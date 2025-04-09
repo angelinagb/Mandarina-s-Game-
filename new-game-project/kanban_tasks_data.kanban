@@ -1,0 +1,189 @@
+{
+	"categories": [
+		{
+			"uuid": "660908f9-4f08-494c-a49b-205b24339bea",
+			"title": "Task",
+			"color": "70bafa"
+		},
+		{
+			"uuid": "65df07b5-a76d-4a88-a058-b5d966229b32",
+			"title": "Angy",
+			"color": "9d20b7"
+		},
+		{
+			"uuid": "97646447-575a-4b6e-9295-31b0c3aca82d",
+			"title": "Nehuen ",
+			"color": "43e01d"
+		},
+		{
+			"uuid": "fcda7061-e499-4a26-b0b6-a234a26bc5ae",
+			"title": "Franco ",
+			"color": "e81945"
+		},
+		{
+			"uuid": "d5f70e49-466f-4c8e-91f9-a0760972603b",
+			"title": "Valentin ",
+			"color": "d9c019"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "8af9c745-f180-48c5-bb46-f50e3bc5953f",
+			"title": "Todo",
+			"tasks": [
+				"fa8e55a4-9ddd-424a-91c8-0384f084edb7",
+				"d27257a1-7f01-4793-ba42-a788b7961bf8",
+				"aa29e35f-6231-467a-aaaf-d3d316e08dd5",
+				"11e2c535-3a03-4af1-a031-c9158daffcf0",
+				"532b3496-e422-4d0b-b8b1-7e616d082077",
+				"0c941acf-b9b1-4395-9722-691e43524542",
+				"46ef366c-0887-4eff-85f2-56b498a3d403",
+				"50b03214-0b9e-44ed-8d84-f7c58b134898",
+				"8a2a6681-28fa-4b9e-9a4a-0bd6bded2a74",
+				"23cfe22c-a3d1-4052-9ad5-a41c8f586d9d",
+				"1640f6d9-4ff4-4be9-89a2-85a723cab469"
+			]
+		},
+		{
+			"uuid": "82473a6b-c337-49fe-9a95-e34757404518",
+			"title": "Doing",
+			"tasks": [
+				"14828e22-5bce-467b-87ec-a80ab9ca8b54",
+				"ad0cb1b0-2cd7-4d37-9bb6-b76baa0dc8a0"
+			]
+		},
+		{
+			"uuid": "c0abc550-e48a-45d2-9f59-379997a3d179",
+			"title": "Done",
+			"tasks": []
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "fa8e55a4-9ddd-424a-91c8-0384f084edb7",
+			"title": "Inventario",
+			"description": "",
+			"category": "660908f9-4f08-494c-a49b-205b24339bea",
+			"steps": []
+		},
+		{
+			"uuid": "14828e22-5bce-467b-87ec-a80ab9ca8b54",
+			"title": "Puerta",
+			"description": "",
+			"category": "d5f70e49-466f-4c8e-91f9-a0760972603b",
+			"steps": []
+		},
+		{
+			"uuid": "d27257a1-7f01-4793-ba42-a788b7961bf8",
+			"title": "Items ",
+			"description": "elementos combinables \nutiles / inutiles\n",
+			"category": "660908f9-4f08-494c-a49b-205b24339bea",
+			"steps": []
+		},
+		{
+			"uuid": "ad0cb1b0-2cd7-4d37-9bb6-b76baa0dc8a0",
+			"title": "Point and click",
+			"description": "",
+			"category": "97646447-575a-4b6e-9295-31b0c3aca82d",
+			"steps": []
+		},
+		{
+			"uuid": "aa29e35f-6231-467a-aaaf-d3d316e08dd5",
+			"title": "UI, menu etc ",
+			"description": "",
+			"category": "660908f9-4f08-494c-a49b-205b24339bea",
+			"steps": []
+		},
+		{
+			"uuid": "11e2c535-3a03-4af1-a031-c9158daffcf0",
+			"title": "pausa",
+			"description": "",
+			"category": "660908f9-4f08-494c-a49b-205b24339bea",
+			"steps": []
+		},
+		{
+			"uuid": "532b3496-e422-4d0b-b8b1-7e616d082077",
+			"title": "opciones",
+			"description": "",
+			"category": "660908f9-4f08-494c-a49b-205b24339bea",
+			"steps": [
+				{
+					"details": "Sonido",
+					"done": false
+				},
+				{
+					"details": "act/des vibracion",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "0c941acf-b9b1-4395-9722-691e43524542",
+			"title": "New task",
+			"description": "",
+			"category": "660908f9-4f08-494c-a49b-205b24339bea",
+			"steps": []
+		},
+		{
+			"uuid": "46ef366c-0887-4eff-85f2-56b498a3d403",
+			"title": "Habitacion ",
+			"description": "puzzles como escenas heredades \n",
+			"category": "660908f9-4f08-494c-a49b-205b24339bea",
+			"steps": [
+				{
+					"details": "puzzle 1",
+					"done": false
+				},
+				{
+					"details": "puzzle 2",
+					"done": false
+				},
+				{
+					"details": "transicion",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "50b03214-0b9e-44ed-8d84-f7c58b134898",
+			"title": "Guardado - Persistencia ",
+			"description": "",
+			"category": "660908f9-4f08-494c-a49b-205b24339bea",
+			"steps": []
+		},
+		{
+			"uuid": "8a2a6681-28fa-4b9e-9a4a-0bd6bded2a74",
+			"title": "Change Scene",
+			"description": "",
+			"category": "660908f9-4f08-494c-a49b-205b24339bea",
+			"steps": []
+		},
+		{
+			"uuid": "23cfe22c-a3d1-4052-9ad5-a41c8f586d9d",
+			"title": "Handler ",
+			"description": "",
+			"category": "660908f9-4f08-494c-a49b-205b24339bea",
+			"steps": []
+		},
+		{
+			"uuid": "1640f6d9-4ff4-4be9-89a2-85a723cab469",
+			"title": "Narrativa",
+			"description": "",
+			"category": "660908f9-4f08-494c-a49b-205b24339bea",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"8af9c745-f180-48c5-bb46-f50e3bc5953f"
+			],
+			[
+				"82473a6b-c337-49fe-9a95-e34757404518"
+			],
+			[
+				"c0abc550-e48a-45d2-9f59-379997a3d179"
+			]
+		]
+	}
+}
