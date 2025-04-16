@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw42cjbp4pvht"]
+
+[ext_resource type="Script" uid="uid://bxujqsqvsfleb" path="res://script/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://ewe4mv32jiut" path="res://assets/Caracter2/Idle_Unarmed/Idle_Unarmed_Body_022.png" id="2_g2els"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
+
+[node name="player" type="Node2D"]
+script = ExtResource("1_g2els")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_g2els")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_g2els")

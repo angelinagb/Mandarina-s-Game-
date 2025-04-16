@@ -11,12 +11,17 @@ config_version=5
 [application]
 
 config/name="proyecto_repo_juego"
+run/main_scene="uid://boqdy120sbqxn"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/kanban_tasks/plugin.cfg")
+
+[filesystem]
+
+import/blender/enabled=false
 
 [rendering]
 
