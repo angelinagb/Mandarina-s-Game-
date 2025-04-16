@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3 uid="uid://bcrpglxqlpkse"]
+
+[ext_resource type="Script" path="res://utils/DialogueSystem/dialogue.gd" id="1_ge5ce"]
+
+[resource]
+script = ExtResource("1_ge5ce")
+arreglo_de_textos = PackedStringArray("¡Oh que bien un libro!", "Me va a ayudar en la tesis.")
+tiempo_entre_caracteres = 0.02

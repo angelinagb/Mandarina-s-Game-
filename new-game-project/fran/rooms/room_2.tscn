@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=4 uid="uid://ddaxpq71ovufv"]
+
+[ext_resource type="PackedScene" uid="uid://cs1gmcwpafdvd" path="res://rooms/room.tscn" id="1_secxv"]
+[ext_resource type="Script" uid="uid://cyd45yb31pavv" path="res://rooms/room_2.gd" id="2_bylct"]
+[ext_resource type="PackedScene" uid="uid://04vt5eris37p" path="res://utils/Transitioner/transitioner.tscn" id="2_wuvbf"]
+[ext_resource type="PackedScene" uid="uid://3v1aqvnidp5b" path="res://utils/Item/item.tscn" id="4_1kamh"]
+[ext_resource type="PackedScene" uid="uid://k2hr1nlbcthi" path="res://utils/DialogueSystem/dialogue_system.tscn" id="5_xxshv"]
+[ext_resource type="Resource" uid="uid://bcrpglxqlpkse" path="res://rooms/DialoguePickUpItem.tres" id="6_6k83b"]
+
+[node name="room_2" instance=ExtResource("1_secxv")]
+script = ExtResource("2_bylct")
+myName = "room_2"
+adjacentRoom = Array[int]([0, 2])
+
+[node name="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAAAAAEAAgABAAAAAAABAAAAAgABAAAAAAABAAEAAgABAAAAAAABAAIAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAAIAAgAAAAAAAAD//wEAAgAAAAAAAAAAAP//AgAAAAAAAAD/////AgAAAAAAAAABAP//AgABAAAAAAACAP//AgAAAAAAAAADAP//AgAAAAAAAAADAAEAAgAAAAAAAAADAAAAAgAAAAAAAAACAAAAAgABAAAAAAACAAEAAgABAAAAAAADAAIAAgAAAAAAAAADAAQAAgAAAAAAAAADAAMAAgAAAAAAAAADAAUAAgAAAAAAAAADAAcAAgAAAAAAAAADAAkAAgAAAAAAAAADAAsAAgAAAAAAAAADAA0AAgAAAAAAAAADAAYAAgAAAAAAAAADAAgAAgAAAAAAAAADAAoAAgAAAAAAAAADAAwAAgAAAAAAAAADAA4AAgAAAAAAAAACAA0AAgABAAAAAAACAAsAAgAAAAAAAAACAAoAAgAAAAAAAAACAAkAAgAAAAAAAAACAAgAAgAAAAAAAAACAAcAAgAAAAAAAAACAAYAAgAAAAAAAAACAAUAAgAAAAAAAAACAAMAAgAAAAAAAAACAAIAAgAAAAAAAAABAAMAAgABAAAAAAACAAQAAgAAAAAAAAABAAcAAgABAAAAAAABAAYAAgAAAAAAAAABAAUAAgABAAAAAAABAAQAAgAAAAAAAAAAAAcAAgAAAAAAAAABAAgAAgAAAAAAAAAAAAYAAgAAAAAAAAAAAAUAAgAAAAAAAAAAAAQAAgAAAAAAAAD//wMAAgAAAAAAAAD//wUAAgAAAAAAAAD//wcAAgAAAAAAAAAAAAgAAgAAAAAAAAD//wkAAgAAAAAAAAAAAAoAAgAAAAAAAAD//wsAAgAAAAAAAAAAAAwAAgAAAAAAAAD//w0AAgAAAAAAAAAAAA4AAgAAAAAAAAD//w8AAgAAAAAAAAAAAA8AAgAAAAAAAAABAA4AAgABAAAAAAABAA8AAgABAAAAAAACAA4AAgABAAAAAAACAA8AAgAAAAAAAAADAA8AAgAAAAAAAAABAA0AAgABAAAAAAACAAwAAgAAAAAAAAABAAsAAgABAAAAAAAAAA0AAgABAAAAAAAAAAsAAgAAAAAAAAABAAoAAgAAAAAAAAABAAkAAgABAAAAAAABAAwAAgAAAAAAAAAAAAkAAgAAAAAAAAA=")
+
+[node name="TransitionerTo3" parent="." index="1" instance=ExtResource("2_wuvbf")]
+position = Vector2(256, 20)
+destiny = 2
+path_scene = "res://rooms/room_3.tscn"
+
+[node name="SpawnFrom3" type="Marker2D" parent="." index="2"]
+position = Vector2(256, 20)
+
+[node name="TransitionerTo1" parent="." index="3" instance=ExtResource("2_wuvbf")]
+position = Vector2(256, 492)
+path_scene = "res://rooms/room_1.tscn"
+
+[node name="SpawnFrom1" type="Marker2D" parent="." index="4"]
+position = Vector2(256, 492)
+
+[node name="Item1" parent="." index="10" instance=ExtResource("4_1kamh")]
+position = Vector2(492, 20)
+sprite_frame = 8
+
+[node name="Item2" parent="." index="11" instance=ExtResource("4_1kamh")]
+position = Vector2(20, 20)
+sprite_frame = 7
+
+[node name="DialogueItem1" parent="." index="12" instance=ExtResource("5_xxshv")]
+dialogueResource = ExtResource("6_6k83b")
+
+[node name="DialogueItem2" parent="." index="13" instance=ExtResource("5_xxshv")]
+dialogueResource = ExtResource("6_6k83b")
+
+[connection signal="body_entered" from="TransitionerTo3" to="." method="_on_transitioner_to_3_body_entered"]
+[connection signal="body_entered" from="TransitionerTo1" to="." method="_on_transitioner_to_1_body_entered"]
+[connection signal="grabbed" from="Item1" to="." method="_on_item_1_grabbed"]
+[connection signal="grabbed" from="Item2" to="." method="_on_item_2_grabbed"]
+[connection signal="dialogue_ended" from="DialogueItem1" to="." method="_on_dialogue_item_1_dialogue_ended"]
+[connection signal="dialogue_ended" from="DialogueItem2" to="." method="_on_dialogue_item_2_dialogue_ended"]

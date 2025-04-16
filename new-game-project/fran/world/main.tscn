@@ -1,0 +1,28 @@
+[gd_scene load_steps=10 format=3 uid="uid://d3gvpmdls1flt"]
+
+[ext_resource type="Script" uid="uid://d1fqy48edo2m" path="res://world/main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dadkd5r8y1uut" path="res://managers/room/room_manager.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://b3tda36v8u0s5" path="res://rooms/room_1.tscn" id="3_lquwl"]
+[ext_resource type="PackedScene" uid="uid://ddaxpq71ovufv" path="res://rooms/room_2.tscn" id="4_7mycd"]
+[ext_resource type="PackedScene" uid="uid://c6e7mmyrs1tmo" path="res://rooms/room_3.tscn" id="5_272bh"]
+[ext_resource type="Script" uid="uid://ctpw63vn3bwxg" path="res://player/resources/movement_stats.gd" id="7_5vw27"]
+[ext_resource type="PackedScene" uid="uid://ddbkx1m8n74tr" path="res://player/player.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://jhud7yutg7ig" path="res://managers/inventory/inventory_manager.tscn" id="8_5vw27"]
+[ext_resource type="PackedScene" uid="uid://coh7ji8k7tga5" path="res://managers/save/save_manager.tscn" id="9_vrojb"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_ig7tw")
+
+[node name="room_manager" parent="." instance=ExtResource("2_0xm2m")]
+rooms = Array[PackedScene]([ExtResource("3_lquwl"), ExtResource("4_7mycd"), ExtResource("5_272bh")])
+
+[node name="Player" parent="." instance=ExtResource("7_272bh")]
+movement_stats = ExtResource("7_5vw27")
+
+[node name="InventoryManager" parent="." instance=ExtResource("8_5vw27")]
+
+[node name="SaveManager" parent="." instance=ExtResource("9_vrojb")]
+
+[connection signal="changed_current_room" from="room_manager" to="." method="_on_room_manager_changed_current_room"]
+[connection signal="dialogue_ended" from="room_manager" to="." method="_on_room_manager_dialogue_ended"]
+[connection signal="item_grabbed" from="room_manager" to="." method="_on_room_manager_item_grabbed"]
