@@ -41,11 +41,16 @@
 [ext_resource type="Texture2D" uid="uid://dcpsvrad0va0v" path="res://Prueba/Sprites-Assets-Tiles/kenney_isometric-miniature-dungeon/Characters/Male/Male_6_Run9.png" id="39_niklt"]
 
 [sub_resource type="GDScript" id="GDScript_q0mdy"]
-script/source = "class_name Player2
+script/source = "class_name Player
 extends CharacterBody2D
 
 @export var SPEED = 300.0
 
+var last_direction = Vector2(0, 1) 
+
+var abilities : Dictionary = {}
+#var save_file = \"user://skills_save\"
+@export var ability_points: int =  3
 @onready var sprite = $AnimatedSprite2D
 @onready var this = $\".\"
 
@@ -55,23 +60,50 @@ const ISO_TRANSFORM = Transform2D(
 	Vector2.ZERO
 )
 
-var last_direction = Vector2(0, 1) 
+func _init():
+	abilities[\"Cerrajeria\"] = Ability.new(\"Cerrajeria\")
+	abilities[\"Persuasión\"] = Ability.new(\"Persuasión\")
+	abilities[\"Animales\"] = Ability.new(\"Animales\")
+	abilities[\"Investigación\"] = Ability.new(\"Investigación\")
+	abilities[\"Carisma\"] = Ability.new(\"Carisma\")	
 
 func _ready(): 
-	pass
-	
-func _physics_process(delta: float) -> void:
-	velocity = Vector2.ZERO
-	var dir = Input.get_vector(\"ui_left\", \"ui_right\", \"ui_up\", \"ui_down\")
+	#load_skills()
+	return 
 
+func _physics_process(delta: float) -> void:
+	var dir = Input.get_vector(\"ui_left\", \"ui_right\", \"ui_up\", \"ui_down\")
+	
 	if dir != Vector2.ZERO:
-		dir = dir.normalized()  
-		last_direction = dir  # guardar la última dirección válida
+		dir = dir.normalized()
+		last_direction = dir  # Guarda la última dirección válida
 	
 	var iso_dir = ISO_TRANSFORM * dir
 	velocity = iso_dir * SPEED
-	
 	move_and_slide()
+
+
+#func save_skills():
+#	var config = ConfigFile.new()
+#	for ability in abilities:
+#		config.set_value(\"skills\", ability.name, ability.level)
+#	config.save(save_file)
+
+
+#func load_skills():
+#	var config = ConfigFile.new()
+#	var error = config.load(save_file)  
+#	if error == OK:
+#		for ability in abilities:
+#			var saved_level = config.get_value(\"skills\", ability.name, 0)
+#			ability.level = saved_level
+
+
+func get_abilities() -> Dictionary:
+	return abilities
+
+func get_abiltypoints() -> int :
+		return ability_points
 "
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hq0ei"]

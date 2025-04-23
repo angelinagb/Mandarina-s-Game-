@@ -1,0 +1,149 @@
+[gd_scene load_steps=10 format=3 uid="uid://ck0r48iiicyno"]
+
+[ext_resource type="Script" uid="uid://qfesqmmphdbo" path="res://Prueba/selector de estadisticas/Scripts/control.gd" id="1_q6axu"]
+[ext_resource type="Texture2D" uid="uid://cwbtuklgx2clq" path="res://Prueba/selector de estadisticas/1. Free Hologram Interface Wenrexa/Card X2/Card X2.png" id="1_rhn5o"]
+[ext_resource type="Texture2D" uid="uid://b1bwj22oylapq" path="res://Prueba/selector de estadisticas/1. Free Hologram Interface Wenrexa/Button 1/Button Normal.png" id="2_hrvy5"]
+[ext_resource type="Texture2D" uid="uid://d1dvnhr3lqyso" path="res://Prueba/selector de estadisticas/1. Free Hologram Interface Wenrexa/Button 1/Button Active.png" id="3_q6axu"]
+[ext_resource type="Texture2D" uid="uid://pc83lxqa7vb0" path="res://Prueba/selector de estadisticas/1. Free Hologram Interface Wenrexa/Button 1/Button Hover.png" id="4_bh65t"]
+[ext_resource type="Texture2D" uid="uid://8paexfgrjnf8" path="res://Prueba/selector de estadisticas/1. Free Hologram Interface Wenrexa/Button 1/Button Disable.png" id="5_3yf6m"]
+
+[sub_resource type="GDScript" id="GDScript_bh65t"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3yf6m"]
+load_path = "res://.godot/imported/Button Normal.png-27a65109882dca3e1be444e8a644e282.ctex"
+script = SubResource("GDScript_bh65t")
+
+[sub_resource type="GDScript" id="GDScript_hrvy5"]
+
+[node name="statistics" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = 10.0
+offset_right = -18.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q6axu")
+
+[node name="ColorRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rhn5o")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -103.0
+offset_right = -143.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 13
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "Carisma"
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "Persuasión"
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "Animales"
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "Cerrajería"
+
+[node name="Label5" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "Investigacion"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 111.0
+offset_top = -99.0
+offset_right = 240.0
+offset_bottom = 229.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 13
+
+[node name="CarismaButton" type="TextureButton" parent="VBoxContainer2"]
+layout_mode = 2
+tooltip_text = "You won a cupcake! 🧁"
+texture_normal = SubResource("CompressedTexture2D_3yf6m")
+texture_pressed = ExtResource("2_hrvy5")
+texture_hover = ExtResource("4_bh65t")
+texture_disabled = ExtResource("5_3yf6m")
+texture_focused = ExtResource("3_q6axu")
+script = SubResource("GDScript_hrvy5")
+
+[node name="PersuasiónButton" type="TextureButton" parent="VBoxContainer2"]
+layout_mode = 2
+tooltip_text = "This is this and nothing more"
+texture_normal = ExtResource("2_hrvy5")
+texture_pressed = ExtResource("2_hrvy5")
+texture_hover = ExtResource("4_bh65t")
+texture_disabled = ExtResource("5_3yf6m")
+texture_focused = ExtResource("3_q6axu")
+
+[node name="AnimalesButton" type="TextureButton" parent="VBoxContainer2"]
+layout_mode = 2
+tooltip_text = "This is this and nothing more"
+texture_normal = ExtResource("2_hrvy5")
+texture_pressed = ExtResource("2_hrvy5")
+texture_hover = ExtResource("4_bh65t")
+texture_disabled = ExtResource("5_3yf6m")
+texture_focused = ExtResource("3_q6axu")
+
+[node name="CerrajeriaButton" type="TextureButton" parent="VBoxContainer2"]
+layout_mode = 2
+tooltip_text = "This is this and nothing more"
+texture_normal = ExtResource("2_hrvy5")
+texture_pressed = ExtResource("2_hrvy5")
+texture_hover = ExtResource("4_bh65t")
+texture_disabled = ExtResource("5_3yf6m")
+texture_focused = ExtResource("3_q6axu")
+
+[node name="InvestigaciónButton" type="TextureButton" parent="VBoxContainer2"]
+layout_mode = 2
+tooltip_text = "This is this and nothing more"
+texture_normal = ExtResource("2_hrvy5")
+texture_pressed = ExtResource("2_hrvy5")
+texture_hover = ExtResource("4_bh65t")
+texture_disabled = ExtResource("5_3yf6m")
+texture_focused = ExtResource("3_q6axu")
+
+[node name="abilitypointsLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 453.0
+offset_top = 171.0
+offset_right = 672.0
+offset_bottom = 218.0
+tooltip_text = "ahre pq estaba en ingles"
+text = "Tus puntos de habilidad: 0"
+horizontal_alignment = 1

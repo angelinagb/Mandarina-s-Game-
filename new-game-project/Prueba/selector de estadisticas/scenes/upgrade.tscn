@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5387jnlpjppi"]
+
+[ext_resource type="Script" uid="uid://kqf1slqsp0t6" path="res://Prueba/selector de estadisticas/Scripts/upgradebutton.gd" id="1_12u02"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_12u02"]
+
+[node name="Upgrade" type="TextureButton"]
+offset_right = 128.0
+offset_bottom = 128.0
+toggle_mode = true
+action_mode = 0
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("1_12u02")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_12u02")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
