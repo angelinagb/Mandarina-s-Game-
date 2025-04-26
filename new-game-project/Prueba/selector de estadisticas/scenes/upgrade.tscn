@@ -22,5 +22,3 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxEmpty_12u02")
-
-[connection signal="pressed" from="." to="." method="_on_pressed"]

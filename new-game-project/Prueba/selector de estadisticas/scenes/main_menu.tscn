@@ -1,34 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://c2yebh6jef4a5"]
+[gd_scene load_steps=9 format=3 uid="uid://c2yebh6jef4a5"]
 
 [ext_resource type="Texture2D" uid="uid://mtso7j2eit4a" path="res://Prueba/selector de estadisticas/1. Free Hologram Interface Wenrexa/Card X3/Card X5.png" id="1_1nfmn"]
 [ext_resource type="PackedScene" uid="uid://b5387jnlpjppi" path="res://Prueba/selector de estadisticas/scenes/upgrade.tscn" id="1_2pod2"]
+[ext_resource type="Script" uid="uid://dvwmtttc3pslb" path="res://Prueba/selector de estadisticas/scenes/main_menu.gd" id="1_neara"]
 [ext_resource type="Script" uid="uid://cult51hjlg6s0" path="res://Prueba/selector de estadisticas/scenes/Abilities.gd" id="1_p71k7"]
 [ext_resource type="Script" uid="uid://cq7bxy2845xtw" path="res://ability_points.gd" id="2_h0gnt"]
-[ext_resource type="Script" uid="uid://ca0ih500po1ec" path="res://Prueba/selector de estadisticas/Scripts/Ability_resource.gd" id="2_labjn"]
 [ext_resource type="Texture2D" uid="uid://chfh7jsdgv3tl" path="res://Prueba/selector de estadisticas/1. Free Hologram Interface Wenrexa/Icons/17.png" id="5_1nfmn"]
 [ext_resource type="Texture2D" uid="uid://p1gey5iubu38" path="res://Prueba/selector de estadisticas/1. Free Hologram Interface Wenrexa/Icons/04.png" id="5_p71k7"]
 [ext_resource type="Texture2D" uid="uid://plsafwb2gpei" path="res://Prueba/selector de estadisticas/1. Free Hologram Interface Wenrexa/Icons/26.png" id="6_p71k7"]
-
-[sub_resource type="Resource" id="Resource_p71k7"]
-script = ExtResource("2_labjn")
-name = "Carisma"
-level = 0
-max_level = 5
-metadata/_custom_type_script = "uid://ca0ih500po1ec"
-
-[sub_resource type="Resource" id="Resource_neara"]
-script = ExtResource("2_labjn")
-name = "Persuasión"
-level = 0
-max_level = 5
-metadata/_custom_type_script = "uid://ca0ih500po1ec"
-
-[sub_resource type="Resource" id="Resource_tq0n8"]
-script = ExtResource("2_labjn")
-name = "Animales"
-level = 0
-max_level = 5
-metadata/_custom_type_script = "uid://ca0ih500po1ec"
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -37,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_neara")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -65,12 +45,11 @@ mouse_filter = 1
 
 [node name="Upgrade" parent="Panel/Abilities" instance=ExtResource("1_2pod2")]
 layout_mode = 0
-offset_left = 192.0
-offset_top = 200.0
-offset_right = 320.0
-offset_bottom = 328.0
+offset_left = 203.0
+offset_top = 204.0
+offset_right = 331.0
+offset_bottom = 332.0
 texture_normal = ExtResource("5_p71k7")
-ability = SubResource("Resource_p71k7")
 
 [node name="Upgrade2" parent="Panel/Abilities" instance=ExtResource("1_2pod2")]
 layout_mode = 0
@@ -79,14 +58,22 @@ offset_top = 200.0
 offset_right = 512.0
 offset_bottom = 328.0
 texture_normal = ExtResource("5_1nfmn")
-ability = SubResource("Resource_neara")
 
 [node name="Upgrade3" parent="Panel/Abilities" instance=ExtResource("1_2pod2")]
 layout_mode = 0
-offset_top = 200.0
-offset_bottom = 328.0
+offset_left = 33.0
+offset_top = 202.0
+offset_right = 161.0
+offset_bottom = 330.0
 texture_normal = ExtResource("6_p71k7")
-ability = SubResource("Resource_tq0n8")
+
+[node name="Upgrade4" parent="Panel/Abilities" instance=ExtResource("1_2pod2")]
+layout_mode = 0
+offset_left = 562.0
+offset_top = 202.0
+offset_right = 690.0
+offset_bottom = 330.0
+texture_normal = ExtResource("6_p71k7")
 
 [node name="AbilityPoints" type="Label" parent="."]
 layout_mode = 0
@@ -96,3 +83,6 @@ offset_right = 242.0
 offset_bottom = 56.0
 text = "Points Available : "
 script = ExtResource("2_h0gnt")
+
+[connection signal="pressed" from="Panel/Abilities/Upgrade" to="." method="_on_upgrade_pressed"]
+[connection signal="pressed" from="Panel/Abilities/Upgrade2" to="." method="_on_upgrade_2_pressed"]

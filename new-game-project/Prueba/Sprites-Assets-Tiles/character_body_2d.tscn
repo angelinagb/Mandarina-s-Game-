@@ -104,6 +104,9 @@ func get_abilities() -> Dictionary:
 
 func get_abiltypoints() -> int :
 		return ability_points
+
+func inicializar()-> void 
+	pass
 "
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hq0ei"]
@@ -250,6 +253,8 @@ animations = [{
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = SubResource("GDScript_q0mdy")
+SPEED = null
+ability_points = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(10, -183)

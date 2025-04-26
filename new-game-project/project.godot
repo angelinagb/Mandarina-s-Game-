@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-SaveData="*res://save_data.gd"
+SaveData="*res://Prueba/selector de estadisticas/Scripts/save_data.gd"
 
 [display]
 

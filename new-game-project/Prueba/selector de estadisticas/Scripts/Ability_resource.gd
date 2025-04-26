@@ -5,6 +5,7 @@ class_name Ability
 @export var level: int
 @export var max_level: int
 
+
 func _init(name : String = "Default"):
 	self.name = name 
 	level = 0
