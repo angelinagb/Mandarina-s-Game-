@@ -48,7 +48,7 @@ offset_top = 202.0
 offset_right = 161.0
 offset_bottom = 330.0
 texture_normal = ExtResource("6_p71k7")
-ability_name = "Animales"
+abilty_name = null
 
 [node name="Carisma_Button" parent="Panel/Abilities" instance=ExtResource("1_2pod2")]
 layout_mode = 0
@@ -57,7 +57,7 @@ offset_top = 204.0
 offset_right = 331.0
 offset_bottom = 332.0
 texture_normal = ExtResource("5_p71k7")
-ability_name = "Carisma"
+abilty_name = null
 
 [node name="Persuacion_Button" parent="Panel/Abilities" instance=ExtResource("1_2pod2")]
 layout_mode = 0
@@ -66,7 +66,7 @@ offset_top = 200.0
 offset_right = 512.0
 offset_bottom = 328.0
 texture_normal = ExtResource("5_1nfmn")
-ability_name = "Persuasión"
+abilty_name = null
 
 [node name="Otro_Button" parent="Panel/Abilities" instance=ExtResource("1_2pod2")]
 layout_mode = 0
@@ -75,7 +75,7 @@ offset_top = 202.0
 offset_right = 690.0
 offset_bottom = 330.0
 texture_normal = ExtResource("6_p71k7")
-ability_name = "Otro"
+abilty_name = null
 
 [node name="AbilityPoints" type="Label" parent="."]
 layout_mode = 0
@@ -85,3 +85,8 @@ offset_right = 600.0
 offset_bottom = 183.0
 text = "Points Available : "
 script = ExtResource("2_h0gnt")
+
+[connection signal="pressed" from="Panel/Abilities/Animales_Button" to="." method="_on_animales_button_pressed"]
+[connection signal="pressed" from="Panel/Abilities/Carisma_Button" to="." method="_on_carisma_button_pressed"]
+[connection signal="pressed" from="Panel/Abilities/Persuacion_Button" to="." method="_on_persuacion_button_pressed"]
+[connection signal="pressed" from="Panel/Abilities/Otro_Button" to="." method="_on_otro_button_pressed"]

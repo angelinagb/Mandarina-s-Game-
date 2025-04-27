@@ -1,3 +1,4 @@
+#No se usa
 extends Resource
 class_name Ability
 #Podemos hacer que cada habilidad extienda de esta y cargarle toda la data si hubiera mas 
