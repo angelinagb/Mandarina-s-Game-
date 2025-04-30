@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2yebh6jef4a5"]
+
+[ext_resource type="Texture2D" uid="uid://mtso7j2eit4a" path="res://Prueba/selector de estadisticas/Assets/1. Free Hologram Interface Wenrexa/Card X3/Card X5.png" id="1_1nfmn"]
+[ext_resource type="PackedScene" uid="uid://b5387jnlpjppi" path="res://Prueba/selector de estadisticas/scenes/upgrade.tscn" id="1_2pod2"]
+[ext_resource type="Script" uid="uid://dvwmtttc3pslb" path="res://Prueba/selector de estadisticas/Scripts/main_menu.gd" id="1_neara"]
+[ext_resource type="Script" uid="uid://cq7bxy2845xtw" path="res://Prueba/selector de estadisticas/Scripts/ability_points_label.gd" id="2_h0gnt"]
+[ext_resource type="Texture2D" uid="uid://chfh7jsdgv3tl" path="res://Prueba/selector de estadisticas/Assets/1. Free Hologram Interface Wenrexa/Icons/17.png" id="5_1nfmn"]
+[ext_resource type="Texture2D" uid="uid://p1gey5iubu38" path="res://Prueba/selector de estadisticas/Assets/1. Free Hologram Interface Wenrexa/Icons/04.png" id="5_p71k7"]
+[ext_resource type="Texture2D" uid="uid://plsafwb2gpei" path="res://Prueba/selector de estadisticas/Assets/1. Free Hologram Interface Wenrexa/Icons/26.png" id="6_p71k7"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_neara")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 6.0
+offset_right = 1151.0
+offset_bottom = 653.0
+
+[node name="backround" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1nfmn")
+
+[node name="Abilities" type="Control" parent="Panel"]
+anchors_preset = 0
+offset_left = 199.0
+offset_top = 74.0
+offset_right = 647.0
+offset_bottom = 530.0
+mouse_filter = 1
+
+[node name="Animales_Button" parent="Panel/Abilities" instance=ExtResource("1_2pod2")]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 202.0
+offset_right = 161.0
+offset_bottom = 330.0
+texture_normal = ExtResource("6_p71k7")
+ability_name = "Animales"
+
+[node name="Carisma_Button" parent="Panel/Abilities" instance=ExtResource("1_2pod2")]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 204.0
+offset_right = 331.0
+offset_bottom = 332.0
+texture_normal = ExtResource("5_p71k7")
+ability_name = "Carisma"
+
+[node name="Persuacion_Button" parent="Panel/Abilities" instance=ExtResource("1_2pod2")]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 200.0
+offset_right = 512.0
+offset_bottom = 328.0
+texture_normal = ExtResource("5_1nfmn")
+ability_name = "Persuasión"
+
+[node name="Otro_Button" parent="Panel/Abilities" instance=ExtResource("1_2pod2")]
+layout_mode = 0
+offset_left = 562.0
+offset_top = 202.0
+offset_right = 690.0
+offset_bottom = 330.0
+texture_normal = ExtResource("6_p71k7")
+ability_name = "Otro"
+
+[node name="AbilityPoints" type="Label" parent="."]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 160.0
+offset_right = 600.0
+offset_bottom = 183.0
+text = "Points Available : "
+script = ExtResource("2_h0gnt")
