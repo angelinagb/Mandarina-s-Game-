@@ -11,8 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://dcpsvrad0va0v" path="res://Prueba/Sprites-Assets-Tiles/kenney_isometric-miniature-dungeon/Characters/Male/Male_6_Run9.png" id="10_dcec6"]
 [ext_resource type="Texture2D" uid="uid://cg7enrae2r1t4" path="res://Prueba/Sprites-Assets-Tiles/wall_tiles.png" id="10_nr6j7"]
 [ext_resource type="Texture2D" uid="uid://ch22rx24jw627" path="res://Prueba/Sprites-Assets-Tiles/stonecolumn.png" id="11_hg3ud"]
-[ext_resource type="Texture2D" uid="uid://2kg4htperwsf" path="res://tables(ENSW).png" id="12_aq85t"]
-[ext_resource type="Texture2D" uid="uid://48pouvnlq184" path="res://woodenCrates.png" id="13_vyekv"]
+[ext_resource type="Texture2D" uid="uid://2kg4htperwsf" path="res://Prueba/Sprites-Assets-Tiles/tables(ENSW).png" id="12_aq85t"]
+[ext_resource type="Texture2D" uid="uid://48pouvnlq184" path="res://Prueba/Sprites-Assets-Tiles/woodenCrates.png" id="13_vyekv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e273k"]
 texture = ExtResource("1_bcwye")

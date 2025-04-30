@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://48pouvnlq184"
-path="res://.godot/imported/woodenCrates.png-fa8061cbc0ba89a3388c167abd95b1ae.ctex"
+path="res://.godot/imported/woodenCrates.png-3cb596e680353c21d4596fb21d36a621.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://woodenCrates.png"
-dest_files=["res://.godot/imported/woodenCrates.png-fa8061cbc0ba89a3388c167abd95b1ae.ctex"]
+source_file="res://Prueba/Sprites-Assets-Tiles/woodenCrates.png"
+dest_files=["res://.godot/imported/woodenCrates.png-3cb596e680353c21d4596fb21d36a621.ctex"]
 
 [params]
 

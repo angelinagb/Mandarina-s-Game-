@@ -47,10 +47,6 @@ extends CharacterBody2D
 @export var SPEED = 300.0
 
 var last_direction = Vector2(0, 1) 
-
-var abilities : Dictionary = {}
-#var save_file = \"user://skills_save\"
-@export var ability_points: int =  3
 @onready var sprite = $AnimatedSprite2D
 @onready var this = $\".\"
 
@@ -59,17 +55,6 @@ const ISO_TRANSFORM = Transform2D(
 	Vector2(0.707, 0.407),   # dirección Y en isométrico (abajo)
 	Vector2.ZERO
 )
-
-func _init():
-	abilities[\"Cerrajeria\"] = Ability.new(\"Cerrajeria\")
-	abilities[\"Persuasión\"] = Ability.new(\"Persuasión\")
-	abilities[\"Animales\"] = Ability.new(\"Animales\")
-	abilities[\"Investigación\"] = Ability.new(\"Investigación\")
-	abilities[\"Carisma\"] = Ability.new(\"Carisma\")	
-
-func _ready(): 
-	#load_skills()
-	return 
 
 func _physics_process(delta: float) -> void:
 	var dir = Input.get_vector(\"ui_left\", \"ui_right\", \"ui_up\", \"ui_down\")
@@ -81,32 +66,6 @@ func _physics_process(delta: float) -> void:
 	var iso_dir = ISO_TRANSFORM * dir
 	velocity = iso_dir * SPEED
 	move_and_slide()
-
-
-#func save_skills():
-#	var config = ConfigFile.new()
-#	for ability in abilities:
-#		config.set_value(\"skills\", ability.name, ability.level)
-#	config.save(save_file)
-
-
-#func load_skills():
-#	var config = ConfigFile.new()
-#	var error = config.load(save_file)  
-#	if error == OK:
-#		for ability in abilities:
-#			var saved_level = config.get_value(\"skills\", ability.name, 0)
-#			ability.level = saved_level
-
-
-func get_abilities() -> Dictionary:
-	return abilities
-
-func get_abiltypoints() -> int :
-		return ability_points
-
-func inicializar()-> void 
-	pass
 "
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hq0ei"]
@@ -253,8 +212,6 @@ animations = [{
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = SubResource("GDScript_q0mdy")
-SPEED = null
-ability_points = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(10, -183)

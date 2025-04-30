@@ -1,8 +1,9 @@
 #SCRIPT GLOBAL 
 extends Node2D
+
 const PATH = "user://player_data.cfg"
 
-var ability_points : int = 3
+var ability_points : int = 10
 var abilities: Dictionary = {
 	"Cerrajeria": [0, 5],
 	"Persuasión": [0, 5],
@@ -33,7 +34,7 @@ func load_data():
 	if config_file.load(PATH) != OK: # si hubo algun error en el archivo de conf, seteo con los valores que tenia
 		set_and_save()
 	else: # cargo del archivo de configuracion los datos 
-		ability_points = config_file.get_value("Player","points",3) 
+		ability_points = config_file.get_value("Player","points",10) 
 		abilities = config_file.get_value("Player","Abilities",get_abilities_default())
 
 func get_abilityPoints():

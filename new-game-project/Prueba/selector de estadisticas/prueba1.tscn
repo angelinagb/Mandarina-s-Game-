@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ch3357f4h2pe8"]
 
 [ext_resource type="PackedScene" uid="uid://bfm1rh2ru2n6f" path="res://Prueba/suelo.tscn" id="1_pg1k0"]
-[ext_resource type="PackedScene" uid="uid://8id4b7tipmgj" path="res://Prueba/Sprites-Assets-Tiles/character_body_2d.tscn" id="2_rn1pp"]
+[ext_resource type="PackedScene" uid="uid://8id4b7tipmgj" path="res://Prueba/Player/character_body_2d.tscn" id="2_rn1pp"]
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true

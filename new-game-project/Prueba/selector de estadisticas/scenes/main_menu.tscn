@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://mtso7j2eit4a" path="res://Prueba/selector de estadisticas/Assets/1. Free Hologram Interface Wenrexa/Card X3/Card X5.png" id="1_1nfmn"]
 [ext_resource type="PackedScene" uid="uid://b5387jnlpjppi" path="res://Prueba/selector de estadisticas/scenes/upgrade.tscn" id="1_2pod2"]
 [ext_resource type="Script" uid="uid://dvwmtttc3pslb" path="res://Prueba/selector de estadisticas/Scripts/main_menu.gd" id="1_neara"]
-[ext_resource type="Script" uid="uid://cq7bxy2845xtw" path="res://ability_points_label.gd" id="2_h0gnt"]
+[ext_resource type="Script" uid="uid://cq7bxy2845xtw" path="res://Prueba/selector de estadisticas/Scripts/ability_points_label.gd" id="2_h0gnt"]
 [ext_resource type="Texture2D" uid="uid://chfh7jsdgv3tl" path="res://Prueba/selector de estadisticas/Assets/1. Free Hologram Interface Wenrexa/Icons/17.png" id="5_1nfmn"]
 [ext_resource type="Texture2D" uid="uid://p1gey5iubu38" path="res://Prueba/selector de estadisticas/Assets/1. Free Hologram Interface Wenrexa/Icons/04.png" id="5_p71k7"]
 [ext_resource type="Texture2D" uid="uid://plsafwb2gpei" path="res://Prueba/selector de estadisticas/Assets/1. Free Hologram Interface Wenrexa/Icons/26.png" id="6_p71k7"]
