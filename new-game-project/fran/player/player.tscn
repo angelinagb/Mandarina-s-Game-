@@ -225,7 +225,6 @@ script/source = "extends Node
 "
 
 [node name="Player" type="CharacterBody2D"]
-scale = Vector2(3, 3)
 script = ExtResource("1_4flbx")
 metadata/_edit_group_ = true
 

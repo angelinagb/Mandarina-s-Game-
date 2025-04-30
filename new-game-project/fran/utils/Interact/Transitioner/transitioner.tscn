@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://53qcgarmhxng"]
+
+[ext_resource type="PackedScene" uid="uid://mvhkwj4slyyt" path="res://utils/Interact/Interactable/interactable.tscn" id="1_8xbec"]
+[ext_resource type="Script" uid="uid://bl6347kmm50hc" path="res://utils/Interact/Transitioner/transitioner.gd" id="1_21cju"]
+
+[node name="Transitioner" instance=ExtResource("1_8xbec")]
+script = ExtResource("1_21cju")
+path_scene = ""

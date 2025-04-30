@@ -1,0 +1,32 @@
+[gd_scene load_steps=11 format=3 uid="uid://d3gvpmdls1flt"]
+
+[ext_resource type="Script" uid="uid://d1fqy48edo2m" path="res://world/world.gd" id="1_ioo17"]
+[ext_resource type="PackedScene" uid="uid://dadkd5r8y1uut" path="res://managers/room/room_manager.tscn" id="2_wse8f"]
+[ext_resource type="PackedScene" uid="uid://4y05v36udm0u" path="res://visuals/gui.tscn" id="4_ai45w"]
+[ext_resource type="PackedScene" uid="uid://ddbkx1m8n74tr" path="res://player/player.tscn" id="6_70uel"]
+[ext_resource type="Script" uid="uid://ctpw63vn3bwxg" path="res://player/resources/movement_stats.gd" id="7_hiqwa"]
+[ext_resource type="PackedScene" uid="uid://dcdfrafxfpp8b" path="res://managers/dialogue/dialogue_manager.tscn" id="7_sc4t8"]
+[ext_resource type="PackedScene" uid="uid://jhud7yutg7ig" path="res://managers/inventory/inventory_manager.tscn" id="8_2u3nc"]
+[ext_resource type="PackedScene" uid="uid://b717pcfilu7jy" path="res://managers/quest/quest_manager.tscn" id="9_fyhu2"]
+[ext_resource type="PackedScene" uid="uid://coh7ji8k7tga5" path="res://managers/save/save_manager.tscn" id="9_udxuc"]
+[ext_resource type="PackedScene" uid="uid://clp8vrd45i0n6" path="res://managers/event/event_manager.tscn" id="10_ov2xu"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_ioo17")
+
+[node name="SaveManager" parent="." instance=ExtResource("9_udxuc")]
+
+[node name="EventManager" parent="." instance=ExtResource("10_ov2xu")]
+
+[node name="QuestManager" parent="." instance=ExtResource("9_fyhu2")]
+
+[node name="InventoryManager" parent="." instance=ExtResource("8_2u3nc")]
+
+[node name="RoomManager" parent="." instance=ExtResource("2_wse8f")]
+
+[node name="Player" parent="." instance=ExtResource("6_70uel")]
+movement_stats = ExtResource("7_hiqwa")
+
+[node name="DialogueManager" parent="." instance=ExtResource("7_sc4t8")]
+
+[node name="gui" parent="." instance=ExtResource("4_ai45w")]

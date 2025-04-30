@@ -8,6 +8,9 @@ extends CharacterBody2D
 var states:PlayerStateNames = PlayerStateNames.new()
 var animations:PlayerAnimations = PlayerAnimations.new()
 
+func initialize(initial_position: Vector2):
+	self.position = initial_position
+
 func _ready():
 	z_index = 1
 	

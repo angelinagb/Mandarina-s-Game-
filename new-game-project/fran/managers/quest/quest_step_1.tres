@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="QuestStep" load_steps=2 format=3 uid="uid://00a8pwbh6oo2"]
+
+[ext_resource type="Script" uid="uid://c0nhxnmv56tui" path="res://managers/quest/quest_step.gd" id="1_p2q3s"]
+
+[resource]
+script = ExtResource("1_p2q3s")
+text_to_do = "Conseguir las 3 herramientas"
+necessary_interactables = {
+"Mate": false,
+"Termo": false,
+"Yerba": false
+}
+metadata/_custom_type_script = "uid://c0nhxnmv56tui"

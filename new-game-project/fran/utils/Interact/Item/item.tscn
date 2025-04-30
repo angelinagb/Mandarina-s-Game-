@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://3v1aqvnidp5b"]
+
+[ext_resource type="PackedScene" uid="uid://mvhkwj4slyyt" path="res://utils/Interact/Interactable/interactable.tscn" id="1_uktik"]
+[ext_resource type="Script" uid="uid://dkl1ftv46fpva" path="res://utils/Interact/Item/item.gd" id="2_v6pl1"]
+
+[node name="Item" instance=ExtResource("1_uktik")]
+script = ExtResource("2_v6pl1")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
