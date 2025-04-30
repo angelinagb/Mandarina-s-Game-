@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlv4wupxriyjy"]
+
+[ext_resource type="Script" uid="uid://up1f7y46q2gq" path="res://Prueba/selector de estadisticas/Scripts/mundo.gd" id="1_75d7k"]
+
+[node name="SaveData" type="Node2D"]
+script = ExtResource("1_75d7k")

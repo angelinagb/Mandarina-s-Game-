@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2yebh6jef4a5"]
+
+[ext_resource type="Texture2D" uid="uid://mtso7j2eit4a" path="res://Prueba/selector de estadisticas/1. Free Hologram Interface Wenrexa/Card X3/Card X5.png" id="1_1nfmn"]
+[ext_resource type="PackedScene" uid="uid://b5387jnlpjppi" path="res://Prueba/selector de estadisticas/scenes/upgrade.tscn" id="1_2pod2"]
+[ext_resource type="Script" uid="uid://cult51hjlg6s0" path="res://Prueba/selector de estadisticas/scenes/Abilities.gd" id="1_p71k7"]
+[ext_resource type="Script" uid="uid://cq7bxy2845xtw" path="res://ability_points.gd" id="2_h0gnt"]
+[ext_resource type="Texture2D" uid="uid://chfh7jsdgv3tl" path="res://Prueba/selector de estadisticas/1. Free Hologram Interface Wenrexa/Icons/17.png" id="5_1nfmn"]
+[ext_resource type="Texture2D" uid="uid://p1gey5iubu38" path="res://Prueba/selector de estadisticas/1. Free Hologram Interface Wenrexa/Icons/04.png" id="5_p71k7"]
+[ext_resource type="Texture2D" uid="uid://plsafwb2gpei" path="res://Prueba/selector de estadisticas/1. Free Hologram Interface Wenrexa/Icons/26.png" id="6_p71k7"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Skill_Tree" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 6.0
+offset_right = 1151.0
+offset_bottom = 653.0
+script = ExtResource("1_p71k7")
+
+[node name="Carisma" type="Control" parent="Skill_Tree"]
+anchors_preset = 0
+offset_left = 127.0
+offset_top = 114.0
+offset_right = 575.0
+offset_bottom = 570.0
+mouse_filter = 1
+
+[node name="Upgrade" parent="Skill_Tree/Carisma" instance=ExtResource("1_2pod2")]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 200.0
+offset_right = 320.0
+offset_bottom = 328.0
+texture_normal = ExtResource("5_p71k7")
+
+[node name="Upgrade2" parent="Skill_Tree/Carisma" instance=ExtResource("1_2pod2")]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 200.0
+offset_right = 512.0
+offset_bottom = 328.0
+texture_normal = ExtResource("5_1nfmn")
+
+[node name="Upgrade3" parent="Skill_Tree/Carisma" instance=ExtResource("1_2pod2")]
+layout_mode = 0
+offset_top = 200.0
+offset_bottom = 328.0
+texture_normal = ExtResource("6_p71k7")
+
+[node name="backround" type="TextureRect" parent="Skill_Tree"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1nfmn")
+
+[node name="AbilityPoints" type="Label" parent="."]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 33.0
+offset_right = 242.0
+offset_bottom = 56.0
+text = "Points Available : "
+script = ExtResource("2_h0gnt")
