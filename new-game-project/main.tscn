@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cry7ijo4ctbq6"]
+
+[ext_resource type="Script" uid="uid://dej3o2jycmb0l" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://hawyj0b52iwd" path="res://visuals/start_menu.tscn" id="3_h2yge"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_0xm2m")
+
+[node name="StartMenu" parent="." instance=ExtResource("3_h2yge")]
+
+[connection signal="world_related_button_pressed" from="StartMenu" to="." method="_on_start_menu_world_related_button_pressed"]

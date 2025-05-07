@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3 uid="uid://cc0vbnfwyelxw"]
-
-[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://dialogo/recursos/scripts/dialogue_resource.gd" id="1_qh0ro"]
-
-[resource]
-script = ExtResource("1_qh0ro")
-arreglo_de_textos = PackedStringArray("Perdon, no me mates por favor", "Puede pasar obviamente perdon por cuestionarlo")
-tiempo_entre_caracteres = 0.02
-metadata/_custom_type_script = "uid://dekceg47jr41c"

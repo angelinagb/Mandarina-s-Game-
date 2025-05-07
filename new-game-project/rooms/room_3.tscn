@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6e7mmyrs1tmo"]
+
+[ext_resource type="PackedScene" uid="uid://cs1gmcwpafdvd" path="res://rooms/room.tscn" id="1_ugu2v"]
+[ext_resource type="PackedScene" uid="uid://53qcgarmhxng" path="res://utils/Interact/Transitioner/transitioner.tscn" id="2_5ql8f"]
+[ext_resource type="Texture2D" uid="uid://cylm5nou3yx60" path="res://art/items/yerba.png" id="3_ir1v3"]
+[ext_resource type="PackedScene" uid="uid://3v1aqvnidp5b" path="res://utils/Interact/Item/item.tscn" id="6_7j5ef"]
+
+[node name="room_3" instance=ExtResource("1_ugu2v")]
+room_identifier = "room_3"
+
+[node name="room_2" type="Marker2D" parent="Spawns" index="1"]
+position = Vector2(352, 480)
+
+[node name="Item2" parent="Interactables/Items" index="0" instance=ExtResource("6_7j5ef")]
+position = Vector2(256, 256)
+id = "Yerba"
+texture = ExtResource("3_ir1v3")
+
+[node name="TrTo2" parent="Interactables/Transitioners" index="0" instance=ExtResource("2_5ql8f")]
+position = Vector2(352, 480)
+path_scene = "res://rooms/room_2.tscn"

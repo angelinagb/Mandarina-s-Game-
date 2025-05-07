@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddaxpq71ovufv"]
+
+[ext_resource type="PackedScene" uid="uid://cs1gmcwpafdvd" path="res://rooms/room.tscn" id="1_secxv"]
+[ext_resource type="PackedScene" uid="uid://53qcgarmhxng" path="res://utils/Interact/Transitioner/transitioner.tscn" id="2_wuvbf"]
+[ext_resource type="Texture2D" uid="uid://fdbwsjbc5nh3" path="res://art/items/termo.png" id="3_13qvk"]
+[ext_resource type="PackedScene" uid="uid://3v1aqvnidp5b" path="res://utils/Interact/Item/item.tscn" id="4_1kamh"]
+
+[node name="room_2" instance=ExtResource("1_secxv")]
+room_identifier = "room_2"
+
+[node name="room_3" type="Marker2D" parent="Spawns" index="1"]
+position = Vector2(352, 96)
+
+[node name="room_1" type="Marker2D" parent="Spawns" index="2"]
+position = Vector2(352, 480)
+
+[node name="Item1" parent="Interactables/Items" index="0" instance=ExtResource("4_1kamh")]
+position = Vector2(492, 96)
+id = "Termo"
+texture = ExtResource("3_13qvk")
+
+[node name="TrTo1" parent="Interactables/Transitioners" index="0" instance=ExtResource("2_wuvbf")]
+position = Vector2(352, 480)
+path_scene = "res://rooms/room_1.tscn"
+
+[node name="TrTo3" parent="Interactables/Transitioners" index="1" instance=ExtResource("2_wuvbf")]
+position = Vector2(352, 96)
+path_scene = "res://rooms/room_3.tscn"
