@@ -1,0 +1,27 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3gvpmdls1flt"]
+
+[ext_resource type="Script" uid="uid://d1fqy48edo2m" path="res://world/world.gd" id="1_ioo17"]
+[ext_resource type="PackedScene" uid="uid://dadkd5r8y1uut" path="res://managers/room/room_manager.tscn" id="2_wse8f"]
+[ext_resource type="PackedScene" uid="uid://ddbkx1m8n74tr" path="res://player/player.tscn" id="6_70uel"]
+[ext_resource type="Script" uid="uid://ctpw63vn3bwxg" path="res://player/resources/movement_stats.gd" id="7_hiqwa"]
+[ext_resource type="PackedScene" uid="uid://dcdfrafxfpp8b" path="res://managers/DialogueManager/dialogue_manager.tscn" id="7_sc4t8"]
+[ext_resource type="PackedScene" uid="uid://jhud7yutg7ig" path="res://managers/inventory/inventory_manager.tscn" id="8_2u3nc"]
+[ext_resource type="PackedScene" uid="uid://coh7ji8k7tga5" path="res://managers/save/save_manager.tscn" id="9_udxuc"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_ioo17")
+
+[node name="DialogueManager" parent="." instance=ExtResource("7_sc4t8")]
+
+[node name="RoomManager" parent="." instance=ExtResource("2_wse8f")]
+
+[node name="InventoryManager" parent="." instance=ExtResource("8_2u3nc")]
+
+[node name="SaveManager" parent="." instance=ExtResource("9_udxuc")]
+
+[node name="Player" parent="." instance=ExtResource("6_70uel")]
+movement_stats = ExtResource("7_hiqwa")
+
+[connection signal="player_changed_room" from="RoomManager" to="." method="_on_room_manager_player_changed_room"]
+[connection signal="player_grabbed_item" from="RoomManager" to="." method="_on_room_manager_player_grabbed_item"]
+[connection signal="player_talked_to_npc" from="RoomManager" to="." method="_on_room_manager_player_talked_to_npc"]

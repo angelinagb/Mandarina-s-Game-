@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://4y05v36udm0u"]
+
+[ext_resource type="Script" uid="uid://bp6qhe2jtedya" path="res://visuals/menu.gd" id="1_7whbs"]
+[ext_resource type="Texture2D" uid="uid://rfa2el0bcmw2" path="res://art/menu/menu.png" id="2_a8gxi"]
+[ext_resource type="PackedScene" uid="uid://c2yebh6jef4a5" path="res://visuals/abilities_menu/abilities_menu.tscn" id="3_cbfyr"]
+[ext_resource type="Texture2D" uid="uid://mswhics2igh6" path="res://art/menu/boton_cerrar.png" id="4_exrgd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dmkcs"]
+font_color = Color(0, 0, 0.784314, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nqhns"]
+font_color = Color(0, 0, 0.784314, 1)
+
+[node name="menu" type="CanvasLayer"]
+script = ExtResource("1_7whbs")
+
+[node name="Fondo" type="Sprite2D" parent="."]
+position = Vector2(256, 256)
+texture = ExtResource("2_a8gxi")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 400.0
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer2"]
+layout_mode = 2
+text = "Quest list"
+label_settings = SubResource("LabelSettings_dmkcs")
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_right = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainMenu" parent="Control2" instance=ExtResource("3_cbfyr")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+offset_top = -100.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_vertical = 0
+
+[node name="Control3" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -112.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Inventario"
+label_settings = SubResource("LabelSettings_nqhns")
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 440.0
+offset_top = 440.0
+offset_right = 512.0
+offset_bottom = 512.0
+icon = ExtResource("4_exrgd")
+
+[connection signal="ability_button_pressed" from="Control2/MainMenu" to="." method="_on_main_menu_ability_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

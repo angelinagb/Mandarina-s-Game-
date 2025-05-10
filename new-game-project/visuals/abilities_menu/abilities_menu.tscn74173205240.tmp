@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2yebh6jef4a5"]
+
+[ext_resource type="Script" uid="uid://dn2yp6o0ftu30" path="res://fran/visuals/abilities_menu/abilities_menu.gd" id="1_wcvn6"]
+[ext_resource type="PackedScene" uid="uid://b5387jnlpjppi" path="res://fran/visuals/abilities_menu/upgrade_button.tscn" id="2_lw6ts"]
+[ext_resource type="Texture2D" uid="uid://rtfwc1r8dnk5" path="res://art/habilidad_animales.png" id="3_5ikfd"]
+[ext_resource type="Texture2D" uid="uid://dl05n7wim573p" path="res://art/habilidad_carisma.png" id="4_b22q8"]
+[ext_resource type="Texture2D" uid="uid://b6okgw8r4wnxp" path="res://art/habilidad_estudio.png" id="5_qihj8"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -512.0
+offset_bottom = -512.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wcvn6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AbilityPoints" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Points Available : "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Animales_Button" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_lw6ts")]
+layout_mode = 2
+texture_normal = ExtResource("3_5ikfd")
+ignore_texture_size = false
+
+[node name="Carisma_Button" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_lw6ts")]
+layout_mode = 2
+texture_normal = ExtResource("4_b22q8")
+ignore_texture_size = false
+
+[node name="Estudio_Button" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_lw6ts")]
+layout_mode = 2
+texture_normal = ExtResource("5_qihj8")
+ignore_texture_size = false
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Animales_Button" to="." method="_on_animales_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Carisma_Button" to="." method="_on_carisma_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Estudio_Button" to="." method="_on_estudio_button_pressed"]

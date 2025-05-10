@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=3 uid="uid://b3tda36v8u0s5"]
+
+[ext_resource type="PackedScene" uid="uid://cs1gmcwpafdvd" path="res://rooms/room.tscn" id="1_2otyv"]
+[ext_resource type="PackedScene" uid="uid://53qcgarmhxng" path="res://utils/Interact/Transitioner/transitioner.tscn" id="2_j6sld"]
+[ext_resource type="Texture2D" uid="uid://bx1ijhl76vl0w" path="res://art/items/mate.png" id="3_ttp18"]
+[ext_resource type="PackedScene" uid="uid://3v1aqvnidp5b" path="res://utils/Interact/Item/item.tscn" id="4_h00nm"]
+[ext_resource type="Resource" uid="uid://0i74v357q5jb" path="res://managers/quest/quest_1.tres" id="6_f0357"]
+[ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="6_p6f22"]
+[ext_resource type="Texture2D" uid="uid://44t52jpt0v4y" path="res://art/items/npc.png" id="7_f0357"]
+
+[node name="room_1" instance=ExtResource("1_2otyv")]
+room_identifier = "room_1"
+
+[node name="room_2" type="Marker2D" parent="Spawns" index="0"]
+position = Vector2(352, 96)
+
+[node name="Item0" parent="Interactables/Items" index="0" instance=ExtResource("4_h00nm")]
+position = Vector2(492, 256)
+id = "Mate"
+texture = ExtResource("3_ttp18")
+
+[node name="TrTo2" parent="Interactables/Transitioners" index="0" instance=ExtResource("2_j6sld")]
+position = Vector2(352, 96)
+path_scene = "res://rooms/room_2.tscn"
+
+[node name="Npc" parent="Interactables/Npcs" index="0" instance=ExtResource("6_p6f22")]
+position = Vector2(256, 256)
+dialogues = Array[String](["¡Buenas! Ayudame a invocar al gauchito gil.", "..."])
+quest = ExtResource("6_f0357")
+texture = ExtResource("7_f0357")
+
+[connection signal="interacted" from="Interactables/Items/Item0" to="." method="_on_item_1_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/TrTo2" to="." method="_on_tr_to_2_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/Npc" to="." method="_on_npc_interacted"]
