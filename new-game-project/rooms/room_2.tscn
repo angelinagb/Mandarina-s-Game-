@@ -1,28 +1,114 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddaxpq71ovufv"]
+[gd_scene load_steps=17 format=4 uid="uid://ddaxpq71ovufv"]
 
 [ext_resource type="PackedScene" uid="uid://cs1gmcwpafdvd" path="res://rooms/room.tscn" id="1_secxv"]
-[ext_resource type="PackedScene" uid="uid://53qcgarmhxng" path="res://utils/Interact/Transitioner/transitioner.tscn" id="2_wuvbf"]
-[ext_resource type="Texture2D" uid="uid://fdbwsjbc5nh3" path="res://art/items/termo.png" id="3_13qvk"]
-[ext_resource type="PackedScene" uid="uid://3v1aqvnidp5b" path="res://utils/Interact/Item/item.tscn" id="4_1kamh"]
+[ext_resource type="Texture2D" uid="uid://gasxqv8ars3l" path="res://art/room_conexion/piso.png" id="2_qgqlj"]
+[ext_resource type="Texture2D" uid="uid://cfgj0qmh333ig" path="res://art/room_aula/pared.png" id="3_1kamh"]
+[ext_resource type="Texture2D" uid="uid://bbfrgjjvmovb4" path="res://art/room_conexion/piso_puerta_abajo.png" id="4_fqk0l"]
+[ext_resource type="Texture2D" uid="uid://qhn4168ovbi8" path="res://art/room_conexion/piso_puerta_arriba.png" id="5_vkoc7"]
+[ext_resource type="Texture2D" uid="uid://dii3uesx4s23e" path="res://art/room_conexion/piso_puerta_derecha.png" id="6_vsfs3"]
+[ext_resource type="Texture2D" uid="uid://cg0d7hssqwunq" path="res://art/room_conexion/piso_puerta_izquierda.png" id="7_kq7a6"]
+[ext_resource type="PackedScene" uid="uid://53qcgarmhxng" path="res://utils/Interact/Door/door.tscn" id="10_h87l2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xxshv"]
+texture = ExtResource("2_qgqlj")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6k83b"]
+texture = ExtResource("3_1kamh")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cnnmw"]
+texture = ExtResource("4_fqk0l")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8kwhi"]
+texture = ExtResource("5_vkoc7")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hu2qu"]
+texture = ExtResource("6_vsfs3")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1j2nb"]
+texture = ExtResource("7_kq7a6")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_t3ehk"]
+tile_size = Vector2i(64, 64)
+sources/1 = SubResource("TileSetAtlasSource_6k83b")
+sources/0 = SubResource("TileSetAtlasSource_xxshv")
+sources/2 = SubResource("TileSetAtlasSource_cnnmw")
+sources/3 = SubResource("TileSetAtlasSource_8kwhi")
+sources/4 = SubResource("TileSetAtlasSource_hu2qu")
+sources/5 = SubResource("TileSetAtlasSource_1j2nb")
+
+[sub_resource type="TileSet" id="TileSet_fqk0l"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
 
 [node name="room_2" instance=ExtResource("1_secxv")]
 room_identifier = "room_2"
 
-[node name="room_3" type="Marker2D" parent="Spawns" index="1"]
-position = Vector2(352, 96)
+[node name="Fondo" type="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAwAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAwAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAIABAAAAAAAAAAHAAMAAAAAAAAAAAAHAAQAAAAAAAAAAAAHAAUABAAAAAAAAAAHAAYAAAAAAAAAAAAHAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAFAAcAAgAAAAAAAAAEAAcAAAAAAAAAAAADAAcAAAAAAAAAAAACAAcAAAAAAAAAAAABAAcAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAQABQAAAAAAAAAAAAMAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAACAAUAAAAAAAAAAAACAAQAAAAAAAAAAAACAAMAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAAAAAAAAAAEAAYAAAAAAAAAAAADAAYAAAAAAAAAAAADAAUAAAAAAAAAAAADAAQAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAQAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAGAAUAAAAAAAAAAAAGAAQAAAAAAAAAAAAGAAMAAAAAAAAAAAAGAAIAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_t3ehk")
 
-[node name="room_1" type="Marker2D" parent="Spawns" index="2"]
+[node name="Objetos" type="TileMapLayer" parent="." index="1"]
+rotation = 1.5708
+tile_set = SubResource("TileSet_fqk0l")
+
+[node name="room_7" type="Marker2D" parent="Spawns" index="1"]
+position = Vector2(32, 288)
+
+[node name="room_6" type="Marker2D" parent="Spawns" index="2"]
+position = Vector2(96, 96)
+
+[node name="room_5" type="Marker2D" parent="Spawns" index="3"]
+position = Vector2(288, 96)
+
+[node name="room_4" type="Marker2D" parent="Spawns" index="4"]
+position = Vector2(480, 160)
+
+[node name="room_3" type="Marker2D" parent="Spawns" index="5"]
+position = Vector2(480, 352)
+
+[node name="room_1" type="Marker2D" parent="Spawns" index="6"]
 position = Vector2(352, 480)
 
-[node name="Item1" parent="Interactables/Items" index="0" instance=ExtResource("4_1kamh")]
-position = Vector2(492, 96)
-id = "Termo"
-texture = ExtResource("3_13qvk")
+[node name="DoorTo1" parent="Interactables/Doors" index="0" instance=ExtResource("10_h87l2")]
+position = Vector2(352, 544)
+new_room_path = "res://rooms/room_1.tscn"
 
-[node name="TrTo1" parent="Interactables/Transitioners" index="0" instance=ExtResource("2_wuvbf")]
-position = Vector2(352, 480)
-path_scene = "res://rooms/room_1.tscn"
+[node name="DoorTo3" parent="Interactables/Doors" index="1" instance=ExtResource("10_h87l2")]
+position = Vector2(544, 352)
+new_room_path = "res://rooms/room_3.tscn"
 
-[node name="TrTo3" parent="Interactables/Transitioners" index="1" instance=ExtResource("2_wuvbf")]
-position = Vector2(352, 96)
-path_scene = "res://rooms/room_3.tscn"
+[node name="DoorTo4" parent="Interactables/Doors" index="2" instance=ExtResource("10_h87l2")]
+position = Vector2(544, 160)
+new_room_path = "res://rooms/room_4.tscn"
+
+[node name="DoorTo5" parent="Interactables/Doors" index="3" instance=ExtResource("10_h87l2")]
+position = Vector2(288, 32)
+new_room_path = "res://rooms/room_5.tscn"
+necessary_item_id = "LlaveRoom5"
+notification_text = "¡Oh esta cerrada!"
+path_sprite_open = "res://art/items/door_open.png"
+path_sprite_close = "res://art/items/door_close.png"
+
+[node name="DoorTo6" parent="Interactables/Doors" index="4" instance=ExtResource("10_h87l2")]
+position = Vector2(96, 32)
+new_room_path = "res://rooms/room_6.tscn"
+necessary_item_id = "LlaveRoom6"
+notification_text = "¡Oh esta cerrada!"
+path_sprite_open = "res://art/items/door_open.png"
+path_sprite_close = "res://art/items/door_close.png"
+
+[node name="DoorTo7" parent="Interactables/Doors" index="5" instance=ExtResource("10_h87l2")]
+position = Vector2(-32, 288)
+new_room_path = "res://rooms/room_7.tscn"

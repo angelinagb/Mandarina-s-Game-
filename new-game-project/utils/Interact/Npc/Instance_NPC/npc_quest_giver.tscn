@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://blrgj8qd73ge1"]
+
+[ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_f78ij"]
+[ext_resource type="Script" uid="uid://cbv8kl21lws4e" path="res://utils/Interact/Npc/Instance_NPC/npc_quest_giver.gd" id="2_8af53"]
+
+[node name="Npc" instance=ExtResource("1_f78ij")]
+script = ExtResource("2_8af53")
+quest = null
+dialogues = Array[String]([])
+necessary_events = Array[String]([])

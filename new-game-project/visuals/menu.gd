@@ -1,6 +1,9 @@
 class_name MenuManager extends CanvasLayer
 
 signal ability_button_pressed(ability_name: String)
+signal on_go_to_start_menu_button_pressed()
+
+var world: Node2D
 
 @onready var vbox := $Control3/VBoxContainer
 
@@ -9,7 +12,8 @@ signal ability_button_pressed(ability_name: String)
 var quest_manager: QuestManager
 var inventory_manager: InventoryManager
 
-func initialize(quest_manager: QuestManager, inventory_manager: InventoryManager, items: Dictionary, quests: Array[Quest]):
+func initialize(world, quest_manager: QuestManager, inventory_manager: InventoryManager, items: Dictionary, quests: Array[Quest]):
+	self.world = world
 	self.quest_manager = quest_manager
 	quest_manager.quest_updated.connect(on_quest_updated)
 	
@@ -47,8 +51,15 @@ func add_item_inventory(item: Dictionary):
 	vbox.add_child(hbox)
 
 func remove_item_inventory(item: Dictionary):
-	for child in vbox:
-		pass
+	var item_name = "- %s" % item.get("name", "Item sin nombre")
+	
+	for child in vbox.get_children():
+		for grandchild in child.get_children():
+			if grandchild is Label and grandchild.text == item_name:
+				vbox.remove_child(child)
+				child.queue_free()
+				return  # Salir tras encontrar y eliminar el ítem
+
 
 func add_quest_ui(quest: Quest) -> void:
 	var quest_box := VBoxContainer.new()
@@ -102,4 +113,11 @@ func _on_main_menu_ability_button_pressed(ability_name: String) -> void:
 
 func _on_exit_button_pressed() -> void:
 	self.visible = false
-	get_tree().paused = false
+	# get_tree().paused = false
+	world.process_mode = Node.PROCESS_MODE_ALWAYS
+	self.process_mode = Node.PROCESS_MODE_DISABLED
+	
+
+func _on_go_to_start_menu_button_pressed() -> void:
+	on_go_to_start_menu_button_pressed.emit()
+	

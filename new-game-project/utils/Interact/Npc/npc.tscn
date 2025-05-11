@@ -1,22 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dymo47m6k6uqb"]
+[gd_scene load_steps=3 format=3 uid="uid://dymo47m6k6uqb"]
 
 [ext_resource type="PackedScene" uid="uid://mvhkwj4slyyt" path="res://utils/Interact/Interactable/interactable.tscn" id="1_k5sc4"]
 [ext_resource type="Script" uid="uid://dwqxbk43d6bwm" path="res://utils/Interact/Npc/npc.gd" id="2_x63vy"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x63vy"]
-size = Vector2(32, 32)
-
 [node name="Npc" instance=ExtResource("1_k5sc4")]
 script = ExtResource("2_x63vy")
-dialogues = Array[String]([])
-quest = null
-
-[node name="Area2D" parent="." index="1"]
-scale = Vector2(3, 3)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
-shape = SubResource("RectangleShape2D_x63vy")
-
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

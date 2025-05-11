@@ -8,4 +8,4 @@ script = ExtResource("1_0xm2m")
 
 [node name="StartMenu" parent="." instance=ExtResource("3_h2yge")]
 
-[connection signal="world_related_button_pressed" from="StartMenu" to="." method="_on_start_menu_world_related_button_pressed"]
+[connection signal="button_pressed" from="StartMenu" to="." method="_on_start_menu_button_pressed"]

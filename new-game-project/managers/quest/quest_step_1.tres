@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_p2q3s")
-text_to_do = "Conseguir las 3 herramientas"
+text_to_do = "Conseguir cosas para el mate."
 necessary_interactables = {
 "Mate": false,
 "Termo": false,

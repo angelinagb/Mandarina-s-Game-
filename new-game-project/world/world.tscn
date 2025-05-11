@@ -34,3 +34,4 @@ script = ExtResource("1_ioo17")
 
 [connection signal="button_open_menu_pressed" from="gui" to="." method="_on_gui_button_open_menu_pressed"]
 [connection signal="ability_button_pressed" from="menu" to="." method="_on_menu_ability_button_pressed"]
+[connection signal="on_go_to_start_menu_button_pressed" from="menu" to="." method="_on_menu_on_go_to_start_menu_button_pressed"]

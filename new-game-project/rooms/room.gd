@@ -13,8 +13,12 @@ func init_items(item_dict: Array[String]):
 			child.start()
 			child.interacted.connect(_on_interactable_interacted)
 
-func init_transitioners(transitioner_dict: Array[String]):
-	for child: Transitioner in $Interactables/Transitioners.get_children():
+func init_transitioners(item_world_dict: Array[String], item_player_dict: Array[String]):
+	for child: Door in $Interactables/Doors.get_children():
+		if item_world_dict.has(child.get_necessary_item_id()) or item_player_dict.has(child.get_necessary_item_id()):
+			child.close_door()
+		else:
+			child.open_door()
 		child.start()
 		child.interacted.connect(_on_interactable_interacted)
 
@@ -23,6 +27,11 @@ func init_npc(npc_dict: Array[String]):
 		child.start()
 		child.interacted.connect(_on_interactable_interacted)
 
+func init_puzzles(puzzle_dict: Array[String]):
+	for child: Puzzle_Activator in $Interactables/Puzzles.get_children():
+		child.start()
+		child.interacted.connect(_on_interactable_interacted)
+		
 func start_interactables():
 	for child in $Interactables.get_children():
 		if child is Interactable:

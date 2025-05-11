@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="Quest" load_steps=4 format=3 uid="uid://0i74v357q5jb"]
+[gd_resource type="Resource" script_class="Quest" load_steps=5 format=3 uid="uid://0i74v357q5jb"]
 
 [ext_resource type="Script" uid="uid://cj81x6yti6bmb" path="res://managers/quest/quest.gd" id="1_2py4u"]
 [ext_resource type="Script" uid="uid://c0nhxnmv56tui" path="res://managers/quest/quest_step.gd" id="2_mwsn3"]
 [ext_resource type="Resource" uid="uid://00a8pwbh6oo2" path="res://managers/quest/quest_step_1.tres" id="3_mwsn3"]
+[ext_resource type="Resource" uid="uid://imbxa5cxxwpj" path="res://managers/quest/quest_step_2.tres" id="4_cfxuy"]
 
 [resource]
 script = ExtResource("1_2py4u")
 title = "Invocar al gauchito gil"
-steps = Array[ExtResource("2_mwsn3")]([ExtResource("3_mwsn3")])
+steps = Array[ExtResource("2_mwsn3")]([ExtResource("3_mwsn3"), ExtResource("4_cfxuy")])
 current_step = 0
 metadata/_custom_type_script = "uid://cj81x6yti6bmb"

@@ -1,34 +1,149 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3tda36v8u0s5"]
+[gd_scene load_steps=35 format=4 uid="uid://b3tda36v8u0s5"]
 
 [ext_resource type="PackedScene" uid="uid://cs1gmcwpafdvd" path="res://rooms/room.tscn" id="1_2otyv"]
-[ext_resource type="PackedScene" uid="uid://53qcgarmhxng" path="res://utils/Interact/Transitioner/transitioner.tscn" id="2_j6sld"]
+[ext_resource type="Texture2D" uid="uid://cfgj0qmh333ig" path="res://art/room_aula/pared.png" id="2_gdwmo"]
+[ext_resource type="PackedScene" uid="uid://53qcgarmhxng" path="res://utils/Interact/Door/door.tscn" id="2_j6sld"]
+[ext_resource type="Texture2D" uid="uid://t3q0jjgqvqk0" path="res://art/room_aula/piso_puerta_abajo.png" id="2_jee7h"]
+[ext_resource type="Texture2D" uid="uid://00230gu6yy37" path="res://art/room_aula/piso.png" id="3_brp25"]
 [ext_resource type="Texture2D" uid="uid://bx1ijhl76vl0w" path="res://art/items/mate.png" id="3_ttp18"]
 [ext_resource type="PackedScene" uid="uid://3v1aqvnidp5b" path="res://utils/Interact/Item/item.tscn" id="4_h00nm"]
-[ext_resource type="Resource" uid="uid://0i74v357q5jb" path="res://managers/quest/quest_1.tres" id="6_f0357"]
-[ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="6_p6f22"]
+[ext_resource type="Texture2D" uid="uid://bjrvb22gvjb8j" path="res://art/room_aula/pizarron.png" id="4_jee7h"]
+[ext_resource type="Texture2D" uid="uid://d087yb1cuaapd" path="res://art/room_aula/silla.png" id="5_cdn6i"]
+[ext_resource type="Texture2D" uid="uid://cymeka8fvc7bl" path="res://art/room_aula/piso_puerta_arriba.png" id="5_p1q16"]
+[ext_resource type="Texture2D" uid="uid://ddg73qwnc2vym" path="res://art/room_aula/escritorio.png" id="6_p1q16"]
+[ext_resource type="Texture2D" uid="uid://b6ix6tr0iqyqt" path="res://art/room_aula/piso_puerta_derecha.png" id="6_re7fg"]
 [ext_resource type="Texture2D" uid="uid://44t52jpt0v4y" path="res://art/items/npc.png" id="7_f0357"]
+[ext_resource type="Texture2D" uid="uid://cjnpddyh7i3ui" path="res://art/room_aula/piso_puerta_izquierda.png" id="7_jlk02"]
+[ext_resource type="Texture2D" uid="uid://bvjwej1vawdox" path="res://art/room_aula/pizarron2.png" id="9_afsgx"]
+[ext_resource type="Texture2D" uid="uid://fdbwsjbc5nh3" path="res://art/items/termo.png" id="14_jlk02"]
+[ext_resource type="Texture2D" uid="uid://bvuxv1egonlse" path="res://art/items/door_close.png" id="15_cdn6i"]
+[ext_resource type="Texture2D" uid="uid://cylm5nou3yx60" path="res://art/items/yerba.png" id="15_n7gw8"]
+[ext_resource type="PackedScene" uid="uid://blrgj8qd73ge1" path="res://utils/Interact/Npc/Instance_NPC/npc_quest_giver.tscn" id="16_p1q16"]
+[ext_resource type="Resource" uid="uid://0i74v357q5jb" path="res://managers/quest/quest_1.tres" id="17_re7fg"]
+[ext_resource type="PackedScene" uid="uid://x65cu86th55u" path="res://utils/Interact/Puzzle/puzzle.tscn" id="21_afsgx"]
+[ext_resource type="Texture2D" uid="uid://bgurncip3xfy" path="res://art/items/book.png" id="22_cn27q"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jee7h"]
+texture = ExtResource("2_jee7h")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cdn6i"]
+texture = ExtResource("2_gdwmo")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1q16"]
+texture = ExtResource("3_brp25")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_re7fg"]
+texture = ExtResource("5_p1q16")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jlk02"]
+texture = ExtResource("6_re7fg")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n7gw8"]
+texture = ExtResource("7_jlk02")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_0cw7g"]
+tile_size = Vector2i(64, 64)
+sources/1 = SubResource("TileSetAtlasSource_cdn6i")
+sources/2 = SubResource("TileSetAtlasSource_p1q16")
+sources/0 = SubResource("TileSetAtlasSource_jee7h")
+sources/3 = SubResource("TileSetAtlasSource_re7fg")
+sources/4 = SubResource("TileSetAtlasSource_jlk02")
+sources/5 = SubResource("TileSetAtlasSource_n7gw8")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_afsgx"]
+texture = ExtResource("4_jee7h")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0qk0t"]
+texture = ExtResource("9_afsgx")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cn27q"]
+texture = ExtResource("5_cdn6i")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0cw7g"]
+texture = ExtResource("6_p1q16")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_eqpyn"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_afsgx")
+sources/3 = SubResource("TileSetAtlasSource_cn27q")
+sources/4 = SubResource("TileSetAtlasSource_0cw7g")
+sources/1 = SubResource("TileSetAtlasSource_0qk0t")
 
 [node name="room_1" instance=ExtResource("1_2otyv")]
 room_identifier = "room_1"
 
+[node name="Fondo" type="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAAAAAEAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAAUAAgAAAAAAAAAAAAYAAgAAAAAAAAAAAAcAAgAAAAAAAAABAAcAAgAAAAAAAAACAAcAAgAAAAAAAAADAAcAAgAAAAAAAAAEAAcAAgAAAAAAAAAFAAcAAgAAAAAAAAAGAAcAAgAAAAAAAAAHAAcAAgAAAAAAAAAHAAYAAgAAAAAAAAAHAAUAAgAAAAAAAAAHAAQAAgAAAAAAAAAHAAMAAgAAAAAAAAAHAAIAAgAAAAAAAAAHAAEAAgAAAAAAAAAGAAEAAgAAAAAAAAAFAAEAAwAAAAAAAAAEAAEAAgAAAAAAAAADAAEAAgAAAAAAAAACAAEAAgAAAAAAAAABAAEAAgAAAAAAAAABAAIAAgAAAAAAAAABAAMAAgAAAAAAAAABAAQAAgAAAAAAAAABAAUAAgAAAAAAAAABAAYAAgAAAAAAAAACAAYAAgAAAAAAAAADAAYAAgAAAAAAAAAEAAYAAgAAAAAAAAAFAAYAAgAAAAAAAAAGAAYAAgAAAAAAAAAGAAUAAgAAAAAAAAAGAAQAAgAAAAAAAAAGAAMAAgAAAAAAAAAGAAIAAgAAAAAAAAAFAAIAAgAAAAAAAAAEAAIAAgAAAAAAAAADAAIAAgAAAAAAAAACAAIAAgAAAAAAAAACAAMAAgAAAAAAAAACAAQAAgAAAAAAAAACAAUAAgAAAAAAAAADAAUAAgAAAAAAAAAEAAUAAgAAAAAAAAAFAAUAAgAAAAAAAAAFAAQAAgAAAAAAAAAFAAMAAgAAAAAAAAADAAMAAgAAAAAAAAADAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAAEAAMAAgAAAAAAAAA=")
+tile_set = SubResource("TileSet_0cw7g")
+
+[node name="Objetos" type="TileMapLayer" parent="." index="1"]
+tile_map_data = PackedByteArray("AAADAAAAAQAAAAAAAAABAAUAAwAAAAAAAAACAAUAAwAAAAAAAAAFAAUAAwAAAAAAAAAGAAUAAwAAAAAAAAAGAAMAAwAAAAAAAAAFAAMAAwAAAAAAAAACAAMAAwAAAAAAAAABAAMAAwAAAAAAAAABAAIABAAAAAAAAAACAAIABAABAAAAAAAFAAIABAAAAAAAAAAGAAIABAABAAAAAAAFAAQABAAAAAAAAAAGAAQABAABAAAAAAABAAQABAAAAAAAAAACAAQABAABAAAAAAA=")
+tile_set = SubResource("TileSet_eqpyn")
+
 [node name="room_2" type="Marker2D" parent="Spawns" index="0"]
 position = Vector2(352, 96)
 
-[node name="Item0" parent="Interactables/Items" index="0" instance=ExtResource("4_h00nm")]
-position = Vector2(492, 256)
+[node name="Mate" parent="Interactables/Items" index="0" instance=ExtResource("4_h00nm")]
+position = Vector2(470, 256)
+notification_text = "¡Oh un mate!"
 id = "Mate"
 texture = ExtResource("3_ttp18")
 
-[node name="TrTo2" parent="Interactables/Transitioners" index="0" instance=ExtResource("2_j6sld")]
-position = Vector2(352, 96)
-path_scene = "res://rooms/room_2.tscn"
+[node name="Termo" parent="Interactables/Items" index="1" instance=ExtResource("4_h00nm")]
+position = Vector2(400, 480)
+notification_text = "¡Oh un termo!"
+id = "Termo"
+texture = ExtResource("14_jlk02")
 
-[node name="Npc" parent="Interactables/Npcs" index="0" instance=ExtResource("6_p6f22")]
+[node name="Yerba" parent="Interactables/Items" index="2" instance=ExtResource("4_h00nm")]
+position = Vector2(100, 480)
+notification_text = "¡Oh yerba!"
+id = "Yerba"
+texture = ExtResource("15_n7gw8")
+
+[node name="DoorTo2" parent="Interactables/Doors" index="0" instance=ExtResource("2_j6sld")]
+position = Vector2(352, 32)
+new_room_path = "res://rooms/room_2.tscn"
+necessary_item_id = "LlaveRoom2"
+notification_text = "¡Oh esta cerrada! Me serviria una llave."
+path_sprite_open = "res://art/items/door_open.png"
+path_sprite_close = "res://art/items/door_close.png"
+id = "Door1to2"
+texture = ExtResource("15_cdn6i")
+
+[node name="Npc" parent="Interactables/Npcs" index="0" instance=ExtResource("16_p1q16")]
 position = Vector2(256, 256)
-dialogues = Array[String](["¡Buenas! Ayudame a invocar al gauchito gil.", "..."])
-quest = ExtResource("6_f0357")
+quest = ExtResource("17_re7fg")
+dialogues = Array[String](["¡Uh, que ganas de tomar mate!", "¡Hasta que no tome un mate, no voy a estar conforme!", "¡Oh que capo! Gracias por las cosas para el mate.", "¡La vida es como un paquete de surtidas Bagley, nunca hay suficientes sonrisas!"])
+necessary_events = Array[String](["Mate", "Termo", "Yerba"])
+id = "Franco"
 texture = ExtResource("7_f0357")
 
-[connection signal="interacted" from="Interactables/Items/Item0" to="." method="_on_item_1_interacted"]
-[connection signal="interacted" from="Interactables/Transitioners/TrTo2" to="." method="_on_tr_to_2_interacted"]
-[connection signal="interacted" from="Interactables/Npcs/Npc" to="." method="_on_npc_interacted"]
+[node name="Puzzle" parent="Interactables/Puzzles" index="0" instance=ExtResource("21_afsgx")]
+position = Vector2(100, 300)
+path_scene = "res://puzzles/puzzle_candado.tscn"
+item = "LlaveRoom2"
+id = "PuzzleCandado"
+texture = ExtResource("22_cn27q")

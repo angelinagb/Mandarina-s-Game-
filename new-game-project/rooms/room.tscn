@@ -1,69 +1,6 @@
-[gd_scene load_steps=24 format=4 uid="uid://cs1gmcwpafdvd"]
+[gd_scene load_steps=6 format=3 uid="uid://cs1gmcwpafdvd"]
 
 [ext_resource type="Script" uid="uid://bq8wcigl4rl3w" path="res://rooms/room.gd" id="1_nk0be"]
-[ext_resource type="Texture2D" uid="uid://cfgj0qmh333ig" path="res://art/room/pared.png" id="2_0poya"]
-[ext_resource type="Texture2D" uid="uid://00230gu6yy37" path="res://art/room/piso.png" id="3_rff2m"]
-[ext_resource type="Texture2D" uid="uid://bjrvb22gvjb8j" path="res://art/room/pizarron.png" id="4_142jq"]
-[ext_resource type="Texture2D" uid="uid://d087yb1cuaapd" path="res://art/room/silla.png" id="5_8cgfi"]
-[ext_resource type="Texture2D" uid="uid://ddg73qwnc2vym" path="res://art/room/escritorio.png" id="6_8b3wb"]
-[ext_resource type="Texture2D" uid="uid://bvuxv1egonlse" path="res://art/room/puerta.png" id="7_u6bfp"]
-[ext_resource type="Texture2D" uid="uid://b0iphpjow0fcs" path="res://art/room/piso_puerta_izquierda.png" id="8_uubw8"]
-[ext_resource type="Texture2D" uid="uid://bx6dms5t7dmcx" path="res://art/room/piso_puerta_abajo.png" id="9_tqyut"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rl122"]
-texture = ExtResource("2_0poya")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q3wlb"]
-texture = ExtResource("3_rff2m")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_wf6up"]
-tile_size = Vector2i(64, 64)
-sources/1 = SubResource("TileSetAtlasSource_rl122")
-sources/2 = SubResource("TileSetAtlasSource_q3wlb")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m1pu6"]
-texture = ExtResource("4_142jq")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uxrsq"]
-texture = ExtResource("5_8cgfi")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wdygy"]
-texture = ExtResource("6_8b3wb")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-1:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bxbvn"]
-texture = ExtResource("7_u6bfp")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lmj4c"]
-texture = ExtResource("8_uubw8")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ahnbq"]
-texture = ExtResource("9_tqyut")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_6ypub"]
-tile_size = Vector2i(64, 64)
-sources/0 = SubResource("TileSetAtlasSource_m1pu6")
-sources/3 = SubResource("TileSetAtlasSource_uxrsq")
-sources/4 = SubResource("TileSetAtlasSource_wdygy")
-sources/7 = SubResource("TileSetAtlasSource_bxbvn")
-sources/8 = SubResource("TileSetAtlasSource_lmj4c")
-sources/9 = SubResource("TileSetAtlasSource_ahnbq")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pmtbo"]
 size = Vector2(512, 10)
@@ -79,14 +16,6 @@ size = Vector2(10, 512)
 
 [node name="room" type="Node2D"]
 script = ExtResource("1_nk0be")
-
-[node name="Fondo" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAAAAAEAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAAUAAgAAAAAAAAAAAAYAAgAAAAAAAAAAAAcAAgAAAAAAAAABAAcAAgAAAAAAAAACAAcAAgAAAAAAAAADAAcAAgAAAAAAAAAEAAcAAgAAAAAAAAAFAAcAAgAAAAAAAAAGAAcAAgAAAAAAAAAHAAcAAgAAAAAAAAAHAAYAAgAAAAAAAAAHAAUAAgAAAAAAAAAHAAQAAgAAAAAAAAAHAAMAAgAAAAAAAAAHAAIAAgAAAAAAAAAHAAEAAgAAAAAAAAAGAAEAAgAAAAAAAAAFAAEAAgAAAAAAAAAEAAEAAgAAAAAAAAADAAEAAgAAAAAAAAACAAEAAgAAAAAAAAABAAEAAgAAAAAAAAABAAIAAgAAAAAAAAABAAMAAgAAAAAAAAABAAQAAgAAAAAAAAABAAUAAgAAAAAAAAABAAYAAgAAAAAAAAACAAYAAgAAAAAAAAADAAYAAgAAAAAAAAAEAAYAAgAAAAAAAAAFAAYAAgAAAAAAAAAGAAYAAgAAAAAAAAAGAAUAAgAAAAAAAAAGAAQAAgAAAAAAAAAGAAMAAgAAAAAAAAAGAAIAAgAAAAAAAAAFAAIAAgAAAAAAAAAEAAIAAgAAAAAAAAADAAIAAgAAAAAAAAACAAIAAgAAAAAAAAACAAMAAgAAAAAAAAACAAQAAgAAAAAAAAACAAUAAgAAAAAAAAADAAUAAgAAAAAAAAAEAAUAAgAAAAAAAAAFAAUAAgAAAAAAAAAFAAQAAgAAAAAAAAAFAAMAAgAAAAAAAAADAAMAAgAAAAAAAAADAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAAEAAMAAgAAAAAAAAA=")
-tile_set = SubResource("TileSet_wf6up")
-
-[node name="Objetos" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAADAAAAAAAAAAAAAAABAAUAAwAAAAAAAAACAAUAAwAAAAAAAAAFAAUAAwAAAAAAAAAGAAUAAwAAAAAAAAAGAAMAAwAAAAAAAAAFAAMAAwAAAAAAAAACAAMAAwAAAAAAAAABAAMAAwAAAAAAAAABAAIABAAAAAAAAAACAAIABAABAAAAAAAFAAIABAAAAAAAAAAGAAIABAABAAAAAAAFAAQABAAAAAAAAAAGAAQABAABAAAAAAABAAQABAAAAAAAAAACAAQABAABAAAAAAAFAAAABwAAAAAAAAAFAAEACAAAAAAAAAAFAAcACQAAAAAAAAA=")
-tile_set = SubResource("TileSet_6ypub")
 
 [node name="Paredes" type="Node" parent="."]
 
@@ -124,6 +53,8 @@ position = Vector2(256, 492)
 
 [node name="Items" type="Node" parent="Interactables"]
 
-[node name="Transitioners" type="Node" parent="Interactables"]
+[node name="Doors" type="Node" parent="Interactables"]
 
 [node name="Npcs" type="Node" parent="Interactables"]
+
+[node name="Puzzles" type="Node" parent="Interactables"]

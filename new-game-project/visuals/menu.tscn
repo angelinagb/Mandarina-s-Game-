@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://4y05v36udm0u"]
+[gd_scene load_steps=8 format=3 uid="uid://4y05v36udm0u"]
 
 [ext_resource type="Script" uid="uid://bp6qhe2jtedya" path="res://visuals/menu.gd" id="1_7whbs"]
 [ext_resource type="Texture2D" uid="uid://rfa2el0bcmw2" path="res://art/menu/menu.png" id="2_a8gxi"]
 [ext_resource type="PackedScene" uid="uid://c2yebh6jef4a5" path="res://visuals/abilities_menu/abilities_menu.tscn" id="3_cbfyr"]
 [ext_resource type="Texture2D" uid="uid://mswhics2igh6" path="res://art/menu/boton_cerrar.png" id="4_exrgd"]
+[ext_resource type="Texture2D" uid="uid://cyvxue6j6v8yt" path="res://art/menu/menu_start_button.png" id="5_a8gxi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dmkcs"]
 font_color = Color(0, 0, 0.784314, 1)
@@ -91,5 +92,12 @@ offset_right = 512.0
 offset_bottom = 512.0
 icon = ExtResource("4_exrgd")
 
+[node name="GoToStartMenuButton" type="Button" parent="."]
+offset_top = 440.0
+offset_right = 72.0
+offset_bottom = 512.0
+icon = ExtResource("5_a8gxi")
+
 [connection signal="ability_button_pressed" from="Control2/MainMenu" to="." method="_on_main_menu_ability_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="GoToStartMenuButton" to="." method="_on_go_to_start_menu_button_pressed"]

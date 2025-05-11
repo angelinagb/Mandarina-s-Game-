@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://mvhkwj4slyyt"]
+[gd_scene load_steps=4 format=3 uid="uid://mvhkwj4slyyt"]
 
 [ext_resource type="Script" uid="uid://bvq7ul31l7a5" path="res://utils/Interact/Interactable/interactable.gd" id="1_c11mj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffr1t"]
-size = Vector2(32, 32)
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0gj2"]
+size = Vector2(64, 64)
 
 [node name="Interactable" type="Node2D"]
 script = ExtResource("1_c11mj")
@@ -15,4 +18,10 @@ script = ExtResource("1_c11mj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_ffr1t")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_a0gj2")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

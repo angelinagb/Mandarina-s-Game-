@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="QuestStep" load_steps=2 format=3 uid="uid://imbxa5cxxwpj"]
+
+[ext_resource type="Script" uid="uid://c0nhxnmv56tui" path="res://managers/quest/quest_step.gd" id="1_fq8fi"]
+
+[resource]
+script = ExtResource("1_fq8fi")
+text_to_do = "Entregar cosas para el mate"
+necessary_interactables = {
+"FrancoQuestCompleted": false
+}
+metadata/_custom_type_script = "uid://c0nhxnmv56tui"

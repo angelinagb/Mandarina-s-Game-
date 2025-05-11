@@ -1,0 +1,94 @@
+[gd_scene load_steps=23 format=4 uid="uid://bogrlq3gmq8kp"]
+
+[ext_resource type="PackedScene" uid="uid://cs1gmcwpafdvd" path="res://rooms/room.tscn" id="1_2gncr"]
+[ext_resource type="Texture2D" uid="uid://t3q0jjgqvqk0" path="res://art/room_aula/piso_puerta_abajo.png" id="2_qauyb"]
+[ext_resource type="Texture2D" uid="uid://cfgj0qmh333ig" path="res://art/room_aula/pared.png" id="3_ugw4o"]
+[ext_resource type="Texture2D" uid="uid://00230gu6yy37" path="res://art/room_aula/piso.png" id="4_qpev3"]
+[ext_resource type="Texture2D" uid="uid://cymeka8fvc7bl" path="res://art/room_aula/piso_puerta_arriba.png" id="5_7jvyy"]
+[ext_resource type="Texture2D" uid="uid://b6ix6tr0iqyqt" path="res://art/room_aula/piso_puerta_derecha.png" id="6_7near"]
+[ext_resource type="Texture2D" uid="uid://cjnpddyh7i3ui" path="res://art/room_aula/piso_puerta_izquierda.png" id="7_kmpqj"]
+[ext_resource type="Texture2D" uid="uid://bjrvb22gvjb8j" path="res://art/room_aula/pizarron.png" id="8_8e11m"]
+[ext_resource type="Texture2D" uid="uid://d087yb1cuaapd" path="res://art/room_aula/silla.png" id="9_3kkxr"]
+[ext_resource type="Texture2D" uid="uid://ddg73qwnc2vym" path="res://art/room_aula/escritorio.png" id="10_31g0r"]
+[ext_resource type="PackedScene" uid="uid://53qcgarmhxng" path="res://utils/Interact/Door/door.tscn" id="11_ugw4o"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jkdiv"]
+texture = ExtResource("2_qauyb")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o860g"]
+texture = ExtResource("3_ugw4o")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_me3m8"]
+texture = ExtResource("4_qpev3")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jhgl8"]
+texture = ExtResource("5_7jvyy")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6dl77"]
+texture = ExtResource("6_7near")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrw7w"]
+texture = ExtResource("7_kmpqj")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_k85h1"]
+tile_size = Vector2i(64, 64)
+sources/1 = SubResource("TileSetAtlasSource_o860g")
+sources/2 = SubResource("TileSetAtlasSource_me3m8")
+sources/0 = SubResource("TileSetAtlasSource_jkdiv")
+sources/3 = SubResource("TileSetAtlasSource_jhgl8")
+sources/4 = SubResource("TileSetAtlasSource_6dl77")
+sources/5 = SubResource("TileSetAtlasSource_wrw7w")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ik444"]
+texture = ExtResource("8_8e11m")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_77rsl"]
+texture = ExtResource("9_3kkxr")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bxbb2"]
+texture = ExtResource("10_31g0r")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_16na2"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ik444")
+sources/3 = SubResource("TileSetAtlasSource_77rsl")
+sources/4 = SubResource("TileSetAtlasSource_bxbb2")
+
+[node name="room_6" instance=ExtResource("1_2gncr")]
+room_identifier = "room_6"
+
+[node name="Fondo" type="TileMapLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAAAAAEAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAAUAAgAAAAAAAAAAAAYAAgAAAAAAAAAAAAcAAgAAAAAAAAABAAcAAAAAAAAAAAACAAcAAgAAAAAAAAADAAcAAgAAAAAAAAAEAAcAAgAAAAAAAAAFAAcAAgAAAAAAAAAGAAcAAgAAAAAAAAAHAAcAAgAAAAAAAAAHAAYAAgAAAAAAAAAHAAUAAgAAAAAAAAAHAAQAAgAAAAAAAAAHAAMAAgAAAAAAAAAHAAIAAgAAAAAAAAAHAAEAAgAAAAAAAAAGAAEAAgAAAAAAAAAFAAEAAgAAAAAAAAAEAAEAAgAAAAAAAAADAAEAAgAAAAAAAAACAAEAAgAAAAAAAAABAAEAAgAAAAAAAAABAAIAAgAAAAAAAAABAAMAAgAAAAAAAAABAAQAAgAAAAAAAAABAAUAAgAAAAAAAAABAAYAAgAAAAAAAAACAAYAAgAAAAAAAAADAAYAAgAAAAAAAAAEAAYAAgAAAAAAAAAFAAYAAgAAAAAAAAAGAAYAAgAAAAAAAAAGAAUAAgAAAAAAAAAGAAQAAgAAAAAAAAAGAAMAAgAAAAAAAAAGAAIAAgAAAAAAAAAFAAIAAgAAAAAAAAAEAAIAAgAAAAAAAAADAAIAAgAAAAAAAAACAAIAAgAAAAAAAAACAAMAAgAAAAAAAAACAAQAAgAAAAAAAAACAAUAAgAAAAAAAAADAAUAAgAAAAAAAAAEAAUAAgAAAAAAAAAFAAUAAgAAAAAAAAAFAAQAAgAAAAAAAAAFAAMAAgAAAAAAAAADAAMAAgAAAAAAAAADAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAAEAAMAAgAAAAAAAAA=")
+tile_set = SubResource("TileSet_k85h1")
+
+[node name="Objetos" type="TileMapLayer" parent="." index="1"]
+tile_map_data = PackedByteArray("AAADAAAAAAAAAAAAAAABAAUAAwAAAAAAAAACAAUAAwAAAAAAAAAFAAUAAwAAAAAAAAAGAAUAAwAAAAAAAAAGAAMAAwAAAAAAAAAFAAMAAwAAAAAAAAACAAMAAwAAAAAAAAABAAMAAwAAAAAAAAABAAIABAAAAAAAAAACAAIABAABAAAAAAAFAAIABAAAAAAAAAAGAAIABAABAAAAAAAFAAQABAAAAAAAAAAGAAQABAABAAAAAAABAAQABAAAAAAAAAACAAQABAABAAAAAAAFAAEAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_16na2")
+
+[node name="room_2" type="Marker2D" parent="Spawns" index="1"]
+position = Vector2(96, 480)
+
+[node name="DoorTo2" parent="Interactables/Doors" index="0" instance=ExtResource("11_ugw4o")]
+position = Vector2(96, 544)
+new_room_path = "res://rooms/room_2.tscn"
+id = "Door6to2"

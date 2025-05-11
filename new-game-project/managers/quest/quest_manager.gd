@@ -16,6 +16,8 @@ func initialize(event_manager: EventManager, active_quests: Array[Quest]):
 func add_quest(quest: Quest) -> void:
 	if not active_quests.has(quest):
 		active_quests.append(quest)
+		for event in event_manager.getEvents():
+			quest.register_interactable(event)
 		quest_updated.emit(quest)
 
 func on_event_added(event: String) -> void:

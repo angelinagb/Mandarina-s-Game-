@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://x65cu86th55u"]
+
+[ext_resource type="PackedScene" uid="uid://mvhkwj4slyyt" path="res://utils/Interact/Interactable/interactable.tscn" id="1_32ur0"]
+[ext_resource type="Script" uid="uid://xyuj0c7t13f" path="res://utils/Interact/Puzzle/puzzle.gd" id="2_dnaph"]
+
+[node name="Puzzle" instance=ExtResource("1_32ur0")]
+script = ExtResource("2_dnaph")
+path_scene = ""
+item = ""
