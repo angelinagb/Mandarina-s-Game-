@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CreateEventResource" load_steps=2 format=3 uid="uid://ettcmgeoe14y"]
+
+[ext_resource type="Script" uid="uid://bjujd3pkyyp0c" path="res://managers/dialogue 2.0/recursos/scripts/Evento_Crear.gd" id="1_h8pu4"]
+
+[resource]
+script = ExtResource("1_h8pu4")
+posicion_elemento = Vector2(0, 0)
+metadata/_custom_type_script = "uid://bjujd3pkyyp0c"

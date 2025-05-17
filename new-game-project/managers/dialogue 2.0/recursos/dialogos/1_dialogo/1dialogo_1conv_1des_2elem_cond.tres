@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="DecisionConditionResource" load_steps=2 format=3 uid="uid://cc2bjpwqnwstc"]
 
-[ext_resource type="Script" uid="uid://c18q2fjhaltr5" path="res://dialogo/recursos/scripts/decision_condition_resource.gd" id="1_bki61"]
+[ext_resource type="Script" uid="uid://c18q2fjhaltr5" path="res://managers/dialogue 2.0/recursos/scripts/Condicion.gd" id="1_bki61"]
 
 [resource]
 script = ExtResource("1_bki61")
