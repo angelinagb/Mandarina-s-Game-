@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="DecisionResource" load_steps=5 format=3 uid="uid://diulcojjj6rc6"]
 
-[ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://dialogo/recursos/scripts/decision_element_resource.gd" id="1_h1740"]
-[ext_resource type="Resource" uid="uid://bgedmva0di4j" path="res://dialogo/recursos/dialogos/1_dialogo/1dialogo_1conv_1des_1elem.tres" id="2_31q3r"]
-[ext_resource type="Resource" uid="uid://dgkulmjc6sofk" path="res://dialogo/recursos/dialogos/1_dialogo/1dialogo_1conv_1des_2elem.tres" id="3_31q3r"]
-[ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://dialogo/recursos/scripts/decision_resource.gd" id="3_yohn6"]
+[ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="1_h1740"]
+[ext_resource type="Resource" uid="uid://bgedmva0di4j" path="res://managers/dialogue 2.0/recursos/dialogos/1_dialogo/1dialogo_1conv_1des_1elem.tres" id="2_31q3r"]
+[ext_resource type="Resource" uid="uid://dgkulmjc6sofk" path="res://managers/dialogue 2.0/recursos/dialogos/1_dialogo/1dialogo_1conv_1des_2elem.tres" id="3_31q3r"]
+[ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="3_yohn6"]
 
 [resource]
 script = ExtResource("3_yohn6")

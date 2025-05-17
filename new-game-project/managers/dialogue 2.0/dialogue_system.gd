@@ -11,10 +11,10 @@ signal dialogue_ended
 @export var boton_decision : PackedScene
 @onready var margin_container : PanelContainer = %PanelContainer
 @onready var v_box_container : VBoxContainer = %VBoxContainer
-var decision_actual : DecisionResource
+var decision_actual : Decision
 
 ##Recurso con información sobre el diálogo a mostrar
-@export var dialogueResource : DialogueResource
+@export var dialogueResource : Dialogo
 @onready var canvas_layer : CanvasLayer = $CanvasLayer
 ## while text not empty
 var i : int
