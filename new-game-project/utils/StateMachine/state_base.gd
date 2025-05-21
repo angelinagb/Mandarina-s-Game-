@@ -1,7 +1,7 @@
 class_name StateBase extends Node
 
 ## referencia al nodo que vamos a controlar
-var controlled_node:Node # @onready var player:Player = self.owner
+var controlled_node : Node # @onready var player:Player = self.owner
 
 ## referencia a la maquina de estados
 var state_machine:StateMachine

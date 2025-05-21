@@ -1,16 +1,17 @@
 class_name Npc extends Interactable
 
+
 signal give_quest(quest: Quest)
 
 @export var dialogues: Array[String]
 @export var quest: Quest
+@export var npc_name : String
 
 var quest_status = true
 
 @onready var current_dialogue: int = 0
 @onready var current_npc_state:STATE = STATE.WAITING
 
-var player_in_range = false
 
 enum STATE {
 	TALKING,
@@ -20,6 +21,10 @@ enum STATE {
 func _ready():
 	my_type = "npc"
 	super._ready()
+	$Name.text = npc_name
+	if texture:
+		$Sprite2D.texture = texture
+		
 
 func _input(event):
 	match current_npc_state:

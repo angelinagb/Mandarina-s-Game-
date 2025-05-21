@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=3 uid="uid://d2fvsajjn3f2c"]
+
+[ext_resource type="Script" uid="uid://dyl824kyawx6l" path="res://Scenes/iso_room.gd" id="1_gsy7k"]
+[ext_resource type="PackedScene" uid="uid://disck758vf23b" path="res://PlayerB/PlayerB.tscn" id="2_3fgue"]
+[ext_resource type="PackedScene" uid="uid://b68ix571wcq1g" path="res://Scenes/BaseTiles.tscn" id="3_xsg4c"]
+[ext_resource type="PackedScene" uid="uid://bmc7emh23f4e0" path="res://Scenes/npc_1.tscn" id="4_mgynr"]
+[ext_resource type="Script" uid="uid://burk0b22hnken" path="res://Scenes/switch.gd" id="5_qafns"]
+[ext_resource type="Texture2D" uid="uid://d3rxugu882yn4" path="res://Tiles/SwichFloor1.png" id="6_ly8fc"]
+[ext_resource type="Texture2D" uid="uid://qsefmxpt1meh" path="res://Tiles/SwichWall.png" id="7_3vqhl"]
+[ext_resource type="Texture2D" uid="uid://dlfto6k0kis28" path="res://Objetos/2dClassroomAssetPackByStyloo/Classroom 2 Props/Classroom Props First Spritesheet 8.png" id="8_3fgue"]
+[ext_resource type="PackedScene" uid="uid://dqppkvdit0fji" path="res://node_2d.tscn" id="9_xsg4c"]
+
+[node name="iso_room" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_gsy7k")
+
+[node name="Player" parent="." instance=ExtResource("2_3fgue")]
+position = Vector2(933, 46)
+
+[node name="BaseTiles" parent="." instance=ExtResource("3_xsg4c")]
+metadata/_edit_lock_ = true
+
+[node name="Npc1" parent="." instance=ExtResource("4_mgynr")]
+y_sort_enabled = false
+texture_filter = 1
+position = Vector2(-99.0001, 377)
+scale = Vector2(2.5, 2.5)
+script = null
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.75, 0.75, 0.75, 1)
+
+[node name="Switch" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(851, -125)
+script = ExtResource("5_qafns")
+metadata/_edit_group_ = true
+
+[node name="SwichFloor1" type="Sprite2D" parent="Switch"]
+y_sort_enabled = true
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_ly8fc")
+hframes = 2
+
+[node name="Area2D" type="Area2D" parent="Switch/SwichFloor1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Switch/SwichFloor1/Area2D"]
+polygon = PackedVector2Array(-3, 157, -63, 189, -1, 220, 64, 189)
+metadata/_edit_lock_ = true
+
+[node name="Switch2" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(864, -286)
+script = ExtResource("5_qafns")
+
+[node name="SwichFloor1" type="Sprite2D" parent="Switch2"]
+z_index = 1
+position = Vector2(-229, -66)
+scale = Vector2(0.701562, 0.596094)
+texture = ExtResource("7_3vqhl")
+hframes = 4
+vframes = 2
+
+[node name="Area2D" type="Area2D" parent="Switch2/SwichFloor1"]
+position = Vector2(2.85714, 2.85714)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Switch2/SwichFloor1/Area2D"]
+polygon = PackedVector2Array(-15.7141, 71, -51.4283, 88.1428, -44.2855, 131, -8.57117, 112.429)
+metadata/_edit_lock_ = true
+
+[node name="Pizarra" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(651, 75)
+scale = Vector2(0.637805, 0.549202)
+texture = ExtResource("8_3fgue")
+region_enabled = true
+region_rect = Rect2(109, 57, 410, 376)
+
+[node name="Node2D" parent="." instance=ExtResource("9_xsg4c")]
+position = Vector2(934, -76)
+scale = Vector2(0.37, 0.3)
+
+[connection signal="body_entered" from="Switch/SwichFloor1/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Switch/SwichFloor1/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Switch2/SwichFloor1/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Switch2/SwichFloor1/Area2D" to="." method="_on_area_2d_body_exited"]

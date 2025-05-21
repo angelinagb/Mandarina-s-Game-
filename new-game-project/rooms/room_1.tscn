@@ -27,6 +27,8 @@ path_scene = "res://rooms/room_2.tscn"
 position = Vector2(256, 256)
 dialogues = Array[String](["¡Buenas! Ayudame a invocar al gauchito gil.", "..."])
 quest = ExtResource("6_f0357")
+npc_name = null
+id = null
 texture = ExtResource("7_f0357")
 
 [connection signal="interacted" from="Interactables/Items/Item0" to="." method="_on_item_1_interacted"]

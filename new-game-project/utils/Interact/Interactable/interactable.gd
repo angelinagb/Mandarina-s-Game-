@@ -2,13 +2,19 @@ class_name Interactable extends Node2D
 
 signal interacted(interactable: Interactable)
 
+#los id pueden ser combinacion room + tipo + orden 
 @export var id: String
-@export var texture: Texture
+#para la escena que diga "Obtuviste!" 
+@export var i_name : String 
+@export var desc: String 
+
+var is_in_world: bool
+var is_in_player: bool
 
 var my_type: String
 
-func _ready():
-	$Sprite2D.texture = texture
+
+func _ready(): # pass 
 	$Area2D.set_monitoring(false)
 	hide()
 	

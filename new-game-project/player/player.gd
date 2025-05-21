@@ -25,4 +25,3 @@ func pause_player():
 
 func resume_player():
 	$StateMachine.change_to(states.Idle)
-	

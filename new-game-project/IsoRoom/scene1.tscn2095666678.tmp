@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2fvsajjn3f2c"]
+
+[ext_resource type="Script" uid="uid://dyl824kyawx6l" path="res://IsoRoom/scene1.gd" id="1_vq2tt"]
+[ext_resource type="PackedScene" uid="uid://disck758vf23b" path="res://PlayerB/PlayerB.tscn" id="2_mli4h"]
+[ext_resource type="PackedScene" uid="uid://b68ix571wcq1g" path="res://IsoRoom/iso_room1.tscn" id="3_bufxw"]
+[ext_resource type="PackedScene" uid="uid://468jxfmf2glq" path="res://IsoRoom/npc_1.tscn" id="4_jkdpa"]
+[ext_resource type="Texture2D" uid="uid://dlfto6k0kis28" path="res://art/items/2dClassroomAssetPackByStyloo/Classroom 2 Props/Classroom Props First Spritesheet 8.png" id="5_skxyi"]
+[ext_resource type="PackedScene" uid="uid://csoh0x671pkgf" path="res://IsoRoom/Objetos/Scenes/Floor_switch.tscn" id="6_uep63"]
+
+[node name="Scene1" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_vq2tt")
+
+[node name="Player" parent="." instance=ExtResource("2_mli4h")]
+position = Vector2(-147, 389)
+
+[node name="BaseTiles" parent="." instance=ExtResource("3_bufxw")]
+metadata/_edit_lock_ = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.75, 0.75, 0.75, 1)
+
+[node name="Pizarra" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(651, 75)
+scale = Vector2(0.637805, 0.549202)
+texture = ExtResource("5_skxyi")
+region_enabled = true
+region_rect = Rect2(109, 57, 410, 376)
+
+[node name="Spawns" type="Node" parent="."]
+
+[node name="defect" type="Marker2D" parent="Spawns"]
+position = Vector2(256, 492)
+
+[node name="Interactables" type="Node" parent="."]
+
+[node name="Items" type="Node" parent="Interactables"]
+
+[node name="Switch" parent="Interactables/Items" instance=ExtResource("6_uep63")]
+position = Vector2(1366, 5)
+
+[node name="Transitioners" type="Node" parent="Interactables"]
+
+[node name="Npcs" type="Node" parent="Interactables"]
+
+[node name="npc_clintbellanger" parent="Interactables/Npcs" instance=ExtResource("4_jkdpa")]
+
+[connection signal="body_entered" from="Interactables/Items/Switch" to="." method="_on_switch_body_entered"]
+[connection signal="body_exited" from="Interactables/Items/Switch" to="." method="_on_switch_body_exited"]

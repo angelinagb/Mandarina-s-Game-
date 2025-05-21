@@ -1,7 +1,7 @@
-[gd_scene load_steps=37 format=3 uid="uid://ddbkx1m8n74tr"]
+[gd_scene load_steps=36 format=3 uid="uid://ddbkx1m8n74tr"]
 
 [ext_resource type="Script" uid="uid://chw3mqjayarr5" path="res://player/player.gd" id="1_4flbx"]
-[ext_resource type="Texture2D" uid="uid://cpyv1e43yyd2t" path="res://art/Small-8-Direction-Characters_by_AxulArt/Small-8-Direction-Characters_by_AxulArt.png" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://cpyv1e43yyd2t" path="res://art/characters/TD/Small-8-Direction-Characters_by_AxulArt/Small-8-Direction-Characters_by_AxulArt.png" id="2_onrkg"]
 [ext_resource type="PackedScene" uid="uid://blu12ycy8r0s7" path="res://utils/StateMachine/state_machine.tscn" id="4_kb6p2"]
 [ext_resource type="Script" uid="uid://qksyhxgitd02" path="res://player/PlayerStates/down.gd" id="5_wodsf"]
 [ext_resource type="Script" uid="uid://b0i3fwp3pjyoi" path="res://player/PlayerStates/down_left.gd" id="6_32hag"]
@@ -13,9 +13,6 @@
 [ext_resource type="Script" uid="uid://f6rhw2gxin7r" path="res://player/PlayerStates/up_left.gd" id="12_bjvpn"]
 [ext_resource type="Script" uid="uid://dhntttcr626sk" path="res://player/PlayerStates/up_right.gd" id="13_s7qer"]
 [ext_resource type="Script" uid="uid://ctfqoguqyewbi" path="res://player/PlayerStates/paused.gd" id="14_g4c7l"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
-size = Vector2(13.6667, 19.6667)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
 atlas = ExtResource("2_onrkg")
@@ -225,17 +222,18 @@ script/source = "extends Node
 "
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 scale = Vector2(2.5, 2.5)
 script = ExtResource("1_4flbx")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.500001, 2.16666)
-shape = SubResource("RectangleShape2D_onrkg")
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-0.233325, 8.60001)
+polygon = PackedVector2Array(-4.16668, 1.39999, -4.56667, -0.600005, 5.03333, -0.200006, 4.63333, 1.39999)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nvl01")
-animation = &"idle"
+animation = &"up_right"
 
 [node name="PlayerController" type="Node" parent="."]
 script = SubResource("GDScript_kb6p2")
