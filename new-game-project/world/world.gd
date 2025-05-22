@@ -55,7 +55,7 @@ func save_this():
 		}
 	}
 	
-	save_manager.save_dict({"actual_room": "res://rooms/room_1.tscn", "prev_room": ""}, "RoomSetup")
+	save_manager.save_dict({"actual_room": "res://rooms/Instancias/room_4.tscn", "prev_room": ""}, "RoomSetup")
 	save_manager.save_dict(items, "Items")
 	save_manager.save_dict(abilities, "AbilityPoints")
 	save_manager.save_dict(ability_points, "AbilityAvailablePoints")
@@ -129,17 +129,14 @@ func _on_transitioner_activated(transitioner: Transitioner) -> void:
 	change_room(path_room, id_prev_room)
 
 func _on_npc_talked_to(npc: Npc) -> void:
-	await dialogue.start_dialogue(npc.getDialogue())
+	#PASUA TODO
+	npc.startDialogue()
 	if npc.quest_available():
 		npc.take_quest()
 		quest.add_quest(npc.quest)
-	npc.stopped_talking()
 
 func initialize_room(path_room: String):
 	current = room_manager.initialize(path_room)
-	current.init_items(inventory.get_items_in_world())
-	current.init_transitioners([])
-	current.init_npc([])
 	current.interactable_interacted.connect(_on_interactable_interacted)
 
 func change_room(path_room: String, id_prev_room: String):
@@ -151,10 +148,6 @@ func change_room(path_room: String, id_prev_room: String):
 	save_setup(room_save)
 	
 	current = room_manager.change_room(path_room)
-	
-	current.init_items(inventory.get_items_in_world())
-	current.init_transitioners([])
-	current.init_npc([])
 	
 	current.interactable_interacted.connect(_on_interactable_interacted)
 	
