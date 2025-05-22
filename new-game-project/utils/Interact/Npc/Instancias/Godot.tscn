@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bumxyjplchdgb"]
+
+[ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_smw16"]
+[ext_resource type="Texture2D" uid="uid://fdbwsjbc5nh3" path="res://art/items/termo.png" id="2_ovx65"]
+
+[node name="Npc" instance=ExtResource("1_smw16")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(1, 0)
+texture = ExtResource("2_ovx65")

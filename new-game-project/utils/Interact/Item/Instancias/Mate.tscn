@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bucn0vs17tsw2"]
+
+[ext_resource type="PackedScene" uid="uid://3v1aqvnidp5b" path="res://utils/Interact/Item/item.tscn" id="1_tvyhi"]
+[ext_resource type="Texture2D" uid="uid://bx1ijhl76vl0w" path="res://art/items/mate.png" id="2_jsiqp"]
+
+[node name="Item" instance=ExtResource("1_tvyhi")]
+id = "Mate"
+texture = ExtResource("2_jsiqp")

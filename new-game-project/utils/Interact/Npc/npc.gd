@@ -2,10 +2,10 @@ class_name Npc extends Interactable
 
 signal give_quest(quest: Quest)
 
-@export var dialogues: Array[String]
 @export var quest: Quest
-
-var quest_status = true
+@onready var primerDialogo : DialogueSystem = $"Dialogo Quest"
+@onready var dialogoDefault : DialogueSystem = $"Dialogo Default"
+var tiene_quest : bool
 
 @onready var current_dialogue: int = 0
 @onready var current_npc_state:STATE = STATE.WAITING
@@ -18,6 +18,8 @@ enum STATE {
 }
 
 func _ready():
+	if primerDialogo.esta_vacio() != false:
+		tiene_quest = true
 	my_type = "npc"
 	super._ready()
 
@@ -33,19 +35,18 @@ func _input(event):
 func interact():
 	interacted.emit(self)
 
-func getDialogue():
-	return dialogues.get(current_dialogue)
-
-func stopped_talking():
-	current_npc_state = STATE.WAITING
-	if dialogues.size()-1 > current_dialogue:
-		current_dialogue += 1
-
+func startDialogue():
+	if tiene_quest == true:
+		primerDialogo.start()
+	else:
+		dialogoDefault.start()
+	
+	
 func quest_available():
-	return quest_status
+	return tiene_quest
 	
 func take_quest():
-	quest_status = false
+	tiene_quest = false
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
