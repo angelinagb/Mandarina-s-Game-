@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://u4sjvuleppf5" path="res://managers/dialogue 2.0/dialogue_system.gd" id="1_r12a2"]
 [ext_resource type="PackedScene" uid="uid://b3iipnt2mv61n" path="res://managers/dialogue 2.0/BotonDecision.tscn" id="2_7c8yr"]
-[ext_resource type="Resource" uid="uid://dtig4xsv7ckdd" path="res://managers/dialogue 2.0/recursos/dialogos/1_dialogo/1dialogo_1conv.tres" id="2_m0h81"]
+[ext_resource type="Resource" uid="uid://dtig4xsv7ckdd" path="res://managers/dialogue 2.0/recursos/dialogos/ChicaTriste_1_dialogo/1dialogo_1conv.tres" id="2_m0h81"]
 [ext_resource type="Animation" uid="uid://b0g4yolqy1eik" path="res://managers/dialogue 2.0/animacion/fade_out.res" id="3_qmr60"]
 [ext_resource type="Animation" uid="uid://bqjgh3o0hb1hh" path="res://managers/dialogue 2.0/animacion/fade_in.res" id="4_8k1qw"]
 
@@ -44,6 +44,7 @@ dialogueResource = ExtResource("2_m0h81")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 10
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
