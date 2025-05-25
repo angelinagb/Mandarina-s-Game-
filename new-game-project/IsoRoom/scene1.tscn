@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2fvsajjn3f2c"]
+[gd_scene load_steps=8 format=3 uid="uid://d2fvsajjn3f2c"]
 
 [ext_resource type="Script" uid="uid://dyl824kyawx6l" path="res://IsoRoom/scene1.gd" id="1_vq2tt"]
 [ext_resource type="PackedScene" uid="uid://b68ix571wcq1g" path="res://IsoRoom/iso_room1.tscn" id="3_bufxw"]
-[ext_resource type="PackedScene" uid="uid://468jxfmf2glq" path="res://IsoRoom/npc_1.tscn" id="4_jkdpa"]
 [ext_resource type="Script" uid="uid://dkl1ftv46fpva" path="res://utils/Interact/Item/item.gd" id="5_mli4h"]
 [ext_resource type="Texture2D" uid="uid://dlfto6k0kis28" path="res://art/items/2dClassroomAssetPackByStyloo/Classroom 2 Props/Classroom Props First Spritesheet 8.png" id="5_skxyi"]
 [ext_resource type="Texture2D" uid="uid://d7tosrjrw5iq" path="res://art/items/pixel-key.png" id="6_bufxw"]
@@ -56,10 +55,6 @@ metadata/_custom_type_script = "uid://dkl1ftv46fpva"
 [node name="Transitioners" type="Node" parent="Interactables"]
 
 [node name="Npcs" type="Node" parent="Interactables"]
-
-[node name="npc_clintbellanger" parent="Interactables/Npcs" instance=ExtResource("4_jkdpa")]
-position = Vector2(270, -34)
-scale = Vector2(3, 3)
 
 [connection signal="body_entered" from="Interactables/Items/Switch" to="." method="_on_switch_body_entered"]
 [connection signal="body_exited" from="Interactables/Items/Switch" to="." method="_on_switch_body_exited"]

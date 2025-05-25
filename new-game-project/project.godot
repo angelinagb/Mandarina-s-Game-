@@ -35,6 +35,7 @@ folder_colors={
 "res://Interacting/": "pink",
 "res://IsoRoom/": "pink",
 "res://IsoRoom/Objetos/": "pink",
+"res://PianoPuzzle/": "pink",
 "res://PlayerB/": "pink"
 }
 

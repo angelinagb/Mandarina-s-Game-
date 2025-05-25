@@ -5,7 +5,7 @@ class_name Item extends Interactable
 var interaction : Callable
 
 func _ready():
-	Sprite2D.texture = texture
+
 	my_type = "item"
 	super._ready()
 

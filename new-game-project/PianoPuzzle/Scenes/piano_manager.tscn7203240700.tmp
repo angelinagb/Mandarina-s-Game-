@@ -1,0 +1,148 @@
+[gd_scene load_steps=16 format=3 uid="uid://wbl6odje5t52"]
+
+[ext_resource type="PackedScene" uid="uid://6p4ounmbwbp2" path="res://PianoPuzzle/Scenes/key.tscn" id="1_cphbr"]
+[ext_resource type="Script" uid="uid://bq5y43o22joh7" path="res://PianoPuzzle/Scenes/piano_manager.gd" id="1_ibkju"]
+[ext_resource type="AudioStream" uid="uid://bpewp8puvxkhg" path="res://PianoPuzzle/sounds_g4-g5/g4.ogg" id="2_doaxa"]
+[ext_resource type="AudioStream" uid="uid://cgye2v4254ai2" path="res://PianoPuzzle/sounds_g4-g5/g4#.ogg" id="3_qjc0d"]
+[ext_resource type="AudioStream" uid="uid://begb61kcek016" path="res://PianoPuzzle/sounds_g4-g5/a4.ogg" id="3_y3ias"]
+[ext_resource type="AudioStream" uid="uid://c3kbfhmvhvnx1" path="res://PianoPuzzle/sounds_g4-g5/b4.ogg" id="4_3y1lm"]
+[ext_resource type="AudioStream" uid="uid://ci3ukd3833b4" path="res://PianoPuzzle/sounds_g4-g5/c5.ogg" id="5_7dgts"]
+[ext_resource type="AudioStream" uid="uid://7tdvohm02vp1" path="res://PianoPuzzle/sounds_g4-g5/d5.ogg" id="6_6ljh2"]
+[ext_resource type="AudioStream" uid="uid://bfmku4885j1ig" path="res://PianoPuzzle/sounds_g4-g5/e5.ogg" id="7_c8gcl"]
+[ext_resource type="AudioStream" uid="uid://d4nfvww43yd7a" path="res://PianoPuzzle/sounds_g4-g5/f5.ogg" id="8_n13nd"]
+[ext_resource type="AudioStream" uid="uid://cjw07wcdl5d0h" path="res://PianoPuzzle/sounds_g4-g5/g5.ogg" id="9_ibkju"]
+[ext_resource type="AudioStream" uid="uid://copr4aybwhrnc" path="res://PianoPuzzle/sounds_g4-g5/a4#.ogg" id="11_n13nd"]
+[ext_resource type="AudioStream" uid="uid://dqtc4cc6mrod8" path="res://PianoPuzzle/sounds_g4-g5/c5#.ogg" id="12_ibkju"]
+[ext_resource type="AudioStream" uid="uid://dy46p41n8of75" path="res://PianoPuzzle/sounds_g4-g5/d5#.ogg" id="13_rhs4o"]
+[ext_resource type="AudioStream" uid="uid://bmbi8pkq04smy" path="res://PianoPuzzle/sounds_g4-g5/f5#.ogg" id="14_n13nd"]
+
+[node name="PianoManager" type="Node2D"]
+position = Vector2(-91, -110)
+scale = Vector2(1.3, 1.3)
+script = ExtResource("1_ibkju")
+metadata/_edit_vertical_guides_ = [-161.0, -356.0]
+metadata/_edit_horizontal_guides_ = [88.0, 0.0]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 29.0
+offset_top = -158.0
+offset_right = 485.0
+offset_bottom = 444.0
+
+[node name="White_Keys" type="Node2D" parent="HBoxContainer"]
+position = Vector2(126, 271)
+scale = Vector2(0.5, 0.5)
+
+[node name="G4" parent="HBoxContainer/White_Keys" instance=ExtResource("1_cphbr")]
+offset_left = -57.8261
+offset_top = 4.43481
+offset_right = -57.8261
+offset_bottom = 4.43481
+scale = Vector2(0.3, 0.3)
+note = "g4"
+stream = ExtResource("2_doaxa")
+
+[node name="A4" parent="HBoxContainer/White_Keys" instance=ExtResource("1_cphbr")]
+offset_left = 12.6087
+offset_top = 4.43481
+offset_right = 12.6087
+offset_bottom = 4.43481
+scale = Vector2(0.3, 0.3)
+stream = ExtResource("3_y3ias")
+
+[node name="B4" parent="HBoxContainer/White_Keys" instance=ExtResource("1_cphbr")]
+offset_left = 82.1739
+offset_top = 3.56525
+offset_right = 82.1739
+offset_bottom = 3.56525
+scale = Vector2(0.3, 0.3)
+stream = ExtResource("4_3y1lm")
+
+[node name="C5" parent="HBoxContainer/White_Keys" instance=ExtResource("1_cphbr")]
+offset_left = 152.609
+offset_top = 4.43481
+offset_right = 152.609
+offset_bottom = 4.43481
+scale = Vector2(0.3, 0.3)
+stream = ExtResource("5_7dgts")
+
+[node name="D5" parent="HBoxContainer/White_Keys" instance=ExtResource("1_cphbr")]
+offset_left = 223.043
+offset_top = 4.43481
+offset_right = 223.043
+offset_bottom = 4.43481
+scale = Vector2(0.3, 0.3)
+stream = ExtResource("6_6ljh2")
+
+[node name="E5" parent="HBoxContainer/White_Keys" instance=ExtResource("1_cphbr")]
+offset_left = 294.348
+offset_top = 3.56525
+offset_right = 294.348
+offset_bottom = 3.56525
+scale = Vector2(0.3, 0.3)
+stream = ExtResource("7_c8gcl")
+
+[node name="F5" parent="HBoxContainer/White_Keys" instance=ExtResource("1_cphbr")]
+offset_left = 364.783
+offset_top = 3.56525
+offset_right = 364.783
+offset_bottom = 3.56525
+scale = Vector2(0.3, 0.3)
+stream = ExtResource("8_n13nd")
+
+[node name="G5" parent="HBoxContainer/White_Keys" instance=ExtResource("1_cphbr")]
+offset_left = 435.217
+offset_top = 4.43481
+offset_right = 435.217
+offset_bottom = 4.43481
+scale = Vector2(0.3, 0.3)
+stream = ExtResource("9_ibkju")
+
+[node name="Black_Keys" type="Node2D" parent="HBoxContainer"]
+position = Vector2(124, 211)
+scale = Vector2(0.3, 0.3)
+
+[node name="g4#" parent="HBoxContainer/Black_Keys" instance=ExtResource("1_cphbr")]
+offset_left = -4.20287
+offset_top = 208.841
+offset_right = -4.20287
+offset_bottom = 208.841
+scale = Vector2(0.3, 0.3)
+is_black = true
+stream = ExtResource("3_qjc0d")
+
+[node name="a4#" parent="HBoxContainer/Black_Keys" instance=ExtResource("1_cphbr")]
+offset_left = 107.391
+offset_top = 210.29
+offset_right = 107.391
+offset_bottom = 210.29
+scale = Vector2(0.3, 0.3)
+is_black = true
+stream = ExtResource("11_n13nd")
+
+[node name="c5#" parent="HBoxContainer/Black_Keys" instance=ExtResource("1_cphbr")]
+offset_left = 343.623
+offset_top = 205.942
+offset_right = 343.623
+offset_bottom = 205.942
+scale = Vector2(0.3, 0.3)
+is_black = true
+stream = ExtResource("12_ibkju")
+
+[node name="d5#" parent="HBoxContainer/Black_Keys" instance=ExtResource("1_cphbr")]
+offset_left = 471.159
+offset_top = 207.391
+offset_right = 471.159
+offset_bottom = 207.391
+scale = Vector2(0.3, 0.3)
+is_black = true
+stream = ExtResource("13_rhs4o")
+
+[node name="f5#" parent="HBoxContainer/Black_Keys" instance=ExtResource("1_cphbr")]
+offset_left = 698.696
+offset_top = 208.841
+offset_right = 698.696
+offset_bottom = 208.841
+scale = Vector2(0.3, 0.3)
+is_black = true
+stream = ExtResource("14_n13nd")

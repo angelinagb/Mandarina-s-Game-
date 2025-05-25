@@ -1,0 +1,184 @@
+[gd_scene load_steps=18 format=3 uid="uid://wbl6odje5t52"]
+
+[ext_resource type="Script" uid="uid://bq5y43o22joh7" path="res://PianoPuzzle/scripts/piano_game.gd" id="1_4aced"]
+[ext_resource type="PackedScene" uid="uid://6p4ounmbwbp2" path="res://PianoPuzzle/Scenes/key.tscn" id="2_7f5js"]
+[ext_resource type="Texture2D" uid="uid://b2yhocwedbnje" path="res://PianoPuzzle/sprites/backround.png" id="2_y6oj7"]
+[ext_resource type="AudioStream" uid="uid://bpewp8puvxkhg" path="res://PianoPuzzle/Sounds/sounds_g4-g5/g4.ogg" id="3_y6oj7"]
+[ext_resource type="AudioStream" uid="uid://begb61kcek016" path="res://PianoPuzzle/Sounds/sounds_g4-g5/a4.ogg" id="4_srx7q"]
+[ext_resource type="AudioStream" uid="uid://c3kbfhmvhvnx1" path="res://PianoPuzzle/Sounds/sounds_g4-g5/b4.ogg" id="5_0pfgx"]
+[ext_resource type="AudioStream" uid="uid://ci3ukd3833b4" path="res://PianoPuzzle/Sounds/sounds_g4-g5/c5.ogg" id="6_khsfd"]
+[ext_resource type="AudioStream" uid="uid://7tdvohm02vp1" path="res://PianoPuzzle/Sounds/sounds_g4-g5/d5.ogg" id="7_hdnhe"]
+[ext_resource type="AudioStream" uid="uid://bfmku4885j1ig" path="res://PianoPuzzle/Sounds/sounds_g4-g5/e5.ogg" id="8_f7htt"]
+[ext_resource type="AudioStream" uid="uid://d4nfvww43yd7a" path="res://PianoPuzzle/Sounds/sounds_g4-g5/f5.ogg" id="9_d2qyk"]
+[ext_resource type="AudioStream" uid="uid://cjw07wcdl5d0h" path="res://PianoPuzzle/Sounds/sounds_g4-g5/g5.ogg" id="10_2q0ka"]
+[ext_resource type="AudioStream" uid="uid://cgye2v4254ai2" path="res://PianoPuzzle/Sounds/sounds_g4-g5/g4#.ogg" id="11_20yyb"]
+[ext_resource type="AudioStream" uid="uid://copr4aybwhrnc" path="res://PianoPuzzle/Sounds/sounds_g4-g5/a4#.ogg" id="12_4o33c"]
+[ext_resource type="AudioStream" uid="uid://dqtc4cc6mrod8" path="res://PianoPuzzle/Sounds/sounds_g4-g5/c5#.ogg" id="13_fgr7n"]
+[ext_resource type="AudioStream" uid="uid://dy46p41n8of75" path="res://PianoPuzzle/Sounds/sounds_g4-g5/d5#.ogg" id="14_hyoph"]
+[ext_resource type="AudioStream" uid="uid://bmbi8pkq04smy" path="res://PianoPuzzle/Sounds/sounds_g4-g5/f5#.ogg" id="15_47kd8"]
+
+[sub_resource type="GDScript" id="GDScript_ibkju"]
+script/source = "extends AudioStreamPlayer2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Piano_MiniGame" type="Node2D"]
+script = ExtResource("1_4aced")
+metadata/_edit_vertical_guides_ = [-161.0, -356.0]
+metadata/_edit_horizontal_guides_ = [88.0, 0.0]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 509.0
+offset_bottom = 509.0
+texture = ExtResource("2_y6oj7")
+expand_mode = 3
+
+[node name="feedbackPlayer" type="AudioStreamPlayer2D" parent="."]
+script = SubResource("GDScript_ibkju")
+
+[node name="White_Keys" type="Node2D" parent="."]
+position = Vector2(55, 42)
+scale = Vector2(1.04, 1.04)
+
+[node name="G4" parent="White_Keys" instance=ExtResource("2_7f5js")]
+offset_left = -57.8261
+offset_top = 4.43481
+offset_right = -57.8261
+offset_bottom = 4.43481
+scale = Vector2(0.3, 0.3)
+note = "g4"
+stream = ExtResource("3_y6oj7")
+
+[node name="A4" parent="White_Keys" instance=ExtResource("2_7f5js")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 4.0
+offset_bottom = 4.0
+scale = Vector2(0.3, 0.3)
+note = "a4"
+stream = ExtResource("4_srx7q")
+metadata/_edit_use_anchors_ = true
+
+[node name="B4" parent="White_Keys" instance=ExtResource("2_7f5js")]
+offset_left = 65.9574
+offset_top = 4.25532
+offset_right = 65.9574
+offset_bottom = 4.25532
+scale = Vector2(0.3, 0.3)
+note = "b4"
+stream = ExtResource("5_0pfgx")
+
+[node name="C5" parent="White_Keys" instance=ExtResource("2_7f5js")]
+offset_left = 127.66
+offset_top = 4.25532
+offset_right = 127.66
+offset_bottom = 4.25532
+scale = Vector2(0.3, 0.3)
+note = "c5"
+stream = ExtResource("6_khsfd")
+
+[node name="D5" parent="White_Keys" instance=ExtResource("2_7f5js")]
+offset_left = 190.426
+offset_top = 4.25532
+offset_right = 190.426
+offset_bottom = 4.25532
+scale = Vector2(0.3, 0.3)
+note = "d5"
+stream = ExtResource("7_hdnhe")
+
+[node name="E5" parent="White_Keys" instance=ExtResource("2_7f5js")]
+offset_left = 252.128
+offset_top = 4.25532
+offset_right = 252.128
+offset_bottom = 4.25532
+scale = Vector2(0.3, 0.3)
+note = "e5"
+stream = ExtResource("8_f7htt")
+
+[node name="F5" parent="White_Keys" instance=ExtResource("2_7f5js")]
+offset_left = 313.83
+offset_top = 4.25532
+offset_right = 313.83
+offset_bottom = 4.25532
+scale = Vector2(0.3, 0.3)
+note = "f5"
+stream = ExtResource("9_d2qyk")
+
+[node name="G5" parent="White_Keys" instance=ExtResource("2_7f5js")]
+offset_left = 375.532
+offset_top = 4.25532
+offset_right = 375.532
+offset_bottom = 4.25532
+scale = Vector2(0.3, 0.3)
+note = "g5"
+stream = ExtResource("10_2q0ka")
+
+[node name="Black_Keys" type="Node2D" parent="."]
+z_index = 1
+position = Vector2(37, -59)
+scale = Vector2(0.52, 0.52)
+
+[node name="g4#" parent="Black_Keys" instance=ExtResource("2_7f5js")]
+offset_left = 10.0
+offset_top = 210.0
+offset_right = 10.0
+offset_bottom = 210.0
+scale = Vector2(0.3, 0.3)
+is_black = true
+note = "g4#"
+stream = ExtResource("11_20yyb")
+
+[node name="a4#" parent="Black_Keys" instance=ExtResource("2_7f5js")]
+offset_left = 136.0
+offset_top = 210.0
+offset_right = 136.0
+offset_bottom = 210.0
+scale = Vector2(0.3, 0.3)
+is_black = true
+note = "a4#"
+stream = ExtResource("12_4o33c")
+
+[node name="c5#" parent="Black_Keys" instance=ExtResource("2_7f5js")]
+offset_left = 390.0
+offset_top = 210.0
+offset_right = 390.0
+offset_bottom = 210.0
+scale = Vector2(0.3, 0.3)
+is_black = true
+note = "c5#"
+stream = ExtResource("13_fgr7n")
+
+[node name="d5#" parent="Black_Keys" instance=ExtResource("2_7f5js")]
+offset_left = 512.0
+offset_top = 210.0
+offset_right = 512.0
+offset_bottom = 210.0
+scale = Vector2(0.3, 0.3)
+is_black = true
+note = "d5#"
+stream = ExtResource("14_hyoph")
+
+[node name="f5#" parent="Black_Keys" instance=ExtResource("2_7f5js")]
+offset_left = 760.0
+offset_top = 210.0
+offset_right = 760.0
+offset_bottom = 210.0
+scale = Vector2(0.3, 0.3)
+is_black = true
+note = "f5#"
+stream = ExtResource("15_47kd8")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(-1, 1)

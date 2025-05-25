@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://6p4ounmbwbp2"]
+
+[ext_resource type="Script" uid="uid://dq7px6wpfdt08" path="res://PianoPuzzle/script/piano_key.gd" id="1_2k2f8"]
+
+[node name="piano_key" type="TextureButton"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_2k2f8")
+is_black = null
+note = null
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(58.5, 139)
+scale = Vector2(0.52657, 0.356771)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="key_pressed" from="." to="." method="_on_key_pressed"]
+[connection signal="key_released" from="." to="." method="_on_key_released"]

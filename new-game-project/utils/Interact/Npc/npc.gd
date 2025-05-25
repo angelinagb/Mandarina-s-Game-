@@ -9,6 +9,7 @@ signal give_quest(quest: Quest)
 
 var quest_status = true
 
+var player_in_range = true 
 @onready var current_dialogue: int = 0
 @onready var current_npc_state:STATE = STATE.WAITING
 
@@ -22,8 +23,6 @@ func _ready():
 	my_type = "npc"
 	super._ready()
 	$Name.text = npc_name
-	if texture:
-		$Sprite2D.texture = texture
 		
 
 func _input(event):

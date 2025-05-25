@@ -102,12 +102,12 @@ sources/2 = SubResource("TileSetAtlasSource_5m2ey")
 sources/1 = SubResource("TileSetAtlasSource_a6ud8")
 sources/8 = SubResource("TileSetAtlasSource_axodm")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y1ppi"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_enb06"]
 texture = ExtResource("1_8b0jd")
 texture_region_size = Vector2i(256, 128)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p345n"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yid2q"]
 texture = ExtResource("6_crisn")
 texture_region_size = Vector2i(256, 128)
 0:0/size_in_atlas = Vector2i(1, 4)
@@ -118,10 +118,10 @@ texture_region_size = Vector2i(256, 128)
 tile_shape = 1
 tile_layout = 5
 tile_size = Vector2i(256, 128)
-sources/0 = SubResource("TileSetAtlasSource_y1ppi")
-sources/1 = SubResource("TileSetAtlasSource_p345n")
+sources/0 = SubResource("TileSetAtlasSource_enb06")
+sources/1 = SubResource("TileSetAtlasSource_yid2q")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yid2q"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e48fm"]
 texture = ExtResource("7_enb06")
 texture_region_size = Vector2i(256, 512)
 0:0/0 = 0
@@ -141,7 +141,7 @@ texture_region_size = Vector2i(256, 512)
 3:4/0 = 0
 3:4/0/texture_origin = Vector2i(0, 191)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f7no6"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_psa81"]
 texture = ExtResource("2_5m2ey")
 texture_region_size = Vector2i(256, 512)
 0:0/0 = 0
@@ -180,8 +180,8 @@ tile_shape = 1
 tile_layout = 5
 tile_size = Vector2i(256, 128)
 physics_layer_0/collision_layer = 1
-sources/8 = SubResource("TileSetAtlasSource_f7no6")
-sources/12 = SubResource("TileSetAtlasSource_yid2q")
+sources/8 = SubResource("TileSetAtlasSource_psa81")
+sources/12 = SubResource("TileSetAtlasSource_e48fm")
 tile_proxies/coords_level = [[0, Vector2i(0, 0)], [12, Vector2i(0, 0)], [1, Vector2i(0, 0)], [12, Vector2i(1, 0)], [2, Vector2i(0, 0)], [12, Vector2i(2, 0)], [3, Vector2i(0, 0)], [12, Vector2i(3, 0)], [3, Vector2i(0, 1)], [12, Vector2i(3, 1)], [3, Vector2i(0, 2)], [12, Vector2i(3, 2)], [3, Vector2i(0, 3)], [12, Vector2i(3, 3)], [4, Vector2i(0, 0)], [12, Vector2i(0, 4)], [4, Vector2i(0, 2)], [12, Vector2i(0, 6)], [4, Vector2i(0, 3)], [12, Vector2i(0, 7)], [5, Vector2i(0, 0)], [12, Vector2i(1, 4)], [5, Vector2i(0, 1)], [12, Vector2i(1, 5)], [5, Vector2i(0, 2)], [12, Vector2i(1, 6)], [5, Vector2i(0, 3)], [12, Vector2i(1, 7)], [6, Vector2i(0, 0)], [12, Vector2i(2, 4)], [6, Vector2i(0, 2)], [12, Vector2i(2, 6)], [6, Vector2i(0, 3)], [12, Vector2i(2, 7)], [7, Vector2i(0, 0)], [12, Vector2i(3, 4)], [7, Vector2i(0, 1)], [12, Vector2i(3, 5)], [7, Vector2i(0, 2)], [12, Vector2i(3, 6)], [7, Vector2i(0, 3)], [12, Vector2i(3, 7)]]
 
 [node name="iso_room1_tiles" type="Node2D"]
