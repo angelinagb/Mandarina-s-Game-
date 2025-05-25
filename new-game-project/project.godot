@@ -20,8 +20,8 @@ SaveData="*res://selector de estadisticas/Scripts/mundo.gd"
 
 [display]
 
-window/size/viewport_width=800
-window/size/viewport_height=360
+window/size/viewport_width=360
+window/size/viewport_height=800
 window/stretch/mode="viewport"
 
 [editor_plugins]

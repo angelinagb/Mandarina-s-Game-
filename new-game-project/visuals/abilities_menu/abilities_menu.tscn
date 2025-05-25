@@ -7,7 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://b6okgw8r4wnxp" path="res://art/menu/habilidad_estudio.png" id="5_qihj8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xgbmo"]
-font_color = Color(0, 0, 0.784314, 1)
+font_size = 24
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -30,11 +31,12 @@ grow_vertical = 2
 
 [node name="AbilityPoints" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Tus puntos de Habiliidad: "
+text = "Tus puntos de Habilidad: "
 label_settings = SubResource("LabelSettings_xgbmo")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="Animales_Button" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_lw6ts")]
 layout_mode = 2

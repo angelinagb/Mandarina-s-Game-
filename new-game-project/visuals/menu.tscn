@@ -1,22 +1,24 @@
 [gd_scene load_steps=7 format=3 uid="uid://4y05v36udm0u"]
 
 [ext_resource type="Script" uid="uid://bp6qhe2jtedya" path="res://visuals/menu.gd" id="1_7whbs"]
-[ext_resource type="Texture2D" uid="uid://rfa2el0bcmw2" path="res://art/menu/menu.png" id="2_a8gxi"]
+[ext_resource type="Texture2D" uid="uid://dkucmftlc07xx" path="res://art/menu/fondoMenu.png" id="2_7whbs"]
 [ext_resource type="PackedScene" uid="uid://c2yebh6jef4a5" path="res://visuals/abilities_menu/abilities_menu.tscn" id="3_cbfyr"]
-[ext_resource type="Texture2D" uid="uid://mswhics2igh6" path="res://art/menu/boton_cerrar.png" id="4_exrgd"]
+[ext_resource type="Texture2D" uid="uid://cu5w0oj4x5tos" path="res://art/menu/cross.png" id="4_7whbs"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dmkcs"]
-font_color = Color(0, 0, 0.784314, 1)
+font_size = 24
+shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_nqhns"]
-font_color = Color(0, 0, 0.784314, 1)
+font_size = 24
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="menu" type="CanvasLayer"]
 script = ExtResource("1_7whbs")
 
 [node name="Fondo" type="Sprite2D" parent="."]
-position = Vector2(256, 256)
-texture = ExtResource("2_a8gxi")
+position = Vector2(180, 400)
+texture = ExtResource("2_7whbs")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -85,11 +87,11 @@ text = "Inventario"
 label_settings = SubResource("LabelSettings_nqhns")
 
 [node name="ExitButton" type="Button" parent="."]
-offset_left = 440.0
-offset_top = 440.0
-offset_right = 512.0
-offset_bottom = 512.0
-icon = ExtResource("4_exrgd")
+offset_left = 247.0
+offset_top = 587.0
+offset_right = 355.0
+offset_bottom = 695.0
+icon = ExtResource("4_7whbs")
 
 [connection signal="ability_button_pressed" from="Control2/MainMenu" to="." method="_on_main_menu_ability_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

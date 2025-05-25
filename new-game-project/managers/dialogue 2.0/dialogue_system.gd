@@ -31,10 +31,7 @@ enum States {ABRIENDO, MOSTRANDO_TEXTO, TEXTO_MOSTRADO, CERRANDO}
 
 func _ready() -> void:
 	canvas_layer.hide()
-	vacio = true
-	if dialogueResource != null:
-		vacio = false
-		inicializar_conversacion()
+	inicializar_conversacion()
 	
 func esta_vacio() -> bool:
 	return vacio
@@ -69,6 +66,7 @@ func start(layer: float = -1):
 		if layer > 0:
 			canvas_layer.layer = layer
 		if text_count > 0:
+			inicializar_conversacion()
 			canvas_layer.show()
 			anim_player.play("fade_in")
 		else:
