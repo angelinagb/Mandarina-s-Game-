@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="QuestStep" load_steps=2 format=3 uid="uid://bngstlr7610l8"]
+
+[ext_resource type="Script" uid="uid://c0nhxnmv56tui" path="res://managers/quest/quest_step.gd" id="1_3qpuf"]
+
+[resource]
+script = ExtResource("1_3qpuf")
+text_to_do = "Funcioan wtf"
+necessary_interactables = {}
+metadata/_custom_type_script = "uid://c0nhxnmv56tui"

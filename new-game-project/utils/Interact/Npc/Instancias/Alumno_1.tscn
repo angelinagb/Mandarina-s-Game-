@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://hoqapuuax7nu" path="res://managers/dialogue 2.0/recursos/dialogos/Alumna_1_dialogo/alumna_1.tres" id="3_atqdo"]
 
 [node name="Alumno 1" instance=ExtResource("1_m7ijv")]
+id = "Q1_DIALOGO"
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_xodyj")
