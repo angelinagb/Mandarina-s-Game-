@@ -95,7 +95,7 @@ func load_setup():
 	
 	inventory.initialize(items)
 	
-	event.initialize(inventory, [])
+	event.initialize([])
 	
 	quest.initialize(event, [])
 	
@@ -110,6 +110,10 @@ func load_setup():
 	$menu.process_mode = Node.PROCESS_MODE_ALWAYS
 	
 func _on_interactable_interacted(interactable: Interactable):
+	#todos los interactuables deberian avanzar quests
+	#rehacer quest step para que acepte ID de cualquier interactuable
+	#Falta guardar estado de items al cambiar de rooms
+	#SEPARAR INTERACTABLES EN FASES, FASE 1, 2, ETC
 	match interactable.my_type:
 		"item":
 			_on_item_grabbed(interactable)
@@ -119,6 +123,8 @@ func _on_interactable_interacted(interactable: Interactable):
 			_on_npc_talked_to(interactable)
 		_:
 			pass
+	event.interactable_triggered(interactable.id)
+	
 
 func _on_item_grabbed(item: Item) -> void:
 	inventory.item_grabbed(item.getId())

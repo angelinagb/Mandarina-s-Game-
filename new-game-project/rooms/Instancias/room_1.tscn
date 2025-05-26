@@ -18,11 +18,9 @@ id = "Mate"
 
 [node name="TrTo2" parent="Interactables/Transitioners" index="0" instance=ExtResource("4_niw4v")]
 position = Vector2(352, 96)
-path_scene = "res://rooms/room_2.tscn"
 
 [node name="Npc" parent="Interactables/Npcs" index="0" instance=ExtResource("5_gu5ly")]
 position = Vector2(256, 256)
-dialogues = Array[String](["¡Buenas! Ayudame a invocar al gauchito gil.", "..."])
 quest = ExtResource("6_ymuah")
 
 [connection signal="interacted" from="Interactables/Items/Item0" to="." method="_on_item_1_interacted"]

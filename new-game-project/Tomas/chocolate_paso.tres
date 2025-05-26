@@ -4,6 +4,8 @@
 
 [resource]
 script = ExtResource("1_0qk1u")
-text_to_do = "Averiguar quien tiene chocolate"
-necessary_interactables = {}
+text_to_do = "Preguntar a alumnos"
+necessary_interactables = {
+"Q1_DIALOGO": false
+}
 metadata/_custom_type_script = "uid://c0nhxnmv56tui"
