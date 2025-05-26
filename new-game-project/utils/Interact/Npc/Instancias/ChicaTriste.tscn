@@ -16,3 +16,6 @@ destruirse_al_finalizar = true
 
 [node name="Dialogo Default" parent="." index="4"]
 dialogueResource = ExtResource("3_k867u")
+
+[node name="CanvasLayer" parent="." index="5"]
+layer = 5

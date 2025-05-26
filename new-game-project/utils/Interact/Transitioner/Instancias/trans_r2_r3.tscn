@@ -3,4 +3,4 @@
 [ext_resource type="PackedScene" uid="uid://53qcgarmhxng" path="res://utils/Interact/Transitioner/transitioner.tscn" id="1_rbjex"]
 
 [node name="TRANS R2 -> R3" instance=ExtResource("1_rbjex")]
-path_scene = "res://rooms/Instancias/room_6.tscn"
+room_id = "ROOM-6"

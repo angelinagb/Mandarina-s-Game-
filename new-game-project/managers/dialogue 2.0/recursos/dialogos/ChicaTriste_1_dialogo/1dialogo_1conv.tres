@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("2_la1bs")
-arreglo_de_textos = PackedStringArray("(La chica esta llorando desconsoladamente.)", "No puedo creer que hace año perdi a Galán, lo extraño tanto.", "Lo único que me haría sentir mejor es chocolate", "Pero me siento tan mal que no me puedo mover", "Podrías conseguirme chocolate por favor?")
+arreglo_de_textos = PackedStringArray("...")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"

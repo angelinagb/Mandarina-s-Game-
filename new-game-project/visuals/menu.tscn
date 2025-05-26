@@ -1,13 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://4y05v36udm0u"]
+[gd_scene load_steps=9 format=3 uid="uid://4y05v36udm0u"]
 
 [ext_resource type="Script" uid="uid://bp6qhe2jtedya" path="res://visuals/menu.gd" id="1_7whbs"]
 [ext_resource type="Texture2D" uid="uid://dkucmftlc07xx" path="res://art/menu/fondoMenu.png" id="2_7whbs"]
 [ext_resource type="PackedScene" uid="uid://c2yebh6jef4a5" path="res://visuals/abilities_menu/abilities_menu.tscn" id="3_cbfyr"]
 [ext_resource type="Texture2D" uid="uid://cu5w0oj4x5tos" path="res://art/menu/cross.png" id="4_7whbs"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7whbs"]
+bg_color = Color(0.645708, 0.573816, 0.526525, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_dmkcs"]
 font_size = 24
 shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8gxi"]
+bg_color = Color(0.584314, 0.576471, 0.670588, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_nqhns"]
 font_size = 24
@@ -20,26 +26,45 @@ script = ExtResource("1_7whbs")
 position = Vector2(180, 400)
 texture = ExtResource("2_7whbs")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 400.0
-grow_vertical = 2
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="Control"]
-layout_mode = 1
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -4.0
+offset_top = 57.0
+offset_bottom = -170.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Control/VBoxContainer2"]
+[node name="Contenedor Quest" type="VBoxContainer" parent="HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/Contenedor Quest"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7whbs")
+
+[node name="Titulo Quest" type="Label" parent="HBoxContainer/Contenedor Quest/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
 text = "Quest list"
 label_settings = SubResource("LabelSettings_dmkcs")
+
+[node name="Conteneder Inventario" type="VBoxContainer" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/Conteneder Inventario"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a8gxi")
+
+[node name="Titulo Inventario" type="Label" parent="HBoxContainer/Conteneder Inventario/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Inventario"
+label_settings = SubResource("LabelSettings_nqhns")
 
 [node name="Control2" type="Control" parent="."]
 layout_mode = 3
@@ -61,36 +86,12 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_vertical = 0
 
-[node name="Control3" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -112.0
-grow_horizontal = 0
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control3"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -3.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Control3/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-text = "Inventario"
-label_settings = SubResource("LabelSettings_nqhns")
-
 [node name="ExitButton" type="Button" parent="."]
-offset_left = 247.0
-offset_top = 587.0
-offset_right = 355.0
-offset_bottom = 695.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 110.0
+offset_bottom = 110.0
+scale = Vector2(0.45, 0.45)
 icon = ExtResource("4_7whbs")
 
 [connection signal="ability_button_pressed" from="Control2/MainMenu" to="." method="_on_main_menu_ability_button_pressed"]

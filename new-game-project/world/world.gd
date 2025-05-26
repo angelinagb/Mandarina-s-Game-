@@ -17,6 +17,8 @@ extends Node2D
 
 var current: Room
 
+@onready var current_room_id : String = "ROOM-4"
+
 var abilities_points: Dictionary
 var abilities_available_points: Dictionary
 
@@ -124,12 +126,11 @@ func _on_item_grabbed(item: Item) -> void:
 	item.end()
 
 func _on_transitioner_activated(transitioner: Transitioner) -> void:
-	var path_room: String = transitioner.get_path_room()
-	var id_prev_room: String = current.get_room_identifier()
-	change_room(path_room, id_prev_room)
+	var room_id: String = transitioner.get_room_id()
+	change_room(room_id, current_room_id)
+	current_room_id = room_id
 
 func _on_npc_talked_to(npc: Npc) -> void:
-	#PASUA TODO
 	npc.startDialogue()
 	if npc.quest_available():
 		npc.take_quest()
@@ -139,19 +140,19 @@ func initialize_room(path_room: String):
 	current = room_manager.initialize(path_room)
 	current.interactable_interacted.connect(_on_interactable_interacted)
 
-func change_room(path_room: String, id_prev_room: String):
+func change_room(new_room_id: String, current_room_id: String):
 	var room_save: Dictionary = {
-		"actual_room": path_room,
+		"actual_room": new_room_id,
 		"prev_room": ""
 	}
 	
 	save_setup(room_save)
 	
-	current = room_manager.change_room(path_room)
+	current = room_manager.change_room(new_room_id)
 	
 	current.interactable_interacted.connect(_on_interactable_interacted)
 	
-	player.move_to(current.get_position_spawn(id_prev_room))
+	player.move_to(current.get_position_spawn(current_room_id))
 
 func _on_menu_ability_button_pressed(ability_name: String) -> void:
 	if(ability_name!= null and abilities_points.get(ability_name)!= null):

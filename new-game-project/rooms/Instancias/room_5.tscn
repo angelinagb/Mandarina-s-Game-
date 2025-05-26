@@ -56,10 +56,10 @@ shape = SubResource("RectangleShape2D_bn5lb")
 [node name="defect" parent="Spawns" index="0"]
 position = Vector2(174, 415)
 
-[node name="room_6" type="Marker2D" parent="Spawns" index="1"]
+[node name="ROOM-6" type="Marker2D" parent="Spawns" index="1"]
 position = Vector2(168, 113)
 
-[node name="room_4" type="Marker2D" parent="Spawns" index="2"]
+[node name="ROOM-4" type="Marker2D" parent="Spawns" index="2"]
 position = Vector2(220, 665)
 
 [node name="TRANS R2 -> R3" parent="Interactables/Transitioners" index="0" instance=ExtResource("2_bitef")]

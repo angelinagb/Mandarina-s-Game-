@@ -2,9 +2,11 @@ class_name MenuManager extends CanvasLayer
 
 signal ability_button_pressed(ability_name: String)
 
-@onready var vbox := $Control3/VBoxContainer
+@onready var item_container := %"Conteneder Inventario"
+@onready var quest_container := %"Contenedor Quest"
+@export var elemento_quest : PackedScene
+@export var elemento_inventario : PackedScene
 
-@onready var vbox2 := $Control/VBoxContainer2
 
 var quest_manager: QuestManager
 var inventory_manager: InventoryManager
@@ -24,45 +26,23 @@ func initialize(quest_manager: QuestManager, inventory_manager: InventoryManager
 			add_quest_ui(quest)
 
 func add_item_inventory(item: Dictionary):
-
-	# Nodo contenedor para imagen + texto
-	var hbox := HBoxContainer.new()
+	var item_box := elemento_inventario.instantiate()
+	item_container.add_child(item_box)
 	
-	# Imagen del ítem
-	var icon := TextureRect.new()
 	var texture := load(item.get("path_img", ""))
-	icon.texture = texture
-	icon.custom_minimum_size = Vector2(32, 32)  # o el tamaño que quieras
-	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	hbox.add_child(icon)
-	
-	# Texto del ítem
-	var label := Label.new()
-	label.text = "- %s" % item.get("name", "Item sin nombre")
-	label.add_theme_color_override("font_color", Color(0, 0, 200))
-	
-	hbox.add_child(label)
-	
-	# Añadir al inventario
-	vbox.add_child(hbox)
+	item_box.set_icono(texture)
+	item_box.set_titulo("- %s" % item.get("name", "Item sin nombre"))
 
 func remove_item_inventory(item: Dictionary):
-	for child in vbox:
+	for child in item_container:
 		pass
 
 func add_quest_ui(quest: Quest) -> void:
-	var quest_box := VBoxContainer.new()
-	quest_box.name = quest.title  # útil para identificarlo luego
-	
-	var title_label := Label.new()
-	title_label.text = quest.title
-	quest_box.add_child(title_label)
-	title_label.add_theme_color_override("font_color", Color(0, 0, 200))
-	
-	var subtitle_label := Label.new()
-	subtitle_label.text = "    " + quest.get_current_step().text_to_do
-	subtitle_label.add_theme_color_override("font_color", Color(0, 0, 200))
-	quest_box.add_child(subtitle_label)
+	var quest_box := elemento_quest.instantiate()
+	quest_container.add_child(quest_box)
+	quest_box.set_nombre_elemento(quest.title)  # útil para identificarlo luego
+	quest_box.set_titulo(quest.title)
+	quest_box.set_paso("    " + quest.get_current_step().text_to_do)
 	
 	var step := quest.get_current_step()
 	if step:
@@ -77,12 +57,12 @@ func add_quest_ui(quest: Quest) -> void:
 
 			quest_box.add_child(step_label)
 	
-	vbox2.add_child(quest_box)
+	quest_container.add_child(quest_box)
 
 func on_quest_updated(quest: Quest) -> void:
-	var existing_box := vbox2.get_node_or_null(quest.title)
+	var existing_box := quest_container.get_node_or_null(quest.title)
 	if existing_box:
-		vbox2.remove_child(existing_box)
+		quest_container.remove_child(existing_box)
 		existing_box.queue_free()
 	
 	if not quest.is_completed():
