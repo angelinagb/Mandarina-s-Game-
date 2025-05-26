@@ -5,7 +5,7 @@
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_12u02"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2ppci"]
-font_color = Color(0, 0, 0.784314, 1)
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="upgradeButton" type="TextureButton"]
 offset_right = 64.0

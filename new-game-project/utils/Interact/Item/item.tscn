@@ -5,6 +5,3 @@
 
 [node name="Item" instance=ExtResource("1_uktik")]
 script = ExtResource("2_v6pl1")
-texture = null
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]

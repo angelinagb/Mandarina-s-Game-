@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogo" load_steps=2 format=3 uid="uid://b77cv5qq7vcac"]
+
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="1_sss4d"]
+
+[resource]
+script = ExtResource("1_sss4d")
+arreglo_de_textos = PackedStringArray("...es que no pense que era tan caro...", "...no, no, tuve que usar mercado crédito...", "...ni idea cuanto tengo en la sube...")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"

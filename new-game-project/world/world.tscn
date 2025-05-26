@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d3gvpmdls1flt"]
+[gd_scene load_steps=13 format=3 uid="uid://d3gvpmdls1flt"]
 
 [ext_resource type="Script" uid="uid://d1fqy48edo2m" path="res://world/world.gd" id="1_ioo17"]
 [ext_resource type="PackedScene" uid="uid://dadkd5r8y1uut" path="res://managers/room/room_manager.tscn" id="2_wse8f"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://coh7ji8k7tga5" path="res://managers/save/save_manager.tscn" id="9_udxuc"]
 [ext_resource type="PackedScene" uid="uid://disck758vf23b" path="res://PlayerB/PlayerB.tscn" id="10_fyhu2"]
 [ext_resource type="PackedScene" uid="uid://clp8vrd45i0n6" path="res://managers/event/event_manager.tscn" id="10_ov2xu"]
+[ext_resource type="PackedScene" uid="uid://bt2q2yopmfhag" path="res://visuals/Quest GUI/quest_element.tscn" id="11_ov2xu"]
+[ext_resource type="PackedScene" uid="uid://daau1addj1laj" path="res://visuals/inventario GUI/inventario_element.tscn" id="12_mad0u"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_ioo17")
@@ -29,6 +31,8 @@ script = ExtResource("1_ioo17")
 [node name="gui" parent="." instance=ExtResource("9_ov2xu")]
 
 [node name="menu" parent="." instance=ExtResource("4_ai45w")]
+elemento_quest = ExtResource("11_ov2xu")
+elemento_inventario = ExtResource("12_mad0u")
 
 [node name="PlayerB" parent="." instance=ExtResource("10_fyhu2")]
 

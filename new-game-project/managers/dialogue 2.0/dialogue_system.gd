@@ -11,7 +11,9 @@ signal dialogue_ended
 @export var boton_decision : PackedScene
 @onready var margin_container : PanelContainer = %PanelContainer
 @onready var v_box_container : VBoxContainer = %VBoxContainer
+@export var destruirse_al_finalizar : bool
 var decision_actual : Decision
+@export var vacio : bool
 
 ##Recurso con información sobre el diálogo a mostrar
 @export var dialogueResource : Dialogo
@@ -26,14 +28,15 @@ var current_state : States
 enum States {ABRIENDO, MOSTRANDO_TEXTO, TEXTO_MOSTRADO, CERRANDO}
 
 
+
 func _ready() -> void:
 	canvas_layer.hide()
 	inicializar_conversacion()
 	
-	#ESTO ESTA SOLO PARA TESTEAR LA ESCENA, SE TIENE QUE COMENTAR Y LLAMAR DESDE OTRO
-	#SCRIPT START PARA COMENZAR EL DIALOGO!
-	start()
-	
+func esta_vacio() -> bool:
+	return vacio
+
+
 func inicializar_conversacion() -> void:
 	text_count = dialogueResource.get_dialogue_count()
 	if text_count > 0:
@@ -59,13 +62,15 @@ func mostrar_decision():
 
 ##Comienza el dialogo, si layer es mayor que 0 se le asigna ese valor al canvas_layer
 func start(layer: float = -1):
-	if layer > 0:
-		canvas_layer.layer = layer
-	if text_count > 0:
-		canvas_layer.show()
-		anim_player.play("fade_in")
-	else:
-		destruir()
+	if vacio == false:
+		if layer > 0:
+			canvas_layer.layer = layer
+		if text_count > 0:
+			inicializar_conversacion()
+			canvas_layer.show()
+			anim_player.play("fade_in")
+		else:
+			destruir()
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and current_state == States.TEXTO_MOSTRADO:
@@ -106,7 +111,8 @@ func next_text():
 		
 func destruir():
 	dialogue_ended.emit()
-	queue_free()
+	if destruirse_al_finalizar == true:
+		queue_free()
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

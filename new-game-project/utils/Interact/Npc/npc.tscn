@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dymo47m6k6uqb"]
+[gd_scene load_steps=6 format=3 uid="uid://dymo47m6k6uqb"]
 
 [ext_resource type="PackedScene" uid="uid://mvhkwj4slyyt" path="res://utils/Interact/Interactable/interactable.tscn" id="1_k5sc4"]
 [ext_resource type="Script" uid="uid://dwqxbk43d6bwm" path="res://utils/Interact/Npc/npc.gd" id="2_x63vy"]
+[ext_resource type="PackedScene" uid="uid://bqscndmb0v4br" path="res://managers/dialogue 2.0/dialogue_system.tscn" id="3_ghgua"]
+[ext_resource type="PackedScene" uid="uid://iuedtyho3pq5" path="res://visuals/npc GUI/npc_quest_indicador.tscn" id="4_mkqov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x63vy"]
 size = Vector2(32, 32)
 
 [node name="Npc" instance=ExtResource("1_k5sc4")]
 script = ExtResource("2_x63vy")
-dialogues = Array[String]([])
 quest = null
 npc_name = ""
 
@@ -20,10 +21,19 @@ scale = Vector2(3, 3)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
 shape = SubResource("RectangleShape2D_x63vy")
 
-[node name="npc_name" type="Label" parent="." index="3"]
-offset_left = -16.0
-offset_top = -77.0
-offset_right = 24.0
-offset_bottom = -54.0
+[node name="Dialogo Quest" parent="." index="3" instance=ExtResource("3_ghgua")]
+
+[node name="Dialogo Default" parent="." index="4" instance=ExtResource("3_ghgua")]
+
+[node name="NpcQuestIndicador" parent="." index="5" instance=ExtResource("4_mkqov")]
+custom_minimum_size = Vector2(32, 32)
+offset_left = 1.0
+offset_top = -53.0
+offset_right = 33.0
+offset_bottom = -21.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="dialogue_ended" from="Dialogo Quest" to="." method="_on_dialogo_quest_dialogue_ended"]
+[connection signal="dialogue_ended" from="Dialogo Default" to="." method="_on_dialogo_default_dialogue_ended"]

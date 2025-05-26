@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogo" load_steps=2 format=3 uid="uid://cdsyibewfj2nv"]
+
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="1_osmmq"]
+
+[resource]
+script = ExtResource("1_osmmq")
+arreglo_de_textos = PackedStringArray("Sí, vendemos chocolate, $2000 esta", "...queres que te lo regale...", "...porque se le murio el hamster a una chica...", "No.", "¿Donde guardo mi enorme stock de chocolate? En mi casa obviamente", "Vos sabes que no me acuerdo si cerre la puerta con llave", "Para, ¿Por qué te estoy diciendo esto a vos?", "Sí, mi casa esta dentro de la facultad... es una historia larga ")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"

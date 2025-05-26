@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://iuedtyho3pq5"]
+
+[ext_resource type="Script" uid="uid://bcm43i7c25blm" path="res://visuals/npc GUI/npc_quest_indicador.gd" id="1_4osju"]
+[ext_resource type="Texture2D" uid="uid://cx2x15v56yxlp" path="res://art/menu/forma-rectangular.png" id="2_yigmp"]
+
+[node name="NpcQuestIndicador" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 2.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4osju")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -15.0
+offset_right = 48.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_yigmp")
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

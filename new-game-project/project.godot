@@ -24,10 +24,9 @@ SaveData="*res://selector de estadisticas/Scripts/mundo.gd"
 
 [display]
 
-window/size/viewport_width=512
-window/size/viewport_height=512
+window/size/viewport_width=360
+window/size/viewport_height=800
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 
 [editor_plugins]
 

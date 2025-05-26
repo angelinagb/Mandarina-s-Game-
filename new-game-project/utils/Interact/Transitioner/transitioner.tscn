@@ -5,4 +5,4 @@
 
 [node name="Transitioner" instance=ExtResource("1_8xbec")]
 script = ExtResource("1_21cju")
-path_scene = ""
+room_id = ""

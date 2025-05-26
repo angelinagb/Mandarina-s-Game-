@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogo" load_steps=2 format=3 uid="uid://bx0mclgqg6pmn"]
+
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="1_b76vu"]
+
+[resource]
+script = ExtResource("1_b76vu")
+arreglo_de_textos = PackedStringArray("Solo un chocolate podria recuperar mi fe en el mundo", "Por favor, ayudame")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
