@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2gcfxowd0lqd"]
+
+[ext_resource type="PackedScene" uid="uid://i3grwt0nk1ii" path="res://puzzles/PuzzleInstance/PuzzleCircuito/CircuitPieces/circuit_piece.tscn" id="1_ba0ld"]
+[ext_resource type="Texture2D" uid="uid://c6y0kxn1fdkcs" path="res://puzzles/PuzzleInstance/PuzzleCircuito/CircuitPieces/Cruz/cruz.png" id="2_5dbpn"]
+
+[node name="CircuitCruz" instance=ExtResource("1_ba0ld")]
+tipo = "cruz"
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_5dbpn")

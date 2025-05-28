@@ -1,6 +1,8 @@
 class_name Puzzle extends Interactable
 
 
+signal puzzle_result(result: bool)
+
 var completado : bool = false
 var player_in_range: bool
 @export var puzzle_tcsn : PackedScene
@@ -10,6 +12,9 @@ func _ready() -> void:
 	my_type = "puzzle"
 	super._ready()
 
+
+func on_puzzle_result(result:bool):
+	puzzle_result.emit(result)
 
 func _on_area_2d_body_entered(body: PlayerB):
 	player_in_range = true 
