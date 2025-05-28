@@ -27,7 +27,7 @@ func resume_player():
 
 #seria lo equiv a play_animation
 func update_animation_parameters(dir: Vector2, state: String):
-	var anim = ""
+	var anim = "_west"
 	if dir.x == 0 and dir.y == -1:
 		anim = "_west" #315
 	elif dir.x == 0 and dir.y == 1:

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cemxq83ayi3jv"]
+
+[ext_resource type="PackedScene" uid="uid://3v1aqvnidp5b" path="res://utils/Interact/Item/item.tscn" id="1_gw7yd"]
+[ext_resource type="Texture2D" uid="uid://bl0rfedpa8dmv" path="res://art/items/2dClassroomAssetPackByStyloo/Computer Room/Computer Room Spritesheet 6.png" id="2_ppa37"]
+
+[node name="Item" instance=ExtResource("1_gw7yd")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ppa37")
+region_enabled = true
+region_rect = Rect2(776, 553, 31, 22)

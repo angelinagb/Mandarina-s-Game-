@@ -2030,7 +2030,7 @@ modulate = Color(0.589096, 0.589096, 0.589095, 1)
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_v0wow")
-animation = &"idle_west"
+animation = &"walk_west"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true

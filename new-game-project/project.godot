@@ -35,7 +35,8 @@ folder_colors={
 "res://IsoRooms/": "pink",
 "res://IsoRooms/Objetos/": "gray",
 "res://PianoPuzzle/": "pink",
-"res://PlayerB/": "pink"
+"res://PlayerB/": "pink",
+"res://QuestPrincipales/": "green"
 }
 
 [input]
