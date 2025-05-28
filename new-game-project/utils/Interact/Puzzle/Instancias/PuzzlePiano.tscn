@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://co0hnolfc7tli"]
+
+[ext_resource type="PackedScene" uid="uid://n4fxclpucmyj" path="res://utils/Interact/Puzzle/Puzzle.tscn" id="1_5f2r2"]
+[ext_resource type="PackedScene" uid="uid://wbl6odje5t52" path="res://PianoPuzzle/Scenes/piano_game.tscn" id="2_nvi6s"]
+[ext_resource type="Texture2D" uid="uid://bvjp6dlyu6i6q" path="res://art/items/caja_cisne.png" id="3_86x8g"]
+
+[node name="Puzzle" instance=ExtResource("1_5f2r2")]
+puzzle_tcsn = ExtResource("2_nvi6s")
+id = "pianoPuzzle"
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-4, -1)
+scale = Vector2(0.0613666, 0.0577916)
+texture = ExtResource("3_86x8g")
+
+[node name="Area2D" parent="." index="1"]
+position = Vector2(-9, -11)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(4.25, 13.9375)
+
+[node name="ClosePuzzle" parent="." index="2"]
+offset_left = 11.0
+offset_top = -14.0
+offset_right = 51.0
+offset_bottom = 26.0
+
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

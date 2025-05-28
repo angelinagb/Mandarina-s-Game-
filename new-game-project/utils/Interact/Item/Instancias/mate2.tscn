@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bter4srclm3xg"]
+
+[ext_resource type="PackedScene" uid="uid://3v1aqvnidp5b" path="res://utils/Interact/Item/item.tscn" id="1_73db4"]
+[ext_resource type="Texture2D" uid="uid://bx1ijhl76vl0w" path="res://art/items/mate.png" id="2_h1fls"]
+
+[node name="Item" instance=ExtResource("1_73db4")]
+id = "Mate"
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_h1fls")

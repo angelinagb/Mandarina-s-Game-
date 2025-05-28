@@ -32,9 +32,15 @@ func _process(delta: float) -> void:
 "
 
 [node name="Piano_MiniGame" type="Node2D"]
+z_index = 9
 script = ExtResource("1_4aced")
 metadata/_edit_vertical_guides_ = [-161.0, -356.0]
 metadata/_edit_horizontal_guides_ = [88.0, 0.0]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 364.0
+offset_bottom = 797.0
+color = Color(0.129412, 0.129412, 0.129412, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_top = 4.0
@@ -47,6 +53,7 @@ expand_mode = 3
 script = SubResource("GDScript_ibkju")
 
 [node name="White_Keys" type="Node2D" parent="."]
+z_index = 6
 position = Vector2(43.7, 0.699997)
 scale = Vector2(0.713097, 0.998511)
 
@@ -58,6 +65,7 @@ offset_bottom = 4.43481
 scale = Vector2(0.3, 0.3)
 note = "g4"
 stream = ExtResource("3_y6oj7")
+metadata/_edit_use_anchors_ = true
 
 [node name="A4" parent="White_Keys" instance=ExtResource("2_7f5js")]
 anchors_preset = 0
@@ -80,6 +88,7 @@ offset_bottom = 4.25532
 scale = Vector2(0.3, 0.3)
 note = "b4"
 stream = ExtResource("5_0pfgx")
+metadata/_edit_use_anchors_ = true
 
 [node name="C5" parent="White_Keys" instance=ExtResource("2_7f5js")]
 offset_left = 127.66
@@ -89,6 +98,7 @@ offset_bottom = 4.25532
 scale = Vector2(0.3, 0.3)
 note = "c5"
 stream = ExtResource("6_khsfd")
+metadata/_edit_use_anchors_ = true
 
 [node name="D5" parent="White_Keys" instance=ExtResource("2_7f5js")]
 offset_left = 190.426
@@ -98,6 +108,7 @@ offset_bottom = 4.25532
 scale = Vector2(0.3, 0.3)
 note = "d5"
 stream = ExtResource("7_hdnhe")
+metadata/_edit_use_anchors_ = true
 
 [node name="E5" parent="White_Keys" instance=ExtResource("2_7f5js")]
 offset_left = 252.128
@@ -107,6 +118,7 @@ offset_bottom = 4.25532
 scale = Vector2(0.3, 0.3)
 note = "e5"
 stream = ExtResource("8_f7htt")
+metadata/_edit_use_anchors_ = true
 
 [node name="F5" parent="White_Keys" instance=ExtResource("2_7f5js")]
 offset_left = 313.83
@@ -116,6 +128,7 @@ offset_bottom = 4.25532
 scale = Vector2(0.3, 0.3)
 note = "f5"
 stream = ExtResource("9_d2qyk")
+metadata/_edit_use_anchors_ = true
 
 [node name="G5" parent="White_Keys" instance=ExtResource("2_7f5js")]
 offset_left = 375.532
@@ -125,9 +138,10 @@ offset_bottom = 4.25532
 scale = Vector2(0.3, 0.3)
 note = "g5"
 stream = ExtResource("10_2q0ka")
+metadata/_edit_use_anchors_ = true
 
 [node name="Black_Keys" type="Node2D" parent="."]
-z_index = 1
+z_index = 13
 position = Vector2(32, -100)
 scale = Vector2(0.356548, 0.499256)
 
@@ -143,6 +157,7 @@ scale = Vector2(0.3, 0.3)
 is_black = true
 note = "g4#"
 stream = ExtResource("11_20yyb")
+metadata/_edit_use_anchors_ = true
 
 [node name="a4#" parent="Black_Keys" instance=ExtResource("2_7f5js")]
 offset_left = 136.0
@@ -153,6 +168,7 @@ scale = Vector2(0.3, 0.3)
 is_black = true
 note = "a4#"
 stream = ExtResource("12_4o33c")
+metadata/_edit_use_anchors_ = true
 
 [node name="c5#" parent="Black_Keys" instance=ExtResource("2_7f5js")]
 offset_left = 385.383
@@ -163,6 +179,7 @@ scale = Vector2(0.3, 0.3)
 is_black = true
 note = "c5#"
 stream = ExtResource("13_fgr7n")
+metadata/_edit_use_anchors_ = true
 
 [node name="d5#" parent="Black_Keys" instance=ExtResource("2_7f5js")]
 offset_left = 512.0
@@ -173,6 +190,7 @@ scale = Vector2(0.3, 0.3)
 is_black = true
 note = "d5#"
 stream = ExtResource("14_hyoph")
+metadata/_edit_use_anchors_ = true
 
 [node name="f5#" parent="Black_Keys" instance=ExtResource("2_7f5js")]
 offset_left = 760.0
@@ -183,6 +201,10 @@ scale = Vector2(0.3, 0.3)
 is_black = true
 note = "f5#"
 stream = ExtResource("15_47kd8")
+metadata/_edit_use_anchors_ = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2(-1, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(182, 398)

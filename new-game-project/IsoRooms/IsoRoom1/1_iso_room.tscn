@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bt1w2mhrlrldg"]
+[gd_scene load_steps=9 format=3 uid="uid://bt1w2mhrlrldg"]
 
 [ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_r6l0j"]
 [ext_resource type="PackedScene" uid="uid://dfp282bcn4bat" path="res://IsoRooms/IsoRoom1/1_base_tiles.tscn" id="2_6jolm"]
@@ -7,20 +7,22 @@
 [ext_resource type="PackedScene" uid="uid://dtgjbrj2ss74o" path="res://utils/Interact/Transitioner/Instancias/trans_r1_r2.tscn" id="4_ims64"]
 [ext_resource type="PackedScene" uid="uid://bucn0vs17tsw2" path="res://utils/Interact/Item/Instancias/Mate.tscn" id="5_1a3g4"]
 [ext_resource type="PackedScene" uid="uid://cjkpau08dmw6l" path="res://utils/Interact/Npc/Instancias/ChicaTriste.tscn" id="5_jm6ep"]
+[ext_resource type="PackedScene" uid="uid://co0hnolfc7tli" path="res://utils/Interact/Puzzle/Instancias/PuzzlePiano.tscn" id="8_lrgrb"]
 
 [node name="IsoRoom" instance=ExtResource("1_r6l0j")]
+y_sort_enabled = true
 room_identifier = "ROOM-4"
 
 [node name="BaseTiles" parent="." index="0" instance=ExtResource("2_6jolm")]
 
 [node name="defect" parent="Spawns" index="0"]
-position = Vector2(-331, -91)
+position = Vector2(288, -267)
 
 [node name="ROOM-5" type="Marker2D" parent="Spawns" index="1"]
 position = Vector2(230, -370)
 
 [node name="Item" parent="Interactables/Items" index="0" instance=ExtResource("3_33ucu")]
-position = Vector2(3, -19)
+position = Vector2(-13, -21)
 rotation = -0.706221
 scale = Vector2(0.662861, 0.85943)
 
@@ -33,7 +35,7 @@ region_enabled = true
 region_rect = Rect2(109, 57, 410, 376)
 
 [node name="Mate" parent="Interactables/Items" index="2" instance=ExtResource("5_1a3g4")]
-position = Vector2(387, -127)
+position = Vector2(142, -297)
 
 [node name="Trans R1 -> R2" parent="Interactables/Transitioners" index="0" instance=ExtResource("4_ims64")]
 position = Vector2(289, -420)
@@ -43,6 +45,11 @@ scale = Vector2(4.79825, 1.66767)
 [node name="Chica Triste" parent="Interactables/Npcs" index="0" instance=ExtResource("5_jm6ep")]
 position = Vector2(125, -468)
 
+[node name="Puzzle" parent="Interactables/Puzzles" index="0" instance=ExtResource("8_lrgrb")]
+position = Vector2(540, -230)
+
 [connection signal="interacted" from="Interactables/Items/Item" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Items/Mate" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/Trans R1 -> R2" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/Chica Triste" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Puzzles/Puzzle" to="." method="_on_interactable_interacted"]

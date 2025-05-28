@@ -16,3 +16,5 @@ script = ExtResource("1_lguep")
 [node name="Transitioners" type="Node" parent="Interactables"]
 
 [node name="Npcs" type="Node" parent="Interactables"]
+
+[node name="Puzzles" type="Node" parent="Interactables"]

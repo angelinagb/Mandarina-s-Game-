@@ -124,14 +124,5 @@ tile_set = SubResource("TileSet_xlc22")
 [node name="surfaces" parent="." index="4"]
 position = Vector2(132, -7)
 scale = Vector2(-0.678538, 0.444)
-tile_map_data = PackedByteArray("AAD8//z/AQAAAAAAAAD9////AQAAAAAAAAD9/wIAAQAAAAAAAAD+//z/AAAAAAAAABD/////AAAAAAAAABD//wIAAAAAAAAAABA=")
+tile_map_data = PackedByteArray("AAD8//z/AQAAAAAAAAD9////AQAAAAAAAAD9/wIAAQAAAAAAAAD+//z/AAAAAAAAABD/////AAAAAAAAABD//wIAAAAAAAAAABD5////AAADAAAAAAA=")
 tile_set = SubResource("TileSet_xlc22")
-
-[node name="CafeteriaFirstSpritesheet8" type="Sprite2D" parent="." index="5"]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(601, -156)
-scale = Vector2(0.781711, 0.548114)
-texture = ExtResource("2_sj8p6")
-region_enabled = true
-region_rect = Rect2(528, 33, 437, 376)

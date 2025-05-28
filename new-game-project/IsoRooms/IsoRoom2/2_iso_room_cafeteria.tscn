@@ -52,7 +52,7 @@ position = Vector2(-329, -219)
 
 [node name="Vendedor" parent="Interactables/Npcs" index="2" instance=ExtResource("7_uylwv")]
 y_sort_enabled = true
-position = Vector2(585, -280)
+position = Vector2(632, -240)
 scale = Vector2(1.2, 1.5)
 skew = 0.020944
 

@@ -115,6 +115,7 @@ func _on_interactable_interacted(interactable: Interactable):
 	#Falta guardar estado de items al cambiar de rooms
 	#SEPARAR INTERACTABLES EN FASES, FASE 1, 2, ETC
 	print("señal conectada")
+	print(interactable.my_type)
 	match interactable.my_type:
 		"item":
 			_on_item_grabbed(interactable)
@@ -122,9 +123,11 @@ func _on_interactable_interacted(interactable: Interactable):
 			_on_transitioner_activated(interactable)
 		"npc":
 			_on_npc_talked_to(interactable)
-			
+		"puzzle":
+			print("match ok")
+			_on_puzzle_begin(interactable)
 		_:
-			pass
+			print("no tengo interactuable" + interactable.my_type)
 	event.interactable_triggered(interactable.id)
 	
 
@@ -143,6 +146,19 @@ func _on_npc_talked_to(npc: Npc) -> void:
 	if npc.quest_available():
 		npc.take_quest()
 		quest.add_quest(npc.quest)
+		
+func _on_puzzle_begin(puzzle : Puzzle):
+		var dapuzzle = puzzle.puzzle_tcsn.instantiate()
+		add_child(dapuzzle)
+		print("llega")
+		show_behind_parent
+		#player.pause_player()
+		#var screen_size = get_viewport_rect().size
+		#puzzle_instance.position = screen_size / 2
+#		puzzle.monitoring = false
+		dapuzzle.on_puzzle_solved.connect(on_puzzle_solved)
+		dapuzzle.showp()
+		gui.showbehind()
 
 func initialize_room(path_room: String):
 	current = room_manager.initialize(path_room)
@@ -173,3 +189,7 @@ func _on_gui_button_open_menu_pressed() -> void:
 	$menu.visible = true
 	get_tree().paused = true
 	$menu.process_mode = Node.PROCESS_MODE_ALWAYS
+	
+func on_puzzle_solved(Reward: String) :
+	inventory.item_grabbed(Reward)
+	player.resume_player()

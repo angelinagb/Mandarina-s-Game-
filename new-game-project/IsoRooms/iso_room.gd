@@ -15,4 +15,4 @@ func get_position_spawn(name_spawn: String) -> Vector2:
 
 func _on_interactable_interacted(interactable: Interactable):
 	interactable_interacted.emit(interactable)
-	print("disparando señal...")
+	print("disparando señal desde la room")

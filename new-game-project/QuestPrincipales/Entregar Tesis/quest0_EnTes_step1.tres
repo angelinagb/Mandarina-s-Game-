@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_bwsco")
-text_to_do = ""
+text_to_do = "Dirígete al departamento de investigación"
 necessary_interactables = {}
 metadata/_custom_type_script = "uid://c0nhxnmv56tui"

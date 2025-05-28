@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b7vuer4est3c1" path="res://utils/Interact/Npc/Instancias/Alumno_1.tscn" id="5_v2ge4"]
 
 [node name="IsoRoom" instance=ExtResource("1_sskki")]
+y_sort_enabled = true
 room_identifier = "ROOM-6"
 metadata/_edit_lock_ = true
 
