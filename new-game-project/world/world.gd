@@ -1,7 +1,7 @@
 extends Node2D
 
 # LOGICA JUGABLE
-@onready var player			: PlayerB 			= $PlayerB
+@onready var player			: PlayerB 
 @onready var room_manager	: RoomManager 		= $RoomManager
 @onready var inventory		: InventoryManager 	= $InventoryManager
 @onready var quest			: QuestManager 		= $QuestManager
@@ -99,9 +99,9 @@ func load_setup():
 	
 	quest.initialize(event, [])
 	
-	initialize_room(room_setup.actual_room)
+	initialize_room(room_setup.actual_room, room_setup.prev_room)
 	
-	player.initialize(current.get_position_spawn(room_setup.prev_room))
+	#player.initialize(current.get_position_spawn(room_setup.prev_room))
 	
 	dialogue.initialize()
 	menu.initialize(quest, inventory, items, [])
@@ -160,9 +160,11 @@ func _on_puzzle_begin(puzzle : Puzzle):
 		dapuzzle.showp()
 		gui.showbehind()
 
-func initialize_room(path_room: String):
+func initialize_room(path_room: String, temp: String ):
 	current = room_manager.initialize(path_room)
 	current.interactable_interacted.connect(_on_interactable_interacted)
+	player = current.get_player()
+	player.initialize(current.get_position_spawn(temp))
 
 func change_room(new_room_id: String, current_room_id: String):
 	var room_save: Dictionary = {
@@ -173,6 +175,8 @@ func change_room(new_room_id: String, current_room_id: String):
 	save_setup(room_save)
 	
 	current = room_manager.change_room(new_room_id)
+	
+	player = current.get_player()
 	
 	current.interactable_interacted.connect(_on_interactable_interacted)
 	

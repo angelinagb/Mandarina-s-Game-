@@ -1,6 +1,10 @@
 class_name  IsoRoom  extends Node2D
 
 signal interactable_interacted(interactable: Interactable)
+
+@onready var player_b: PlayerB = $Player/PlayerB
+
+
 @export var room_identifier: String
 
 func _ready(): pass
@@ -16,3 +20,6 @@ func get_position_spawn(name_spawn: String) -> Vector2:
 func _on_interactable_interacted(interactable: Interactable):
 	interactable_interacted.emit(interactable)
 	print("disparando señal desde la room")
+
+func get_player() -> PlayerB:
+	return player_b

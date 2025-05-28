@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dp1j1sh86uh60"]
 
-[ext_resource type="Script" uid="uid://8l51kftvbjh" path="res://puzzles/PuzzleInstance/PuzzleReaccionesQuimicas/puzzle_quimica.gd" id="1_jgy3u"]
-[ext_resource type="Texture2D" uid="uid://m8tfot3ejea3" path="res://puzzles/PuzzleInstance/PuzzleReaccionesQuimicas/tabla-periodica-grande-fondo-blanco-192641164.png" id="2_kfvf7"]
+[ext_resource type="Script" uid="uid://8l51kftvbjh" path="res://utils/Interact/Puzzle/PuzzleInstance_Franco/PuzzleReaccionesQuimicas/puzzle_quimica.gd" id="1_jgy3u"]
+[ext_resource type="Texture2D" uid="uid://m8tfot3ejea3" path="res://utils/Interact/Puzzle/PuzzleInstance_Franco/PuzzleReaccionesQuimicas/tabla-periodica-grande-fondo-blanco-192641164.png" id="2_kfvf7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_u7tt2"]
 font_size = 20
@@ -12,11 +12,13 @@ font_size = 20
 [sub_resource type="LabelSettings" id="LabelSettings_3jpu8"]
 font_size = 200
 
-[node name="PuzzleReaccionesQuimicas" type="Node"]
+[node name="PuzzleReaccionesQuimicas" type="Node2D"]
+position = Vector2(4, 530)
 script = ExtResource("1_jgy3u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1170, 540)
+position = Vector2(174, -384.762)
+scale = Vector2(0.174, 0.223203)
 texture = ExtResource("2_kfvf7")
 
 [node name="Control_C" type="Control" parent="."]
@@ -37,6 +39,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 264.24
+offset_top = -462.66
+offset_right = 264.24
+offset_bottom = -454.66
 grow_horizontal = 2
 grow_vertical = 2
 flat = true
@@ -57,6 +63,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 270.5
+offset_top = -457.84
+offset_right = 278.5
+offset_bottom = -450.48
 grow_horizontal = 2
 grow_vertical = 2
 flat = true
@@ -77,6 +87,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 280.78
+offset_top = -439.4
+offset_right = 288.4
+offset_bottom = -431.4
 grow_horizontal = 2
 grow_vertical = 2
 flat = true
@@ -97,6 +111,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 22.84
+offset_top = -486.12
+offset_right = 30.84
+offset_bottom = -478.12
 grow_horizontal = 2
 grow_vertical = 2
 flat = true
@@ -107,18 +125,23 @@ anchor_left = 0.767
 anchor_top = 0.155
 anchor_right = 0.809
 anchor_bottom = 0.246
-offset_left = 0.219971
-offset_top = -0.399994
-offset_right = 0.939941
-offset_bottom = 0.320007
+offset_left = 30.0
+offset_top = -251.0
+offset_right = 46.0
+offset_bottom = -236.0
 
 [node name="Button_O" type="Button" parent="Control_O"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 253.0
+offset_top = -216.0
+offset_right = 260.28
+offset_bottom = -208.72
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.690624, 0.869826)
 flat = true
 
 [node name="Control" type="Control" parent="."]
@@ -127,7 +150,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2170.0
+offset_left = 181.0
+offset_top = -257.0
+offset_right = 351.0
+offset_bottom = -221.0
 grow_horizontal = 2
 grow_vertical = 2
 

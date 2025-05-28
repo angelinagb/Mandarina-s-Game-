@@ -14,8 +14,8 @@ signal on_puzzle_solved(Reward: String)
 @onready var camera_2d: Camera2D = $Camera2D
 
 
-var win_sound = preload("res://PianoPuzzle/Sounds/sound_effects/win.wav")
-var error_sound = preload("res://PianoPuzzle/Sounds/sound_effects/error.wav")
+var win_sound = preload("res://utils/Interact/Puzzle/PianoPuzzle/Sounds/sound_effects/win.wav")
+var error_sound = preload("res://utils/Interact/Puzzle/PianoPuzzle/Sounds/sound_effects/error.wav")
 
 var target_sequence: Array[String] = ["F5#", "B4", "C5#", "D5", "E5", "F5#", "D5","F5#","D5","F5#","B4","D5","B4","G4","D5","B4"]
 

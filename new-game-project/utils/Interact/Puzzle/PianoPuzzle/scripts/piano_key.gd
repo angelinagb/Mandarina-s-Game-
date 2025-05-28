@@ -13,10 +13,10 @@ class_name PianoKey extends TextureButton
 
 signal key_pressed(note: String)
 
-var whiteoff = preload("res://PianoPuzzle/sprites/whiteunpressed.png")
-var whiteon = preload("res://PianoPuzzle/sprites/whitepressed.png")
-var blackoff = preload("res://PianoPuzzle/sprites/blackunpressed.png")
-var blackon = preload("res://PianoPuzzle/sprites/blackpressed.png")
+var whiteoff = preload("res://utils/Interact/Puzzle/PianoPuzzle/sprites/whiteunpressed.png")
+var whiteon = preload("res://utils/Interact/Puzzle/PianoPuzzle/sprites/whitepressed.png")
+var blackoff = preload("res://utils/Interact/Puzzle/PianoPuzzle/sprites/blackunpressed.png")
+var blackon = preload("res://utils/Interact/Puzzle/PianoPuzzle/sprites/blackpressed.png")
 
 func _ready() -> void:
 	label.text = note
