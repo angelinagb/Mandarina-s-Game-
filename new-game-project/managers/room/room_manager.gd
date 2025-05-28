@@ -2,12 +2,12 @@ class_name RoomManager extends Node
 
 var can_change_room: bool = true
 
-var current: Room = null
+var current: Node2D = null
 
 var rooms = {
-	"ROOM-4": "res://rooms/Instancias/room_4.tscn",
-	"ROOM-5": "res://rooms/Instancias/room_5.tscn",
-	"ROOM-6": "res://rooms/Instancias/room_6.tscn"
+	"ROOM-4":"res://IsoRooms/IsoRoom1/1_iso_room.tscn" ,
+	"ROOM-5": "res://IsoRooms/IsoRoom2/2_iso_room_cafeteria.tscn",
+	"ROOM-6": "res://IsoRooms/IsoRoom3/3_iso_room.tscn"
 }
 
 func get_room(room_id : String) -> String:
@@ -22,7 +22,7 @@ func initialize(room_path: String):
 	add_child(current)
 	return current
 
-func change_room(room_id: String) -> Room:
+func change_room(room_id: String) -> IsoRoom:
 	if (!can_change_room):
 		return
 	can_change_room = false

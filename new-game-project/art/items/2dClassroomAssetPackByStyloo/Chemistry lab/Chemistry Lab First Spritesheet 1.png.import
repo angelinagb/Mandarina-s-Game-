@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c088s4ksnp4uk"
-path="res://.godot/imported/Chemistry Lab First Spritesheet 1.png-9018ec7c64df20532c97f863563c7a32.ctex"
+path="res://.godot/imported/Chemistry Lab First Spritesheet 1.png-06cc9484b63826299fd555f612b920a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Habitacion1/Objetos/2dClassroomAssetPackByStyloo/Chemistry lab/Chemistry Lab First Spritesheet 1.png"
-dest_files=["res://.godot/imported/Chemistry Lab First Spritesheet 1.png-9018ec7c64df20532c97f863563c7a32.ctex"]
+source_file="res://art/items/2dClassroomAssetPackByStyloo/Chemistry lab/Chemistry Lab First Spritesheet 1.png"
+dest_files=["res://.godot/imported/Chemistry Lab First Spritesheet 1.png-06cc9484b63826299fd555f612b920a4.ctex"]
 
 [params]
 

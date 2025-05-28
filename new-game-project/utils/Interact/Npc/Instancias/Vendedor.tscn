@@ -1,13 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://caf5h04ulskmr"]
 
 [ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_f3ya5"]
-[ext_resource type="Texture2D" uid="uid://bx1ijhl76vl0w" path="res://art/items/mate.png" id="2_ddq6u"]
+[ext_resource type="Texture2D" uid="uid://gpqvpe334ymm" path="res://art/characters/iso/npc/Trader_npc.png" id="2_j5561"]
 [ext_resource type="Resource" uid="uid://cdsyibewfj2nv" path="res://managers/dialogue 2.0/recursos/dialogos/vendedor_de_chocolate/vendedor_1.tres" id="3_j5561"]
 
 [node name="Vendedor" instance=ExtResource("1_f3ya5")]
 
 [node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("2_ddq6u")
+position = Vector2(0, 1.90735e-06)
+scale = Vector2(3, 1.5)
+texture = ExtResource("2_j5561")
+hframes = 6
 
 [node name="Dialogo Quest" parent="." index="3"]
 vacio = true

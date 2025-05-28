@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4kokfybi0077"]
+
+[ext_resource type="Script" uid="uid://8bl8ox2653cv" path="res://IsoRooms/iso_room.gd" id="1_lguep"]
+
+[node name="IsoRoom" type="Node2D"]
+script = ExtResource("1_lguep")
+
+[node name="Spawns" type="Node" parent="."]
+
+[node name="defect" type="Marker2D" parent="Spawns"]
+
+[node name="Interactables" type="Node" parent="."]
+
+[node name="Items" type="Node" parent="Interactables"]
+
+[node name="Transitioners" type="Node" parent="Interactables"]
+
+[node name="Npcs" type="Node" parent="Interactables"]

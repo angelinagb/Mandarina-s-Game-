@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://3g08138nqpuj"]
+
+[ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_q8i2c"]
+[ext_resource type="PackedScene" uid="uid://cbd4cnklmn8ew" path="res://IsoRooms/IsoRoom2/2_base_tiles.tscn" id="2_npoke"]
+[ext_resource type="PackedScene" uid="uid://r18o0a1jywmg" path="res://utils/Interact/Transitioner/Instancias/trans_r2_r1.tscn" id="3_7vu3n"]
+[ext_resource type="PackedScene" uid="uid://bucn0vs17tsw2" path="res://utils/Interact/Item/Instancias/Mate.tscn" id="3_gjd7k"]
+[ext_resource type="PackedScene" uid="uid://casn7bf6nq44q" path="res://utils/Interact/Transitioner/Instancias/trans_r2_r3.tscn" id="4_kqm18"]
+[ext_resource type="PackedScene" uid="uid://d0flo6jple31q" path="res://utils/Interact/Npc/Instancias/Alumna_2.tscn" id="5_kqm18"]
+[ext_resource type="PackedScene" uid="uid://cv8f0bg0ein8h" path="res://utils/Interact/Npc/Instancias/Alumna_1.tscn" id="6_gjd7k"]
+[ext_resource type="PackedScene" uid="uid://caf5h04ulskmr" path="res://utils/Interact/Npc/Instancias/Vendedor.tscn" id="7_uylwv"]
+
+[node name="IsoRoom" instance=ExtResource("1_q8i2c")]
+y_sort_enabled = true
+room_identifier = "ROOM-5"
+
+[node name="BaseTiles" parent="." index="0" instance=ExtResource("2_npoke")]
+position = Vector2(40, -64)
+metadata/_edit_lock_ = true
+
+[node name="defect" parent="Spawns" index="0"]
+position = Vector2(72.0001, -34)
+scale = Vector2(-4.1721, 1.88666)
+
+[node name="ROOM-6" type="Marker2D" parent="Spawns" index="1"]
+position = Vector2(257, -374)
+scale = Vector2(0.552003, 0.109553)
+
+[node name="ROOM-4" type="Marker2D" parent="Spawns" index="2"]
+position = Vector2(406, 128)
+
+[node name="Mate" parent="Interactables/Items" index="0" instance=ExtResource("3_gjd7k")]
+position = Vector2(-110, -262)
+
+[node name="TRANS R2 -> R1" parent="Interactables/Transitioners" index="0" instance=ExtResource("3_7vu3n")]
+position = Vector2(453, 194)
+rotation = -0.439371
+scale = Vector2(6.23226, -1.23633)
+
+[node name="TRANS R2 -> R3" parent="Interactables/Transitioners" index="1" instance=ExtResource("4_kqm18")]
+position = Vector2(321, -423)
+rotation = 0.431205
+scale = Vector2(3.8, 0.92)
+
+[node name="Alumna 2" parent="Interactables/Npcs" index="0" instance=ExtResource("5_kqm18")]
+y_sort_enabled = true
+position = Vector2(-227, -253)
+rotation = -0.00205081
+scale = Vector2(-1.20386, 1.08141)
+
+[node name="Alumna 1" parent="Interactables/Npcs" index="1" instance=ExtResource("6_gjd7k")]
+position = Vector2(-329, -219)
+
+[node name="Vendedor" parent="Interactables/Npcs" index="2" instance=ExtResource("7_uylwv")]
+y_sort_enabled = true
+position = Vector2(585, -280)
+scale = Vector2(1.2, 1.5)
+skew = 0.020944
+
+[connection signal="interacted" from="Interactables/Items/Mate" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/TRANS R2 -> R1" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/TRANS R2 -> R3" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/Alumna 2" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/Alumna 1" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/Vendedor" to="." method="_on_interactable_interacted"]

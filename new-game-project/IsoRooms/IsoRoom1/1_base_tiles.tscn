@@ -1,0 +1,238 @@
+[gd_scene load_steps=18 format=4 uid="uid://dfp282bcn4bat"]
+
+[ext_resource type="PackedScene" uid="uid://cevm1i60dkopp" path="res://IsoRooms/base_tiles.tscn" id="1_4alid"]
+[ext_resource type="Texture2D" uid="uid://bohqql3pb80le" path="res://art/items/2dClassroomAssetPackByStyloo/Classroom/Classroom Second Spritesheet 4.png" id="2_cq16r"]
+[ext_resource type="Texture2D" uid="uid://bn3dltyr1tkjo" path="res://art/items/2dClassroomAssetPackByStyloo/Classroom/Classroom First Spritesheet 8 - Copy.png" id="3_4skku"]
+[ext_resource type="Texture2D" uid="uid://bax6c3ay0naor" path="res://art/items/2dClassroomAssetPackByStyloo/Classroom/Classroom First Spritesheet 6.png" id="4_1ympy"]
+[ext_resource type="Texture2D" uid="uid://cwnebjawamal5" path="res://art/items/2dClassroomAssetPackByStyloo/Computer Room/Computer Room Spritesheet 4.png" id="5_th60u"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_aej4x"]
+polygon = PackedVector2Array(0, -64, -128, 0, 0, 64, 128, 0)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_otiqa"]
+texture = ExtResource("2_cq16r")
+margins = Vector2i(2, 0)
+texture_region_size = Vector2i(28, 17)
+2:36/0 = 0
+28:2/0 = 0
+0:2/size_in_atlas = Vector2i(3, 4)
+0:2/0 = 0
+0:2/0/texture_origin = Vector2i(-5, 61)
+0:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_aej4x")
+29:1/size_in_atlas = Vector2i(4, 8)
+29:1/0 = 0
+29:1/0/z_index = 1
+0:10/size_in_atlas = Vector2i(3, 4)
+0:10/0 = 0
+0:10/0/texture_origin = Vector2i(-5, 83)
+5:11/size_in_atlas = Vector2i(2, 3)
+5:11/0 = 0
+3:2/size_in_atlas = Vector2i(2, 3)
+3:2/next_alternative_id = 2
+3:2/0 = 0
+3:2/0/texture_origin = Vector2i(-5, 61)
+3:2/1 = 1
+5:2/size_in_atlas = Vector2i(2, 4)
+5:2/0 = 0
+3:11/size_in_atlas = Vector2i(2, 3)
+3:11/0 = 0
+3:11/0/texture_origin = Vector2i(-6, 61)
+0:19/size_in_atlas = Vector2i(3, 3)
+0:19/0 = 0
+3:19/size_in_atlas = Vector2i(2, 3)
+3:19/0 = 0
+3:19/0/texture_origin = Vector2i(-5, 61)
+5:19/size_in_atlas = Vector2i(2, 3)
+5:19/0 = 0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kjft8"]
+cull_mode = 2
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tgo6q"]
+texture = ExtResource("3_4skku")
+texture_region_size = Vector2i(256, 512)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 61)
+0:0/0/modulate = Color(0.941176, 0.941176, 0.890196, 1)
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_kjft8")
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-74, -27, -72, -91, -23, -129, 59, -72, 58, 6, 21, 33)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2wxx0"]
+texture = ExtResource("4_1ympy")
+texture_region_size = Vector2i(32, 16)
+25:52/size_in_atlas = Vector2i(5, 11)
+25:52/0 = 0
+2:54/size_in_atlas = Vector2i(4, 8)
+2:54/0 = 0
+1:41/size_in_atlas = Vector2i(5, 11)
+1:41/0 = 0
+1:41/0/physics_layer_0/polygon_0/points = PackedVector2Array(-63, 43, 27, -7, 26, -8, 64, 13, -24, 62, -26, 62)
+7:41/size_in_atlas = Vector2i(5, 11)
+7:41/0 = 0
+26:18/size_in_atlas = Vector2i(6, 7)
+26:18/0 = 0
+26:18/0/texture_origin = Vector2i(0, 191)
+20:18/size_in_atlas = Vector2i(5, 8)
+20:18/0 = 0
+20:18/0/texture_origin = Vector2i(0, 191)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_niu15"]
+texture = ExtResource("5_th60u")
+texture_region_size = Vector2i(64, 32)
+2:2/size_in_atlas = Vector2i(1, 2)
+2:2/0 = 0
+5:1/size_in_atlas = Vector2i(2, 5)
+5:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_0jqlu"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(256, 128)
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+navigation_layer_0/layers = 1
+sources/3 = SubResource("TileSetAtlasSource_2wxx0")
+sources/2 = SubResource("TileSetAtlasSource_tgo6q")
+sources/1 = SubResource("TileSetAtlasSource_otiqa")
+sources/8 = SubResource("TileSetAtlasSource_niu15")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cq16r"]
+texture = ExtResource("2_cq16r")
+margins = Vector2i(2, 0)
+texture_region_size = Vector2i(28, 17)
+2:36/0 = 0
+28:2/0 = 0
+0:2/size_in_atlas = Vector2i(3, 4)
+0:2/0 = 0
+0:2/0/texture_origin = Vector2i(-5, 61)
+0:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_aej4x")
+29:1/size_in_atlas = Vector2i(4, 8)
+29:1/0 = 0
+29:1/0/z_index = 1
+0:10/size_in_atlas = Vector2i(3, 4)
+0:10/0 = 0
+0:10/0/texture_origin = Vector2i(-5, 83)
+5:11/size_in_atlas = Vector2i(2, 3)
+5:11/0 = 0
+3:2/size_in_atlas = Vector2i(2, 3)
+3:2/next_alternative_id = 2
+3:2/0 = 0
+3:2/0/texture_origin = Vector2i(-5, 61)
+3:2/1 = 1
+5:2/size_in_atlas = Vector2i(2, 4)
+5:2/0 = 0
+3:11/size_in_atlas = Vector2i(2, 3)
+3:11/0 = 0
+3:11/0/texture_origin = Vector2i(-6, 61)
+0:19/size_in_atlas = Vector2i(3, 3)
+0:19/0 = 0
+3:19/size_in_atlas = Vector2i(2, 3)
+3:19/0 = 0
+3:19/0/texture_origin = Vector2i(-5, 61)
+5:19/size_in_atlas = Vector2i(2, 3)
+5:19/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4skku"]
+texture = ExtResource("3_4skku")
+texture_region_size = Vector2i(256, 512)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 61)
+0:0/0/modulate = Color(0.941176, 0.941176, 0.890196, 1)
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_kjft8")
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-74, -27, -72, -91, -23, -129, 59, -72, 58, 6, 21, 33)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ympy"]
+texture = ExtResource("4_1ympy")
+texture_region_size = Vector2i(32, 16)
+25:52/size_in_atlas = Vector2i(5, 11)
+25:52/0 = 0
+2:54/size_in_atlas = Vector2i(4, 8)
+2:54/0 = 0
+1:41/size_in_atlas = Vector2i(5, 11)
+1:41/0 = 0
+1:41/0/physics_layer_0/polygon_0/points = PackedVector2Array(-63, 43, 27, -7, 26, -8, 64, 13, -24, 62, -26, 62)
+7:41/size_in_atlas = Vector2i(5, 11)
+7:41/0 = 0
+26:18/size_in_atlas = Vector2i(6, 7)
+26:18/0 = 0
+26:18/0/texture_origin = Vector2i(0, 191)
+20:18/size_in_atlas = Vector2i(5, 8)
+20:18/0 = 0
+20:18/0/texture_origin = Vector2i(0, 191)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_th60u"]
+texture = ExtResource("5_th60u")
+texture_region_size = Vector2i(64, 32)
+2:2/size_in_atlas = Vector2i(1, 2)
+2:2/0 = 0
+5:1/size_in_atlas = Vector2i(2, 5)
+5:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_otiqa"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(256, 128)
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+navigation_layer_0/layers = 1
+sources/3 = SubResource("TileSetAtlasSource_1ympy")
+sources/2 = SubResource("TileSetAtlasSource_4skku")
+sources/1 = SubResource("TileSetAtlasSource_cq16r")
+sources/8 = SubResource("TileSetAtlasSource_th60u")
+
+[node name="BaseTiles" instance=ExtResource("1_4alid")]
+
+[node name="floors" parent="." index="0"]
+z_index = -3
+tile_map_data = PackedByteArray("AAD9//7/AQAAAAAAAAD9////AQAAAAAAAAD+////AQAAAAAAAAD+/wAAAQAAAAAAAAD+/wEAAQAAAAAAAAD//wEAAQAAAAAAAAAAAAEAAQAAAAAAAAABAAEAAQAAAAAAAAABAAAAAQAAAAAAAAABAP//AQAAAAAAAAAAAP//AQAAAAAAAAAAAP7/AQAAAAAAAAD///7/AQAAAAAAAAD///3/AQAAAAAAAAD+//3/AQAAAAAAAAD+//7/AQAAAAAAAAD//wAAAQAAAAAAAAAAAAAAAQAAAAAAAAD/////AQAAAAAAAAD9//3/AQAAAAAAAAD9/wAAAQAAAAAAAAD9/wEAAQAAAAAAAAABAP7/AQAAAAAAAAABAP3/AQAAAAAAAAAAAP3/AQAAAAAAAAD8//v/AQAAAAAAAAD8//z/AQAAAAAAABD8//3/AQAAAAAAABD8//7/AQAAAAAAAAD8////AQAAAAAAAAD8/wAAAQAAAAAAAAD8/wEAAQAAAAAAAAD8/wIAAQAAAAAAAAD9//v/AQAAAAAAAAD9//z/AQAAAAAAAAD9/wIAAQAAAAAAAAD+//z/AQAAAAAAAAD+/wIAAQAAAAAAAAD///z/AQAAAAAAAAAAAPz/AQAAAAAAAAABAPz/AQAAAAAAAAD//wIAAQAAAAAAAAAAAAIAAQAAAAAAAAABAAIAAQAAAAAAAAA=")
+
+[node name="walls_back" parent="." index="1"]
+tile_map_data = PackedByteArray("AAD8//z/CAACAAAAAAD8//3/CAAAAAEAAAD8//7/CAAAAAEAAAD8////CAAAAAEAAAD8/wAACAAAAAEAAAD8/wEACAAAAAEAAAD8/wIACAAAAAAAAAD+//z/CAACAAEAAAD///z/CAACAAEAAAAAAPz/CAACAAEAAAABAPz/CAACAAEAAAD9//z/AwACAAAAAAAAAAIAAwAAAAQAAAA=")
+
+[node name="walls_front" parent="." index="2"]
+tile_map_data = PackedByteArray("AAABAAEACAADAAEAAAABAAAACAADAAEAAAABAP//CAADAAEAAAABAP7/CAADAAEAAAABAP3/CAADAAEAAAD9/wIACAABAAEAAAD+/wIACAABAAEAAAD//wIACAABAAEAAAABAPz/CAADAAEAAAABAAIACAABAAAAAAAAAAIAAAAAAAAAAAA=")
+
+[node name="objects" parent="." index="3"]
+tile_map_data = PackedByteArray("AADH/8v/AQAAAAIAAADH/8z/AQAAAAIAAADI/8r/AQAAAAIAAADK/8v/AQAAAAIAAADL/8v/AQAAAAIAAADL/8z/AQAAAAIAAADN/8v/AQAAAAIAAAA=")
+
+[node name="top" type="TileMapLayer" parent="." index="5"]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(-334, 84)
+scale = Vector2(0.5, 0.438)
+tile_map_data = PackedByteArray("AAD4//b/AwAUABIAAAD4//v/AwAUABIAAAD6//b/AwAUABIAAAD8//L/CAAFAAEAAAD8//r/AwAUABIAAAAAAPb/AwAUABIAAAAAAPv/AwAUABIAAAA=")
+tile_set = SubResource("TileSet_0jqlu")
+
+[node name="obj" type="TileMapLayer" parent="." index="6"]
+y_sort_enabled = true
+position = Vector2(-307, 143)
+scale = Vector2(0.6, 0.525)
+skew = 0.0174533
+tile_map_data = PackedByteArray("AAD6//n/AgAAAAAAAAD6//r/AgAAAAAAAAD6//v/AwACADYAABD9//n/AgAAAAAAAAD9//r/AgAAAAAAAAD+//n/AgAAAAAAAAD///z/AwABACkAAAAAAPn/AgAAAAAAAAAAAPv/AwAHACkAABD6//j/AgAAAAAAAAD6//z/AwAHACkAAAD7//j/AgAAAAAAAAD7//n/AgAAAAAAAAD7//r/AgAAAAAAAAD8//z/AwABACkAAAD9//j/AgAAAAAAAAD+//j/AgAAAAAAAAD+//r/AgAAAAAAAAD///j/AgAAAAAAAAAAAPj/AgAAAAAAAAAAAPz/AwACADYAAAABAPj/AgAAAAAAAAABAPn/AgAAAAAAAAABAPr/AgAAAAAAAAA=")
+tile_set = SubResource("TileSet_otiqa")
+
+[node name="obj2" type="TileMapLayer" parent="." index="7"]
+z_index = 3
+y_sort_enabled = true
+position = Vector2(-307, 143)
+scale = Vector2(0.6, 0.525)
+skew = 0.0174533
+tile_map_data = PackedByteArray("AAD6//n/AQAAAAoAAAD6//r/AQAAAAoAAAD7//j/AQADAAsAAAD9//n/AQAAAAoAAAD+//n/AQADAAsAAAD+//r/AQAAAAoAAAAAAPn/AQADAAsAAAA=")
+tile_set = SubResource("TileSet_otiqa")
+
+[node name="obj3" type="TileMapLayer" parent="." index="8"]
+y_sort_enabled = true
+position = Vector2(-307, 143)
+scale = Vector2(0.6, 0.525)
+skew = 0.0174533
+tile_map_data = PackedByteArray("AAD6//n/AQAAAAIAAAD6//r/AQAAAAIAAAD7//j/AQAAAAIAAAD9//n/AQAAAAIAAAD+//n/AQAAAAIAAAD+//r/AQAAAAIAAAAAAPn/AQAAAAIAAAA=")
+tile_set = SubResource("TileSet_otiqa")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." index="9"]
+color = Color(0.75, 0.75, 0.75, 1)

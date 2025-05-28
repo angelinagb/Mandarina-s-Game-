@@ -1,0 +1,145 @@
+[gd_scene load_steps=14 format=4 uid="uid://cl6b1ih87sy2a"]
+
+[ext_resource type="PackedScene" uid="uid://cevm1i60dkopp" path="res://IsoRooms/base_tiles.tscn" id="1_nahom"]
+[ext_resource type="Texture2D" uid="uid://dwx50jrjvw0an" path="res://art/items/2dClassroomAssetPackByStyloo/Cafeteria/Cafeteria First Spritesheet 2.png" id="2_m536j"]
+[ext_resource type="Texture2D" uid="uid://rfsxcax2pves" path="res://art/items/2dClassroomAssetPackByStyloo/Cafeteria/Cafeteria First Spritesheet 8.png" id="3_vp6ub"]
+[ext_resource type="Texture2D" uid="uid://b2ieb7w7fjp1a" path="res://art/items/2dClassroomAssetPackByStyloo/Cafeteria/Cafeteria First Spritesheet 4.png" id="4_5l0gv"]
+[ext_resource type="Texture2D" uid="uid://cbbl4rrqj7btc" path="res://art/items/2dClassroomAssetPackByStyloo/Chemistry lab/Chemistry Lab Second Spritesheet 2.png" id="5_jeh44"]
+[ext_resource type="Texture2D" uid="uid://c8gtfcs5tup0f" path="res://art/items/2dClassroomAssetPackByStyloo/Chemistry lab/Chemistry Lab First Spritesheet 2.png" id="6_883nb"]
+[ext_resource type="Texture2D" uid="uid://dlfto6k0kis28" path="res://art/items/2dClassroomAssetPackByStyloo/Classroom 2 Props/Classroom Props First Spritesheet 8.png" id="8_kdwjh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_42e7n"]
+texture = ExtResource("2_m536j")
+texture_region_size = Vector2i(145, 118)
+0:0/size_in_atlas = Vector2i(3, 3)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(19, 85)
+0:3/size_in_atlas = Vector2i(1, 2)
+0:3/0 = 0
+0:5/0 = 0
+3:0/size_in_atlas = Vector2i(4, 4)
+3:0/0 = 0
+3:0/0/y_sort_origin = 147
+1:3/size_in_atlas = Vector2i(1, 2)
+1:3/0 = 0
+2:3/size_in_atlas = Vector2i(1, 2)
+2:3/0 = 0
+6:4/0 = 0
+3:4/size_in_atlas = Vector2i(2, 1)
+3:4/0 = 0
+4:5/size_in_atlas = Vector2i(3, 3)
+4:5/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_etalr"]
+texture = ExtResource("3_vp6ub")
+texture_region_size = Vector2i(144, 117)
+0:0/size_in_atlas = Vector2i(3, 3)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 100)
+6:4/0 = 0
+2:3/size_in_atlas = Vector2i(1, 2)
+2:3/0 = 0
+2:3/0/texture_origin = Vector2i(0, 94)
+2:3/0/y_sort_origin = 10
+4:5/size_in_atlas = Vector2i(3, 3)
+4:5/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1a1u0"]
+texture = ExtResource("4_5l0gv")
+texture_region_size = Vector2i(147, 81)
+0:5/size_in_atlas = Vector2i(1, 2)
+0:5/0 = 0
+0:5/0/y_sort_origin = 80
+2:5/size_in_atlas = Vector2i(1, 2)
+2:5/0 = 0
+1:5/size_in_atlas = Vector2i(1, 2)
+1:5/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hd7cy"]
+texture = ExtResource("5_jeh44")
+texture_region_size = Vector2i(64, 64)
+use_texture_padding = false
+8:0/size_in_atlas = Vector2i(8, 7)
+8:0/0 = 0
+8:0/0/texture_origin = Vector2i(0, 100)
+0:10/size_in_atlas = Vector2i(4, 6)
+0:10/0 = 0
+3:7/size_in_atlas = Vector2i(3, 3)
+3:7/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dul4s"]
+texture = ExtResource("6_883nb")
+texture_region_size = Vector2i(64, 64)
+2:4/size_in_atlas = Vector2i(3, 3)
+2:4/0 = 0
+8:0/size_in_atlas = Vector2i(4, 5)
+8:0/0 = 0
+8:0/0/texture_origin = Vector2i(0, 249)
+8:0/0/y_sort_origin = 101
+8:5/0 = 0
+0:10/size_in_atlas = Vector2i(7, 4)
+0:10/0 = 0
+0:10/0/texture_origin = Vector2i(0, 61)
+5:0/size_in_atlas = Vector2i(3, 4)
+5:0/0 = 0
+5:0/0/z_index = 1
+5:0/0/y_sort_origin = 1
+0:4/size_in_atlas = Vector2i(2, 4)
+0:4/0 = 0
+0:4/0/z_index = 1
+
+[sub_resource type="TileSet" id="TileSet_xlc22"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(256, 128)
+sources/0 = SubResource("TileSetAtlasSource_42e7n")
+sources/1 = SubResource("TileSetAtlasSource_etalr")
+sources/3 = SubResource("TileSetAtlasSource_1a1u0")
+sources/4 = SubResource("TileSetAtlasSource_hd7cy")
+sources/5 = SubResource("TileSetAtlasSource_dul4s")
+
+[node name="BaseTiles" instance=ExtResource("1_nahom")]
+
+[node name="floors" parent="." index="0"]
+tile_map_data = PackedByteArray("AAAAAAEAAQAAAAAAAAABAAEAAQAAAAAAAAABAAAAAQAAAAAAAAABAP//AQAAAAAAAAAAAP//AQAAAAAAAAAAAAAAAQAAAAAAAAD/////AQAAAAAAAAAAAAMAAQAAAAAAAAAAAAIAAQAAAAAAAAABAAIAAQAAAAAAAAACAP//AQAAAAAAAAACAAAAAQAAAAAAAAACAAEAAQAAAAAAAAACAAIAAQAAAAAAAAACAAMAAQAAAAAAAAABAAMAAQAAAAAAAAADAAEAAQAAAAAAAAADAAIAAQAAAAAAAAADAAMAAQAAAAAAAAACAAQAAQAAAAAAAAACAAUAAQAAAAAAAAABAAQAAQAAAAAAAAABAAUAAQAAAAAAAAAAAAUAAQAAAAAAAAAAAAQAAQAAAAAAAAADAAQAAQAAAAAAAAADAAUAAQAAAAAAAAADAAAAAQAAAAAAAAA=")
+
+[node name="walls_back" parent="." index="1"]
+tile_map_data = PackedByteArray("AAAAAAUACAAAAAEAAAAAAAQACAAAAAEAAAAAAAMACAAAAAEAAAAAAAIACAAAAAEAAAAAAAEACAAAAAEAAAAAAAAACAACAAAAAAABAAAACAACAAEAAAACAAAACAACAAEAAAADAAAACAACAAEAAAA=")
+
+[node name="walls_front" parent="." index="2"]
+tile_map_data = PackedByteArray("AAABAAUACAABAAEAAAACAAUACAABAAEAAAADAAUACAABAAAAAAADAAQACAADAAEAAAADAAMACAADAAEAAAADAAIACAADAAEAAAADAAEAAwABAAAAAAAAAAUACAABAAEAAAADAAAACAADAAEAAAA=")
+
+[node name="objects" parent="." index="3"]
+tile_map_data = PackedByteArray("AAADAAIABAADAAcAAAADAAEABAADAAcAAAAGAAIABAADAAcAAAAJAAIABAADAAcAAAAJAAEABAADAAcAAAAKAAAABQAAAAQAAAAFAAsABAADAAcAAAAIAAsABAADAAcAAAALAAoABAADAAcAAAALAAsABAADAAcAAAA=")
+tile_set = SubResource("TileSet_xlc22")
+
+[node name="objects on top" type="TileMapLayer" parent="." index="4"]
+y_sort_enabled = true
+rotation = 0.010779
+scale = Vector2(0.401613, 0.339945)
+tile_map_data = PackedByteArray("AAACAAgABQAFAAAAAAAFAAgABQAFAAAAABAKAAoABQAIAAAAAAA=")
+tile_set = SubResource("TileSet_xlc22")
+
+[node name="surfaces" parent="." index="5"]
+scale = Vector2(0.609, 0.479)
+tile_map_data = PackedByteArray("AAADAAgABAAIAAAAAAAFAAgABAAIAAAAAAAHAAgABAAIAAAAAAACAAIABAAIAAAAAAAEAAIABAAIAAAAAAAGAAIABAAIAAAAAAA=")
+tile_set = SubResource("TileSet_xlc22")
+
+[node name="Pizarra" type="Sprite2D" parent="." index="6"]
+z_index = 1
+z_as_relative = false
+position = Vector2(-205, 94)
+rotation = -3.1458
+scale = Vector2(0.547337, -0.439521)
+texture = ExtResource("8_kdwjh")
+region_enabled = true
+region_rect = Rect2(109, 57, 410, 376)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="7"]
+modulate = Color(1, 0.529412, 1, 1)
+z_index = 1
+position = Vector2(78, 62)
+scale = Vector2(0.507901, 0.258442)
+texture = ExtResource("6_883nb")
+region_enabled = true
+region_rect = Rect2(617, 752, 61, 95)

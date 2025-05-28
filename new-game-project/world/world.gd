@@ -1,7 +1,7 @@
 extends Node2D
 
 # LOGICA JUGABLE
-@onready var player			: Player 			= $Player
+@onready var player			: PlayerB 			= $PlayerB
 @onready var room_manager	: RoomManager 		= $RoomManager
 @onready var inventory		: InventoryManager 	= $InventoryManager
 @onready var quest			: QuestManager 		= $QuestManager
@@ -15,7 +15,7 @@ extends Node2D
 @onready var menu			: MenuManager 		= $menu
 @onready var gui			:  					= $gui
 
-var current: Room
+var current: IsoRoom
 
 @onready var current_room_id : String = "ROOM-4"
 
@@ -57,7 +57,7 @@ func save_this():
 		}
 	}
 	
-	save_manager.save_dict({"actual_room": "res://rooms/Instancias/room_4.tscn", "prev_room": ""}, "RoomSetup")
+	save_manager.save_dict({"actual_room": "res://IsoRooms/IsoRoom1/1_iso_room.tscn", "prev_room": ""}, "RoomSetup")
 	save_manager.save_dict(items, "Items")
 	save_manager.save_dict(abilities, "AbilityPoints")
 	save_manager.save_dict(ability_points, "AbilityAvailablePoints")
@@ -114,6 +114,7 @@ func _on_interactable_interacted(interactable: Interactable):
 	#rehacer quest step para que acepte ID de cualquier interactuable
 	#Falta guardar estado de items al cambiar de rooms
 	#SEPARAR INTERACTABLES EN FASES, FASE 1, 2, ETC
+	print("señal conectada")
 	match interactable.my_type:
 		"item":
 			_on_item_grabbed(interactable)
@@ -121,6 +122,7 @@ func _on_interactable_interacted(interactable: Interactable):
 			_on_transitioner_activated(interactable)
 		"npc":
 			_on_npc_talked_to(interactable)
+			
 		_:
 			pass
 	event.interactable_triggered(interactable.id)
@@ -128,7 +130,6 @@ func _on_interactable_interacted(interactable: Interactable):
 
 func _on_item_grabbed(item: Item) -> void:
 	inventory.item_grabbed(item.getId())
-	
 	item.end()
 
 func _on_transitioner_activated(transitioner: Transitioner) -> void:
@@ -138,6 +139,7 @@ func _on_transitioner_activated(transitioner: Transitioner) -> void:
 
 func _on_npc_talked_to(npc: Npc) -> void:
 	npc.startDialogue()
+	print("hablando con npc---")
 	if npc.quest_available():
 		npc.take_quest()
 		quest.add_quest(npc.quest)

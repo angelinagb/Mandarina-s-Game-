@@ -4,8 +4,8 @@ signal event_added(event: String)
 
 var events: Array[String]
 
-func initialize(events: Array[String]):
-	self.events = events
+func initialize(Events: Array[String]):
+	self.events = Events
 	
 
 func addEvent(event: String):

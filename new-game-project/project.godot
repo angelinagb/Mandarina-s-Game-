@@ -18,10 +18,6 @@ config/features=PackedStringArray("4.4", "Mobile")
 
 buses/default_bus_layout=""
 
-[autoload]
-
-SaveData="*res://selector de estadisticas/Scripts/mundo.gd"
-
 [display]
 
 window/size/viewport_width=360
@@ -36,8 +32,8 @@ enabled=PackedStringArray("res://addons/kanban_tasks/plugin.cfg")
 
 folder_colors={
 "res://Interacting/": "pink",
-"res://IsoRoom/": "pink",
-"res://IsoRoom/Objetos/": "pink",
+"res://IsoRooms/": "pink",
+"res://IsoRooms/Objetos/": "gray",
 "res://PianoPuzzle/": "pink",
 "res://PlayerB/": "pink"
 }

@@ -1,6 +1,5 @@
 class_name Npc extends Interactable
 
-
 signal give_quest(quest: Quest)
 signal dialogue_ended
 
@@ -10,10 +9,10 @@ signal dialogue_ended
 @onready var quest_icon : ColorRect = $NpcQuestIndicador
 var tiene_quest : bool
 
-var player_in_range = true 
 @onready var current_dialogue: int = 0
 @onready var current_npc_state:STATE = STATE.WAITING
 
+var player_in_range = false
 
 enum STATE {
 	TALKING,
@@ -27,8 +26,6 @@ func _ready():
 		quest_icon.show()
 	my_type = "npc"
 	super._ready()
-	$Name.text = npc_name
-		
 
 func _input(event):
 	match current_npc_state:
@@ -38,6 +35,7 @@ func _input(event):
 			if player_in_range and Input.is_action_just_pressed("ui_accept"):
 				current_npc_state = STATE.TALKING
 				interact()
+				print("npc interacted")
 				await dialogueEnded()
 				current_npc_state = STATE.WAITING
 
@@ -62,11 +60,11 @@ func take_quest():
 	quest_icon.hide()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
+	if body.name == "PlayerB":
 		player_in_range = true
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body.name == "Player":
+	if body.name == "PlayerB":
 		player_in_range = false
 
 

@@ -1,14 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://b7vuer4est3c1"]
 
 [ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_m7ijv"]
-[ext_resource type="Texture2D" uid="uid://44t52jpt0v4y" path="res://art/items/npc.png" id="2_xodyj"]
+[ext_resource type="Texture2D" uid="uid://bjfayaxpwmbpq" path="res://art/characters/iso/npc/clint_bellanger_isometric_programador_npc.png" id="2_atqdo"]
 [ext_resource type="Resource" uid="uid://hoqapuuax7nu" path="res://managers/dialogue 2.0/recursos/dialogos/Alumna_1_dialogo/alumna_1.tres" id="3_atqdo"]
 
 [node name="Alumno 1" instance=ExtResource("1_m7ijv")]
 id = "Q1_DIALOGO"
 
 [node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("2_xodyj")
+position = Vector2(-0.499999, -1.90735e-06)
+scale = Vector2(1.9375, 1.5)
+texture = ExtResource("2_atqdo")
+hframes = 6
 
 [node name="Dialogo Quest" parent="." index="3"]
 vacio = true

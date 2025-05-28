@@ -2,20 +2,21 @@
 
 [ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_hdobk"]
 [ext_resource type="Resource" uid="uid://ct45gjwmh0t0y" path="res://Tomas/quest_chocolate.tres" id="2_5w6g1"]
-[ext_resource type="Texture2D" uid="uid://44t52jpt0v4y" path="res://art/items/npc.png" id="2_tdkq5"]
+[ext_resource type="Texture2D" uid="uid://ck4j3cy2oxycf" path="res://art/characters/TD/Female1.png" id="3_5w6g1"]
 [ext_resource type="Resource" uid="uid://bx0mclgqg6pmn" path="res://managers/dialogue 2.0/recursos/dialogos/ChicaTriste_2_dialogo/chicatriste_2.tres" id="3_k867u"]
 
 [node name="Chica Triste" instance=ExtResource("1_hdobk")]
 quest = ExtResource("2_5w6g1")
 
 [node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("2_tdkq5")
+scale = Vector2(3.00651, 1.99395)
+texture = ExtResource("3_5w6g1")
+hframes = 8
+vframes = 12
+frame = 33
 
 [node name="Dialogo Quest" parent="." index="3"]
 destruirse_al_finalizar = true
 
 [node name="Dialogo Default" parent="." index="4"]
 dialogueResource = ExtResource("3_k867u")
-
-[node name="CanvasLayer" parent="." index="5"]
-layer = 5

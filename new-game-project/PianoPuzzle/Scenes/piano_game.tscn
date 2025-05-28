@@ -37,8 +37,9 @@ metadata/_edit_vertical_guides_ = [-161.0, -356.0]
 metadata/_edit_horizontal_guides_ = [88.0, 0.0]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 509.0
-offset_bottom = 509.0
+offset_top = 4.0
+offset_right = 358.0
+offset_bottom = 354.0
 texture = ExtResource("2_y6oj7")
 expand_mode = 3
 
@@ -46,8 +47,8 @@ expand_mode = 3
 script = SubResource("GDScript_ibkju")
 
 [node name="White_Keys" type="Node2D" parent="."]
-position = Vector2(55, 42)
-scale = Vector2(1.04, 1.04)
+position = Vector2(43.7, 0.699997)
+scale = Vector2(0.713097, 0.998511)
 
 [node name="G4" parent="White_Keys" instance=ExtResource("2_7f5js")]
 offset_left = -57.8261
@@ -127,10 +128,13 @@ stream = ExtResource("10_2q0ka")
 
 [node name="Black_Keys" type="Node2D" parent="."]
 z_index = 1
-position = Vector2(37, -59)
-scale = Vector2(0.52, 0.52)
+position = Vector2(32, -100)
+scale = Vector2(0.356548, 0.499256)
 
 [node name="g4#" parent="Black_Keys" instance=ExtResource("2_7f5js")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = 10.0
 offset_top = 210.0
 offset_right = 10.0
@@ -151,10 +155,10 @@ note = "a4#"
 stream = ExtResource("12_4o33c")
 
 [node name="c5#" parent="Black_Keys" instance=ExtResource("2_7f5js")]
-offset_left = 390.0
-offset_top = 210.0
-offset_right = 390.0
-offset_bottom = 210.0
+offset_left = 385.383
+offset_top = 209.712
+offset_right = 385.383
+offset_bottom = 209.712
 scale = Vector2(0.3, 0.3)
 is_black = true
 note = "c5#"

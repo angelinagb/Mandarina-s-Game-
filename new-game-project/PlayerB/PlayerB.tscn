@@ -2030,11 +2030,11 @@ modulate = Color(0.589096, 0.589096, 0.589095, 1)
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_v0wow")
-animation = &"push_east"
-frame_progress = 0.205655
+animation = &"idle_west"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -3)
+y_sort_enabled = true
+position = Vector2(0, 15)
 shape = SubResource("CircleShape2D_bki2o")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("default_state")]
@@ -2064,6 +2064,7 @@ script = SubResource("GDScript_m7bgy")
 script = ExtResource("31_mxgrx")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+y_sort_enabled = true
 remote_path = NodePath("../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]

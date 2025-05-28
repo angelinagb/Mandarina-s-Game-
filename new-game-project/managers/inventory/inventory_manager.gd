@@ -7,12 +7,12 @@ var items_in_player: Array[String]
 
 signal item_updated(item: Dictionary)
 
-func initialize(items: Dictionary) -> void:
-	self.items = items
-	for child in items:
-		if items[child].is_in_world:
+func initialize(Items: Dictionary) -> void:
+	self.items = Items
+	for child in Items:
+		if Items[child].is_in_world:
 			items_in_world.append(child)
-		elif items[child].is_in_player:
+		elif Items[child].is_in_player:
 			items_in_player.append(child)
 
 func get_items() -> Dictionary:
