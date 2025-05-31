@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("2_la1bs")
-arreglo_de_textos = PackedStringArray("...")
+arreglo_de_textos = PackedStringArray("(Esta chica esta muy triste, me pregunto que le paso)", "Unos tontos se burlaron de mi por ser muy lenta para resolver puzzles", "Dijieron que es genético y que toda mi familia es igual de tonta que yo", "¿Podrías hacerte pasar por mi hermano y vencerlos?", "Le pediría ayuda a mi hermano mayor pero recien me aviso que le erro de parada y va a llegar tarde", "Mision \"La venganza de los tontos\" Comenzada!")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"

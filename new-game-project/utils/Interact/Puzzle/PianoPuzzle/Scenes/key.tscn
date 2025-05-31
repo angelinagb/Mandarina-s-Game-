@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://6p4ounmbwbp2"]
 
-[ext_resource type="Script" uid="uid://dq7px6wpfdt08" path="res://PianoPuzzle/scripts/piano_key.gd" id="1_2k2f8"]
+[ext_resource type="Script" uid="uid://dq7px6wpfdt08" path="res://utils/Interact/Puzzle/PianoPuzzle/scripts/piano_key.gd" id="1_2k2f8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mc7wf"]
 size = Vector2(205, 765)

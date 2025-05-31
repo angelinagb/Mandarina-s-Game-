@@ -1,0 +1,306 @@
+[gd_scene load_steps=20 format=3 uid="uid://bkkm80qlft38n"]
+
+[ext_resource type="Script" uid="uid://ci1ikafwx21sf" path="res://puzzles/PuzzleInstance/PuzzlePinCracker/puzzle_informatica.gd" id="1_s33nc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1c7nw"]
+font_size = 170
+
+[sub_resource type="Theme" id="Theme_y42ic"]
+default_font_size = 300
+
+[sub_resource type="Theme" id="Theme_14lyo"]
+default_font_size = 300
+
+[sub_resource type="Theme" id="Theme_ump14"]
+default_font_size = 300
+
+[sub_resource type="Theme" id="Theme_ffcyb"]
+default_font_size = 300
+
+[sub_resource type="Theme" id="Theme_gajmu"]
+default_font_size = 100
+
+[sub_resource type="Theme" id="Theme_7t855"]
+default_font_size = 100
+
+[sub_resource type="Theme" id="Theme_u35mc"]
+default_font_size = 100
+
+[sub_resource type="Theme" id="Theme_svfbc"]
+default_font_size = 100
+
+[sub_resource type="Theme" id="Theme_vj6pe"]
+default_font_size = 100
+
+[sub_resource type="Theme" id="Theme_jodgm"]
+default_font_size = 100
+
+[sub_resource type="Theme" id="Theme_vrbj8"]
+default_font_size = 100
+
+[sub_resource type="Theme" id="Theme_l265q"]
+default_font_size = 100
+
+[sub_resource type="Theme" id="Theme_jtqwa"]
+default_font_size = 100
+
+[sub_resource type="Theme" id="Theme_2bcwn"]
+default_font_size = 100
+
+[sub_resource type="Theme" id="Theme_g3xfp"]
+default_font_size = 100
+
+[sub_resource type="Theme" id="Theme_1c7nw"]
+default_font_size = 70
+
+[sub_resource type="LabelSettings" id="LabelSettings_41u4c"]
+font_size = 60
+
+[node name="PinCracker" type="Node"]
+script = ExtResource("1_s33nc")
+
+[node name="Control2" type="Control" parent="."]
+custom_minimum_size = Vector2(2000, 270)
+layout_mode = 3
+anchor_right = 0.855
+anchor_bottom = 0.25
+offset_right = -0.700073
+grow_horizontal = 2
+
+[node name="ResultadoLabel" type="Label" parent="Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "ESPERANDO INTENTO"
+label_settings = SubResource("LabelSettings_1c7nw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(2000, 540)
+layout_mode = 3
+anchor_top = 0.25
+anchor_right = 0.855
+anchor_bottom = 0.75
+offset_right = -0.700073
+offset_bottom = -6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 4
+
+[node name="Digito_1" type="RichTextLabel" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(496, 540)
+layout_mode = 2
+theme = SubResource("Theme_y42ic")
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digito_2" type="RichTextLabel" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(496, 540)
+layout_mode = 2
+theme = SubResource("Theme_14lyo")
+text = "8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digito_3" type="RichTextLabel" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(496, 540)
+layout_mode = 2
+theme = SubResource("Theme_ump14")
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digito_4" type="RichTextLabel" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(496, 540)
+layout_mode = 2
+theme = SubResource("Theme_ffcyb")
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control3" type="Control" parent="."]
+custom_minimum_size = Vector2(2000, 50)
+layout_mode = 3
+anchor_top = 0.75
+anchor_right = 0.855
+anchor_bottom = 0.796
+offset_top = -6.10352e-05
+offset_right = -0.700073
+offset_bottom = 0.319946
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="GridContainer" type="GridContainer" parent="Control3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 4
+
+[node name="Feedback_1" type="ColorRect" parent="Control3/GridContainer"]
+custom_minimum_size = Vector2(496, 50)
+layout_mode = 2
+
+[node name="Feedback_2" type="ColorRect" parent="Control3/GridContainer"]
+custom_minimum_size = Vector2(496, 50)
+layout_mode = 2
+
+[node name="Feedback_3" type="ColorRect" parent="Control3/GridContainer"]
+custom_minimum_size = Vector2(496, 50)
+layout_mode = 2
+
+[node name="Feedback_4" type="ColorRect" parent="Control3/GridContainer"]
+custom_minimum_size = Vector2(496, 50)
+layout_mode = 2
+
+[node name="Control6" type="Control" parent="."]
+custom_minimum_size = Vector2(2000, 220)
+layout_mode = 3
+anchor_top = 0.796
+anchor_right = 0.855
+anchor_bottom = 1.0
+offset_top = 0.319946
+offset_right = -0.700073
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Botonera" type="GridContainer" parent="Control6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 11
+
+[node name="0" type="Button" parent="Control6/Botonera"]
+custom_minimum_size = Vector2(180, 220)
+layout_mode = 2
+theme = SubResource("Theme_gajmu")
+text = "0"
+
+[node name="1" type="Button" parent="Control6/Botonera"]
+custom_minimum_size = Vector2(180, 220)
+layout_mode = 2
+theme = SubResource("Theme_7t855")
+text = "1"
+
+[node name="2" type="Button" parent="Control6/Botonera"]
+custom_minimum_size = Vector2(180, 220)
+layout_mode = 2
+theme = SubResource("Theme_u35mc")
+text = "2"
+
+[node name="3" type="Button" parent="Control6/Botonera"]
+custom_minimum_size = Vector2(180, 220)
+layout_mode = 2
+theme = SubResource("Theme_svfbc")
+text = "3"
+
+[node name="4" type="Button" parent="Control6/Botonera"]
+custom_minimum_size = Vector2(180, 220)
+layout_mode = 2
+theme = SubResource("Theme_vj6pe")
+text = "4"
+
+[node name="5" type="Button" parent="Control6/Botonera"]
+custom_minimum_size = Vector2(180, 220)
+layout_mode = 2
+theme = SubResource("Theme_jodgm")
+text = "5"
+
+[node name="6" type="Button" parent="Control6/Botonera"]
+custom_minimum_size = Vector2(180, 220)
+layout_mode = 2
+theme = SubResource("Theme_vrbj8")
+text = "6"
+
+[node name="7" type="Button" parent="Control6/Botonera"]
+custom_minimum_size = Vector2(180, 220)
+layout_mode = 2
+theme = SubResource("Theme_l265q")
+text = "7"
+
+[node name="8" type="Button" parent="Control6/Botonera"]
+custom_minimum_size = Vector2(180, 220)
+layout_mode = 2
+theme = SubResource("Theme_jtqwa")
+text = "8"
+
+[node name="9" type="Button" parent="Control6/Botonera"]
+custom_minimum_size = Vector2(180, 220)
+layout_mode = 2
+theme = SubResource("Theme_2bcwn")
+text = "9"
+
+[node name="_" type="Button" parent="Control6/Botonera"]
+custom_minimum_size = Vector2(160, 220)
+layout_mode = 2
+theme = SubResource("Theme_g3xfp")
+text = "_"
+
+[node name="Control4" type="Control" parent="."]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 3
+anchor_left = 0.855
+anchor_right = 1.0
+anchor_bottom = 0.75
+offset_left = -0.700073
+offset_bottom = -6.10352e-05
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="FallosLabel" type="RichTextLabel" parent="Control4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_1c7nw")
+bbcode_enabled = true
+text = "FALLOS"
+horizontal_alignment = 1
+
+[node name="Control5" type="Control" parent="."]
+custom_minimum_size = Vector2(340, 270)
+layout_mode = 3
+anchor_left = 0.855
+anchor_top = 0.75
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.700073
+offset_top = -6.10352e-05
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="RestantesLabel" type="Label" parent="Control5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "INTENTOS"
+label_settings = SubResource("LabelSettings_41u4c")
+horizontal_alignment = 1
+
+[node name="ResetTimer" type="Timer" parent="."]
+wait_time = 1.5
+
+[connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]

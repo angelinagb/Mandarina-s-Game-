@@ -15,7 +15,6 @@ room_identifier = "ROOM-5"
 
 [node name="BaseTiles" parent="." index="0" instance=ExtResource("2_npoke")]
 position = Vector2(40, -64)
-metadata/_edit_lock_ = true
 
 [node name="defect" parent="Spawns" index="0"]
 position = Vector2(72.0001, -34)
@@ -34,27 +33,33 @@ position = Vector2(-110, -262)
 [node name="TRANS R2 -> R1" parent="Interactables/Transitioners" index="0" instance=ExtResource("3_7vu3n")]
 position = Vector2(453, 194)
 rotation = -0.439371
-scale = Vector2(6.23226, -1.23633)
+scale = Vector2(2.69358, -1.21806)
 
 [node name="TRANS R2 -> R3" parent="Interactables/Transitioners" index="1" instance=ExtResource("4_kqm18")]
 position = Vector2(321, -423)
 rotation = 0.431205
-scale = Vector2(3.8, 0.92)
+scale = Vector2(1.55329, 1.39522)
 
 [node name="Alumna 2" parent="Interactables/Npcs" index="0" instance=ExtResource("5_kqm18")]
+z_index = 1
 y_sort_enabled = true
-position = Vector2(-227, -253)
+position = Vector2(-56, -176)
 rotation = -0.00205081
-scale = Vector2(-1.20386, 1.08141)
+scale = Vector2(2.09249, 2.33475)
 
 [node name="Alumna 1" parent="Interactables/Npcs" index="1" instance=ExtResource("6_gjd7k")]
-position = Vector2(-329, -219)
+position = Vector2(63, -500)
+scale = Vector2(1.88556, 2.23748)
 
 [node name="Vendedor" parent="Interactables/Npcs" index="2" instance=ExtResource("7_uylwv")]
-y_sort_enabled = true
-position = Vector2(632, -240)
-scale = Vector2(1.2, 1.5)
+z_index = 1
+position = Vector2(523, -318)
+scale = Vector2(3.06996, 2.91977)
 skew = 0.020944
+
+[node name="PlayerB" parent="Player" index="0"]
+z_index = 1
+position = Vector2(138, -381)
 
 [connection signal="interacted" from="Interactables/Items/Mate" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/TRANS R2 -> R1" to="." method="_on_interactable_interacted"]

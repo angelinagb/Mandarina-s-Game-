@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3tda36v8u0s5"]
+
+[ext_resource type="PackedScene" uid="uid://cs1gmcwpafdvd" path="res://rooms/room.tscn" id="1_n7283"]
+[ext_resource type="PackedScene" uid="uid://3v1aqvnidp5b" path="res://utils/Interact/Item/item.tscn" id="2_jy5ib"]
+[ext_resource type="PackedScene" uid="uid://53qcgarmhxng" path="res://utils/Interact/Transitioner/transitioner.tscn" id="4_niw4v"]
+[ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="5_gu5ly"]
+[ext_resource type="Resource" uid="uid://0i74v357q5jb" path="res://managers/quest/quest_1.tres" id="6_ymuah"]
+
+[node name="room_1" instance=ExtResource("1_n7283")]
+room_identifier = "room_1"
+
+[node name="room_2" type="Marker2D" parent="Spawns" index="0"]
+position = Vector2(352, 96)
+
+[node name="Item0" parent="Interactables/Items" index="0" instance=ExtResource("2_jy5ib")]
+position = Vector2(492, 256)
+id = "Mate"
+
+[node name="TrTo2" parent="Interactables/Transitioners" index="0" instance=ExtResource("4_niw4v")]
+position = Vector2(352, 96)
+
+[node name="Npc" parent="Interactables/Npcs" index="0" instance=ExtResource("5_gu5ly")]
+position = Vector2(256, 256)
+quest = ExtResource("6_ymuah")
+
+[connection signal="interacted" from="Interactables/Items/Item0" to="." method="_on_item_1_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/TrTo2" to="." method="_on_tr_to_2_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/Npc" to="." method="_on_npc_interacted"]

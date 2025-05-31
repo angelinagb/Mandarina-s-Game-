@@ -4,6 +4,8 @@ class_name DialogueSystem
 #TODO señales si hay exito o falla el chequeo de hablidad
 #no deberia activarse de vuelta la animacion cuando empieza recursivamente otro dialogo
 signal dialogue_ended
+signal finished
+
 
 @onready var anim_player : AnimationPlayer = $AnimationPlayer
 @onready var rich_text_label : RichTextLabel = $CanvasLayer/PanelContainer/VBoxContainer/RichTextLabel
@@ -111,6 +113,7 @@ func next_text():
 		
 func destruir():
 	dialogue_ended.emit()
+	finished.emit()
 	if destruirse_al_finalizar == true:
 		queue_free()
 

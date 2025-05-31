@@ -1,20 +1,80 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7vuer4est3c1"]
+[gd_scene load_steps=12 format=3 uid="uid://b7vuer4est3c1"]
 
 [ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_m7ijv"]
-[ext_resource type="Texture2D" uid="uid://bjfayaxpwmbpq" path="res://art/characters/iso/npc/clint_bellanger_isometric_programador_npc.png" id="2_atqdo"]
+[ext_resource type="Script" uid="uid://bx8mltsrm31l6" path="res://utils/Interact/Npc/Instancias/alumno_1.gd" id="2_15fen"]
+[ext_resource type="PackedScene" uid="uid://dilhgir4y8bhr" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleCircuito/puzzle_electronica.tscn" id="3_1t34d"]
 [ext_resource type="Resource" uid="uid://hoqapuuax7nu" path="res://managers/dialogue 2.0/recursos/dialogos/Alumna_1_dialogo/alumna_1.tres" id="3_atqdo"]
+[ext_resource type="Resource" uid="uid://ddbq60ed0dnbn" path="res://Tomas/victoria_Quest.tres" id="4_1t34d"]
+[ext_resource type="PackedScene" uid="uid://bqscndmb0v4br" path="res://managers/dialogue 2.0/dialogue_system.tscn" id="5_4oijs"]
+[ext_resource type="PackedScene" uid="uid://dihymy0nqn7ab" path="res://Tomas/pop up/quest_completed.tscn" id="5_vden7"]
+[ext_resource type="Texture2D" uid="uid://bjfayaxpwmbpq" path="res://art/characters/iso/npc/clint_bellanger_isometric_programador_npc.png" id="6_1t34d"]
+
+[sub_resource type="Animation" id="Animation_vden7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1t34d"]
+resource_name = "idle"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2i(0, 0), Vector2i(5, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7arh5"]
+_data = {
+&"RESET": SubResource("Animation_vden7"),
+&"idle": SubResource("Animation_1t34d")
+}
 
 [node name="Alumno 1" instance=ExtResource("1_m7ijv")]
-id = "Q1_DIALOGO"
+script = ExtResource("2_15fen")
+puzzle = ExtResource("3_1t34d")
+dialogo_victoria = ExtResource("4_1t34d")
+quest_completed = ExtResource("5_vden7")
+id = "Q1_S1_VICTORIA"
 
-[node name="Sprite2D" parent="." index="0"]
-position = Vector2(-0.499999, -1.90735e-06)
-scale = Vector2(1.9375, 1.5)
-texture = ExtResource("2_atqdo")
+[node name="PlayerShadow" parent="." index="0"]
+visible = false
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(1.5, -6)
+scale = Vector2(2.22917, 1.53125)
+texture = ExtResource("6_1t34d")
 hframes = 6
 
-[node name="Dialogo Quest" parent="." index="3"]
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-0.75, -2.10417)
+
+[node name="Dialogo Quest" parent="." index="4"]
 vacio = true
 
-[node name="Dialogo Default" parent="." index="4"]
+[node name="Dialogo Default" parent="." index="5"]
+destruirse_al_finalizar = true
 dialogueResource = ExtResource("3_atqdo")
+
+[node name="Dialogue System" parent="." index="6" instance=ExtResource("5_4oijs")]
+
+[node name="AnimationPlayer" parent="." index="8"]
+libraries = {
+&"": SubResource("AnimationLibrary_7arh5")
+}

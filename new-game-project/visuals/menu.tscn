@@ -23,7 +23,8 @@ shadow_color = Color(0, 0, 0, 1)
 script = ExtResource("1_7whbs")
 
 [node name="Fondo" type="Sprite2D" parent="."]
-position = Vector2(180, 400)
+position = Vector2(400, 180)
+rotation = 1.5708
 texture = ExtResource("2_7whbs")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]

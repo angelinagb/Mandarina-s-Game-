@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogo" load_steps=2 format=3 uid="uid://ybelqypif60r"]
+
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="1_vq70x"]
+
+[resource]
+script = ExtResource("1_vq70x")
+arreglo_de_textos = PackedStringArray("Cada NPC es interactuable", "Con acercarse y apretar ENTER, se comienza un dialogo", "Los que tengan una burbuja de mensaje encima suyo, dan misiones")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"

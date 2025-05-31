@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_aldwx")
-arreglo_de_textos = PackedStringArray("Que frío que hace!", "No se para que vengo la verdad", "Los profesores solo leen las diapositivas nada más")
+arreglo_de_textos = PackedStringArray("Que miras tonto", "Por que no mejor seguis caminando insecto antes de que te destruya")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"

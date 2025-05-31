@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://iuedtyho3pq5"]
 
 [ext_resource type="Script" uid="uid://bcm43i7c25blm" path="res://visuals/npc GUI/npc_quest_indicador.gd" id="1_4osju"]
-[ext_resource type="Texture2D" uid="uid://cx2x15v56yxlp" path="res://art/menu/forma-rectangular.png" id="2_yigmp"]
+[ext_resource type="Texture2D" uid="uid://ccgicbrx5ofw3" path="res://art/menu/quest_icon.png" id="2_yigmp"]
 
 [node name="NpcQuestIndicador" type="ColorRect"]
 anchors_preset = 15
@@ -13,6 +13,7 @@ offset_right = 2.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(1, 1, 1, 0.0627451)
 script = ExtResource("1_4osju")
 
 [node name="TextureRect" type="TextureRect" parent="."]

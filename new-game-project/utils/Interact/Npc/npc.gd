@@ -33,9 +33,9 @@ func _input(event):
 			pass
 		STATE.WAITING:
 			if player_in_range and Input.is_action_just_pressed("ui_accept"):
+				print("?")
 				current_npc_state = STATE.TALKING
 				interact()
-				print("npc interacted")
 				await dialogueEnded()
 				current_npc_state = STATE.WAITING
 
@@ -49,7 +49,8 @@ func startDialogue():
 	if tiene_quest == true:
 		primerDialogo.start()
 	else:
-		dialogoDefault.start()
+		if dialogoDefault != null:
+			dialogoDefault.start()
 	
 	
 func quest_available():
@@ -59,11 +60,11 @@ func take_quest():
 	tiene_quest = false
 	quest_icon.hide()
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(body: PlayerB) -> void:
 	if body.name == "PlayerB":
 		player_in_range = true
 
-func _on_area_2d_body_exited(body: Node2D) -> void:
+func _on_area_2d_body_exited(body: PlayerB) -> void:
 	if body.name == "PlayerB":
 		player_in_range = false
 

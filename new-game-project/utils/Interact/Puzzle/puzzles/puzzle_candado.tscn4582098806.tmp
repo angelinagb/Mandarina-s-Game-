@@ -1,0 +1,113 @@
+[gd_scene load_steps=13 format=3 uid="uid://ksp6solj3qvd"]
+
+[ext_resource type="Script" uid="uid://w2xwgdqdbaqg" path="res://puzzles/puzzle_candado.gd" id="1_jekc6"]
+[ext_resource type="Texture2D" uid="uid://d3v0pb5vr3qwm" path="res://art/puzzle/puzzle1/fondo.png" id="2_jekc6"]
+[ext_resource type="Script" uid="uid://oowib2ek1red" path="res://puzzles/control.gd" id="2_rup32"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d5ppn"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_tj51c"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_xh2i4"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_shlj5"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_iwbfu"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_k34of"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_xr4sk"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_ase7b"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_g1b6d"]
+font_size = 64
+
+[node name="PuzzleCandado" type="Node2D"]
+script = ExtResource("1_jekc6")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 140.0
+offset_top = 230.0
+offset_right = 180.0
+offset_bottom = 300.0
+script = ExtResource("2_rup32")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label9" type="Label" parent="Control/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 1
+text = "9"
+label_settings = SubResource("LabelSettings_d5ppn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="Control/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "8"
+label_settings = SubResource("LabelSettings_tj51c")
+
+[node name="Label7" type="Label" parent="Control/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "7"
+label_settings = SubResource("LabelSettings_xh2i4")
+
+[node name="Label6" type="Label" parent="Control/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "6"
+label_settings = SubResource("LabelSettings_shlj5")
+
+[node name="Label5" type="Label" parent="Control/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "5"
+label_settings = SubResource("LabelSettings_iwbfu")
+
+[node name="Label4" type="Label" parent="Control/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "4"
+label_settings = SubResource("LabelSettings_k34of")
+
+[node name="Label3" type="Label" parent="Control/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "3"
+label_settings = SubResource("LabelSettings_xr4sk")
+
+[node name="Label2" type="Label" parent="Control/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "2"
+label_settings = SubResource("LabelSettings_ase7b")
+
+[node name="Label" type="Label" parent="Control/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "1"
+label_settings = SubResource("LabelSettings_g1b6d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(256, 256)
+texture = ExtResource("2_jekc6")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://cevm1i60dkopp"]
+[gd_scene load_steps=27 format=4 uid="uid://cevm1i60dkopp"]
 
 [ext_resource type="Texture2D" uid="uid://bjapggl08o25x" path="res://art/tiles/tile_207.png" id="1_hd7cy"]
 [ext_resource type="Texture2D" uid="uid://4rd6oe0hstb7" path="res://art/items/2dClassroomAssetPackByStyloo/slab_N.png" id="2_2dkj0"]
@@ -9,10 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://cbbl4rrqj7btc" path="res://art/items/2dClassroomAssetPackByStyloo/Chemistry lab/Chemistry Lab Second Spritesheet 2.png" id="8_svhhi"]
 [ext_resource type="Texture2D" uid="uid://c8gtfcs5tup0f" path="res://art/items/2dClassroomAssetPackByStyloo/Chemistry lab/Chemistry Lab First Spritesheet 2.png" id="9_hd7cy"]
 [ext_resource type="Texture2D" uid="uid://b2ieb7w7fjp1a" path="res://art/items/2dClassroomAssetPackByStyloo/Cafeteria/Cafeteria First Spritesheet 4.png" id="9_skrxg"]
+[ext_resource type="Texture2D" uid="uid://b0rdkdwqjq4pn" path="res://art/tiles/images.png" id="10_2dkj0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wjpw0"]
 texture = ExtResource("1_hd7cy")
-texture_region_size = Vector2i(256, 128)
+texture_region_size = Vector2i(1, 1)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o4gu4"]
@@ -98,14 +99,17 @@ texture_region_size = Vector2i(145, 118)
 0:0/0/texture_origin = Vector2i(19, 85)
 0:3/size_in_atlas = Vector2i(1, 2)
 0:3/0 = 0
+0:3/0/texture_origin = Vector2i(0, 71)
 0:5/0 = 0
 3:0/size_in_atlas = Vector2i(4, 4)
 3:0/0 = 0
 3:0/0/y_sort_origin = 147
 1:3/size_in_atlas = Vector2i(1, 2)
 1:3/0 = 0
+1:3/0/texture_origin = Vector2i(0, 71)
 2:3/size_in_atlas = Vector2i(1, 2)
 2:3/0 = 0
+2:3/0/texture_origin = Vector2i(0, 71)
 6:4/0 = 0
 3:4/size_in_atlas = Vector2i(2, 1)
 3:4/0 = 0
@@ -128,7 +132,7 @@ texture_region_size = Vector2i(144, 117)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1a1u0"]
 texture = ExtResource("9_skrxg")
-texture_region_size = Vector2i(147, 81)
+texture_region_size = Vector2i(145, 81)
 0:5/size_in_atlas = Vector2i(1, 2)
 0:5/0 = 0
 0:5/0/y_sort_origin = 80
@@ -136,6 +140,8 @@ texture_region_size = Vector2i(147, 81)
 2:5/0 = 0
 1:5/size_in_atlas = Vector2i(1, 2)
 1:5/0 = 0
+3:0/size_in_atlas = Vector2i(4, 5)
+3:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hd7cy"]
 texture = ExtResource("8_svhhi")
@@ -174,18 +180,40 @@ texture_region_size = Vector2i(64, 64)
 tile_shape = 1
 tile_layout = 5
 tile_size = Vector2i(256, 128)
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_42e7n")
 sources/1 = SubResource("TileSetAtlasSource_etalr")
 sources/3 = SubResource("TileSetAtlasSource_1a1u0")
 sources/4 = SubResource("TileSetAtlasSource_hd7cy")
 sources/5 = SubResource("TileSetAtlasSource_dul4s")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wxpp0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_goui0"]
+texture = ExtResource("10_2dkj0")
+texture_region_size = Vector2i(32, 16)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2dkj0"]
+texture = ExtResource("10_2dkj0")
+texture_region_size = Vector2i(16, 8)
+0:0/0 = 0
+1:0/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_0ybgh"]
+tile_shape = 1
+tile_size = Vector2i(32, 16)
+sources/0 = SubResource("TileSetAtlasSource_goui0")
+sources/1 = SubResource("TileSetAtlasSource_2dkj0")
+
 [node name="BaseTiles" type="Node2D"]
 y_sort_enabled = true
 metadata/_edit_horizontal_guides_ = [-140.0]
 
 [node name="floors" type="TileMapLayer" parent="."]
-z_index = -1
+z_index = -3
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAD9//7/AQAAAAAAAAD9////AQAAAAAAAAD+////AQAAAAAAAAD+/wAAAQAAAAAAAAD+/wEAAQAAAAAAAAD//wEAAQAAAAAAAAAAAAEAAQAAAAAAAAABAAEAAQAAAAAAAAABAAAAAQAAAAAAAAABAP//AQAAAAAAAAAAAP//AQAAAAAAAAAAAP7/AQAAAAAAAAD///7/AQAAAAAAAAD///3/AQAAAAAAAAD+//3/AQAAAAAAAAD+//7/AQAAAAAAAAD//wAAAQAAAAAAAAAAAAAAAQAAAAAAAAD/////AQAAAAAAAAD9//3/AQAAAAAAAAD9/wAAAQAAAAAAAAD9/wEAAQAAAAAAAAABAP7/AQAAAAAAAAABAP3/AQAAAAAAAAAAAP3/AQAAAAAAAAA=")
 tile_set = SubResource("TileSet_gdlvw")
@@ -196,7 +224,7 @@ tile_map_data = PackedByteArray("AAD9/wEACAAAAAEAAAD9/wAACAAAAAEAAAD9////CAAAAAE
 tile_set = SubResource("TileSet_1qkuv")
 
 [node name="walls_front" type="TileMapLayer" parent="."]
-y_sort_enabled = true
+z_index = 1
 tile_map_data = PackedByteArray("AAAAAAEACAABAAEAAAD//wEACAABAAEAAAD+/wEACAABAAEAAAD9/wEACAABAAEAAAABAAEACAABAAAAAAABAAAACAADAAEAAAABAP//CAADAAEAAAABAP7/CAADAAEAAAABAP3/CAADAAEAAAA=")
 tile_set = SubResource("TileSet_1qkuv")
 
@@ -204,6 +232,7 @@ tile_set = SubResource("TileSet_1qkuv")
 y_sort_enabled = true
 rotation = 0.010779
 scale = Vector2(0.408655, 0.321648)
+tile_map_data = PackedByteArray("AAD9//v/AAACAAMAAAA=")
 tile_set = SubResource("TileSet_xlc22")
 
 [node name="surfaces" type="TileMapLayer" parent="."]
@@ -211,3 +240,10 @@ y_sort_enabled = true
 rotation = 0.010779
 scale = Vector2(0.408655, 0.321648)
 tile_set = SubResource("TileSet_xlc22")
+
+[node name="Floor_Shadows" type="TileMapLayer" parent="."]
+modulate = Color(1, 1, 1, 0.47451)
+z_index = -2
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_wxpp0")
+tile_set = SubResource("TileSet_0ybgh")

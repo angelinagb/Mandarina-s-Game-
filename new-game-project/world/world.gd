@@ -147,7 +147,7 @@ func _on_npc_talked_to(npc: Npc) -> void:
 		npc.take_quest()
 		quest.add_quest(npc.quest)
 		
-func _on_puzzle_begin(puzzle : Puzzle):
+func _on_puzzle_begin(puzzle : Interactable):
 		var dapuzzle = puzzle.puzzle_tcsn.instantiate()
 		add_child(dapuzzle)
 		print("llega")

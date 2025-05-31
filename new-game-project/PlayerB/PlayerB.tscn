@@ -1,4 +1,4 @@
-[gd_scene load_steps=298 format=3 uid="uid://disck758vf23b"]
+[gd_scene load_steps=299 format=3 uid="uid://disck758vf23b"]
 
 [ext_resource type="Texture2D" uid="uid://c0twjsbfmdmqj" path="res://art/characters/iso/GirlSample/GirlSample-Idle/GirlSample_ReadyIdle_DownRight.png" id="1_jt0kk"]
 [ext_resource type="Script" uid="uid://bod7u5xrsnquq" path="res://PlayerB/PlayerBStates/playerB.gd" id="1_mxgrx"]
@@ -31,6 +31,7 @@
 [ext_resource type="Script" uid="uid://cjwnprdtsb3t0" path="res://PlayerB/PlayerBStates/player_b_state_run.gd" id="21_icxdj"]
 [ext_resource type="Script" uid="uid://bpcepofex6moj" path="res://PlayerB/PlayerBStates/player_b_state_running_jump.gd" id="26_nrqje"]
 [ext_resource type="Script" uid="uid://onp2jxf5tgbo" path="res://PlayerB/PlayerBStates/player_b_state_pause.gd" id="31_mxgrx"]
+[ext_resource type="Texture2D" uid="uid://cmbhdp0rhrnn5" path="res://art/characters/iso/GirlSample/playerShadow.png" id="32_cs7jv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uvdll"]
 atlas = ExtResource("1_jt0kk")
@@ -1989,8 +1990,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bki2o"]
-radius = 19.0263
+[sub_resource type="CircleShape2D" id="CircleShape2D_cs7jv"]
+radius = 20.2237
 
 [sub_resource type="GDScript" id="GDScript_mxgrx"]
 
@@ -2025,17 +2026,25 @@ func on_input(_event):
 y_sort_enabled = true
 script = ExtResource("1_mxgrx")
 
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.247059)
+position = Vector2(-5.96046e-08, 27)
+scale = Vector2(3.78873, 2.17835)
+texture = ExtResource("32_cs7jv")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.589096, 0.589096, 0.589095, 1)
 y_sort_enabled = true
 texture_filter = 1
+scale = Vector2(0.901804, 1.13341)
 sprite_frames = SubResource("SpriteFrames_v0wow")
-animation = &"walk_west"
+animation = &"idle_west"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
-position = Vector2(0, 15)
-shape = SubResource("CircleShape2D_bki2o")
+position = Vector2(0, 28)
+scale = Vector2(1.19679, 0.591514)
+shape = SubResource("CircleShape2D_cs7jv")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("default_state")]
 script = ExtResource("17_66vyb")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvc5d7mq2bsy8"]
+
+[ext_resource type="Script" uid="uid://dmdwl08shqbr5" path="res://Tomas/Intro/intro.gd" id="1_clp3c"]
+[ext_resource type="PackedScene" uid="uid://bqscndmb0v4br" path="res://managers/dialogue 2.0/dialogue_system.tscn" id="2_rcg5i"]
+[ext_resource type="Resource" uid="uid://ybelqypif60r" path="res://Tomas/Intro/Intro_Dialogo_1.tres" id="3_ueic3"]
+[ext_resource type="Texture2D" uid="uid://44t52jpt0v4y" path="res://art/items/npc.png" id="5_4shve"]
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_clp3c")
+dialogo_1 = ExtResource("3_ueic3")
+
+[node name="Dialogue System" parent="." instance=ExtResource("2_rcg5i")]
+dialogueResource = ExtResource("3_ueic3")
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(180, 722)
+texture = ExtResource("5_4shve")

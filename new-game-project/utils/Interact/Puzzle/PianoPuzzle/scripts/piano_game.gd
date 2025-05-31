@@ -4,20 +4,20 @@
 #✅ Avanza si acierta.
 #✅ Emite señal de victoria si completa la secuencia
 
-extends Node2D
+extends Puzzle
 
+signal finished
 signal on_puzzle_solved(Reward: String)
 
 @onready var h_box_container: HBoxContainer = $HBoxContainer
 @onready var feedback_player: AudioStreamPlayer2D = $feedbackPlayer
 @onready var canvas_modulate: CanvasModulate = $CanvasModulate
-@onready var camera_2d: Camera2D = $Camera2D
 
 
 var win_sound = preload("res://utils/Interact/Puzzle/PianoPuzzle/Sounds/sound_effects/win.wav")
 var error_sound = preload("res://utils/Interact/Puzzle/PianoPuzzle/Sounds/sound_effects/error.wav")
 
-var target_sequence: Array[String] = ["F5#", "B4", "C5#", "D5", "E5", "F5#", "D5","F5#","D5","F5#","B4","D5","B4","G4","D5","B4"]
+var target_sequence: Array[String] = ["E5", "D5", "C5", "A4", "B4", "D5", "C5","B4","G4#","A4"]
 
 var current_index := 0
 
@@ -33,6 +33,7 @@ func _on_key_pressed(note: String) -> void:
 		if current_index >= target_sequence.size():
 			feedback_win()
 			print("🎉 ¡Secuencia completada!")
+			finished.emit()
 			on_puzzle_solved.emit("Chocolate")
 			current_index = 0  # o podés cambiar de nivel
 	else:
@@ -71,10 +72,3 @@ func hidep():
 	self.hide()
 	for key in get_tree().get_nodes_in_group("piano_keys"):
 		key.disable = true 
-	
-func showp():
-	self.show() 
-	self.show_behind_parent= true
-	#for key in get_tree().get_nodes_in_group("piano_keys"):
-		#key.disable = false 
-	camera_2d.make_current()

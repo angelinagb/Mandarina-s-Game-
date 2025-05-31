@@ -1,17 +1,26 @@
 [gd_scene load_steps=4 format=3 uid="uid://cv8f0bg0ein8h"]
 
 [ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_wxqcd"]
-[ext_resource type="Texture2D" uid="uid://44t52jpt0v4y" path="res://art/items/npc.png" id="2_d5h5y"]
+[ext_resource type="Texture2D" uid="uid://dwrjitbrmvrmk" path="res://art/characters/iso/npc/unnamed (1).png" id="2_sti0p"]
 [ext_resource type="Resource" uid="uid://eg33hfnwy4tk" path="res://managers/dialogue 2.0/recursos/dialogos/Alumno_1_dialogo/alumno_1.tres" id="3_sti0p"]
 
 [node name="Alumna 1" instance=ExtResource("1_wxqcd")]
 
-[node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("2_d5h5y")
+[node name="PlayerShadow" parent="." index="0"]
+position = Vector2(-8.49999, 38.6991)
+scale = Vector2(5.03125, 0.96239)
 
-[node name="Dialogo Quest" parent="." index="3"]
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(-5, 12)
+scale = Vector2(0.0966797, 0.0966797)
+texture = ExtResource("2_sti0p")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-1, -1)
+
+[node name="Dialogo Quest" parent="." index="4"]
 unique_name_in_owner = true
 vacio = true
 
-[node name="Dialogo Default" parent="." index="4"]
+[node name="Dialogo Default" parent="." index="5"]
 dialogueResource = ExtResource("3_sti0p")

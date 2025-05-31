@@ -1,0 +1,8 @@
+es la pista para sacar la melodia del piano
+tiene que correr hasta que diga secuen completada 
+no hay mucha ciencia
+
+Porque:
+Perodo visual ∝ 1/ Frecuencia
+Y en la fórmula del seno: sin(frecuencia⋅𝑥⋅escala)
+→ Si la frecuencia aumenta, el seno oscila más rápido a medida que x avanza
