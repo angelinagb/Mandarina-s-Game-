@@ -5,14 +5,14 @@ extends Node2D
 @onready var room_manager	: RoomManager 		= $RoomManager
 @onready var inventory		: InventoryManager 	= $InventoryManager
 @onready var quest			: QuestManager 		= $QuestManager
-@onready var event			: EventManager	 	= $EventManager
+@onready var event			: EventManager	 	=$EventManager
 
 # LOGICA APLICACION
 @onready var save_manager	: SaveManager 		= $SaveManager
 
 # VISUALES
 @onready var dialogue		: DialogueManager 	= $DialogueManager
-@onready var menu			: MenuManager 		= $menu
+@onready var menu			: MenuManager 		=$menu
 @onready var gui			:  					= $gui
 
 var current: IsoRoom
@@ -197,3 +197,15 @@ func _on_gui_button_open_menu_pressed() -> void:
 func on_puzzle_solved(Reward: String) :
 	inventory.item_grabbed(Reward)
 	player.resume_player()
+
+
+#func _on_inventory_manager_item_updated(item: Dictionary) -> void:
+	#pass # Replace with function body.
+#
+#
+#func _on_quest_manager_quest_updated(quest: Quest) -> void:
+	#pass # Replace with function body.
+#
+#
+#func _on_event_manager_event_added(event: String) -> void:
+	#pass # Replace with function body.

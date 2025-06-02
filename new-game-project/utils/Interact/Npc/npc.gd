@@ -60,11 +60,11 @@ func take_quest():
 	tiene_quest = false
 	quest_icon.hide()
 
-func _on_area_2d_body_entered(body: PlayerB) -> void:
+func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "PlayerB":
 		player_in_range = true
 
-func _on_area_2d_body_exited(body: PlayerB) -> void:
+func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.name == "PlayerB":
 		player_in_range = false
 

@@ -3,7 +3,6 @@ class_name  IsoRoom  extends Node2D
 signal interactable_interacted(interactable: Interactable)
 
 @onready var player_b: PlayerB = $Player/PlayerB
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 @export var room_identifier: String
@@ -26,7 +25,3 @@ func _on_interactable_interacted(interactable: Interactable):
 
 func get_player() -> PlayerB:
 	return player_b
-
-func _process(delta: float) -> void:
-	if animation_player:
-		animation_player.play("idle")

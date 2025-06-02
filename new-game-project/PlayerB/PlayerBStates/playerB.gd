@@ -5,6 +5,8 @@ class_name PlayerB extends CharacterBody2D
 @onready var sprite = $AnimatedSprite2D
 @onready var this = $"."
 @onready var state_machine = $StateMachine
+@onready var joystick: Node2D = $Joystick
+
 
 var facing_direction = Vector2(0, 1) 
 var states: PlayerBStateNames = PlayerBStateNames.new()

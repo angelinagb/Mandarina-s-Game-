@@ -12,15 +12,15 @@
 [node name="PuzzleCircuito" type="Node2D"]
 process_mode = 3
 z_index = 10
-position = Vector2(230, 82)
-scale = Vector2(0.557498, 0.413592)
+scale = Vector2(0.585373, 0.413592)
 script = ExtResource("1_4yum5")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 151.0
+offset_top = -7.25352
+offset_bottom = 143.746
 grow_horizontal = 2
 size_flags_vertical = 4
 

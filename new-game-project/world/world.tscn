@@ -27,11 +27,14 @@ script = ExtResource("1_ioo17")
 
 [node name="DialogueManager" parent="." instance=ExtResource("7_sc4t8")]
 
-[node name="gui" parent="." instance=ExtResource("9_ov2xu")]
-
 [node name="menu" parent="." instance=ExtResource("4_ai45w")]
 elemento_quest = ExtResource("11_ov2xu")
 elemento_inventario = ExtResource("12_mad0u")
 
-[connection signal="button_open_menu_pressed" from="gui" to="." method="_on_gui_button_open_menu_pressed"]
+[node name="gui" parent="." instance=ExtResource("9_ov2xu")]
+
+[connection signal="event_added" from="EventManager" to="." method="_on_event_manager_event_added"]
+[connection signal="quest_updated" from="QuestManager" to="." method="_on_quest_manager_quest_updated"]
+[connection signal="item_updated" from="InventoryManager" to="." method="_on_inventory_manager_item_updated"]
 [connection signal="ability_button_pressed" from="menu" to="." method="_on_menu_ability_button_pressed"]
+[connection signal="button_open_menu_pressed" from="gui" to="." method="_on_gui_button_open_menu_pressed"]

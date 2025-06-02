@@ -43,8 +43,6 @@ scale = Vector2(0.747764, 0.80786)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="7"]
-
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="dialogue_ended" from="Dialogo Quest" to="." method="_on_dialogo_quest_dialogue_ended"]
 [connection signal="dialogue_ended" from="Dialogo Default" to="." method="_on_dialogo_default_dialogue_ended"]

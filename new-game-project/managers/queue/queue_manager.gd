@@ -13,7 +13,7 @@ func enqueue_event(event_scene: PackedScene):
 	event_queue.append(event_scene)
 	if not is_playing:
 		_start_queue()
-
+		
 func _start_queue():
 	is_playing = true
 	get_tree().paused = true

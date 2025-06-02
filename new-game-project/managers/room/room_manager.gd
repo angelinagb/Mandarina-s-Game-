@@ -31,3 +31,6 @@ func change_room(room_id: String) -> IsoRoom:
 	add_child(current)
 	can_change_room = true
 	return current
+
+func _ready() -> void:
+	pass

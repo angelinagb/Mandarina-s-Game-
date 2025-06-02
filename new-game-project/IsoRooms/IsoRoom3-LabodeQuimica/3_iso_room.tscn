@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cedn2qcbe0ghs"]
+[gd_scene load_steps=7 format=3 uid="uid://cedn2qcbe0ghs"]
 
 [ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_sskki"]
 [ext_resource type="PackedScene" uid="uid://bucn0vs17tsw2" path="res://utils/Interact/Item/Instancias/Mate.tscn" id="2_twoqq"]
 [ext_resource type="PackedScene" uid="uid://cl6b1ih87sy2a" path="res://IsoRooms/IsoRoom3-LabodeQuimica/iso_room_base3.tscn" id="4_kwovi"]
 [ext_resource type="PackedScene" uid="uid://biaeia3f0l7xn" path="res://utils/Interact/Transitioner/Instancias/trans_r3_r2.tscn" id="4_v2ge4"]
 [ext_resource type="PackedScene" uid="uid://b7vuer4est3c1" path="res://utils/Interact/Npc/Instancias/Alumno_1.tscn" id="5_v2ge4"]
+[ext_resource type="PackedScene" uid="uid://dilhgir4y8bhr" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleCircuito/puzzle_electronica.tscn" id="6_sunh3"]
 
 [node name="IsoRoom" instance=ExtResource("1_sskki")]
 y_sort_enabled = true
@@ -34,7 +35,7 @@ y_sort_enabled = true
 position = Vector2(-148, 158)
 rotation = -0.00162853
 scale = Vector2(-1.42141, 1.41966)
-puzzle = null
+puzzle = ExtResource("6_sunh3")
 
 [node name="PlayerB" parent="Player" index="0"]
 position = Vector2(54, 187)
