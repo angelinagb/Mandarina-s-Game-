@@ -11,6 +11,8 @@
 
 [node name="PuzzleCircuito" type="Node2D"]
 process_mode = 3
+show_behind_parent = true
+top_level = true
 z_index = 10
 scale = Vector2(0.585373, 0.413592)
 script = ExtResource("1_4yum5")
