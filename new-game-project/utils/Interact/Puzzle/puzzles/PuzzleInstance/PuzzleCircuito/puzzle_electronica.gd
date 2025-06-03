@@ -1,6 +1,5 @@
 extends Puzzle
 
-
 signal finished
 
 @onready var grid: GridContainer = $Grid

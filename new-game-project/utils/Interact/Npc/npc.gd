@@ -33,7 +33,6 @@ func _input(event):
 			pass
 		STATE.WAITING:
 			if player_in_range and Input.is_action_just_pressed("ui_accept"):
-				print("?")
 				current_npc_state = STATE.TALKING
 				interact()
 				await dialogueEnded()

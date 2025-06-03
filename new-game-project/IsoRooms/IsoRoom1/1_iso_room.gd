@@ -20,3 +20,4 @@ func save_state():
 
 func _on_chica_triste_dialogue_ended() -> void:
 	trans.process_mode = Node.PROCESS_MODE_INHERIT
+	

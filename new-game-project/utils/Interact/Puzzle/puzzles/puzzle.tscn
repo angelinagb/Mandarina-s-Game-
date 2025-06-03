@@ -5,4 +5,5 @@
 [node name="Puzzle" type="CanvasLayer"]
 process_mode = 3
 layer = 3
+follow_viewport_enabled = true
 script = ExtResource("1_2k45h")

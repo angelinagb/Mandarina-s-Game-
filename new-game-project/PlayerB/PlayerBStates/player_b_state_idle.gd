@@ -10,14 +10,25 @@ func on_physics_process(_delta: float) -> void:
 	playerb.velocity = Vector2.ZERO
 	playerb.update_animation_parameters(playerb.get_facing_direction(), "idle")
 	playerb.move_and_slide()
-	
-func on_input(_event):
-	if Input.is_action_pressed("keys"):
-		if Input.is_action_pressed("shift") : # tambien cambiar esto a lo que armemos mobile
+
+	var joystick := playerb.joystick
+	var joy_input: Vector2 = joystick.get_normalized_vector()
+
+	if joy_input.length() > 0.1:
+		# Acá decidís si usar shift o si querés algo diferente en mobile
+		if Input.is_action_pressed("shift"):
 			state_machine.change_to(playerb.states.Run)
-		else: 
+		else:
 			state_machine.change_to(playerb.states.Walk)
+
 	
+#func on_input(_event):
+	#if Input.is_action_pressed("keys"):
+		#if Input.is_action_pressed("shift") : # tambien cambiar esto a lo que armemos mobile
+			#state_machine.change_to(playerb.states.Run)
+		#else: 
+			#state_machine.change_to(playerb.states.Walk)
+	#
 
 func end():
 	pass

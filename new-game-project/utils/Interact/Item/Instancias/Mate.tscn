@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bx1ijhl76vl0w" path="res://art/items/mate.png" id="2_jsiqp"]
 
 [node name="Mate" instance=ExtResource("1_tvyhi")]
-id = "Q1_MATE"
+id = "Mate"
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_jsiqp")

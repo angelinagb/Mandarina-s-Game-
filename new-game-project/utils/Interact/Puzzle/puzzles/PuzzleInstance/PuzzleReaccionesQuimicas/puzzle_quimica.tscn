@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dp1j1sh86uh60"]
 
-[ext_resource type="Script" uid="uid://8l51kftvbjh" path="res://puzzles/PuzzleInstance/PuzzleReaccionesQuimicas/puzzle_quimica.gd" id="1_jgy3u"]
-[ext_resource type="Texture2D" uid="uid://m8tfot3ejea3" path="res://puzzles/PuzzleInstance/PuzzleReaccionesQuimicas/tabla-periodica-grande-fondo-blanco-192641164.png" id="2_kfvf7"]
+[ext_resource type="Script" uid="uid://8l51kftvbjh" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleReaccionesQuimicas/puzzle_quimica.gd" id="1_jgy3u"]
+[ext_resource type="Texture2D" uid="uid://m8tfot3ejea3" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleReaccionesQuimicas/tabla-periodica-grande-fondo-blanco-192641164.png" id="2_kfvf7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_u7tt2"]
 font_size = 20

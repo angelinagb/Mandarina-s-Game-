@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://df0eeq5en5tmr"]
+
+[ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_ebu0q"]
+[ext_resource type="PackedScene" uid="uid://bxdarh5hjdqcv" path="res://IsoRooms/IsoRoom4-LabodeFisica/4_base_tiles_labodefisica.tscn" id="2_8hemf"]
+[ext_resource type="Script" uid="uid://cbksmdo5jkvnq" path="res://IsoRooms/IsoRoom4-LabodeFisica/4_iso_room_labodefisica.gd" id="2_i5aki"]
+[ext_resource type="PackedScene" uid="uid://v8ayk5g3mgli" path="res://IsoRooms/IsoRoom4-LabodeFisica/PistaPiano/osicloscopio.tscn" id="3_oyfwe"]
+[ext_resource type="PackedScene" uid="uid://bucn0vs17tsw2" path="res://utils/Interact/Item/Instancias/Mate.tscn" id="3_woc7s"]
+
+[node name="IsoRoom" instance=ExtResource("1_ebu0q")]
+script = ExtResource("2_i5aki")
+osc = ExtResource("3_oyfwe")
+
+[node name="BaseTiles" parent="." index="0" instance=ExtResource("2_8hemf")]
+
+[node name="Mate" parent="Interactables/Items" index="0" instance=ExtResource("3_woc7s")]
+position = Vector2(251, -325)
+
+[node name="osc-activator" type="Area2D" parent="." index="4"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="osc-activator" index="0"]
+z_index = 2
+position = Vector2(-91, -131)
+polygon = PackedVector2Array(-102, -123, -4, -165, 32, -51, -58, -5)
+
+[connection signal="body_entered" from="osc-activator" to="." method="_on_oscactivator_body_entered"]

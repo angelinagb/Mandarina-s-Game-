@@ -13,7 +13,7 @@
 y_sort_enabled = true
 script = ExtResource("2_lrgrb")
 intro = null
-room_identifier = "ROOM-4"
+room_id = "ROOM-4"
 
 [node name="BaseTiles" parent="." index="0" instance=ExtResource("2_6jolm")]
 
@@ -54,4 +54,5 @@ position = Vector2(189, -392)
 [connection signal="interacted" from="Interactables/Items/Item" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Items/Mate" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/Trans R1 -> R2" to="." method="_on_interactable_interacted"]
+[connection signal="dialogue_ended" from="Interactables/Npcs/Chica Triste" to="." method="_on_chica_triste_dialogue_ended"]
 [connection signal="interacted" from="Interactables/Npcs/Chica Triste" to="." method="_on_interactable_interacted"]

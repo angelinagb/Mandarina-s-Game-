@@ -1,4 +1,8 @@
 class_name PlayerB extends CharacterBody2D
+#Cambiar nombre de las animaciones
+#actualizar grados de la direccion para abarcar las 8 direcciones 
+
+
 
 @export var SPEED = 300.0
 
@@ -28,17 +32,20 @@ func resume_player():
 #endregion 
 
 #seria lo equiv a play_animation
-func update_animation_parameters(dir: Vector2, state: String):
-	var anim = "_west"
-	if dir.x == 0 and dir.y == -1:
-		anim = "_west" #315
-	elif dir.x == 0 and dir.y == 1:
-		anim = "_east"#143
-	elif dir.x == -1 and dir.y == 0:
-		anim = "_south" #247
-	elif dir.x == 1 and dir.y == 0:
-		anim = "_north" #67
+func update_animation_parameters(dir: Vector2, state: String) -> void:
+	var anim = ""
+	var angle = dir.angle()
+		# Convierto la dirección en 8 sectores
+	if angle >= -PI / 4 and angle < PI / 4:
+		anim = "_north"
+	elif angle >= PI / 4 and angle < 3 * PI / 4:
+		anim = "_east"
+	elif angle >= -3 * PI / 4 and angle < -PI / 4:
+		anim = "_west"
+	else:
+		anim = "_south"
 
+	# Ahora actualizás la animación del player
 	sprite.play(state + anim)
 
 func get_facing_direction() -> Vector2 : 

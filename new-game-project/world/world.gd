@@ -128,6 +128,7 @@ func _on_interactable_interacted(interactable: Interactable):
 			_on_puzzle_begin(interactable)
 		_:
 			print("no tengo interactuable" + interactable.my_type)
+	
 	event.interactable_triggered(interactable.id)
 	
 

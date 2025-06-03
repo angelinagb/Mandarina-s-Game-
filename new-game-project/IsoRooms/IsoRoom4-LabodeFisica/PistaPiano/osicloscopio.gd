@@ -1,9 +1,11 @@
 extends Node 
 
 @onready var wave: Node2D = $Wave
-@onready var button: Button = $Button
+@onready var begin_button: Button = $BeginButton
+@onready var close_button: Button = $CloseButton
 @onready var label: Label = $Label
 
+signal finished 
 
 var secuence = ["E5", "D5", "C5", "A4", "B4", "D5", "C5","B4","G#4","A4"]
 
@@ -18,9 +20,6 @@ func ready():
 		##clean 
 
 
-func _on_button_toggled(toggled_on: bool) -> void:
-	play_secuence()
-	button.disabled = true
 	
 func play_secuence():
 	for key in secuence:
@@ -30,5 +29,19 @@ func play_secuence():
 		wave.play_note(key)
 		await wave.playing 
 	wave.stop()
-	button.disabled = false
+	begin_button.disabled = false
 	label.text = "Secuence ended"
+
+
+func _on_begin_pressed() -> void:
+	play_secuence()
+	begin_button.disabled = true
+
+func _on_close_pressed() -> void:
+	finished.emit()
+	queue_free()
+
+func start():
+	pass
+
+	

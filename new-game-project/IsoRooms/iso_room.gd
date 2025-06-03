@@ -7,14 +7,12 @@ signal interactable_interacted(interactable: Interactable)
 @export var room_id: String
 var current_state: Dictionary = {}
 
-@export var room_identifier: String
-
 func _ready(): 
 	current_state = StateManager.get_room_state(room_id)
 	restore_state()
 		
 
-func get_room_identifier(): return room_identifier
+func get_room_identifier(): return room_id
 
 func get_position_spawn(name_spawn: String) -> Vector2:
 	for child in $Spawns.get_children():

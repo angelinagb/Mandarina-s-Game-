@@ -10,7 +10,7 @@
 
 [node name="IsoRoom-1b" instance=ExtResource("1_kwsg3")]
 y_sort_enabled = true
-room_identifier = "ROOM 4 -II"
+room_id = "ROOM-4-II"
 
 [node name="BaseTiles" parent="." index="0" instance=ExtResource("3_4p6kt")]
 

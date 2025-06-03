@@ -20,6 +20,7 @@ font_size = 24
 shadow_color = Color(0, 0, 0, 1)
 
 [node name="menu" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_7whbs")
 
 [node name="Fondo" type="Sprite2D" parent="."]

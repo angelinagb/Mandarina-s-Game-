@@ -1,5 +1,6 @@
 extends Sprite2D
 
+signal change_motion()
 @onready var parent = $".."
 
 var pressing = false
@@ -32,7 +33,6 @@ func calculateVector():
 		
 func _on_button_button_down():
 	pressing = true
-
 
 func _on_button_button_up():
 	pressing = false

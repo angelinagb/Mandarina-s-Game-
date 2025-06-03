@@ -44,18 +44,18 @@ func add_quest_ui(quest: Quest) -> void:
 	quest_box.set_titulo(quest.title)
 	quest_box.set_paso("    " + quest.get_current_step().text_to_do)
 	
-	var step := quest.get_current_step()
-	if step:
-		for id in step.necessary_interactables.keys():
-			var id_text := "%s [%s]" % [
-				id,
-				"✔" if step.necessary_interactables[id] else "✘"
-			]
-			var step_label := Label.new()
-			step_label.text = "    " + "    " +id_text
-			step_label.add_theme_color_override("font_color", Color(0, 0, 200))
-
-			quest_box.add_child(step_label)
+	#var step := quest.get_current_step()
+	#if step:
+		#for id in step.necessary_interactables.keys():
+			#var id_text := "%s [%s]" % [
+				#id,
+				#"✔" if step.necessary_interactables[id] else "✘"
+			#]
+			#var step_label := Label.new()
+			#step_label.text = "    " + "    " +id_text
+			#step_label.add_theme_color_override("font_color", Color(0, 0, 200))
+#
+			#quest_box.add_child(step_label)
 	
 	quest_container.add_child(quest_box)
 
@@ -75,7 +75,8 @@ func on_item_updated(item: Dictionary):
 		remove_item_inventory(item)
 
 func on_abilities_updated(points_available: int, abilities: Dictionary):
-	$Control2/MainMenu.update(points_available, abilities)
+	#$Control2/MainMenu.update(points_available, abilities)
+	pass
 
 func _on_main_menu_ability_button_pressed(ability_name: String) -> void:
 	ability_button_pressed.emit(ability_name)
