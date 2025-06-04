@@ -1,375 +1,410 @@
-[gd_scene load_steps=14 format=3 uid="uid://ksp6solj3qvd"]
+[gd_scene load_steps=9 format=3 uid="uid://ksp6solj3qvd"]
 
-[ext_resource type="Script" uid="uid://w2xwgdqdbaqg" path="res://puzzles/PuzzleInstance/PuzzleCandado/puzzle_candado.gd" id="1_jekc6"]
-[ext_resource type="Texture2D" uid="uid://d3v0pb5vr3qwm" path="res://puzzles/PuzzleInstance/PuzzleCandado/fondo.png" id="2_jekc6"]
-[ext_resource type="Script" uid="uid://oowib2ek1red" path="res://puzzles/PuzzleInstance/PuzzleCandado/control.gd" id="2_rup32"]
+[ext_resource type="Script" uid="uid://w2xwgdqdbaqg" path="res://utils/Interact/Puzzle/puzzles 2.0/PuzzleInstance/PuzzleCandado/puzzle_candado.gd" id="1_jekc6"]
+[ext_resource type="FontFile" uid="uid://ctwexxmrsmp1g" path="res://utils/Interact/Puzzle/puzzles 2.0/font/LuckiestGuy-Regular.ttf" id="2_bw8q6"]
+[ext_resource type="Texture2D" uid="uid://d3v0pb5vr3qwm" path="res://utils/Interact/Puzzle/puzzles 2.0/PuzzleInstance/PuzzleCandado/fondo.png" id="2_jekc6"]
+[ext_resource type="Script" uid="uid://oowib2ek1red" path="res://utils/Interact/Puzzle/puzzles 2.0/PuzzleInstance/PuzzleCandado/control.gd" id="2_rup32"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_jekc6"]
-font_size = 64
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58q44"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
-[sub_resource type="LabelSettings" id="LabelSettings_g1b6d"]
-font_size = 64
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_unhuv"]
+bg_color = Color(0.0392157, 0.0980392, 0.294118, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_ase7b"]
-font_size = 64
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3iwr8"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
-[sub_resource type="LabelSettings" id="LabelSettings_xr4sk"]
-font_size = 64
-
-[sub_resource type="LabelSettings" id="LabelSettings_k34of"]
-font_size = 64
-
-[sub_resource type="LabelSettings" id="LabelSettings_iwbfu"]
-font_size = 64
-
-[sub_resource type="LabelSettings" id="LabelSettings_shlj5"]
-font_size = 64
-
-[sub_resource type="LabelSettings" id="LabelSettings_xh2i4"]
-font_size = 64
-
-[sub_resource type="LabelSettings" id="LabelSettings_tj51c"]
-font_size = 64
-
-[sub_resource type="LabelSettings" id="LabelSettings_d5ppn"]
-font_size = 64
+[sub_resource type="Theme" id="Theme_73crn"]
+Button/colors/font_color = Color(1, 0.647059, 0, 1)
+Button/constants/outline_size = 10
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("2_bw8q6")
+Button/styles/normal = SubResource("StyleBoxFlat_58q44")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/constants/outline_size = 10
+Label/font_sizes/font_size = 64
+Label/fonts/font = ExtResource("2_bw8q6")
+PanelBackground/base_type = &"Panel"
+PanelBackground/styles/panel = SubResource("StyleBoxFlat_unhuv")
+PanelDigit/base_type = &"Panel"
+PanelDigit/styles/panel = SubResource("StyleBoxFlat_3iwr8")
 
 [node name="PuzzleCandado" type="Node"]
 script = ExtResource("1_jekc6")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 2340.0
-offset_bottom = 1079.0
-color = Color(0, 0, 0, 1)
+[node name="Background" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_73crn")
+theme_type_variation = &"PanelBackground"
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1050.0
-offset_top = 510.0
-offset_right = 1100.0
-offset_bottom = 580.0
-script = ExtResource("2_rup32")
-metadata/_edit_use_anchors_ = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+[node name="Texture" type="TextureRect" parent="Background"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Label0" type="Label" parent="Control/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_jekc6")
-
-[node name="Label1" type="Label" parent="Control/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "1"
-label_settings = SubResource("LabelSettings_g1b6d")
-
-[node name="Label2" type="Label" parent="Control/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "2"
-label_settings = SubResource("LabelSettings_ase7b")
-
-[node name="Label3" type="Label" parent="Control/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "3"
-label_settings = SubResource("LabelSettings_xr4sk")
-
-[node name="Label4" type="Label" parent="Control/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "4"
-label_settings = SubResource("LabelSettings_k34of")
-
-[node name="Label5" type="Label" parent="Control/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "5"
-label_settings = SubResource("LabelSettings_iwbfu")
-
-[node name="Label6" type="Label" parent="Control/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "6"
-label_settings = SubResource("LabelSettings_shlj5")
-
-[node name="Label7" type="Label" parent="Control/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "7"
-label_settings = SubResource("LabelSettings_xh2i4")
-
-[node name="Label8" type="Label" parent="Control/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "8"
-label_settings = SubResource("LabelSettings_tj51c")
-
-[node name="Label9" type="Label" parent="Control/VBoxContainer"]
-visible = false
-layout_mode = 2
-size_flags_vertical = 1
-text = "9"
-label_settings = SubResource("LabelSettings_d5ppn")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Control2" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1115.0
-offset_top = 510.0
-offset_right = 1165.0
-offset_bottom = 580.0
-script = ExtResource("2_rup32")
-metadata/_edit_use_anchors_ = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Label0" type="Label" parent="Control2/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_jekc6")
-
-[node name="Label1" type="Label" parent="Control2/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "1"
-label_settings = SubResource("LabelSettings_g1b6d")
-
-[node name="Label2" type="Label" parent="Control2/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "2"
-label_settings = SubResource("LabelSettings_ase7b")
-
-[node name="Label3" type="Label" parent="Control2/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "3"
-label_settings = SubResource("LabelSettings_xr4sk")
-
-[node name="Label4" type="Label" parent="Control2/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "4"
-label_settings = SubResource("LabelSettings_k34of")
-
-[node name="Label5" type="Label" parent="Control2/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "5"
-label_settings = SubResource("LabelSettings_iwbfu")
-
-[node name="Label6" type="Label" parent="Control2/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "6"
-label_settings = SubResource("LabelSettings_shlj5")
-
-[node name="Label7" type="Label" parent="Control2/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "7"
-label_settings = SubResource("LabelSettings_xh2i4")
-
-[node name="Label8" type="Label" parent="Control2/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "8"
-label_settings = SubResource("LabelSettings_tj51c")
-
-[node name="Label9" type="Label" parent="Control2/VBoxContainer"]
-visible = false
-layout_mode = 2
-size_flags_vertical = 1
-text = "9"
-label_settings = SubResource("LabelSettings_d5ppn")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Control3" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1180.0
-offset_top = 510.0
-offset_right = 1230.0
-offset_bottom = 580.0
-script = ExtResource("2_rup32")
-metadata/_edit_use_anchors_ = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control3"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Label0" type="Label" parent="Control3/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_jekc6")
-
-[node name="Label1" type="Label" parent="Control3/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "1"
-label_settings = SubResource("LabelSettings_g1b6d")
-
-[node name="Label2" type="Label" parent="Control3/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "2"
-label_settings = SubResource("LabelSettings_ase7b")
-
-[node name="Label3" type="Label" parent="Control3/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "3"
-label_settings = SubResource("LabelSettings_xr4sk")
-
-[node name="Label4" type="Label" parent="Control3/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "4"
-label_settings = SubResource("LabelSettings_k34of")
-
-[node name="Label5" type="Label" parent="Control3/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "5"
-label_settings = SubResource("LabelSettings_iwbfu")
-
-[node name="Label6" type="Label" parent="Control3/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "6"
-label_settings = SubResource("LabelSettings_shlj5")
-
-[node name="Label7" type="Label" parent="Control3/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "7"
-label_settings = SubResource("LabelSettings_xh2i4")
-
-[node name="Label8" type="Label" parent="Control3/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "8"
-label_settings = SubResource("LabelSettings_tj51c")
-
-[node name="Label9" type="Label" parent="Control3/VBoxContainer"]
-visible = false
-layout_mode = 2
-size_flags_vertical = 1
-text = "9"
-label_settings = SubResource("LabelSettings_d5ppn")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Control4" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1240.0
-offset_top = 510.0
-offset_right = 1290.0
-offset_bottom = 580.0
-script = ExtResource("2_rup32")
-metadata/_edit_use_anchors_ = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control4"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Label0" type="Label" parent="Control4/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "0"
-label_settings = SubResource("LabelSettings_jekc6")
-
-[node name="Label1" type="Label" parent="Control4/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "1"
-label_settings = SubResource("LabelSettings_g1b6d")
-
-[node name="Label2" type="Label" parent="Control4/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "2"
-label_settings = SubResource("LabelSettings_ase7b")
-
-[node name="Label3" type="Label" parent="Control4/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "3"
-label_settings = SubResource("LabelSettings_xr4sk")
-
-[node name="Label4" type="Label" parent="Control4/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "4"
-label_settings = SubResource("LabelSettings_k34of")
-
-[node name="Label5" type="Label" parent="Control4/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "5"
-label_settings = SubResource("LabelSettings_iwbfu")
-
-[node name="Label6" type="Label" parent="Control4/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "6"
-label_settings = SubResource("LabelSettings_shlj5")
-
-[node name="Label7" type="Label" parent="Control4/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "7"
-label_settings = SubResource("LabelSettings_xh2i4")
-
-[node name="Label8" type="Label" parent="Control4/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "8"
-label_settings = SubResource("LabelSettings_tj51c")
-
-[node name="Label9" type="Label" parent="Control4/VBoxContainer"]
-visible = false
-layout_mode = 2
-size_flags_vertical = 1
-text = "9"
-label_settings = SubResource("LabelSettings_d5ppn")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1170, 540)
 texture = ExtResource("2_jekc6")
+expand_mode = 2
+
+[node name="FirstDigit" type="Panel" parent="Background"]
+layout_mode = 1
+offset_left = 209.0
+offset_top = 217.0
+offset_right = 293.0
+offset_bottom = 296.0
+theme_type_variation = &"PanelDigit"
+script = ExtResource("2_rup32")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/FirstDigit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/FirstDigit/MarginContainer"]
+layout_mode = 2
+
+[node name="0" type="Label" parent="Background/FirstDigit/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+
+[node name="1" type="Label" parent="Background/FirstDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "1"
+
+[node name="2" type="Label" parent="Background/FirstDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "2"
+
+[node name="3" type="Label" parent="Background/FirstDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "3"
+
+[node name="4" type="Label" parent="Background/FirstDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "4"
+
+[node name="5" type="Label" parent="Background/FirstDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "5"
+
+[node name="6" type="Label" parent="Background/FirstDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "6"
+
+[node name="7" type="Label" parent="Background/FirstDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "7"
+
+[node name="8" type="Label" parent="Background/FirstDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "8"
+
+[node name="9" type="Label" parent="Background/FirstDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "9"
+
+[node name="SecondDigit" type="Panel" parent="Background"]
+layout_mode = 1
+offset_left = 306.0
+offset_top = 216.0
+offset_right = 393.0
+offset_bottom = 295.0
+theme_type_variation = &"PanelDigit"
+script = ExtResource("2_rup32")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/SecondDigit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/SecondDigit/MarginContainer"]
+layout_mode = 2
+
+[node name="0" type="Label" parent="Background/SecondDigit/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+
+[node name="1" type="Label" parent="Background/SecondDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "1"
+
+[node name="2" type="Label" parent="Background/SecondDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "2"
+
+[node name="3" type="Label" parent="Background/SecondDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "3"
+
+[node name="4" type="Label" parent="Background/SecondDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "4"
+
+[node name="5" type="Label" parent="Background/SecondDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "5"
+
+[node name="6" type="Label" parent="Background/SecondDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "6"
+
+[node name="7" type="Label" parent="Background/SecondDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "7"
+
+[node name="8" type="Label" parent="Background/SecondDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "8"
+
+[node name="9" type="Label" parent="Background/SecondDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "9"
+
+[node name="ThirdDigit" type="Panel" parent="Background"]
+layout_mode = 1
+offset_left = 407.0
+offset_top = 216.0
+offset_right = 494.0
+offset_bottom = 295.0
+theme_type_variation = &"PanelDigit"
+script = ExtResource("2_rup32")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/ThirdDigit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/ThirdDigit/MarginContainer"]
+layout_mode = 2
+
+[node name="0" type="Label" parent="Background/ThirdDigit/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+
+[node name="1" type="Label" parent="Background/ThirdDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "1"
+
+[node name="2" type="Label" parent="Background/ThirdDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "2"
+
+[node name="3" type="Label" parent="Background/ThirdDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "3"
+
+[node name="4" type="Label" parent="Background/ThirdDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "4"
+
+[node name="5" type="Label" parent="Background/ThirdDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "5"
+
+[node name="6" type="Label" parent="Background/ThirdDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "6"
+
+[node name="7" type="Label" parent="Background/ThirdDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "7"
+
+[node name="8" type="Label" parent="Background/ThirdDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "8"
+
+[node name="9" type="Label" parent="Background/ThirdDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "9"
+
+[node name="FourthDigit" type="Panel" parent="Background"]
+layout_mode = 1
+offset_left = 508.0
+offset_top = 216.0
+offset_right = 593.0
+offset_bottom = 296.0
+theme_type_variation = &"PanelDigit"
+script = ExtResource("2_rup32")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/FourthDigit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/FourthDigit/MarginContainer"]
+layout_mode = 2
+
+[node name="0" type="Label" parent="Background/FourthDigit/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+
+[node name="1" type="Label" parent="Background/FourthDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "1"
+
+[node name="2" type="Label" parent="Background/FourthDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "2"
+
+[node name="3" type="Label" parent="Background/FourthDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "3"
+
+[node name="4" type="Label" parent="Background/FourthDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "4"
+
+[node name="5" type="Label" parent="Background/FourthDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "5"
+
+[node name="6" type="Label" parent="Background/FourthDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "6"
+
+[node name="7" type="Label" parent="Background/FourthDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "7"
+
+[node name="8" type="Label" parent="Background/FourthDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "8"
+
+[node name="9" type="Label" parent="Background/FourthDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "9"
+
+[node name="Result" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -32.0
+offset_right = 20.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Submit" type="Button" parent="Background"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -208.0
+offset_top = -77.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "¡INTENTAR!"
+
+[connection signal="pressed" from="Background/Submit" to="." method="_on_submit_pressed"]

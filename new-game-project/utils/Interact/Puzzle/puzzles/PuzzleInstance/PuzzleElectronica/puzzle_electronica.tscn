@@ -1,0 +1,142 @@
+[gd_scene load_steps=10 format=3 uid="uid://dilhgir4y8bhr"]
+
+[ext_resource type="Script" uid="uid://l1tla8e6kipu" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleElectronica/puzzle_electronica.gd" id="1_4yum5"]
+[ext_resource type="Theme" uid="uid://cfktrx0hiftg5" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleElectronica/resources/BaseThemePuzzle.tres" id="2_2fvp1"]
+[ext_resource type="PackedScene" uid="uid://ptw8h7ryjkwh" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleElectronica/CircuitPieces/Base/circuit_base.tscn" id="2_sbefj"]
+[ext_resource type="PackedScene" uid="uid://be86ultj5mw6c" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleElectronica/CircuitPieces/t/circuit_t.tscn" id="3_crcys"]
+[ext_resource type="PackedScene" uid="uid://b2gcfxowd0lqd" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleElectronica/CircuitPieces/Cruz/circuit_cruz.tscn" id="4_piwqa"]
+[ext_resource type="PackedScene" uid="uid://n1ixjwjhtvwr" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleElectronica/CircuitPieces/Codo/circuit_codo.tscn" id="5_2my50"]
+[ext_resource type="PackedScene" uid="uid://ddyttbsrreufb" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleElectronica/CircuitPieces/Inicio/circuit_inicio.tscn" id="6_uqwnh"]
+[ext_resource type="PackedScene" uid="uid://gmslgbvhx21f" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleElectronica/CircuitPieces/Linea/circuit_linea.tscn" id="7_cvsyy"]
+[ext_resource type="PackedScene" uid="uid://dqjrvwxt4hq1k" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleElectronica/CircuitPieces/Final/circuit_final.tscn" id="8_g8jse"]
+
+[node name="PuzzleCircuito" type="Node"]
+script = ExtResource("1_4yum5")
+
+[node name="Background" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_2fvp1")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/MarginContainer"]
+layout_mode = 2
+
+[node name="Circuit" type="GridContainer" parent="Background/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+size_flags_stretch_ratio = 7.0
+columns = 5
+
+[node name="CircuitBase" parent="Background/MarginContainer/VBoxContainer/Circuit" instance=ExtResource("2_sbefj")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="CircuitT" parent="Background/MarginContainer/VBoxContainer/Circuit" instance=ExtResource("3_crcys")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="CircuitCruz" parent="Background/MarginContainer/VBoxContainer/Circuit" instance=ExtResource("4_piwqa")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="CircuitCodo4" parent="Background/MarginContainer/VBoxContainer/Circuit" instance=ExtResource("5_2my50")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="CircuitBase3" parent="Background/MarginContainer/VBoxContainer/Circuit" instance=ExtResource("2_sbefj")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="CircuitInicio" parent="Background/MarginContainer/VBoxContainer/Circuit" instance=ExtResource("6_uqwnh")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="CircuitCodo" parent="Background/MarginContainer/VBoxContainer/Circuit" instance=ExtResource("5_2my50")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="CircuitLinea4" parent="Background/MarginContainer/VBoxContainer/Circuit" instance=ExtResource("7_cvsyy")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="CircuitCodo5" parent="Background/MarginContainer/VBoxContainer/Circuit" instance=ExtResource("5_2my50")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="CircuitFinal" parent="Background/MarginContainer/VBoxContainer/Circuit" instance=ExtResource("8_g8jse")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="CircuitBase2" parent="Background/MarginContainer/VBoxContainer/Circuit" instance=ExtResource("2_sbefj")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="CircuitCodo3" parent="Background/MarginContainer/VBoxContainer/Circuit" instance=ExtResource("5_2my50")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="CircuitCruz3" parent="Background/MarginContainer/VBoxContainer/Circuit" instance=ExtResource("4_piwqa")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="CircuitCodo2" parent="Background/MarginContainer/VBoxContainer/Circuit" instance=ExtResource("5_2my50")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="CircuitBase4" parent="Background/MarginContainer/VBoxContainer/Circuit" instance=ExtResource("2_sbefj")]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="Background/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Submit" type="Button" parent="Background/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "¡INTENTAR!"
+
+[node name="Spacer2" type="Control" parent="Background/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Result" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = -22.5
+offset_right = 101.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Background/MarginContainer/VBoxContainer/HBoxContainer/Submit" to="." method="_on_button_pressed"]

@@ -1,0 +1,233 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkkm80qlft38n"]
+
+[ext_resource type="Script" uid="uid://ci1ikafwx21sf" path="res://utils/Interact/Puzzle/puzzles 2.0/PuzzleInstance/PuzzleInformatica/puzzle_informatica.gd" id="1_s33nc"]
+[ext_resource type="Theme" uid="uid://ht1jo68esctd" path="res://utils/Interact/Puzzle/puzzles 2.0/PuzzleInstance/PuzzleInformatica/resources/BaseThemePuzzle.tres" id="2_8tjlj"]
+
+[node name="PinCracker" type="Node"]
+script = ExtResource("1_s33nc")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_8tjlj")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="FeedbackLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_type_variation = &"ResultLabel"
+text = "ESPERANDO INTENTO"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="HBoxDigitContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="Digito_1" type="Label" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HBoxDigitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+theme_type_variation = &"DigitoLabel"
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digito_2" type="Label" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HBoxDigitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+theme_type_variation = &"DigitoLabel"
+text = "8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digito_3" type="Label" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HBoxDigitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+theme_type_variation = &"DigitoLabel"
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digito_4" type="Label" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HBoxDigitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+theme_type_variation = &"DigitoLabel"
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxFeedbackContainer2" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Feedback_1" type="ColorRect" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HBoxFeedbackContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Feedback_2" type="ColorRect" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HBoxFeedbackContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Feedback_3" type="ColorRect" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HBoxFeedbackContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Feedback_4" type="ColorRect" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HBoxFeedbackContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Botonera" type="GridContainer" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+columns = 11
+
+[node name="0" type="Button" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/Botonera"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "0"
+
+[node name="1" type="Button" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/Botonera"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "1"
+
+[node name="2" type="Button" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/Botonera"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "2"
+
+[node name="3" type="Button" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/Botonera"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "3"
+
+[node name="4" type="Button" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/Botonera"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "4"
+
+[node name="5" type="Button" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/Botonera"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "5"
+
+[node name="6" type="Button" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/Botonera"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "6"
+
+[node name="7" type="Button" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/Botonera"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "7"
+
+[node name="8" type="Button" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/Botonera"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "8"
+
+[node name="9" type="Button" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/Botonera"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "9"
+
+[node name="_" type="Button" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/VBoxContainer/Botonera"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "_"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="FailureLabel" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme_type_variation = &"FailureRichText"
+bbcode_enabled = true
+text = "FALLOS"
+horizontal_alignment = 1
+
+[node name="OportunitiesLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer2/HBoxContainer/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"ResultLabel"
+text = "INTENTOS"
+horizontal_alignment = 1
+
+[node name="Result" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -16.5
+offset_right = 20.0
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ResultLabel"
+
+[node name="ResetTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]
