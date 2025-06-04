@@ -8,9 +8,19 @@ signal interacted(interactable: Interactable)
 var my_type: String
 
 func _ready():
-	pass
+	add_to_group("Con Estado")
 	
 func getId(): return id
 
+func load_state(loaded_state : Dictionary):
+	visible = loaded_state["visible"]
+	#leo de loaded_state el valor de todas las variables que me interesaron guardar en get_state y se las asigno
+	pass
+	
+func get_state() -> Dictionary:
+	var state = {}
+	state["visible"] = visible
+	#en cada implementacion de interactuable meto las variables que quiero que se guarden state
+	return state
 
-func end(): self.queue_free()
+func end(): hide()

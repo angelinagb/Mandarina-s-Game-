@@ -49,6 +49,10 @@ folder_colors={
 "res://utils/Virtual_Joystick/": "pink"
 }
 
+[global_group]
+
+"Con Estado"="Todo lo que tenga estado y necesite ser guardado al salir de la escena"
+
 [input]
 
 shift={

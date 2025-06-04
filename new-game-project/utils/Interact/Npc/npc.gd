@@ -74,3 +74,7 @@ func _on_dialogo_quest_dialogue_ended() -> void:
 
 func _on_dialogo_default_dialogue_ended() -> void:
 	dialogue_ended.emit()
+	
+func get_state() -> Dictionary:
+	
+	return {}

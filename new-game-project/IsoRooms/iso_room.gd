@@ -31,7 +31,11 @@ func _exit_tree():
 	save_state()
 
 func restore_state():
-	pass
+	for node in get_tree().get_nodes_in_group("Con Estado"):
+		node.load_state(current_state[node.name])
 
 func save_state():
+	current_state = {}
+	for node in get_tree().get_nodes_in_group("Con Estado"):
+		current_state[node.name] = node.get_state()
 	StateManager.save_room_state(room_id, current_state)

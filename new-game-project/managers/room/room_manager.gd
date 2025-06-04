@@ -16,6 +16,7 @@ func get_room(room_id : String) -> String:
 
 func update_room(room_id : String, new_room_version : String):
 	rooms[room_id] = new_room_version
+	StateManager.save_room_state(room_id, {}) #al cambiar de version de room, no hay estado distinto al que viene con la room
 
 
 func initialize(room_path: String):
