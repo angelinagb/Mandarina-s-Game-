@@ -28,6 +28,7 @@ func change_room(room_id: String) -> IsoRoom:
 	if (!can_change_room):
 		return
 	can_change_room = false
+	current.save_state()
 	current.queue_free()
 	current = load(get_room(room_id)).instantiate()
 	add_child(current)
@@ -35,4 +36,4 @@ func change_room(room_id: String) -> IsoRoom:
 	return current
 
 func _ready() -> void:
-	pass
+	StateManager.inicializar_rooms(rooms.keys())

@@ -76,5 +76,11 @@ func _on_dialogo_default_dialogue_ended() -> void:
 	dialogue_ended.emit()
 	
 func get_state() -> Dictionary:
+	var state = {}
+	state["tiene_quest"] = tiene_quest
+	return state
 	
-	return {}
+func load_state(current_state):
+	tiene_quest = current_state["tiene_quest"]
+
+	

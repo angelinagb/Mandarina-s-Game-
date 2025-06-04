@@ -9,8 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://cv8f0bg0ein8h" path="res://utils/Interact/Npc/Instancias/Alumna_1.tscn" id="6_gjd7k"]
 [ext_resource type="PackedScene" uid="uid://caf5h04ulskmr" path="res://utils/Interact/Npc/Instancias/Vendedor.tscn" id="7_uylwv"]
 
-[node name="IsoRoom" instance=ExtResource("1_q8i2c")]
+[node name="ROOM-5" instance=ExtResource("1_q8i2c")]
 y_sort_enabled = true
+room_id = "ROOM-5"
 
 [node name="BaseTiles" parent="." index="0" instance=ExtResource("2_npoke")]
 position = Vector2(40, -64)

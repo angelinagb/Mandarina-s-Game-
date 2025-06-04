@@ -27,12 +27,15 @@ func _on_interactable_interacted(interactable: Interactable):
 func get_player() -> PlayerB:
 	return player_b
 	
-func _exit_tree():
-	save_state()
 
 func restore_state():
+	print("Lista de estados de ", room_id ," !")
+	print(current_state)
 	for node in get_tree().get_nodes_in_group("Con Estado"):
-		node.load_state(current_state[node.name])
+		print("Buscando ", node.name, "...")
+		if current_state.has(node.name):
+			print("Encontrado state de : ", node.name , " !")
+			node.load_state(current_state[node.name])
 
 func save_state():
 	current_state = {}

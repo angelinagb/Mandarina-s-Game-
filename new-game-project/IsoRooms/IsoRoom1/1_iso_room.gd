@@ -10,9 +10,7 @@ func _ready():
 	trans.process_mode = Node.PROCESS_MODE_DISABLED
 	#QueueManager.enqueue_event(intro)
 
-func restore_state():
-	print("estado recuperado!")
-	
+
 func save_state():
 	print("guardando estado!")
 	super.save_state()
