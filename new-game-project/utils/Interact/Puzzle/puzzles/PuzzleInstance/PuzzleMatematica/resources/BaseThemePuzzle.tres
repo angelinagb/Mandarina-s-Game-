@@ -1,0 +1,25 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://v4ecbhurmt7p"]
+
+[ext_resource type="FontFile" uid="uid://ctwexxmrsmp1g" path="res://utils/Interact/Puzzle/puzzles 2.0/font/LuckiestGuy-Regular.ttf" id="1_gj7qq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qq6b1"]
+bg_color = Color(0.0392157, 0.0980392, 0.294118, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gj7qq"]
+bg_color = Color(0.450844, 0.57808, 0.953215, 1)
+
+[resource]
+Button/colors/font_color = Color(1, 0.647059, 0, 1)
+Button/constants/outline_size = 10
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_gj7qq")
+Button/styles/normal = SubResource("StyleBoxFlat_qq6b1")
+Label/colors/font_color = Color(1, 0.647059, 0, 1)
+Label/constants/outline_size = 20
+Label/font_sizes/font_size = 64
+Label/fonts/font = ExtResource("1_gj7qq")
+Panel/styles/panel = SubResource("StyleBoxFlat_gj7qq")

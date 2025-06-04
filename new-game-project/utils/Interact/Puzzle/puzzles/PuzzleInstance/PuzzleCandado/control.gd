@@ -1,4 +1,4 @@
-extends Control
+extends Panel
 
 var dragging := false
 var drag_start_y := 0.0
@@ -33,5 +33,5 @@ func update_number_display():
 	# Lógica para mostrar sólo el número actual según el offset
 	var index = int(round(current_offset / number_height)) % 10
 	for i in range(10):
-		var label = $VBoxContainer.get_child(i)
+		var label = $MarginContainer/VBoxContainer.get_child(i)
 		label.visible = (i == index)

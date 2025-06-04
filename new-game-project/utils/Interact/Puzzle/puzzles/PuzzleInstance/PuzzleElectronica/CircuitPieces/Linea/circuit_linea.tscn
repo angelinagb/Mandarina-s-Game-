@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://gmslgbvhx21f"]
+
+[ext_resource type="PackedScene" uid="uid://i3grwt0nk1ii" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleCircuito/CircuitPieces/circuit_piece.tscn" id="1_alw34"]
+[ext_resource type="Texture2D" uid="uid://cmpfm505q7nho" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleCircuito/CircuitPieces/Linea/linea.png" id="1_ht20u"]
+
+[node name="CircuitLinea" instance=ExtResource("1_alw34")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+tipo = "linea"
+
+[node name="TextureRect" parent="." index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ht20u")
