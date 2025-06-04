@@ -29,7 +29,7 @@ rotation = 0.00967322
 scale = Vector2(0.426274, 0.649988)
 
 [node name="Pizarra" type="Sprite2D" parent="Interactables/Items" index="1"]
-z_index = 1
+y_sort_enabled = true
 position = Vector2(537, -359)
 scale = Vector2(0.637805, 0.549202)
 texture = ExtResource("4_0cyss")
@@ -45,11 +45,11 @@ rotation = -2.67915
 scale = Vector2(2.09534, 1.28191)
 
 [node name="Chica Triste" parent="Interactables/Npcs" index="0" instance=ExtResource("5_jm6ep")]
-position = Vector2(732, -171)
+position = Vector2(781, -180)
 scale = Vector2(-1.52753, 1.62744)
 
 [node name="PlayerB" parent="Player" index="0"]
-position = Vector2(189, -392)
+position = Vector2(525, -256)
 
 [connection signal="interacted" from="Interactables/Items/Item" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Items/Mate" to="." method="_on_interactable_interacted"]

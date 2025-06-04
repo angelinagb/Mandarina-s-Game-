@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjdwqiyjmufg6"]
+
+[ext_resource type="Texture2D" uid="uid://mswhics2igh6" path="res://art/menu/boton_cerrar.png" id="1_lxfiy"]
+[ext_resource type="Texture2D" uid="uid://cu5w0oj4x5tos" path="res://art/menu/cross.png" id="2_hom5t"]
+
+[node name="InteractableButtonTouch" type="TouchScreenButton"]
+texture_normal = ExtResource("1_lxfiy")
+texture_pressed = ExtResource("2_hom5t")

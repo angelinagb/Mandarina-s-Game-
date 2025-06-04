@@ -263,14 +263,12 @@ tile_set = SubResource("TileSet_1qkuv")
 y_sort_enabled = true
 rotation = 0.010779
 scale = Vector2(0.408655, 0.321648)
-tile_map_data = PackedByteArray("AAD5//v/AgAAAAAAAAD6//v/AgAaAAwAAAD5//r/AgAUAA4AAAA=")
 tile_set = SubResource("TileSet_xlc22")
 
 [node name="surfaces" type="TileMapLayer" parent="."]
 y_sort_enabled = true
 rotation = 0.010779
 scale = Vector2(0.408655, 0.321648)
-tile_map_data = PackedByteArray("AAD6//v/AgASABMAAAA=")
 tile_set = SubResource("TileSet_xlc22")
 
 [node name="Floor_Shadows" type="TileMapLayer" parent="."]

@@ -23,6 +23,6 @@ func _on_area_2d_body_exited(body: PlayerB) -> void:
 	if body.name == "PlayerB":
 		can_grab.visible = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if is_in_area and Input.is_action_just_pressed("ui_accept") :
 		interacted.emit(self)

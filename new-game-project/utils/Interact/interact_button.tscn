@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv0pd0hpuhmqt"]
+
+[ext_resource type="FontFile" uid="uid://c48homm7y5ftp" path="res://art/Fonts/Audiowide-Regular.ttf" id="1_3cs6p"]
+
+[node name="Control" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_colors/font_disabled_color = Color(0.286349, 0.694638, 0.382094, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_color = Color(0.933333, 0.423529, 0.180392, 1)
+theme_override_colors/font_outline_color = Color(0.0670734, 0.0107269, 0.000919926, 0.662745)
+theme_override_colors/font_color = Color(0.756863, 0.313726, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.756863, 0.313726, 0.0862745, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_3cs6p")
+text = "INTERACT"
