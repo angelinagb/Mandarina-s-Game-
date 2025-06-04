@@ -13,3 +13,6 @@ func on_puzzle_result(result: bool):
 	
 func start():
 	pass
+
+func interact():
+	pass

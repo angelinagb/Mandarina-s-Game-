@@ -11,5 +11,17 @@ func get_room_id():
 	return room_id
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "PlayerB" :
-		interacted.emit(self)
+	if body.name == "PlayerB":
+		InteractionManager.set_interactuable(self)
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body.name == "PlayerB":
+		print("rtas")
+		InteractionManager.clear_interactuable(self)
+
+
+func interact() :
+	interacted.emit(self)
+
+func get_type():
+	return my_type

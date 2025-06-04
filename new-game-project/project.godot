@@ -27,6 +27,7 @@ QueueManager="*res://managers/queue/queue_manager.gd"
 StateManager="*res://managers/state/state_manager.gd"
 World="*res://world/world.gd"
 NotificationManager="*res://managers/notification/notification_manager.gd"
+InteractionManager="*res://managers/interaction/interaction_manager.tscn"
 
 [display]
 
@@ -47,6 +48,7 @@ folder_colors={
 "res://PianoPuzzle/": "pink",
 "res://PlayerB/": "pink",
 "res://QuestPrincipales/": "green",
+"res://utils/Interact/": "yellow",
 "res://utils/Virtual_Joystick/": "pink"
 }
 

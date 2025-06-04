@@ -43,6 +43,7 @@ position = Vector2(235, -197)
 position = Vector2(289, -420)
 rotation = -2.67915
 scale = Vector2(2.09534, 1.28191)
+id = "trans_iso_1to2"
 
 [node name="Chica Triste" parent="Interactables/Npcs" index="0" instance=ExtResource("5_jm6ep")]
 position = Vector2(781, -180)

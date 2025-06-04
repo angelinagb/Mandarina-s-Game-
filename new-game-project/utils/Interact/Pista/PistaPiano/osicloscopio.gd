@@ -1,4 +1,4 @@
-extends Node 
+extends Interactable 
 
 @onready var wave: Node2D = $Wave
 @onready var begin_button: Button = $BeginButton
@@ -10,7 +10,8 @@ signal finished
 var secuence = ["E5", "D5", "C5", "A4", "B4", "D5", "C5","B4","G#4","A4"]
 
 func ready():
-	pass
+	my_type = "activator"
+	super._ready()
 
 
 #func _on_wave_playing(value: bool) -> void: # cuando me llegue la signal de que termino? 
@@ -43,5 +44,4 @@ func _on_close_pressed() -> void:
 
 func start():
 	pass
-
 	

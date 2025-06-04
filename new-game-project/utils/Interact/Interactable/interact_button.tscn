@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv0pd0hpuhmqt"]
+
+[ext_resource type="FontFile" uid="uid://c48homm7y5ftp" path="res://art/Fonts/Audiowide-Regular.ttf" id="1_3eqy8"]
+
+[node name="Control" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_3eqy8")
+text = "INTERACT"

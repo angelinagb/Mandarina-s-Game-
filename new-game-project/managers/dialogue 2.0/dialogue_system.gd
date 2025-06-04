@@ -6,7 +6,7 @@ class_name DialogueSystem
 signal dialogue_ended
 signal finished
 
-
+@onready var next_text_button: Button = $CanvasLayer/PanelContainer/next_text_button
 @onready var anim_player : AnimationPlayer = $AnimationPlayer
 @onready var rich_text_label : RichTextLabel = $CanvasLayer/PanelContainer/VBoxContainer/RichTextLabel
 @onready var timer : Timer = $Timer
@@ -75,8 +75,8 @@ func start(layer: float = -1):
 			destruir()
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_accept") and current_state == States.TEXTO_MOSTRADO:
-		next_text()	
+	if current_state == States.TEXTO_MOSTRADO:
+		next_text_button.disabled = false
 
 func terminar_texto():
 	i = text_length
@@ -142,3 +142,9 @@ func _on_boton_decision_pressed(indice : int):
 	dialogueResource = decision_actual.get_recurso_dialogo_de_decision_elegida(indice).get_recurso_dialogo()
 	inicializar_conversacion()
 	start()
+
+
+
+func _on_next_text_button_pressed() -> void:
+	next_text()	
+	next_text_button.disabled = true

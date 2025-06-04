@@ -210,3 +210,4 @@ func on_puzzle_solved(Reward: String) :
 #
 #func _on_event_manager_event_added(event: String) -> void:
 	#pass # Replace with function body.
+	

@@ -1,14 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://v8ayk5g3mgli"]
 
-[ext_resource type="Script" uid="uid://b6x1u23l2mbyc" path="res://IsoRooms/IsoRoom4-LabodeFisica/PistaPiano/osicloscopio.gd" id="1_ygk6t"]
-[ext_resource type="PackedScene" uid="uid://dijy517d8yamq" path="res://IsoRooms/IsoRoom4-LabodeFisica/PistaPiano/wave_signal.tscn" id="2_ey0qu"]
+[ext_resource type="Script" uid="uid://b6x1u23l2mbyc" path="res://utils/Interact/Pista/PistaPiano/osicloscopio.gd" id="1_ygk6t"]
+[ext_resource type="PackedScene" uid="uid://dijy517d8yamq" path="res://utils/Interact/Pista/PistaPiano/wave_signal.tscn" id="2_ey0qu"]
 [ext_resource type="FontFile" uid="uid://c48homm7y5ftp" path="res://art/Fonts/Audiowide-Regular.ttf" id="3_gp3lk"]
 [ext_resource type="Texture2D" uid="uid://mswhics2igh6" path="res://art/menu/boton_cerrar.png" id="4_loldm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gp3lk"]
 bg_color = Color(0.67451, 0, 0.141176, 0.215686)
 
-[node name="Osicloscopio" type="CanvasLayer"]
+[node name="Osicloscopio" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_ygk6t")
 

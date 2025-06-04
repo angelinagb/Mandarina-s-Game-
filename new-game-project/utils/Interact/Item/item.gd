@@ -5,26 +5,27 @@ class_name Item extends Interactable
 
 var interaction : Callable
 var is_in_area : bool
-@onready var can_grab: Label = $Can_grab
 
 func _ready():
-	can_grab.visible = false
 	my_type = "item"
 	super._ready()
 
 
-func _on_area_2d_body_entered(body: PlayerB) -> void:
-	is_in_area = true
+func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "PlayerB":
-		can_grab.visible = true
+		print("hola querido soy un " + my_type+ " " + id)
+		InteractionManager.set_interactuable(self)
 
 
-func _on_area_2d_body_exited(body: PlayerB) -> void:
-	is_in_area = false
+func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.name == "PlayerB":
-		can_grab.visible = false
+		InteractionManager.clear_interactuable(self)
 
-func _process(delta: float) -> void:
-	if is_in_area and Input.is_action_just_pressed("ui_accept"):
+
+func interact():
+		print("item")
 		interacted.emit(self)
 		NotificationManager.enqueue_event(item_notification)
+		
+func get_type()  -> String :
+	return my_type
