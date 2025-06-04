@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://mig00nmd2h8j"]
+
+[ext_resource type="PackedScene" uid="uid://cyif0m3rl1hoj" path="res://visuals/Notificacion GUI/Notification.tscn" id="1_xlmdv"]
+
+[node name="Notification" instance=ExtResource("1_xlmdv")]
+
+[node name="Titulo" parent="Control/PanelContainer/MarginContainer/VBoxContainer" index="0"]
+text = "Nuevo item obtenido !"
+
+[node name="Descripcion" parent="Control/PanelContainer/MarginContainer/VBoxContainer" index="1"]
+text = "Examine item para más detalles"

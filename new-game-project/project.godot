@@ -26,6 +26,7 @@ buses/default_bus_layout=""
 QueueManager="*res://managers/queue/queue_manager.gd"
 StateManager="*res://managers/state/state_manager.gd"
 World="*res://world/world.gd"
+NotificationManager="*res://managers/notification/notification_manager.gd"
 
 [display]
 
@@ -48,6 +49,10 @@ folder_colors={
 "res://QuestPrincipales/": "green",
 "res://utils/Virtual_Joystick/": "pink"
 }
+
+[global_group]
+
+"Con Estado"="Todo lo que tenga estado y necesite ser guardado al salir de la escena"
 
 [input]
 

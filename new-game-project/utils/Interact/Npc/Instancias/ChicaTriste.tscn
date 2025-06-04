@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjkpau08dmw6l"]
+[gd_scene load_steps=6 format=3 uid="uid://cjkpau08dmw6l"]
 
 [ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_hdobk"]
 [ext_resource type="Resource" uid="uid://ct45gjwmh0t0y" path="res://Tomas/quest_chocolate.tres" id="2_5w6g1"]
 [ext_resource type="Texture2D" uid="uid://djj4haibkkndk" path="res://art/characters/iso/npc/unnamed.png" id="3_5w6g1"]
 [ext_resource type="Resource" uid="uid://b25o7bfjrxwqp" path="res://managers/dialogue 2.0/recursos/dialogos/DIALOGO PRUEBA/PRUEBA_DIALOGO.tres" id="4_5w6g1"]
+[ext_resource type="Resource" uid="uid://d0qk3att6gqda" path="res://managers/dialogue 2.0/recursos/dialogos/ChicaTriste_1_dialogo/dialogo_debugging.tres" id="4_6bm3g"]
 
 [node name="Chica Triste" instance=ExtResource("1_hdobk")]
 quest = ExtResource("2_5w6g1")
@@ -23,6 +24,7 @@ scale = Vector2(2.92651, 1.45249)
 
 [node name="Dialogo Quest" parent="." index="4"]
 destruirse_al_finalizar = true
+dialogueResource = ExtResource("4_6bm3g")
 
 [node name="Dialogo Default" parent="." index="5"]
 dialogueResource = ExtResource("4_5w6g1")

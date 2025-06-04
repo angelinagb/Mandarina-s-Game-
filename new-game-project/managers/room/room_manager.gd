@@ -16,6 +16,7 @@ func get_room(room_id : String) -> String:
 
 func update_room(room_id : String, new_room_version : String):
 	rooms[room_id] = new_room_version
+	StateManager.save_room_state(room_id, {}) #al cambiar de version de room, no hay estado distinto al que viene con la room
 
 
 func initialize(room_path: String):
@@ -27,6 +28,7 @@ func change_room(room_id: String) -> IsoRoom:
 	if (!can_change_room):
 		return
 	can_change_room = false
+	current.save_state()
 	current.queue_free()
 	current = load(get_room(room_id)).instantiate()
 	add_child(current)
@@ -34,4 +36,4 @@ func change_room(room_id: String) -> IsoRoom:
 	return current
 
 func _ready() -> void:
-	pass
+	StateManager.inicializar_rooms(rooms.keys())

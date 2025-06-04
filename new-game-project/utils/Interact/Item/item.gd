@@ -1,6 +1,7 @@
 class_name Item extends Interactable
 
 @export var texture: Texture
+@export var item_notification : PackedScene
 
 var interaction : Callable
 var is_in_area : bool
@@ -23,6 +24,7 @@ func _on_area_2d_body_exited(body: PlayerB) -> void:
 	if body.name == "PlayerB":
 		can_grab.visible = false
 
-func _process(_delta: float) -> void:
-	if is_in_area and Input.is_action_just_pressed("ui_accept") :
+func _process(delta: float) -> void:
+	if is_in_area and Input.is_action_just_pressed("ui_accept"):
 		interacted.emit(self)
+		NotificationManager.enqueue_event(item_notification)
