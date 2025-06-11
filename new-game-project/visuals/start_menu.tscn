@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://hawyj0b52iwd"]
+[gd_scene load_steps=4 format=3 uid="uid://hawyj0b52iwd"]
 
 [ext_resource type="Script" uid="uid://1b1bjnvf6u0h" path="res://visuals/start_menu.gd" id="1_1on3q"]
-[ext_resource type="Texture2D" uid="uid://b7agttxisqrc5" path="res://art/menu/start_menu_background.png" id="1_qtro5"]
+[ext_resource type="Texture2D" uid="uid://wrphx78et2m" path="res://art/icon/backround.png" id="2_1on3q"]
+[ext_resource type="Theme" uid="uid://ht1jo68esctd" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleInformatica/resources/BaseThemePuzzle.tres" id="3_24fwf"]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -12,10 +13,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1on3q")
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(180, 400)
-scale = Vector2(1.6, 1.6)
-texture = ExtResource("1_qtro5")
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 736.0
+offset_bottom = 664.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.520525, 0.353515)
+texture = ExtResource("2_1on3q")
 
 [node name="VButtonContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -24,25 +32,24 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -112.0
-offset_top = -50.5
-offset_right = 112.0
-offset_bottom = 50.5
+offset_left = 104.0
+offset_top = 87.0
+offset_right = 556.0
+offset_bottom = 193.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.634127, 0.98439)
 
 [node name="NewGame" type="Button" parent="VButtonContainer"]
 layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("3_24fwf")
 text = "Nueva partida"
 
 [node name="ResumeGame" type="Button" parent="VButtonContainer"]
 layout_mode = 2
+theme = ExtResource("3_24fwf")
 text = "Continuar partida guardada"
-
-[node name="DeleteGame" type="Button" parent="VButtonContainer"]
-layout_mode = 2
-text = "Eliminar partida guardada"
 
 [connection signal="pressed" from="VButtonContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="VButtonContainer/ResumeGame" to="." method="_on_resume_game_pressed"]
-[connection signal="pressed" from="VButtonContainer/DeleteGame" to="." method="_on_delete_game_pressed"]
