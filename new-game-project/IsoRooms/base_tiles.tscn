@@ -1,5 +1,6 @@
-[gd_scene load_steps=29 format=4 uid="uid://cevm1i60dkopp"]
+[gd_scene load_steps=30 format=4 uid="uid://cevm1i60dkopp"]
 
+[ext_resource type="Script" uid="uid://crsv6sqnag5gu" path="res://IsoRooms/base_tiles.gd" id="1_goui0"]
 [ext_resource type="Texture2D" uid="uid://bjapggl08o25x" path="res://art/tiles/tile_207.png" id="1_hd7cy"]
 [ext_resource type="Texture2D" uid="uid://4rd6oe0hstb7" path="res://art/items/2dClassroomAssetPackByStyloo/slab_N.png" id="2_2dkj0"]
 [ext_resource type="Texture2D" uid="uid://d15u14bdym21j" path="res://art/tiles/PrototypeDoors.png" id="3_ux64w"]
@@ -249,6 +250,7 @@ sources/1 = SubResource("TileSetAtlasSource_2dkj0")
 
 [node name="BaseTiles" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_goui0")
 metadata/_edit_horizontal_guides_ = [-140.0, -154.0]
 
 [node name="floors" type="TileMapLayer" parent="."]
@@ -263,6 +265,7 @@ tile_map_data = PackedByteArray("AAD9/wEACAAAAAEAAAD9/wAACAAAAAEAAAD9////CAAAAAE
 tile_set = SubResource("TileSet_1qkuv")
 
 [node name="walls_front" type="TileMapLayer" parent="."]
+visible = false
 z_index = 1
 tile_map_data = PackedByteArray("AAAAAAEACAABAAEAAAD//wEACAABAAEAAAD+/wEACAABAAEAAAD9/wEACAABAAEAAAABAAEACAABAAAAAAABAAAACAADAAEAAAABAP//CAADAAEAAAABAP7/CAADAAEAAAABAP3/CAADAAEAAAA=")
 tile_set = SubResource("TileSet_1qkuv")

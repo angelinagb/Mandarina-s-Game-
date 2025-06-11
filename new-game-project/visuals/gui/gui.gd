@@ -32,3 +32,7 @@ func _on_interactuable_cambiado(i):
 	
 func _on_interact_button_pressed() -> void:
 	InteractionManager.interact()
+
+
+func _on_check_button_pressed() -> void:
+	pass

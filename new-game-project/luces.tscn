@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfn6m6mb235ke"]
+
+[ext_resource type="Texture2D" uid="uid://d2s5ix51refqx" path="res://art/tiles/Classroom First Spritesheet 8.png" id="1_xdy3p"]
+[ext_resource type="Texture2D" uid="uid://dxbbifcf2qi75" path="res://art/tiles/Glow-Background-PNG-Image.png" id="2_garun"]
+
+[node name="ClassroomFirstSpritesheet8" type="Sprite2D"]
+texture = ExtResource("1_xdy3p")
+region_enabled = true
+region_rect = Rect2(648, 290, 149, 100)
+
+[node name="Node2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(-13, 15)
+rotation = 0.336149
+scale = Vector2(0.23901, 0.142555)
+texture = ExtResource("2_garun")

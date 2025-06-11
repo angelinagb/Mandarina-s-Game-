@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bt1w2mhrlrldg"]
+[gd_scene load_steps=10 format=3 uid="uid://bt1w2mhrlrldg"]
 
 [ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_r6l0j"]
 [ext_resource type="PackedScene" uid="uid://dfp282bcn4bat" path="res://IsoRooms/IsoRoom1/1_base_tiles.tscn" id="2_6jolm"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dtgjbrj2ss74o" path="res://utils/Interact/Transitioner/Instancias/trans_r1_r2.tscn" id="4_ims64"]
 [ext_resource type="PackedScene" uid="uid://bucn0vs17tsw2" path="res://utils/Interact/Item/Instancias/Mate.tscn" id="5_1a3g4"]
 [ext_resource type="PackedScene" uid="uid://cjkpau08dmw6l" path="res://utils/Interact/Npc/Instancias/ChicaTriste.tscn" id="5_jm6ep"]
+[ext_resource type="Texture2D" uid="uid://7dxmpu3xm8wf" path="res://art/tiles/proyector.png" id="7_f81vo"]
 
 [node name="IsoRoom-1" instance=ExtResource("1_r6l0j")]
 y_sort_enabled = true
@@ -16,6 +17,7 @@ intro = null
 room_id = "ROOM-4"
 
 [node name="BaseTiles" parent="." index="0" instance=ExtResource("2_6jolm")]
+script = null
 
 [node name="defect" parent="Spawns" index="0"]
 position = Vector2(288, -267)
@@ -39,8 +41,16 @@ region_rect = Rect2(109, 57, 410, 376)
 [node name="Mate" parent="Interactables/Items" index="2" instance=ExtResource("5_1a3g4")]
 position = Vector2(235, -197)
 
+[node name="Proyector" type="Sprite2D" parent="Interactables/Items" index="3"]
+modulate = Color(0.844351, 0.843886, 0.83505, 1)
+position = Vector2(368, -383)
+scale = Vector2(0.300403, 0.291209)
+texture = ExtResource("7_f81vo")
+region_enabled = true
+region_rect = Rect2(53, 62, 248, 182)
+
 [node name="Trans R1 -> R2" parent="Interactables/Transitioners" index="0" instance=ExtResource("4_ims64")]
-position = Vector2(289, -420)
+position = Vector2(289, -415)
 rotation = -2.67915
 scale = Vector2(2.09534, 1.28191)
 id = "trans_iso_1to2"
@@ -50,7 +60,7 @@ position = Vector2(781, -180)
 scale = Vector2(-1.52753, 1.62744)
 
 [node name="PlayerB" parent="Player" index="0"]
-position = Vector2(525, -256)
+position = Vector2(-1, 0)
 
 [connection signal="interacted" from="Interactables/Items/Item" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Items/Mate" to="." method="_on_interactable_interacted"]

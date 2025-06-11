@@ -44,6 +44,7 @@ dialogueResource = ExtResource("2_m0h81")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 10
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
