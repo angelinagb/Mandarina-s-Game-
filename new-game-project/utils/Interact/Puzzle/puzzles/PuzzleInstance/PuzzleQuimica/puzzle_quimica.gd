@@ -94,7 +94,6 @@ func open_popup_menu():
 	popupmenu_instance.replay_pressed.connect(on_replay_pressed)
 	popupmenu_instance.out_pressed.connect(on_out_pressed)
 	add_child(popupmenu_instance)
-	
 func on_replay_pressed():
 	restart_puzzle()
 

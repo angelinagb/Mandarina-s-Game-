@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://dp1j1sh86uh60"]
 
-[ext_resource type="Script" uid="uid://8l51kftvbjh" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleQuimica/puzzle_quimica.gd" id="1_b64x8"]
-[ext_resource type="Texture2D" uid="uid://m8tfot3ejea3" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleQuimica/tabla-periodica-grande-fondo-blanco-192641164.png" id="2_kfvf7"]
-[ext_resource type="FontFile" uid="uid://ctwexxmrsmp1g" path="res://utils/Interact/Puzzle/puzzles/font/LuckiestGuy-Regular.ttf" id="3_bqo13"]
-[ext_resource type="StyleBox" uid="uid://4gdf7mu15ywi" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleQuimica/resources/element_button_resource.tres" id="3_eieog"]
-[ext_resource type="StyleBox" uid="uid://bxc3bleqorwrs" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleQuimica/resources/menu_button_resource.tres" id="5_1a4iv"]
+[ext_resource type="Script" uid="uid://8l51kftvbjh" path="res://utils/Interact/Puzzle/puzzles 2.0/PuzzleInstance/PuzzleQuimica/puzzle_quimica.gd" id="1_b64x8"]
+[ext_resource type="Texture2D" uid="uid://m8tfot3ejea3" path="res://utils/Interact/Puzzle/puzzles 2.0/PuzzleInstance/PuzzleQuimica/tabla-periodica-grande-fondo-blanco-192641164.png" id="2_kfvf7"]
+[ext_resource type="FontFile" uid="uid://ctwexxmrsmp1g" path="res://utils/Interact/Puzzle/puzzles 2.0/font/LuckiestGuy-Regular.ttf" id="3_bqo13"]
+[ext_resource type="StyleBox" uid="uid://4gdf7mu15ywi" path="res://utils/Interact/Puzzle/puzzles 2.0/PuzzleInstance/PuzzleQuimica/resources/element_button_resource.tres" id="3_eieog"]
+[ext_resource type="StyleBox" uid="uid://bxc3bleqorwrs" path="res://utils/Interact/Puzzle/puzzles 2.0/PuzzleInstance/PuzzleQuimica/resources/menu_button_resource.tres" id="5_1a4iv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eieog"]
 bg_color = Color(0.0392157, 0.0980392, 0.294118, 1)
@@ -32,7 +32,7 @@ font_color = Color(1, 0.647059, 0, 1)
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
-[node name="PuzzleReaccionesQuimicas" type="CanvasLayer"]
+[node name="PuzzleReaccionesQuimicas" type="Node"]
 script = ExtResource("1_b64x8")
 
 [node name="Background" type="TextureRect" parent="."]

@@ -20,7 +20,6 @@ func start():
 
 func interact():
 	pass
-	
 func end():
 	finished.emit()
 	queue_free()

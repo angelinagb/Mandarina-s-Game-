@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=21 format=4 uid="uid://ht1jo68esctd"]
 
-[ext_resource type="FontFile" uid="uid://ctwexxmrsmp1g" path="res://utils/Interact/Puzzle/puzzles/font/LuckiestGuy-Regular.ttf" id="1_buvi3"]
+[ext_resource type="FontFile" uid="uid://ctwexxmrsmp1g" path="res://utils/Interact/Puzzle/puzzles 2.0/font/LuckiestGuy-Regular.ttf" id="1_buvi3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_07sob"]
 bg_color = Color(0, 0, 0, 1)

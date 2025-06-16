@@ -1,6 +1,27 @@
 [gd_scene load_steps=2 format=3 uid="uid://bgjvuht5rv4ms"]
 
-[ext_resource type="Script" uid="uid://4ad0mvht4g3" path="res://utils/Interact/Puzzle/puzzles/puzzle.gd" id="1_lbjwc"]
+[sub_resource type="GDScript" id="GDScript_gn7lw"]
+script/source = "class_name Puzzle extends Node
+
+signal puzzle_result(result: bool)
+signal interacted(type: String)
+signal finished()
+
+
+func _ready() -> void:
+	interacted.emit(\"puzzle\")
+	
+
+func on_puzzle_result(result: bool):
+	puzzle_result.emit(result)
+	
+func start():
+	pass
+
+func end():
+	finished.emit()
+	queue_free()
+"
 
 [node name="Puzzle" type="Node"]
-script = ExtResource("1_lbjwc")
+script = SubResource("GDScript_gn7lw")
