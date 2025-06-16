@@ -4,7 +4,7 @@ signal puzzle_result(result: bool)
 signal interacted(type: String)
 signal finished()
 
-var POPUPMENU_PATH: String = "res://utils/Interact/Puzzle/puzzles 2.0/PuzzlePopUpMenu/pop_up_menu.tscn"
+var POPUPMENU_PATH: String ="res://utils/Interact/Puzzle/puzzles/PuzzlePopUpMenu/pop_up_menu.tscn"
 var popupmenu_instance
 
 @export var item_id: String
@@ -16,8 +16,10 @@ func on_puzzle_result(result: bool):
 	puzzle_result.emit(result)
 
 func start():
-	pass
+	process_mode = Node.PROCESS_MODE_ALWAYS
 
+func interact():
+	pass
 func end():
 	finished.emit()
 	queue_free()

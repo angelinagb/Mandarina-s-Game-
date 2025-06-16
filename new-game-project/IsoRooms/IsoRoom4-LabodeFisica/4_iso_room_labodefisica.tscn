@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_ebu0q"]
 [ext_resource type="PackedScene" uid="uid://bxdarh5hjdqcv" path="res://IsoRooms/IsoRoom4-LabodeFisica/4_base_tiles_labodefisica.tscn" id="2_8hemf"]
 [ext_resource type="Script" uid="uid://cbksmdo5jkvnq" path="res://IsoRooms/IsoRoom4-LabodeFisica/4_iso_room_labodefisica.gd" id="2_i5aki"]
-[ext_resource type="PackedScene" uid="uid://v8ayk5g3mgli" path="res://IsoRooms/IsoRoom4-LabodeFisica/PistaPiano/osicloscopio.tscn" id="3_oyfwe"]
+[ext_resource type="PackedScene" uid="uid://v8ayk5g3mgli" path="res://utils/Interact/Pista/PistaPiano/osicloscopio.tscn" id="3_oyfwe"]
 [ext_resource type="PackedScene" uid="uid://bucn0vs17tsw2" path="res://utils/Interact/Item/Instancias/Mate.tscn" id="3_woc7s"]
 
-[node name="IsoRoom" instance=ExtResource("1_ebu0q")]
+[node name="LabodeFisica" instance=ExtResource("1_ebu0q")]
 script = ExtResource("2_i5aki")
 osc = ExtResource("3_oyfwe")
 

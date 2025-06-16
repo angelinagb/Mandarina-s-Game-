@@ -8,11 +8,3 @@
 script = ExtResource("2_v6pl1")
 texture = null
 item_notification = ExtResource("3_pr5ff")
-
-[node name="Can_grab" type="Label" parent="." index="2"]
-offset_left = -81.0
-offset_top = -95.0
-offset_right = 30.0
-offset_bottom = -72.0
-scale = Vector2(1.60678, 1.93383)
-text = "E to Grab Item"

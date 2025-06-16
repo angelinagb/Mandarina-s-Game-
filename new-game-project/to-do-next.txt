@@ -1,0 +1,52 @@
+to - do next 
+
+0. Incorporar logica de clicks para hacer las cosas que seria equivalente al touch
+	a. Dialogo
+	b. Boton para interactuar ( Item - npc - pista - puzzle, lo que sea)
+1. joystick virtual 
+2. Inventario:
+	a. Items - states 
+	b. Lógica de Guardado 
+	c. Persistencia de Items 
+3. Versiones de Room - ya esta hecho - pulir
+4. Misiones 
+	a. Escribir 
+	b. Exportar 
+	c. Tracks
+5. Cinematicas 
+	a. Intro 
+		b. Mandarina se lleva las cosas 
+		c. else.
+		
+6. Exportacion Android
+7. Puzzle class
+	a. abrir/cerrar
+	b. cuando habilitarlo 
+	c. Puzzle Completado
+	d. Lista de Puzzles completado
+	e. Pistas - dentro de item - ?inspeccionar item 
+	f. Estadisticas
+	 
+9. TopDown vista modelo de prueba
+
+10.Aesthetics
+	a. Sonidos 
+	b. Colores 
+	c. YSORT coherencia 
+		Player
+		Colision en Tiles 
+		Y Sort Origins
+	d. Dialogos 
+		caras
+		sonidos 
+	e. Sombras 
+	f. Escaleras 
+		b. Puerta _ Transicionador  
+		c. 
+11. Mapa 
+	a. 
+
+12. Puzzle Terrain 
+	a. Switch 
+	b. Laberinto Mini Rooms
+RESOLUCION HORIZONTAL - 800x360

@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://b67a6yiwqfmwq"]
 
-[ext_resource type="Script" uid="uid://bepxeu5fe4n1x" path="res://utils/Interact/Puzzle/puzzles 2.0/PuzzleInstance/PuzzleMatematica/puzzle_matematica.gd" id="1_nhjop"]
-[ext_resource type="Theme" uid="uid://v4ecbhurmt7p" path="res://utils/Interact/Puzzle/puzzles 2.0/PuzzleInstance/PuzzleMatematica/resources/BaseThemePuzzle.tres" id="2_tn6bo"]
+[ext_resource type="Script" uid="uid://bepxeu5fe4n1x" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleMatematica/puzzle_matematica.gd" id="1_nhjop"]
+[ext_resource type="Theme" uid="uid://v4ecbhurmt7p" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleMatematica/resources/BaseThemePuzzle.tres" id="2_tn6bo"]
 
-[node name="PuzzleMatematica" type="Node"]
+[node name="PuzzleMatematica" type="CanvasLayer"]
 script = ExtResource("1_nhjop")
 
 [node name="Panel" type="Panel" parent="."]
