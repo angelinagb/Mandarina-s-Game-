@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://hm1bx25eg2ip"]
+
+[ext_resource type="PackedScene" uid="uid://caf5h04ulskmr" path="res://utils/Interact/Npc/Instancias/Vendedor.tscn" id="1_r5tc5"]
+[ext_resource type="Resource" uid="uid://bh7xoyfn7xm3o" path="res://Tomas/CAFETERIA/Quest 1/cafeteria_quest_1.tres" id="2_sbqyn"]
+[ext_resource type="Resource" uid="uid://bifavrhhidbk1" path="res://Tomas/CAFETERIA/Quest 1/cafeteria_quest_1_dialogo_1.tres" id="3_whud3"]
+
+[node name="Vendedor Q1" instance=ExtResource("1_r5tc5")]
+quest = ExtResource("2_sbqyn")
+
+[node name="Sprite2D" parent="." index="1"]
+visible = false
+scale = Vector2(3, 3)
+
+[node name="Area2D" parent="." index="2"]
+position = Vector2(-3, 78)
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(-1, 79)
+
+[node name="Dialogo Quest" parent="." index="4"]
+vacio = false
+dialogueResource = ExtResource("3_whud3")
+
+[node name="NpcQuestIndicador" parent="." index="6"]
+offset_left = 11.0
+offset_top = -106.0
+offset_right = 43.0
+offset_bottom = -74.0
+scale = Vector2(1, 1.304)

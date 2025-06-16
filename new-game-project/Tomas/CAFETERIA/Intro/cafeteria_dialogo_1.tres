@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogo" load_steps=2 format=3 uid="uid://cjaej6cj8a01j"]
+
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="1_ethko"]
+
+[resource]
+script = ExtResource("1_ethko")
+arreglo_de_textos = PackedStringArray("Juraría que via a Mandarina entrar aca con mi tesis...", "Debería preguntar al vendedor si sabe algo al respecto", "Aunque me dijieron que es muy cerrado y poco sociable", "Voy a tener que ganarme su confianza")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"

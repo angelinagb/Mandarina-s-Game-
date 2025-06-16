@@ -53,3 +53,11 @@ func get_facing_direction() -> Vector2 :
 	
 func update_facing_direction(new_dir : Vector2) -> void : 
 	facing_direction = new_dir
+	
+func esconder_joystick():
+	#agregado para cinematicas
+	joystick.hide()
+	
+func mostrar_joystick():
+	#agregado para cinematicas
+	joystick.show()

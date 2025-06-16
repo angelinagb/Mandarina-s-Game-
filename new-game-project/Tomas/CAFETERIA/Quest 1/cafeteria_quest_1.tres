@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=4 format=3 uid="uid://bh7xoyfn7xm3o"]
+
+[ext_resource type="Script" uid="uid://cj81x6yti6bmb" path="res://managers/notification/quest/quest.gd" id="1_8tab6"]
+[ext_resource type="Script" uid="uid://c0nhxnmv56tui" path="res://managers/notification/quest/quest_step.gd" id="2_g0axy"]
+[ext_resource type="Resource" uid="uid://ckwr7ex133gn1" path="res://Tomas/CAFETERIA/Quest 1/cafeteria_quest_1_step_1.tres" id="3_g0axy"]
+
+[resource]
+script = ExtResource("1_8tab6")
+title = "Robo en la cafetería"
+steps = Array[ExtResource("2_g0axy")]([ExtResource("3_g0axy")])
+current_step = 0
+is_secondary = true
+metadata/_custom_type_script = "uid://cj81x6yti6bmb"

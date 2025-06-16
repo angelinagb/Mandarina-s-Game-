@@ -16,4 +16,9 @@ func set_interactable_interacted(id: String) -> bool:
 	if necessary_interactables.has(id):
 		necessary_interactables[id] = true
 		response = true
+		if is_completed():
+			on_completed()
 	return response
+
+func on_completed():
+	pass

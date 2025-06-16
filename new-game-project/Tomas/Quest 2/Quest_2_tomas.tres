@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=4 format=3 uid="uid://b5ckmjtix8nt0"]
+
+[ext_resource type="Script" uid="uid://cj81x6yti6bmb" path="res://managers/notification/quest/quest.gd" id="1_upksb"]
+[ext_resource type="Script" uid="uid://c0nhxnmv56tui" path="res://managers/notification/quest/quest_step.gd" id="2_tqbbn"]
+[ext_resource type="Resource" uid="uid://dhbuxe2puh0va" path="res://Tomas/Quest 2/Quest_2_tomas_step_1.tres" id="3_tqbbn"]
+
+[resource]
+script = ExtResource("1_upksb")
+title = "Quest numero dos"
+steps = Array[ExtResource("2_tqbbn")]([ExtResource("3_tqbbn")])
+current_step = 0
+is_secondary = true
+metadata/_custom_type_script = "uid://cj81x6yti6bmb"

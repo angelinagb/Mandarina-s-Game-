@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bucn0vs17tsw2" path="res://utils/Interact/Item/Instancias/Mate.tscn" id="5_1a3g4"]
 [ext_resource type="PackedScene" uid="uid://cjkpau08dmw6l" path="res://utils/Interact/Npc/Instancias/ChicaTriste.tscn" id="5_jm6ep"]
 [ext_resource type="Texture2D" uid="uid://7dxmpu3xm8wf" path="res://art/tiles/proyector.png" id="7_f81vo"]
+[ext_resource type="PackedScene" uid="uid://cv8f0bg0ein8h" path="res://utils/Interact/Npc/Instancias/Alumna_1.tscn" id="8_hwk7s"]
 
 [node name="IsoRoom-1" instance=ExtResource("1_r6l0j")]
 y_sort_enabled = true
@@ -55,8 +56,11 @@ rotation = -2.67915
 scale = Vector2(2.09534, 1.28191)
 id = "trans_iso_1to2"
 
-[node name="Chica Triste" parent="Interactables/Npcs" index="0" instance=ExtResource("5_jm6ep")]
-position = Vector2(781, -180)
+[node name="Alumna 1" parent="Interactables/Npcs" index="0" instance=ExtResource("8_hwk7s")]
+position = Vector2(542, -242)
+
+[node name="Chica Triste" parent="Interactables/Npcs" index="1" instance=ExtResource("5_jm6ep")]
+position = Vector2(732, -171)
 scale = Vector2(-1.52753, 1.62744)
 
 [node name="PlayerB" parent="Player" index="0"]
@@ -65,5 +69,6 @@ position = Vector2(-1, 0)
 [connection signal="interacted" from="Interactables/Items/Item" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Items/Mate" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/Trans R1 -> R2" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/Alumna 1" to="." method="_on_interactable_interacted"]
 [connection signal="dialogue_ended" from="Interactables/Npcs/Chica Triste" to="." method="_on_chica_triste_dialogue_ended"]
 [connection signal="interacted" from="Interactables/Npcs/Chica Triste" to="." method="_on_interactable_interacted"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://n0gmw80orkd4"]
+
+[ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_j32p6"]
+[ext_resource type="Resource" uid="uid://c8dgr3vulsrar" path="res://Tomas/CAFETERIA/Quest 1/cafeteria_quest_1_dialogo_grupo_1.tres" id="2_ndeox"]
+
+[node name="GRUPO 1" instance=ExtResource("1_j32p6")]
+id = "COFFEE_G1"
+
+[node name="Dialogo Quest" parent="." index="4"]
+vacio = true
+
+[node name="Dialogo Default" parent="." index="5"]
+dialogueResource = ExtResource("2_ndeox")

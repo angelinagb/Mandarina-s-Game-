@@ -25,7 +25,6 @@ buses/default_bus_layout=""
 
 QueueManager="*res://managers/queue/queue_manager.gd"
 StateManager="*res://managers/state/state_manager.gd"
-World="*res://world/world.gd"
 NotificationManager="*res://managers/notification/notification_manager.gd"
 InteractionManager="*res://managers/interaction/interaction_manager.tscn"
 

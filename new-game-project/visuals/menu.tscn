@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://4y05v36udm0u"]
+[gd_scene load_steps=11 format=3 uid="uid://4y05v36udm0u"]
 
 [ext_resource type="Script" uid="uid://bp6qhe2jtedya" path="res://visuals/menu.gd" id="1_7whbs"]
 [ext_resource type="Texture2D" uid="uid://dkucmftlc07xx" path="res://art/menu/fondoMenu.png" id="2_7whbs"]
+[ext_resource type="PackedScene" uid="uid://cugub82m6h141" path="res://visuals/Quest GUI/Instancias/quest_element_main.tscn" id="2_cbfyr"]
 [ext_resource type="PackedScene" uid="uid://c2yebh6jef4a5" path="res://visuals/abilities_menu/abilities_menu.tscn" id="3_cbfyr"]
+[ext_resource type="PackedScene" uid="uid://cgqwrlyxo24m7" path="res://visuals/Quest GUI/Instancias/quest_element_secondary.tscn" id="3_exrgd"]
 [ext_resource type="Texture2D" uid="uid://cu5w0oj4x5tos" path="res://art/menu/cross.png" id="4_7whbs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7whbs"]
@@ -22,6 +24,8 @@ shadow_color = Color(0, 0, 0, 1)
 [node name="menu" type="CanvasLayer"]
 layer = 2
 script = ExtResource("1_7whbs")
+elemento_quest_main = ExtResource("2_cbfyr")
+elemento_quest_secondary = ExtResource("3_exrgd")
 
 [node name="Fondo" type="Sprite2D" parent="."]
 position = Vector2(400, 180)
@@ -41,6 +45,7 @@ grow_vertical = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 0
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/Contenedor Quest"]
 layout_mode = 2
@@ -69,6 +74,7 @@ text = "Inventario"
 label_settings = SubResource("LabelSettings_nqhns")
 
 [node name="Control2" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 13
 anchor_left = 0.5

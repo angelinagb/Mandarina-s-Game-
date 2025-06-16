@@ -1,9 +1,11 @@
 class_name Quest
 extends Resource
 
+
 @export var title: String
 @export var steps: Array[QuestStep] = []
 @export var current_step: int = 0
+@export var is_secondary : bool = true
 
 func get_current_step() -> QuestStep:
 	if current_step < steps.size():

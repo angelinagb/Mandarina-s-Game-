@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogo" load_steps=2 format=3 uid="uid://7pyj6j84fvmy"]
+
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="1_adcgc"]
+
+[resource]
+script = ExtResource("1_adcgc")
+arreglo_de_textos = PackedStringArray("Ni se entero nada, si siempre va al baño a esa hora", "Es su culpa por descuidarse", "(¿Enterarse de qué? Esto claramente tiene que ver con lo que esta pasando)", "(Claro, ahora que lo pienso es muy obvio lo que esta sucediendo con los faltantes)")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"

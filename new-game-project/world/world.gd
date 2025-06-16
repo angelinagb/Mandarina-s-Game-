@@ -13,7 +13,7 @@ extends Node2D
 # VISUALES
 @onready var dialogue		: DialogueManager 	= $DialogueManager
 @onready var menu			: MenuManager 		=$menu
-@onready var gui			:  					= $gui
+@onready var gui : GUI	= $gui
 
 var current: IsoRoom
 
@@ -57,7 +57,7 @@ func save_this():
 		}
 	}
 	
-	save_manager.save_dict({"actual_room": "res://IsoRooms/IsoRoom1/1_iso_room.tscn", "prev_room": ""}, "RoomSetup")
+	save_manager.save_dict({"actual_room": "res://Tomas/CAFETERIA/CAFETERIA_CON_CONTENIDO.tscn", "prev_room": ""}, "RoomSetup")
 	save_manager.save_dict(items, "Items")
 	save_manager.save_dict(abilities, "AbilityPoints")
 	save_manager.save_dict(ability_points, "AbilityAvailablePoints")
@@ -104,7 +104,7 @@ func load_setup():
 	#player.initialize(current.get_position_spawn(room_setup.prev_room))
 	
 	dialogue.initialize()
-	menu.initialize(quest, inventory, items, [])
+	menu.initialize(quest, inventory, items)
 	menu.on_abilities_updated(abilities_available_points.get("Points"), abilities_points)
 	$menu.visible = false
 	$menu.process_mode = Node.PROCESS_MODE_ALWAYS
@@ -147,6 +147,8 @@ func _on_npc_talked_to(npc: Npc) -> void:
 	if npc.quest_available():
 		npc.take_quest()
 		quest.add_quest(npc.quest)
+		
+		
 		
 func _on_puzzle_begin(puzzle : Interactable):
 		var dapuzzle = puzzle.puzzle_tcsn.instantiate()
