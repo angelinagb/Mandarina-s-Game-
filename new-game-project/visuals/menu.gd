@@ -1,19 +1,23 @@
 class_name MenuManager extends CanvasLayer
 
 signal ability_button_pressed(ability_name: String)
+signal secondary_quest_picked(title : String)
 
 @onready var item_container := %"Conteneder Inventario"
 @onready var quest_container := %"Contenedor Quest"
-@export var elemento_quest : PackedScene
+@export var elemento_quest_main : PackedScene
 @export var elemento_inventario : PackedScene
+@export var elemento_quest_secondary : PackedScene
 
-
+var active_secondary_quest = null
 var quest_manager: QuestManager
 var inventory_manager: InventoryManager
 
-func initialize(quest_manager: QuestManager, inventory_manager: InventoryManager, items: Dictionary, quests: Array[Quest]):
+func initialize(quest_manager: QuestManager, inventory_manager: InventoryManager, items: Dictionary):
 	self.quest_manager = quest_manager
 	quest_manager.quest_updated.connect(on_quest_updated)
+
+	var quests := quest_manager.get_active_quests()
 	
 	self.inventory_manager = inventory_manager
 	inventory_manager.item_updated.connect(on_item_updated)
@@ -22,7 +26,7 @@ func initialize(quest_manager: QuestManager, inventory_manager: InventoryManager
 		if items[item].is_in_player and not items[item].is_in_world:
 			add_item_inventory(items[item])
 	for quest in quests:
-		if not quest.is_completed():
+		if quest.is_completed():
 			add_quest_ui(quest)
 
 func add_item_inventory(item: Dictionary):
@@ -38,10 +42,18 @@ func remove_item_inventory(item: Dictionary):
 		pass
 
 func add_quest_ui(quest: Quest) -> void:
-	var quest_box := elemento_quest.instantiate()
+	var quest_box : QuestElement
+	if(quest.is_secondary):
+		quest_box = elemento_quest_secondary.instantiate()
+		quest_box.pressed.connect(_on_secondary_quest_picked.bind(quest_box.titulo))
+	else:
+		quest_box = elemento_quest_main.instantiate()
 	quest_container.add_child(quest_box)
 	quest_box.set_nombre_elemento(quest.title)  # útil para identificarlo luego
-	quest_box.set_titulo(quest.title)
+	if(quest == active_secondary_quest):
+		quest_box.set_titulo(quest.title + " (ACTIVA)")
+	else:
+		quest_box.set_titulo(quest.title)
 	quest_box.set_paso("    " + quest.get_current_step().text_to_do)
 	
 	#var step := quest.get_current_step()
@@ -84,3 +96,11 @@ func _on_main_menu_ability_button_pressed(ability_name: String) -> void:
 func _on_exit_button_pressed() -> void:
 	self.visible = false
 	get_tree().paused = false
+
+
+func _on_quest_manager_new_active_secondary_quest(quest: Quest) -> void:
+	active_secondary_quest = quest
+
+
+func _on_secondary_quest_picked(title):
+	secondary_quest_picked.emit(title)

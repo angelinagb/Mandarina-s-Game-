@@ -1,0 +1,113 @@
+[gd_scene load_steps=13 format=3 uid="uid://cimvpyl0tae0m"]
+
+[ext_resource type="PackedScene" uid="uid://3g08138nqpuj" path="res://IsoRooms/IsoRoom2/2_iso_room_cafeteria.tscn" id="1_7eguv"]
+[ext_resource type="Script" uid="uid://bfncky2s0ss6u" path="res://Tomas/CAFETERIA/cafeteria.gd" id="2_ap168"]
+[ext_resource type="PackedScene" uid="uid://dh1mihsxbf435" path="res://Tomas/CAFETERIA/Intro/cafeteria_dialogo_1.tscn" id="3_km8hj"]
+[ext_resource type="Texture2D" uid="uid://gpqvpe334ymm" path="res://art/characters/iso/npc/Trader_npc.png" id="4_4je3a"]
+[ext_resource type="PackedScene" uid="uid://hm1bx25eg2ip" path="res://Tomas/CAFETERIA/Vendedor_Q1.tscn" id="4_j2wjg"]
+[ext_resource type="PackedScene" uid="uid://n0gmw80orkd4" path="res://utils/Interact/Npc/Instancias/Grupo_1.tscn" id="5_snxlu"]
+[ext_resource type="PackedScene" uid="uid://qghui2lvxk3v" path="res://utils/Interact/Npc/Instancias/Grupo_2.tscn" id="6_4je3a"]
+[ext_resource type="PackedScene" uid="uid://x7bckplwrhjd" path="res://Tomas/CAFETERIA/Vendedor_Q2.tscn" id="6_xnuun"]
+[ext_resource type="PackedScene" uid="uid://xpklt7xbwqj7" path="res://utils/Interact/Npc/Instancias/Grupo_3.tscn" id="7_xnuun"]
+
+[sub_resource type="Animation" id="Animation_km8hj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ap168"]
+resource_name = "fade_out"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_km8hj"]
+_data = {
+&"RESET": SubResource("Animation_km8hj"),
+&"fade_out": SubResource("Animation_ap168")
+}
+
+[node name="CAFETERIA" instance=ExtResource("1_7eguv")]
+script = ExtResource("2_ap168")
+dialogo_intro = ExtResource("3_km8hj")
+room_id = ""
+
+[node name="defect" parent="Spawns" index="0"]
+position = Vector2(226, -376)
+
+[node name="SPRITE VENDEDOR" type="Sprite2D" parent="Interactables/Npcs" index="0"]
+position = Vector2(572, -334)
+scale = Vector2(3, 3)
+texture = ExtResource("4_4je3a")
+hframes = 6
+
+[node name="Vendedor Q1" parent="Interactables/Npcs/SPRITE VENDEDOR" index="0" instance=ExtResource("4_j2wjg")]
+position = Vector2(-2.66667, -3)
+scale = Vector2(0.333333, 0.333333)
+
+[node name="Vendedor Q2" parent="Interactables/Npcs/SPRITE VENDEDOR" index="1" groups=["Q2_BEGIN"] instance=ExtResource("6_xnuun")]
+visible = false
+position = Vector2(-2.66667, -3)
+scale = Vector2(0.333333, 0.333333)
+
+[node name="GRUPO 1" parent="Interactables/Npcs" index="1" groups=["Q1_GRUPOS"] instance=ExtResource("5_snxlu")]
+position = Vector2(-12, -209)
+
+[node name="GRUPO 2" parent="Interactables/Npcs" index="2" groups=["Q1_GRUPOS"] instance=ExtResource("6_4je3a")]
+position = Vector2(220, -73)
+
+[node name="GRUPO 3" parent="Interactables/Npcs" index="3" groups=["Q1_GRUPOS"] instance=ExtResource("7_xnuun")]
+position = Vector2(534, -58)
+
+[node name="CinematicasCafeteria" type="AnimationPlayer" parent="." index="4"]
+libraries = {
+&"": SubResource("AnimationLibrary_km8hj")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="5"]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[connection signal="interacted" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q1" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/GRUPO 1" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/GRUPO 2" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/GRUPO 3" to="." method="_on_interactable_interacted"]

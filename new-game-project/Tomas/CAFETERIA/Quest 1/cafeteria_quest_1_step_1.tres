@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="QuestStep" load_steps=2 format=3 uid="uid://ckwr7ex133gn1"]
+
+[ext_resource type="Script" uid="uid://c0nhxnmv56tui" path="res://managers/notification/quest/quest_step.gd" id="1_qne3k"]
+
+[resource]
+script = ExtResource("1_qne3k")
+text_to_do = "Escuchar de que habla cada grupo"
+necessary_interactables = {
+"COFFEE_G3": false
+}
+metadata/_custom_type_script = "uid://c0nhxnmv56tui"

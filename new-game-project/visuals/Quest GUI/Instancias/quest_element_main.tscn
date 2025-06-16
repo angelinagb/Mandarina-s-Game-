@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cugub82m6h141"]
+
+[ext_resource type="PackedScene" uid="uid://bt2q2yopmfhag" path="res://visuals/Quest GUI/quest_element.tscn" id="1_wqyya"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wqyya"]
+bg_color = Color(0.649017, 0.287337, 0, 1)
+
+[node name="QuestElementMain" instance=ExtResource("1_wqyya")]
+theme_override_styles/normal = SubResource("StyleBoxFlat_wqyya")

@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://b3tda36v8u0s5"]
 
-[ext_resource type="PackedScene" uid="uid://cs1gmcwpafdvd" path="res://rooms/room.tscn" id="1_n7283"]
+[ext_resource type="PackedScene" path="res://rooms/room.tscn" id="1_n7283"]
 [ext_resource type="PackedScene" uid="uid://3v1aqvnidp5b" path="res://utils/Interact/Item/item.tscn" id="2_jy5ib"]
 [ext_resource type="PackedScene" uid="uid://53qcgarmhxng" path="res://utils/Interact/Transitioner/transitioner.tscn" id="4_niw4v"]
 [ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="5_gu5ly"]
-[ext_resource type="Resource" uid="uid://0i74v357q5jb" path="res://managers/quest/quest_1.tres" id="6_ymuah"]
+[ext_resource type="Resource" uid="uid://0i74v357q5jb" path="res://managers/notification/quest/quest_1.tres" id="6_ymuah"]
 
 [node name="room_1" instance=ExtResource("1_n7283")]
 room_identifier = "room_1"

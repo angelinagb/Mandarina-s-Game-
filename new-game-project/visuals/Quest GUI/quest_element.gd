@@ -1,11 +1,12 @@
-extends PanelContainer
-
+extends Button
+class_name QuestElement
 
 @onready var titulo : Label = %Titulo
 @onready var paso : Label = %Paso
 
 func set_nombre_elemento(nuevo_nombre):
 	name = nuevo_nombre
+	
 
 func set_titulo(nuevo_titulo):
 	titulo.text = nuevo_titulo
