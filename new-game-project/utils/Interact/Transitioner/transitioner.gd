@@ -1,6 +1,8 @@
 class_name Transitioner extends Interactable
-
-@export_enum("ROOM-4", "ROOM-5", "ROOM-6")
+#ROOM 4: AULA 01
+#ROOM 5: CAFETERIA 
+#ROOM 6: LABO DE QUIMICA 
+@export_enum("ROOM-4", "ROOM-5", "ROOM-6", "ROOM-PASILLO","ROOM-LABOFISICA","ROOM-ENTRADA")
 var room_id: String
 
 func _ready():

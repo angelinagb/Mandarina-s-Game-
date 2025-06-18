@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://m6s8117jojso"]
+[gd_scene load_steps=5 format=3 uid="uid://m6s8117jojso"]
 
 [ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_jshhq"]
 [ext_resource type="Script" uid="uid://fogxceak3oo3" path="res://IsoRooms/IsoRoom0_Entrada/iso_room0.gd" id="2_v0741"]
+[ext_resource type="PackedScene" uid="uid://cd4po1v8botyd" path="res://IsoRooms/IsoRoom0_Entrada/0_base_tiles_entrada.tscn" id="3_v0741"]
+[ext_resource type="PackedScene" uid="uid://d2jcbaf1bvttq" path="res://Mandarina/mandarina.tscn" id="4_t36t4"]
 
 [node name="IsoRoom0_Entrada" instance=ExtResource("1_jshhq")]
 script = ExtResource("2_v0741")
+
+[node name="Entrada" parent="." index="3" instance=ExtResource("3_v0741")]
+
+[node name="Mandarina" parent="." index="4" instance=ExtResource("4_t36t4")]
+position = Vector2(176, -164)

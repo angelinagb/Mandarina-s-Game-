@@ -19,9 +19,14 @@ scale = Vector2(-4.1721, 1.88666)
 position = Vector2(321, -423)
 rotation = 0.431205
 scale = Vector2(1.55329, 1.39522)
+room_id = "ROOM-LABOFISICA"
 
 [node name="PlayerB" parent="Player" index="0"]
 z_index = 1
 position = Vector2(138, -381)
+
+[node name="BackRoundMusic" parent="." index="4"]
+volume_db = 0.001
+autoplay = true
 
 [connection signal="interacted" from="Interactables/Transitioners/TRANS R2 -> R3" to="." method="_on_interactable_interacted"]

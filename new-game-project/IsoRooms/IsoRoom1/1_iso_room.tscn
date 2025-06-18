@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bt1w2mhrlrldg"]
+[gd_scene load_steps=11 format=3 uid="uid://bt1w2mhrlrldg"]
 
 [ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_r6l0j"]
 [ext_resource type="PackedScene" uid="uid://dfp282bcn4bat" path="res://IsoRooms/IsoRoom1/1_base_tiles.tscn" id="2_6jolm"]

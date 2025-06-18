@@ -8,8 +8,11 @@ var rooms = {
 	"ROOM-4":"res://IsoRooms/IsoRoom1/1_iso_room.tscn" ,
 	"ROOM-4-II": "res://IsoRooms/IsoRoom1/1b_iso_room.tscn",
 	"ROOM-5": "res://IsoRooms/IsoRoom2/2_iso_room_cafeteria.tscn",
-	"ROOM-6": "res://IsoRooms/IsoRoom3-LabodeQuimica/3_iso_room.tscn"
-}
+	"ROOM-6": "res://IsoRooms/IsoRoom3-LabodeQuimica/3_iso_room.tscn",
+	"ROOM-PASILLO": "res://IsoRooms/Pasillo/iso_room_5_pasillo.tscn",
+	"ROOM-ENTRADA": "res://IsoRooms/IsoRoom0_Entrada/iso_room_0_entrada.tscn",
+	"ROOM-LABOFISICA": "res://IsoRooms/IsoRoom4-LabodeFisica/4_iso_room_labodefisica.tscn"
+	}
 
 func get_room(room_id : String) -> String:
 	return rooms[room_id]

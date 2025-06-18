@@ -7,6 +7,10 @@ const ISO_TRANSFORM = Transform2D(
 	Vector2.ZERO
 )
 
+func start():
+	playerb.start_audio()
+
+
 #se llama en cada frame si el vel != 0 
 func on_physics_process(_delta):
 	#var dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") 
@@ -39,3 +43,5 @@ func on_physics_process(_delta):
 	#if Input.is_action_just_pressed("shift"):
 		#state_machine.change_to(playerb.states.Run)
 		
+func end():
+		playerb.stop_audio()

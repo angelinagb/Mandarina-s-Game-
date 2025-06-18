@@ -36,3 +36,10 @@ func _on_interact_button_pressed() -> void:
 
 func _on_check_button_pressed() -> void:
 	pass
+
+func toogle_gui():
+	if self.visible == true :
+		self.visible = false
+	else:
+		self.visible = true
+	

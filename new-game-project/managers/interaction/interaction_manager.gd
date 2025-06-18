@@ -2,7 +2,6 @@ extends Node
 
 var interactuable_actual: Interactable = null
 signal interactuable_cambiado(interactuable: Interactable)
-
 func set_interactuable(i):
 	interactuable_actual = i
 	emit_signal("interactuable_cambiado", i)

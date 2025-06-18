@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dvwjtwebauvgf"
+path="res://.godot/imported/an old heartbeat.mp3-24fc21c4d2fad0019eeb6fec84315a9b.mp3str"
+
+[deps]
+
+source_file="res://art/music-sfx/Retro_Retro_Music/an old heartbeat.mp3"
+dest_files=["res://.godot/imported/an old heartbeat.mp3-24fc21c4d2fad0019eeb6fec84315a9b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

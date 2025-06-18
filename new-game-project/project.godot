@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Mandarina´s Game-angysBranch"
+config/name="Mandarina´s Miscellaneuous Mischief"
 run/main_scene="uid://cry7ijo4ctbq6"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="uid://cwpyiw1tiw07u"
@@ -44,6 +44,7 @@ folder_colors={
 "res://Interacting/": "pink",
 "res://IsoRooms/": "pink",
 "res://IsoRooms/Objetos/": "gray",
+"res://Mandarina/": "orange",
 "res://PianoPuzzle/": "pink",
 "res://PlayerB/": "pink",
 "res://QuestPrincipales/": "green",
