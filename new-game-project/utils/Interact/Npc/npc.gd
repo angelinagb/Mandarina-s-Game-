@@ -1,6 +1,6 @@
 class_name Npc extends Interactable
 
-signal give_quest(quest: Quest)
+signal quest_begun
 signal dialogue_ended
 
 @export var quest: Quest
@@ -59,6 +59,7 @@ func quest_available():
 func take_quest():
 	tiene_quest = false
 	quest_icon.hide()
+	quest_begun.emit()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "PlayerB":

@@ -5,9 +5,7 @@ extends IsoRoom
 
 func _ready() -> void:
 	super._ready()
-	#intro
 	await intro()
-	print("Termino la intro")
 	
 func intro():
 	player_b.esconder_joystick()
@@ -18,3 +16,9 @@ func intro():
 	player_b.mostrar_joystick()
 	#anim_player.play("intro")
 	#await anim_player.animation_finished
+
+
+func _on_vendedor_q_1_quest_begun() -> void:
+	#Empieza Quest 1, habilito los grupos para interactuar
+	for node : Node in get_tree().get_nodes_in_group("Q1_GRUPOS"):
+		node.process_mode = Node.PROCESS_MODE_INHERIT
