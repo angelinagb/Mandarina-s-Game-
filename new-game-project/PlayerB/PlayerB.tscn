@@ -35,7 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://cmbhdp0rhrnn5" path="res://art/characters/iso/GirlSample/playerShadow.png" id="32_cs7jv"]
 [ext_resource type="PackedScene" uid="uid://dm6q0abakck7u" path="res://utils/Virtual_Joystick/Scenes/joystick.tscn" id="33_gg580"]
 [ext_resource type="AudioStream" uid="uid://txl5r1p10xko" path="res://art/music-sfx/RPGsfx/footstep08.ogg" id="41_18h6m"]
-[ext_resource type="AudioStream" uid="uid://dyey0im7rrg60" path="res://art/music-sfx/RPGsfx/footstep09.ogg" id="42_sa11x"]
+[ext_resource type="AudioStream" uid="uid://hui5msi4j2h7" path="res://art/music-sfx/RPGsfx/footstep09.ogg" id="42_sa11x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uvdll"]
 atlas = ExtResource("1_jt0kk")
