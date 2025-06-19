@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogo" load_steps=2 format=3 uid="uid://cndyeoebrms4x"]
+
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="1_vxl60"]
+
+[resource]
+script = ExtResource("1_vxl60")
+arreglo_de_textos = PackedStringArray("...aprovechandose de que te vas siempre a esa hora...", "...eso es todo.", "(Genial, ya pude explicarle todo al vendedor)", "No puedo creerlo, nunca se me hubiera ocurrido que el faltante era por robo", "Te lo agradezco de verdad, solo te voy a pedir un último favor antes de ayudarte", "Hoy quiero que me ayudes a enfrentarlos a la noche, darles un buen susto así nunca más lo hacen.", "Es solo unos minutos, solo eso te pido", "(Parece que no tengo otra opción si quiero recuperar mi tesis)", "Genial, hagamoslo, seguime.")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"

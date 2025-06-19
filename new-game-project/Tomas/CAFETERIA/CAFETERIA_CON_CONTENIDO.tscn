@@ -73,22 +73,25 @@ scale = Vector2(3, 3)
 texture = ExtResource("4_4je3a")
 hframes = 6
 
-[node name="Vendedor Q1" parent="Interactables/Npcs/SPRITE VENDEDOR" index="0" instance=ExtResource("4_j2wjg")]
+[node name="Vendedor Q1" parent="Interactables/Npcs/SPRITE VENDEDOR" index="0" groups=["Q1"] instance=ExtResource("4_j2wjg")]
 position = Vector2(-2.66667, -3)
 scale = Vector2(0.333333, 0.333333)
 
-[node name="Vendedor Q2" parent="Interactables/Npcs/SPRITE VENDEDOR" index="1" groups=["Q2_BEGIN"] instance=ExtResource("6_xnuun")]
-visible = false
+[node name="Vendedor Q2" parent="Interactables/Npcs/SPRITE VENDEDOR" index="1" groups=["Q2"] instance=ExtResource("6_xnuun")]
+process_mode = 4
 position = Vector2(-2.66667, -3)
 scale = Vector2(0.333333, 0.333333)
 
-[node name="GRUPO 1" parent="Interactables/Npcs" index="1" groups=["Q1_GRUPOS"] instance=ExtResource("5_snxlu")]
+[node name="GRUPO 1" parent="Interactables/Npcs" index="1" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("5_snxlu")]
+process_mode = 4
 position = Vector2(-12, -209)
 
-[node name="GRUPO 2" parent="Interactables/Npcs" index="2" groups=["Q1_GRUPOS"] instance=ExtResource("6_4je3a")]
+[node name="GRUPO 2" parent="Interactables/Npcs" index="2" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("6_4je3a")]
+process_mode = 4
 position = Vector2(220, -73)
 
-[node name="GRUPO 3" parent="Interactables/Npcs" index="3" groups=["Q1_GRUPOS"] instance=ExtResource("7_xnuun")]
+[node name="GRUPO 3" parent="Interactables/Npcs" index="3" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("7_xnuun")]
+process_mode = 4
 position = Vector2(534, -58)
 
 [node name="CinematicasCafeteria" type="AnimationPlayer" parent="." index="4"]
@@ -107,6 +110,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
 [connection signal="interacted" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q1" to="." method="_on_interactable_interacted"]
+[connection signal="quest_begun" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q1" to="." method="_on_vendedor_q_1_quest_begun"]
 [connection signal="interacted" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/GRUPO 1" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/GRUPO 2" to="." method="_on_interactable_interacted"]
