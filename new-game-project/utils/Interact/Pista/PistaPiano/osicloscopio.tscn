@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://v8ayk5g3mgli"]
+
+[ext_resource type="Script" uid="uid://b6x1u23l2mbyc" path="res://utils/Interact/Pista/PistaPiano/osicloscopio.gd" id="1_ygk6t"]
+[ext_resource type="PackedScene" uid="uid://dijy517d8yamq" path="res://utils/Interact/Pista/PistaPiano/wave_signal.tscn" id="2_ey0qu"]
+[ext_resource type="FontFile" uid="uid://c48homm7y5ftp" path="res://art/Fonts/Audiowide-Regular.ttf" id="3_gp3lk"]
+[ext_resource type="Texture2D" uid="uid://mswhics2igh6" path="res://art/menu/boton_cerrar.png" id="4_loldm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gp3lk"]
+bg_color = Color(0.67451, 0, 0.141176, 0.215686)
+
+[node name="Osicloscopio" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_ygk6t")
+
+[node name="TextureRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.384314, 0.290196, 1)
+
+[node name="Wave" parent="." instance=ExtResource("2_ey0qu")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 18.0
+offset_top = 39.0
+offset_right = 139.0
+offset_bottom = 69.0
+theme_override_fonts/font = ExtResource("3_gp3lk")
+text = " "
+
+[node name="BeginButton" type="Button" parent="."]
+offset_left = 108.0
+offset_top = -1.0
+offset_right = 221.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("3_gp3lk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gp3lk")
+toggle_mode = true
+text = "Begin Sample"
+
+[node name="CloseButton" type="Button" parent="."]
+offset_left = 736.0
+offset_top = 6.0
+offset_right = 808.0
+offset_bottom = 78.0
+scale = Vector2(0.800692, 0.877655)
+icon = ExtResource("4_loldm")
+flat = true
+
+[connection signal="pressed" from="BeginButton" to="." method="_on_begin_pressed"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_pressed"]

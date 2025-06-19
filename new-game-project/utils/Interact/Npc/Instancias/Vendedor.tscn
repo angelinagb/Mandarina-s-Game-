@@ -11,6 +11,10 @@ position = Vector2(2, 8)
 texture = ExtResource("2_j5561")
 hframes = 6
 
+[node name="Area2D" parent="." index="2"]
+position = Vector2(0, 10)
+scale = Vector2(1.03006, 1.80097)
+
 [node name="Dialogo Quest" parent="." index="4"]
 vacio = true
 

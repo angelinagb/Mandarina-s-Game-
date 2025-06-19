@@ -27,23 +27,24 @@ func _ready():
 	my_type = "npc"
 	super._ready()
 
-func _input(event):
-	match current_npc_state:
-		STATE.TALKING:			
-			pass
-		STATE.WAITING:
-			if player_in_range and Input.is_action_just_pressed("ui_accept"):
-				current_npc_state = STATE.TALKING
-				interact()
-				await dialogueEnded()
-				current_npc_state = STATE.WAITING
+#func _input(event):
+	#match current_npc_state:
+		#STATE.TALKING:			
+			#pass
+		#STATE.WAITING:
+			#if player_in_range and Input.is_action_just_pressed("ui_accept"):
+				#current_npc_state = STATE.TALKING
+				#interact()
+				#
+				#current_npc_state = STATE.WAITING
 
 func dialogueEnded():
 	await dialogue_ended
 
 func interact():
 	interacted.emit(self)
-
+	await dialogueEnded()
+	
 func startDialogue():
 	if tiene_quest == true:
 		primerDialogo.start()
@@ -62,11 +63,11 @@ func take_quest():
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "PlayerB":
-		player_in_range = true
+		InteractionManager.set_interactuable(self)
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.name == "PlayerB":
-		player_in_range = false
+		InteractionManager.clear_interactuable(self)
 
 
 func _on_dialogo_quest_dialogue_ended() -> void:
@@ -85,3 +86,5 @@ func load_state(current_state):
 	tiene_quest = current_state["tiene_quest"]
 
 	
+func get_type()  -> String :
+	return my_type

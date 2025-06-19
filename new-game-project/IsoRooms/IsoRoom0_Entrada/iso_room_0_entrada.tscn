@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://m6s8117jojso"]
+
+[ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_jshhq"]
+[ext_resource type="Script" uid="uid://fogxceak3oo3" path="res://IsoRooms/IsoRoom0_Entrada/iso_room0.gd" id="2_v0741"]
+
+[node name="IsoRoom0_Entrada" instance=ExtResource("1_jshhq")]
+script = ExtResource("2_v0741")

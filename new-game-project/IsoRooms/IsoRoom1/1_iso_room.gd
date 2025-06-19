@@ -18,4 +18,5 @@ func save_state():
 
 func _on_chica_triste_dialogue_ended() -> void:
 	trans.process_mode = Node.PROCESS_MODE_INHERIT
-	
+	#change dialogo si la quest no esta completada 
+	#change dialogo una vez terminada la quest?

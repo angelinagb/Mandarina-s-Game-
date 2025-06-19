@@ -9,12 +9,12 @@
 script = ExtResource("1_ii2vn")
 
 [node name="Ring" type="Sprite2D" parent="."]
-modulate = Color(0.243137, 1, 1, 1)
+modulate = Color(0.0670734, 0.0107269, 0.000919926, 0.662745)
 scale = Vector2(0.055, 0.055)
 texture = ExtResource("2_w2jn3")
 
 [node name="Knob" type="Sprite2D" parent="."]
-modulate = Color(0.286275, 0.301961, 1, 1)
+modulate = Color(0.933333, 0.423529, 0.180392, 1)
 scale = Vector2(0.02, 0.02)
 texture = ExtResource("3_voruw")
 script = ExtResource("4_g4kk1")

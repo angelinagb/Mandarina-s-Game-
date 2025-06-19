@@ -38,7 +38,7 @@ func add_item_inventory(item: Dictionary):
 	item_box.set_titulo("- %s" % item.get("name", "Item sin nombre"))
 
 func remove_item_inventory(item: Dictionary):
-	for child in item_container:
+	for child in item_container.get_children():
 		pass
 
 func add_quest_ui(quest: Quest) -> void:
