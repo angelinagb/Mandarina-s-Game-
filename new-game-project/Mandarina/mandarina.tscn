@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2jcbaf1bvttq"]
+[gd_scene load_steps=10 format=3 uid="uid://d2jcbaf1bvttq"]
 
 [ext_resource type="Texture2D" uid="uid://d1mxik0nrgod3" path="res://art/characters/iso/npc/mandarina.png" id="1_eb230"]
+[ext_resource type="Script" uid="uid://8rdxjob1fq4o" path="res://Mandarina/mandarina.gd" id="1_ugmtq"]
 
 [sub_resource type="Animation" id="Animation_byv1q"]
 length = 0.001
@@ -98,6 +99,7 @@ _data = {
 radius = 17.6887
 
 [node name="Mandarina" type="CharacterBody2D"]
+script = ExtResource("1_ugmtq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
