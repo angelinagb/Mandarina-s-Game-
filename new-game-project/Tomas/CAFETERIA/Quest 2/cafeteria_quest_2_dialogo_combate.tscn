@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bahdwu3b3uvas"]
+
+[ext_resource type="PackedScene" uid="uid://bqscndmb0v4br" path="res://managers/dialogue 2.0/dialogue_system.tscn" id="1_rub8g"]
+[ext_resource type="Resource" uid="uid://cuw8q0tdfd37i" path="res://Tomas/CAFETERIA/Quest 2/cafeteria_q2_dialogo_3.tres" id="2_jmfyg"]
+
+[node name="Dialogue System" instance=ExtResource("1_rub8g")]
+destruirse_al_finalizar = true
+dialogueResource = ExtResource("2_jmfyg")

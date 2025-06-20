@@ -30,6 +30,7 @@ func letra_random(palabra : String):
 func initialize():
 	set_palabra_label()
 	init_palabra_parcial()
+	pista_label.text = pista
 	current_tries = intentos
 	update_vidas_restantes()
 	abecedario = 'abcdefghijklmnoprstuvwxyz' + palabra + palabra + palabra + palabra
@@ -75,7 +76,7 @@ func lose():
 	fondo_pantalla_derrota.show()
 	
 	
-func on_burbuja_clicked_on(letra : String):
+func on_burbuja_clicked_on(letra : String): 
 	if palabra.to_upper().contains(letra.to_upper()) && !palabra_label.text.to_upper().contains(letra.to_upper()):
 		var from : int = 0
 		var index : int = palabra.to_upper().find(letra.to_upper(), from)

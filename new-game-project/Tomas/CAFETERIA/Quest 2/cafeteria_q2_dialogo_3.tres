@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="Dialogo" load_steps=2 format=3 uid="uid://cw33b8tthg2yf"]
+[gd_resource type="Resource" script_class="Dialogo" load_steps=2 format=3 uid="uid://cuw8q0tdfd37i"]
 
 [ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="1_maa31"]
 
 [resource]
 script = ExtResource("1_maa31")
-arreglo_de_textos = PackedStringArray()
+arreglo_de_textos = PackedStringArray("Que humillación", "Toma tu hoja, por favor no le cuentes a nadie esto", "No puedo creerlo", "¡Hoja de tesis conseguida! Nivel Cafetería completado")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"

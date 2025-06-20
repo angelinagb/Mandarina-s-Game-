@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://bkkm80qlft38n"]
 
-[ext_resource type="Script" uid="uid://ci1ikafwx21sf" path="res://utils/Interact/Puzzle/puzzles 2.0/PuzzleInstance/PuzzleInformatica/puzzle_informatica.gd" id="1_s33nc"]
-[ext_resource type="Theme" uid="uid://ht1jo68esctd" path="res://utils/Interact/Puzzle/puzzles 2.0/PuzzleInstance/PuzzleInformatica/resources/BaseThemePuzzle.tres" id="2_8tjlj"]
+[ext_resource type="Script" uid="uid://ci1ikafwx21sf" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleInformatica/puzzle_informatica.gd" id="1_s33nc"]
+[ext_resource type="Theme" uid="uid://ht1jo68esctd" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleInformatica/resources/BaseThemePuzzle.tres" id="2_8tjlj"]
 
-[node name="PinCracker" type="Node"]
+[node name="PinCracker" type="CanvasLayer"]
 script = ExtResource("1_s33nc")
 
 [node name="Panel" type="Panel" parent="."]

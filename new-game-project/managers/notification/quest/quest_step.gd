@@ -1,6 +1,8 @@
 class_name QuestStep
 extends Resource
 
+signal step_completed
+
 @export var text_to_do: String
 @export var necessary_interactables: Dictionary = {}
 # Formato: { "1": false, "5": true, "claveX": false }
@@ -17,6 +19,7 @@ func set_interactable_interacted(id: String) -> bool:
 		necessary_interactables[id] = true
 		response = true
 		if is_completed():
+			step_completed.emit()
 			on_completed()
 	return response
 

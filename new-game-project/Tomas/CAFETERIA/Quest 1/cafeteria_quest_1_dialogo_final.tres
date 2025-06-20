@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogo" load_steps=2 format=3 uid="uid://cj1aa4eqoxwp8"]
+
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="1_2jhob"]
+
+[resource]
+script = ExtResource("1_2jhob")
+arreglo_de_textos = PackedStringArray("Era obvio, hay un ladrón que se ha estado robando el inventario", "Ahora que se esto voy a avisarle al vendedor", "Espero que se resuelva rápido, necesito mi hoja de tesis")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"

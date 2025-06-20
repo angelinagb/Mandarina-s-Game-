@@ -19,6 +19,8 @@ font_size = 80
 process_mode = 3
 layer = 2
 script = ExtResource("1_q8xyk")
+palabra = "LADRON"
+pista = "¿Cuál es la causa del stock faltante?"
 burbuja_palabra = ExtResource("2_ymvu5")
 velocidad_burbujas = 200.0
 

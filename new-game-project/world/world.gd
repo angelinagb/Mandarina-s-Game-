@@ -122,10 +122,10 @@ func _on_interactable_interacted(interactable: Interactable):
 		"transitioner":
 			_on_transitioner_activated(interactable)
 		"npc":
-			_on_npc_talked_to(interactable)
+			await _on_npc_talked_to(interactable)
 		"puzzle":
 			print("match ok")
-			_on_puzzle_begin(interactable)
+			await _on_puzzle_begin(interactable)
 		_:
 			print("no tengo interactuable" + interactable.my_type)
 	
@@ -144,6 +144,7 @@ func _on_transitioner_activated(transitioner: Transitioner) -> void:
 func _on_npc_talked_to(npc: Npc) -> void:
 	npc.startDialogue()
 	print("hablando con npc---")
+	await npc.dialogue_ended
 	if npc.quest_available():
 		npc.take_quest()
 		quest.add_quest(npc.quest)

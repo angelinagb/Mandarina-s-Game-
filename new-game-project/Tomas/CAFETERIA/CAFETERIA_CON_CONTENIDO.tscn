@@ -1,15 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://cimvpyl0tae0m"]
+[gd_scene load_steps=15 format=3 uid="uid://cimvpyl0tae0m"]
 
 [ext_resource type="PackedScene" uid="uid://3g08138nqpuj" path="res://IsoRooms/IsoRoom2/2_iso_room_cafeteria.tscn" id="1_7eguv"]
 [ext_resource type="Script" uid="uid://bfncky2s0ss6u" path="res://Tomas/CAFETERIA/cafeteria.gd" id="2_ap168"]
 [ext_resource type="PackedScene" uid="uid://dh1mihsxbf435" path="res://Tomas/CAFETERIA/Intro/cafeteria_dialogo_1.tscn" id="3_km8hj"]
-[ext_resource type="PackedScene" uid="uid://yfk7rrpxh44v" path="res://Tomas/Minijuegos/Ahorcado Burbujas/ahorcado.tscn" id="4_0pd66"]
 [ext_resource type="Texture2D" uid="uid://gpqvpe334ymm" path="res://art/characters/iso/npc/Trader_npc.png" id="4_4je3a"]
 [ext_resource type="PackedScene" uid="uid://hm1bx25eg2ip" path="res://Tomas/CAFETERIA/Vendedor_Q1.tscn" id="4_j2wjg"]
 [ext_resource type="PackedScene" uid="uid://n0gmw80orkd4" path="res://utils/Interact/Npc/Instancias/Grupo_1.tscn" id="5_snxlu"]
 [ext_resource type="PackedScene" uid="uid://qghui2lvxk3v" path="res://utils/Interact/Npc/Instancias/Grupo_2.tscn" id="6_4je3a"]
 [ext_resource type="PackedScene" uid="uid://x7bckplwrhjd" path="res://Tomas/CAFETERIA/Vendedor_Q2.tscn" id="6_xnuun"]
+[ext_resource type="Resource" uid="uid://cv5hu5avsttda" path="res://Tomas/CAFETERIA/Quest 2/cafeteria_q2.tres" id="7_0pd66"]
 [ext_resource type="PackedScene" uid="uid://xpklt7xbwqj7" path="res://utils/Interact/Npc/Instancias/Grupo_3.tscn" id="7_xnuun"]
+[ext_resource type="PackedScene" uid="uid://bh12kbhvaf3bl" path="res://Tomas/CAFETERIA/Nerd_Q2.tscn" id="8_aaue2"]
 
 [sub_resource type="Animation" id="Animation_km8hj"]
 length = 0.001
@@ -63,11 +64,13 @@ _data = {
 [node name="CAFETERIA" instance=ExtResource("1_7eguv")]
 script = ExtResource("2_ap168")
 dialogo_intro = ExtResource("3_km8hj")
-minijuego = ExtResource("4_0pd66")
 room_id = ""
 
 [node name="defect" parent="Spawns" index="0"]
 position = Vector2(226, -376)
+
+[node name="TRANS R2 -> R3" parent="Interactables/Transitioners" index="0" groups=["COFFEE_END"]]
+process_mode = 4
 
 [node name="SPRITE VENDEDOR" type="Sprite2D" parent="Interactables/Npcs" index="0"]
 position = Vector2(572, -334)
@@ -83,16 +86,21 @@ scale = Vector2(0.333333, 0.333333)
 process_mode = 4
 position = Vector2(-2.66667, -3)
 scale = Vector2(0.333333, 0.333333)
+quest = ExtResource("7_0pd66")
 
-[node name="GRUPO 1" parent="Interactables/Npcs" index="1" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("5_snxlu")]
+[node name="Nerd" parent="Interactables/Npcs" index="1" groups=["Q2", "Q2_BEGIN"] instance=ExtResource("8_aaue2")]
+process_mode = 4
+position = Vector2(-522, -140)
+
+[node name="GRUPO 1" parent="Interactables/Npcs" index="2" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("5_snxlu")]
 process_mode = 4
 position = Vector2(-12, -209)
 
-[node name="GRUPO 2" parent="Interactables/Npcs" index="2" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("6_4je3a")]
+[node name="GRUPO 2" parent="Interactables/Npcs" index="3" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("6_4je3a")]
 process_mode = 4
 position = Vector2(220, -73)
 
-[node name="GRUPO 3" parent="Interactables/Npcs" index="3" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("7_xnuun")]
+[node name="GRUPO 3" parent="Interactables/Npcs" index="4" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("7_xnuun")]
 process_mode = 4
 position = Vector2(534, -58)
 
@@ -113,7 +121,11 @@ color = Color(0, 0, 0, 0)
 
 [connection signal="interacted" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q1" to="." method="_on_interactable_interacted"]
 [connection signal="quest_begun" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q1" to="." method="_on_vendedor_q_1_quest_begun"]
+[connection signal="quest_ended" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q1" to="." method="_on_vendedor_q_1_quest_ended"]
 [connection signal="interacted" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2" to="." method="_on_interactable_interacted"]
+[connection signal="quest_begun" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2" to="." method="_on_vendedor_q_2_quest_begun"]
+[connection signal="quest_ended" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2" to="." method="_on_vendedor_q_2_quest_ended"]
+[connection signal="interacted" from="Interactables/Npcs/Nerd" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/GRUPO 1" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/GRUPO 2" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/GRUPO 3" to="." method="_on_interactable_interacted"]
