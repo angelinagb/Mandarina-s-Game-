@@ -3,20 +3,29 @@
 [ext_resource type="Script" uid="uid://de7ssua73bfcv" path="res://Tomas/Minijuegos/Ahorcado Burbujas/burbuja_letra.gd" id="1_mn6my"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ob8ly"]
-font_size = 12
+font_size = 30
 outline_size = 1
 outline_color = Color(0, 0, 0, 1)
 
 [node name="BurbujaLetra" type="CanvasLayer"]
+process_mode = 4
+layer = 2
 script = ExtResource("1_mn6my")
 
-[node name="Letra" type="Label" parent="."]
-offset_right = 20.0
-offset_bottom = 20.0
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 42.0
+
+[node name="Letra" type="Label" parent="PanelContainer"]
+layout_mode = 2
 mouse_filter = 0
 text = "A"
 label_settings = SubResource("LabelSettings_ob8ly")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="gui_input" from="Letra" to="." method="_on_letra_gui_input"]
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="gui_input" from="PanelContainer/Letra" to="." method="_on_letra_gui_input"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

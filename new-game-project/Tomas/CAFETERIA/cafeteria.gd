@@ -2,12 +2,15 @@ extends IsoRoom
 
 @export var dialogo_intro : PackedScene
 @onready var anim_player : AnimationPlayer = $CinematicasCafeteria
+@export var minijuego : PackedScene
 
 func _ready() -> void:
 	super._ready()
 	await intro()
 	
 func intro():
+	QueueManager.enqueue_event(minijuego)
+	await QueueManager.finished
 	player_b.esconder_joystick()
 	anim_player.play("fade_out")
 	await anim_player.animation_finished

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogo" load_steps=2 format=3 uid="uid://bpq84p2h5uvi7"]
+
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="1_2r8pu"]
+
+[resource]
+script = ExtResource("1_2r8pu")
+arreglo_de_textos = PackedStringArray("Me esta matando el estrés", "No se me ocurre cual puede ser el causante...")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
