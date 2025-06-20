@@ -18,6 +18,7 @@ intro = null
 room_id = "ROOM-4"
 
 [node name="BaseTiles" parent="." index="0" instance=ExtResource("2_6jolm")]
+position = Vector2(8, 22)
 script = null
 
 [node name="defect" parent="Spawns" index="0"]

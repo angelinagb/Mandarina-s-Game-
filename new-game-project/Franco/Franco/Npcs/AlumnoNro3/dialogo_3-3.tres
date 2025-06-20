@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dialogo" load_steps=2 format=3 uid="uid://rkcdn7a3f300"]
+
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="1_6x3r7"]
+
+[resource]
+script = ExtResource("1_6x3r7")
+arreglo_de_textos = PackedStringArray("Vos podes creer que esta andando todo mal hoy?")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"

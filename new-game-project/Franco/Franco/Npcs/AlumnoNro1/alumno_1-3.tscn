@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://buljgfkbc4a3w"]
+
+[ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_p5pqf"]
+[ext_resource type="Texture2D" uid="uid://b341gjt3lvvwc" path="res://Franco/Npcs/AlumnoNro1/AlumnoNro1.png" id="2_6ogvg"]
+[ext_resource type="Resource" uid="uid://bdlderl73dml1" path="res://Franco/Npcs/AlumnoNro1/dialogo_1-3.tres" id="3_u2pcb"]
+
+[node name="AlumnoNro1-3" instance=ExtResource("1_p5pqf")]
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_6ogvg")
+
+[node name="Dialogo Quest" parent="." index="4"]
+vacio = true
+
+[node name="Dialogo Default" parent="." index="5"]
+dialogueResource = ExtResource("3_u2pcb")

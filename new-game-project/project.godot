@@ -41,6 +41,7 @@ enabled=PackedStringArray("res://addons/kanban_tasks/plugin.cfg")
 [file_customization]
 
 folder_colors={
+"res://Ange/": "yellow",
 "res://Interacting/": "pink",
 "res://IsoRooms/": "pink",
 "res://IsoRooms/Objetos/": "gray",
@@ -48,6 +49,7 @@ folder_colors={
 "res://PianoPuzzle/": "pink",
 "res://PlayerB/": "pink",
 "res://QuestPrincipales/": "green",
+"res://Tomas/CAFETERIA/CAFETERIA_CON_CONTENIDO.tscn": "yellow",
 "res://utils/Interact/": "yellow",
 "res://utils/Virtual_Joystick/": "pink"
 }

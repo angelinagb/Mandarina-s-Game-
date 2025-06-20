@@ -25,8 +25,4 @@ room_id = "ROOM-LABOFISICA"
 z_index = 1
 position = Vector2(138, -381)
 
-[node name="BackRoundMusic" parent="." index="4"]
-volume_db = 0.001
-autoplay = true
-
 [connection signal="interacted" from="Interactables/Transitioners/TRANS R2 -> R3" to="." method="_on_interactable_interacted"]

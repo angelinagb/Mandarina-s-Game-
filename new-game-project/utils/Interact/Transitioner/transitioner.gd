@@ -4,6 +4,7 @@ class_name Transitioner extends Interactable
 #ROOM 6: LABO DE QUIMICA 
 @export_enum("ROOM-4", "ROOM-5", "ROOM-6", "ROOM-PASILLO","ROOM-LABOFISICA","ROOM-ENTRADA")
 var room_id: String
+@onready var door_sound: AudioStreamPlayer = $door_sound
 
 func _ready():
 	my_type = "transitioner"
@@ -23,6 +24,8 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 
 func interact() :
+	door_sound.play()
+	await door_sound.finished
 	interacted.emit(self)
 
 func get_type():

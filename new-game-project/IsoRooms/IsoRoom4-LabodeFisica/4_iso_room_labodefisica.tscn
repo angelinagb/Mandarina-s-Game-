@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://v8ayk5g3mgli" path="res://utils/Interact/Pista/PistaPiano/osicloscopio.tscn" id="3_oyfwe"]
 [ext_resource type="PackedScene" uid="uid://bucn0vs17tsw2" path="res://utils/Interact/Item/Instancias/Mate.tscn" id="3_woc7s"]
 [ext_resource type="Script" uid="uid://bvq7ul31l7a5" path="res://utils/Interact/Interactable/interactable.gd" id="6_bpgie"]
-[ext_resource type="PackedScene" path="res://IsoRooms/IsoRoom4-LabodeFisica/osc_activator.tscn" id="7_7bnoq"]
+[ext_resource type="PackedScene" uid="uid://cho8fef01i037" path="res://IsoRooms/IsoRoom4-LabodeFisica/osc_activator.tscn" id="7_7bnoq"]
 
 [node name="LabodeFisica" instance=ExtResource("1_ebu0q")]
 script = ExtResource("2_i5aki")

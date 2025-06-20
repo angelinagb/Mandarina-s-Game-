@@ -15,4 +15,4 @@ func interact():
 	if interactuable_actual:
 		interactuable_actual.interact()
 	else :
-		print("NO HAY NADA, NO ESTAS HACIENDO NADA")
+		print("No interaction defined for this interactable")

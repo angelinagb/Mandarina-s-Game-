@@ -9,6 +9,7 @@ func _on_new_game_pressed() -> void:
 	await sfx_music.finished
 	world_related_button_pressed.emit("NEW_GAME")
 	
+	
 
 func _on_resume_game_pressed() -> void:
 	sfx_music.play()

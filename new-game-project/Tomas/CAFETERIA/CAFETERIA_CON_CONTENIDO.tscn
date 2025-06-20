@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://3g08138nqpuj" path="res://IsoRooms/IsoRoom2/2_iso_room_cafeteria.tscn" id="1_7eguv"]
 [ext_resource type="Script" uid="uid://bfncky2s0ss6u" path="res://Tomas/CAFETERIA/cafeteria.gd" id="2_ap168"]
-[ext_resource type="PackedScene" uid="uid://dh1mihsxbf435" path="res://Tomas/CAFETERIA/Intro/cafeteria_dialogo_1.tscn" id="3_km8hj"]
+[ext_resource type="PackedScene" uid="uid://cc873te58i88x" path="res://Ange/dialogo_intro.tscn" id="3_xnuun"]
 [ext_resource type="Texture2D" uid="uid://gpqvpe334ymm" path="res://art/characters/iso/npc/Trader_npc.png" id="4_4je3a"]
 [ext_resource type="PackedScene" uid="uid://hm1bx25eg2ip" path="res://Tomas/CAFETERIA/Vendedor_Q1.tscn" id="4_j2wjg"]
 [ext_resource type="PackedScene" uid="uid://n0gmw80orkd4" path="res://utils/Interact/Npc/Instancias/Grupo_1.tscn" id="5_snxlu"]
@@ -61,7 +61,7 @@ _data = {
 
 [node name="CAFETERIA" instance=ExtResource("1_7eguv")]
 script = ExtResource("2_ap168")
-dialogo_intro = ExtResource("3_km8hj")
+dialogo_intro = ExtResource("3_xnuun")
 room_id = ""
 
 [node name="defect" parent="Spawns" index="0"]

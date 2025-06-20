@@ -9,9 +9,12 @@ var rooms = {
 	"ROOM-4-II": "res://IsoRooms/IsoRoom1/1b_iso_room.tscn",
 	"ROOM-5": "res://IsoRooms/IsoRoom2/2_iso_room_cafeteria.tscn",
 	"ROOM-6": "res://IsoRooms/IsoRoom3-LabodeQuimica/3_iso_room.tscn",
-	"ROOM-PASILLO": "res://IsoRooms/Pasillo/iso_room_5_pasillo.tscn",
-	"ROOM-ENTRADA": "res://IsoRooms/IsoRoom0_Entrada/iso_room_0_entrada.tscn",
-	"ROOM-LABOFISICA": "res://IsoRooms/IsoRoom4-LabodeFisica/4_iso_room_labodefisica.tscn"
+	"ROOM-PASILLO1": "res://Franco/Franco/rooms/pasillo1/pasillo_1.tscn",
+	"ROOM-ENTRADA": "res://Franco/Franco/rooms/Entrada/entrada_iso_room.tscn",
+	"ROOM-LABOFISICA": "res://IsoRooms/IsoRoom4-LabodeFisica/4_iso_room_labodefisica.tscn",
+	"ROOM-CENTROALUMNOS":"res://Franco/Franco/rooms/Centro alumnos/centro_alumnos.tscn",
+	"ROOM-PASILLO2": "res://Franco/Franco/rooms/pasillo2/pasillo_2.tscn",
+	"ROOM-SALACOMUN":"res://Franco/Franco/rooms/SalaComun/sala_comun.tscn"
 	}
 
 func get_room(room_id : String) -> String:

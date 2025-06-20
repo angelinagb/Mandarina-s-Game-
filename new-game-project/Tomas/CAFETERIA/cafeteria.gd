@@ -16,7 +16,7 @@ func intro():
 	player_b.mostrar_joystick()
 	#anim_player.play("intro")
 	#await anim_player.animation_finished
-
+ 
 
 func _on_vendedor_q_1_quest_begun() -> void:
 	#Empieza Quest 1, habilito los grupos para interactuar

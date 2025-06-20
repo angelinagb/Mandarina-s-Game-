@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://cupamgrr3ac4b"]
+
+[ext_resource type="Texture2D" uid="uid://wrphx78et2m" path="res://art/icon/backround.png" id="1_b7lti"]
+[ext_resource type="Script" uid="uid://djessoc46dl17" path="res://Franco/Franco/end.gd" id="1_yn1hw"]
+[ext_resource type="FontFile" uid="uid://c48homm7y5ftp" path="res://art/Fonts/Audiowide-Regular.ttf" id="2_yn1hw"]
+[ext_resource type="PackedScene" uid="uid://bqscndmb0v4br" path="res://managers/dialogue 2.0/dialogue_system.tscn" id="4_dp2n8"]
+[ext_resource type="Resource" uid="uid://dcu0ddde2va7n" path="res://Franco/Franco/end_dialogue.tres" id="5_feiva"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dp2n8"]
+bg_color = Color(0, 0, 0, 0.784314)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rjjqa"]
+font = ExtResource("2_yn1hw")
+font_size = 32
+font_color = Color(0.784314, 0.470588, 0, 1)
+
+[node name="End" type="CanvasLayer"]
+script = ExtResource("1_yn1hw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_b7lti")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dp2n8")
+
+[node name="TitleLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "¡Felicitaciones!"
+label_settings = SubResource("LabelSettings_rjjqa")
+horizontal_alignment = 1
+
+[node name="Dialogue System" parent="." instance=ExtResource("4_dp2n8")]
+dialogueResource = ExtResource("5_feiva")

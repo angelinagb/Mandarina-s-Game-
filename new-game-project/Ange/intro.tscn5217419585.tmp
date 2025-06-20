@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://do7nalwy1mjpc"]
+
+[ext_resource type="Texture2D" uid="uid://bl77oocpaghpd" path="res://art/menu/Facultad2.png" id="1_cmrnn"]
+[ext_resource type="Script" uid="uid://1vdnaelrfvas" path="res://Ange/intro.gd" id="1_fsooq"]
+[ext_resource type="PackedScene" uid="uid://cc873te58i88x" path="res://Ange/dialogo_intro.tscn" id="2_cmrnn"]
+
+[node name="Intro" type="CanvasLayer"]
+script = ExtResource("1_fsooq")
+dialogo_intro = ExtResource("2_cmrnn")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 797.0
+offset_bottom = 355.0
+texture = ExtResource("1_cmrnn")
+expand_mode = 1

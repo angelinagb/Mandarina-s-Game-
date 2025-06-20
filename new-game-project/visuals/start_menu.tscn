@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://wrphx78et2m" path="res://art/icon/backround.png" id="2_1on3q"]
 [ext_resource type="Theme" uid="uid://ht1jo68esctd" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleInformatica/resources/BaseThemePuzzle.tres" id="3_24fwf"]
 [ext_resource type="AudioStream" uid="uid://328xayf6flx2" path="res://art/music-sfx/Retro_Retro_Music/bored, honestly.mp3" id="4_oqa2s"]
-[ext_resource type="AudioStream" uid="uid://dk8s64jjyd8pg" path="res://art/music-sfx/Interface/confirmation_002.ogg" id="5_5dbiu"]
+[ext_resource type="AudioStream" uid="uid://cxv6hwh41yd0u" path="res://art/music-sfx/Interface/confirmation_002.ogg" id="5_5dbiu"]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
