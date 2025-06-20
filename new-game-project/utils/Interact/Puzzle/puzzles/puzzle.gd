@@ -1,4 +1,4 @@
-class_name Puzzle extends Node
+class_name Puzzle extends CanvasLayer
 
 signal puzzle_result(result: bool)
 signal interacted(type: String)

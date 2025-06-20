@@ -18,7 +18,29 @@ func intro():
 	#await anim_player.animation_finished
  
 
+
+
 func _on_vendedor_q_1_quest_begun() -> void:
 	#Empieza Quest 1, habilito los grupos para interactuar
 	for node : Node in get_tree().get_nodes_in_group("Q1_GRUPOS"):
+		node.process_mode = Node.PROCESS_MODE_INHERIT
+
+
+func _on_vendedor_q_1_quest_ended(title: Variant) -> void:
+	for node : Node in get_tree().get_nodes_in_group("Q1"):
+		node.process_mode = Node.PROCESS_MODE_DISABLED
+	for node : Node in get_tree().get_nodes_in_group("Q2"):
+		node.process_mode = Node.PROCESS_MODE_INHERIT
+
+
+func _on_vendedor_q_2_quest_ended(title: Variant) -> void:
+	for node : Node in get_tree().get_nodes_in_group("Q2"):
+		node.process_mode = Node.PROCESS_MODE_DISABLED
+	for node : Node in get_tree().get_nodes_in_group("COFFEE_END"):
+		node.process_mode = Node.PROCESS_MODE_INHERIT
+			
+
+
+func _on_vendedor_q_2_quest_begun() -> void:
+	for node : Node in get_tree().get_nodes_in_group("Q2_BEGIN"):
 		node.process_mode = Node.PROCESS_MODE_INHERIT

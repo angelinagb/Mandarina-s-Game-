@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_8tab6")
-title = "Robo en la cafetería"
+title = "Stock faltante"
 steps = Array[ExtResource("2_g0axy")]([ExtResource("3_g0axy")])
 current_step = 0
 is_secondary = true

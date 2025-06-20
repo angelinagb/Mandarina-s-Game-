@@ -2,6 +2,7 @@ class_name Npc extends Interactable
 
 signal quest_begun
 signal dialogue_ended
+signal quest_ended(title)
 
 @export var quest: Quest
 @onready var primerDialogo : DialogueSystem = $"Dialogo Quest"
@@ -26,6 +27,9 @@ func _ready():
 		quest_icon.show()
 	my_type = "npc"
 	super._ready()
+	if quest:
+		quest.init()
+		quest.quest_ended.connect(on_quest_ended)
 
 #func _input(event):
 	#match current_npc_state:
@@ -40,6 +44,9 @@ func _ready():
 
 func dialogueEnded():
 	await dialogue_ended
+	
+func on_quest_ended(title):
+	quest_ended.emit(title)
 
 func interact():
 	interacted.emit(self)
@@ -80,11 +87,12 @@ func _on_dialogo_default_dialogue_ended() -> void:
 func get_state() -> Dictionary:
 	var state = {}
 	state["tiene_quest"] = tiene_quest
+	state["process_mode"] = process_mode
 	return state
 	
 func load_state(current_state):
 	tiene_quest = current_state["tiene_quest"]
-
+	process_mode = current_state["process_mode"]
 	
 func get_type()  -> String :
 	return my_type

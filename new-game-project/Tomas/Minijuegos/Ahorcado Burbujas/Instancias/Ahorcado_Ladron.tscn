@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpb37okrbfa86"]
+
+[ext_resource type="PackedScene" uid="uid://yfk7rrpxh44v" path="res://Tomas/Minijuegos/Ahorcado Burbujas/ahorcado.tscn" id="1_egyvj"]
+
+[node name="Ahorcado" instance=ExtResource("1_egyvj")]

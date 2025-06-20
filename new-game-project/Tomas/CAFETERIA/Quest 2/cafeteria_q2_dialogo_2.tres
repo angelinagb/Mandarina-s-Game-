@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_j5pu7")
-arreglo_de_textos = PackedStringArray("¡Alto ahí!", "Demonios, pense que no iba a ver nadie.", "*¡Te le enfrentas a los ladrones!*")
+arreglo_de_textos = PackedStringArray("¿Qué miras tonto?")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"

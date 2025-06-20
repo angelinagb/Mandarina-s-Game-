@@ -1,18 +1,111 @@
-[gd_scene format=3 uid="uid://yfk7rrpxh44v"]
+[gd_scene load_steps=6 format=3 uid="uid://yfk7rrpxh44v"]
 
-[node name="Ahorcado" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[ext_resource type="Script" uid="uid://dx8w6ikdaajbq" path="res://Tomas/Minijuegos/Ahorcado Burbujas/ahorcado.gd" id="1_q8xyk"]
+[ext_resource type="PackedScene" uid="uid://jjutlmj18ail" path="res://Tomas/Minijuegos/Ahorcado Burbujas/Burbuja_Letra.tscn" id="2_ymvu5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2pi44"]
+font_size = 50
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_q8xyk"]
+font_size = 18
+font_color = Color(0.386958, 0.72092, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ymvu5"]
+font_size = 80
+
+[node name="Ahorcado" type="CanvasLayer"]
+process_mode = 3
+layer = 2
+script = ExtResource("1_q8xyk")
+palabra = "LADRON"
+pista = "¿Cuál es la causa del stock faltante?"
+burbuja_palabra = ExtResource("2_ymvu5")
+velocidad_burbujas = 200.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.164549, 0.156022, 0.249169, 1)
+
+[node name="palabra_label" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 275.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "LADRON"
+label_settings = SubResource("LabelSettings_2pi44")
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="pista_label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "¿Cuál es la causa de que haya faltante de stock?"
+label_settings = SubResource("LabelSettings_q8xyk")
+vertical_alignment = 1
+
+[node name="vidas_label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "VIDAS RESTANTES"
+label_settings = SubResource("LabelSettings_q8xyk")
+vertical_alignment = 1
+
+[node name="Fondo" type="CanvasLayer" parent="."]
+layer = 3
+visible = false
+
+[node name="Fondo Pantalla Derrota" type="ColorRect" parent="Fondo"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.299667, 0, 0.0241786, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Fondo/Fondo Pantalla Derrota"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Fondo/Fondo Pantalla Derrota/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Fondo/Fondo Pantalla Derrota/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "PERDISTE!"
+label_settings = SubResource("LabelSettings_ymvu5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="boton_reintentar" type="Button" parent="Fondo/Fondo Pantalla Derrota/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "REINTENTAR?"
+
+[connection signal="pressed" from="Fondo/Fondo Pantalla Derrota/MarginContainer/VBoxContainer/boton_reintentar" to="." method="_on_boton_reintentar_pressed"]

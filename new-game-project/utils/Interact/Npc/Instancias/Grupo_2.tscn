@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://qghui2lvxk3v"]
+[gd_scene load_steps=4 format=3 uid="uid://qghui2lvxk3v"]
 
 [ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_8ulqu"]
 [ext_resource type="Resource" uid="uid://c37gusn0desdm" path="res://Tomas/CAFETERIA/Quest 1/cafeteria_quest_1_dialogo_grupo_2.tres" id="2_6yet1"]
+[ext_resource type="Texture2D" uid="uid://dwrjitbrmvrmk" path="res://art/characters/iso/npc/unnamed (1).png" id="2_lbk0d"]
 
 [node name="GRUPO 2" instance=ExtResource("1_8ulqu")]
 id = "COFFEE_G2"
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("2_lbk0d")
 
 [node name="Dialogo Quest" parent="." index="4"]
 vacio = true

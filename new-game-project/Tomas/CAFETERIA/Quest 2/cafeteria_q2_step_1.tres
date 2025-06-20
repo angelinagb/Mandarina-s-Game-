@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="QuestStep" load_steps=2 format=3 uid="uid://dndxlwuymqrer"]
+
+[ext_resource type="Script" uid="uid://c0nhxnmv56tui" path="res://managers/notification/quest/quest_step.gd" id="1_mjhj3"]
+
+[resource]
+script = ExtResource("1_mjhj3")
+text_to_do = "Enfrentar al Nerd"
+necessary_interactables = {
+"COFFEE-NERD": false
+}
+metadata/_custom_type_script = "uid://c0nhxnmv56tui"

@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="QuestStep" load_steps=2 format=3 uid="uid://ckwr7ex133gn1"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://ckwr7ex133gn1"]
 
-[ext_resource type="Script" uid="uid://c0nhxnmv56tui" path="res://managers/notification/quest/quest_step.gd" id="1_qne3k"]
+[ext_resource type="PackedScene" uid="uid://bpb37okrbfa86" path="res://Tomas/Minijuegos/Ahorcado Burbujas/Instancias/Ahorcado_Ladron.tscn" id="1_jswk8"]
+[ext_resource type="Script" uid="uid://onwp3two1h0l" path="res://Tomas/CAFETERIA/Quest 1/cafeteria_quest_1_step_1.gd" id="1_qne3k"]
+[ext_resource type="PackedScene" uid="uid://qukjrucbrm7i" path="res://Tomas/CAFETERIA/Quest 1/cafeteria_quest_1_dialogo_final.tscn" id="1_xkdat"]
 
 [resource]
 script = ExtResource("1_qne3k")
+minijuego = ExtResource("1_jswk8")
+dialogo_final = ExtResource("1_xkdat")
 text_to_do = "Escuchar de que habla cada grupo"
 necessary_interactables = {
 "COFFEE_G3": false

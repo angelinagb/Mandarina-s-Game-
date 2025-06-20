@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="Dialogo" load_steps=2 format=3 uid="uid://d3tqb04ht3qpn"]
-
-[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="1_h8mgx"]
-
-[resource]
-script = ExtResource("1_h8mgx")
-arreglo_de_textos = PackedStringArray("*Te acercas a él y te fijas en su bolsillo y encuentras una hoja de tu tesis!", "(Una más, cada vez quedan menos para poder recuperar todas)", "¿Erá lo que buscabas no?", "Me alegro pero ya me tengo que ir que abro a la mañana, pasate cuando quieras igual", "¡Hoja de tesis conseguida! ¡Nivel cafetería completado!")
-tiempo_entre_caracteres = 0.02
-metadata/_custom_type_script = "uid://dekceg47jr41c"
