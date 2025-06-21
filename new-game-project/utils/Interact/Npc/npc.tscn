@@ -25,6 +25,7 @@ texture = ExtResource("5_4cdph")
 scale = Vector2(3, 3)
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-0.333333, -2)
 shape = SubResource("CapsuleShape2D_4cdph")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="3"]

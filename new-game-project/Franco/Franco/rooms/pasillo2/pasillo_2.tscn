@@ -13,14 +13,14 @@ room_id = "ROOM-PASILLO2"
 [node name="BaseTiles" parent="." index="0" instance=ExtResource("2_c7vn3")]
 
 [node name="Transitioner" parent="Interactables/Transitioners" index="0" instance=ExtResource("3_522a5")]
-position = Vector2(431, 228)
-rotation = 0.966912
-scale = Vector2(3, 3)
+position = Vector2(340, 243)
+rotation = 1.15571
+scale = Vector2(1.22198, -5.55599)
 
 [node name="Transitioner2" parent="Interactables/Transitioners" index="1" instance=ExtResource("4_rpjon")]
-position = Vector2(-682, -350)
-rotation = 0.785398
-scale = Vector2(3, 3)
+position = Vector2(-691, -358)
+rotation = 1.05498
+scale = Vector2(1.66797, 4.06116)
 room_id = "ROOM-5"
 
 [node name="AlumnoNro2-3" parent="Interactables/Npcs" index="0" instance=ExtResource("5_rpjon")]

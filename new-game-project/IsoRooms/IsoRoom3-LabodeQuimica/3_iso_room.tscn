@@ -25,9 +25,9 @@ position = Vector2(353, 304)
 position = Vector2(-178, 347)
 
 [node name="TRANS R3 -> R2" parent="Interactables/Transitioners" index="0" instance=ExtResource("4_v2ge4")]
-position = Vector2(421, 466)
-rotation = -0.45355
-scale = Vector2(1.82531, -0.74337)
+position = Vector2(411, 451)
+rotation = -0.423137
+scale = Vector2(6.8216, -4.13405)
 
 [node name="Alumno 1" parent="Interactables/Npcs" index="0" instance=ExtResource("5_v2ge4")]
 z_index = 1

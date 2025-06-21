@@ -137,7 +137,6 @@ scale = Vector2(-1.20095, 1)
 tile_map_data = PackedByteArray("AAD9//3/CAACAAEAAAD+//3/CAACAAEAAAD///3/CAACAAEAAAAAAP3/CAACAAEAAAABAP3/CAACAAEAAAD8//3/CAACAAAAAAD8//7/AwACAAAAABD8////CAAAAAEAAAD8/wAACAAAAAEAAAD8/wEACAAAAAEAAAD8/wIACAAAAAEAAAD8/wMACAAAAAEAAAA=")
 
 [node name="walls_front" parent="." index="2"]
-visible = true
 z_index = 2
 position = Vector2(132, -7)
 scale = Vector2(-1.20095, 1)
