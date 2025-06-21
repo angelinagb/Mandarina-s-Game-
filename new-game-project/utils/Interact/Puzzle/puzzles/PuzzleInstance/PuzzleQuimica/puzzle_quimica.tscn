@@ -32,7 +32,7 @@ font_color = Color(1, 0.647059, 0, 1)
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
-[node name="PuzzleReaccionesQuimicas" type="Node"]
+[node name="PuzzleReaccionesQuimicas" type="CanvasLayer"]
 script = ExtResource("1_b64x8")
 
 [node name="Background" type="TextureRect" parent="."]

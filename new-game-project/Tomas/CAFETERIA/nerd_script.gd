@@ -4,7 +4,7 @@ extends Npc
 @export var dialogo_victoria : PackedScene
 
 func interact():
-	super.interact()
+	await super.interact()
 	QueueManager.enqueue_event(puzzle)
 	await QueueManager.finished
 	QueueManager.enqueue_event(dialogo_victoria)

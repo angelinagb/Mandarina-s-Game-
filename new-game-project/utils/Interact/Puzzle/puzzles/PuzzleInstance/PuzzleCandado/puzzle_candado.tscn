@@ -38,7 +38,7 @@ PanelBackground/styles/panel = SubResource("StyleBoxFlat_unhuv")
 PanelDigit/base_type = &"Panel"
 PanelDigit/styles/panel = SubResource("StyleBoxFlat_3iwr8")
 
-[node name="PuzzleCandado" type="Node"]
+[node name="PuzzleCandado" type="CanvasLayer"]
 script = ExtResource("1_jekc6")
 
 [node name="Background" type="Panel" parent="."]

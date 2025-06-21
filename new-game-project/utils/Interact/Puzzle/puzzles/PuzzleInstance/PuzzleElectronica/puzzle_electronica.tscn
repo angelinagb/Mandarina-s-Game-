@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://gmslgbvhx21f" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleElectronica/CircuitPieces/Linea/circuit_linea.tscn" id="7_cvsyy"]
 [ext_resource type="PackedScene" uid="uid://dqjrvwxt4hq1k" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleElectronica/CircuitPieces/Final/circuit_final.tscn" id="8_g8jse"]
 
-[node name="PuzzleCircuito" type="Node"]
+[node name="PuzzleCircuito" type="CanvasLayer"]
 script = ExtResource("1_4yum5")
 
 [node name="Background" type="Panel" parent="."]
