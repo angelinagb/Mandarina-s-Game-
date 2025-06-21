@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://hm1bx25eg2ip" path="res://Tomas/CAFETERIA/Vendedor_Q1.tscn" id="1_4cmog"]
 [ext_resource type="Resource" uid="uid://cndyeoebrms4x" path="res://Tomas/CAFETERIA/Quest 2/cafeteria_q2_dialogo.tres" id="2_cuam8"]
+[ext_resource type="Resource" uid="uid://cxielkr23ymc6" path="res://Tomas/CAFETERIA/Quest 2/cafeteria_quest_2_dialogo_final.tres" id="3_xwvbs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffr1t"]
 size = Vector2(58.0535, 68.1253)
@@ -24,3 +25,5 @@ dialogueResource = ExtResource("2_cuam8")
 
 [connection signal="dialogue_ended" from="Dialogo Quest" to="." method="_on_dialogo_quest_dialogue_ended"]
 [connection signal="dialogue_ended" from="Dialogo Default" to="." method="_on_dialogo_default_dialogue_ended"]
+[node name="Dialogo Default" parent="." index="5"]
+dialogueResource = ExtResource("3_xwvbs")

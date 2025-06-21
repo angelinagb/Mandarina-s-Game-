@@ -32,7 +32,7 @@ func _on_vendedor_q_1_quest_ended(title: Variant) -> void:
 	for node : Node in get_tree().get_nodes_in_group("Q2"):
 		node.process_mode = Node.PROCESS_MODE_INHERIT
 
-
+	
 func _on_vendedor_q_2_quest_ended(title: Variant) -> void:
 	for node : Node in get_tree().get_nodes_in_group("Q2"):
 		node.process_mode = Node.PROCESS_MODE_DISABLED

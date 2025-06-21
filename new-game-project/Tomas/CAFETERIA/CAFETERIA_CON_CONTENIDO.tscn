@@ -93,6 +93,8 @@ quest = ExtResource("7_0pd66")
 process_mode = 4
 position = Vector2(-522, -140)
 puzzle = ExtResource("9_w6y4y")
+quest_completada = null
+id = "COFFEE-NERD"
 
 [node name="GRUPO 1" parent="Interactables/Npcs" index="2" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("5_snxlu")]
 process_mode = 4
