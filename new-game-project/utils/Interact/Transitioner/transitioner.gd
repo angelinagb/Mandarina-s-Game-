@@ -2,7 +2,7 @@ class_name Transitioner extends Interactable
 #ROOM 4: AULA 01
 #ROOM 5: CAFETERIA 
 #ROOM 6: LABO DE QUIMICA 
-@export_enum("ROOM-4", "ROOM-5", "ROOM-6", "ROOM-PASILLO","ROOM-LABOFISICA","ROOM-ENTRADA")
+@export_enum("ROOM-4", "ROOM-5", "ROOM-6", "ROOM-PASILLO1","ROOM-LABOFISICA","ROOM-ENTRADA","ROOM-PASILLO2","ROOM_-SALACOMUN","ROOM-CENTROALUMNOS")
 var room_id: String
 @onready var door_sound: AudioStreamPlayer = $door_sound
 

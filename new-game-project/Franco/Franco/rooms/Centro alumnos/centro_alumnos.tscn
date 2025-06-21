@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://df6obxrt87pkm"]
 
 [ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_j40la"]
-[ext_resource type="PackedScene" uid="uid://dhvuw0m72quqt" path="res://Franco/rooms/Centro alumnos/centroalumnos_base_tiles.tscn" id="2_f8ki5"]
-[ext_resource type="PackedScene" uid="uid://fndioqw8omgo" path="res://Franco/rooms/Centro alumnos/transitioner1.tscn" id="3_km8l3"]
-[ext_resource type="PackedScene" uid="uid://buljgfkbc4a3w" path="res://Franco/Npcs/AlumnoNro1/alumno_1-3.tscn" id="4_w8tux"]
-[ext_resource type="PackedScene" uid="uid://2apwpwmvnibm" path="res://Franco/Npcs/AlumnoNro3/alumno_3-2.tscn" id="5_jhm14"]
+[ext_resource type="PackedScene" uid="uid://dhvuw0m72quqt" path="res://Franco/Franco/rooms/Centro alumnos/centroalumnos_base_tiles.tscn" id="2_f8ki5"]
+[ext_resource type="PackedScene" uid="uid://fndioqw8omgo" path="res://Franco/Franco/rooms/Centro alumnos/transitioner1.tscn" id="3_km8l3"]
+[ext_resource type="PackedScene" uid="uid://buljgfkbc4a3w" path="res://Franco/Franco/Npcs/AlumnoNro1/alumno_1-3.tscn" id="4_w8tux"]
+[ext_resource type="PackedScene" uid="uid://2apwpwmvnibm" path="res://Franco/Franco/Npcs/AlumnoNro3/alumno_3-2.tscn" id="5_jhm14"]
 
 [node name="CentroAlumnos" instance=ExtResource("1_j40la")]
 room_id = "ROOM-CENTROALUMNOS"
@@ -17,10 +17,12 @@ rotation = 0.706858
 scale = Vector2(3, 3)
 
 [node name="AlumnoNro1-3" parent="Interactables/Npcs" index="0" instance=ExtResource("4_w8tux")]
-position = Vector2(-495, -529)
+position = Vector2(-370, -612)
+scale = Vector2(-1.30431, 1.51919)
 
 [node name="AlumnoNro3-2" parent="Interactables/Npcs" index="1" instance=ExtResource("5_jhm14")]
-position = Vector2(-711, -435)
+position = Vector2(-660, -437)
+scale = Vector2(1.25975, 1.25312)
 
 [node name="PlayerB" parent="Player" index="0"]
 position = Vector2(-16, -146)

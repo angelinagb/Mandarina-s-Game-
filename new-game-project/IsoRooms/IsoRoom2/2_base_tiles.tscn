@@ -40,7 +40,7 @@ texture_region_size = Vector2i(144, 117)
 0:0/size_in_atlas = Vector2i(3, 3)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 100)
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(181, 4, 72, 63, -197, -43, -60, -109)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(186.5, -106.5, 120.6, 3.7, 53, 37.5, -106.5, -52.5, -192.5, -172.5, -60.5, -248.5)
 6:4/0 = 0
 2:3/size_in_atlas = Vector2i(1, 2)
 2:3/0 = 0
@@ -137,6 +137,7 @@ scale = Vector2(-1.20095, 1)
 tile_map_data = PackedByteArray("AAD9//3/CAACAAEAAAD+//3/CAACAAEAAAD///3/CAACAAEAAAAAAP3/CAACAAEAAAABAP3/CAACAAEAAAD8//3/CAACAAAAAAD8//7/AwACAAAAABD8////CAAAAAEAAAD8/wAACAAAAAEAAAD8/wEACAAAAAEAAAD8/wIACAAAAAEAAAD8/wMACAAAAAEAAAA=")
 
 [node name="walls_front" parent="." index="2"]
+visible = true
 z_index = 2
 position = Vector2(132, -7)
 scale = Vector2(-1.20095, 1)
@@ -146,7 +147,7 @@ tile_map_data = PackedByteArray("AAABAAEACAADAAEAAAABAAAACAADAAEAAAABAP//CAADAAE
 z_index = 1
 position = Vector2(132, -7)
 scale = Vector2(-0.731379, 0.479)
-tile_map_data = PackedByteArray("AAD9//v/AQACAAMAAAD+/wEAAwAAAAUAAAD//wEAAwAAAAUAAAAAAAEAAwAAAAUAAAD/////AQACAAMAAAAAAP//AQACAAMAAAD9////AQACAAMAAAD+////AQACAAMAAAD8//v/AQACAAMAAAD+//v/AQACAAMAAAD///v/AQACAAMAAAD+//3/AwABAAUAAAD///3/AwABAAUAAAAAAP3/AwABAAUAAAD+/wUAAAABAAMAAAAAAAUAAwABAAUAABD8/wUAAAABAAMAAAAAAAYAAwABAAUAABA=")
+tile_map_data = PackedByteArray("AAD9//v/AQACAAMAAAD8//v/AQACAAMAAAD+//v/AQACAAMAAAD///v/AQACAAMAAAD+//3/AwABAAUAAAD///3/AwABAAUAAAAAAP3/AwABAAUAAAD+/wUAAAABAAMAAAAAAAUAAwABAAUAABD8/wUAAAABAAMAAAAAAAYAAwABAAUAABD+/wEAAwAAAAUAAAD/////AQACAAMAAAD//wEAAwAAAAUAAAAAAP//AQACAAMAAAAAAAEAAwAAAAUAAAA=")
 tile_set = SubResource("TileSet_xlc22")
 
 [node name="small" type="TileMapLayer" parent="." index="4"]

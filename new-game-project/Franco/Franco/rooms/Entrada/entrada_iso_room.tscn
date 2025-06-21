@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bq0g1jdkuqoe4"]
+[gd_scene load_steps=8 format=3 uid="uid://bq0g1jdkuqoe4"]
 
 [ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_jvyd0"]
 [ext_resource type="PackedScene" uid="uid://ci53j2pn65rrk" path="res://Franco/Franco/rooms/Entrada/entrada_base_tiles.tscn" id="2_i3aam"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://pgmbodsruy1l" path="res://Franco/Franco/rooms/Entrada/tr_ent_pas2.tscn" id="3_iyjjf"]
 [ext_resource type="PackedScene" uid="uid://dptwndcgaqacf" path="res://Franco/Franco/rooms/Entrada/tr_ent_scom.tscn" id="4_d7voa"]
 [ext_resource type="PackedScene" uid="uid://57n8nvjbm568" path="res://Franco/Franco/Npcs/AlumnoNro3/alumno_3-3.tscn" id="6_iyjjf"]
+[ext_resource type="PackedScene" uid="uid://ilxqll2oo45m" path="res://Ange/entrada_pasillo.tscn" id="7_gko6f"]
 
 [node name="EntradaIsoRoom" instance=ExtResource("1_jvyd0")]
 room_id = "ROOM-ENTRADA"
@@ -27,6 +28,13 @@ scale = Vector2(3, 3)
 position = Vector2(-188, 95)
 rotation = 0.483456
 scale = Vector2(3, 3)
+
+[node name="Transitioner" parent="Interactables/Transitioners" index="2" instance=ExtResource("7_gko6f")]
+z_index = 30
+position = Vector2(848, 387)
+rotation = -0.426141
+scale = Vector2(-5.81194, -1.59064)
+room_id = "ROOM-PASILLO1"
 
 [node name="AlumnoNro1-1" parent="Interactables/Npcs" index="0" instance=ExtResource("3_aafd0")]
 position = Vector2(-102, -89)

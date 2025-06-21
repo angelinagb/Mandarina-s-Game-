@@ -1,9 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://x7bckplwrhjd"]
+[gd_scene load_steps=4 format=3 uid="uid://x7bckplwrhjd"]
 
 [ext_resource type="PackedScene" uid="uid://hm1bx25eg2ip" path="res://Tomas/CAFETERIA/Vendedor_Q1.tscn" id="1_4cmog"]
 [ext_resource type="Resource" uid="uid://cndyeoebrms4x" path="res://Tomas/CAFETERIA/Quest 2/cafeteria_q2_dialogo.tres" id="2_cuam8"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ffr1t"]
+size = Vector2(58.0535, 68.1253)
+
 [node name="Vendedor Q2" instance=ExtResource("1_4cmog")]
 
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0.970817, -1.78814e-06)
+rotation = -3.14159
+scale = Vector2(0.944374, -0.228214)
+shape = SubResource("RectangleShape2D_ffr1t")
+
+[node name="StaticBody2D" parent="." index="3"]
+position = Vector2(0, 0)
+
 [node name="Dialogo Quest" parent="." index="4"]
+position = Vector2(0, 0)
+scale = Vector2(1, 1)
 dialogueResource = ExtResource("2_cuam8")
+
+[connection signal="dialogue_ended" from="Dialogo Quest" to="." method="_on_dialogo_quest_dialogue_ended"]
+[connection signal="dialogue_ended" from="Dialogo Default" to="." method="_on_dialogo_default_dialogue_ended"]

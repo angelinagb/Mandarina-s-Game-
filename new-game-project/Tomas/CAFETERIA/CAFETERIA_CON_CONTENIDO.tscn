@@ -1,8 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://cimvpyl0tae0m"]
+[gd_scene load_steps=16 format=3 uid="uid://cimvpyl0tae0m"]
 
 [ext_resource type="PackedScene" uid="uid://3g08138nqpuj" path="res://IsoRooms/IsoRoom2/2_iso_room_cafeteria.tscn" id="1_7eguv"]
 [ext_resource type="Script" uid="uid://bfncky2s0ss6u" path="res://Tomas/CAFETERIA/cafeteria.gd" id="2_ap168"]
-[ext_resource type="PackedScene" uid="uid://cc873te58i88x" path="res://Ange/dialogo_intro.tscn" id="3_xnuun"]
+[ext_resource type="PackedScene" uid="uid://dh1mihsxbf435" path="res://Tomas/CAFETERIA/Intro/cafeteria_dialogo_1.tscn" id="3_km8hj"]
 [ext_resource type="Texture2D" uid="uid://gpqvpe334ymm" path="res://art/characters/iso/npc/Trader_npc.png" id="4_4je3a"]
 [ext_resource type="PackedScene" uid="uid://hm1bx25eg2ip" path="res://Tomas/CAFETERIA/Vendedor_Q1.tscn" id="4_j2wjg"]
 [ext_resource type="PackedScene" uid="uid://n0gmw80orkd4" path="res://utils/Interact/Npc/Instancias/Grupo_1.tscn" id="5_snxlu"]
@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://cv5hu5avsttda" path="res://Tomas/CAFETERIA/Quest 2/cafeteria_q2.tres" id="7_0pd66"]
 [ext_resource type="PackedScene" uid="uid://xpklt7xbwqj7" path="res://utils/Interact/Npc/Instancias/Grupo_3.tscn" id="7_xnuun"]
 [ext_resource type="PackedScene" uid="uid://bh12kbhvaf3bl" path="res://Tomas/CAFETERIA/Nerd_Q2.tscn" id="8_aaue2"]
+[ext_resource type="PackedScene" uid="uid://bkkm80qlft38n" path="res://utils/Interact/Puzzle/puzzles/puzzle_informatica.tscn" id="9_w6y4y"]
 
 [sub_resource type="Animation" id="Animation_km8hj"]
 length = 0.001
@@ -63,7 +64,7 @@ _data = {
 
 [node name="CAFETERIA" instance=ExtResource("1_7eguv")]
 script = ExtResource("2_ap168")
-dialogo_intro = ExtResource("3_xnuun")
+dialogo_intro = ExtResource("3_km8hj")
 room_id = ""
 
 [node name="defect" parent="Spawns" index="0"]
@@ -91,18 +92,19 @@ quest = ExtResource("7_0pd66")
 [node name="Nerd" parent="Interactables/Npcs" index="1" groups=["Q2", "Q2_BEGIN"] instance=ExtResource("8_aaue2")]
 process_mode = 4
 position = Vector2(-522, -140)
+puzzle = ExtResource("9_w6y4y")
 
 [node name="GRUPO 1" parent="Interactables/Npcs" index="2" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("5_snxlu")]
 process_mode = 4
-position = Vector2(-12, -209)
+position = Vector2(247, 38)
 
 [node name="GRUPO 2" parent="Interactables/Npcs" index="3" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("6_4je3a")]
 process_mode = 4
-position = Vector2(220, -73)
+position = Vector2(172, -175)
 
 [node name="GRUPO 3" parent="Interactables/Npcs" index="4" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("7_xnuun")]
 process_mode = 4
-position = Vector2(534, -58)
+position = Vector2(505, -55)
 
 [node name="CinematicasCafeteria" type="AnimationPlayer" parent="." index="4"]
 libraries = {
@@ -115,6 +117,10 @@ libraries = {
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -11.0
+offset_right = 2.0
+offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)

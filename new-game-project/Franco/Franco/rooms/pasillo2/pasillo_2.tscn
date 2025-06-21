@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://cl8uobxpi3u6"]
 
 [ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_450mq"]
-[ext_resource type="PackedScene" uid="uid://dboe44ingytfm" path="res://Franco/rooms/pasillo2/pasillo_2_base_tiles.tscn" id="2_c7vn3"]
-[ext_resource type="PackedScene" uid="uid://5xdakxg5e4ym" path="res://Franco/rooms/pasillo2/transitioner1.tscn" id="3_522a5"]
-[ext_resource type="PackedScene" uid="uid://ribmtol1i1ho" path="res://Franco/rooms/pasillo2/transitioner2.tscn" id="4_rpjon"]
-[ext_resource type="PackedScene" uid="uid://dl7v1mcsivlok" path="res://Franco/Npcs/AlumnoNro2/alumno_2-3.tscn" id="5_rpjon"]
+[ext_resource type="PackedScene" uid="uid://dboe44ingytfm" path="res://Franco/Franco/rooms/pasillo2/pasillo_2_base_tiles.tscn" id="2_c7vn3"]
+[ext_resource type="PackedScene" uid="uid://5xdakxg5e4ym" path="res://Franco/Franco/rooms/pasillo2/transitioner1.tscn" id="3_522a5"]
+[ext_resource type="PackedScene" uid="uid://ribmtol1i1ho" path="res://Franco/Franco/rooms/pasillo2/transitioner2.tscn" id="4_rpjon"]
+[ext_resource type="PackedScene" uid="uid://dl7v1mcsivlok" path="res://Franco/Franco/Npcs/AlumnoNro2/alumno_2-3.tscn" id="5_rpjon"]
 
 [node name="Pasillo2" instance=ExtResource("1_450mq")]
 room_id = "ROOM-PASILLO2"
@@ -20,6 +20,7 @@ scale = Vector2(3, 3)
 position = Vector2(-682, -350)
 rotation = 0.785398
 scale = Vector2(3, 3)
+room_id = "ROOM-5"
 
 [node name="AlumnoNro2-3" parent="Interactables/Npcs" index="0" instance=ExtResource("5_rpjon")]
 

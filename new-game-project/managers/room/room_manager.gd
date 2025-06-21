@@ -7,7 +7,7 @@ var current: IsoRoom = null
 var rooms = {
 	"ROOM-4":"res://IsoRooms/IsoRoom1/1_iso_room.tscn" ,
 	"ROOM-4-II": "res://IsoRooms/IsoRoom1/1b_iso_room.tscn",
-	"ROOM-5": "res://IsoRooms/IsoRoom2/2_iso_room_cafeteria.tscn",
+	"ROOM-5": "res://Tomas/CAFETERIA/CAFETERIA_CON_CONTENIDO.tscn",
 	"ROOM-6": "res://IsoRooms/IsoRoom3-LabodeQuimica/3_iso_room.tscn",
 	"ROOM-PASILLO1": "res://Franco/Franco/rooms/pasillo1/pasillo_1.tscn",
 	"ROOM-ENTRADA": "res://Franco/Franco/rooms/Entrada/entrada_iso_room.tscn",
