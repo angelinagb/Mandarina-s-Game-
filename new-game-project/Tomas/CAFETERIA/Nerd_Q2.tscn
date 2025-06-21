@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cq5o8tv7h24ea" path="res://Tomas/CAFETERIA/nerd_script.gd" id="2_au8og"]
 [ext_resource type="Texture2D" uid="uid://dwrjitbrmvrmk" path="res://art/characters/iso/npc/unnamed (1).png" id="2_cg5l6"]
 [ext_resource type="PackedScene" uid="uid://bahdwu3b3uvas" path="res://Tomas/CAFETERIA/Quest 2/cafeteria_quest_2_dialogo_combate.tscn" id="3_n26le"]
-[ext_resource type="PackedScene" uid="uid://bkkm80qlft38n" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleInformatica/puzzle_informatica.tscn" id="3_nt8ji"]
+[ext_resource type="PackedScene" uid="uid://bkkm80qlft38n" path="res://utils/Interact/Puzzle/puzzles/puzzle_informatica.tscn" id="3_nt8ji"]
 [ext_resource type="PackedScene" uid="uid://dihymy0nqn7ab" path="res://Tomas/pop up/quest_completed.tscn" id="5_edm0b"]
 [ext_resource type="Resource" uid="uid://be24g1jx7m82l" path="res://Tomas/CAFETERIA/Quest 2/cafeteria_q2_dialogo_2.tres" id="6_nt8ji"]
 

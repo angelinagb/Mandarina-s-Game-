@@ -146,6 +146,7 @@ tile_map_data = PackedByteArray("AAACAAgABQAFAAAAAAAKAAoABQAIAAAAAAAFAAgABQAFAAA
 tile_set = SubResource("TileSet_xlc22")
 
 [node name="surfaces" parent="." index="5"]
+position = Vector2(0, -4)
 scale = Vector2(0.609, 0.479)
 tile_map_data = PackedByteArray("AAADAAgABAAIAAAAAAAFAAgABAAIAAAAAAAHAAgABAAIAAAAAAACAAIABAAIAAAAAAAEAAIABAAIAAAAAAAGAAIABAAIAAAAAAA=")
 tile_set = SubResource("TileSet_xlc22")

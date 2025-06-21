@@ -18,7 +18,7 @@ intro = null
 room_id = "ROOM-4"
 
 [node name="BaseTiles" parent="." index="0" instance=ExtResource("2_6jolm")]
-position = Vector2(8, 22)
+position = Vector2(4, 14)
 script = null
 
 [node name="defect" parent="Spawns" index="0"]
@@ -58,7 +58,8 @@ scale = Vector2(2.09534, 1.28191)
 id = "trans_iso_1to2"
 
 [node name="Alumna 1" parent="Interactables/Npcs" index="0" instance=ExtResource("8_hwk7s")]
-position = Vector2(542, -242)
+position = Vector2(68, -470)
+scale = Vector2(1.91733, 1.64237)
 
 [node name="Chica Triste" parent="Interactables/Npcs" index="1" instance=ExtResource("5_jm6ep")]
 position = Vector2(732, -171)

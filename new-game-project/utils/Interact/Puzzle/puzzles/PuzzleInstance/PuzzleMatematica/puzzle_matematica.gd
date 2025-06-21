@@ -1,4 +1,4 @@
-extends Puzle
+extends Puzzle
 
 @onready var label_pregunta: Label = $Panel/MarginContainer/VBoxContainer/Question
 @onready var opciones_container: HBoxContainer = $Panel/MarginContainer/VBoxContainer/HBoxContainer

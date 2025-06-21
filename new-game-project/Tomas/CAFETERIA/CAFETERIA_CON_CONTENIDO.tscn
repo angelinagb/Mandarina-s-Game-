@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cimvpyl0tae0m"]
+[gd_scene load_steps=15 format=3 uid="uid://cimvpyl0tae0m"]
 
 [ext_resource type="PackedScene" uid="uid://3g08138nqpuj" path="res://IsoRooms/IsoRoom2/2_iso_room_cafeteria.tscn" id="1_7eguv"]
 [ext_resource type="Script" uid="uid://bfncky2s0ss6u" path="res://Tomas/CAFETERIA/cafeteria.gd" id="2_ap168"]
@@ -11,7 +11,6 @@
 [ext_resource type="Resource" uid="uid://cv5hu5avsttda" path="res://Tomas/CAFETERIA/Quest 2/cafeteria_q2.tres" id="7_0pd66"]
 [ext_resource type="PackedScene" uid="uid://xpklt7xbwqj7" path="res://utils/Interact/Npc/Instancias/Grupo_3.tscn" id="7_xnuun"]
 [ext_resource type="PackedScene" uid="uid://bh12kbhvaf3bl" path="res://Tomas/CAFETERIA/Nerd_Q2.tscn" id="8_aaue2"]
-[ext_resource type="PackedScene" uid="uid://bkkm80qlft38n" path="res://utils/Interact/Puzzle/puzzles/puzzle_informatica.tscn" id="9_w6y4y"]
 
 [sub_resource type="Animation" id="Animation_km8hj"]
 length = 0.001
@@ -92,9 +91,7 @@ quest = ExtResource("7_0pd66")
 [node name="Nerd" parent="Interactables/Npcs" index="1" groups=["Q2", "Q2_BEGIN"] instance=ExtResource("8_aaue2")]
 process_mode = 4
 position = Vector2(-522, -140)
-puzzle = ExtResource("9_w6y4y")
 quest_completada = null
-id = "COFFEE-NERD"
 
 [node name="GRUPO 1" parent="Interactables/Npcs" index="2" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("5_snxlu")]
 process_mode = 4
