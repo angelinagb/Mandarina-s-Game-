@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://bq0g1jdkuqoe4"]
+
+[ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_jvyd0"]
+[ext_resource type="PackedScene" uid="uid://ci53j2pn65rrk" path="res://Franco/Franco/rooms/Entrada/entrada_base_tiles.tscn" id="2_i3aam"]
+[ext_resource type="PackedScene" uid="uid://b4nbf65ykv6m2" path="res://Franco/Franco/Npcs/AlumnoNro1/alumno_1-1.tscn" id="3_aafd0"]
+[ext_resource type="PackedScene" uid="uid://pgmbodsruy1l" path="res://Franco/Franco/rooms/Entrada/tr_ent_pas2.tscn" id="3_iyjjf"]
+[ext_resource type="PackedScene" uid="uid://dptwndcgaqacf" path="res://Franco/Franco/rooms/Entrada/tr_ent_scom.tscn" id="4_d7voa"]
+[ext_resource type="PackedScene" uid="uid://57n8nvjbm568" path="res://Franco/Franco/Npcs/AlumnoNro3/alumno_3-3.tscn" id="6_iyjjf"]
+[ext_resource type="PackedScene" uid="uid://ilxqll2oo45m" path="res://Ange/entrada_pasillo.tscn" id="7_gko6f"]
+
+[node name="EntradaIsoRoom" instance=ExtResource("1_jvyd0")]
+room_id = "ROOM-ENTRADA"
+
+[node name="BaseTiles" parent="." index="0" instance=ExtResource("2_i3aam")]
+
+[node name="FROM-PAS2" type="Marker2D" parent="Spawns" index="1"]
+position = Vector2(-95, -173)
+
+[node name="FROM-SCOM" type="Marker2D" parent="Spawns" index="2"]
+position = Vector2(-126, -6)
+
+[node name="Tr-Ent-Pas2" parent="Interactables/Transitioners" index="0" instance=ExtResource("3_iyjjf")]
+position = Vector2(-177, -231)
+rotation = 0.966912
+scale = Vector2(-1.22358, 2.77277)
+
+[node name="Tr-Ent-Scom" parent="Interactables/Transitioners" index="1" instance=ExtResource("4_d7voa")]
+position = Vector2(-188, 95)
+rotation = 0.483456
+scale = Vector2(3, 3)
+
+[node name="Transitioner" parent="Interactables/Transitioners" index="2" instance=ExtResource("7_gko6f")]
+z_index = 30
+position = Vector2(816, 371)
+rotation = -0.426141
+scale = Vector2(3.12989, -0.985378)
+room_id = "ROOM-6"
+
+[node name="AlumnoNro1-1" parent="Interactables/Npcs" index="0" instance=ExtResource("3_aafd0")]
+position = Vector2(-26, -123)
+scale = Vector2(0.958419, 1.64387)
+
+[node name="AlumnoNro3-3" parent="Interactables/Npcs" index="1" instance=ExtResource("6_iyjjf")]
+position = Vector2(119, -265)
+scale = Vector2(1.28571, 1.26087)
+
+[node name="PlayerB" parent="Player" index="0"]
+position = Vector2(211, -77)
+
+[connection signal="interacted" from="Interactables/Transitioners/Tr-Ent-Pas2" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/Tr-Ent-Scom" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/Transitioner" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/AlumnoNro1-1" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/AlumnoNro3-3" to="." method="_on_interactable_interacted"]

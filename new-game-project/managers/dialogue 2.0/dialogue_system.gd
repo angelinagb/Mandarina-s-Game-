@@ -5,7 +5,7 @@ class_name DialogueSystem
 #no deberia activarse de vuelta la animacion cuando empieza recursivamente otro dialogo
 signal dialogue_ended
 signal finished
-
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var next_text_button: Button = $CanvasLayer/PanelContainer/next_text_button
 @onready var anim_player : AnimationPlayer = $AnimationPlayer
 @onready var rich_text_label : RichTextLabel = $CanvasLayer/PanelContainer/VBoxContainer/RichTextLabel
@@ -77,6 +77,10 @@ func start(layer: float = -1):
 func _process(delta: float) -> void:
 	if current_state == States.TEXTO_MOSTRADO:
 		next_text_button.disabled = false
+	if current_state == States.MOSTRANDO_TEXTO:
+		audio_stream_player.play()
+	else:
+		audio_stream_player.stop()
 
 func terminar_texto():
 	i = text_length
@@ -142,6 +146,7 @@ func _on_boton_decision_pressed(indice : int):
 	dialogueResource = decision_actual.get_recurso_dialogo_de_decision_elegida(indice).get_recurso_dialogo()
 	inicializar_conversacion()
 	start()
+	
 
 
 

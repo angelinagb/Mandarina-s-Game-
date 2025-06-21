@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_aldwx")
-arreglo_de_textos = PackedStringArray("Que miras tonto", "Por que no mejor seguis caminando insecto antes de que te destruya")
+arreglo_de_textos = PackedStringArray("EU! Como viene la busqueda de la tesis?", "Sabes que creo que vi una hoja tirada por aca, tenia unas machas de pata", "Posta Mandarina se la llevo? ", "JAJJAJA que gato.... peculiar", "Dale ayudame con esto y te ayudo a buscar la  hoja")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"

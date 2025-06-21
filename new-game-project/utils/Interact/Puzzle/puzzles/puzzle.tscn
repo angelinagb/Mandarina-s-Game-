@@ -23,5 +23,5 @@ func end():
 	queue_free()
 "
 
-[node name="Puzzle" type="Node"]
+[node name="Puzzle" type="CanvasLayer"]
 script = SubResource("GDScript_gn7lw")

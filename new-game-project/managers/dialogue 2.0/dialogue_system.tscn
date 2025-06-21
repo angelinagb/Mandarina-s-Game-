@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqscndmb0v4br"]
+[gd_scene load_steps=12 format=3 uid="uid://bqscndmb0v4br"]
 
 [ext_resource type="Script" uid="uid://u4sjvuleppf5" path="res://managers/dialogue 2.0/dialogue_system.gd" id="1_r12a2"]
 [ext_resource type="PackedScene" uid="uid://b3iipnt2mv61n" path="res://managers/dialogue 2.0/BotonDecision.tscn" id="2_7c8yr"]
 [ext_resource type="Resource" uid="uid://dtig4xsv7ckdd" path="res://managers/dialogue 2.0/recursos/dialogos/ChicaTriste_1_dialogo/1dialogo_1conv.tres" id="2_m0h81"]
 [ext_resource type="Animation" uid="uid://b0g4yolqy1eik" path="res://managers/dialogue 2.0/animacion/fade_out.res" id="3_qmr60"]
 [ext_resource type="Animation" uid="uid://bqjgh3o0hb1hh" path="res://managers/dialogue 2.0/animacion/fade_in.res" id="4_8k1qw"]
+[ext_resource type="AudioStream" uid="uid://d4f01b4kpkqyl" path="res://art/music-sfx/Interface/toggle_001.ogg" id="6_0fdmc"]
+[ext_resource type="AudioStream" uid="uid://dtc8fccphn13c" path="res://art/music-sfx/Interface/toggle_002.ogg" id="7_ovsma"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7c8yr"]
 bg_color = Color(0, 0, 0, 1)
@@ -35,6 +37,11 @@ _data = {
 &"fade_in": ExtResource("4_8k1qw"),
 &"fade_out": ExtResource("3_qmr60")
 }
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_s10b4"]
+stream_count = 2
+stream_0 = ExtResource("6_0fdmc")
+stream_1 = ExtResource("7_ovsma")
 
 [node name="Dialogue System" type="Node2D"]
 process_mode = 3
@@ -97,6 +104,10 @@ libraries = {
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPlaylist_s10b4")
+volume_db = -33.545
 
 [connection signal="pressed" from="CanvasLayer/PanelContainer/next_text_button" to="." method="_on_next_text_button_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

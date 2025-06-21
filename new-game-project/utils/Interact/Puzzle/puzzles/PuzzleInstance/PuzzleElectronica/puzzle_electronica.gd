@@ -88,6 +88,7 @@ func _on_button_pressed() -> void:
 	check_solution()
 
 func open_popup_menu():
+	self.visible = false
 	popupmenu_instance = load(POPUPMENU_PATH).instantiate()
 	popupmenu_instance.replay_pressed.connect(on_replay_pressed)
 	popupmenu_instance.out_pressed.connect(on_out_pressed)
@@ -95,6 +96,7 @@ func open_popup_menu():
 
 func on_replay_pressed():
 	restart_puzzle()
+	self.visible = true
 
 func on_out_pressed():
 	end_puzzle(false)

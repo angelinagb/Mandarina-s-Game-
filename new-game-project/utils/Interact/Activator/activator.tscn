@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c352qhl8iuech"]
+
+[ext_resource type="PackedScene" uid="uid://mvhkwj4slyyt" path="res://utils/Interact/Interactable/interactable.tscn" id="1_r5poh"]
+[ext_resource type="Script" uid="uid://catgvpvrv4gou" path="res://utils/Interact/Activator/activator.gd" id="2_5pt0y"]
+
+[node name="Activator" instance=ExtResource("1_r5poh")]
+script = ExtResource("2_5pt0y")
+activable = null

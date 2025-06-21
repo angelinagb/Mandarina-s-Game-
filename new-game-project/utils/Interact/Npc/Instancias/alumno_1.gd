@@ -14,4 +14,3 @@ func startDialogue():
 	dialogo_sistema.start()
 	await dialogo_sistema.dialogue_ended
 	QueueManager.enqueue_event(quest_completed)
-	

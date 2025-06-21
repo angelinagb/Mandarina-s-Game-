@@ -19,6 +19,7 @@ scale = Vector2(-4.1721, 1.88666)
 position = Vector2(321, -423)
 rotation = 0.431205
 scale = Vector2(1.55329, 1.39522)
+room_id = "ROOM-LABOFISICA"
 
 [node name="PlayerB" parent="Player" index="0"]
 z_index = 1

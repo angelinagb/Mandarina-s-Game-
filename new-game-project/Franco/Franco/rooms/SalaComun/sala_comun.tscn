@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://k4b5us15b0hx"]
+
+[ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_uu2fg"]
+[ext_resource type="PackedScene" uid="uid://b7scurh83jjd3" path="res://Franco/Franco/rooms/SalaComun/salacomun_base_tiles.tscn" id="2_vgkf0"]
+[ext_resource type="PackedScene" uid="uid://bokiqkdyjrbnp" path="res://Franco/Franco/rooms/SalaComun/transitioner1.tscn" id="3_8hspg"]
+[ext_resource type="PackedScene" uid="uid://d1d1n5ko8inb4" path="res://Franco/Franco/rooms/SalaComun/transitioner2.tscn" id="4_pjb4r"]
+[ext_resource type="PackedScene" uid="uid://bbmnypv4abegx" path="res://Franco/Franco/rooms/SalaComun/transitioner3.tscn" id="5_jlwm5"]
+[ext_resource type="PackedScene" uid="uid://b6fswewcmem85" path="res://Franco/Franco/Npcs/AlumnoNro1/alumno_1-2.tscn" id="6_jlwm5"]
+[ext_resource type="PackedScene" uid="uid://c71vbsp3n2k3j" path="res://Franco/Franco/Npcs/AlumnoNro2/alumno_2-1.tscn" id="7_uoxjr"]
+[ext_resource type="PackedScene" uid="uid://bxpn10e43akt0" path="res://Nerds/nerd_5.tscn" id="8_px5ws"]
+
+[node name="SalaComun" instance=ExtResource("1_uu2fg")]
+room_id = "ROOM-SALACOMUN"
+
+[node name="BaseTiles" parent="." index="0" instance=ExtResource("2_vgkf0")]
+
+[node name="Transitioner" parent="Interactables/Transitioners" index="0" instance=ExtResource("3_8hspg")]
+position = Vector2(568, -174)
+rotation = 0.593412
+scale = Vector2(3, 3)
+
+[node name="Transitioner2" parent="Interactables/Transitioners" index="1" instance=ExtResource("4_pjb4r")]
+position = Vector2(-830, 536)
+rotation = 0.483456
+scale = Vector2(3, 3)
+
+[node name="Transitioner3" parent="Interactables/Transitioners" index="2" instance=ExtResource("5_jlwm5")]
+position = Vector2(-1070, -171)
+rotation = 0.966912
+scale = Vector2(3, 3)
+
+[node name="AlumnoNro1-2" parent="Interactables/Npcs" index="0" instance=ExtResource("6_jlwm5")]
+
+[node name="AlumnoNro2-1" parent="Interactables/Npcs" index="1" instance=ExtResource("7_uoxjr")]
+position = Vector2(-1089, 84)
+
+[node name="Nerd5" parent="Interactables/Npcs" index="2" instance=ExtResource("8_px5ws")]
+position = Vector2(-581, -296)
+scale = Vector2(2, 2)
+
+[node name="PlayerB" parent="Player" index="0"]
+position = Vector2(-260, -54)
+
+[connection signal="interacted" from="Interactables/Transitioners/Transitioner" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/Transitioner2" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/Transitioner3" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/AlumnoNro1-2" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/AlumnoNro2-1" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/Nerd5" to="." method="_on_interactable_interacted"]

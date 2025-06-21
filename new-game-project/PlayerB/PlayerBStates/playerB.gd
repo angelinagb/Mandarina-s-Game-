@@ -1,6 +1,7 @@
 class_name PlayerB extends CharacterBody2D
 #Cambiar nombre de las animaciones
 #actualizar grados de la direccion para abarcar las 8 direcciones 
+@onready var steps: AudioStreamPlayer = $Steps
 
 
 
@@ -61,3 +62,9 @@ func esconder_joystick():
 func mostrar_joystick():
 	#agregado para cinematicas
 	joystick.show()
+
+func start_audio():
+	steps.play()
+	
+func stop_audio():
+	steps.stop()

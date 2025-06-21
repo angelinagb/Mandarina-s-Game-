@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bntd3jal4r67x"
+path="res://.godot/imported/Battle Lost.wav-797cdeb91199ac595c6e0db03d841d39.sample"
+
+[deps]
+
+source_file="res://art/music-sfx/RPG_Music_Orchestra/Battle Lost.wav"
+dest_files=["res://.godot/imported/Battle Lost.wav-797cdeb91199ac595c6e0db03d841d39.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

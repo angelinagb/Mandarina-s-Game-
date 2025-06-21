@@ -13,8 +13,8 @@ signal on_puzzle_solved(Reward: String)
 @onready var canvas_modulate: CanvasModulate = $CanvasModulate
 
 
-var win_sound = preload("res://utils/Interact/Puzzle/PianoPuzzle/Sounds/sound_effects/win.wav")
-var error_sound = preload("res://utils/Interact/Puzzle/PianoPuzzle/Sounds/sound_effects/error.wav")
+var win_sound = preload("res://utils/Interact/Puzzle/puzzles/PianoPuzzle/Sounds/sound_effects/win.wav")
+var error_sound = preload("res://utils/Interact/Puzzle/puzzles/PianoPuzzle/Sounds/sound_effects/error.wav")
 
 var target_sequence: Array[String] = ["E5", "D5", "C5", "A4", "B4", "D5", "C5","B4","G4#","A4"]
 

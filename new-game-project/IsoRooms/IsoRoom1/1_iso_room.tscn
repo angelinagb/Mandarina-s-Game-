@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bt1w2mhrlrldg"]
+[gd_scene load_steps=11 format=3 uid="uid://bt1w2mhrlrldg"]
 
 [ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_r6l0j"]
 [ext_resource type="PackedScene" uid="uid://dfp282bcn4bat" path="res://IsoRooms/IsoRoom1/1_base_tiles.tscn" id="2_6jolm"]
@@ -18,6 +18,7 @@ intro = null
 room_id = "ROOM-4"
 
 [node name="BaseTiles" parent="." index="0" instance=ExtResource("2_6jolm")]
+position = Vector2(4, 14)
 script = null
 
 [node name="defect" parent="Spawns" index="0"]
@@ -54,10 +55,12 @@ region_rect = Rect2(53, 62, 248, 182)
 position = Vector2(289, -415)
 rotation = -2.67915
 scale = Vector2(2.09534, 1.28191)
+room_id = "ROOM-PASILLO1"
 id = "trans_iso_1to2"
 
 [node name="Alumna 1" parent="Interactables/Npcs" index="0" instance=ExtResource("8_hwk7s")]
-position = Vector2(542, -242)
+position = Vector2(68, -470)
+scale = Vector2(1.91733, 1.64237)
 
 [node name="Chica Triste" parent="Interactables/Npcs" index="1" instance=ExtResource("5_jm6ep")]
 position = Vector2(732, -171)

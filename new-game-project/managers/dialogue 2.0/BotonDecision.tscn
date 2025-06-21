@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b3iipnt2mv61n"]
 
-[ext_resource type="Script" uid="uid://bcgrtrmyvtnly" path="res://dialogo/boton_decision.gd" id="1_gpwk4"]
+[ext_resource type="Script" uid="uid://bcgrtrmyvtnly" path="res://managers/dialogue 2.0/boton_decision.gd" id="1_gpwk4"]
 
 [node name="BotonDecision" type="Button"]
 clip_contents = true
