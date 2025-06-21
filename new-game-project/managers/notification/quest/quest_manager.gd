@@ -40,9 +40,14 @@ func initialize(event_manager: EventManager, taken_quests: Array[Quest]):
 	
 	self.taken_quests = taken_quests
 	
+func on_quest_finished(title):
+	set_main("","")
+	set_secondary("","")
+	
 	
 func add_quest(quest: Quest) -> void:
 	if not taken_quests.has(quest):
+		quest.quest_ended.connect(on_quest_finished)
 		taken_quests.append(quest)
 		if quest.is_secondary and active_secondary_quest == null:
 			active_secondary_quest = quest
@@ -53,6 +58,7 @@ func add_quest(quest: Quest) -> void:
 				active_primary_quest = quest
 			set_main(quest.title, quest.get_current_step().text_to_do)
 		quest_updated.emit(quest)
+		
 		
 
 func on_event_added(event: String) -> void:
