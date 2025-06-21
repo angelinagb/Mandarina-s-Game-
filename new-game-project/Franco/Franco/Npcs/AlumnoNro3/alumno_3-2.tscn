@@ -1,10 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://2apwpwmvnibm"]
 
 [ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_x2twc"]
-[ext_resource type="Texture2D" uid="uid://cjkw4snpnyg7o" path="res://Franco/Npcs/AlumnoNro3/AlumnoNro3.png" id="2_62wgy"]
-[ext_resource type="Resource" uid="uid://bm2gl6d25xwsr" path="res://Franco/Npcs/AlumnoNro3/dialogo_3-2.tres" id="3_vnksu"]
+[ext_resource type="Texture2D" uid="uid://cjkw4snpnyg7o" path="res://Franco/Franco/Npcs/AlumnoNro3/AlumnoNro3.png" id="2_62wgy"]
+[ext_resource type="Resource" uid="uid://bm2gl6d25xwsr" path="res://Franco/Franco/Npcs/AlumnoNro3/dialogo_3-2.tres" id="3_vnksu"]
 
 [node name="AlumnoNro3-2" instance=ExtResource("1_x2twc")]
+scale = Vector2(1.2, 1.2)
 id = "MUJER"
 
 [node name="Sprite2D" parent="." index="1"]

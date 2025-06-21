@@ -38,5 +38,4 @@ id = "ROOM-LABOFISICA"
 [node name="PlayerB" parent="Player" index="0"]
 position = Vector2(205, -31)
 
-[connection signal="interacted" from="Interactables/Transitioners/Transitioner" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Activators/OscActivator" to="." method="_on_interactable_interacted"]

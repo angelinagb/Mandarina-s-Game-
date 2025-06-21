@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://ddvutqjo45no4" path="res://Nerds/dn3.tres" id="4_sksg0"]
 
 [node name="Nerd3" instance=ExtResource("1_1p111")]
+scale = Vector2(2, 2)
 dialogo_victoria = ExtResource("2_lnoj8")
 
 [node name="Sprite2D" parent="." index="1"]

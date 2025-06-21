@@ -55,6 +55,7 @@ region_rect = Rect2(53, 62, 248, 182)
 position = Vector2(289, -415)
 rotation = -2.67915
 scale = Vector2(2.09534, 1.28191)
+room_id = "ROOM-PASILLO1"
 id = "trans_iso_1to2"
 
 [node name="Alumna 1" parent="Interactables/Npcs" index="0" instance=ExtResource("8_hwk7s")]

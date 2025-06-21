@@ -1,10 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://57n8nvjbm568"]
 
 [ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_vc7fm"]
-[ext_resource type="Texture2D" uid="uid://cjkw4snpnyg7o" path="res://Franco/Npcs/AlumnoNro3/AlumnoNro3.png" id="2_2m3r8"]
-[ext_resource type="Resource" uid="uid://rkcdn7a3f300" path="res://Franco/Npcs/AlumnoNro3/dialogo_3-3.tres" id="3_mklwf"]
+[ext_resource type="Texture2D" uid="uid://cjkw4snpnyg7o" path="res://Franco/Franco/Npcs/AlumnoNro3/AlumnoNro3.png" id="2_2m3r8"]
+[ext_resource type="Resource" uid="uid://rkcdn7a3f300" path="res://Franco/Franco/Npcs/AlumnoNro3/dialogo_3-3.tres" id="3_mklwf"]
 
 [node name="AlumnoNro3-3" instance=ExtResource("1_vc7fm")]
+scale = Vector2(1.2, 1.2)
 
 [node name="Sprite2D" parent="." index="1"]
 scale = Vector2(0.2, 0.2)

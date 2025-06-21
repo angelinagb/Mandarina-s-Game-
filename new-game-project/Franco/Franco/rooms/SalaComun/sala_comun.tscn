@@ -36,6 +36,7 @@ position = Vector2(-1089, 84)
 
 [node name="Nerd5" parent="Interactables/Npcs" index="2" instance=ExtResource("8_px5ws")]
 position = Vector2(-581, -296)
+scale = Vector2(2, 2)
 
 [node name="PlayerB" parent="Player" index="0"]
 position = Vector2(-260, -54)

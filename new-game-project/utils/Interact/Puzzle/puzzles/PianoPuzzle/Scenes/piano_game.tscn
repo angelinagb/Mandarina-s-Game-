@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 	pass
 "
 
-[node name="Piano_MiniGame" type="Node"]
+[node name="Piano_MiniGame" type="CanvasLayer"]
 script = ExtResource("1_4aced")
 metadata/_edit_vertical_guides_ = [-161.0, -356.0]
 metadata/_edit_horizontal_guides_ = [88.0, 0.0]

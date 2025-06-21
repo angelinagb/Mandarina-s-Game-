@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://cwx60t32gnshj" path="res://Franco/Franco/Npcs/AlumnoNro3/dialogo_3-1.tres" id="3_l3mh7"]
 
 [node name="AlumnoNro3-1" instance=ExtResource("1_1qpdh")]
+scale = Vector2(1.2, 1.2)
 
 [node name="Sprite2D" parent="." index="1"]
 scale = Vector2(0.2, 0.2)
