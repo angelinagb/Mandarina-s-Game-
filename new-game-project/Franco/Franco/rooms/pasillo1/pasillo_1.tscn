@@ -24,11 +24,13 @@ scale = Vector2(3, 3)
 position = Vector2(-3252, -358)
 rotation = 0.846485
 scale = Vector2(3, 3)
+room_id = "ROOM-LABOFISICA"
 
 [node name="Transitioner3" parent="Interactables/Transitioners" index="2" instance=ExtResource("5_kvqi8")]
 position = Vector2(-2758, -415)
 rotation = 0.603884
 scale = Vector2(3, 3)
+room_id = "ROOM-4"
 
 [node name="AlumnoNro2-2" parent="Interactables/Npcs" index="0" instance=ExtResource("6_4ue0e")]
 

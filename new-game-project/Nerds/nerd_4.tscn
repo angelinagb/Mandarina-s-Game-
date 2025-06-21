@@ -1,13 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://5x17l54uy2sg"]
+[gd_scene load_steps=5 format=3 uid="uid://5x17l54uy2sg"]
 
 [ext_resource type="PackedScene" uid="uid://bh12kbhvaf3bl" path="res://Tomas/CAFETERIA/Nerd_Q2.tscn" id="1_xovak"]
-[ext_resource type="PackedScene" uid="uid://bkkm80qlft38n" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleInformatica/puzzle_informatica.tscn" id="2_4r2bd"]
 [ext_resource type="PackedScene" uid="uid://dwak37e1gsj" path="res://Nerds/nerd4dv.tscn" id="3_tdshe"]
 [ext_resource type="Texture2D" uid="uid://bkhuoqtvtfh4p" path="res://Nerds/AlumnoNro3.png" id="4_o6fue"]
 [ext_resource type="Resource" uid="uid://dy3bdvrg8p02e" path="res://Nerds/dn4.tres" id="5_rt6xu"]
 
 [node name="Nerd4" instance=ExtResource("1_xovak")]
-puzzle = ExtResource("2_4r2bd")
+scale = Vector2(2, 2)
 dialogo_victoria = ExtResource("3_tdshe")
 
 [node name="Sprite2D" parent="." index="1"]

@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://c4cs2randj0s5" path="res://Nerds/dn5.tres" id="5_4g01p"]
 
 [node name="Nerd5" instance=ExtResource("1_lai5o")]
+scale = Vector2(2, 2)
 puzzle = ExtResource("2_1o86v")
 dialogo_victoria = ExtResource("3_bonj8")
 

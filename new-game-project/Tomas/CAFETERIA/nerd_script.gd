@@ -13,4 +13,3 @@ func interact():
 	QueueManager.enqueue_event(quest_completada)
 	await QueueManager.finished
 	process_mode = Node.PROCESS_MODE_DISABLED
-	

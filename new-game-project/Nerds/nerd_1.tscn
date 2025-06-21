@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dp1yhvnm4vd2n" path="res://Nerds/AlumnoNro1.png" id="4_1gyco"]
 
 [node name="Nerd1" instance=ExtResource("1_744vf")]
+scale = Vector2(2, 2)
 puzzle = ExtResource("2_t3hmc")
 dialogo_victoria = ExtResource("3_xgcld")
 

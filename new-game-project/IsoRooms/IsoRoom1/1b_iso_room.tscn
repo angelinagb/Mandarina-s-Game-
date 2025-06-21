@@ -40,6 +40,7 @@ position = Vector2(235, -197)
 position = Vector2(289, -420)
 rotation = -2.67915
 scale = Vector2(2.09534, 1.28191)
+room_id = "ROOM-PASILLO1"
 
 [node name="Chica Triste" parent="Interactables/Npcs" index="0" instance=ExtResource("8_7etyn")]
 position = Vector2(732, -171)
