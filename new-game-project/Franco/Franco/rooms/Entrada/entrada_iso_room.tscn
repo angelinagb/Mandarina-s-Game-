@@ -33,7 +33,7 @@ scale = Vector2(3, 3)
 z_index = 30
 position = Vector2(816, 371)
 rotation = -0.426141
-scale = Vector2(2.92837, -0.970596)
+scale = Vector2(3.12989, -0.985378)
 room_id = "ROOM-6"
 
 [node name="AlumnoNro1-1" parent="Interactables/Npcs" index="0" instance=ExtResource("3_aafd0")]
