@@ -16,7 +16,7 @@ func intro():
 	player_b.mostrar_joystick()
 	#anim_player.play("intro")
 	#await anim_player.animation_finished
-
+ 
 
 
 

@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://df6obxrt87pkm"]
+
+[ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_j40la"]
+[ext_resource type="PackedScene" uid="uid://dhvuw0m72quqt" path="res://Franco/Franco/rooms/Centro alumnos/centroalumnos_base_tiles.tscn" id="2_f8ki5"]
+[ext_resource type="PackedScene" uid="uid://fndioqw8omgo" path="res://Franco/Franco/rooms/Centro alumnos/transitioner1.tscn" id="3_km8l3"]
+[ext_resource type="PackedScene" uid="uid://buljgfkbc4a3w" path="res://Franco/Franco/Npcs/AlumnoNro1/alumno_1-3.tscn" id="4_w8tux"]
+[ext_resource type="PackedScene" uid="uid://2apwpwmvnibm" path="res://Franco/Franco/Npcs/AlumnoNro3/alumno_3-2.tscn" id="5_jhm14"]
+[ext_resource type="PackedScene" uid="uid://c4vpvt7lq8bc8" path="res://Nerds/nerd_1.tscn" id="6_irih4"]
+
+[node name="CentroAlumnos" instance=ExtResource("1_j40la")]
+room_id = "ROOM-CENTROALUMNOS"
+
+[node name="BaseTiles" parent="." index="0" instance=ExtResource("2_f8ki5")]
+
+[node name="Transitioner" parent="Interactables/Transitioners" index="0" instance=ExtResource("3_km8l3")]
+position = Vector2(442, 88)
+rotation = 0.706858
+scale = Vector2(3, 3)
+
+[node name="AlumnoNro1-3" parent="Interactables/Npcs" index="0" instance=ExtResource("4_w8tux")]
+position = Vector2(-370, -612)
+scale = Vector2(-1.30431, 1.51919)
+
+[node name="AlumnoNro3-2" parent="Interactables/Npcs" index="1" instance=ExtResource("5_jhm14")]
+position = Vector2(-660, -437)
+scale = Vector2(1.25975, 1.25312)
+
+[node name="Nerd1" parent="Interactables/Npcs" index="2" instance=ExtResource("6_irih4")]
+position = Vector2(-378, -419)
+
+[node name="PlayerB" parent="Player" index="0"]
+position = Vector2(-16, -146)
+
+[connection signal="interacted" from="Interactables/Transitioners/Transitioner" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/AlumnoNro1-3" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/AlumnoNro3-2" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/Nerd1" to="." method="_on_interactable_interacted"]

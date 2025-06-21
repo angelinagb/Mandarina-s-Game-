@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cho8fef01i037"]
+
+[ext_resource type="PackedScene" uid="uid://c352qhl8iuech" path="res://utils/Interact/Activator/activator.tscn" id="1_wenjj"]
+
+[node name="OscActivator" instance=ExtResource("1_wenjj")]

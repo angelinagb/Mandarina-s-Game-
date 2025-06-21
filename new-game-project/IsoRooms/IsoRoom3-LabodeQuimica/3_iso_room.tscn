@@ -25,20 +25,21 @@ position = Vector2(353, 304)
 position = Vector2(-178, 347)
 
 [node name="TRANS R3 -> R2" parent="Interactables/Transitioners" index="0" instance=ExtResource("4_v2ge4")]
-position = Vector2(429, 350)
-rotation = -0.45355
-scale = Vector2(1.82531, -0.74337)
+position = Vector2(411, 451)
+rotation = -0.423137
+scale = Vector2(6.8216, -4.13405)
+room_id = "ROOM-PASILLO2"
 
 [node name="Alumno 1" parent="Interactables/Npcs" index="0" instance=ExtResource("5_v2ge4")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-148, 158)
 rotation = -0.00162853
-scale = Vector2(-1.42141, 1.41966)
+scale = Vector2(-1.0321, 1.53535)
 puzzle = ExtResource("6_sunh3")
 
 [node name="PlayerB" parent="Player" index="0"]
-position = Vector2(54, 187)
+position = Vector2(-20, 247)
 
 [connection signal="interacted" from="Interactables/Items/Mate" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/TRANS R3 -> R2" to="." method="_on_interactable_interacted"]

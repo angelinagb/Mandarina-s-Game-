@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_ethko")
-arreglo_de_textos = PackedStringArray("Juraría que via a Mandarina entrar aca con mi tesis...", "Debería preguntar al vendedor si sabe algo al respecto", "Aunque me dijieron que es muy cerrado y poco sociable", "Voy a tener que ganarme su confianza")
+arreglo_de_textos = PackedStringArray("Segun las camaras, mandarina paso por aca con mi tesis.", "Supongo que un gato es mejor que la nube", "Bueno...¿Ahora que?", "Debería preguntar al vendedor si sabe algo al respecto", "Aunque me dijieron que es muy cerrado y poco sociable", "Voy a tener que ganarme su confianza")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"

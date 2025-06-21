@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4vpvt7lq8bc8"]
+
+[ext_resource type="PackedScene" uid="uid://bh12kbhvaf3bl" path="res://Tomas/CAFETERIA/Nerd_Q2.tscn" id="1_744vf"]
+[ext_resource type="PackedScene" uid="uid://b67a6yiwqfmwq" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleMatematica/puzzle_matematica.tscn" id="2_t3hmc"]
+[ext_resource type="Resource" uid="uid://d14atmfygh386" path="res://Nerds/dn1.tres" id="2_yl8v2"]
+[ext_resource type="PackedScene" uid="uid://jabdhd4ubrmr" path="res://Nerds/nerd1dv.tscn" id="3_xgcld"]
+[ext_resource type="Texture2D" uid="uid://dp1yhvnm4vd2n" path="res://Nerds/AlumnoNro1.png" id="4_1gyco"]
+
+[node name="Nerd1" instance=ExtResource("1_744vf")]
+puzzle = ExtResource("2_t3hmc")
+dialogo_victoria = ExtResource("3_xgcld")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("4_1gyco")
+
+[node name="Dialogo Default" parent="." index="5"]
+dialogueResource = ExtResource("2_yl8v2")

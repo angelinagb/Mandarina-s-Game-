@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://3lnlp7ralt15"]
+
+[ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_xrkv2"]
+[ext_resource type="PackedScene" uid="uid://ddgy04kkrt3o" path="res://Franco/Franco/rooms/pasillo1/pasillo1_base_tiles.tscn" id="2_5u03s"]
+[ext_resource type="PackedScene" uid="uid://b2bxnhyvudhcn" path="res://Franco/Franco/rooms/pasillo1/transitioner1.tscn" id="3_7ef5p"]
+[ext_resource type="PackedScene" uid="uid://7j4xjebp8mtc" path="res://Franco/Franco/rooms/pasillo1/transitioner2.tscn" id="4_4ue0e"]
+[ext_resource type="PackedScene" uid="uid://dp8y2wjcclbsa" path="res://Franco/Franco/rooms/pasillo1/transitioner3.tscn" id="5_kvqi8"]
+[ext_resource type="PackedScene" uid="uid://ckhntr41fq8h" path="res://Franco/Franco/Npcs/AlumnoNro2/alumno_2-2.tscn" id="6_4ue0e"]
+[ext_resource type="PackedScene" uid="uid://ceblw85wrg7by" path="res://Franco/Franco/Npcs/AlumnoNro3/alumno_3-1.tscn" id="7_kvqi8"]
+[ext_resource type="PackedScene" uid="uid://fq0kmvendk55" path="res://Nerds/nerd_2.tscn" id="8_qilch"]
+[ext_resource type="PackedScene" uid="uid://1wg7fcglnnlq" path="res://Nerds/nerd_3.tscn" id="9_1bfff"]
+
+[node name="Pasillo1" instance=ExtResource("1_xrkv2")]
+room_id = "ROOM-PASILLO1"
+
+[node name="BaseTiles" parent="." index="0" instance=ExtResource("2_5u03s")]
+
+[node name="Transitioner" parent="Interactables/Transitioners" index="0" instance=ExtResource("3_7ef5p")]
+position = Vector2(424, -220)
+rotation = 0.724312
+scale = Vector2(3, 3)
+
+[node name="Transitioner2" parent="Interactables/Transitioners" index="1" instance=ExtResource("4_4ue0e")]
+position = Vector2(-3252, -358)
+rotation = 0.846485
+scale = Vector2(3, 3)
+
+[node name="Transitioner3" parent="Interactables/Transitioners" index="2" instance=ExtResource("5_kvqi8")]
+position = Vector2(-2758, -415)
+rotation = 0.603884
+scale = Vector2(3, 3)
+
+[node name="AlumnoNro2-2" parent="Interactables/Npcs" index="0" instance=ExtResource("6_4ue0e")]
+
+[node name="AlumnoNro3-1" parent="Interactables/Npcs" index="1" instance=ExtResource("7_kvqi8")]
+
+[node name="Nerd2" parent="Interactables/Npcs" index="2" instance=ExtResource("8_qilch")]
+position = Vector2(-788, 540)
+
+[node name="Nerd3" parent="Interactables/Npcs" index="3" instance=ExtResource("9_1bfff")]
+position = Vector2(-2985, -405)
+
+[node name="PlayerB" parent="Player" index="0"]
+position = Vector2(-133, -190)
+
+[connection signal="interacted" from="Interactables/Transitioners/Transitioner" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/Transitioner2" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/Transitioner3" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/AlumnoNro2-2" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/AlumnoNro3-1" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/Nerd2" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/Nerd3" to="." method="_on_interactable_interacted"]

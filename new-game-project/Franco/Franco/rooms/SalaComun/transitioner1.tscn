@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bokiqkdyjrbnp"]
+
+[ext_resource type="PackedScene" uid="uid://53qcgarmhxng" path="res://utils/Interact/Transitioner/transitioner.tscn" id="1_abgpo"]
+
+[node name="Transitioner" instance=ExtResource("1_abgpo")]
+room_id = "ROOM-ENTRADA"

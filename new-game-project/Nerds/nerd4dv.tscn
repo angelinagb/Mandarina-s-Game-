@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwak37e1gsj"]
+
+[ext_resource type="PackedScene" uid="uid://bahdwu3b3uvas" path="res://Tomas/CAFETERIA/Quest 2/cafeteria_quest_2_dialogo_combate.tscn" id="1_r0tud"]
+[ext_resource type="Resource" uid="uid://c2wxypvn2u23x" path="res://Nerds/dn4v.tres" id="2_mhruh"]
+
+[node name="Dialogue System" instance=ExtResource("1_r0tud")]
+dialogueResource = ExtResource("2_mhruh")

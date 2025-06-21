@@ -57,7 +57,7 @@ func save_this():
 		}
 	}
 	
-	save_manager.save_dict({"actual_room": "res://Tomas/CAFETERIA/CAFETERIA_CON_CONTENIDO.tscn", "prev_room": ""}, "RoomSetup")
+	save_manager.save_dict({"actual_room": "res://Ange/intro_!iso_room.tscn", "prev_room": ""}, "RoomSetup")
 	save_manager.save_dict(items, "Items")
 	save_manager.save_dict(abilities, "AbilityPoints")
 	save_manager.save_dict(ability_points, "AbilityAvailablePoints")

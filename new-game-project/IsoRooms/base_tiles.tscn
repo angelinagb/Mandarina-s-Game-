@@ -278,6 +278,7 @@ tile_set = SubResource("TileSet_xlc22")
 
 [node name="surfaces" type="TileMapLayer" parent="."]
 y_sort_enabled = true
+position = Vector2(-80, -8)
 rotation = 0.010779
 scale = Vector2(0.408655, 0.321648)
 tile_set = SubResource("TileSet_xlc22")

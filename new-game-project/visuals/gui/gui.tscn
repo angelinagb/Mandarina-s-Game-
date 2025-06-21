@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://be5di5g2ylsl5"]
+[gd_scene load_steps=3 format=3 uid="uid://be5di5g2ylsl5"]
 
 [ext_resource type="Script" uid="uid://2w2kklqevxh6" path="res://visuals/gui/gui.gd" id="1_eaxf3"]
 [ext_resource type="Texture2D" uid="uid://bm1h4sjdvqal7" path="res://art/menu/boton_abrir.png" id="1_vsbrd"]
-[ext_resource type="FontFile" uid="uid://ctwexxmrsmp1g" path="res://utils/Interact/Puzzle/puzzles/font/LuckiestGuy-Regular.ttf" id="4_jdal2"]
 
 [node name="gui" type="CanvasLayer"]
 script = ExtResource("1_eaxf3")
@@ -45,17 +44,6 @@ grow_vertical = 2
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 0)
 disabled = true
 text = "hi"
-
-[node name="CheckButton" type="CheckButton" parent="Control"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -44.0
-offset_bottom = 24.0
-grow_horizontal = 0
-theme_override_fonts/font = ExtResource("4_jdal2")
-text = "front walls"
 
 [connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Control/InteractButton" to="." method="_on_interact_button_pressed"]

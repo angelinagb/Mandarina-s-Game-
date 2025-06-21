@@ -10,10 +10,3 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-	
-func toogle_walls_front_visibility():
-	if walls_front.visible == true:
-		walls_front.visible = false
-	else: 
-		walls_front.visible = true

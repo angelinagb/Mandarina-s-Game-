@@ -90,12 +90,14 @@ func _on_submit_pressed() -> void:
 		open_popup_menu()
 
 func open_popup_menu():
+	self.visible = false
 	popupmenu_instance = load(POPUPMENU_PATH).instantiate()
 	popupmenu_instance.replay_pressed.connect(on_replay_pressed)
 	popupmenu_instance.out_pressed.connect(on_out_pressed)
 	add_child(popupmenu_instance)
 func on_replay_pressed():
 	restart_puzzle()
+	self.visible = true
 
 func on_out_pressed():
 	end_puzzle(false)

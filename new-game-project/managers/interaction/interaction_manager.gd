@@ -2,7 +2,6 @@ extends Node
 
 var interactuable_actual: Interactable = null
 signal interactuable_cambiado(interactuable: Interactable)
-
 func set_interactuable(i):
 	interactuable_actual = i
 	emit_signal("interactuable_cambiado", i)
@@ -16,4 +15,4 @@ func interact():
 	if interactuable_actual:
 		interactuable_actual.interact()
 	else :
-		print("NO HAY NADA, NO ESTAS HACIENDO NADA")
+		print("No interaction defined for this interactable")

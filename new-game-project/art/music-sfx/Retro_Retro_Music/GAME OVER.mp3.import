@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d3tkspk0vkx5c"
+path="res://.godot/imported/GAME OVER.mp3-cfb60390e78e731109f320959aa81ab9.mp3str"
+
+[deps]
+
+source_file="res://art/music-sfx/Retro_Retro_Music/GAME OVER.mp3"
+dest_files=["res://.godot/imported/GAME OVER.mp3-cfb60390e78e731109f320959aa81ab9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

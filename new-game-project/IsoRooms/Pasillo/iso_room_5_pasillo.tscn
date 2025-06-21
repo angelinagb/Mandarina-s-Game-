@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://csd34hxktl1hl"]
+
+[ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_y3myp"]
+[ext_resource type="PackedScene" uid="uid://cojn85xfsktkp" path="res://IsoRooms/Pasillo/5_base_tiles.tscn" id="2_7xcgx"]
+[ext_resource type="PackedScene" uid="uid://cas7jeaslklbm" path="res://utils/Interact/Transitioner/Instancias/trans_pasillo_cafeteria.tscn" id="2_js4aw"]
+
+[node name="IsoRoom5-Pasillo" instance=ExtResource("1_y3myp")]
+
+[node name="trans pasillo-cafeteria" parent="Interactables/Transitioners" index="0" instance=ExtResource("2_js4aw")]
+position = Vector2(-26, -299)
+rotation = -0.417543
+scale = Vector2(2.6, 1)
+
+[node name="BaseTiles" parent="." index="3" instance=ExtResource("2_7xcgx")]

@@ -1,8 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://53qcgarmhxng"]
+[gd_scene load_steps=4 format=3 uid="uid://53qcgarmhxng"]
 
 [ext_resource type="PackedScene" uid="uid://mvhkwj4slyyt" path="res://utils/Interact/Interactable/interactable.tscn" id="1_8xbec"]
 [ext_resource type="Script" uid="uid://bl6347kmm50hc" path="res://utils/Interact/Transitioner/transitioner.gd" id="1_21cju"]
+[ext_resource type="AudioStream" uid="uid://b4t0itwshte1q" path="res://art/music-sfx/RPGsfx/doorClose_2.ogg" id="3_s0v1x"]
 
 [node name="Transitioner" instance=ExtResource("1_8xbec")]
 script = ExtResource("1_21cju")
 room_id = ""
+
+[node name="door_sound" type="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("3_s0v1x")

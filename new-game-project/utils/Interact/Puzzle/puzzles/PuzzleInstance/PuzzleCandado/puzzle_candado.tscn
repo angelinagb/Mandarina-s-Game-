@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://ksp6solj3qvd"]
 
-[ext_resource type="Script" uid="uid://w2xwgdqdbaqg" path="res://utils/Interact/Puzzle/puzzles 2.0/PuzzleInstance/PuzzleCandado/puzzle_candado.gd" id="1_jekc6"]
-[ext_resource type="FontFile" uid="uid://ctwexxmrsmp1g" path="res://utils/Interact/Puzzle/puzzles 2.0/font/LuckiestGuy-Regular.ttf" id="2_bw8q6"]
-[ext_resource type="Texture2D" uid="uid://d3v0pb5vr3qwm" path="res://utils/Interact/Puzzle/puzzles 2.0/PuzzleInstance/PuzzleCandado/fondo.png" id="2_jekc6"]
-[ext_resource type="Script" uid="uid://oowib2ek1red" path="res://utils/Interact/Puzzle/puzzles 2.0/PuzzleInstance/PuzzleCandado/control.gd" id="2_rup32"]
+[ext_resource type="Script" uid="uid://w2xwgdqdbaqg" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleCandado/puzzle_candado.gd" id="1_jekc6"]
+[ext_resource type="FontFile" uid="uid://ctwexxmrsmp1g" path="res://utils/Interact/Puzzle/puzzles/font/LuckiestGuy-Regular.ttf" id="2_bw8q6"]
+[ext_resource type="Texture2D" uid="uid://d3v0pb5vr3qwm" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleCandado/fondo.png" id="2_jekc6"]
+[ext_resource type="Script" uid="uid://oowib2ek1red" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleCandado/control.gd" id="2_rup32"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58q44"]
 bg_color = Color(0, 0, 0, 1)
@@ -38,7 +38,7 @@ PanelBackground/styles/panel = SubResource("StyleBoxFlat_unhuv")
 PanelDigit/base_type = &"Panel"
 PanelDigit/styles/panel = SubResource("StyleBoxFlat_3iwr8")
 
-[node name="PuzzleCandado" type="Node"]
+[node name="PuzzleCandado" type="CanvasLayer"]
 script = ExtResource("1_jekc6")
 
 [node name="Background" type="Panel" parent="."]

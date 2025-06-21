@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv1lid7iq8bur"
-path="res://.godot/imported/proyector.jpg-b4e8f44106a405d187fdbb0f4aa827e6.ctex"
+uid="uid://bw58oqif373gl"
+path="res://.godot/imported/AlumnoNro2.png-840d9c108ed8cbe24c6d1a4420adf84d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/tiles/proyector.jpg"
-dest_files=["res://.godot/imported/proyector.jpg-b4e8f44106a405d187fdbb0f4aa827e6.ctex"]
+source_file="res://Franco/Franco/Npcs/AlumnoNro2/AlumnoNro2.png"
+dest_files=["res://.godot/imported/AlumnoNro2.png-840d9c108ed8cbe24c6d1a4420adf84d.ctex"]
 
 [params]
 

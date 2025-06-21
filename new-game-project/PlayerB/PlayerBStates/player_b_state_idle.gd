@@ -2,7 +2,7 @@
 extends PlayerBStateBase
 
 func start():
-	pass #le podes poner cualquier maravilla al incio del estado , que cante 
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

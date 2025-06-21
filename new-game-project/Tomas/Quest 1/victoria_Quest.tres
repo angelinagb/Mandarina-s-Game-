@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_v13kp")
-arreglo_de_textos = PackedStringArray("No puedo creerlo, que humillación", "Mira, se que no eres el hermano de la chica de recien", "Pero aprendí una lección de humildad, voy a ir a disculparme, tú ganas")
+arreglo_de_textos = PackedStringArray("Amigo me salvas, sin GPT ya no se pensar", "y mira que es QG1", "Nada, ahi esta la hoja mira, tomá", "( Gracias bro ) ")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"

@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://hawyj0b52iwd"]
+[gd_scene load_steps=6 format=3 uid="uid://hawyj0b52iwd"]
 
 [ext_resource type="Script" uid="uid://1b1bjnvf6u0h" path="res://visuals/start_menu.gd" id="1_1on3q"]
 [ext_resource type="Texture2D" uid="uid://wrphx78et2m" path="res://art/icon/backround.png" id="2_1on3q"]
 [ext_resource type="Theme" uid="uid://ht1jo68esctd" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleInformatica/resources/BaseThemePuzzle.tres" id="3_24fwf"]
+[ext_resource type="AudioStream" uid="uid://328xayf6flx2" path="res://art/music-sfx/Retro_Retro_Music/bored, honestly.mp3" id="4_oqa2s"]
+[ext_resource type="AudioStream" uid="uid://cxv6hwh41yd0u" path="res://art/music-sfx/Interface/confirmation_002.ogg" id="5_5dbiu"]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -50,6 +52,12 @@ text = "Nueva partida"
 layout_mode = 2
 theme = ExtResource("3_24fwf")
 text = "Continuar partida guardada"
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_oqa2s")
+
+[node name="SFX Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5dbiu")
 
 [connection signal="pressed" from="VButtonContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="VButtonContainer/ResumeGame" to="." method="_on_resume_game_pressed"]

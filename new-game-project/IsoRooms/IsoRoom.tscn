@@ -23,3 +23,5 @@ script = ExtResource("1_lguep")
 [node name="Player" type="Node" parent="."]
 
 [node name="PlayerB" parent="Player" instance=ExtResource("2_vdkr8")]
+
+[node name="RoomSounds" type="AudioStreamPlayer" parent="."]

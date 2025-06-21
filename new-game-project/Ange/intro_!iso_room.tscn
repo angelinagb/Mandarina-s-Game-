@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://do31ff72hlieq"]
+
+[ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_btw8a"]
+[ext_resource type="Script" uid="uid://1vdnaelrfvas" path="res://Ange/intro.gd" id="2_1lwjr"]
+[ext_resource type="PackedScene" uid="uid://cc873te58i88x" path="res://Ange/dialogo_intro.tscn" id="3_1lwjr"]
+[ext_resource type="Texture2D" uid="uid://bl77oocpaghpd" path="res://art/menu/Facultad2.png" id="4_7i8ax"]
+[ext_resource type="PackedScene" uid="uid://cu2xlpbbt6454" path="res://Ange/trans_intro_entrada.tscn" id="5_7i8ax"]
+[ext_resource type="Theme" uid="uid://v4ecbhurmt7p" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleMatematica/resources/BaseThemePuzzle.tres" id="6_3lyrc"]
+
+[node name="IsoRoom" instance=ExtResource("1_btw8a")]
+script = ExtResource("2_1lwjr")
+dialogo_intro = ExtResource("3_1lwjr")
+
+[node name="TextureRect" type="TextureRect" parent="Spawns" index="1"]
+offset_left = -400.0
+offset_top = -180.0
+offset_right = 400.0
+offset_bottom = 220.0
+texture = ExtResource("4_7i8ax")
+expand_mode = 1
+
+[node name="trans_intro_entrada" parent="Interactables/Transitioners" index="0" instance=ExtResource("5_7i8ax")]
+position = Vector2(75, 6)
+
+[node name="PlayerB" parent="Player" index="0"]
+visible = false
+position = Vector2(400, 180)
+
+[node name="Button" type="Button" parent="." index="4"]
+z_index = 1
+offset_left = 137.0
+offset_top = 111.0
+offset_right = 457.0
+offset_bottom = 144.0
+scale = Vector2(0.554801, 0.726111)
+theme = ExtResource("6_3lyrc")
+text = "Entrar a la Facultad"
+
+[connection signal="interacted" from="Interactables/Transitioners/trans_intro_entrada" to="." method="_on_interactable_interacted"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
