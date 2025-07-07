@@ -5,7 +5,7 @@ class_name PlayerB extends CharacterBody2D
 
 
 
-@export var SPEED = 300.0
+@export var SPEED = 250.0
 
 @onready var sprite = $AnimatedSprite2D
 @onready var this = $"."
@@ -34,26 +34,38 @@ func resume_player():
 
 #seria lo equiv a play_animation
 func update_animation_parameters(dir: Vector2, state: String) -> void:
-	var anim = ""
-	var angle = dir.angle()
-		# Convierto la dirección en 8 sectores
-	if angle >= -PI / 4 and angle < PI / 4:
-		anim = "_north"
-	elif angle >= PI / 4 and angle < 3 * PI / 4:
-		anim = "_east"
-	elif angle >= -3 * PI / 4 and angle < -PI / 4:
-		anim = "_west"
-	else:
-		anim = "_south"
+	if dir.length() == 0:
+		sprite.play(state + "_down")  # default
+		return
 
-	# Ahora actualizás la animación del player
+	var angle = dir.angle()
+	var anim = ""
+
+	if angle >= -PI/8 and angle < PI/8:
+		anim = "_right"
+	elif angle >= PI/8 and angle < 3*PI/8:
+		anim = "_down_right"
+	elif angle >= 3*PI/8 and angle < 5*PI/8:
+		anim = "_down"
+	elif angle >= 5*PI/8 and angle < 7*PI/8:
+		anim = "_down_left"
+	elif angle >= 7*PI/8 or angle < -7*PI/8:
+		anim = "_left"
+	elif angle >= -7*PI/8 and angle < -5*PI/8:
+		anim = "_up_left"
+	elif angle >= -5*PI/8 and angle < -3*PI/8:
+		anim = "_up"
+	elif angle >= -3*PI/8 and angle < -PI/8:
+		anim = "_up_right"
+
 	sprite.play(state + anim)
 
 func get_facing_direction() -> Vector2 : 
 	return facing_direction
 	
-func update_facing_direction(new_dir : Vector2) -> void : 
-	facing_direction = new_dir
+func update_facing_direction(new_dir: Vector2) -> void:
+	if new_dir.length() > 0.1:
+		facing_direction = new_dir.normalized()
 	
 func esconder_joystick():
 	#agregado para cinematicas

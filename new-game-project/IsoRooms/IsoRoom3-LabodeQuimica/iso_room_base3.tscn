@@ -165,7 +165,7 @@ region_rect = Rect2(109, 57, 410, 376)
 [node name="Sprite2D" type="Sprite2D" parent="." index="7"]
 modulate = Color(1, 0.529412, 1, 1)
 z_index = 2
-position = Vector2(78, 62)
+position = Vector2(80, 63)
 scale = Vector2(0.507901, 0.258442)
 texture = ExtResource("6_883nb")
 region_enabled = true

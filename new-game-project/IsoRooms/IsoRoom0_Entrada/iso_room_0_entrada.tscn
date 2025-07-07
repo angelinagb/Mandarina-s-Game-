@@ -17,5 +17,8 @@ rotation = 0.493142
 scale = Vector2(4.44, 1)
 room_id = "ROOM-PASILLO"
 
+[node name="PlayerB" parent="Player" index="0"]
+position = Vector2(164, -260)
+
 [node name="Mandarina" parent="." index="4" instance=ExtResource("4_t36t4")]
 position = Vector2(-79, -125)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgqw6ln6p51sx"]
+
+[ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_lijkx"]
+[ext_resource type="PackedScene" uid="uid://4psc62mdkccy" path="res://Ange/PruebaMov8D/pruebaTiles.tscn" id="2_xmkb7"]
+
+[node name="IsoRoom" instance=ExtResource("1_lijkx")]
+
+[node name="BaseTiles" parent="." index="4" instance=ExtResource("2_xmkb7")]
