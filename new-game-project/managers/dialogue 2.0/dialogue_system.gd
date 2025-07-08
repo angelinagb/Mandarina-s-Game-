@@ -48,7 +48,8 @@ func inicializar_conversacion() -> void:
 	timer.wait_time = dialogueResource.get_dialogue_speed()
 	rich_text_label.text = ""
 	current_state = States.ABRIENDO
-	
+
+@warning_ignore("shadowed_variable")
 func mostrar_decision():
 	var i : int = 0
 	var aux_boton : BotonDecision
@@ -63,7 +64,7 @@ func mostrar_decision():
 		
 
 ##Comienza el dialogo, si layer es mayor que 0 se le asigna ese valor al canvas_layer
-func start(layer: float = -1):
+func start(layer: int = -1):
 	if vacio == false:
 		if layer > 0:
 			canvas_layer.layer = layer
@@ -74,7 +75,7 @@ func start(layer: float = -1):
 		else:
 			destruir()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if current_state == States.TEXTO_MOSTRADO:
 		next_text_button.disabled = false
 	if current_state == States.MOSTRANDO_TEXTO:
@@ -143,9 +144,14 @@ func cambiar_a_modo_conversacion():
 func _on_boton_decision_pressed(indice : int):
 	#TENGO QUE ELIMINAR TODOS LOS BOTONES DEL DIALOGO
 	cambiar_a_modo_conversacion()
-	dialogueResource = decision_actual.get_recurso_dialogo_de_decision_elegida(indice).get_recurso_dialogo()
-	inicializar_conversacion()
-	start()
+	dialogueResource = decision_actual.get_recurso_dialogo_de_decision_elegida(indice).get_recurso_dialogo_exitoso()
+	if dialogueResource != null:
+		inicializar_conversacion()
+		start()
+	else:
+		current_state = States.CERRANDO
+		anim_player.play("fade_out")
+		destruir()
 	
 
 

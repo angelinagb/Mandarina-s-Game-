@@ -31,6 +31,7 @@ func _on_interactuable_cambiado(i):
 		interact_button.text = button_text
 	
 func _on_interact_button_pressed() -> void:
+	interact_button.disabled = true
 	InteractionManager.interact()
 
 

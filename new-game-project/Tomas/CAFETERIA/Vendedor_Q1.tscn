@@ -15,6 +15,13 @@ scale = Vector2(3, 3)
 [node name="Area2D" parent="." index="2"]
 position = Vector2(-3, 78)
 
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+light_mask = 1
+visibility_layer = 1
+position = Vector2(-0.970817, 1.11051)
+rotation = 0.000846744
+scale = Vector2(6.06169, 0.720136)
+
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]
 position = Vector2(-1, 79)
 

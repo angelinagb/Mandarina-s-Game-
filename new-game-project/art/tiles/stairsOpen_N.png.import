@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjrvb22gvjb8j"
-path="res://.godot/imported/pizarron.png-5a86cdc90914ddcf74e2d0639e822b72.ctex"
+uid="uid://cmtrsia35xg26"
+path="res://.godot/imported/stairsOpen_N.png-d0a4b0891e2e2e7535cc71e40ce0532d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/room/pizarron.png"
-dest_files=["res://.godot/imported/pizarron.png-5a86cdc90914ddcf74e2d0639e822b72.ctex"]
+source_file="res://art/tiles/stairsOpen_N.png"
+dest_files=["res://.godot/imported/stairsOpen_N.png-d0a4b0891e2e2e7535cc71e40ce0532d.ctex"]
 
 [params]
 

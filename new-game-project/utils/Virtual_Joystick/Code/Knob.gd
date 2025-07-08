@@ -13,11 +13,12 @@ func _ready():
 	set_process_input(true)
 
 func _input(event):
-	if event is InputEventMouseButton or event is InputEventScreenTouch:
-		if event.pressed and is_inside_tree() and get_rect().has_point(to_local(event.position)):
-			pressing = true
-		elif not event.pressed:
+	if event is InputEventScreenTouch:
+		if not event.pressed:
 			pressing = false
+	elif event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			pressing = event.pressed and get_rect().has_point(to_local(event.position))
 
 func _process(delta):
 	if pressing:

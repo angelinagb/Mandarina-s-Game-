@@ -1,10 +1,13 @@
 extends Control
 @onready var menu_music: AudioStreamPlayer = $MenuMusic
 @onready var sfx_music: AudioStreamPlayer = $"SFX Music"
+@onready var new_game_btn: Button = $VButtonContainer/NewGame
+
 
 signal world_related_button_pressed(type_world: String)
 
 func _on_new_game_pressed() -> void:
+	new_game_btn.disabled = true
 	sfx_music.play()
 	await sfx_music.finished
 	world_related_button_pressed.emit("NEW_GAME")

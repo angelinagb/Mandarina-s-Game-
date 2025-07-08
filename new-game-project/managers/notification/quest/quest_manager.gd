@@ -1,6 +1,8 @@
 class_name QuestManager
 extends Node
 
+
+
 signal new_active_secondary_quest(quest: Quest)
 signal quest_updated(quest: Quest)
 signal all_level_quest_completed
@@ -33,7 +35,7 @@ func set_secondary(titulo : String, step : String):
 	else:
 		ui_secondary.show()
 
-
+@warning_ignore("shadowed_variable")
 func initialize(event_manager: EventManager, taken_quests: Array[Quest]):
 	self.event_manager = event_manager
 	event_manager.event_added.connect(on_event_added)

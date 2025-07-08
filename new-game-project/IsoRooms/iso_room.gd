@@ -1,7 +1,7 @@
 class_name  IsoRoom  extends Node2D
 
 signal interactable_interacted(interactable: Interactable)
-@onready var back_round_music: AudioStreamPlayer = $BackRoundMusic
+@onready var room_sounds: AudioStreamPlayer = $RoomSounds
 
 @onready var player_b: PlayerB = $Player/PlayerB
 

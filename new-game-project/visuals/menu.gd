@@ -13,6 +13,7 @@ var active_secondary_quest = null
 var quest_manager: QuestManager
 var inventory_manager: InventoryManager
 
+@warning_ignore("shadowed_variable")
 func initialize(quest_manager: QuestManager, inventory_manager: InventoryManager, items: Dictionary):
 	self.quest_manager = quest_manager
 	quest_manager.quest_updated.connect(on_quest_updated)
@@ -36,6 +37,7 @@ func add_item_inventory(item: Dictionary):
 	var texture := load(item.get("path_img", ""))
 	item_box.set_icono(texture)
 	item_box.set_titulo("- %s" % item.get("name", "Item sin nombre"))
+
 
 func remove_item_inventory(item: Dictionary):
 	for child in item_container.get_children():

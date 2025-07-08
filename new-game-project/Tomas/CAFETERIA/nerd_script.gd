@@ -11,5 +11,6 @@ func interact():
 	QueueManager.enqueue_event(dialogo_victoria)
 	await QueueManager.finished
 	QueueManager.enqueue_event(quest_completada)
-	await QueueManager.finished
+	await QueueManager.finished	
+	NotificationManager.enqueue_event(preload("res://visuals/Notificacion GUI/Instancias/item_picked_up_notif.tscn"))
 	process_mode = Node.PROCESS_MODE_DISABLED

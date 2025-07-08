@@ -85,7 +85,7 @@ func save_setup(room_save: Dictionary):
 	save_manager.save_dict(abilities_available_points, "AbilityAvailablePoints")
 
 func load_setup():
-	var player_setup: Dictionary = save_manager.load_dict("PlayerSetup")
+	var _player_setup: Dictionary = save_manager.load_dict("PlayerSetup")
 	var room_setup: Dictionary = save_manager.load_dict("RoomSetup")
 	
 	var items: Dictionary = save_manager.load_dict("Items")
@@ -155,7 +155,6 @@ func _on_puzzle_begin(puzzle : Interactable):
 		var dapuzzle = puzzle.puzzle_tcsn.instantiate()
 		add_child(dapuzzle)
 		print("llega")
-		show_behind_parent
 		#player.pause_player()
 		#var screen_size = get_viewport_rect().size
 		#puzzle_instance.position = screen_size / 2
@@ -170,6 +169,7 @@ func initialize_room(path_room: String, temp: String ):
 	player = current.get_player()
 	player.initialize(current.get_position_spawn(temp))
 
+@warning_ignore("shadowed_variable")
 func change_room(new_room_id: String, current_room_id: String):
 	var room_save: Dictionary = {
 		"actual_room": new_room_id,

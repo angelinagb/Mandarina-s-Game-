@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dufv153ssvvqf"]
+
+[ext_resource type="PackedScene" uid="uid://cyif0m3rl1hoj" path="res://visuals/Notificacion GUI/Notification.tscn" id="1_oqkdl"]
+
+[node name="Nivel Completado" instance=ExtResource("1_oqkdl")]
+
+[node name="Titulo" parent="Control/PanelContainer/MarginContainer/VBoxContainer" index="0"]
+text = "Nivel Cafeteria Completado!"
+
+[node name="Descripcion" parent="Control/PanelContainer/MarginContainer/VBoxContainer" index="1"]
+text = "Aula 01 Desbloqueada"

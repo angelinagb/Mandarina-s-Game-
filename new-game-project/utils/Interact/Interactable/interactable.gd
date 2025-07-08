@@ -1,5 +1,5 @@
 class_name Interactable extends Node2D
-
+@warning_ignore("unused_signal")
 signal interacted(interactable: Interactable)
 
 #los id pueden ser combinacion room + tipo + orden 
@@ -29,10 +29,11 @@ func end():
 func interactuar():
 	pass
 
+@warning_ignore("unused_parameter")
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.
 
-
+@warning_ignore("unused_parameter")
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	pass # Replace with function body.
 

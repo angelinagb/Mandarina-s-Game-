@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cl8uobxpi3u6"]
+[gd_scene load_steps=8 format=3 uid="uid://cl8uobxpi3u6"]
 
 [ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_450mq"]
 [ext_resource type="PackedScene" uid="uid://dboe44ingytfm" path="res://Franco/Franco/rooms/pasillo2/pasillo_2_base_tiles.tscn" id="2_c7vn3"]
 [ext_resource type="PackedScene" uid="uid://5xdakxg5e4ym" path="res://Franco/Franco/rooms/pasillo2/transitioner1.tscn" id="3_522a5"]
 [ext_resource type="PackedScene" uid="uid://ribmtol1i1ho" path="res://Franco/Franco/rooms/pasillo2/transitioner2.tscn" id="4_rpjon"]
+[ext_resource type="PackedScene" uid="uid://dtgwk30hw03u7" path="res://trans_vacio.tscn" id="5_o76j6"]
 [ext_resource type="PackedScene" uid="uid://dl7v1mcsivlok" path="res://Franco/Franco/Npcs/AlumnoNro2/alumno_2-3.tscn" id="5_rpjon"]
 [ext_resource type="PackedScene" uid="uid://5x17l54uy2sg" path="res://Nerds/nerd_4.tscn" id="6_rwdn4"]
 
@@ -12,24 +13,40 @@ room_id = "ROOM-PASILLO2"
 
 [node name="BaseTiles" parent="." index="0" instance=ExtResource("2_c7vn3")]
 
+[node name="defect" parent="Spawns" index="0"]
+position = Vector2(3, 196)
+scale = Vector2(0.629577, 1.05579)
+
 [node name="Transitioner" parent="Interactables/Transitioners" index="0" instance=ExtResource("3_522a5")]
-position = Vector2(340, 243)
-rotation = 1.15571
-scale = Vector2(1.22198, -5.55599)
+position = Vector2(-188, 306)
+rotation = -1.03759
+scale = Vector2(-3.04491, -5.50299)
 
 [node name="Transitioner2" parent="Interactables/Transitioners" index="1" instance=ExtResource("4_rpjon")]
-position = Vector2(-691, -358)
+position = Vector2(762, -130)
 rotation = 1.05498
 scale = Vector2(1.66797, 4.06116)
 room_id = "ROOM-5"
 
+[node name="Transitioner3" parent="Interactables/Transitioners" index="2" instance=ExtResource("5_o76j6")]
+position = Vector2(-27, 107)
+rotation = 2.6936
+scale = Vector2(5.32383, -1.24007)
+
+[node name="Transitioner4" parent="Interactables/Transitioners" index="3" instance=ExtResource("5_o76j6")]
+position = Vector2(235, -412)
+rotation = -0.589321
+scale = Vector2(3.68585, -0.939496)
+
 [node name="AlumnoNro2-3" parent="Interactables/Npcs" index="0" instance=ExtResource("5_rpjon")]
+position = Vector2(197, -311)
 
 [node name="Nerd4" parent="Interactables/Npcs" index="1" instance=ExtResource("6_rwdn4")]
-position = Vector2(-376, -285)
+position = Vector2(641, -350)
+scale = Vector2(1.81113, 1.98075)
 
 [node name="PlayerB" parent="Player" index="0"]
-position = Vector2(-5, -163)
+position = Vector2(571, -204)
 
 [connection signal="interacted" from="Interactables/Transitioners/Transitioner" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/Transitioner2" to="." method="_on_interactable_interacted"]

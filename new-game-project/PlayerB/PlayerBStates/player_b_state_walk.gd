@@ -29,7 +29,7 @@ func on_physics_process(_delta):
 	dir = dir.normalized()
 
 	# Si no hay input, pasar a Idle
-	if dir.length() == 0:
+	if dir.length() < 0.1:
 		state_machine.change_to(playerb.states.Idle)
 		return
 

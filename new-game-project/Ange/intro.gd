@@ -1,6 +1,7 @@
 extends IsoRoom
 @onready var texture_rect: TextureRect = $TextureRect
 @onready var trans_intro_entrada: Transitioner = $Interactables/Transitioners/trans_intro_entrada
+@onready var button: Button = $Button
 
 
 @export var dialogo_intro = PackedScene
@@ -23,5 +24,6 @@ func intro () :
 
 
 func _on_button_pressed() -> void:
+	button.disabled = true
 	trans_intro_entrada.interact()
 	

@@ -12,5 +12,10 @@ dialogo_victoria = ExtResource("3_tdshe")
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("4_o6fue")
 
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+light_mask = 1
+visibility_layer = 1
+position = Vector2(-0.333333, -2)
+
 [node name="Dialogo Default" parent="." index="5"]
 dialogueResource = ExtResource("5_rt6xu")

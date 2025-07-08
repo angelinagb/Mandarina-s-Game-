@@ -38,7 +38,7 @@ func _on_vendedor_q_2_quest_ended(title: Variant) -> void:
 		node.process_mode = Node.PROCESS_MODE_DISABLED
 	for node : Node in get_tree().get_nodes_in_group("COFFEE_END"):
 		node.process_mode = Node.PROCESS_MODE_INHERIT
-			
+	
 
 
 func _on_vendedor_q_2_quest_begun() -> void:
