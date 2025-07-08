@@ -96,6 +96,7 @@ hframes = 6
 position = Vector2(-2.66667, -3)
 rotation = -0.0425112
 scale = Vector2(0.333333, 0.333333)
+id = "COFFEE_V"
 
 [node name="Vendedor Q2" parent="Interactables/Npcs/SPRITE VENDEDOR" index="1" groups=["Q2"] instance=ExtResource("6_xnuun")]
 process_mode = 4
@@ -116,9 +117,9 @@ position = Vector2(-204, -36)
 process_mode = 4
 position = Vector2(645, -37)
 
-[node name="GRUPO 3" parent="Interactables/Npcs" index="4" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("7_xnuun")]
+[node name="GRUPO 3" parent="Interactables/Npcs" index="4" groups=["Q1_GRUPOS"] instance=ExtResource("7_xnuun")]
 process_mode = 4
-position = Vector2(145, 68)
+position = Vector2(92, 68)
 
 [node name="PlayerB" parent="Player" index="0"]
 position = Vector2(-237, -131)
@@ -134,6 +135,10 @@ libraries = {
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 15.0
+offset_right = -1.0
+offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)

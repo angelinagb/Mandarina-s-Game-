@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="QuestStep" load_steps=2 format=3 uid="uid://deisn6124rufb"]
+
+[ext_resource type="Script" uid="uid://c0nhxnmv56tui" path="res://managers/notification/quest/quest_step.gd" id="1_g2a8x"]
+
+[resource]
+script = ExtResource("1_g2a8x")
+text_to_do = "Vuelve con el Vendedor"
+necessary_interactables = {}
+metadata/_custom_type_script = "uid://c0nhxnmv56tui"

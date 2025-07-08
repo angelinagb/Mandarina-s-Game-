@@ -37,7 +37,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 57.0
-offset_bottom = -170.0
+offset_bottom = -98.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -74,7 +74,6 @@ text = "Inventario"
 label_settings = SubResource("LabelSettings_nqhns")
 
 [node name="Control2" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 13
 anchor_left = 0.5

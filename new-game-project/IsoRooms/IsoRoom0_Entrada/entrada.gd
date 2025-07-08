@@ -9,6 +9,10 @@ func _ready() -> void:
 	
 
 func intro():
-	pass 
+	QuestManager.add_quest(initial_quest)
+	
 func outro():
+	pass
+
+func on_quest_ended():
 	pass

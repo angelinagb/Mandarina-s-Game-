@@ -39,4 +39,3 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "TITULO"
 label_settings = SubResource("LabelSettings_bn0k0")
-horizontal_alignment = 2

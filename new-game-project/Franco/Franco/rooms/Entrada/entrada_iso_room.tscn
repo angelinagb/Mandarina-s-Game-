@@ -14,7 +14,7 @@
 
 [sub_resource type="Resource" id="Resource_kqioq"]
 script = ExtResource("4_vn0rm")
-text_to_do = "Dirigete al Laboratorio de Seguridad e Higiene para "
+text_to_do = "Dirigete al Laboratorio de Seguridad e Higiene"
 necessary_interactables = {}
 metadata/_custom_type_script = "uid://c0nhxnmv56tui"
 
@@ -29,6 +29,7 @@ metadata/_custom_type_script = "uid://cj81x6yti6bmb"
 [node name="EntradaIsoRoom" instance=ExtResource("1_jvyd0")]
 script = ExtResource("2_i7aci")
 initial_quest = SubResource("Resource_eckjf")
+room_id = null
 
 [node name="Entrada" parent="." index="0" instance=ExtResource("2_wxnbc")]
 
@@ -60,18 +61,19 @@ rotation = -0.449199
 scale = Vector2(4.54762, -1.30585)
 room_id = "ROOM-6"
 
-[node name="trans entrada_deptoal" parent="Interactables/Transitioners" index="3" instance=ExtResource("6_wxnbc")]
+[node name="trans_entrada_labosyh" parent="Interactables/Transitioners" index="3" instance=ExtResource("6_wxnbc")]
 position = Vector2(681, -726)
 rotation = 0.499486
 scale = Vector2(4.39521, -1.36154)
 room_id = "ROOM-CENTROALUMNOS"
+id = "Trans_LABOSYH"
 
 [node name="AlumnoNro1-1" parent="Interactables/Npcs" index="0" instance=ExtResource("3_aafd0")]
 position = Vector2(574, -124)
 scale = Vector2(1.41777, 1.54542)
 
 [node name="AlumnoNro3-3" parent="Interactables/Npcs" index="1" instance=ExtResource("6_iyjjf")]
-position = Vector2(643, -536)
+position = Vector2(637, -527)
 scale = Vector2(1.09628, 1.31673)
 
 [node name="PlayerB" parent="Player" index="0"]

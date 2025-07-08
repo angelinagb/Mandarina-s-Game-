@@ -9,5 +9,6 @@ func on_completed():
 	await QueueManager.finished
 	QueueManager.enqueue_event(dialogo_final)
 	await QueueManager.finished
-	QueueManager.enqueue_event(quest_completada)
+	if quest_completada :
+		QueueManager.enqueue_event(quest_completada)
 	await QueueManager.finished

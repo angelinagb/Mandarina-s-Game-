@@ -51,6 +51,8 @@ func inicializar_conversacion() -> void:
 
 @warning_ignore("shadowed_variable")
 func mostrar_decision():
+	next_text_button.visible = false
+	next_text_button.disabled = true
 	var i : int = 0
 	var aux_boton : BotonDecision
 	rich_text_label.queue_free()
@@ -100,6 +102,7 @@ func _on_timer_timeout() -> void:
 	read_text()
 
 func next_text():
+	next_text_button.visible = true
 	j += 1
 	if j < text_count:
 		##hay otro texto por mostrar

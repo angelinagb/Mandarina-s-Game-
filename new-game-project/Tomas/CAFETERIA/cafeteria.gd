@@ -20,6 +20,7 @@ func intro():
 
 
 
+
 func _on_vendedor_q_1_quest_begun() -> void:
 	#Empieza Quest 1, habilito los grupos para interactuar
 	for node : Node in get_tree().get_nodes_in_group("Q1_GRUPOS"):
