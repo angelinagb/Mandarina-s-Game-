@@ -4,7 +4,6 @@ class_name Dialogo
 
 @export var arreglo_de_textos : PackedStringArray
 @export var decision : Decision
-
 #Tiempo que se va a esperar para mostrar el siguiente caräcter del texto
 @export var tiempo_entre_caracteres : float = .02
 

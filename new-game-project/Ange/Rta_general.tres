@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="Dialogo" load_steps=14 format=3 uid="uid://csg85q86ltl7j"]
+
+[ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="1_7yv0c"]
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="1_pft6n"]
+[ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="2_pcb0t"]
+[ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="4_cba2b"]
+
+[sub_resource type="Resource" id="Resource_pam5u"]
+script = ExtResource("1_pft6n")
+arreglo_de_textos = PackedStringArray("(risa nerviosa) No... pero encontré una hoja en la impresora.", "Tomá", "Deberías encontrar el resto antes de que la IA termine la etapa de entrenamiento.", "Podés ver las camaras si quieres")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[sub_resource type="Resource" id="Resource_b6qsq"]
+script = ExtResource("1_7yv0c")
+texto = "¡AH PERO QUE EXCELENTE!¿Algo más? ¿Mandarina la escaneó también?"
+dialogo_exitoso = SubResource("Resource_pam5u")
+array_eventos = Array[ExtResource("2_pcb0t")]([])
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_5eiuy"]
+script = ExtResource("4_cba2b")
+array_opciones = Array[ExtResource("1_7yv0c")]([SubResource("Resource_b6qsq")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
+
+[sub_resource type="Resource" id="Resource_dc3sq"]
+script = ExtResource("1_pft6n")
+arreglo_de_textos = PackedStringArray("No lo es... Y de alguna forma la IA académica que estaba en desarrollo tomo algunos datos de esas hojas para su entrenamiento...")
+decision = SubResource("Resource_5eiuy")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[sub_resource type="Resource" id="Resource_vp8qc"]
+script = ExtResource("1_7yv0c")
+texto = "Mandarina. ¿El gato?. ¿Es un chiste?"
+dialogo_exitoso = SubResource("Resource_dc3sq")
+array_eventos = Array[ExtResource("2_pcb0t")]([])
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_j7qbr"]
+script = ExtResource("4_cba2b")
+array_opciones = Array[ExtResource("1_7yv0c")]([SubResource("Resource_vp8qc")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
+
+[sub_resource type="Resource" id="Resource_sj8pg"]
+script = ExtResource("1_pft6n")
+arreglo_de_textos = PackedStringArray("Entiendo tu frustracioó, pero no la encontró alguien... Si no .. \"algo\".", "Parece que Mandarina esparció tu tesis por toda la facultad, hay hojas por todos lados, haz escrito bastante.")
+decision = SubResource("Resource_j7qbr")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[sub_resource type="Resource" id="Resource_hxm2k"]
+script = ExtResource("1_7yv0c")
+texto = "¡¿Desapareció?! ¡¿Cómo es posible?! ¿Y si alguien la encuentra y la publica en internet? ¡Sería una catástrofe!"
+dialogo_exitoso = SubResource("Resource_sj8pg")
+array_eventos = Array[ExtResource("2_pcb0t")]([])
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_n05pm"]
+script = ExtResource("4_cba2b")
+array_opciones = Array[ExtResource("1_7yv0c")]([SubResource("Resource_hxm2k")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
+
+[resource]
+script = ExtResource("1_pft6n")
+arreglo_de_textos = PackedStringArray("¡Claro que lo es! ", "La situación es que la tesis desapareció.", "Y está habiendo fallas en toda la facultad.", "Tememos que puedan estar relacionados .")
+decision = SubResource("Resource_n05pm")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"

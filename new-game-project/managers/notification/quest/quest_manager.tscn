@@ -38,14 +38,17 @@ script = ExtResource("1_l277l")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Quests Info" type="VBoxContainer" parent="CanvasLayer"]
+visible = false
 custom_minimum_size = Vector2(150, 100)
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -50.0
-offset_right = 150.0
-offset_bottom = 50.0
+anchors_preset = -1
+anchor_top = 0.361
+anchor_right = 0.392
+anchor_bottom = 0.515
+offset_top = 0.0399933
+offset_right = 16.4
+offset_bottom = 46.6
 grow_vertical = 2
+scale = Vector2(0.988699, 1.0566)
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Quests Info"]
 visible = false
@@ -92,3 +95,12 @@ label_settings = SubResource("LabelSettings_4cjpl")
 [node name="Quest" type="Label" parent="CanvasLayer/Quests Info/PanelContainer2/MarginContainer/Active Secondary Quest"]
 layout_mode = 2
 label_settings = SubResource("LabelSettings_bdoti")
+
+[node name="CheckButton" type="CheckButton" parent="CanvasLayer"]
+visible = false
+offset_left = -1.0
+offset_top = 97.0
+offset_right = 91.0
+offset_bottom = 128.0
+
+[connection signal="toggled" from="CanvasLayer/CheckButton" to="." method="_on_check_button_toggled"]

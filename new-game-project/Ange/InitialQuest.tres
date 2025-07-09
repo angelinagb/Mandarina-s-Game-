@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=5 format=3 uid="uid://be1kjqlts87y5"]
+
+[ext_resource type="Script" uid="uid://cj81x6yti6bmb" path="res://managers/notification/quest/quest.gd" id="1_n7wfs"]
+[ext_resource type="Script" uid="uid://c0nhxnmv56tui" path="res://managers/notification/quest/quest_step.gd" id="2_da7x6"]
+[ext_resource type="Resource" uid="uid://dt8d4elfgow5x" path="res://Ange/Init_quest_step_0.tres" id="3_da7x6"]
+
+[sub_resource type="Resource" id="Resource_da7x6"]
+script = ExtResource("2_da7x6")
+text_to_do = "Habla con el profe franco "
+necessary_interactables = {
+"PROFE_FRANCO_NPC": false
+}
+metadata/_custom_type_script = "uid://c0nhxnmv56tui"
+
+[resource]
+script = ExtResource("1_n7wfs")
+title = "Averiguar que pasa con la tesis"
+steps = Array[ExtResource("2_da7x6")]([ExtResource("3_da7x6"), SubResource("Resource_da7x6")])
+current_step = 0
+is_secondary = false
+metadata/_custom_type_script = "uid://cj81x6yti6bmb"

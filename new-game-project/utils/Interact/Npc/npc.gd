@@ -61,7 +61,7 @@ func startDialogue():
 	
 	
 func quest_available():
-	return tiene_quest
+	return quest != null
 	
 func take_quest():
 	tiene_quest = false

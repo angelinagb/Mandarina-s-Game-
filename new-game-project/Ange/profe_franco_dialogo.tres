@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="Dialogo" load_steps=9 format=3 uid="uid://bin2w80ucewvn"]
+
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="1_krwnq"]
+[ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="1_y2qf0"]
+[ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="2_w1nvl"]
+[ext_resource type="Resource" uid="uid://csg85q86ltl7j" path="res://Ange/Rta_general.tres" id="3_33efu"]
+[ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="4_y8een"]
+
+[sub_resource type="Resource" id="Resource_4huuk"]
+script = ExtResource("1_y2qf0")
+texto = "¡Eso es excelente! "
+dialogo_exitoso = ExtResource("3_33efu")
+array_eventos = Array[ExtResource("2_w1nvl")]([])
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_ejfml"]
+script = ExtResource("1_y2qf0")
+texto = "¡Genial! Pero, de que situación hablás?"
+dialogo_exitoso = ExtResource("3_33efu")
+array_eventos = Array[ExtResource("2_w1nvl")]([])
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_chndk"]
+script = ExtResource("4_y8een")
+array_opciones = Array[ExtResource("1_y2qf0")]([SubResource("Resource_4huuk"), SubResource("Resource_ejfml")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
+
+[resource]
+script = ExtResource("1_krwnq")
+arreglo_de_textos = PackedStringArray("¡Hola, que bueno que viniste!", "Ocurrío una situación con tu tesis que el departamento no pudo predecir. ", "Respetamos tu decisión de entregar la tesis en papel y, según lo que pude leer, con justa razón.", "Está aprobada y ya podes hacer los trámites para recibirte. ")
+decision = SubResource("Resource_chndk")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"

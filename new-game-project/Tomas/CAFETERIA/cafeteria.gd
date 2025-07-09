@@ -14,6 +14,7 @@ func intro():
 	QueueManager.enqueue_event(dialogo_intro)
 	await QueueManager.finished
 	player_b.mostrar_joystick()
+	dialogo_intro = null
 	#anim_player.play("intro")
 	#await anim_player.animation_finished
  

@@ -27,7 +27,7 @@ var text_length : int
 var text_count : int
 var current_state : States
 
-enum States {ABRIENDO, MOSTRANDO_TEXTO, TEXTO_MOSTRADO, CERRANDO}
+enum States {ABRIENDO, MOSTRANDO_TEXTO, TEXTO_MOSTRADO, CERRANDO, MOSTRANDO_DECISIONES}
 
 
 
@@ -51,8 +51,8 @@ func inicializar_conversacion() -> void:
 
 @warning_ignore("shadowed_variable")
 func mostrar_decision():
-	next_text_button.visible = false
-	next_text_button.disabled = true
+	set_button_visibility(false)
+	current_state = States.MOSTRANDO_DECISIONES
 	var i : int = 0
 	var aux_boton : BotonDecision
 	rich_text_label.queue_free()
@@ -63,9 +63,8 @@ func mostrar_decision():
 		aux_boton.boton_decision_elegido.connect(_on_boton_decision_pressed)
 		v_box_container.add_child(aux_boton)
 		i += 1
-		
-
 ##Comienza el dialogo, si layer es mayor que 0 se le asigna ese valor al canvas_layer
+
 func start(layer: int = -1):
 	if vacio == false:
 		if layer > 0:
@@ -79,7 +78,8 @@ func start(layer: int = -1):
 
 func _process(_delta: float) -> void:
 	if current_state == States.TEXTO_MOSTRADO:
-		next_text_button.disabled = false
+		set_button_visibility(true)
+		pass
 	if current_state == States.MOSTRANDO_TEXTO:
 		audio_stream_player.play()
 	else:
@@ -88,21 +88,21 @@ func _process(_delta: float) -> void:
 func terminar_texto():
 	i = text_length
 	rich_text_label.text = dialogueResource.get_dialogue_text(j)
-
 func read_text():
 	if i < text_length:
-		#voy agregando caracteres de a uno
 		rich_text_label.text += dialogueResource.get_dialogue_text(j)[i]
 		i += 1
 		timer.start()
 	else:
-		current_state = States.TEXTO_MOSTRADO
-		
+		if current_state != States.TEXTO_MOSTRADO:
+			next_text_button.disabled = false
+			current_state = States.TEXTO_MOSTRADO
+			
+			
 func _on_timer_timeout() -> void:
 	read_text()
 
 func next_text():
-	next_text_button.visible = true
 	j += 1
 	if j < text_count:
 		##hay otro texto por mostrar
@@ -117,7 +117,10 @@ func next_text():
 			mostrar_decision()
 		else:	
 			current_state = States.CERRANDO
-			anim_player.play("fade_out")
+			if anim_player.has_animation("fade_out"):
+				anim_player.play("fade_out")
+			else:
+				destruir()
 		
 func destruir():
 	dialogue_ended.emit()
@@ -128,28 +131,42 @@ func destruir():
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "fade_in":
-		current_state = States.MOSTRANDO_TEXTO
-		read_text()
+		if text_count > 0:
+			current_state = States.MOSTRANDO_TEXTO
+			read_text()
+		else:
+			current_state = States.CERRANDO
+			destruir()
 	else:
 		destruir()
 		
-func cambiar_a_modo_conversacion():
+func cambiar_a_modo_conversacion(): #resetea el cuadro de dialogo
 	v_box_container.queue_free()
+	
 	v_box_container = VBoxContainer.new()
+	v_box_container.alignment = BoxContainer.ALIGNMENT_BEGIN
+	v_box_container.size_flags_vertical = v_box_container.SIZE_SHRINK_CENTER
+	margin_container.add_child(v_box_container) 
+	
+	margin_container.move_child(v_box_container,0)
+	
+	
 	rich_text_label = RichTextLabel.new()
-	rich_text_label.add_theme_font_size_override("normal_font_size",25)
-	rich_text_label.custom_minimum_size = Vector2(0,100)
-	margin_container.add_child(v_box_container)
+	rich_text_label.scroll_active = true
+	rich_text_label.fit_content = true 
+	rich_text_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	rich_text_label.add_theme_font_size_override("normal_font_size",18)
+	rich_text_label.custom_minimum_size = Vector2(0,52)
 	v_box_container.add_child(rich_text_label)
-		
 
+	
 		
 func _on_boton_decision_pressed(indice : int):
 	#TENGO QUE ELIMINAR TODOS LOS BOTONES DEL DIALOGO
 	cambiar_a_modo_conversacion()
 	dialogueResource = decision_actual.get_recurso_dialogo_de_decision_elegida(indice).get_recurso_dialogo_exitoso()
 	if dialogueResource != null:
-		inicializar_conversacion()
+		canvas_layer.hide()
 		start()
 	else:
 		current_state = States.CERRANDO
@@ -162,3 +179,17 @@ func _on_boton_decision_pressed(indice : int):
 func _on_next_text_button_pressed() -> void:
 	next_text()	
 	next_text_button.disabled = true
+
+
+
+func set_button_visibility(state:bool):
+	if state == false:
+		next_text_button.hide()
+		next_text_button.disabled = true
+		next_text_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		next_text_button.modulate = Color(1, 1, 1, 0)  # invisible por si algún estilo ignora "visible"
+	else:
+		next_text_button.show()
+		next_text_button.disabled = false
+		next_text_button.mouse_filter = Control.MOUSE_FILTER_STOP
+		next_text_button.modulate = Color(1, 1, 1, 1)

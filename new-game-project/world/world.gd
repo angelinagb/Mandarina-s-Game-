@@ -124,7 +124,6 @@ func _on_interactable_interacted(interactable: Interactable):
 		"npc":
 			await _on_npc_talked_to(interactable)
 		"puzzle":
-			print("match ok")
 			await _on_puzzle_begin(interactable)
 		_:
 			print("no tengo interactuable" + interactable.my_type)
@@ -137,6 +136,9 @@ func _on_item_grabbed(item: Item) -> void:
 	item.end()
 
 func _on_transitioner_activated(transitioner: Transitioner) -> void:
+	if transitioner.quest != null :
+		transitioner.take_room_quest()
+		quest.add_quest(transitioner.quest)
 	var room_id: String = transitioner.get_room_id()
 	change_room(room_id, current_room_id)
 	current_room_id = room_id
@@ -149,7 +151,7 @@ func _on_npc_talked_to(npc: Npc) -> void:
 		npc.take_quest()
 		quest.add_quest(npc.quest)
 		
-		
+
 		
 func _on_puzzle_begin(puzzle : Interactable):
 		var dapuzzle = puzzle.puzzle_tcsn.instantiate()
@@ -202,6 +204,9 @@ func on_puzzle_solved(Reward: String) :
 	inventory.item_grabbed(Reward)
 	player.resume_player()
 
+func _on_quest_begin(interactable: Interactable):
+	quest.add_quest(interactable.the_quest)
+
 
 #func _on_inventory_manager_item_updated(item: Dictionary) -> void:
 	#pass # Replace with function body.
@@ -214,3 +219,7 @@ func on_puzzle_solved(Reward: String) :
 #func _on_event_manager_event_added(event: String) -> void:
 	#pass # Replace with function body.
 	
+
+
+func _on_menu_quest_updated(quest_upd: Quest) -> void:
+	quest.update_quest(quest_upd)

@@ -10,7 +10,6 @@ minijuego = ExtResource("1_jswk8")
 dialogo_final = ExtResource("1_xkdat")
 text_to_do = "Escuchar de que habla cada grupo"
 necessary_interactables = {
-"COFFEE_G3": false,
-"COFFEE_V": false
+"COFFEE_G3": false
 }
 metadata/_custom_type_script = "uid://c0nhxnmv56tui"

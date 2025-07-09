@@ -1,15 +1,15 @@
 extends IsoRoom
 
 signal quest_begun
-@export var initial_quest: Quest
+#@export var initial_quest: Quest
+
 
 func _ready() -> void:
 	super._ready()
-	intro()
-	
 
 func intro():
-	QuestManager.add_quest(initial_quest)
+	pass
+	
 	
 func outro():
 	pass

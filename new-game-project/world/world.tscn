@@ -36,5 +36,6 @@ elemento_inventario = ExtResource("12_mad0u")
 [connection signal="quest_updated" from="QuestManager" to="menu" method="on_quest_updated"]
 [connection signal="item_updated" from="InventoryManager" to="." method="_on_inventory_manager_item_updated"]
 [connection signal="ability_button_pressed" from="menu" to="." method="_on_menu_ability_button_pressed"]
+[connection signal="quest_updated" from="menu" to="." method="_on_menu_quest_updated"]
 [connection signal="secondary_quest_picked" from="menu" to="QuestManager" method="_on_menu_secondary_quest_picked"]
 [connection signal="button_open_menu_pressed" from="gui" to="." method="_on_gui_button_open_menu_pressed"]

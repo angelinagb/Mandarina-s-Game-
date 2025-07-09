@@ -8,6 +8,7 @@
 [node name="Transitioner" instance=ExtResource("1_8xbec")]
 script = ExtResource("1_21cju")
 room_id = "VACIO"
+quest = null
 
 [node name="door_sound_open" type="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource("3_s0v1x")

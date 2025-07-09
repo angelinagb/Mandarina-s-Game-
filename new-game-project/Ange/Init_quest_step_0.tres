@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="QuestStep" load_steps=2 format=3 uid="uid://dtief0w4ghh6g"]
+[gd_resource type="Resource" script_class="QuestStep" load_steps=2 format=3 uid="uid://dt8d4elfgow5x"]
 
 [ext_resource type="Script" uid="uid://c0nhxnmv56tui" path="res://managers/notification/quest/quest_step.gd" id="1_r3btn"]
 
 [resource]
 script = ExtResource("1_r3btn")
 text_to_do = "Dirigete al laboratorio de seguridad e Higiene"
-necessary_interactables = {}
+necessary_interactables = {
+"Trans_LABOSYH": false
+}
 metadata/_custom_type_script = "uid://c0nhxnmv56tui"

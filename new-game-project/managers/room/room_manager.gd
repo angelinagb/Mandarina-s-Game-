@@ -14,7 +14,8 @@ var rooms = {
 	"ROOM-LABOFISICA": "res://IsoRooms/IsoRoom4-LabodeFisica/4_iso_room_labodefisica.tscn",
 	"ROOM-CENTROALUMNOS":"res://Franco/Franco/rooms/Centro alumnos/centro_alumnos.tscn",
 	"ROOM-PASILLO2": "res://Franco/Franco/rooms/pasillo2/pasillo_2.tscn",
-	"ROOM-SALACOMUN":"res://Franco/Franco/rooms/SalaComun/sala_comun.tscn"
+	"ROOM-SALACOMUN":"res://Franco/Franco/rooms/SalaComun/sala_comun.tscn",
+	"ROOM-LABOSYH":"res://Ange/labo_sy_h_iso_room.tscn"
 	}
 
 func get_room(room_id : String) -> String:

@@ -51,7 +51,6 @@ dialogueResource = ExtResource("2_m0h81")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 10
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
@@ -87,14 +86,17 @@ theme_override_constants/separation = 10
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 52)
 layout_mode = 2
+theme_override_colors/font_selected_color = Color(0.00392157, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 18
-text = "El otro dia iba caminando por la calle y no sabia que iba a pasr das da s"
+text = "¡¿Desapareció?! ¡¿Cómo es posible?! ¿Y si alguien la encuentra y la publica en internet? ¡Sería una catastrofe!"
 
 [node name="next_text_button" type="Button" parent="CanvasLayer/PanelContainer"]
+z_index = 7
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 disabled = true
+toggle_mode = true
 text = "next"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

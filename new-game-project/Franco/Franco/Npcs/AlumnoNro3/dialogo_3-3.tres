@@ -1,9 +1,44 @@
-[gd_resource type="Resource" script_class="Dialogo" load_steps=2 format=3 uid="uid://rkcdn7a3f300"]
+[gd_resource type="Resource" script_class="Dialogo" load_steps=10 format=3 uid="uid://rkcdn7a3f300"]
 
 [ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="1_6x3r7"]
+[ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="1_nbibq"]
+[ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="2_gxe5n"]
+[ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="3_pqvpc"]
+
+[sub_resource type="Resource" id="Resource_nbibq"]
+script = ExtResource("1_6x3r7")
+arreglo_de_textos = PackedStringArray("Es muy raro...", "No se que estará pasando")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[sub_resource type="Resource" id="Resource_m1bo6"]
+script = ExtResource("1_nbibq")
+texto = "Que raro.."
+dialogo_exitoso = SubResource("Resource_nbibq")
+array_eventos = Array[ExtResource("2_gxe5n")]([])
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_gxe5n"]
+script = ExtResource("1_6x3r7")
+arreglo_de_textos = PackedStringArray("Eso te pasa por usar internet para todo ")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[sub_resource type="Resource" id="Resource_q3qfy"]
+script = ExtResource("1_nbibq")
+texto = "Siempre dije que no hay que depender de la tecnología"
+dialogo_exitoso = SubResource("Resource_gxe5n")
+array_eventos = Array[ExtResource("2_gxe5n")]([])
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_83yrj"]
+script = ExtResource("3_pqvpc")
+array_opciones = Array[ExtResource("1_nbibq")]([SubResource("Resource_m1bo6"), SubResource("Resource_q3qfy")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
 
 [resource]
 script = ExtResource("1_6x3r7")
-arreglo_de_textos = PackedStringArray("Vos podes creer que esta andando todo mal hoy?")
+arreglo_de_textos = PackedStringArray("Vos podes creer que esta andando todo mal hoy?", "Ni la sube puedo cargar ", "¿Ahora me voy a tener que ir caminando?")
+decision = SubResource("Resource_83yrj")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"

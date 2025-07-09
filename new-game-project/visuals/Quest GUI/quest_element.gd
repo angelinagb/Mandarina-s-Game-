@@ -1,7 +1,7 @@
 extends Button
 class_name QuestElement
 
-@onready var titulo : Label = %Titulo
+@onready var titulo : Label = %Titulo 
 @onready var paso : Label = %Paso
 
 func set_nombre_elemento(nuevo_nombre):

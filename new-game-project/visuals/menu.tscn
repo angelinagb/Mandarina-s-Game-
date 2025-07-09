@@ -45,7 +45,6 @@ grow_vertical = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 0
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/Contenedor Quest"]
 layout_mode = 2
@@ -56,6 +55,10 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Quest list"
 label_settings = SubResource("LabelSettings_dmkcs")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Contenedor Quest"]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Conteneder Inventario" type="VBoxContainer" parent="HBoxContainer"]
 unique_name_in_owner = true
