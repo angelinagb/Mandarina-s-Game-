@@ -13,6 +13,7 @@ radius = 6.18907
 
 [node name="Npc" instance=ExtResource("1_k5sc4")]
 script = ExtResource("2_x63vy")
+npc_name = ""
 quest = null
 
 [node name="PlayerShadow" type="Sprite2D" parent="." index="0"]

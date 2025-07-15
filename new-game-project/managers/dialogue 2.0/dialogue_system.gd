@@ -16,9 +16,11 @@ signal finished
 @export var destruirse_al_finalizar : bool
 var decision_actual : Decision
 @export var vacio : bool
+@onready var speaker_name: Label = $CanvasLayer/Speaker_Name
 
 ##Recurso con información sobre el diálogo a mostrar
 @export var dialogueResource : Dialogo
+@export var dialogo_alternativo: Dialogo
 @onready var canvas_layer : CanvasLayer = $CanvasLayer
 ## while text not empty
 var i : int
@@ -52,6 +54,7 @@ func inicializar_conversacion() -> void:
 @warning_ignore("shadowed_variable")
 func mostrar_decision():
 	set_button_visibility(false)
+	speaker_name.visible = false
 	current_state = States.MOSTRANDO_DECISIONES
 	var i : int = 0
 	var aux_boton : BotonDecision
@@ -84,6 +87,8 @@ func _process(_delta: float) -> void:
 		audio_stream_player.play()
 	else:
 		audio_stream_player.stop()
+	if current_state != States.MOSTRANDO_DECISIONES :
+		speaker_name.visible = true
 
 func terminar_texto():
 	i = text_length
@@ -169,13 +174,19 @@ func _on_boton_decision_pressed(indice : int):
 	if dialogueResource != null:
 		canvas_layer.hide()
 		start()
-	else:
-		current_state = States.CERRANDO
-		anim_player.play("fade_out")
-		destruir()
+		await dialogue_ended
+	else: 
+		end()
 	
-
-
+	var events = decision_actual.get_recurso_dialogo_de_decision_elegida(indice).array_eventos
+	if events.size() > 0 :
+		for event in events:
+			print("evento")
+			await event.trigger()
+	else :
+		end()
+	
+	check_and_start_alternative_dialogue()
 
 func _on_next_text_button_pressed() -> void:
 	next_text()	
@@ -194,3 +205,26 @@ func set_button_visibility(state:bool):
 		next_text_button.disabled = false
 		next_text_button.mouse_filter = Control.MOUSE_FILTER_STOP
 		next_text_button.modulate = Color(1, 1, 1, 1)
+
+
+func set_speaker(name: String):
+	speaker_name.text = name
+	
+func end():
+		current_state = States.CERRANDO
+		anim_player.play("fade_out")
+		destruir()
+
+
+
+func check_and_start_alternative_dialogue():
+	if dialogo_alternativo == null:
+		end()
+	else:
+		cambiar_a_modo_conversacion()
+		canvas_layer.hide()
+	
+		dialogueResource = dialogo_alternativo
+		dialogo_alternativo = null
+	
+		start()

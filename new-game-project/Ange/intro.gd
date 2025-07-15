@@ -9,6 +9,7 @@ extends IsoRoom
 func _ready() -> void:
 	super._ready()
 	intro()
+	player_b.default_camera_zoom()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://be5di5g2ylsl5"]
 
 [ext_resource type="Script" uid="uid://2w2kklqevxh6" path="res://visuals/gui/gui.gd" id="1_eaxf3"]
-[ext_resource type="Texture2D" uid="uid://bm1h4sjdvqal7" path="res://art/menu/boton_abrir.png" id="1_vsbrd"]
+[ext_resource type="Texture2D" uid="uid://br8c3vwnkg0ql" path="res://art/menu/Icons_Essential/v1.2/Icons/Backpack.png" id="2_yxvp7"]
 [ext_resource type="FontFile" uid="uid://ctwexxmrsmp1g" path="res://utils/Interact/Puzzle/puzzles/font/LuckiestGuy-Regular.ttf" id="3_yxvp7"]
 
 [node name="gui" type="CanvasLayer"]
@@ -23,11 +23,12 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -8.0
-offset_top = -8.0
+offset_left = -71.0
+offset_top = -83.0
 grow_horizontal = 0
 grow_vertical = 0
-icon = ExtResource("1_vsbrd")
+icon = ExtResource("2_yxvp7")
+expand_icon = true
 
 [node name="InteractButton" type="Button" parent="Control"]
 layout_mode = 1

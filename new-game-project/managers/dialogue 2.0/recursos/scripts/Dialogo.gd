@@ -7,7 +7,6 @@ class_name Dialogo
 #Tiempo que se va a esperar para mostrar el siguiente caräcter del texto
 @export var tiempo_entre_caracteres : float = .02
 
-
 var current_text : int
 
 func init():

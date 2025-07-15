@@ -4,11 +4,12 @@ signal quest_begun
 signal dialogue_ended
 signal quest_ended(title)
 
+@export var npc_name: String
 @export var quest: Quest
 @onready var primerDialogo : DialogueSystem = $"Dialogo Quest"
 @onready var dialogoDefault : DialogueSystem = $"Dialogo Default"
 @onready var quest_icon : ColorRect = $NpcQuestIndicador
-var tiene_quest : bool
+var tiene_quest : bool #refiere al dialogo de la quest
 
 @onready var current_dialogue: int = 0
 @onready var current_npc_state:STATE = STATE.WAITING
@@ -54,9 +55,14 @@ func interact():
 	
 func startDialogue():
 	if tiene_quest == true:
+		primerDialogo.set_speaker(self.npc_name)
 		primerDialogo.start()
+		if not quest :
+			await primerDialogo.dialogue_ended
+			take_quest()
 	else:
 		if dialogoDefault != null:
+			dialogoDefault.set_speaker(self.npc_name)
 			dialogoDefault.start()
 	
 	

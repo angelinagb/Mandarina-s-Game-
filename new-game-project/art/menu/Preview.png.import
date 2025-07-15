@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df4kpiufqjedw"
-path="res://.godot/imported/IconsEssential.png-bda358dc5b74ed3fdc9413ae828b02a3.ctex"
+uid="uid://cqsw8irjpatkr"
+path="res://.godot/imported/Preview.png-95fd88741038f484424a1524a0cc9d14.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/menu/Icons_Essential/v1.2/Spritesheet/IconsEssential.png"
-dest_files=["res://.godot/imported/IconsEssential.png-bda358dc5b74ed3fdc9413ae828b02a3.ctex"]
+source_file="res://art/menu/Preview.png"
+dest_files=["res://.godot/imported/Preview.png-95fd88741038f484424a1524a0cc9d14.ctex"]
 
 [params]
 

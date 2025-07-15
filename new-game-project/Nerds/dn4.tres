@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_vsu2k")
-arreglo_de_textos = PackedStringArray("Perdon, tengo tu hoja. Te la voy a dar, pero ayudame porfa")
+arreglo_de_textos = PackedStringArray("¡Gracias por ayudarme!", "¡Mucha suerte con la busqueda!")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"

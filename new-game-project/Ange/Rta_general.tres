@@ -16,6 +16,7 @@ script = ExtResource("1_7yv0c")
 texto = "¡AH PERO QUE EXCELENTE!¿Algo más? ¿Mandarina la escaneó también?"
 dialogo_exitoso = SubResource("Resource_pam5u")
 array_eventos = Array[ExtResource("2_pcb0t")]([])
+decision_type = "Chat"
 metadata/_custom_type_script = "uid://bxesqyur17jig"
 
 [sub_resource type="Resource" id="Resource_5eiuy"]
@@ -35,6 +36,7 @@ script = ExtResource("1_7yv0c")
 texto = "Mandarina. ¿El gato?. ¿Es un chiste?"
 dialogo_exitoso = SubResource("Resource_dc3sq")
 array_eventos = Array[ExtResource("2_pcb0t")]([])
+decision_type = "Chat"
 metadata/_custom_type_script = "uid://bxesqyur17jig"
 
 [sub_resource type="Resource" id="Resource_j7qbr"]
@@ -54,6 +56,7 @@ script = ExtResource("1_7yv0c")
 texto = "¡¿Desapareció?! ¡¿Cómo es posible?! ¿Y si alguien la encuentra y la publica en internet? ¡Sería una catástrofe!"
 dialogo_exitoso = SubResource("Resource_sj8pg")
 array_eventos = Array[ExtResource("2_pcb0t")]([])
+decision_type = "Chat"
 metadata/_custom_type_script = "uid://bxesqyur17jig"
 
 [sub_resource type="Resource" id="Resource_n05pm"]

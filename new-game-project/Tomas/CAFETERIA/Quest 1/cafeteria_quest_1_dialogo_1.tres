@@ -9,6 +9,7 @@
 script = ExtResource("1_52r1a")
 texto = "Está bien, te voy a ayudar.."
 array_eventos = Array[ExtResource("2_fttl0")]([])
+decision_type = "Chat"
 metadata/_custom_type_script = "uid://bxesqyur17jig"
 
 [sub_resource type="Resource" id="Resource_sk5yx"]

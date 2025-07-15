@@ -59,14 +59,14 @@ func add_quest(quest: Quest) -> void:
 		taken_quests.append(quest)
 		if quest.is_secondary and active_secondary_quest == null:
 			active_secondary_quest = quest
-			#set_secondary(quest.title, quest.get_current_step().text_to_do)
+			set_secondary(quest.title, quest.get_current_step().text_to_do)
 			new_active_secondary_quest.emit(quest)
 		else:
 			if !quest.is_secondary and active_primary_quest == null:
 				active_primary_quest = quest
-			#set_main(quest.title, quest.get_current_step().text_to_do)
+			set_main(quest.title, quest.get_current_step().text_to_do)
 		quest_updated.emit(quest)
-		#$CanvasLayer/CheckButton.visible = true
+		$CanvasLayer/CheckButton.visible = true
 		
 func on_event_added(event: String) -> void:
 	for quest in taken_quests:
@@ -93,7 +93,7 @@ func _on_menu_secondary_quest_picked(title: String) -> void:
 	var picked_quest : Quest = get_quest_by_title(title)
 	if picked_quest != active_secondary_quest:
 		active_secondary_quest = picked_quest
-		#set_secondary(picked_quest.title, picked_quest.get_current_step().text_to_do)
+		set_secondary(picked_quest.title, picked_quest.get_current_step().text_to_do)
 		quest_updated.emit(picked_quest)
 		
 func finished_level():
@@ -101,17 +101,17 @@ func finished_level():
 	
 
 
-#func _on_check_button_toggled(toggled_on: bool) -> void:
-	#if toggled_on == true :
-		#quests_info.visible = true
-	#else :
-		#quests_info.visible = false
+func _on_check_button_toggled(toggled_on: bool) -> void:
+	if toggled_on == true :
+		quests_info.visible = true
+	else :
+		quests_info.visible = false
 
-#func update_quest(quest: Quest) -> void:
-	## Si la quest es la principal activa, actualizamos su UI
-	#if quest == active_primary_quest:
-		#set_main(quest.title, quest.get_current_step().text_to_do)
-#
-	## Si es la secundaria activa, actualizamos su UI también
-	#elif quest == active_secondary_quest:
-		#set_secondary(quest.title, quest.get_current_step().text_to_do)
+func update_quest(quest: Quest) -> void:
+	# Si la quest es la principal activa, actualizamos su UI
+	if quest == active_primary_quest:
+		set_main(quest.title, quest.get_current_step().text_to_do)
+
+	# Si es la secundaria activa, actualizamos su UI también
+	elif quest == active_secondary_quest:
+		set_secondary(quest.title, quest.get_current_step().text_to_do)

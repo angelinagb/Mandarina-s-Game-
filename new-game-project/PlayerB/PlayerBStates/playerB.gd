@@ -11,6 +11,7 @@ class_name PlayerB extends CharacterBody2D
 @onready var this = $"."
 @onready var state_machine = $StateMachine
 @onready var joystick: Node2D = $Joystick
+@onready var camera_2d: Camera2D = $Camera2D
 
 
 var facing_direction = Vector2(0, 1) 
@@ -80,3 +81,6 @@ func start_audio():
 	
 func stop_audio():
 	steps.stop()
+
+func default_camera_zoom():
+	camera_2d.zoom = Vector2(1,1)

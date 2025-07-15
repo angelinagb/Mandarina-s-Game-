@@ -43,7 +43,6 @@ offset_left = 1.0
 offset_top = 24.0
 offset_right = 151.0
 offset_bottom = 126.0
-scale = Vector2(0.658435, 0.667929)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
@@ -100,10 +99,11 @@ label_settings = SubResource("LabelSettings_bdoti")
 
 [node name="CheckButton" type="CheckButton" parent="CanvasLayer"]
 visible = false
-offset_left = 24.0
-offset_right = 126.0
-offset_bottom = 31.0
-scale = Vector2(0.4983, 0.781701)
-text = "Quests"
+offset_left = -1.0
+offset_top = -7.0
+offset_right = 153.0
+offset_bottom = 49.0
+button_pressed = true
+text = "Show Active Quests"
 
 [connection signal="toggled" from="CanvasLayer/CheckButton" to="." method="_on_check_button_toggled"]

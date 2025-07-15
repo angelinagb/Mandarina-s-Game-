@@ -11,6 +11,7 @@ script = ExtResource("1_y2qf0")
 texto = "¡Eso es excelente! "
 dialogo_exitoso = ExtResource("3_33efu")
 array_eventos = Array[ExtResource("2_w1nvl")]([])
+decision_type = "Chat"
 metadata/_custom_type_script = "uid://bxesqyur17jig"
 
 [sub_resource type="Resource" id="Resource_ejfml"]
@@ -18,6 +19,7 @@ script = ExtResource("1_y2qf0")
 texto = "¡Genial! Pero, de que situación hablás?"
 dialogo_exitoso = ExtResource("3_33efu")
 array_eventos = Array[ExtResource("2_w1nvl")]([])
+decision_type = "Chat"
 metadata/_custom_type_script = "uid://bxesqyur17jig"
 
 [sub_resource type="Resource" id="Resource_chndk"]
