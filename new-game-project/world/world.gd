@@ -125,6 +125,8 @@ func _on_interactable_interacted(interactable: Interactable):
 			await _on_npc_talked_to(interactable)
 		"puzzle":
 			await _on_puzzle_begin(interactable)
+		"activator":
+			await _on_activator_activate(interactable)
 		_:
 			print("no tengo interactuable" + interactable.my_type)
 	
@@ -145,7 +147,6 @@ func _on_transitioner_activated(transitioner: Transitioner) -> void:
 
 func _on_npc_talked_to(npc: Npc) -> void:
 	npc.startDialogue()
-	print("hablando con npc---")
 	await npc.dialogue_ended
 	if npc.quest_available():
 		npc.take_quest()
@@ -207,7 +208,9 @@ func on_puzzle_solved(Reward: String) :
 func _on_quest_begin(interactable: Interactable):
 	quest.add_quest(interactable.the_quest)
 
-
+func _on_activator_activate(interactable: Activator):
+	#QueueManager.enqueue_event(interactable.activable)
+	pass
 #func _on_inventory_manager_item_updated(item: Dictionary) -> void:
 	#pass # Replace with function body.
 #
@@ -221,5 +224,5 @@ func _on_quest_begin(interactable: Interactable):
 	
 
 
-func _on_menu_quest_updated(quest_upd: Quest) -> void:
-	quest.update_quest(quest_upd)
+#func _on_menu_quest_updated(quest_upd: Quest) -> void:
+	#quest.update_quest(quest_upd)

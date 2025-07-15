@@ -1,4 +1,4 @@
-extends Interactable
+class_name Activator extends Interactable
 
 @export var activable : PackedScene
 
@@ -24,8 +24,9 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 func interact():
 		QueueManager.enqueue_event(activable)
-		await QueueManager.finished
 		interacted.emit(self)
+		print("interactuo")
 		
 func get_type()  -> String :
 	return my_type
+	

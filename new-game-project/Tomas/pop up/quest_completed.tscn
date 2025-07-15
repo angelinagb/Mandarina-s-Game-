@@ -96,6 +96,7 @@ _data = {
 
 [node name="QuestCompleted" type="CanvasLayer"]
 process_mode = 3
+layer = 12
 script = ExtResource("1_7a1uo")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]

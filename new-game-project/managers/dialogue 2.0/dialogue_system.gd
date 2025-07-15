@@ -59,7 +59,7 @@ func mostrar_decision():
 	while i < decision_actual.get_texto_opciones().size():
 		#CREO UN BOTON POR CADA DECISION Y CONECTO AL EVENTO
 		aux_boton = boton_decision.instantiate()
-		aux_boton.inicializar(decision_actual.get_texto_opciones()[i],i)
+		aux_boton.inicializar(decision_actual.get_texto_opciones()[i],i,decision_actual.get_type_decision_elegida(i))
 		aux_boton.boton_decision_elegido.connect(_on_boton_decision_pressed)
 		v_box_container.add_child(aux_boton)
 		i += 1
@@ -157,6 +157,7 @@ func cambiar_a_modo_conversacion(): #resetea el cuadro de dialogo
 	rich_text_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	rich_text_label.add_theme_font_size_override("normal_font_size",18)
 	rich_text_label.custom_minimum_size = Vector2(0,52)
+	rich_text_label.add_theme_font_override("normal_font",preload("res://art/Fonts/Audiowide-Regular.ttf"))
 	v_box_container.add_child(rich_text_label)
 
 	

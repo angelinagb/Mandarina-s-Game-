@@ -16,6 +16,7 @@ script = ExtResource("1_nbibq")
 texto = "Que raro.."
 dialogo_exitoso = SubResource("Resource_nbibq")
 array_eventos = Array[ExtResource("2_gxe5n")]([])
+decision_type = "Chat"
 metadata/_custom_type_script = "uid://bxesqyur17jig"
 
 [sub_resource type="Resource" id="Resource_gxe5n"]
@@ -29,6 +30,7 @@ script = ExtResource("1_nbibq")
 texto = "Siempre dije que no hay que depender de la tecnología"
 dialogo_exitoso = SubResource("Resource_gxe5n")
 array_eventos = Array[ExtResource("2_gxe5n")]([])
+decision_type = "Chat"
 metadata/_custom_type_script = "uid://bxesqyur17jig"
 
 [sub_resource type="Resource" id="Resource_83yrj"]

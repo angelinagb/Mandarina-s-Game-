@@ -6,7 +6,7 @@
 tiempo_que_aparece = 2.0
 
 [node name="Titulo" parent="Control/PanelContainer/MarginContainer/VBoxContainer" index="0"]
-text = "🔒Puerta Bloqueada "
+text = "🔒Area Bloqueada "
 
 [node name="Descripcion" parent="Control/PanelContainer/MarginContainer/VBoxContainer" index="1"]
 text = "Sigue avanzando para desbloquear

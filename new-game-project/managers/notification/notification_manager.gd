@@ -15,10 +15,12 @@ func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
 func enqueue_event(async_scene: PackedScene):
+	print_stack()
 	async_queue.append(async_scene)
 	if not is_playing:
 		_start_queue()
-		
+	else:
+		await QueueManager.finished
 func _start_queue():
 	is_playing = true
 	#no pausea arbol, ya que es asincronica la notificacion

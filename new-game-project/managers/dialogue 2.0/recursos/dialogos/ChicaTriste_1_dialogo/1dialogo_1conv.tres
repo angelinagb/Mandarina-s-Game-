@@ -1,9 +1,39 @@
-[gd_resource type="Resource" script_class="Dialogo" load_steps=2 format=3 uid="uid://dtig4xsv7ckdd"]
+[gd_resource type="Resource" script_class="Dialogo" load_steps=9 format=3 uid="uid://dtig4xsv7ckdd"]
 
+[ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="1_pbp6g"]
+[ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="2_e6o7h"]
 [ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="2_la1bs"]
+[ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="3_35w85"]
+
+[sub_resource type="Resource" id="Resource_pbp6g"]
+script = ExtResource("2_la1bs")
+arreglo_de_textos = PackedStringArray("¡Si! Pasando la escalera, la ultima puerta a la izquierda.")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[sub_resource type="Resource" id="Resource_e6o7h"]
+script = ExtResource("1_pbp6g")
+texto = "¿Sabés donde queda el laboratorio de seguridad e Higiene?"
+dialogo_exitoso = SubResource("Resource_pbp6g")
+array_eventos = Array[ExtResource("2_e6o7h")]([])
+decision_type = "Quest"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_35w85"]
+script = ExtResource("1_pbp6g")
+texto = "¡Nos vemos!"
+array_eventos = Array[ExtResource("2_e6o7h")]([])
+decision_type = "Quit"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_2pq64"]
+script = ExtResource("3_35w85")
+array_opciones = Array[ExtResource("1_pbp6g")]([SubResource("Resource_e6o7h"), SubResource("Resource_35w85")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
 
 [resource]
 script = ExtResource("2_la1bs")
-arreglo_de_textos = PackedStringArray("¡Mucha suerte en la busqueda!", "Cuando termines considerá ")
+arreglo_de_textos = PackedStringArray("¡Hola!")
+decision = SubResource("Resource_2pq64")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"

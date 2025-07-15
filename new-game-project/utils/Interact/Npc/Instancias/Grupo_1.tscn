@@ -11,6 +11,10 @@ id = "COFFEE_G1"
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_vhooq")
 
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0.333333, 0.333333)
+scale = Vector2(1.56482, 1.68381)
+
 [node name="Dialogo Quest" parent="." index="4"]
 vacio = true
 

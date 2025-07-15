@@ -11,6 +11,10 @@ id = "COFFEE_G2"
 scale = Vector2(0.175, 0.175)
 texture = ExtResource("2_lbk0d")
 
+[node name="Area2D" parent="." index="2"]
+position = Vector2(1.19209e-07, -60)
+scale = Vector2(6.40052, 5.19521)
+
 [node name="Dialogo Quest" parent="." index="4"]
 vacio = true
 

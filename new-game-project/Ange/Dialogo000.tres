@@ -5,6 +5,5 @@
 [resource]
 script = ExtResource("1_s31tr")
 arreglo_de_textos = PackedStringArray("Que raro que me hayan llamado hoy, ¿Ya habrán correjido la tesis?", "Espero que no me pidan que la suba al campus ni a ningun lado, a ver, si la leyeron saben porque ", "Ojala pueda terminar ya lo tramites para recibirme...")
-is_player_talking = false
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"

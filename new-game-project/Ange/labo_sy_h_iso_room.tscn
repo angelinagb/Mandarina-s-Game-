@@ -1,26 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://cr82lsk1vc42y"]
+[gd_scene load_steps=6 format=3 uid="uid://cr82lsk1vc42y"]
 
 [ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_bvjg6"]
 [ext_resource type="PackedScene" uid="uid://lpb6bguiyou2" path="res://Ange/labo_syh_base_tiles.tscn" id="2_8c415"]
-[ext_resource type="Script" uid="uid://cfep4ntd6srsb" path="res://Ange/labo_sy_h_iso_room.gd" id="2_kpvxe"]
 [ext_resource type="PackedScene" uid="uid://bd60j0ppl5sbm" path="res://Ange/franco_npc.tscn" id="3_kpvxe"]
+[ext_resource type="PackedScene" uid="uid://da3yrerllmlfw" path="res://IsoRooms/IsoRoom4-LabodeFisica/transitioner.tscn" id="4_xlrqw"]
+[ext_resource type="Resource" uid="uid://gv3afr554f23" path="res://Ange/QuestLaboSyH.tres" id="6_yacvt"]
 
 [node name="LaboSyH" instance=ExtResource("1_bvjg6")]
-script = ExtResource("2_kpvxe")
-room_id = "ROOM-LABOSYH"
 
 [node name="Labo_syh_base_tiles" parent="." index="0" instance=ExtResource("2_8c415")]
 
 [node name="defect" parent="Spawns" index="0"]
 position = Vector2(-217, 246)
 
+[node name="Transitioner" parent="Interactables/Transitioners" index="0" instance=ExtResource("4_xlrqw")]
+position = Vector2(-289, 248)
+rotation = 0.577697
+scale = Vector2(5.37969, -1.27588)
+room_id = "ROOM-ENTRADA"
+
 [node name="Npc_profe" parent="Interactables/Npcs" index="0" instance=ExtResource("3_kpvxe")]
 position = Vector2(-88, 6)
 scale = Vector2(2.5, 2.5)
+quest = ExtResource("6_yacvt")
 id = "PROFE_FRANCO_NPC"
 
 [node name="PlayerB" parent="Player" index="0"]
 position = Vector2(-263, 124)
 
+[connection signal="interacted" from="Interactables/Transitioners/Transitioner" to="." method="_on_interactable_interacted"]
 [connection signal="dialogue_ended" from="Interactables/Npcs/Npc_profe" to="." method="_on_npc_profe_dialogue_ended"]
 [connection signal="interacted" from="Interactables/Npcs/Npc_profe" to="." method="_on_interactable_interacted"]

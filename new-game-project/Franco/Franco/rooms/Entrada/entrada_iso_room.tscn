@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bq0g1jdkuqoe4"]
+[gd_scene load_steps=11 format=3 uid="uid://bq0g1jdkuqoe4"]
 
 [ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_jvyd0"]
-[ext_resource type="Script" uid="uid://b53ebtu66hrjq" path="res://Franco/Franco/rooms/Entrada/entrada_iso_room.gd" id="2_bg5nm"]
 [ext_resource type="PackedScene" uid="uid://cd4po1v8botyd" path="res://IsoRooms/IsoRoom0_Entrada/0_base_tiles_entrada.tscn" id="2_wxnbc"]
 [ext_resource type="PackedScene" uid="uid://b4nbf65ykv6m2" path="res://Franco/Franco/Npcs/AlumnoNro1/alumno_1-1.tscn" id="3_aafd0"]
 [ext_resource type="PackedScene" uid="uid://pgmbodsruy1l" path="res://Franco/Franco/rooms/Entrada/tr_ent_pas2.tscn" id="3_iyjjf"]
@@ -9,9 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://57n8nvjbm568" path="res://Franco/Franco/Npcs/AlumnoNro3/alumno_3-3.tscn" id="6_iyjjf"]
 [ext_resource type="PackedScene" uid="uid://bd8vu6dvsq1r1" path="res://utils/Interact/Transitioner/Instancias/trans_entrada_deptoal.tscn" id="6_wxnbc"]
 [ext_resource type="PackedScene" uid="uid://ilxqll2oo45m" path="res://Ange/entrada_pasillo.tscn" id="7_gko6f"]
+[ext_resource type="PackedScene" uid="uid://d2f2p7cl1qirc" path="res://Ange/terminal_sube.tscn" id="10_bg5nm"]
+[ext_resource type="PackedScene" uid="uid://bamrwyg31jnv4" path="res://Ange/sube.tscn" id="11_go8ah"]
 
 [node name="EntradaIsoRoom" instance=ExtResource("1_jvyd0")]
-script = ExtResource("2_bg5nm")
 
 [node name="Entrada" parent="." index="0" instance=ExtResource("2_wxnbc")]
 
@@ -19,14 +19,18 @@ script = ExtResource("2_bg5nm")
 position = Vector2(54, 73)
 rotation = 1.65441
 
-[node name="FROM-PAS2" type="Marker2D" parent="Spawns" index="1"]
+[node name="ROOM-LABOSYH" type="Marker2D" parent="Spawns" index="1"]
+position = Vector2(647, -700)
+rotation = 1.65441
+
+[node name="ROOM-PASILLO2" type="Marker2D" parent="Spawns" index="2"]
 position = Vector2(968, -488)
 
-[node name="FROM-SCOM" type="Marker2D" parent="Spawns" index="2"]
+[node name="ROOM-SALACOMUN" type="Marker2D" parent="Spawns" index="3"]
 position = Vector2(196, -568)
 
 [node name="Tr-Ent-Pas2" parent="Interactables/Transitioners" index="0" instance=ExtResource("3_iyjjf")]
-position = Vector2(1064, -541)
+position = Vector2(1045, -536)
 rotation = 2.10737
 scale = Vector2(1.2269, 4.19627)
 
@@ -38,15 +42,21 @@ room_id = "VACIO"
 
 [node name="Transitioner" parent="Interactables/Transitioners" index="2" instance=ExtResource("7_gko6f")]
 z_index = 30
-position = Vector2(436, 78.9999)
+position = Vector2(403, 62)
 rotation = -0.449199
 scale = Vector2(4.54762, -1.30585)
 room_id = "ROOM-6"
 
-[node name="trans_entrada_labosyh" parent="Interactables/Transitioners" index="3" instance=ExtResource("6_wxnbc")]
+[node name="Transitioner2" parent="Interactables/Transitioners" index="3" instance=ExtResource("7_gko6f")]
+z_index = 30
+position = Vector2(577, -490)
+rotation = -0.449199
+scale = Vector2(4.54762, -1.30585)
+
+[node name="trans_entrada_labosyh" parent="Interactables/Transitioners" index="4" instance=ExtResource("6_wxnbc")]
 position = Vector2(681, -726)
 rotation = 0.499486
-scale = Vector2(4.39521, -1.36154)
+scale = Vector2(4.37436, -1.36276)
 room_id = "ROOM-LABOSYH"
 id = "Trans_LABOSYH"
 
@@ -57,13 +67,21 @@ scale = Vector2(1.41777, 1.54542)
 [node name="AlumnoNro3-3" parent="Interactables/Npcs" index="1" instance=ExtResource("6_iyjjf")]
 position = Vector2(226, -503)
 scale = Vector2(1.09628, 1.31673)
+id = "Al3-3"
+
+[node name="Terminal_sube" parent="Interactables" index="3" instance=ExtResource("10_bg5nm")]
+position = Vector2(84, -316)
+scale = Vector2(0.288798, 0.217287)
+activable = ExtResource("11_go8ah")
 
 [node name="PlayerB" parent="Player" index="0"]
-position = Vector2(213, -263)
+position = Vector2(95, -168)
 
 [connection signal="interacted" from="Interactables/Transitioners/Tr-Ent-Pas2" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/Tr-Ent-Scom" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/Transitioner" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/Transitioner2" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/trans_entrada_labosyh" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/AlumnoNro1-1" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/AlumnoNro3-3" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Terminal_sube" to="." method="_on_interactable_interacted"]

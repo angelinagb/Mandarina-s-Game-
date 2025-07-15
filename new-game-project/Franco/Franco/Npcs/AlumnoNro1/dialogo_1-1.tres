@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_hhjfo")
-arreglo_de_textos = PackedStringArray("Que linda universidad", "la paso re bien aca")
+arreglo_de_textos = PackedStringArray("Que linda universidad...", "La paso re bien acá.")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"

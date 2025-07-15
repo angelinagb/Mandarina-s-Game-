@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://be24g1jx7m82l" path="res://Tomas/CAFETERIA/Quest 2/cafeteria_q2_dialogo_2.tres" id="6_nt8ji"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_edm0b"]
-size = Vector2(34.3333, 16.3333)
+size = Vector2(16, 28.3333)
 
 [node name="Nerd" instance=ExtResource("1_iw10b")]
 script = ExtResource("2_au8og")
@@ -23,7 +23,7 @@ scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_cg5l6")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(4.16667, 7.5)
+position = Vector2(0.916658, -3)
 shape = SubResource("RectangleShape2D_edm0b")
 
 [node name="Dialogo Quest" parent="." index="4"]

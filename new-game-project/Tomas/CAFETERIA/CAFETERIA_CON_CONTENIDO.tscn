@@ -74,7 +74,7 @@ position = Vector2(46, -61)
 position = Vector2(-457, -127)
 
 [node name="TRANS R2 -> R3" parent="Interactables/Transitioners" index="0"]
-process_mode = 4
+process_mode = 3
 position = Vector2(-470, -158)
 rotation = -0.489665
 scale = Vector2(5.64316, -0.846016)

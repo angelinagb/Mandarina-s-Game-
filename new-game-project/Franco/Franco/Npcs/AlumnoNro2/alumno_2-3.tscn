@@ -11,6 +11,10 @@ scale = Vector2(1.2, 1.2)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_ensao")
 
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0.833332, -2.5)
+scale = Vector2(1.30175, 1.3181)
+
 [node name="Dialogo Quest" parent="." index="4"]
 vacio = true
 

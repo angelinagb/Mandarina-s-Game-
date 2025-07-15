@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://buhcppmxmcwpn"]
+
+[ext_resource type="PackedScene" uid="uid://cyif0m3rl1hoj" path="res://visuals/Notificacion GUI/Notification.tscn" id="1_rc211"]
+
+[node name="Mision_update_notification" instance=ExtResource("1_rc211")]
+
+[node name="Titulo" parent="Control/PanelContainer/MarginContainer/VBoxContainer" index="0"]
+text = "¡Mision Actualizada!"

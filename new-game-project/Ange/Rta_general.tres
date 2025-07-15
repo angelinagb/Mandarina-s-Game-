@@ -44,7 +44,7 @@ metadata/_custom_type_script = "uid://ceg75660dlfjc"
 
 [sub_resource type="Resource" id="Resource_sj8pg"]
 script = ExtResource("1_pft6n")
-arreglo_de_textos = PackedStringArray("Entiendo tu frustracioó, pero no la encontró alguien... Si no .. \"algo\".", "Parece que Mandarina esparció tu tesis por toda la facultad, hay hojas por todos lados, haz escrito bastante.")
+arreglo_de_textos = PackedStringArray("Entiendo tu frustración, pero no la encontró alguien... Si no .. \"algo\".", "Parece que Mandarina esparció tu tesis por toda la facultad, hay hojas por todos lados, haz escrito bastante.")
 decision = SubResource("Resource_j7qbr")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"

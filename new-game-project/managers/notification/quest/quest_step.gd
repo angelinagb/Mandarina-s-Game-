@@ -21,7 +21,6 @@ func set_interactable_interacted(id: String) -> bool:
 		if is_completed():
 			step_completed.emit()
 			on_completed()
-			print("step completed")
 	return response
 
 func on_completed():

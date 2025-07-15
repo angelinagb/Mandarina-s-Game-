@@ -38,21 +38,19 @@ script = ExtResource("1_l277l")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Quests Info" type="VBoxContainer" parent="CanvasLayer"]
-visible = false
 custom_minimum_size = Vector2(150, 100)
-anchors_preset = -1
-anchor_top = 0.361
-anchor_right = 0.392
-anchor_bottom = 0.515
-offset_top = 0.0399933
-offset_right = 16.4
-offset_bottom = 46.6
-grow_vertical = 2
-scale = Vector2(0.988699, 1.0566)
+offset_left = 1.0
+offset_top = 24.0
+offset_right = 151.0
+offset_bottom = 126.0
+scale = Vector2(0.658435, 0.667929)
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Quests Info"]
 visible = false
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_l277l")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Quests Info/PanelContainer"]
@@ -67,10 +65,12 @@ layout_mode = 2
 
 [node name="Titulo" type="Label" parent="CanvasLayer/Quests Info/PanelContainer/MarginContainer/Active Main Quest"]
 layout_mode = 2
+text = "TItulo Quest"
 label_settings = SubResource("LabelSettings_05jgr")
 
 [node name="Step" type="Label" parent="CanvasLayer/Quests Info/PanelContainer/MarginContainer/Active Main Quest"]
 layout_mode = 2
+text = "PasoPasoPaso"
 label_settings = SubResource("LabelSettings_iipj2")
 
 [node name="PanelContainer2" type="PanelContainer" parent="CanvasLayer/Quests Info"]
@@ -90,17 +90,20 @@ layout_mode = 2
 
 [node name="Titulo" type="Label" parent="CanvasLayer/Quests Info/PanelContainer2/MarginContainer/Active Secondary Quest"]
 layout_mode = 2
+text = "Titulo QUest"
 label_settings = SubResource("LabelSettings_4cjpl")
 
 [node name="Quest" type="Label" parent="CanvasLayer/Quests Info/PanelContainer2/MarginContainer/Active Secondary Quest"]
 layout_mode = 2
+text = "PASOPASOPASO"
 label_settings = SubResource("LabelSettings_bdoti")
 
 [node name="CheckButton" type="CheckButton" parent="CanvasLayer"]
 visible = false
-offset_left = -1.0
-offset_top = 97.0
-offset_right = 91.0
-offset_bottom = 128.0
+offset_left = 24.0
+offset_right = 126.0
+offset_bottom = 31.0
+scale = Vector2(0.4983, 0.781701)
+text = "Quests"
 
 [connection signal="toggled" from="CanvasLayer/CheckButton" to="." method="_on_check_button_toggled"]
