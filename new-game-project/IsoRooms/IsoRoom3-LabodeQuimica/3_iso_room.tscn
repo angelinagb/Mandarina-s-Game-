@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://cedn2qcbe0ghs"]
+
+[ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_sskki"]
+[ext_resource type="PackedScene" uid="uid://dmxwvsy6e1cx8" path="res://Franco/Franco/Items/item_yerba.tscn" id="3_sunh3"]
+[ext_resource type="PackedScene" uid="uid://cl6b1ih87sy2a" path="res://IsoRooms/IsoRoom3-LabodeQuimica/iso_room_base3.tscn" id="4_kwovi"]
+[ext_resource type="PackedScene" uid="uid://biaeia3f0l7xn" path="res://utils/Interact/Transitioner/Instancias/trans_r3_r2.tscn" id="4_v2ge4"]
+[ext_resource type="PackedScene" uid="uid://b7vuer4est3c1" path="res://utils/Interact/Npc/Instancias/Alumno_1.tscn" id="5_v2ge4"]
+[ext_resource type="PackedScene" uid="uid://dp1j1sh86uh60" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleQuimica/puzzle_quimica.tscn" id="6_sunh3"]
+
+[node name="IsoRoom" instance=ExtResource("1_sskki")]
+y_sort_enabled = true
+metadata/_edit_lock_ = true
+
+[node name="BaseTiles" parent="." index="0" instance=ExtResource("4_kwovi")]
+position = Vector2(-12, 7)
+script = null
+
+[node name="defect" parent="Spawns" index="0"]
+position = Vector2(16, 287)
+
+[node name="ROOM-5" type="Marker2D" parent="Spawns" index="1"]
+position = Vector2(353, 304)
+
+[node name="Yerba" parent="Interactables/Items" index="0" instance=ExtResource("3_sunh3")]
+position = Vector2(155, 177)
+
+[node name="TRANS R3 -> R2" parent="Interactables/Transitioners" index="0" instance=ExtResource("4_v2ge4")]
+position = Vector2(411, 451)
+rotation = -0.423137
+scale = Vector2(6.8216, -4.13405)
+room_id = "ROOM-ENTRADA"
+
+[node name="Alumno 1" parent="Interactables/Npcs" index="0" instance=ExtResource("5_v2ge4")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-148, 158)
+rotation = -0.00162853
+scale = Vector2(-1.0321, 1.53535)
+puzzle = ExtResource("6_sunh3")
+
+[node name="PlayerB" parent="Player" index="0"]
+position = Vector2(-20, 247)
+
+[connection signal="interacted" from="Interactables/Transitioners/TRANS R3 -> R2" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/Alumno 1" to="." method="_on_interactable_interacted"]

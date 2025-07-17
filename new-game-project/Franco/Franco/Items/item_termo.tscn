@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmnx3aqcbtgld"]
+
+[ext_resource type="PackedScene" uid="uid://3v1aqvnidp5b" path="res://utils/Interact/Item/item.tscn" id="1_y0iml"]
+[ext_resource type="Texture2D" uid="uid://sux76uleluc3" path="res://Franco/Franco/Items/resources/termo.png" id="2_rmf60"]
+[ext_resource type="Shape2D" uid="uid://d3nit1u2e8dha" path="res://Franco/Franco/rooms/area_tile.tres" id="3_syvek"]
+
+[node name="Termo" instance=ExtResource("1_y0iml")]
+id = "Termo"
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_rmf60")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 0)
+rotation = 0.453786
+skew = 0.663225
+shape = ExtResource("3_syvek")

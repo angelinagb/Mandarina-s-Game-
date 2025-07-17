@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2qpyqv0pdr3h"]
+
+[ext_resource type="PackedScene" uid="uid://bn6hjmulrrmiu" path="res://Franco/Franco/AreaInteractuable/area_puerta_cerrada.tscn" id="1_0hmd3"]
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="2_cldh5"]
+
+[sub_resource type="Resource" id="Resource_6y67i"]
+script = ExtResource("2_cldh5")
+arreglo_de_textos = PackedStringArray("Que raro, un extintor en el piso.")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[node name="AreaExtintor" instance=ExtResource("1_0hmd3")]
+
+[node name="Dialogo Default" parent="." index="5"]
+dialogueResource = SubResource("Resource_6y67i")

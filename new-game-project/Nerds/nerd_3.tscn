@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://1wg7fcglnnlq"]
+
+[ext_resource type="PackedScene" uid="uid://bh12kbhvaf3bl" path="res://Tomas/CAFETERIA/Nerd_Q2.tscn" id="1_1p111"]
+[ext_resource type="PackedScene" uid="uid://70yn6ahvrpxl" path="res://Nerds/nerd3dv.tscn" id="2_lnoj8"]
+[ext_resource type="Texture2D" uid="uid://dm6p8h3wixdo4" path="res://Nerds/AlumnoNro2.png" id="3_2jkw2"]
+[ext_resource type="Shape2D" uid="uid://d3nit1u2e8dha" path="res://Franco/Franco/rooms/area_tile.tres" id="4_2jkw2"]
+[ext_resource type="Resource" uid="uid://ddvutqjo45no4" path="res://Nerds/dn3.tres" id="4_sksg0"]
+
+[node name="Nerd3" instance=ExtResource("1_1p111")]
+dialogo_victoria = ExtResource("2_lnoj8")
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_2jkw2")
+
+[node name="Area2D" parent="." index="2"]
+position = Vector2(0, 32)
+scale = Vector2(0.7, 0.7)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 0)
+rotation = 0.453786
+skew = 0.663225
+shape = ExtResource("4_2jkw2")
+
+[node name="StaticBody2D" parent="." index="3"]
+position = Vector2(0, 32)
+scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(0, 0)
+rotation = 0.453786
+scale = Vector2(1, 1)
+skew = 0.663225
+shape = ExtResource("4_2jkw2")
+
+[node name="Dialogo Default" parent="." index="5"]
+dialogueResource = ExtResource("4_sksg0")

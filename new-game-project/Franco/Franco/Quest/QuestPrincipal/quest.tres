@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=4 format=3 uid="uid://jx68r58cphfk"]
+
+[ext_resource type="Script" uid="uid://cj81x6yti6bmb" path="res://managers/notification/quest/quest.gd" id="1_5apkb"]
+[ext_resource type="Script" uid="uid://c0nhxnmv56tui" path="res://managers/notification/quest/quest_step.gd" id="2_oarsi"]
+[ext_resource type="Resource" uid="uid://uman6u1o3by8" path="res://Franco/Franco/Quest/QuestPrincipal/step1.tres" id="3_vgga4"]
+
+[resource]
+script = ExtResource("1_5apkb")
+title = "Encontrar tesis."
+steps = Array[ExtResource("2_oarsi")]([ExtResource("3_vgga4")])
+current_step = 0
+is_secondary = true
+metadata/_custom_type_script = "uid://cj81x6yti6bmb"

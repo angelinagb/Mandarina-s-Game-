@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjj04qkbhrghk"]
+
+[ext_resource type="PackedScene" uid="uid://dihymy0nqn7ab" path="res://Tomas/pop up/quest_completed.tscn" id="1_gifo1"]
+
+[node name="PuzzleCompleted" instance=ExtResource("1_gifo1")]
+
+[node name="Titulo" parent="PanelContainer/PanelContainer/VBoxContainer" index="0"]
+text = "PUZZLE COMPLETADO!"
+
+[node name="Nombre Quest" parent="PanelContainer/PanelContainer/VBoxContainer" index="1"]
+text = "PUZZLE COMPLETADO!"

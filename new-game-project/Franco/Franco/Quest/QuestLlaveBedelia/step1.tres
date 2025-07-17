@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="QuestStep" load_steps=2 format=3 uid="uid://rf30wjaxxsxa"]
+
+[ext_resource type="Script" uid="uid://c0nhxnmv56tui" path="res://managers/notification/quest/quest_step.gd" id="1_rp2pk"]
+
+[resource]
+script = ExtResource("1_rp2pk")
+text_to_do = "Tengo que conseguir las llaves de Bedelia."
+necessary_interactables = {
+"Llave1": false,
+"Llave2": false,
+"Llave3": false,
+"Llave4": false,
+"Llave5": false
+}
+metadata/_custom_type_script = "uid://c0nhxnmv56tui"

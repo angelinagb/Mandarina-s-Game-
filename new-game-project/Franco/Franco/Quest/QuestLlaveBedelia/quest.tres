@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=3 format=3 uid="uid://dp3o8gxnjrlp"]
+
+[ext_resource type="Script" uid="uid://cj81x6yti6bmb" path="res://managers/notification/quest/quest.gd" id="1_6am32"]
+[ext_resource type="Script" uid="uid://c0nhxnmv56tui" path="res://managers/notification/quest/quest_step.gd" id="2_7sqpv"]
+
+[resource]
+script = ExtResource("1_6am32")
+title = "Llaves Bedelia."
+steps = Array[ExtResource("2_7sqpv")]([null])
+current_step = 0
+is_secondary = true
+metadata/_custom_type_script = "uid://cj81x6yti6bmb"

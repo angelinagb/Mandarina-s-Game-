@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://5x17l54uy2sg"]
+
+[ext_resource type="PackedScene" uid="uid://bh12kbhvaf3bl" path="res://Tomas/CAFETERIA/Nerd_Q2.tscn" id="1_xovak"]
+[ext_resource type="PackedScene" uid="uid://dp1j1sh86uh60" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleQuimica/puzzle_quimica.tscn" id="2_4r2bd"]
+[ext_resource type="PackedScene" uid="uid://dwak37e1gsj" path="res://Nerds/nerd4dv.tscn" id="3_tdshe"]
+[ext_resource type="Texture2D" uid="uid://bkhuoqtvtfh4p" path="res://Nerds/AlumnoNro3.png" id="4_o6fue"]
+[ext_resource type="Resource" uid="uid://dy3bdvrg8p02e" path="res://Nerds/dn4.tres" id="5_rt6xu"]
+[ext_resource type="Shape2D" uid="uid://d3nit1u2e8dha" path="res://Franco/Franco/rooms/area_tile.tres" id="5_tdshe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6fue"]
+size = Vector2(140, 140)
+
+[node name="Nerd4" instance=ExtResource("1_xovak")]
+puzzle = ExtResource("2_4r2bd")
+dialogo_victoria = ExtResource("3_tdshe")
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_o6fue")
+
+[node name="Area2D" parent="." index="2"]
+position = Vector2(0, 32)
+scale = Vector2(0.7, 0.7)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 0)
+rotation = 0.453786
+skew = 0.663225
+shape = ExtResource("5_tdshe")
+
+[node name="StaticBody2D" parent="." index="3"]
+position = Vector2(0, 32)
+scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(0, 0)
+rotation = 0.453786
+scale = Vector2(1, 1)
+skew = 0.663225
+shape = SubResource("RectangleShape2D_o6fue")
+
+[node name="Dialogo Default" parent="." index="5"]
+dialogueResource = ExtResource("5_rt6xu")

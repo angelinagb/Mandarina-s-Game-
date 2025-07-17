@@ -1,0 +1,411 @@
+[gd_scene load_steps=9 format=3 uid="uid://ksp6solj3qvd"]
+
+[ext_resource type="Script" uid="uid://w2xwgdqdbaqg" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleCandado/puzzle_candado.gd" id="1_jekc6"]
+[ext_resource type="FontFile" uid="uid://ctwexxmrsmp1g" path="res://utils/Interact/Puzzle/puzzles/font/LuckiestGuy-Regular.ttf" id="2_bw8q6"]
+[ext_resource type="Texture2D" uid="uid://d3v0pb5vr3qwm" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleCandado/fondo.png" id="2_jekc6"]
+[ext_resource type="Script" uid="uid://oowib2ek1red" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleCandado/control.gd" id="2_rup32"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58q44"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_unhuv"]
+bg_color = Color(0.0392157, 0.0980392, 0.294118, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3iwr8"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_73crn"]
+Button/colors/font_color = Color(1, 0.647059, 0, 1)
+Button/constants/outline_size = 10
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("2_bw8q6")
+Button/styles/normal = SubResource("StyleBoxFlat_58q44")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/constants/outline_size = 10
+Label/font_sizes/font_size = 64
+Label/fonts/font = ExtResource("2_bw8q6")
+PanelBackground/base_type = &"Panel"
+PanelBackground/styles/panel = SubResource("StyleBoxFlat_unhuv")
+PanelDigit/base_type = &"Panel"
+PanelDigit/styles/panel = SubResource("StyleBoxFlat_3iwr8")
+
+[node name="PuzzleCandado" type="CanvasLayer"]
+script = ExtResource("1_jekc6")
+item_id = "Capitulo5"
+
+[node name="Background" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_73crn")
+theme_type_variation = &"PanelBackground"
+
+[node name="Texture" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jekc6")
+expand_mode = 2
+
+[node name="FirstDigit" type="Panel" parent="Background"]
+layout_mode = 1
+offset_left = 209.0
+offset_top = 217.0
+offset_right = 293.0
+offset_bottom = 296.0
+theme_type_variation = &"PanelDigit"
+script = ExtResource("2_rup32")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/FirstDigit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/FirstDigit/MarginContainer"]
+layout_mode = 2
+
+[node name="0" type="Label" parent="Background/FirstDigit/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+
+[node name="1" type="Label" parent="Background/FirstDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "1"
+
+[node name="2" type="Label" parent="Background/FirstDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "2"
+
+[node name="3" type="Label" parent="Background/FirstDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "3"
+
+[node name="4" type="Label" parent="Background/FirstDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "4"
+
+[node name="5" type="Label" parent="Background/FirstDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "5"
+
+[node name="6" type="Label" parent="Background/FirstDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "6"
+
+[node name="7" type="Label" parent="Background/FirstDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "7"
+
+[node name="8" type="Label" parent="Background/FirstDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "8"
+
+[node name="9" type="Label" parent="Background/FirstDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "9"
+
+[node name="SecondDigit" type="Panel" parent="Background"]
+layout_mode = 1
+offset_left = 306.0
+offset_top = 216.0
+offset_right = 393.0
+offset_bottom = 295.0
+theme_type_variation = &"PanelDigit"
+script = ExtResource("2_rup32")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/SecondDigit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/SecondDigit/MarginContainer"]
+layout_mode = 2
+
+[node name="0" type="Label" parent="Background/SecondDigit/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+
+[node name="1" type="Label" parent="Background/SecondDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "1"
+
+[node name="2" type="Label" parent="Background/SecondDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "2"
+
+[node name="3" type="Label" parent="Background/SecondDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "3"
+
+[node name="4" type="Label" parent="Background/SecondDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "4"
+
+[node name="5" type="Label" parent="Background/SecondDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "5"
+
+[node name="6" type="Label" parent="Background/SecondDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "6"
+
+[node name="7" type="Label" parent="Background/SecondDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "7"
+
+[node name="8" type="Label" parent="Background/SecondDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "8"
+
+[node name="9" type="Label" parent="Background/SecondDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "9"
+
+[node name="ThirdDigit" type="Panel" parent="Background"]
+layout_mode = 1
+offset_left = 407.0
+offset_top = 216.0
+offset_right = 494.0
+offset_bottom = 295.0
+theme_type_variation = &"PanelDigit"
+script = ExtResource("2_rup32")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/ThirdDigit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/ThirdDigit/MarginContainer"]
+layout_mode = 2
+
+[node name="0" type="Label" parent="Background/ThirdDigit/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+
+[node name="1" type="Label" parent="Background/ThirdDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "1"
+
+[node name="2" type="Label" parent="Background/ThirdDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "2"
+
+[node name="3" type="Label" parent="Background/ThirdDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "3"
+
+[node name="4" type="Label" parent="Background/ThirdDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "4"
+
+[node name="5" type="Label" parent="Background/ThirdDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "5"
+
+[node name="6" type="Label" parent="Background/ThirdDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "6"
+
+[node name="7" type="Label" parent="Background/ThirdDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "7"
+
+[node name="8" type="Label" parent="Background/ThirdDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "8"
+
+[node name="9" type="Label" parent="Background/ThirdDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "9"
+
+[node name="FourthDigit" type="Panel" parent="Background"]
+layout_mode = 1
+offset_left = 508.0
+offset_top = 216.0
+offset_right = 593.0
+offset_bottom = 296.0
+theme_type_variation = &"PanelDigit"
+script = ExtResource("2_rup32")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/FourthDigit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/FourthDigit/MarginContainer"]
+layout_mode = 2
+
+[node name="0" type="Label" parent="Background/FourthDigit/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+
+[node name="1" type="Label" parent="Background/FourthDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "1"
+
+[node name="2" type="Label" parent="Background/FourthDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "2"
+
+[node name="3" type="Label" parent="Background/FourthDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "3"
+
+[node name="4" type="Label" parent="Background/FourthDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "4"
+
+[node name="5" type="Label" parent="Background/FourthDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "5"
+
+[node name="6" type="Label" parent="Background/FourthDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "6"
+
+[node name="7" type="Label" parent="Background/FourthDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "7"
+
+[node name="8" type="Label" parent="Background/FourthDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "8"
+
+[node name="9" type="Label" parent="Background/FourthDigit/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "9"
+
+[node name="Result" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -32.0
+offset_right = 20.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Submit" type="Button" parent="Background"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -208.0
+offset_top = -77.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "¡INTENTAR!"
+
+[connection signal="pressed" from="Background/Submit" to="." method="_on_submit_pressed"]

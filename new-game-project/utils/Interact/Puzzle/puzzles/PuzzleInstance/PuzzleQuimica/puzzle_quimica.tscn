@@ -1,0 +1,270 @@
+[gd_scene load_steps=11 format=3 uid="uid://dp1j1sh86uh60"]
+
+[ext_resource type="Script" uid="uid://8l51kftvbjh" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleQuimica/puzzle_quimica.gd" id="1_b64x8"]
+[ext_resource type="Texture2D" uid="uid://m8tfot3ejea3" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleQuimica/tabla-periodica-grande-fondo-blanco-192641164.png" id="2_kfvf7"]
+[ext_resource type="FontFile" uid="uid://ctwexxmrsmp1g" path="res://utils/Interact/Puzzle/puzzles/font/LuckiestGuy-Regular.ttf" id="3_bqo13"]
+[ext_resource type="StyleBox" uid="uid://4gdf7mu15ywi" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleQuimica/resources/element_button_resource.tres" id="3_eieog"]
+[ext_resource type="StyleBox" uid="uid://bxc3bleqorwrs" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleQuimica/resources/menu_button_resource.tres" id="5_1a4iv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eieog"]
+bg_color = Color(0.0392157, 0.0980392, 0.294118, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_u7tt2"]
+font_size = 8
+font_color = Color(1, 0.647059, 0, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1a4iv"]
+bg_color = Color(0.0392157, 0.0980392, 0.294118, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_74gqc"]
+font = ExtResource("3_bqo13")
+font_size = 30
+font_color = Color(1, 0.647059, 0, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3jpu8"]
+font = ExtResource("3_bqo13")
+font_size = 64
+font_color = Color(1, 0.647059, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="PuzzleReaccionesQuimicas" type="CanvasLayer"]
+script = ExtResource("1_b64x8")
+item_id = "Capitulo1"
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_kfvf7")
+expand_mode = 2
+
+[node name="ButtonsTable" type="Node" parent="."]
+
+[node name="Control_C" type="Control" parent="ButtonsTable"]
+layout_mode = 3
+anchor_left = 0.711
+anchor_top = 0.158
+anchor_right = 0.764
+anchor_bottom = 0.249
+offset_left = 0.199951
+offset_top = 0.119999
+offset_right = -0.180054
+offset_bottom = 0.119987
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button_C" type="Button" parent="ButtonsTable/Control_C"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_bqo13")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = ExtResource("3_eieog")
+text = "C"
+
+[node name="Control_N" type="Control" parent="ButtonsTable"]
+layout_mode = 3
+anchor_left = 0.764
+anchor_top = 0.158
+anchor_right = 0.811
+anchor_bottom = 0.25
+offset_left = -0.200073
+offset_top = 0.119999
+offset_right = 0.199951
+
+[node name="Button_N" type="Button" parent="ButtonsTable/Control_N"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_bqo13")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = ExtResource("3_eieog")
+text = "N"
+
+[node name="Control_S" type="Control" parent="ButtonsTable"]
+layout_mode = 3
+anchor_left = 0.814
+anchor_top = 0.25
+anchor_right = 0.862
+anchor_bottom = 0.338
+offset_left = -0.200012
+offset_right = 0.399963
+offset_bottom = 1.32
+
+[node name="Button_S" type="Button" parent="ButtonsTable/Control_S"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_bqo13")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = ExtResource("3_eieog")
+text = "S"
+
+[node name="Control_H" type="Control" parent="ButtonsTable"]
+layout_mode = 3
+anchor_left = 0.062
+anchor_top = 0.069
+anchor_right = 0.111
+anchor_bottom = 0.152
+offset_left = 0.399998
+offset_top = 0.159998
+offset_right = 0.199989
+offset_bottom = 2.28
+
+[node name="Button_H" type="Button" parent="ButtonsTable/Control_H"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_bqo13")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = ExtResource("3_eieog")
+text = "H"
+
+[node name="Control_O" type="Control" parent="ButtonsTable"]
+layout_mode = 3
+anchor_left = 0.812
+anchor_top = 0.158
+anchor_right = 0.862
+anchor_bottom = 0.246
+offset_left = 0.399963
+offset_top = 0.119999
+offset_right = 0.399963
+offset_bottom = 1.43999
+
+[node name="Button_O" type="Button" parent="ButtonsTable/Control_O"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_bqo13")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = ExtResource("3_eieog")
+text = "O"
+
+[node name="PanelRight" type="Panel" parent="."]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -71.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eieog")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelRight"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelRight/MarginContainer"]
+layout_mode = 2
+
+[node name="Solution" type="Label" parent="PanelRight/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "COMPONENTES"
+label_settings = SubResource("LabelSettings_u7tt2")
+
+[node name="PanelLeft" type="Panel" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -156.0
+offset_right = 156.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1a4iv")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelLeft"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelLeft/MarginContainer"]
+layout_mode = 2
+
+[node name="Objective" type="Label" parent="PanelLeft/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 4.0
+text = "Objetivo"
+label_settings = SubResource("LabelSettings_74gqc")
+horizontal_alignment = 1
+
+[node name="Delete" type="Button" parent="PanelLeft/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 0.647059, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_bqo13")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("5_1a4iv")
+text = "Eliminar"
+
+[node name="Submit" type="Button" parent="PanelLeft/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 0.647059, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_bqo13")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("5_1a4iv")
+text = "Intentar"
+
+[node name="Response" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -32.0
+offset_right = 0.5
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_3jpu8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="PanelLeft/MarginContainer/VBoxContainer/Delete" to="." method="_on_delete_pressed"]
+[connection signal="pressed" from="PanelLeft/MarginContainer/VBoxContainer/Submit" to="." method="_on_submit_pressed"]

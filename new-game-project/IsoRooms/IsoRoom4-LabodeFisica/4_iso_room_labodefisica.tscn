@@ -1,0 +1,42 @@
+[gd_scene load_steps=10 format=3 uid="uid://df0eeq5en5tmr"]
+
+[ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_ebu0q"]
+[ext_resource type="PackedScene" uid="uid://bxdarh5hjdqcv" path="res://IsoRooms/IsoRoom4-LabodeFisica/4_base_tiles_labodefisica.tscn" id="2_8hemf"]
+[ext_resource type="Script" uid="uid://cbksmdo5jkvnq" path="res://IsoRooms/IsoRoom4-LabodeFisica/4_iso_room_labodefisica.gd" id="2_i5aki"]
+[ext_resource type="PackedScene" uid="uid://v8ayk5g3mgli" path="res://utils/Interact/Pista/PistaPiano/osicloscopio.tscn" id="3_oyfwe"]
+[ext_resource type="PackedScene" uid="uid://bmnx3aqcbtgld" path="res://Franco/Franco/Items/item_termo.tscn" id="5_e7dv1"]
+[ext_resource type="PackedScene" uid="uid://da3yrerllmlfw" path="res://IsoRooms/IsoRoom4-LabodeFisica/transitioner.tscn" id="6_7bnoq"]
+[ext_resource type="Script" uid="uid://bvq7ul31l7a5" path="res://utils/Interact/Interactable/interactable.gd" id="6_bpgie"]
+[ext_resource type="PackedScene" uid="uid://cho8fef01i037" path="res://IsoRooms/IsoRoom4-LabodeFisica/osc_activator.tscn" id="7_7bnoq"]
+[ext_resource type="PackedScene" uid="uid://wbl6odje5t52" path="res://utils/Interact/Puzzle/puzzles/PianoPuzzle/Scenes/piano_game.tscn" id="9_e7dv1"]
+
+[node name="LabodeFisica" instance=ExtResource("1_ebu0q")]
+script = ExtResource("2_i5aki")
+osc = ExtResource("3_oyfwe")
+
+[node name="BaseTiles" parent="." index="0" instance=ExtResource("2_8hemf")]
+
+[node name="Termo" parent="Interactables/Items" index="0" instance=ExtResource("5_e7dv1")]
+position = Vector2(274, -283)
+
+[node name="Transitioner" parent="Interactables/Transitioners" index="0" instance=ExtResource("6_7bnoq")]
+position = Vector2(-315, 31)
+rotation = 0.678933
+scale = Vector2(4, 4)
+
+[node name="Activators" type="Node2D" parent="Interactables" index="4"]
+script = ExtResource("6_bpgie")
+metadata/_custom_type_script = "uid://bvq7ul31l7a5"
+
+[node name="OscActivator" parent="Interactables/Activators" index="0" instance=ExtResource("7_7bnoq")]
+position = Vector2(-153, -215)
+rotation = -0.475169
+scale = Vector2(3.41612, -4.68284)
+activable = ExtResource("9_e7dv1")
+id = "ROOM-LABOFISICA"
+
+[node name="PlayerB" parent="Player" index="0"]
+position = Vector2(205, -31)
+
+[connection signal="interacted" from="Interactables/Transitioners/Transitioner" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Activators/OscActivator" to="." method="_on_interactable_interacted"]

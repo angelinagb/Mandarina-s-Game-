@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8iop4loukleo"]
+
+[ext_resource type="PackedScene" uid="uid://3v1aqvnidp5b" path="res://utils/Interact/Item/item.tscn" id="1_5lp8w"]
+[ext_resource type="Texture2D" uid="uid://do37liywobiiv" path="res://Franco/Franco/Items/resources/capitulo3.png" id="2_qu7a6"]
+[ext_resource type="Shape2D" uid="uid://d3nit1u2e8dha" path="res://Franco/Franco/rooms/area_tile.tres" id="3_vowlq"]
+
+[node name="Capitulo3" instance=ExtResource("1_5lp8w")]
+id = "Capitulo3"
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_qu7a6")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 0)
+rotation = 0.453786
+skew = 0.663225
+shape = ExtResource("3_vowlq")

@@ -1,0 +1,94 @@
+[gd_scene load_steps=17 format=3 uid="uid://bq0g1jdkuqoe4"]
+
+[ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_jvyd0"]
+[ext_resource type="PackedScene" uid="uid://ci53j2pn65rrk" path="res://Franco/Franco/rooms/Entrada/entrada_base_tiles.tscn" id="2_i3aam"]
+[ext_resource type="PackedScene" uid="uid://b4nbf65ykv6m2" path="res://Franco/Franco/Npcs/AlumnoNro1/alumno_1-1.tscn" id="3_aafd0"]
+[ext_resource type="PackedScene" uid="uid://pgmbodsruy1l" path="res://Franco/Franco/rooms/Entrada/tr_pasillo_2.tscn" id="3_iyjjf"]
+[ext_resource type="PackedScene" uid="uid://bk2vih33pg3qt" path="res://Franco/Franco/Items/item_llave_3.tscn" id="3_wxnbc"]
+[ext_resource type="PackedScene" uid="uid://dptwndcgaqacf" path="res://Franco/Franco/rooms/Entrada/tr_scom.tscn" id="4_d7voa"]
+[ext_resource type="PackedScene" uid="uid://57n8nvjbm568" path="res://Franco/Franco/Npcs/AlumnoNro3/alumno_3-3.tscn" id="6_iyjjf"]
+[ext_resource type="PackedScene" uid="uid://bn6hjmulrrmiu" path="res://Franco/Franco/AreaInteractuable/area_puerta_cerrada.tscn" id="9_i7aci"]
+[ext_resource type="PackedScene" uid="uid://d2qpyqv0pdr3h" path="res://Franco/Franco/AreaInteractuable/area_extintor.tscn" id="10_go8ah"]
+[ext_resource type="PackedScene" uid="uid://bot7u1twpsrti" path="res://Franco/Franco/AreaInteractuable/area_salir_edificio.tscn" id="11_go8ah"]
+[ext_resource type="PackedScene" uid="uid://b1w6wn8w7b6db" path="res://Franco/Franco/AreaInteractuable/area_bidones.tscn" id="11_vn0rm"]
+[ext_resource type="PackedScene" uid="uid://c4vpvt7lq8bc8" path="res://Nerds/nerd_1.tscn" id="12_kgvm6"]
+[ext_resource type="PackedScene" uid="uid://fq0kmvendk55" path="res://Nerds/nerd_2.tscn" id="13_htb0u"]
+[ext_resource type="PackedScene" uid="uid://1wg7fcglnnlq" path="res://Nerds/nerd_3.tscn" id="14_alk3u"]
+[ext_resource type="PackedScene" uid="uid://5x17l54uy2sg" path="res://Nerds/nerd_4.tscn" id="15_bkmq1"]
+[ext_resource type="PackedScene" uid="uid://bxpn10e43akt0" path="res://Nerds/nerd_5.tscn" id="16_knrxh"]
+
+[node name="Entrada" instance=ExtResource("1_jvyd0")]
+room_id = "ROOM-ENTRADA"
+
+[node name="BaseTiles" parent="." index="0" instance=ExtResource("2_i3aam")]
+
+[node name="defect" parent="Spawns" index="0"]
+position = Vector2(641, 311)
+
+[node name="ROOM-PASILLO2" type="Marker2D" parent="Spawns" index="1"]
+position = Vector2(-123, -197)
+
+[node name="ROOM-SALACOMUN" type="Marker2D" parent="Spawns" index="2"]
+position = Vector2(-131, 65)
+
+[node name="Llave3" parent="Interactables/Items" index="0" instance=ExtResource("3_wxnbc")]
+position = Vector2(385, 318)
+
+[node name="Tr-Ent-Pas2" parent="Interactables/Transitioners" index="0" instance=ExtResource("3_iyjjf")]
+position = Vector2(-125, -190)
+
+[node name="Tr-Ent-Scom" parent="Interactables/Transitioners" index="1" instance=ExtResource("4_d7voa")]
+position = Vector2(-130, 64)
+
+[node name="AlumnoNro1-1" parent="Interactables/Npcs" index="0" instance=ExtResource("3_aafd0")]
+position = Vector2(130, 142)
+scale = Vector2(1.5, 1.5)
+
+[node name="AlumnoNro3-3" parent="Interactables/Npcs" index="1" instance=ExtResource("6_iyjjf")]
+position = Vector2(253, -51)
+scale = Vector2(1.5, 1.5)
+
+[node name="AreaPuertaCerrada" parent="Interactables/Npcs" index="2" instance=ExtResource("9_i7aci")]
+position = Vector2(639, 190)
+
+[node name="AreaExtintor" parent="Interactables/Npcs" index="3" instance=ExtResource("10_go8ah")]
+position = Vector2(126, -317)
+
+[node name="AreaBidones" parent="Interactables/Npcs" index="4" instance=ExtResource("11_vn0rm")]
+position = Vector2(-330, -39)
+
+[node name="AreaSalirEdificio" parent="Interactables/Npcs" index="5" instance=ExtResource("11_go8ah")]
+position = Vector2(767, 385)
+
+[node name="Nerd1" parent="Interactables/Npcs" index="6" instance=ExtResource("12_kgvm6")]
+position = Vector2(33, -16)
+
+[node name="Nerd2" parent="Interactables/Npcs" index="7" instance=ExtResource("13_htb0u")]
+position = Vector2(387, 150)
+
+[node name="Nerd3" parent="Interactables/Npcs" index="8" instance=ExtResource("14_alk3u")]
+position = Vector2(414, 35)
+
+[node name="Nerd4" parent="Interactables/Npcs" index="9" instance=ExtResource("15_bkmq1")]
+position = Vector2(-64, -83)
+
+[node name="Nerd5" parent="Interactables/Npcs" index="10" instance=ExtResource("16_knrxh")]
+position = Vector2(67, -156)
+
+[node name="PlayerB" parent="Player" index="0"]
+position = Vector2(211, -77)
+
+[connection signal="interacted" from="Interactables/Items/Llave3" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/Tr-Ent-Pas2" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/Tr-Ent-Scom" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/AlumnoNro1-1" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/AlumnoNro3-3" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/AreaPuertaCerrada" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/AreaExtintor" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/AreaBidones" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/AreaSalirEdificio" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/Nerd1" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/Nerd2" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/Nerd3" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/Nerd4" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/Nerd5" to="." method="_on_interactable_interacted"]

@@ -5,12 +5,23 @@ var items: Dictionary = {}
 var items_in_world: Array[String]
 var items_in_player: Array[String]
 
+signal game_ended()
+
 signal item_updated(item: Dictionary)
 
+<<<<<<< Updated upstream
 func initialize(items: Dictionary) -> void:
 	self.items = items
 	for child in items:
 		if items[child].is_in_world:
+=======
+var cont: int = 0
+
+func initialize(Items: Dictionary) -> void:
+	self.items = Items
+	for child in Items:
+		if Items[child].is_in_world:
+>>>>>>> Stashed changes
 			items_in_world.append(child)
 		elif items[child].is_in_player:
 			items_in_player.append(child)
@@ -34,6 +45,12 @@ func item_grabbed(item_id: String) -> void:
 		items_in_world.erase(item_id)
 		items_in_player.append(item_id)
 		item_updated.emit(items[item_id])
+	else:
+		return
+	if item_id == "Capitulo1" or item_id == "Capitulo2" or item_id == "Capitulo3" or item_id == "Capitulo4" or item_id == "Capitulo5":
+		cont += 1
+	if cont == 5:
+		game_ended.emit()
 
 func item_used(item_id: String) -> void:
 	if items_in_player.has(item_id):

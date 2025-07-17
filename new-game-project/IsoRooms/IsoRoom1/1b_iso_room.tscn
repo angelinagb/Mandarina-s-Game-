@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://c6d21rhpjvl26"]
+
+[ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_kwsg3"]
+[ext_resource type="PackedScene" uid="uid://dfp282bcn4bat" path="res://IsoRooms/IsoRoom1/1_base_tiles.tscn" id="3_4p6kt"]
+[ext_resource type="PackedScene" uid="uid://i73pskx5fgwn" path="res://Franco/Franco/Items/item_mate.tscn" id="4_k4nds"]
+[ext_resource type="PackedScene" uid="uid://bykastfo056vh" path="res://IsoRooms/IsoRoom1/Interactuables/Items/key.tscn" id="4_nvcfp"]
+[ext_resource type="Texture2D" uid="uid://dlfto6k0kis28" path="res://art/items/2dClassroomAssetPackByStyloo/Classroom 2 Props/Classroom Props First Spritesheet 8.png" id="5_yrvce"]
+[ext_resource type="PackedScene" uid="uid://dtgjbrj2ss74o" path="res://utils/Interact/Transitioner/Instancias/trans_r1_r2.tscn" id="7_5jj12"]
+[ext_resource type="PackedScene" uid="uid://cjkpau08dmw6l" path="res://utils/Interact/Npc/Instancias/ChicaTriste.tscn" id="8_7etyn"]
+
+[node name="IsoRoom-1b" instance=ExtResource("1_kwsg3")]
+y_sort_enabled = true
+room_id = "ROOM-4-II"
+
+[node name="BaseTiles" parent="." index="0" instance=ExtResource("3_4p6kt")]
+
+[node name="defect" parent="Spawns" index="0"]
+position = Vector2(288, -267)
+
+[node name="ROOM-5" type="Marker2D" parent="Spawns" index="1"]
+position = Vector2(230, -370)
+
+[node name="Item" parent="Interactables/Items" index="0" instance=ExtResource("4_nvcfp")]
+position = Vector2(-70, -333)
+rotation = 0.00967322
+scale = Vector2(0.426274, 0.649988)
+
+[node name="Mate" parent="Interactables/Items" index="1" instance=ExtResource("4_k4nds")]
+position = Vector2(222, -210)
+
+[node name="Trans R1 -> R2" parent="Interactables/Transitioners" index="0" instance=ExtResource("7_5jj12")]
+position = Vector2(289, -420)
+rotation = -2.67915
+scale = Vector2(2.09534, 1.28191)
+room_id = "ROOM-PASILLO1"
+
+[node name="Chica Triste" parent="Interactables/Npcs" index="0" instance=ExtResource("8_7etyn")]
+position = Vector2(732, -171)
+scale = Vector2(-1.52753, 1.62744)
+
+[node name="PlayerB" parent="Player" index="0"]
+position = Vector2(189, -392)
+
+[node name="Pizarra" type="Sprite2D" parent="." index="5"]
+z_index = 1
+position = Vector2(537, -359)
+scale = Vector2(0.637805, 0.549202)
+texture = ExtResource("5_yrvce")
+region_enabled = true
+region_rect = Rect2(109, 57, 410, 376)
+
+[connection signal="interacted" from="Interactables/Items/Item" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/Trans R1 -> R2" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/Chica Triste" to="." method="_on_interactable_interacted"]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd1vgpl1h8mne"]
+
+[ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_g63ld"]
+[ext_resource type="Shape2D" uid="uid://d3nit1u2e8dha" path="res://Franco/Franco/rooms/area_tile.tres" id="2_0uowf"]
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="3_hmf58"]
+
+[sub_resource type="Resource" id="Resource_1rr1f"]
+script = ExtResource("3_hmf58")
+arreglo_de_textos = PackedStringArray("Wow que lindos los lockers.")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[node name="AreaLockers" instance=ExtResource("1_g63ld")]
+
+[node name="Sprite2D" parent="." index="1"]
+visible = false
+
+[node name="Area2D" parent="." index="2"]
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 0)
+rotation = 0.453786
+skew = 0.663225
+shape = ExtResource("2_0uowf")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+shape = null
+
+[node name="Dialogo Quest" parent="." index="4"]
+vacio = true
+
+[node name="Dialogo Default" parent="." index="5"]
+dialogueResource = SubResource("Resource_1rr1f")
+
+[node name="NpcQuestIndicador" parent="." index="6"]
+visible = false

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="QuestStep" load_steps=2 format=3 uid="uid://uman6u1o3by8"]
+
+[ext_resource type="Script" uid="uid://c0nhxnmv56tui" path="res://managers/notification/quest/quest_step.gd" id="1_rxose"]
+
+[resource]
+script = ExtResource("1_rxose")
+text_to_do = "Encontrar capitulos de tesis."
+necessary_interactables = {
+"Capitulo1": false,
+"Capitulo2": false,
+"Capitulo3": false,
+"Capitulo4": false,
+"Capitulo5": false
+}
+metadata/_custom_type_script = "uid://c0nhxnmv56tui"

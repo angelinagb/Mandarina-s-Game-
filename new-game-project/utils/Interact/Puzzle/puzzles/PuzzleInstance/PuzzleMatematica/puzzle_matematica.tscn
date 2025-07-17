@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://b67a6yiwqfmwq"]
+
+[ext_resource type="Script" uid="uid://bepxeu5fe4n1x" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleMatematica/puzzle_matematica.gd" id="1_nhjop"]
+[ext_resource type="Theme" uid="uid://v4ecbhurmt7p" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleMatematica/resources/BaseThemePuzzle.tres" id="2_tn6bo"]
+
+[node name="PuzzleMatematica" type="CanvasLayer"]
+script = ExtResource("1_nhjop")
+item_id = "Capitulo2"
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_tn6bo")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="Question" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Pregunta"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme_override_constants/separation = 100
+
+[node name="Option1" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "OPCION 1"
+
+[node name="Option2" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "OPCION 2"
+
+[node name="Option3" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "OPCION 3"
+
+[node name="Result" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = -32.0
+offset_right = 375.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 10
+horizontal_alignment = 1

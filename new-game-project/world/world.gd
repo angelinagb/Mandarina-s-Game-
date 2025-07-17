@@ -78,6 +78,86 @@ func save_this():
 			"path_img": "res://art/items/yerba.png",
 			"is_in_world": true,
 			"is_in_player": false
+		},
+		"Capitulo1": {
+			"id": "Capitulo1",
+			"name": "Capitulo 1",
+			"desc": "El capitulo 1 de la tesis.",
+			"path_img": "res://Franco/Franco/Items/resources/capitulo1.png",
+			"is_in_world": true,
+			"is_in_player": false
+		},
+		"Capitulo2": {
+			"id": "Capitulo2",
+			"name": "Capitulo 2",
+			"desc": "El capitulo 2 de la tesis.",
+			"path_img": "res://Franco/Franco/Items/resources/capitulo2.png",
+			"is_in_world": true,
+			"is_in_player": false
+		},
+		"Capitulo3": {
+			"id": "Capitulo3",
+			"name": "Capitulo 3",
+			"desc": "El capitulo 3 de la tesis.",
+			"path_img": "res://Franco/Franco/Items/resources/capitulo3.png",
+			"is_in_world": true,
+			"is_in_player": false
+		},
+		"Capitulo4": {
+			"id": "Capitulo4",
+			"name": "Capitulo 4",
+			"desc": "El capitulo 4 de la tesis.",
+			"path_img": "res://Franco/Franco/Items/resources/capitulo4.png",
+			"is_in_world": true,
+			"is_in_player": false
+		},
+		"Capitulo5": {
+			"id": "Capitulo5",
+			"name": "Capitulo 5",
+			"desc": "El capitulo 5 de la tesis.",
+			"path_img": "res://Franco/Franco/Items/resources/capitulo5.png",
+			"is_in_world": true,
+			"is_in_player": false
+		},
+		"Llave1": {
+			"id": "Llave1",
+			"name": "Llave 1",
+			"desc": "La llave 1, sirve para abrir...",
+			"path_img": "res://Franco/Franco/Items/resources/pixel-key.png",
+			"is_in_world": true,
+			"is_in_player": false
+		},
+		"Llave2": {
+			"id": "Llave2",
+			"name": "Llave 2",
+			"desc": "La llave 2, sirve para abrir...",
+			"path_img": "res://Franco/Franco/Items/resources/pixel-key.png",
+			"is_in_world": true,
+			"is_in_player": false
+		},
+		"Llave3": {
+			"id": "Llave3",
+			"name": "Llave 3",
+			"desc": "La llave 3, sirve para abrir...",
+			"path_img": "res://Franco/Franco/Items/resources/pixel-key.png",
+			"is_in_world": true,
+			"is_in_player": false
+		},
+		"Llave4": {
+			"id": "Llave4",
+			"name": "Llave 4",
+			"desc": "La llave 4, sirve para abrir...",
+			"path_img": "res://Franco/Franco/Items/resources/pixel-key.png",
+			"is_in_world": true,
+			"is_in_player": false
+		},
+		"Llave5": {
+			"id": "Llave5",
+			"name": "Llave 5",
+			"desc": "La llave 5, sirve para abrir...",
+			"path_img": "res://Franco/Franco/Items/resources/pixel-key.png",
+			"is_in_world": true,
+			"is_in_player": false
 		}
 	}
 	
@@ -121,12 +201,23 @@ func load_setup():
 	abilities_available_points = save_manager.load_dict("AbilityAvailablePoints")
 	
 	inventory.initialize(items)
+<<<<<<< Updated upstream
 	
 	event.initialize(inventory, [])
 	
 	quest.initialize(event, [])
 	
 	initialize_room(room_setup.actual_room)
+=======
+	inventory.game_ended.connect(on_game_ended)
+	event.initialize([])
+	
+	quest.initialize(event, [])
+	
+	quest.add_quest(load("res://Franco/Franco/Quest/QuestPrincipal/quest.tres"))
+	
+	initialize_room(room_setup.actual_room, room_setup.prev_room)
+>>>>>>> Stashed changes
 	
 	player.initialize(current.get_position_spawn(room_setup.prev_room))
 	
@@ -232,6 +323,8 @@ func _on_gui_button_open_menu_pressed() -> void:
 	# get_tree().paused = true
 	# $menu.process_mode = Node.PROCESS_MODE_ALWAYS
 
+func on_game_ended():
+	add_child(load("res://Franco/Franco/end.tscn").instantiate())
 
 func _on_menu_on_go_to_start_menu_button_pressed() -> void:
 	main.open_start_menu()

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ribmtol1i1ho"]
+
+[ext_resource type="PackedScene" uid="uid://53qcgarmhxng" path="res://utils/Interact/Transitioner/transitioner.tscn" id="1_hxxf5"]
+[ext_resource type="Shape2D" uid="uid://d3nit1u2e8dha" path="res://Franco/Franco/rooms/area_tile.tres" id="2_m1ds1"]
+
+[node name="Transitioner" instance=ExtResource("1_hxxf5")]
+room_id = "ROOM-6"
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 0)
+rotation = 0.453786
+skew = 0.663225
+shape = ExtResource("2_m1ds1")

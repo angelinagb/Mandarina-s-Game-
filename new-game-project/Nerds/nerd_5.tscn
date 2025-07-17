@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://bxpn10e43akt0"]
+
+[ext_resource type="PackedScene" uid="uid://bh12kbhvaf3bl" path="res://Tomas/CAFETERIA/Nerd_Q2.tscn" id="1_lai5o"]
+[ext_resource type="PackedScene" uid="uid://dilhgir4y8bhr" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleElectronica/puzzle_electronica.tscn" id="2_1o86v"]
+[ext_resource type="PackedScene" uid="uid://cvqpxv2gtxr2y" path="res://Nerds/nerd5dv.tscn" id="3_bonj8"]
+[ext_resource type="Texture2D" uid="uid://bkhuoqtvtfh4p" path="res://Nerds/AlumnoNro3.png" id="4_n1383"]
+[ext_resource type="Resource" uid="uid://c4cs2randj0s5" path="res://Nerds/dn5.tres" id="5_4g01p"]
+[ext_resource type="Shape2D" uid="uid://d3nit1u2e8dha" path="res://Franco/Franco/rooms/area_tile.tres" id="5_bonj8"]
+
+[node name="Nerd5" instance=ExtResource("1_lai5o")]
+puzzle = ExtResource("2_1o86v")
+dialogo_victoria = ExtResource("3_bonj8")
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_n1383")
+
+[node name="Area2D" parent="." index="2"]
+position = Vector2(0, 32)
+scale = Vector2(0.7, 0.7)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 0)
+rotation = 0.453786
+skew = 0.663225
+shape = ExtResource("5_bonj8")
+
+[node name="StaticBody2D" parent="." index="3"]
+position = Vector2(0, 32)
+scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(0, 0)
+rotation = 0.453786
+scale = Vector2(1, 1)
+skew = 0.663225
+shape = ExtResource("5_bonj8")
+
+[node name="Dialogo Default" parent="." index="5"]
+dialogueResource = ExtResource("5_4g01p")
