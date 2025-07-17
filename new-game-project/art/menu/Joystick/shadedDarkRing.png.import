@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5cv0hnff1ql"
-path="res://.godot/imported/shadedDarkRing.png-f283b794a0368d6e616d890cf9217575.ctex"
+path="res://.godot/imported/shadedDarkRing.png-4c6552df6e98a5fab2e4887596e449d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/menu/shaded-dark/shadedDarkRing.png"
-dest_files=["res://.godot/imported/shadedDarkRing.png-f283b794a0368d6e616d890cf9217575.ctex"]
+source_file="res://art/menu/Joystick/shadedDarkRing.png"
+dest_files=["res://.godot/imported/shadedDarkRing.png-4c6552df6e98a5fab2e4887596e449d8.ctex"]
 
 [params]
 
