@@ -54,6 +54,38 @@ func save_this():
 			"path_img": "res://art/items/yerba.png",
 			"is_in_world": true,
 			"is_in_player": false
+		},
+		"Capitulo1": {
+			"id": "Capitulo1",
+			"name": "Capitulo 1",
+			"desc": "El capitulo 1 de la tesis.",
+			"path_img": "res://art/items/book.png",
+			"is_in_world": true,
+			"is_in_player": false
+		},
+		"Capitulo2": {
+			"id": "Capitulo2",
+			"name": "Capitulo 2",
+			"desc": "El capitulo 2 de la tesis.",
+			"path_img": "res://art/items/book.png",
+			"is_in_world": true,
+			"is_in_player": false
+		},
+		"Capitulo3": {
+			"id": "Capitulo3",
+			"name": "Capitulo 3",
+			"desc": "El capitulo 3 de la tesis.",
+			"path_img": "res://art/items/book.png",
+			"is_in_world": true,
+			"is_in_player": false
+		},
+		"Capitulo4": {
+			"id": "Capitulo4",
+			"name": "Capitulo 4",
+			"desc": "El capitulo 4 de la tesis.",
+			"path_img": "res://art/items/book.png",
+			"is_in_world": true,
+			"is_in_player": false
 		}
 	}
 	
@@ -94,6 +126,7 @@ func load_setup():
 	abilities_available_points = save_manager.load_dict("AbilityAvailablePoints")
 	
 	inventory.initialize(items)
+	inventory.game_ended.connect(on_game_ended)
 	
 	event.initialize([])
 	
@@ -226,3 +259,6 @@ func _on_activator_activate(interactable: Activator):
 
 #func _on_menu_quest_updated(quest_upd: Quest) -> void:
 	#quest.update_quest(quest_upd)
+
+func on_game_ended():
+	add_child(load("res://Franco/Franco/end.tscn").instantiate())

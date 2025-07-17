@@ -5,7 +5,10 @@ var items: Dictionary = {}
 var items_in_world: Array[String]
 var items_in_player: Array[String]
 
+signal game_ended()
 signal item_updated(item: Dictionary)
+
+var cont: int = 0
 
 func initialize(Items: Dictionary) -> void:
 	self.items = Items
@@ -34,6 +37,12 @@ func item_grabbed(item_id: String) -> void:
 		items_in_world.erase(item_id)
 		items_in_player.append(item_id)
 		item_updated.emit(items[item_id])
+	else:
+		return
+	if item_id == "Capitulo1" or item_id == "Capitulo2" or item_id == "Capitulo3" or item_id == "Capitulo4":
+		cont += 1
+	if cont == 4:
+		game_ended.emit()
 
 func item_used(item_id: String) -> void:
 	if items_in_player.has(item_id):

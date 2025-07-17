@@ -12,6 +12,7 @@
 
 [node name="PuzzleCircuito" type="CanvasLayer"]
 script = ExtResource("1_4yum5")
+item_id = "Capitulo1"
 
 [node name="Background" type="Panel" parent="."]
 anchors_preset = 15
