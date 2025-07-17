@@ -5,6 +5,7 @@
 
 [node name="PuzzleMatematica" type="CanvasLayer"]
 script = ExtResource("1_nhjop")
+item_id = "Capitulo3"
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 15
