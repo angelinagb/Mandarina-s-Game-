@@ -147,8 +147,6 @@ func _on_interactable_interacted(interactable: Interactable):
 	#rehacer quest step para que acepte ID de cualquier interactuable
 	#Falta guardar estado de items al cambiar de rooms
 	#SEPARAR INTERACTABLES EN FASES, FASE 1, 2, ETC
-	print("señal conectada")
-	print(interactable.my_type)
 	match interactable.my_type:
 		"item":
 			_on_item_grabbed(interactable)
@@ -179,8 +177,12 @@ func _on_transitioner_activated(transitioner: Transitioner) -> void:
 	current_room_id = room_id
 
 func _on_npc_talked_to(npc: Npc) -> void:
+	if npc.gives_item :
+		npc.connect_events_to_inventory(inventory) 
+	
 	npc.startDialogue()
 	await npc.dialogue_ended
+	
 	if npc.quest_available():
 		npc.take_quest()
 		quest.add_quest(npc.quest)
@@ -190,7 +192,6 @@ func _on_npc_talked_to(npc: Npc) -> void:
 func _on_puzzle_begin(puzzle : Interactable):
 		var dapuzzle = puzzle.puzzle_tcsn.instantiate()
 		add_child(dapuzzle)
-		print("llega")
 		#player.pause_player()
 		#var screen_size = get_viewport_rect().size
 		#puzzle_instance.position = screen_size / 2
@@ -244,8 +245,10 @@ func _on_quest_begin(interactable: Interactable):
 func _on_activator_activate(interactable: Activator):
 	#QueueManager.enqueue_event(interactable.activable)
 	pass
+
 #func _on_inventory_manager_item_updated(item: Dictionary) -> void:
-	#pass # Replace with function body.
+	#menu.on_item_updated(item)
+	#print()
 #
 #
 #func _on_quest_manager_quest_updated(quest: Quest) -> void:
@@ -257,8 +260,8 @@ func _on_activator_activate(interactable: Activator):
 	
 
 
-#func _on_menu_quest_updated(quest_upd: Quest) -> void:
-	#quest.update_quest(quest_upd)
+func _on_menu_quest_updated(quest_upd: Quest) -> void:
+	quest.update_quest(quest_upd)
 
 func on_game_ended():
 	add_child(load("res://Franco/Franco/end.tscn").instantiate())

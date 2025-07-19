@@ -23,7 +23,6 @@ func get_position_spawn(name_spawn: String) -> Vector2:
 
 func _on_interactable_interacted(interactable: Interactable):
 	interactable_interacted.emit(interactable)
-	print("disparando señal desde la room, " + "incteractuo: " + interactable.my_type)
 
 func get_player() -> PlayerB:
 	return player_b

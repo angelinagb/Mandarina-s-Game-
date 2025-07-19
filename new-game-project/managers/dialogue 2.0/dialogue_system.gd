@@ -5,22 +5,29 @@ class_name DialogueSystem
 #no deberia activarse de vuelta la animacion cuando empieza recursivamente otro dialogo
 signal dialogue_ended
 signal finished
+signal deliver_item(item_id: String)
+
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var next_text_button: Button = $CanvasLayer/PanelContainer/next_text_button
 @onready var anim_player : AnimationPlayer = $AnimationPlayer
 @onready var rich_text_label : RichTextLabel = $CanvasLayer/PanelContainer/VBoxContainer/RichTextLabel
 @onready var timer : Timer = $Timer
+
 @export var boton_decision : PackedScene
+
 @onready var margin_container : PanelContainer = %PanelContainer
 @onready var v_box_container : VBoxContainer = %VBoxContainer
 @export var destruirse_al_finalizar : bool
 var decision_actual : Decision
-@export var vacio : bool
+
+@export var vacio : bool #determina si se va a reproducir este dialogo o no.
+
 @onready var speaker_name: Label = $CanvasLayer/Speaker_Name
 
 ##Recurso con información sobre el diálogo a mostrar
 @export var dialogueResource : Dialogo
 @export var dialogo_alternativo: Dialogo
+
 @onready var canvas_layer : CanvasLayer = $CanvasLayer
 ## while text not empty
 var i : int
@@ -69,7 +76,13 @@ func mostrar_decision():
 ##Comienza el dialogo, si layer es mayor que 0 se le asigna ese valor al canvas_layer
 
 func start(layer: int = -1):
-	if vacio == false:
+	if rich_text_label == null or not is_instance_valid(rich_text_label):
+		cambiar_a_modo_conversacion()  # aseguro que lo crea de nuevo
+	if vacio or dialogueResource == null: # tengo que arrancar el dialogo
+		#end()
+		#return
+		pass
+	else:
 		if layer > 0:
 			canvas_layer.layer = layer
 		if text_count > 0:
@@ -80,6 +93,7 @@ func start(layer: int = -1):
 			destruir()
 
 func _process(_delta: float) -> void:
+	skip_conversation() # para debuggear
 	if current_state == States.TEXTO_MOSTRADO:
 		set_button_visibility(true)
 		pass
@@ -93,6 +107,7 @@ func _process(_delta: float) -> void:
 func terminar_texto():
 	i = text_length
 	rich_text_label.text = dialogueResource.get_dialogue_text(j)
+	
 func read_text():
 	if i < text_length:
 		rich_text_label.text += dialogueResource.get_dialogue_text(j)[i]
@@ -166,27 +181,21 @@ func cambiar_a_modo_conversacion(): #resetea el cuadro de dialogo
 	v_box_container.add_child(rich_text_label)
 
 	
-		
 func _on_boton_decision_pressed(indice : int):
-	#TENGO QUE ELIMINAR TODOS LOS BOTONES DEL DIALOGO
+	#TENGO QUE ELIMINAR TODOS LOS BOTONES DEL DIALOGOv+
+	var events = decision_actual.get_recurso_dialogo_de_decision_elegida(indice).array_eventos
 	cambiar_a_modo_conversacion()
 	dialogueResource = decision_actual.get_recurso_dialogo_de_decision_elegida(indice).get_recurso_dialogo_exitoso()
+	
 	if dialogueResource != null:
 		canvas_layer.hide()
 		start()
 		await dialogue_ended
-	else: 
-		end()
-	
-	var events = decision_actual.get_recurso_dialogo_de_decision_elegida(indice).array_eventos
+		
 	if events.size() > 0 :
-		for event in events:
-			print("evento")
-			await event.trigger()
-	else :
-		end()
-	
-	check_and_start_alternative_dialogue()
+		await trigger_events(events)
+
+	check_and_start_alternative_dialogue() 
 
 func _on_next_text_button_pressed() -> void:
 	next_text()	
@@ -207,8 +216,8 @@ func set_button_visibility(state:bool):
 		next_text_button.modulate = Color(1, 1, 1, 1)
 
 
-func set_speaker(name: String):
-	speaker_name.text = name
+func set_speaker(character_name: String):
+	speaker_name.text = character_name
 	
 func end():
 		current_state = States.CERRANDO
@@ -228,3 +237,25 @@ func check_and_start_alternative_dialogue():
 		dialogo_alternativo = null
 	
 		start()
+
+
+func trigger_events(events: Array[Evento] ):
+	var type
+	for event in events:
+		if event is Evento_Grab_Item :
+			deliver_item.emit(event.item_id)
+		await event.trigger()
+		
+
+#region para debugear
+func skip_conversation(): 
+	if Input.is_action_just_pressed("ui_right"):
+		skip()
+
+func skip():
+	var index = j
+	while index < dialogueResource.arreglo_de_textos.size():
+		terminar_texto()
+		next_text()
+		index += 1
+#endregion

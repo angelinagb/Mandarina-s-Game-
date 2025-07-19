@@ -1,9 +1,15 @@
-[gd_resource type="Resource" script_class="Dialogo" load_steps=14 format=3 uid="uid://csg85q86ltl7j"]
+[gd_resource type="Resource" script_class="Dialogo" load_steps=16 format=3 uid="uid://csg85q86ltl7j"]
 
 [ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="1_7yv0c"]
 [ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="1_pft6n"]
 [ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="2_pcb0t"]
+[ext_resource type="Script" uid="uid://bk4dph0sloiwh" path="res://managers/dialogue 2.0/recursos/scripts/grab_item_event.gd" id="3_pcb0t"]
 [ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="4_cba2b"]
+
+[sub_resource type="Resource" id="Resource_cba2b"]
+script = ExtResource("3_pcb0t")
+item_id = "Capitulo1"
+metadata/_custom_type_script = "uid://bk4dph0sloiwh"
 
 [sub_resource type="Resource" id="Resource_pam5u"]
 script = ExtResource("1_pft6n")
@@ -15,7 +21,7 @@ metadata/_custom_type_script = "uid://dekceg47jr41c"
 script = ExtResource("1_7yv0c")
 texto = "¡AH PERO QUE EXCELENTE!¿Algo más? ¿Mandarina la escaneó también?"
 dialogo_exitoso = SubResource("Resource_pam5u")
-array_eventos = Array[ExtResource("2_pcb0t")]([])
+array_eventos = Array[ExtResource("2_pcb0t")]([SubResource("Resource_cba2b")])
 decision_type = "Chat"
 metadata/_custom_type_script = "uid://bxesqyur17jig"
 

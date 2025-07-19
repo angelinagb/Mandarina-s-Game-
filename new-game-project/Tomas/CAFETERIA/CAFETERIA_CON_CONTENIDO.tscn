@@ -96,30 +96,36 @@ hframes = 6
 position = Vector2(-2.66667, -3)
 rotation = -0.0425112
 scale = Vector2(0.333333, 0.333333)
+gives_item = false
 id = "COFFEE_V"
 
 [node name="Vendedor Q2" parent="Interactables/Npcs/SPRITE VENDEDOR" index="1" groups=["Q2"] instance=ExtResource("6_xnuun")]
 process_mode = 4
 position = Vector2(-4.54008, -3.45291)
 scale = Vector2(0.367685, 0.333333)
+gives_item = false
 quest = ExtResource("7_0pd66")
 
 [node name="Nerd" parent="Interactables/Npcs" index="1" groups=["Q2_BEGIN"] instance=ExtResource("8_aaue2")]
 process_mode = 4
 position = Vector2(187, -179)
 rotation = -0.0416234
+gives_item = false
 
 [node name="GRUPO 1" parent="Interactables/Npcs" index="2" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("5_snxlu")]
 process_mode = 4
 position = Vector2(-204, -36)
+gives_item = false
 
 [node name="GRUPO 2" parent="Interactables/Npcs" index="3" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("6_4je3a")]
 process_mode = 4
 position = Vector2(645, -37)
+gives_item = false
 
 [node name="GRUPO 3" parent="Interactables/Npcs" index="4" groups=["Q1_GRUPOS"] instance=ExtResource("7_xnuun")]
 process_mode = 4
 position = Vector2(92, 68)
+gives_item = false
 
 [node name="PlayerB" parent="Player" index="0"]
 position = Vector2(-237, -131)

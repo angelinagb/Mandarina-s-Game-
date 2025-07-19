@@ -60,7 +60,7 @@ scale = Vector2(4.37436, -1.36276)
 room_id = "ROOM-LABOSYH"
 id = "Trans_LABOSYH"
 
-[node name="AlumnoNro1-1" parent="Interactables/Npcs" index="0" instance=ExtResource("3_aafd0")]
+[node name="AlumnoNro1-1" parent="Interactables/Npcs" index="0" groups=["Con Estado"] instance=ExtResource("3_aafd0")]
 position = Vector2(574, -124)
 scale = Vector2(1.41777, 1.54542)
 

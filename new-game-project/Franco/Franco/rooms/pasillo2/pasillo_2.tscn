@@ -40,6 +40,7 @@ scale = Vector2(3.68585, -0.939496)
 
 [node name="AlumnoNro2-3" parent="Interactables/Npcs" index="0" instance=ExtResource("5_rpjon")]
 position = Vector2(197, -311)
+gives_item = false
 npc_name = "Alumno"
 
 [node name="Nerd4" parent="Interactables/Npcs" index="1" instance=ExtResource("6_rwdn4")]

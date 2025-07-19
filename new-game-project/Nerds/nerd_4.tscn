@@ -45,7 +45,7 @@ metadata/_custom_type_script = "uid://dekceg47jr41c"
 
 [sub_resource type="Resource" id="Resource_lkshp"]
 script = ExtResource("8_h71hj")
-item_id = "Mate"
+item_id = ""
 metadata/_custom_type_script = "uid://bk4dph0sloiwh"
 
 [sub_resource type="Resource" id="Resource_dh234"]
@@ -70,6 +70,7 @@ metadata/_custom_type_script = "uid://dekceg47jr41c"
 [node name="Nerd4" instance=ExtResource("1_xovak")]
 scale = Vector2(2, 2)
 script = ExtResource("2_h71hj")
+gives_item = false
 npc_name = "Alumno Nerd"
 id = ""
 

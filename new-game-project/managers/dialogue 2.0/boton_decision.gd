@@ -15,13 +15,13 @@ func inicializar(texto: String, indice: int,type: String):
 	label.text = texto
 	indice_elemento = indice
 	var tex :=  preload("res://art/menu/Icons_Essential/v1.2/Icons/Info.png")
-	print(tex)
 	match type: 
 		"Quest": decision_icon.texture = preload("res://art/menu/Icons_Essential/v1.2/Icons/Info.png")
 		"Quit": decision_icon.texture = preload("res://art/menu/Icons_Essential/v1.2/Icons/Exit.png")
 		_: decision_icon.texture = null
 	pressed.connect(_on_button_pressed)
 	label.queue_redraw()
+	self.disabled = false
 	
 func get_indice_elemento() -> int:
 	return indice_elemento
@@ -29,3 +29,4 @@ func get_indice_elemento() -> int:
 	
 func _on_button_pressed():
 	boton_decision_elegido.emit(indice_elemento)
+	self.disabled = true 

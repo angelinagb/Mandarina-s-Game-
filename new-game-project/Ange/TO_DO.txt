@@ -2,10 +2,17 @@
 -> Portrait 
 -> Sounds
 -> Your Name 
+
 -> Quest completada animation ( en vez de hacer QueueManager.enque_event(quest_Competada) hago
 		NotificationManager_enqueue_event(quest_completada))-> para no superponer las cosas si se hacen seguidas
 		tiene mas sentido porque en teoria quest completada podria disparar en cualquier momento 
+
 -> Sistema de Guardado de Partida y de Atributos 
 
 -> Dialogo default podria ser un aleatroio del arreglo
--> me da la sensación que el viewport es muy chiquito, me gustaria hacerle como un zoom-out 
+
+-> me da la sensación que el viewport es muy chiquito, me gustaria hacerle como un zoom-out ✔️
+
+-> Vuelve a entrar y se reincia la quest del npc ✔️
+
+-> Proximamente: Modos de juego en el mnu Principal

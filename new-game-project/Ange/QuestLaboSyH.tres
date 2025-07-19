@@ -14,5 +14,5 @@ script = ExtResource("1_oeqka")
 title = "Sigue el rastro de Mandarina"
 steps = Array[ExtResource("2_0wubs")]([SubResource("Resource_oeqka")])
 current_step = 0
-is_secondary = true
+is_secondary = false
 metadata/_custom_type_script = "uid://cj81x6yti6bmb"

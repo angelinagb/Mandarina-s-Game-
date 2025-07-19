@@ -1,7 +1,7 @@
 extends Resource
 class_name Condicion
 
-enum ATTRIBUTE_TYPE { CARISMA, INTELIGENCIA, FUERZA}
+enum ATTRIBUTE_TYPE { CARISMA, INTELECTO, IMAGINACION}
 
 
 @export var atributo: ATTRIBUTE_TYPE

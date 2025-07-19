@@ -20,7 +20,6 @@ func _on_interactuable_cambiado(i):
 	interact_button.disabled = i == null
 	if (i) and i.has_method("get_type"):
 		var type = i.get_type()
-		print(type)
 		 #default
 		match type:
 			"item"			: button_text = "pick up"

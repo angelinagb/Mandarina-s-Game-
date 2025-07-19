@@ -31,18 +31,13 @@ func get_items_in_player() -> Array[String]:
 	return items_in_player
 
 func item_grabbed(item_id: String) -> void:
-	if items_in_world.has(item_id):
+	if not items_in_world.has(item_id):
+		return
+	else :
 		items[item_id].is_in_world = false
 		items[item_id].is_in_player = true
 		items_in_world.erase(item_id)
-		items_in_player.append(item_id)
-		item_updated.emit(items[item_id])
-	else:
-		return
-	if item_id == "Capitulo1" or item_id == "Capitulo2" or item_id == "Capitulo3" or item_id == "Capitulo4":
-		cont += 1
-	if cont == 4:
-		game_ended.emit()
+		give_item_to_player(item_id)
 
 func item_used(item_id: String) -> void:
 	if items_in_player.has(item_id):
@@ -55,3 +50,13 @@ func is_item_in_world(item_id: String) -> bool:
 
 func is_item_in_player(item_id: String) -> bool:
 	return items_in_player.has(item_id)
+	
+func give_item_to_player(item_id: String) -> void:
+		items[item_id].is_in_world = false
+		items[item_id].is_in_player = true
+		items_in_player.append(item_id)
+		item_updated.emit(items[item_id])
+		if item_id == "Capitulo1" or item_id == "Capitulo2" or item_id == "Capitulo3" or item_id == "Capitulo4":
+			cont += 1
+		if cont == 4:
+			game_ended.emit()

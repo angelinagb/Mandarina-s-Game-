@@ -1,4 +1,5 @@
 class_name Interactable extends Node2D
+
 @warning_ignore("unused_signal")
 signal interacted(interactable: Interactable)
 
@@ -12,10 +13,11 @@ func _ready():
 	
 func getId(): return id
 
+
 func load_state(loaded_state : Dictionary):
 	visible = loaded_state["visible"]
 	#leo de loaded_state el valor de todas las variables que me interesaron guardar en get_state y se las asigno
-	
+
 func get_state() -> Dictionary:
 	var state = {}
 	state["visible"] = visible
