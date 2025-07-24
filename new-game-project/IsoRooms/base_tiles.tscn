@@ -152,10 +152,12 @@ texture = ExtResource("7_wxpp0")
 texture_region_size = Vector2i(32, 32)
 0:0/size_in_atlas = Vector2i(8, 8)
 0:0/0 = 0
-0:0/0/texture_origin = Vector2i(-37, 133)
+0:0/0/texture_origin = Vector2i(-37, 95)
 0:0/0/z_index = 1
 18:19/size_in_atlas = Vector2i(14, 13)
 18:19/0 = 0
+18:19/0/texture_origin = Vector2i(0, 128)
+18:19/0/y_sort_origin = 123
 0:23/size_in_atlas = Vector2i(8, 9)
 0:23/0 = 0
 0:23/0/texture_origin = Vector2i(0, 115)
@@ -169,6 +171,19 @@ texture_region_size = Vector2i(32, 32)
 20:14/0/z_index = 1
 24:17/size_in_atlas = Vector2i(2, 2)
 24:17/0 = 0
+9:1/size_in_atlas = Vector2i(6, 5)
+9:1/0 = 0
+15:2/size_in_atlas = Vector2i(4, 5)
+15:2/0 = 0
+26:1/size_in_atlas = Vector2i(6, 6)
+26:1/0 = 0
+8:12/size_in_atlas = Vector2i(6, 5)
+8:12/0 = 0
+0:11/size_in_atlas = Vector2i(8, 6)
+0:11/0 = 0
+8:18/0 = 0
+18:7/size_in_atlas = Vector2i(7, 6)
+18:7/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1a1u0"]
 texture = ExtResource("9_skrxg")
@@ -190,6 +205,7 @@ use_texture_padding = false
 8:0/size_in_atlas = Vector2i(8, 7)
 8:0/0 = 0
 8:0/0/texture_origin = Vector2i(0, 100)
+8:0/0/y_sort_origin = -200
 0:10/size_in_atlas = Vector2i(4, 6)
 0:10/0 = 0
 0:10/0/texture_origin = Vector2i(0, 128)
@@ -349,7 +365,7 @@ tile_set = SubResource("TileSet_xlc22")
 
 [node name="surfaces" type="TileMapLayer" parent="."]
 y_sort_enabled = true
-scale = Vector2(0.634049, 0.829449)
+scale = Vector2(0.64264, 0.502354)
 tile_set = SubResource("TileSet_xlc22")
 
 [node name="Floor_Shadows" type="TileMapLayer" parent="."]

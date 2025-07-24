@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://o8p805et2w7w"]
+
+[ext_resource type="Script" uid="uid://dgit3fiq0hsj5" path="res://SecurityCams/cams_display.gd" id="1_kofjb"]
+[ext_resource type="Texture2D" uid="uid://b16r8lgcplq6h" path="res://art/menu/Mobile Game UI/back_icon.png" id="1_oc0ny"]
+[ext_resource type="Texture2D" uid="uid://crtsl0h72ejek" path="res://art/menu/Mobile Game UI/next_icon.png" id="2_kofjb"]
+
+[node name="cams_display" type="CanvasLayer"]
+script = ExtResource("1_kofjb")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="prev" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 68.0
+grow_vertical = 2
+icon = ExtResource("1_oc0ny")
+
+[node name="next" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -68.0
+grow_horizontal = 0
+grow_vertical = 2
+icon = ExtResource("2_kofjb")
+
+[node name="Container" type="Container" parent="."]
+offset_left = 66.0
+offset_top = 3.0
+offset_right = 106.0
+offset_bottom = 43.0
+scale = Vector2(16.6471, 8.84814)
+
+[connection signal="pressed" from="Panel/prev" to="." method="_on_prev_pressed"]

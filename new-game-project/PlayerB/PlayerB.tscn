@@ -1462,6 +1462,12 @@ position = Vector2(0, 28)
 scale = Vector2(1.19679, 0.591514)
 shape = SubResource("CircleShape2D_cs7jv")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 28)
+scale = Vector2(1.19679, 0.591514)
+shape = SubResource("CircleShape2D_cs7jv")
+
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("default_state")]
 script = ExtResource("17_66vyb")
 default_state = NodePath("PlayerBStateIdle")

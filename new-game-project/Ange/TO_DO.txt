@@ -1,4 +1,7 @@
 -> Who´s Talking ✔️
+-> Vuelve a entrar y se reincia la quest del npc ✔️
+-> me da la sensación que el viewport es muy chiquito, me gustaria hacerle como un zoom-out ✔️
+
 -> Portrait 
 -> Sounds
 -> Your Name 
@@ -11,8 +14,11 @@
 
 -> Dialogo default podria ser un aleatroio del arreglo
 
--> me da la sensación que el viewport es muy chiquito, me gustaria hacerle como un zoom-out ✔️
 
--> Vuelve a entrar y se reincia la quest del npc ✔️
+
 
 -> Proximamente: Modos de juego en el mnu Principal
+
+-> cinematica mandarina en cámaras
+
+->find mandarina

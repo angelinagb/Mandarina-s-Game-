@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bd60j0ppl5sbm"]
 
 [ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_86w2h"]
-[ext_resource type="Texture2D" uid="uid://bjfayaxpwmbpq" path="res://art/characters/iso/npc/clint_bellanger_isometric_programador_npc.png" id="2_p2h21"]
+[ext_resource type="Texture2D" uid="uid://dnv4bv46vfof2" path="res://art/characters/iso/npc/clint_bellanger_isometric_programador_npc.png" id="2_p2h21"]
 [ext_resource type="Resource" uid="uid://bin2w80ucewvn" path="res://Ange/profe_franco_dialogo.tres" id="3_p2h21"]
 [ext_resource type="Resource" uid="uid://brhq08dyercow" path="res://Ange/franco_dialogo_default.tres" id="4_0it1q"]
 

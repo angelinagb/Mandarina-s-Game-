@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1mxik0nrgod3"
-path="res://.godot/imported/mandarina.png-9674d9027de5073649384f2c1305ad5b.ctex"
+uid="uid://cs3rwnqx3k4ae"
+path="res://.godot/imported/walk_1.png-8211abecb5981bf0b79e1b844264390d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/characters/iso/npc/mandarina.png"
-dest_files=["res://.godot/imported/mandarina.png-9674d9027de5073649384f2c1305ad5b.ctex"]
+source_file="res://art/characters/iso/Mandarina/64x64/top-down/walk_1.png"
+dest_files=["res://.godot/imported/walk_1.png-8211abecb5981bf0b79e1b844264390d.ctex"]
 
 [params]
 

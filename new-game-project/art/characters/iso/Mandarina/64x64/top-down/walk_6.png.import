@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b30uws6ghxb4g"
-path="res://.godot/imported/chica triste.png-db69f4d84ee47d0d85096e1498db5c99.ctex"
+uid="uid://cigu7fkr5aeo1"
+path="res://.godot/imported/walk_6.png-5f324f39576586890467627f70a1fd6a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/characters/iso/npc/chica triste.png"
-dest_files=["res://.godot/imported/chica triste.png-db69f4d84ee47d0d85096e1498db5c99.ctex"]
+source_file="res://art/characters/iso/Mandarina/64x64/top-down/walk_6.png"
+dest_files=["res://.godot/imported/walk_6.png-5f324f39576586890467627f70a1fd6a.ctex"]
 
 [params]
 

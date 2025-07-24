@@ -32,15 +32,17 @@ room_id = "ROOM-5"
 position = Vector2(-27, 107)
 rotation = 2.6936
 scale = Vector2(5.32383, -1.24007)
+room_id = "ROOM-SALA-CAMARAS"
+necesary_key = true
 
 [node name="Transitioner4" parent="Interactables/Transitioners" index="3" instance=ExtResource("5_o76j6")]
 position = Vector2(235, -412)
 rotation = -0.589321
 scale = Vector2(3.68585, -0.939496)
+necesary_key = true
 
 [node name="AlumnoNro2-3" parent="Interactables/Npcs" index="0" instance=ExtResource("5_rpjon")]
 position = Vector2(197, -311)
-gives_item = false
 npc_name = "Alumno"
 
 [node name="Nerd4" parent="Interactables/Npcs" index="1" instance=ExtResource("6_rwdn4")]
@@ -52,5 +54,7 @@ position = Vector2(571, -204)
 
 [connection signal="interacted" from="Interactables/Transitioners/Transitioner" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/Transitioner2" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/Transitioner3" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/Transitioner4" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/AlumnoNro2-3" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/Nerd4" to="." method="_on_interactable_interacted"]

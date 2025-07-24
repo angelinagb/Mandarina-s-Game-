@@ -130,7 +130,6 @@ func new_item(item_id):
 		return  
 	else: 
 		inventory_reference.give_item_to_player(item_id)
-		print("ITEM DADO"+ item_id)
 
 
 func take_first_dialogue():

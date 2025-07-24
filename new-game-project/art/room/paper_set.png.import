@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6rgib6qbdv1p"
-path="res://.godot/imported/Mage-Sheet.png-4ffc397b37183c9969124d3124858347.ctex"
+uid="uid://bb5dqyk3tbehr"
+path="res://.godot/imported/paper_set.png-0c39804dba11dddeb3bf63533f25a901.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/characters/iso/npc/Mage-Sheet.png"
-dest_files=["res://.godot/imported/Mage-Sheet.png-4ffc397b37183c9969124d3124858347.ctex"]
+source_file="res://art/room/paper_set.png"
+dest_files=["res://.godot/imported/paper_set.png-0c39804dba11dddeb3bf63533f25a901.ctex"]
 
 [params]
 

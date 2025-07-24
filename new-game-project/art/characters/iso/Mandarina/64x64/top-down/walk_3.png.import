@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b16r8lgcplq6h"
-path="res://.godot/imported/back_icon.png-45a888454dd98ceccb8ccad70cf5f08c.ctex"
+uid="uid://c3wdo2hjv1o5c"
+path="res://.godot/imported/walk_3.png-77ede918e96921a35c8aa0a3eba76b08.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/menu/Mobile Game UI/icons/back_icon.png"
-dest_files=["res://.godot/imported/back_icon.png-45a888454dd98ceccb8ccad70cf5f08c.ctex"]
+source_file="res://art/characters/iso/Mandarina/64x64/top-down/walk_3.png"
+dest_files=["res://.godot/imported/walk_3.png-77ede918e96921a35c8aa0a3eba76b08.ctex"]
 
 [params]
 

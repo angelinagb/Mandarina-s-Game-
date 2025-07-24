@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvo880b0jctdv"]
+
+[ext_resource type="PackedScene" uid="uid://cyif0m3rl1hoj" path="res://visuals/Notificacion GUI/Notification.tscn" id="1_nu1ln"]
+
+[node name="Notification" instance=ExtResource("1_nu1ln")]
+
+[node name="PanelContainer" parent="Control" index="0"]
+modulate = Color(1, 1, 0.329412, 1)
+
+[node name="Titulo" parent="Control/PanelContainer/MarginContainer/VBoxContainer" index="0"]
+text = "¡Haz obtenido una llave!"
+
+[node name="Descripcion" parent="Control/PanelContainer/MarginContainer/VBoxContainer" index="1"]
+text = "Descubre que abre"

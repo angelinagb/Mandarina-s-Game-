@@ -16,6 +16,6 @@ metadata/_custom_type_script = "uid://c0nhxnmv56tui"
 script = ExtResource("1_n7wfs")
 title = "Averiguar que pasa con la tesis"
 steps = Array[ExtResource("2_da7x6")]([ExtResource("3_da7x6"), SubResource("Resource_da7x6")])
-current_step = 0
+current_step = null
 is_secondary = false
 metadata/_custom_type_script = "uid://cj81x6yti6bmb"

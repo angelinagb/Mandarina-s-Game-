@@ -61,17 +61,18 @@ texture_region_size = Vector2i(147, 81)
 texture = ExtResource("5_jeh44")
 texture_region_size = Vector2i(64, 64)
 use_texture_padding = false
-8:0/size_in_atlas = Vector2i(8, 7)
-8:0/0 = 0
-8:0/0/texture_origin = Vector2i(0, 100)
-8:0/0/y_sort_origin = -302
-8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-204, 21, 113, -158, 197, -106, -105, 81)
 0:10/size_in_atlas = Vector2i(4, 6)
 0:10/0 = 0
 3:7/size_in_atlas = Vector2i(3, 3)
 3:7/0 = 0
 3:7/0/y_sort_origin = 41
 3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-22, 35, 8, 18, 48, 40, 11.6, 58.2)
+8:0/size_in_atlas = Vector2i(8, 7)
+8:0/0 = 0
+8:0/0/texture_origin = Vector2i(0, 100)
+8:0/0/z_index = 1
+8:0/0/y_sort_origin = -67
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-204, 21, 113, -158, 197, -106, -105, 81)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dul4s"]
 texture = ExtResource("6_883nb")
@@ -180,6 +181,7 @@ tile_map_data = PackedByteArray("AAARACEAAAAAAAAAAAD8/yYAAAAAAAAAAAD3/x8AAAAAAAA
 tile_set = SubResource("TileSet_0ybgh")
 
 [node name="ventana1" type="Sprite2D" parent="." index="10"]
+modulate = Color(0.775063, 0.775063, 0.775063, 1)
 z_index = -1
 position = Vector2(258.806, 6.75563)
 scale = Vector2(1.48766, 1.26944)
@@ -188,6 +190,7 @@ region_enabled = true
 region_rect = Rect2(35, 30, 141, 195)
 
 [node name="ventana2" type="Sprite2D" parent="." index="11"]
+modulate = Color(0.753984, 0.753984, 0.753984, 1)
 z_index = -1
 position = Vector2(448.806, 99.7556)
 scale = Vector2(1.44014, 1.24335)

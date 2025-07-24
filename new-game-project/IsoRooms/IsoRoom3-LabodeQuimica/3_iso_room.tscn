@@ -39,7 +39,7 @@ scale = Vector2(-1.0321, 1.53535)
 puzzle = ExtResource("6_sunh3")
 
 [node name="PlayerB" parent="Player" index="0"]
-position = Vector2(276, 413)
+position = Vector2(-523, 397)
 
 [connection signal="interacted" from="Interactables/Items/Mate" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/TRANS R3 -> R2" to="." method="_on_interactable_interacted"]

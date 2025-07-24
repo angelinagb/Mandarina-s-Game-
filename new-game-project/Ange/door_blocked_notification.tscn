@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvuwph3krutn4"]
+[gd_scene load_steps=3 format=3 uid="uid://cvuwph3krutn4"]
 
 [ext_resource type="PackedScene" uid="uid://cyif0m3rl1hoj" path="res://visuals/Notificacion GUI/Notification.tscn" id="1_vs5x7"]
+[ext_resource type="AudioStream" uid="uid://cndi1qxenf8xb" path="res://art/music-sfx/RPGsfx/doorClose_4.ogg" id="2_nd0gl"]
 
 [node name="Door_Blocked_Notification" instance=ExtResource("1_vs5x7")]
 tiempo_que_aparece = 2.0
@@ -12,3 +13,6 @@ text = "🔒Area Bloqueada "
 text = "Sigue avanzando para desbloquear
 más áreas"
 horizontal_alignment = 1
+
+[node name="sound" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("2_nd0gl")

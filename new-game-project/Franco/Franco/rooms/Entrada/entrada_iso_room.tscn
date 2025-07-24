@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bd8vu6dvsq1r1" path="res://utils/Interact/Transitioner/Instancias/trans_entrada_deptoal.tscn" id="6_wxnbc"]
 [ext_resource type="PackedScene" uid="uid://ilxqll2oo45m" path="res://Ange/entrada_pasillo.tscn" id="7_gko6f"]
 [ext_resource type="PackedScene" uid="uid://d2f2p7cl1qirc" path="res://Ange/terminal_sube.tscn" id="10_bg5nm"]
-[ext_resource type="PackedScene" uid="uid://bamrwyg31jnv4" path="res://Ange/sube.tscn" id="11_go8ah"]
+[ext_resource type="PackedScene" uid="uid://bamrwyg31jnv4" path="res://Ange/sube.tscn" id="10_go8ah"]
 
 [node name="EntradaIsoRoom" instance=ExtResource("1_jvyd0")]
 
@@ -38,25 +38,28 @@ scale = Vector2(1.2269, 4.19627)
 position = Vector2(109, -613)
 rotation = 2.69055
 scale = Vector2(5.42614, 1.76333)
-room_id = "VACIO"
+room_id = "ROOM-CENTROALUMNOS"
+necesary_key = true
 
 [node name="Transitioner" parent="Interactables/Transitioners" index="2" instance=ExtResource("7_gko6f")]
 z_index = 30
-position = Vector2(403, 62)
+position = Vector2(438, 81)
 rotation = -0.449199
 scale = Vector2(4.54762, -1.30585)
 room_id = "ROOM-6"
+necesary_key = true
 
 [node name="Transitioner2" parent="Interactables/Transitioners" index="3" instance=ExtResource("7_gko6f")]
 z_index = 30
 position = Vector2(577, -490)
 rotation = -0.449199
 scale = Vector2(4.54762, -1.30585)
+necesary_key = true
 
 [node name="trans_entrada_labosyh" parent="Interactables/Transitioners" index="4" instance=ExtResource("6_wxnbc")]
 position = Vector2(681, -726)
 rotation = 0.499486
-scale = Vector2(4.37436, -1.36276)
+scale = Vector2(4.31694, -1.36504)
 room_id = "ROOM-LABOSYH"
 id = "Trans_LABOSYH"
 
@@ -70,9 +73,9 @@ scale = Vector2(1.09628, 1.31673)
 id = "Al3-3"
 
 [node name="Terminal_sube" parent="Interactables" index="3" instance=ExtResource("10_bg5nm")]
-position = Vector2(84, -316)
-scale = Vector2(0.288798, 0.217287)
-activable = ExtResource("11_go8ah")
+position = Vector2(84, -319)
+scale = Vector2(0.272137, 0.217287)
+activable = ExtResource("10_go8ah")
 
 [node name="PlayerB" parent="Player" index="0"]
 position = Vector2(95, -168)

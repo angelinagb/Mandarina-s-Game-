@@ -3,6 +3,7 @@ extends Resource
 
 signal quest_ended(title)
 
+
 @export var title: String
 @export var steps: Array[QuestStep] = []
 @export var current_step: int = 0

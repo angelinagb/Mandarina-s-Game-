@@ -8,11 +8,14 @@ signal finished
 @onready var descripcion : Label = $Control/PanelContainer/MarginContainer/VBoxContainer/Descripcion
 @onready var timer : Timer = $Timer
 @export var tiempo_que_aparece : float = 5.0
+@onready var sound = get_node_or_null("sound")
 
 func start():
 	anim_player.play("fade_in")
 	await anim_player.animation_finished
-	
+	print(sound)
+	if sound:
+		sound.play
 	timer.start(tiempo_que_aparece)
 	await timer.timeout
 	

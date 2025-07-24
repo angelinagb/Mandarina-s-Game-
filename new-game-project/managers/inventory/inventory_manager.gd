@@ -4,6 +4,7 @@ extends Node
 var items: Dictionary = {}
 var items_in_world: Array[String]
 var items_in_player: Array[String]
+var keys_in_player: Array[String]
 
 signal game_ended()
 signal item_updated(item: Dictionary)
@@ -60,3 +61,12 @@ func give_item_to_player(item_id: String) -> void:
 			cont += 1
 		if cont == 4:
 			game_ended.emit()
+
+func new_key(key : String):
+	keys_in_player.append(key)
+
+func has_key(room_id : String):
+	for key in keys_in_player:
+		if key == room_id:
+			return true
+	return false

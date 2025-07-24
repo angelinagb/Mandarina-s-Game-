@@ -25,9 +25,9 @@ var abilities_available_points: Dictionary
 func save_this():
 	var ability_points : Dictionary = {"Points": 10}
 	var abilities: Dictionary = {
-		"Estudio": [0, 5],
-		"Animales": [0, 5],
-		"Carisma": [0, 5]
+		"Intelecto": [0, 5],
+		"Carisma": [0, 5],
+		"Imaginacion": [0, 5]
 	}
 	
 	var items = {
@@ -165,16 +165,22 @@ func _on_interactable_interacted(interactable: Interactable):
 	
 
 func _on_item_grabbed(item: Item) -> void:
-	inventory.item_grabbed(item.getId())
+	if item is Key:
+		inventory.new_key(item.open_room_id)
+	else:
+		inventory.item_grabbed(item.getId())
 	item.end()
 
 func _on_transitioner_activated(transitioner: Transitioner) -> void:
-	if transitioner.quest != null :
-		transitioner.take_room_quest()
-		quest.add_quest(transitioner.quest)
-	var room_id: String = transitioner.get_room_id()
-	change_room(room_id, current_room_id)
-	current_room_id = room_id
+	if transitioner.necesary_key and !inventory.has_key(transitioner.room_id):
+			NotificationManager.enqueue_event(preload("res://Ange/door_blocked_notification.tscn"))
+	else:
+		if transitioner.quest != null :
+			transitioner.take_room_quest()
+			quest.add_quest(transitioner.quest)
+		var room_id: String = transitioner.get_room_id() 
+		change_room(room_id, current_room_id)
+		current_room_id = room_id
 
 func _on_npc_talked_to(npc: Npc) -> void:
 	if npc.gives_item :

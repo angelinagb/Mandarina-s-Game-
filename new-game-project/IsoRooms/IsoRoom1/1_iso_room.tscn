@@ -1,15 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bt1w2mhrlrldg"]
+[gd_scene load_steps=7 format=3 uid="uid://bt1w2mhrlrldg"]
 
 [ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_r6l0j"]
 [ext_resource type="PackedScene" uid="uid://dfp282bcn4bat" path="res://IsoRooms/IsoRoom1/1_base_tiles.tscn" id="2_6jolm"]
 [ext_resource type="Script" uid="uid://ku4vxmgj6gkg" path="res://IsoRooms/IsoRoom1/1_iso_room.gd" id="2_lrgrb"]
 [ext_resource type="PackedScene" uid="uid://bykastfo056vh" path="res://IsoRooms/IsoRoom1/Interactuables/Items/key.tscn" id="3_33ucu"]
-[ext_resource type="Texture2D" uid="uid://dlfto6k0kis28" path="res://art/items/2dClassroomAssetPackByStyloo/Classroom 2 Props/Classroom Props First Spritesheet 8.png" id="4_0cyss"]
 [ext_resource type="PackedScene" uid="uid://dtgjbrj2ss74o" path="res://utils/Interact/Transitioner/Instancias/trans_r1_r2.tscn" id="4_ims64"]
 [ext_resource type="PackedScene" uid="uid://bucn0vs17tsw2" path="res://utils/Interact/Item/Instancias/Mate.tscn" id="5_1a3g4"]
-[ext_resource type="PackedScene" uid="uid://cjkpau08dmw6l" path="res://utils/Interact/Npc/Instancias/ChicaTriste.tscn" id="5_jm6ep"]
-[ext_resource type="Texture2D" uid="uid://7dxmpu3xm8wf" path="res://art/tiles/proyector.png" id="7_f81vo"]
-[ext_resource type="PackedScene" uid="uid://cv8f0bg0ein8h" path="res://utils/Interact/Npc/Instancias/Alumna_1.tscn" id="8_hwk7s"]
 
 [node name="IsoRoom-1" instance=ExtResource("1_r6l0j")]
 y_sort_enabled = true
@@ -28,28 +24,12 @@ position = Vector2(288, -267)
 position = Vector2(230, -370)
 
 [node name="Item" parent="Interactables/Items" index="0" instance=ExtResource("3_33ucu")]
-position = Vector2(-70, -333)
+position = Vector2(-71, -321)
 rotation = 0.00967322
 scale = Vector2(0.426274, 0.649988)
 
-[node name="Pizarra" type="Sprite2D" parent="Interactables/Items" index="1"]
-y_sort_enabled = true
-position = Vector2(537, -359)
-scale = Vector2(0.637805, 0.549202)
-texture = ExtResource("4_0cyss")
-region_enabled = true
-region_rect = Rect2(109, 57, 410, 376)
-
-[node name="Mate" parent="Interactables/Items" index="2" instance=ExtResource("5_1a3g4")]
+[node name="Mate" parent="Interactables/Items" index="1" instance=ExtResource("5_1a3g4")]
 position = Vector2(235, -197)
-
-[node name="Proyector" type="Sprite2D" parent="Interactables/Items" index="3"]
-modulate = Color(0.844351, 0.843886, 0.83505, 1)
-position = Vector2(368, -383)
-scale = Vector2(0.300403, 0.291209)
-texture = ExtResource("7_f81vo")
-region_enabled = true
-region_rect = Rect2(53, 62, 248, 182)
 
 [node name="Trans R1 -> R2" parent="Interactables/Transitioners" index="0" instance=ExtResource("4_ims64")]
 position = Vector2(289, -415)
@@ -58,20 +38,9 @@ scale = Vector2(2.09534, 1.28191)
 room_id = "ROOM-PASILLO1"
 id = "trans_iso_1to2"
 
-[node name="Alumna 1" parent="Interactables/Npcs" index="0" instance=ExtResource("8_hwk7s")]
-position = Vector2(68, -470)
-scale = Vector2(1.91733, 1.64237)
-
-[node name="Chica Triste" parent="Interactables/Npcs" index="1" instance=ExtResource("5_jm6ep")]
-position = Vector2(732, -171)
-scale = Vector2(-1.52753, 1.62744)
-
 [node name="PlayerB" parent="Player" index="0"]
-position = Vector2(-1, 0)
+position = Vector2(397, -218)
 
 [connection signal="interacted" from="Interactables/Items/Item" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Items/Mate" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/Trans R1 -> R2" to="." method="_on_interactable_interacted"]
-[connection signal="interacted" from="Interactables/Npcs/Alumna 1" to="." method="_on_interactable_interacted"]
-[connection signal="dialogue_ended" from="Interactables/Npcs/Chica Triste" to="." method="_on_chica_triste_dialogue_ended"]
-[connection signal="interacted" from="Interactables/Npcs/Chica Triste" to="." method="_on_interactable_interacted"]
