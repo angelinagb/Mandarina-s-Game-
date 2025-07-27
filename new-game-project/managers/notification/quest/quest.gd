@@ -10,8 +10,8 @@ signal quest_ended(title)
 @export var is_secondary : bool = true
 
 func init():
-	for step : QuestStep in steps:
-		step.step_completed.connect(on_last_step_completed)
+	steps[steps.size() -1 ].step_completed.connect(on_last_step_completed)
+	
 
 func get_current_step() -> QuestStep:
 	if current_step < steps.size():

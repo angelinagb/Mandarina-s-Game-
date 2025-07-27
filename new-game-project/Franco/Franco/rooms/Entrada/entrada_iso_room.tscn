@@ -8,10 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://57n8nvjbm568" path="res://Franco/Franco/Npcs/AlumnoNro3/alumno_3-3.tscn" id="6_iyjjf"]
 [ext_resource type="PackedScene" uid="uid://bd8vu6dvsq1r1" path="res://utils/Interact/Transitioner/Instancias/trans_entrada_deptoal.tscn" id="6_wxnbc"]
 [ext_resource type="PackedScene" uid="uid://ilxqll2oo45m" path="res://Ange/entrada_pasillo.tscn" id="7_gko6f"]
-[ext_resource type="PackedScene" uid="uid://d2f2p7cl1qirc" path="res://Ange/terminal_sube.tscn" id="10_bg5nm"]
-[ext_resource type="PackedScene" uid="uid://bamrwyg31jnv4" path="res://Ange/sube.tscn" id="10_go8ah"]
+[ext_resource type="PackedScene" uid="uid://d2f2p7cl1qirc" path="res://Ange/Decos/terminal_sube.tscn" id="10_bg5nm"]
+[ext_resource type="PackedScene" uid="uid://bamrwyg31jnv4" path="res://Ange/Decos/sube.tscn" id="10_go8ah"]
 
 [node name="EntradaIsoRoom" instance=ExtResource("1_jvyd0")]
+room_id = "ROOM-ENTRADA"
 
 [node name="Entrada" parent="." index="0" instance=ExtResource("2_wxnbc")]
 
@@ -70,6 +71,7 @@ scale = Vector2(1.41777, 1.54542)
 [node name="AlumnoNro3-3" parent="Interactables/Npcs" index="1" instance=ExtResource("6_iyjjf")]
 position = Vector2(226, -503)
 scale = Vector2(1.09628, 1.31673)
+gives_item = ""
 id = "Al3-3"
 
 [node name="Terminal_sube" parent="Interactables" index="3" instance=ExtResource("10_bg5nm")]

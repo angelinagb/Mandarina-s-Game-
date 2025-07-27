@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://3g08138nqpuj" path="res://IsoRooms/IsoRoom2/2_iso_room_cafeteria.tscn" id="1_7eguv"]
 [ext_resource type="Script" uid="uid://bfncky2s0ss6u" path="res://Tomas/CAFETERIA/cafeteria.gd" id="2_ap168"]
 [ext_resource type="PackedScene" uid="uid://dh1mihsxbf435" path="res://Tomas/CAFETERIA/Intro/cafeteria_dialogo_1.tscn" id="3_km8hj"]
-[ext_resource type="Texture2D" uid="uid://gpqvpe334ymm" path="res://art/characters/iso/npc/Trader_npc.png" id="4_4je3a"]
+[ext_resource type="Texture2D" uid="uid://dlbf708twa50n" path="res://art/characters/iso/npc/Trader_npc.png" id="4_4je3a"]
 [ext_resource type="PackedScene" uid="uid://hm1bx25eg2ip" path="res://Tomas/CAFETERIA/Vendedor_Q1.tscn" id="4_j2wjg"]
 [ext_resource type="PackedScene" uid="uid://casn7bf6nq44q" path="res://utils/Interact/Transitioner/Instancias/trans_r2_r3.tscn" id="4_w6y4y"]
 [ext_resource type="PackedScene" uid="uid://n0gmw80orkd4" path="res://utils/Interact/Npc/Instancias/Grupo_1.tscn" id="5_snxlu"]
@@ -96,39 +96,33 @@ hframes = 6
 position = Vector2(-2.66667, -3)
 rotation = -0.0425112
 scale = Vector2(0.333333, 0.333333)
-gives_item = false
 id = "COFFEE_V"
 
 [node name="Vendedor Q2" parent="Interactables/Npcs/SPRITE VENDEDOR" index="1" groups=["Q2"] instance=ExtResource("6_xnuun")]
 process_mode = 4
 position = Vector2(-4.54008, -3.45291)
 scale = Vector2(0.367685, 0.333333)
-gives_item = false
 quest = ExtResource("7_0pd66")
 
 [node name="Nerd" parent="Interactables/Npcs" index="1" groups=["Q2_BEGIN"] instance=ExtResource("8_aaue2")]
 process_mode = 4
 position = Vector2(187, -179)
 rotation = -0.0416234
-gives_item = false
 
 [node name="GRUPO 1" parent="Interactables/Npcs" index="2" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("5_snxlu")]
 process_mode = 4
 position = Vector2(-204, -36)
-gives_item = false
 
 [node name="GRUPO 2" parent="Interactables/Npcs" index="3" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("6_4je3a")]
 process_mode = 4
-position = Vector2(645, -37)
-gives_item = false
+position = Vector2(615, -6)
 
 [node name="GRUPO 3" parent="Interactables/Npcs" index="4" groups=["Q1_GRUPOS"] instance=ExtResource("7_xnuun")]
 process_mode = 4
 position = Vector2(92, 68)
-gives_item = false
 
 [node name="PlayerB" parent="Player" index="0"]
-position = Vector2(-237, -131)
+position = Vector2(-456, -152)
 
 [node name="CinematicasCafeteria" type="AnimationPlayer" parent="." index="4"]
 libraries = {

@@ -173,5 +173,4 @@ tile_map_data = PackedByteArray()
 tile_set = SubResource("TileSet_iw57x")
 
 [node name="surfaces" parent="." index="5"]
-scale = Vector2(0.64264, 0.502354)
 tile_set = SubResource("TileSet_iw57x")

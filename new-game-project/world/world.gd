@@ -22,6 +22,9 @@ var current: IsoRoom
 var abilities_points: Dictionary
 var abilities_available_points: Dictionary
 
+var notifications ={"item_notification": preload("res://visuals/Notificacion GUI/Instancias/item_picked_up_notif.tscn")}
+
+
 func save_this():
 	var ability_points : Dictionary = {"Points": 10}
 	var abilities: Dictionary = {
@@ -31,6 +34,22 @@ func save_this():
 	}
 	
 	var items = {
+		"Key": {
+			"id": "key",
+			"name":"Key",
+			"desc": "La llave de alguna puerta de la facultad",
+			"path_img": "res://art/menu/Icons_Essential/v1.2/Icons/Key.png",
+			"is_in_world": true,
+			"is_in_player": false
+		},
+		"Pendrive": {
+			"id": "pendrive",
+			"name":"pendrive",
+			"desc": "Un contenedor binario de informacion,que agradable",
+			"path_img": "res://art/items/pendrive.png",
+			"is_in_world": true,
+			"is_in_player": false
+		},
 		"Mate": {
 			"id": "Mate",
 			"name": "Mate",
@@ -52,6 +71,14 @@ func save_this():
 			"name": "Yerba",
 			"desc": "el item 2",
 			"path_img": "res://art/items/yerba.png",
+			"is_in_world": true,
+			"is_in_player": false
+		},
+		"Capitulo0": {
+			"id": "Capitulo0",
+			"name": "Introducción",
+			"desc": "El capitulo 1 de la tesis.",
+			"path_img": "res://art/items/book.png",
 			"is_in_world": true,
 			"is_in_player": false
 		},
@@ -159,8 +186,9 @@ func _on_interactable_interacted(interactable: Interactable):
 		"activator":
 			await _on_activator_activate(interactable)
 		_:
-			print("no tengo interactuable" + interactable.my_type)
+			print("no tengo interactuable" + interactable.my_type + interactable.getId())
 	
+
 	event.interactable_triggered(interactable.id)
 	
 
@@ -169,6 +197,7 @@ func _on_item_grabbed(item: Item) -> void:
 		inventory.new_key(item.open_room_id)
 	else:
 		inventory.item_grabbed(item.getId())
+		NotificationManager.enqueue_event(notifications.item_notification)
 	item.end()
 
 func _on_transitioner_activated(transitioner: Transitioner) -> void:
@@ -183,8 +212,8 @@ func _on_transitioner_activated(transitioner: Transitioner) -> void:
 		current_room_id = room_id
 
 func _on_npc_talked_to(npc: Npc) -> void:
-	if npc.gives_item :
-		npc.connect_events_to_inventory(inventory) 
+	if npc.gives_item != null :
+		npc.node_item.interacted.connect(_on_interactable_interacted)
 	
 	npc.startDialogue()
 	await npc.dialogue_ended

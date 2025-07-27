@@ -15,7 +15,6 @@ func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
 func enqueue_event(async_scene: PackedScene):
-	print_stack()
 	async_queue.append(async_scene)
 	if not is_playing:
 		_start_queue()
@@ -38,3 +37,4 @@ func _process_queue() -> void:
 	await event_instance.finished  # Custom signal when the event is done
 	event_instance.queue_free()
 	_process_queue()
+ 

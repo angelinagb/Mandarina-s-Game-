@@ -4,7 +4,7 @@ signal quest_begun
 signal dialogue_ended
 signal quest_ended(title)
 
-@export var gives_item: bool
+@export var gives_item: String
 @export var npc_name: String
 @export var quest: Quest
 
@@ -15,10 +15,10 @@ signal quest_ended(title)
 @onready var current_dialogue: int = 0
 @onready var current_npc_state:STATE = STATE.WAITING
 
-var inventory_reference : InventoryManager
 var player_in_range = false
 var tiene_dialogo_quest : bool 
 var tiene_quest: bool
+var node_item: Item
 
 enum STATE {
 	TALKING,
@@ -31,13 +31,13 @@ func _ready():
 	name = "npc" + npc_name
 	my_type = "npc"
 	
-	if gives_item :
+	if gives_item != null:
+		create_item()
 		primerDialogo.deliver_item.connect(new_item)
 		
 	if primerDialogo.esta_vacio() == false: 
 		tiene_dialogo_quest = true
 		quest_icon.show()
-		
 	if quest:
 		tiene_quest = true
 		quest.init()
@@ -67,7 +67,6 @@ func interact():
 	await dialogueEnded()
 	
 func startDialogue():
-	
 	if tiene_dialogo_quest == true:
 		primerDialogo.set_speaker(self.npc_name)
 		primerDialogo.start()
@@ -122,16 +121,16 @@ func load_state(current_state):
 func get_type()  -> String :
 	return my_type
 	
-func connect_events_to_inventory(inventory: InventoryManager):
-	inventory_reference = inventory
 
-func new_item(item_id):
-	if not inventory_reference :
-		return  
-	else: 
-		inventory_reference.give_item_to_player(item_id)
-
+func new_item(item):
+	node_item.interact()
 
 func take_first_dialogue():
 	quest_icon.hide()
 	tiene_dialogo_quest = false
+
+func create_item() -> Item :
+	node_item = Item.new()
+	node_item.my_type = "item"
+	node_item.id = gives_item
+	return node_item

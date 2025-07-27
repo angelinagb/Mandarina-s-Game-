@@ -8,6 +8,7 @@ signal quest_updated(quest: Quest)
 signal all_level_quest_completed
 
 var taken_quests: Array[Quest] = []
+var completed_quest: Array[Quest] = []
 var active_primary_quest : Quest = null
 var active_secondary_quest : Quest = null
 var event_manager: EventManager
@@ -47,9 +48,15 @@ func on_quest_finished(title):
 	var quest_completed_scene = preload("res://Tomas/pop up/quest_completed.tscn")
 	var temp = quest_completed_scene.instantiate()
 	var personalizada = temp.get_personalized_scene(title)
-	NotificationManager.enqueue_event(personalizada)
-	set_main("","")
-	set_secondary("","")
+	NotificationManager.enqueue_event(personalizada)	
+	completed_quest.append(get_quest_by_title(title))
+	taken_quests.erase(get_quest_by_title(title))
+	if taken_quests.size() > 0 &&  taken_quests[0] != null :
+		if taken_quests[0].is_secondary == false :
+			set_main(taken_quests[0].title,taken_quests[0].get_current_step().text_to_do)
+			active_primary_quest = taken_quests[0]
+		else: 
+			set_secondary(taken_quests[0].title, taken_quests[0].get_current_step().text_to_do)
 	
 	
 func add_quest(quest: Quest) -> void:
@@ -78,7 +85,8 @@ func on_event_added(event: String) -> void:
 					quest.quest_ended.emit(quest.title)
 			
 	
-	
+
+#solo en takern quest claro
 func get_quest_by_title(title: String) -> Quest:
 	for quest in taken_quests:
 		if quest.title == title:

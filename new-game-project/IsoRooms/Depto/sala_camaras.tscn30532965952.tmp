@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://c2gjo04u3whyy"]
+
+[ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_tgbj5"]
+[ext_resource type="PackedScene" uid="uid://ch4g0isb86j0w" path="res://IsoRooms/Depto/dpto_base_tiles.tscn" id="2_c4beg"]
+[ext_resource type="Script" uid="uid://dvgqdurqjfity" path="res://IsoRooms/Depto/sala_camaras.gd" id="2_pwxik"]
+[ext_resource type="PackedScene" uid="uid://cemxq83ayi3jv" path="res://pendrive.tscn" id="3_c4beg"]
+[ext_resource type="PackedScene" uid="uid://dpgylvsidqx3f" path="res://IsoRooms/Depto/player_think.tscn" id="3_lp3ph"]
+[ext_resource type="PackedScene" uid="uid://53qcgarmhxng" path="res://utils/Interact/Transitioner/transitioner.tscn" id="4_l1x5i"]
+[ext_resource type="PackedScene" uid="uid://c352qhl8iuech" path="res://utils/Interact/Activator/activator.tscn" id="5_ultxf"]
+[ext_resource type="PackedScene" uid="uid://o8p805et2w7w" path="res://SecurityCams/cams_display.tscn" id="6_pwxik"]
+
+[node name="IsoRoom" instance=ExtResource("1_tgbj5")]
+script = ExtResource("2_pwxik")
+player_think = ExtResource("3_lp3ph")
+
+[node name="BaseTiles" parent="." index="0" instance=ExtResource("2_c4beg")]
+scale = Vector2(1.00219, 1)
+
+[node name="defect" parent="Spawns" index="0"]
+position = Vector2(198, -200)
+
+[node name="ROOM-PASILLO2" type="Marker2D" parent="Spawns" index="1"]
+position = Vector2(618, 31)
+
+[node name="Item" parent="Interactables/Items" index="0" instance=ExtResource("3_c4beg")]
+position = Vector2(-105, -365)
+scale = Vector2(0.418392, 0.495411)
+
+[node name="Transitioner" parent="Interactables/Transitioners" index="0" instance=ExtResource("4_l1x5i")]
+position = Vector2(708, 70)
+rotation = -0.556548
+scale = Vector2(7.16601, 1.19053)
+room_id = "ROOM-PASILLO2"
+
+[node name="Cams_Activator" parent="Interactables" index="4" instance=ExtResource("5_ultxf")]
+y_sort_enabled = true
+position = Vector2(230, -244)
+rotation = 0.144878
+scale = Vector2(2.46493, 1.46672)
+activable = ExtResource("6_pwxik")
+
+[node name="PlayerB" parent="Player" index="0"]
+position = Vector2(120, -233)
+
+[connection signal="interacted" from="Interactables/Transitioners/Transitioner" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Cams_Activator" to="." method="_on_interactable_interacted"]

@@ -6,7 +6,6 @@
 [ext_resource type="Resource" uid="uid://brhq08dyercow" path="res://Ange/franco_dialogo_default.tres" id="4_0it1q"]
 
 [node name="Npc" instance=ExtResource("1_86w2h")]
-gives_item = true
 npc_name = "Profe Franco"
 id = "PROFE_FRANCO_NPC"
 

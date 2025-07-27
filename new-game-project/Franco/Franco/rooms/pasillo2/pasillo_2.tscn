@@ -33,7 +33,6 @@ position = Vector2(-27, 107)
 rotation = 2.6936
 scale = Vector2(5.32383, -1.24007)
 room_id = "ROOM-SALA-CAMARAS"
-necesary_key = true
 
 [node name="Transitioner4" parent="Interactables/Transitioners" index="3" instance=ExtResource("5_o76j6")]
 position = Vector2(235, -412)
@@ -43,11 +42,13 @@ necesary_key = true
 
 [node name="AlumnoNro2-3" parent="Interactables/Npcs" index="0" instance=ExtResource("5_rpjon")]
 position = Vector2(197, -311)
-npc_name = "Alumno"
+npc_name = "Jorge"
 
 [node name="Nerd4" parent="Interactables/Npcs" index="1" instance=ExtResource("6_rwdn4")]
-position = Vector2(641, -350)
+position = Vector2(634, -343)
 scale = Vector2(1.81113, 1.98075)
+gives_item = "Capitulo1"
+npc_name = "Camila"
 
 [node name="PlayerB" parent="Player" index="0"]
 position = Vector2(571, -204)

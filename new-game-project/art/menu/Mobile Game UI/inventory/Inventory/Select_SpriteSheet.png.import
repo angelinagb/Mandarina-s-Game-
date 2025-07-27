@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c03b3kkl8r48s"
-path="res://.godot/imported/habilidad_animales.png-29722c31f634e56c85a0f1c67ac8b730.ctex"
+uid="uid://l5kbgudp8vwl"
+path="res://.godot/imported/Select_SpriteSheet.png-14fcdb9e952d5386b58fecf3f7c49772.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/menu/habilidad_animales.png"
-dest_files=["res://.godot/imported/habilidad_animales.png-29722c31f634e56c85a0f1c67ac8b730.ctex"]
+source_file="res://art/menu/Mobile Game UI/inventory/Inventory/Select_SpriteSheet.png"
+dest_files=["res://.godot/imported/Select_SpriteSheet.png-14fcdb9e952d5386b58fecf3f7c49772.ctex"]
 
 [params]
 

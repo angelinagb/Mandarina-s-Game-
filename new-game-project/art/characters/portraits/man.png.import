@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6okgw8r4wnxp"
-path="res://.godot/imported/habilidad_estudio.png-0b8e2cf13bda290f0da4454035bb8b4b.ctex"
+uid="uid://gt266u0y5xi6"
+path="res://.godot/imported/man.png-45a2908b2ca067ba8c3ad3bb20466cc1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/menu/habilidad_estudio.png"
-dest_files=["res://.godot/imported/habilidad_estudio.png-0b8e2cf13bda290f0da4454035bb8b4b.ctex"]
+source_file="res://art/characters/portraits/man.png"
+dest_files=["res://.godot/imported/man.png-45a2908b2ca067ba8c3ad3bb20466cc1.ctex"]
 
 [params]
 

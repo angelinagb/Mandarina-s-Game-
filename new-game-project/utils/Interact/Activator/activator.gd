@@ -1,5 +1,6 @@
 class_name Activator extends Interactable
 
+signal end_activable
 @export var activable : PackedScene
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,7 +26,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 func interact():
 		QueueManager.enqueue_event(activable)
 		interacted.emit(self)
-		print("interactuo")
+		end_activable.emit()
 		
 func get_type()  -> String :
 	return my_type

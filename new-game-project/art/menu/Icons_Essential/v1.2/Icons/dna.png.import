@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx2dyltcd3l4y"
-path="res://.godot/imported/Sube.png-b0700c46ffcc833af9ed40ea816ff4e5.ctex"
+uid="uid://dpcxmyc235vxf"
+path="res://.godot/imported/dna.png-4a27e5c2b6ee4a0507b5edc4ef508da7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ange/Sube.png"
-dest_files=["res://.godot/imported/Sube.png-b0700c46ffcc833af9ed40ea816ff4e5.ctex"]
+source_file="res://art/menu/Icons_Essential/v1.2/Icons/dna.png"
+dest_files=["res://.godot/imported/dna.png-4a27e5c2b6ee4a0507b5edc4ef508da7.ctex"]
 
 [params]
 

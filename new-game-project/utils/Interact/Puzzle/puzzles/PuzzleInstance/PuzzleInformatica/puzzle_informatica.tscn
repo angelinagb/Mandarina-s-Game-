@@ -5,7 +5,6 @@
 
 [node name="PinCracker" type="CanvasLayer"]
 script = ExtResource("1_s33nc")
-item_id = "Capitulo2"
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 15

@@ -8,12 +8,12 @@
 
 [sub_resource type="Resource" id="Resource_cba2b"]
 script = ExtResource("3_pcb0t")
-item_id = "Capitulo1"
+item_id = "Capitulo0"
 metadata/_custom_type_script = "uid://bk4dph0sloiwh"
 
 [sub_resource type="Resource" id="Resource_pam5u"]
 script = ExtResource("1_pft6n")
-arreglo_de_textos = PackedStringArray("(risa nerviosa) No... pero encontré una hoja en la impresora.", "Tomá", "Deberías encontrar el resto antes de que la IA termine la etapa de entrenamiento.", "Podés ver las camaras si quieres")
+arreglo_de_textos = PackedStringArray("(risa nerviosa) No... pero encontré una hoja en la impresora.", "Tomá", "Deberías encontrar el resto antes de que la IA termine la etapa de entrenamiento.", "Podés ver las cámaras si quieres", "En el escritorio estan las llaves de la sala de camaras,  antes era el aula de Trabajo Final", "¡Suerte en la busqueda!")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"
 

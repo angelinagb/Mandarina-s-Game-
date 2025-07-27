@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqsw8irjpatkr"
-path="res://.godot/imported/Preview.png-95fd88741038f484424a1524a0cc9d14.ctex"
+uid="uid://c6rbi3n6rdyl4"
+path="res://.godot/imported/Inventory_icons_and_text.png-d3c0a8501968ff6d739eb835eb12f772.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/menu/Preview.png"
-dest_files=["res://.godot/imported/Preview.png-95fd88741038f484424a1524a0cc9d14.ctex"]
+source_file="res://art/menu/Mobile Game UI/inventory/Inventory/Inventory_icons_and_text.png"
+dest_files=["res://.godot/imported/Inventory_icons_and_text.png-d3c0a8501968ff6d739eb835eb12f772.ctex"]
 
 [params]
 

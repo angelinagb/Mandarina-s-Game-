@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_8ulqu"]
 [ext_resource type="Resource" uid="uid://c37gusn0desdm" path="res://Tomas/CAFETERIA/Quest 1/cafeteria_quest_1_dialogo_grupo_2.tres" id="2_6yet1"]
-[ext_resource type="Texture2D" uid="uid://dwrjitbrmvrmk" path="res://art/characters/iso/npc/unnamed (1).png" id="2_lbk0d"]
+[ext_resource type="Texture2D" uid="uid://d0puyy150tjoo" path="res://art/characters/iso/npc/girl_npc.png" id="2_lbk0d"]
 
 [node name="GRUPO 2" instance=ExtResource("1_8ulqu")]
 id = "COFFEE_G2"

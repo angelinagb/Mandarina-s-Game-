@@ -13,7 +13,6 @@ signal finished
 func start():
 	anim_player.play("fade_in")
 	await anim_player.animation_finished
-	print(sound)
 	if sound:
 		sound.play
 	timer.start(tiempo_que_aparece)

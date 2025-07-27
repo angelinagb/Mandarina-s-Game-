@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3sb8mknddc5b"
-path="res://.godot/imported/Sample.png-9991b329ea476f6e86f08947a1e8227e.ctex"
+uid="uid://dx2dyltcd3l4y"
+path="res://.godot/imported/Sube.png-66642bd86abe34e0c9416813b84f7d7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/menu/Sample.png"
-dest_files=["res://.godot/imported/Sample.png-9991b329ea476f6e86f08947a1e8227e.ctex"]
+source_file="res://Ange/Decos/Sube.png"
+dest_files=["res://.godot/imported/Sube.png-66642bd86abe34e0c9416813b84f7d7b.ctex"]
 
 [params]
 

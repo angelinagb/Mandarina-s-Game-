@@ -6,6 +6,7 @@
 
 [node name="AlumnoNro2-3" instance=ExtResource("1_vxmm5")]
 scale = Vector2(1.2, 1.2)
+gives_item = ""
 
 [node name="Sprite2D" parent="." index="1"]
 scale = Vector2(0.2, 0.2)

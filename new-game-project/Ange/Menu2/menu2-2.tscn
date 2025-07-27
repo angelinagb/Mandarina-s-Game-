@@ -1,0 +1,501 @@
+[gd_scene load_steps=15 format=3 uid="uid://c8bq8afxvd45f"]
+
+[ext_resource type="Script" uid="uid://bp6qhe2jtedya" path="res://visuals/menu.gd" id="1_o827s"]
+[ext_resource type="Texture2D" uid="uid://dkucmftlc07xx" path="res://art/menu/fondoMenu.png" id="2_72h0v"]
+[ext_resource type="Texture2D" uid="uid://br8c3vwnkg0ql" path="res://art/menu/Icons_Essential/v1.2/Icons/Backpack.png" id="3_a0qig"]
+[ext_resource type="Texture2D" uid="uid://dxbbifcf2qi75" path="res://art/tiles/Glow-Background-PNG-Image.png" id="4_x0w84"]
+[ext_resource type="Texture2D" uid="uid://dxfpavhplc11t" path="res://art/menu/Icons_Essential/v1.2/Icons/Hammer.png" id="5_6juix"]
+[ext_resource type="FontFile" uid="uid://ctwexxmrsmp1g" path="res://utils/Interact/Puzzle/puzzles/font/LuckiestGuy-Regular.ttf" id="6_crokh"]
+[ext_resource type="Texture2D" uid="uid://p7d4bw6i5y3n" path="res://art/menu/Icons_Essential/v1.2/Icons/Book.png" id="7_14fj0"]
+[ext_resource type="Texture2D" uid="uid://qaljqtu3nsel" path="res://art/menu/Icons_Essential/v1.2/Icons/ChestTreasure.png" id="8_6xj7g"]
+[ext_resource type="Texture2D" uid="uid://b678p7ey5f2il" path="res://art/menu/Icons_Essential/v1.2/Icons/Document.png" id="9_8fjs6"]
+[ext_resource type="Texture2D" uid="uid://lfuhe82nci3l" path="res://art/menu/Icons_Essential/v1.2/Icons/Exit.png" id="10_fokrn"]
+[ext_resource type="PackedScene" uid="uid://cpqmbgeosfbo2" path="res://Ange/Menu2/inventario2.tscn" id="11_vrksn"]
+
+[sub_resource type="Animation" id="Animation_ne6fd"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Attributes_Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.93),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(332, 162), Vector2(0, 211)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Attributes_Button:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.93),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/Quest_Button:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(332, 166), Vector2(571, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/Quest_Button:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/Objetcts_Button:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(332, 163), Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/Objetcts_Button:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Control/Chapters_Button:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(334, 164), Vector2(571, 211)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Control/Chapters_Button:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Control/Menu/Glow-background-png-image:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Control/Attributes_Button/glow:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Control/Quest_Button/glow2:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.0333333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Control/Objetcts_Button/glow3:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Control/Chapters_Button/glow4:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Control/Attributes_Button/Label4:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Control/Quest_Button/Label3:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Control/Objetcts_Button/Label:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Control/Chapters_Button/Label2:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_v0e36"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Attributes_Button/Label4:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Quest_Button/Label3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/Objetcts_Button/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/Chapters_Button/Label2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ww4o1"]
+_data = {
+&"RESET": SubResource("Animation_v0e36"),
+&"fade_in": SubResource("Animation_ne6fd")
+}
+
+[node name="menu" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_o827s")
+metadata/_edit_horizontal_guides_ = [262.0]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 800.0
+offset_top = -220.0
+offset_right = 800.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+texture = ExtResource("2_72h0v")
+stretch_mode = 3
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.096
+anchor_top = 0.108
+anchor_right = 0.928
+anchor_bottom = 0.931
+offset_left = -7.8
+offset_top = -6.88
+offset_right = 3.59998
+offset_bottom = 6.83997
+
+[node name="Menu" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = -49.5
+offset_right = 53.0
+offset_bottom = 49.5
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("3_a0qig")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Glow-background-png-image" type="Sprite2D" parent="Control/Menu"]
+modulate = Color(1, 1, 1, 0)
+show_behind_parent = true
+position = Vector2(45.5, 58.5)
+scale = Vector2(0.253049, 0.221429)
+texture = ExtResource("4_x0w84")
+
+[node name="Attributes_Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.5
+offset_top = 7.0
+offset_right = 99.5
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+icon = ExtResource("5_6juix")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="glow" type="Sprite2D" parent="Control/Attributes_Button"]
+visible = false
+show_behind_parent = true
+position = Vector2(622, 48)
+scale = Vector2(0.259887, 0.238853)
+texture = ExtResource("4_x0w84")
+
+[node name="Label4" type="Label" parent="Control/Attributes_Button"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 102.0
+offset_right = 91.0
+offset_bottom = 139.0
+theme_override_colors/font_color = Color(0, 0.0784314, 0, 1)
+theme_override_fonts/font = ExtResource("6_crokh")
+text = "Atributos"
+
+[node name="Quest_Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -345.0
+offset_top = 166.0
+offset_right = -239.0
+offset_bottom = 265.0
+grow_horizontal = 0
+scale = Vector2(1e-05, 1e-05)
+icon = ExtResource("7_14fj0")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="glow2" type="Sprite2D" parent="Control/Quest_Button"]
+show_behind_parent = true
+position = Vector2(-521, 56)
+scale = Vector2(0.259887, 0.238853)
+texture = ExtResource("4_x0w84")
+
+[node name="Label3" type="Label" parent="Control/Quest_Button"]
+visible = false
+layout_mode = 0
+offset_left = 21.0
+offset_top = 305.0
+offset_right = 98.0
+offset_bottom = 342.0
+theme_override_colors/font_color = Color(0, 0.0784314, 0, 1)
+theme_override_fonts/font = ExtResource("6_crokh")
+text = "Capítulos
+"
+
+[node name="Objetcts_Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.5
+offset_top = 8.0
+offset_right = 99.5
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+icon = ExtResource("8_6xj7g")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="glow3" type="Sprite2D" parent="Control/Objetcts_Button"]
+visible = false
+show_behind_parent = true
+z_index = -1
+position = Vector2(50, 261)
+scale = Vector2(0.259887, 0.238853)
+texture = ExtResource("4_x0w84")
+
+[node name="Label" type="Label" parent="Control/Objetcts_Button"]
+visible = false
+layout_mode = 0
+offset_left = 19.0
+offset_top = 96.0
+offset_right = 84.0
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(0, 0.0784314, 0, 1)
+theme_override_fonts/font = ExtResource("6_crokh")
+text = "Objetos"
+
+[node name="Chapters_Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.5
+offset_top = 9.0
+offset_right = 101.5
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+icon = ExtResource("9_8fjs6")
+flat = true
+expand_icon = true
+
+[node name="glow4" type="Sprite2D" parent="Control/Chapters_Button"]
+visible = false
+show_behind_parent = true
+z_index = -1
+position = Vector2(44, -157)
+scale = Vector2(0.259887, 0.238853)
+texture = ExtResource("4_x0w84")
+
+[node name="Label2" type="Label" parent="Control/Chapters_Button"]
+visible = false
+layout_mode = 0
+offset_left = 16.0
+offset_top = -114.0
+offset_right = 85.0
+offset_bottom = -91.0
+theme_override_colors/font_color = Color(0, 0.0784314, 0, 1)
+theme_override_fonts/font = ExtResource("6_crokh")
+text = "Misiones"
+
+[node name="Exit_Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -57.0
+offset_top = -26.0
+offset_right = -33.0
+offset_bottom = -2.0
+icon = ExtResource("10_fokrn")
+flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ww4o1")
+}
+
+[node name="Inventario" parent="." instance=ExtResource("11_vrksn")]
+layer = 3
+visible = false
+
+[connection signal="pressed" from="Control/Objetcts_Button" to="." method="_on_objetcts_button_pressed"]
+[connection signal="pressed" from="Control/Exit_Button" to="." method="_on_exit_button_pressed"]
+
+[editable path="Inventario"]

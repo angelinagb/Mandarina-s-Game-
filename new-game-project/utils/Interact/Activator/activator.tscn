@@ -1,8 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://c352qhl8iuech"]
+[gd_scene load_steps=4 format=3 uid="uid://c352qhl8iuech"]
 
 [ext_resource type="PackedScene" uid="uid://mvhkwj4slyyt" path="res://utils/Interact/Interactable/interactable.tscn" id="1_r5poh"]
 [ext_resource type="Script" uid="uid://catgvpvrv4gou" path="res://utils/Interact/Activator/activator.gd" id="2_5pt0y"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5pt0y"]
+size = Vector2(54.796, 27.2882)
+
 [node name="Activator" instance=ExtResource("1_r5poh")]
 script = ExtResource("2_5pt0y")
 activable = null
+
+[node name="Area2D" parent="." index="1"]
+visible = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_5pt0y")

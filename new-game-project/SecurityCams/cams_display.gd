@@ -7,6 +7,7 @@ const SECURITY_CAMS_4 = preload("res://SecurityCams/security_cams4.tscn")
 @onready var container: CenterContainer = $Container
 
 var current_cam = 1
+signal end
 signal finished
 
 # Called when the node enters the scene tree for the first time.
@@ -36,6 +37,9 @@ func display(camera_numer : int ):
 	# Instanciar y agregar la nueva
 	var camera_instance = camera_scene.instantiate()
 	container.add_child(camera_instance)
+	await camera_instance.finished
+	current_cam += 1
+	display(current_cam)
 
 func _on_prev_pressed() -> void:
 	if current_cam == 1: 
@@ -60,5 +64,6 @@ func start():
 
 
 func _on_exit_pressed() -> void:
+	end.emit()
 	finished.emit()
 	queue_free()

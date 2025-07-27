@@ -7,15 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://cmbhdp0rhrnn5" path="res://art/characters/iso/GirlSample/playerShadow.png" id="5_4cdph"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4cdph"]
-radius = 21.0
-height = 47.3333
+radius = 15.1734
+height = 37.0904
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_21rhp"]
 radius = 6.18907
 
 [node name="Npc" instance=ExtResource("1_k5sc4")]
 script = ExtResource("2_x63vy")
-gives_item = false
+gives_item = ""
 npc_name = ""
 quest = null
 

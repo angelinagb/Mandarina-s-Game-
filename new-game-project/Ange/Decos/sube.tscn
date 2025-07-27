@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bamrwyg31jnv4"]
 
-[ext_resource type="Texture2D" uid="uid://dx2dyltcd3l4y" path="res://Ange/Sube.png" id="1_8veti"]
-[ext_resource type="Script" uid="uid://cf6keeo0hxech" path="res://Ange/sube.gd" id="1_rqqix"]
+[ext_resource type="Texture2D" uid="uid://dx2dyltcd3l4y" path="res://Ange/Decos/Sube.png" id="1_8veti"]
+[ext_resource type="Script" uid="uid://cf6keeo0hxech" path="res://Ange/Decos/sube.gd" id="1_rqqix"]
 [ext_resource type="Texture2D" uid="uid://bpy18y0xg07wn" path="res://art/menu/Mobile Game UI/buttons/circle_button_3.png" id="2_blor7"]
 [ext_resource type="Texture2D" uid="uid://b16r8lgcplq6h" path="res://art/menu/Mobile Game UI/back_icon.png" id="3_rqqix"]
 
