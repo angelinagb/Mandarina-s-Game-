@@ -1,9 +1,17 @@
-[gd_resource type="Resource" script_class="Dialogo" load_steps=2 format=3 uid="uid://be24g1jx7m82l"]
+[gd_resource type="Resource" script_class="Dialogo" load_steps=5 format=3 uid="uid://be24g1jx7m82l"]
 
+[ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="1_c5cwl"]
 [ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="1_j5pu7"]
+[ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="2_er8w8"]
+
+[sub_resource type="Resource" id="Resource_dvir3"]
+script = ExtResource("2_er8w8")
+array_opciones = Array[ExtResource("1_c5cwl")]([])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
 
 [resource]
 script = ExtResource("1_j5pu7")
-arreglo_de_textos = PackedStringArray("¿Qué miras tonto?")
+arreglo_de_textos = PackedStringArray("JAJAJA", "...", "Vos otra vez...", "La proxima no me vas a ganar.")
+decision = SubResource("Resource_dvir3")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"

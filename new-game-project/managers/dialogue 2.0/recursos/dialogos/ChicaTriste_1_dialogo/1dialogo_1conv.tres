@@ -1,58 +1,90 @@
-[gd_resource type="Resource" script_class="Dialogo" load_steps=13 format=3 uid="uid://dtig4xsv7ckdd"]
+[gd_resource type="Resource" script_class="Dialogo" load_steps=20 format=3 uid="uid://dtig4xsv7ckdd"]
 
 [ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="1_pbp6g"]
 [ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="2_e6o7h"]
 [ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="2_la1bs"]
 [ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="3_35w85"]
 [ext_resource type="Script" uid="uid://bk4dph0sloiwh" path="res://managers/dialogue 2.0/recursos/scripts/grab_item_event.gd" id="3_e6o7h"]
-
-[sub_resource type="Resource" id="Resource_dd8wp"]
-script = ExtResource("1_pbp6g")
-texto = "Gracias!"
-array_eventos = Array[ExtResource("2_e6o7h")]([])
-decision_type = "Quit"
-metadata/_custom_type_script = "uid://bxesqyur17jig"
-
-[sub_resource type="Resource" id="Resource_83cv2"]
-script = ExtResource("3_35w85")
-array_opciones = Array[ExtResource("1_pbp6g")]([SubResource("Resource_dd8wp")])
-metadata/_custom_type_script = "uid://ceg75660dlfjc"
-
-[sub_resource type="Resource" id="Resource_e6o7h"]
-script = ExtResource("2_la1bs")
-arreglo_de_textos = PackedStringArray("Si claro", "Päsando la escalera, la ultima puerta a la izquierda, antes de entrar al pasillo del comedor")
-decision = SubResource("Resource_83cv2")
-tiempo_entre_caracteres = 0.02
-metadata/_custom_type_script = "uid://dekceg47jr41c"
-
-[sub_resource type="Resource" id="Resource_etnsl"]
-script = ExtResource("1_pbp6g")
-texto = "¿Sabés dónde queda el laboratorio de seguridad e higiene?"
-dialogo_exitoso = SubResource("Resource_e6o7h")
-array_eventos = Array[ExtResource("2_e6o7h")]([])
-decision_type = "Chat"
-metadata/_custom_type_script = "uid://bxesqyur17jig"
+[ext_resource type="PackedScene" uid="uid://dilhgir4y8bhr" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleElectronica/puzzle_electronica.tscn" id="4_2pq64"]
+[ext_resource type="Script" uid="uid://bgh1w2gpnp0nj" path="res://managers/dialogue 2.0/recursos/scripts/evento_enqueue_event.gd" id="5_h3xb2"]
 
 [sub_resource type="Resource" id="Resource_h3xb2"]
 script = ExtResource("3_e6o7h")
 item_id = "Capitulo1"
 metadata/_custom_type_script = "uid://bk4dph0sloiwh"
 
+[sub_resource type="Resource" id="Resource_etnsl"]
+script = ExtResource("5_h3xb2")
+event = ExtResource("4_2pq64")
+metadata/_custom_type_script = "uid://bgh1w2gpnp0nj"
+
+[sub_resource type="Resource" id="Resource_dd8wp"]
+script = ExtResource("1_pbp6g")
+texto = "Batallar"
+array_eventos = Array[ExtResource("2_e6o7h")]([SubResource("Resource_etnsl")])
+decision_type = "Quest"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_83cv2"]
+script = ExtResource("5_h3xb2")
+event = ExtResource("4_2pq64")
+metadata/_custom_type_script = "uid://bgh1w2gpnp0nj"
+
+[sub_resource type="Resource" id="Resource_spchv"]
+script = ExtResource("1_pbp6g")
+texto = "Batallar"
+array_eventos = Array[ExtResource("2_e6o7h")]([SubResource("Resource_83cv2")])
+decision_type = "Chat"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_bdx4q"]
+script = ExtResource("3_35w85")
+array_opciones = Array[ExtResource("1_pbp6g")]([SubResource("Resource_spchv")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
+
+[sub_resource type="Resource" id="Resource_bvmds"]
+script = ExtResource("2_la1bs")
+arreglo_de_textos = PackedStringArray("Volá de aca salamin.")
+decision = SubResource("Resource_bdx4q")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[sub_resource type="Resource" id="Resource_exppr"]
+script = ExtResource("1_pbp6g")
+texto = "Podemos arreglar esto mejor..."
+dialogo_exitoso = SubResource("Resource_bvmds")
+array_eventos = Array[ExtResource("2_e6o7h")]([])
+decision_type = "Chat"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_tkeh6"]
+script = ExtResource("3_35w85")
+array_opciones = Array[ExtResource("1_pbp6g")]([SubResource("Resource_dd8wp"), SubResource("Resource_exppr")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
+
+[sub_resource type="Resource" id="Resource_cac7n"]
+script = ExtResource("2_la1bs")
+arreglo_de_textos = PackedStringArray("No se de que hablás")
+decision = SubResource("Resource_tkeh6")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
 [sub_resource type="Resource" id="Resource_35w85"]
 script = ExtResource("1_pbp6g")
-texto = "¡Nos vemos!"
+texto = "Quiero mi hoja de tesis."
+dialogo_exitoso = SubResource("Resource_cac7n")
 array_eventos = Array[ExtResource("2_e6o7h")]([SubResource("Resource_h3xb2")])
 decision_type = "Quit"
 metadata/_custom_type_script = "uid://bxesqyur17jig"
 
 [sub_resource type="Resource" id="Resource_2pq64"]
 script = ExtResource("3_35w85")
-array_opciones = Array[ExtResource("1_pbp6g")]([SubResource("Resource_etnsl"), SubResource("Resource_35w85")])
+array_opciones = Array[ExtResource("1_pbp6g")]([SubResource("Resource_35w85")])
 metadata/_custom_type_script = "uid://ceg75660dlfjc"
 
 [resource]
 script = ExtResource("2_la1bs")
-arreglo_de_textos = PackedStringArray()
+arreglo_de_textos = PackedStringArray("JAJAJAJA", "?", "¿Que querés?")
 decision = SubResource("Resource_2pq64")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"

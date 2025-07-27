@@ -8,7 +8,7 @@
 script = ExtResource("2_g0axy")
 text_to_do = "Volver con el Vendedor "
 necessary_interactables = {
-"COFFEE_V": false
+"COFFEE_V2": false
 }
 metadata/_custom_type_script = "uid://c0nhxnmv56tui"
 

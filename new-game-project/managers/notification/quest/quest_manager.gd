@@ -45,19 +45,33 @@ func initialize(event_manager: EventManager, taken_quests: Array[Quest]):
 	self.taken_quests = taken_quests
 	
 func on_quest_finished(title):
+	var ended_quest = get_quest_by_title(title)
+	if ended_quest == null:
+		print("⚠️ Quest con título '%s' no encontrada o ya completada." % title)
+		return
+	
 	var quest_completed_scene = preload("res://Tomas/pop up/quest_completed.tscn")
 	var temp = quest_completed_scene.instantiate()
 	var personalizada = temp.get_personalized_scene(title)
 	NotificationManager.enqueue_event(personalizada)	
-	completed_quest.append(get_quest_by_title(title))
-	taken_quests.erase(get_quest_by_title(title))
-	if taken_quests.size() > 0 &&  taken_quests[0] != null :
-		if taken_quests[0].is_secondary == false :
-			set_main(taken_quests[0].title,taken_quests[0].get_current_step().text_to_do)
-			active_primary_quest = taken_quests[0]
-		else: 
-			set_secondary(taken_quests[0].title, taken_quests[0].get_current_step().text_to_do)
 	
+	completed_quest.append(ended_quest)
+	taken_quests.erase(ended_quest)
+	
+	var next: Quest
+	if taken_quests.size() > 0 &&  taken_quests[0] != null :
+		if ended_quest.is_secondary == true :
+			next = get_next_Secondary()
+			if next:
+				set_secondary(next.title,next.get_current_step().text_to_do)
+			else:
+				set_secondary("","")
+		else: 
+			next = get_next_primary()
+			if next:
+				set_main(next.title,next.get_current_step().text_to_do)
+			else:
+				set_main("","")
 	
 func add_quest(quest: Quest) -> void:
 	if  get_quest_by_title(quest.title) == null:
@@ -123,3 +137,32 @@ func update_quest(quest: Quest) -> void:
 	# Si es la secundaria activa, actualizamos su UI también
 	elif quest == active_secondary_quest:
 		set_secondary(quest.title, quest.get_current_step().text_to_do)
+
+
+func get_next_primary() -> Quest :
+	var i := 0 
+	var size = taken_quests.size()
+	if size == 0 :
+		return null
+	else:
+		var actual = taken_quests[0]
+		while i < size and actual.is_secondary == true:
+			i+=1
+		if i == size :
+			return null
+		else: 
+			return actual
+		
+func get_next_Secondary() -> Quest :
+	var i := 0 
+	var size = taken_quests.size()
+	if size == 0 :
+		return null
+	else:
+		var actual = taken_quests[0]
+		while i < size and actual.is_secondary == false:
+			i+=1
+		if i == size :
+			return null
+		else: 
+			return actual

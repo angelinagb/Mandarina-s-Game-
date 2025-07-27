@@ -39,6 +39,7 @@ position = Vector2(230, -244)
 rotation = 0.144878
 scale = Vector2(2.46493, 1.46672)
 activable = ExtResource("6_pwxik")
+id = "cams_activator"
 
 [node name="PlayerB" parent="Player" index="0"]
 position = Vector2(120, -233)

@@ -193,7 +193,9 @@ func _on_boton_decision_pressed(indice : int):
 		await dialogue_ended
 		
 	if events.size() > 0 :
+		canvas_layer.hide()
 		await trigger_events(events)
+		canvas_layer.show()
 
 	check_and_start_alternative_dialogue() 
 

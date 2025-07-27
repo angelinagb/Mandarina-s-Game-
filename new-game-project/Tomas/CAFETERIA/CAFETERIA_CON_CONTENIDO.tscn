@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cimvpyl0tae0m"]
+[gd_scene load_steps=17 format=3 uid="uid://cimvpyl0tae0m"]
 
 [ext_resource type="PackedScene" uid="uid://3g08138nqpuj" path="res://IsoRooms/IsoRoom2/2_iso_room_cafeteria.tscn" id="1_7eguv"]
 [ext_resource type="Script" uid="uid://bfncky2s0ss6u" path="res://Tomas/CAFETERIA/cafeteria.gd" id="2_ap168"]
@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://cv5hu5avsttda" path="res://Tomas/CAFETERIA/Quest 2/cafeteria_q2.tres" id="7_0pd66"]
 [ext_resource type="PackedScene" uid="uid://xpklt7xbwqj7" path="res://utils/Interact/Npc/Instancias/Grupo_3.tscn" id="7_xnuun"]
 [ext_resource type="PackedScene" uid="uid://bh12kbhvaf3bl" path="res://Tomas/CAFETERIA/Nerd_Q2.tscn" id="8_aaue2"]
+[ext_resource type="Script" uid="uid://dwqxbk43d6bwm" path="res://utils/Interact/Npc/npc.gd" id="10_cok5s"]
 
 [sub_resource type="Animation" id="Animation_km8hj"]
 length = 0.001
@@ -62,12 +63,12 @@ _data = {
 &"fade_out": SubResource("Animation_ap168")
 }
 
-[node name="CAFETERIA" instance=ExtResource("1_7eguv")]
+[node name="CAFETERIA" groups=["Con Estado"] instance=ExtResource("1_7eguv")]
 script = ExtResource("2_ap168")
 dialogo_intro = ExtResource("3_km8hj")
-room_id = ""
+room_id = "ROOM-CAFETERIA"
 
-[node name="BaseTiles" parent="." index="0" groups=["COFFEE_END"]]
+[node name="BaseTiles" parent="." index="0"]
 position = Vector2(46, -61)
 
 [node name="defect" parent="Spawns" index="0"]
@@ -96,6 +97,7 @@ hframes = 6
 position = Vector2(-2.66667, -3)
 rotation = -0.0425112
 scale = Vector2(0.333333, 0.333333)
+npc_name = "Vendedor"
 id = "COFFEE_V"
 
 [node name="Vendedor Q2" parent="Interactables/Npcs/SPRITE VENDEDOR" index="1" groups=["Q2"] instance=ExtResource("6_xnuun")]
@@ -103,11 +105,15 @@ process_mode = 4
 position = Vector2(-4.54008, -3.45291)
 scale = Vector2(0.367685, 0.333333)
 quest = ExtResource("7_0pd66")
+id = "COFFEE_V2"
 
 [node name="Nerd" parent="Interactables/Npcs" index="1" groups=["Q2_BEGIN"] instance=ExtResource("8_aaue2")]
 process_mode = 4
 position = Vector2(187, -179)
 rotation = -0.0416234
+script = ExtResource("10_cok5s")
+npc_name = "Matias el Nerd"
+id = ""
 
 [node name="GRUPO 1" parent="Interactables/Npcs" index="2" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("5_snxlu")]
 process_mode = 4
@@ -130,6 +136,7 @@ libraries = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="5"]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" index="0"]
 anchors_preset = 15
@@ -152,4 +159,5 @@ color = Color(0, 0, 0, 0)
 [connection signal="interacted" from="Interactables/Npcs/Nerd" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/GRUPO 1" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/GRUPO 2" to="." method="_on_interactable_interacted"]
+[connection signal="dialogue_ended" from="Interactables/Npcs/GRUPO 3" to="." method="_on_grupo_3_dialogue_ended"]
 [connection signal="interacted" from="Interactables/Npcs/GRUPO 3" to="." method="_on_interactable_interacted"]
