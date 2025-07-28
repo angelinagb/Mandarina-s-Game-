@@ -33,5 +33,6 @@ npc_name = "María"
 [node name="PlayerB" parent="Player" index="0"]
 position = Vector2(401, -221)
 
+[connection signal="interacted" from="Interactables/Transitioners/Transitioner" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/Npc" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/Npc3" to="." method="_on_interactable_interacted"]

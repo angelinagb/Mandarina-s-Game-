@@ -27,6 +27,7 @@ position = Vector2(762, -130)
 rotation = 1.05498
 scale = Vector2(1.66797, 4.06116)
 room_id = "ROOM-5"
+necesary_key = true
 
 [node name="Transitioner3" parent="Interactables/Transitioners" index="2" instance=ExtResource("5_o76j6")]
 position = Vector2(-27, 107)

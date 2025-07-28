@@ -127,9 +127,6 @@ material = SubResource("ShaderMaterial_wxpp0")
 tile_map_data = PackedByteArray("AAABAP3/AAAAAAAAAAD//wQAAAAAAAAAAAD+/xQAAAAAAAAAAAD9/xUAAAAAAAAAAAD+/xMAAAAAAAAAAAAAABMAAAAAAAAAAAABABIAAAAAAAAAAAABABEAAAAAAAAAAAADAAMAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_0ybgh")
 
-[node name="Stairs1" parent="." index="8"]
-tile_map_data = PackedByteArray()
-
 [node name="ComputerRoomSpritesheet8" type="Sprite2D" parent="." index="10"]
 z_index = 1
 y_sort_enabled = true

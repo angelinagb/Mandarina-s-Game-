@@ -99,6 +99,7 @@ theme_override_colors/font_selected_color = Color(0.00392157, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_ovsma")
 theme_override_font_sizes/normal_font_size = 18
 text = "¡¿Desapareció?! ¡¿Cómo es posible?! ¿Y si alguien la encuentra y la publica en internet? ¡Sería una catastrofe!"
+fit_content = true
 
 [node name="next_text_button" type="Button" parent="CanvasLayer/PanelContainer"]
 z_index = 7

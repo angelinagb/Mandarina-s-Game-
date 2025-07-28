@@ -2,7 +2,8 @@ extends Node2D
 class_name DialogueSystem
 
 #TODO señales si hay exito o falla el chequeo de hablidad
-#no deberia activarse de vuelta la animacion cuando empieza recursivamente otro dialogo
+#no deberia activarse de vuelta la animacion
+#cuando empieza recursivamente otro dialogo
 signal dialogue_ended
 signal finished
 signal deliver_item(item_id: String)
@@ -249,8 +250,6 @@ func trigger_events(events: Array[Evento] ):
 			deliver_item.emit(event.item_id)
 		if event is event_use_item :
 			use_item.emit(event.item_id)
-		if event is Event_Enqueue_Event:
-			event.event.puzzle_result.connect(_on_puzzle_result)
 		await event.trigger()
 		
 

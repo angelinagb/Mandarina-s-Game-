@@ -226,6 +226,3 @@ material = SubResource("ShaderMaterial_wxpp0")
 position = Vector2(0, 1)
 tile_map_data = PackedByteArray("AAD9/8n/AAAAAAAAAAD+/83/AAAAAAAAAAD//8z/AAAAAAAAAAAJANr/AAAAAAAAAAAIANn/AAAAAAAAAAAIANj/AAAAAAAAAAAHANf/AAAAAAAAAAAHANb/AAAAAAAAAAD7/83/AAAAAAAAAAD8/87/AAAAAAAAAAD+/8z/AAAAAAAAAAD//8v/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_0ybgh")
-
-[node name="Stairs1" parent="." index="9"]
-tile_map_data = PackedByteArray()

@@ -5,7 +5,7 @@ extends IsoRoom
 @onready var key1: Key = $Interactables/Items/Item
 @onready var key2: Key = $Interactables/Items/Item2
 
-
+var level_completed = false
 
 
 
@@ -27,6 +27,10 @@ func _ready() -> void:
 		intro()
 	else :
 		return
+	
+	if level_completed:
+		for node : Node in get_tree().get_nodes_in_group("COFFEE_END"):
+			node.process_mode = Node.PROCESS_MODE_INHERIT
 		
 	
 func intro():
@@ -67,6 +71,7 @@ func _on_vendedor_q_2_quest_ended(title: Variant) -> void:
 	await NotificationManager.finished
 	key1.interact()
 	key2.interact()
+	level_completed = true
 
 
 func _on_vendedor_q_2_quest_begun() -> void:
@@ -84,10 +89,12 @@ func _on_grupo_3_dialogue_ended() -> void:
 
 func get_state() -> Dictionary:
 	return {
-		"dialogue_said": said
+		"dialogue_said": said,
+		"level_completed": level_completed
 	}
 
 func load_state(state: Dictionary) -> void:
 	if state.has("dialogue_said"):
-		said = state["dialogue_said"] 
+		said = state["dialogue_said"]
+		level_completed = state["level_completed"] 
 	

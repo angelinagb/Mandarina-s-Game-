@@ -128,9 +128,18 @@ scale = Vector2(0.367685, 0.333333)
 quest = ExtResource("7_0pd66")
 id = "COFFEE_V2"
 
+[node name="NpcQuestIndicador" parent="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2" index="6"]
+visible = false
+
 [node name="Vendedor Q3" parent="Interactables/Npcs/SPRITE VENDEDOR" index="2" groups=["COFFEE_END"] instance=ExtResource("10_ech2l")]
 process_mode = 4
 gives_item = "full_termo"
+
+[node name="Sprite2D" parent="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q3" index="1"]
+visible = false
+
+[node name="NpcQuestIndicador" parent="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q3" index="6"]
+visible = false
 
 [node name="Nerd" parent="Interactables/Npcs" index="1" groups=["Q2_BEGIN"] instance=ExtResource("8_aaue2")]
 process_mode = 4
@@ -193,3 +202,5 @@ color = Color(0, 0, 0, 0)
 
 [editable path="Interactables/Items/Item"]
 [editable path="Interactables/Items/Item2"]
+[editable path="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2"]
+[editable path="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q3"]
