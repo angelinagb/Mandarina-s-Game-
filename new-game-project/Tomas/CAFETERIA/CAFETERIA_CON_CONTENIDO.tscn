@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cimvpyl0tae0m"]
+[gd_scene load_steps=18 format=3 uid="uid://cimvpyl0tae0m"]
 
 [ext_resource type="PackedScene" uid="uid://3g08138nqpuj" path="res://IsoRooms/IsoRoom2/2_iso_room_cafeteria.tscn" id="1_7eguv"]
 [ext_resource type="Script" uid="uid://bfncky2s0ss6u" path="res://Tomas/CAFETERIA/cafeteria.gd" id="2_ap168"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://xpklt7xbwqj7" path="res://utils/Interact/Npc/Instancias/Grupo_3.tscn" id="7_xnuun"]
 [ext_resource type="PackedScene" uid="uid://bh12kbhvaf3bl" path="res://Tomas/CAFETERIA/Nerd_Q2.tscn" id="8_aaue2"]
 [ext_resource type="Script" uid="uid://dwqxbk43d6bwm" path="res://utils/Interact/Npc/npc.gd" id="10_cok5s"]
-[ext_resource type="PackedScene" uid="uid://bw0sog6evwj22" path="res://IsoRooms/IsoRoom-Bedelia/vendedor.tscn" id="10_ech2l"]
 
 [sub_resource type="Animation" id="Animation_km8hj"]
 length = 0.001
@@ -131,16 +130,6 @@ id = "COFFEE_V2"
 [node name="NpcQuestIndicador" parent="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2" index="6"]
 visible = false
 
-[node name="Vendedor Q3" parent="Interactables/Npcs/SPRITE VENDEDOR" index="2" groups=["COFFEE_END"] instance=ExtResource("10_ech2l")]
-process_mode = 4
-gives_item = "full_termo"
-
-[node name="Sprite2D" parent="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q3" index="1"]
-visible = false
-
-[node name="NpcQuestIndicador" parent="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q3" index="6"]
-visible = false
-
 [node name="Nerd" parent="Interactables/Npcs" index="1" groups=["Q2_BEGIN"] instance=ExtResource("8_aaue2")]
 process_mode = 4
 position = Vector2(187, -179)
@@ -193,7 +182,6 @@ color = Color(0, 0, 0, 0)
 [connection signal="interacted" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2" to="." method="_on_interactable_interacted"]
 [connection signal="quest_begun" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2" to="." method="_on_vendedor_q_2_quest_begun"]
 [connection signal="quest_ended" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2" to="." method="_on_vendedor_q_2_quest_ended"]
-[connection signal="interacted" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q3" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/Nerd" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/GRUPO 1" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/GRUPO 2" to="." method="_on_interactable_interacted"]
@@ -203,4 +191,3 @@ color = Color(0, 0, 0, 0)
 [editable path="Interactables/Items/Item"]
 [editable path="Interactables/Items/Item2"]
 [editable path="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2"]
-[editable path="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q3"]

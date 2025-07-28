@@ -6,9 +6,6 @@ extends IsoRoom
 @onready var key2: Key = $Interactables/Items/Item2
 
 var level_completed = false
-
-
-
 var said = false
 
 func _ready() -> void:
@@ -31,6 +28,9 @@ func _ready() -> void:
 	if level_completed:
 		for node : Node in get_tree().get_nodes_in_group("COFFEE_END"):
 			node.process_mode = Node.PROCESS_MODE_INHERIT
+		key1.queue_free()
+		key2.queue_free()
+		
 		
 	
 func intro():
