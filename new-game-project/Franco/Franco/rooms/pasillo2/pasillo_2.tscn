@@ -41,6 +41,13 @@ rotation = -0.589321
 scale = Vector2(3.68585, -0.939496)
 necesary_key = true
 
+[node name="trans-piso2a" parent="Interactables/Transitioners" index="4" instance=ExtResource("5_o76j6")]
+position = Vector2(842, -285)
+rotation = 0.589706
+scale = Vector2(5.12216, -1.437)
+room_id = "ROOM-PISO2A"
+necesary_key = true
+
 [node name="AlumnoNro2-3" parent="Interactables/Npcs" index="0" instance=ExtResource("5_rpjon")]
 position = Vector2(197, -311)
 npc_name = "Jorge"
@@ -48,6 +55,7 @@ npc_name = "Jorge"
 [node name="Nerd4" parent="Interactables/Npcs" index="1" instance=ExtResource("6_rwdn4")]
 position = Vector2(634, -343)
 scale = Vector2(1.81113, 1.98075)
+gives_item = "Capitulo1"
 npc_name = "Camila"
 
 [node name="PlayerB" parent="Player" index="0"]
@@ -57,5 +65,6 @@ position = Vector2(571, -204)
 [connection signal="interacted" from="Interactables/Transitioners/Transitioner2" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/Transitioner3" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/Transitioner4" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/trans-piso2a" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/AlumnoNro2-3" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/Nerd4" to="." method="_on_interactable_interacted"]

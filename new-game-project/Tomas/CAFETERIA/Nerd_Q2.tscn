@@ -43,7 +43,6 @@ metadata/_custom_type_script = "uid://dekceg47jr41c"
 script = ExtResource("2_au8og")
 puzzle = ExtResource("3_nt8ji")
 dialogo_victoria = ExtResource("3_n26le")
-gives_item = "Capitulo1"
 id = "COFFEE-NERD"
 
 [node name="Sprite2D" parent="." index="1"]

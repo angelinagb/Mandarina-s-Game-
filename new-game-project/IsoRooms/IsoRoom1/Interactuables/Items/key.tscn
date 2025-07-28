@@ -8,6 +8,7 @@
 [node name="Item" instance=ExtResource("1_o17x0")]
 script = ExtResource("2_tdq04")
 open_room_id = ""
+nombre_room = ""
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(1.49012e-08, 2.98023e-08)

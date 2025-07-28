@@ -3,7 +3,6 @@ class_name Evento_Grab_Item
 
 @export var item_id :String
 
-
 func trigger():
 	pass
 	

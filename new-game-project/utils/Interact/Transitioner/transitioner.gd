@@ -3,7 +3,10 @@ class_name Transitioner extends Interactable
 #ROOM 5: CAFETERIA 
 #ROOM 6: LABO DE QUIMICA 
 var door_blocked_notification =  preload("res://Ange/door_blocked_notification.tscn")
-@export_enum("ROOM-4", "ROOM-5", "ROOM-6","ROOM-LABOSYH", "ROOM-PASILLO1","ROOM-LABOFISICA","ROOM-ENTRADA","ROOM-PASILLO2","ROOM-SALACOMUN","ROOM-CENTROALUMNOS","ROOM-SALA-CAMARAS","VACIO")
+@export_enum("ROOM-4", "ROOM-5", "ROOM-6","ROOM-LABOSYH",
+ "ROOM-PASILLO1","ROOM-LABOFISICA","ROOM-ENTRADA",
+"ROOM-PASILLO2","ROOM-SALACOMUN","ROOM-CENTROALUMNOS",
+"ROOM-SALA-CAMARAS","VACIO","ROOM-PISO2A","ROOM-BEDELIA")
 var room_id: String = "VACIO"
 @onready var door_sound_open: AudioStreamPlayer = $door_sound_open
 @export var quest: Quest

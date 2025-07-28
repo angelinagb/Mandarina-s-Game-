@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=3 uid="uid://csd34hxktl1hl"]
+
+[ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_y3myp"]
+[ext_resource type="PackedScene" uid="uid://cojn85xfsktkp" path="res://IsoRooms/IsoRoom-Piso2/5_base_tiles.tscn" id="2_7xcgx"]
+[ext_resource type="PackedScene" uid="uid://cas7jeaslklbm" path="res://utils/Interact/Transitioner/Instancias/trans_pasillo_cafeteria.tscn" id="2_js4aw"]
+
+[node name="IsoRoom5-Pasillo" instance=ExtResource("1_y3myp")]
+room_id = "ROOM-PISO2A"
+
+[node name="BaseTiles" parent="." index="0" instance=ExtResource("2_7xcgx")]
+metadata/_edit_lock_ = true
+
+[node name="trasn_ labo_industrial" parent="Interactables/Transitioners" index="0" instance=ExtResource("2_js4aw")]
+position = Vector2(-539, -157)
+rotation = -0.417543
+scale = Vector2(5.36464, 1.25457)
+necesary_key = true
+
+[node name="trans_labo_instruial_2" parent="Interactables/Transitioners" index="1" instance=ExtResource("2_js4aw")]
+position = Vector2(-201, -160)
+rotation = 0.463196
+scale = Vector2(5.30208, 1.36455)
+necesary_key = true
+
+[node name="trans_depto_info" parent="Interactables/Transitioners" index="2" instance=ExtResource("2_js4aw")]
+position = Vector2(809, 348)
+rotation = 0.6763
+scale = Vector2(5.01539, 1.56877)
+necesary_key = true
+
+[node name="trans" parent="Interactables/Transitioners" index="3" instance=ExtResource("2_js4aw")]
+position = Vector2(1022, 611)
+rotation = 0.967534
+scale = Vector2(2.31606, -3.83157)
+necesary_key = true
+
+[node name="trans_pasillo2" parent="Interactables/Transitioners" index="4" instance=ExtResource("2_js4aw")]
+position = Vector2(139, 5)
+rotation = 2.04148
+scale = Vector2(1.30347, -4.86094)
+room_id = "ROOM-PASILLO2"
+
+[node name="trans2" parent="Interactables/Transitioners" index="5" instance=ExtResource("2_js4aw")]
+position = Vector2(-40, -88)
+rotation = 2.04148
+scale = Vector2(1.30347, -4.86094)
+necesary_key = true
+
+[node name="trans_aula_201" parent="Interactables/Transitioners" index="6" instance=ExtResource("2_js4aw")]
+position = Vector2(-852, 444)
+rotation = 0.967534
+scale = Vector2(2.92013, -3.71304)
+necesary_key = true
+
+[node name="trans_aula_207" parent="Interactables/Transitioners" index="7" instance=ExtResource("2_js4aw")]
+position = Vector2(-1847, 877)
+rotation = 0.490498
+scale = Vector2(-5.47888, 2.07825)
+necesary_key = true
+
+[node name="trans_aula_206" parent="Interactables/Transitioners" index="8" instance=ExtResource("2_js4aw")]
+position = Vector2(-2483, 451)
+rotation = 0.490498
+scale = Vector2(-5.47888, 2.07825)
+necesary_key = true
+
+[node name="trans_aula_205" parent="Interactables/Transitioners" index="9" instance=ExtResource("2_js4aw")]
+position = Vector2(-2640, 149)
+rotation = 0.490498
+scale = Vector2(-5.47888, 2.07825)
+necesary_key = true
+
+[node name="trans_bedelia" parent="Interactables/Transitioners" index="10" instance=ExtResource("2_js4aw")]
+position = Vector2(-3116, 130)
+rotation = 0.490498
+scale = Vector2(-5.47888, 2.07825)
+room_id = "ROOM-BEDELIA"
+necesary_key = true
+
+[connection signal="interacted" from="Interactables/Transitioners/trans_pasillo2" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/trans_bedelia" to="." method="_on_interactable_interacted"]

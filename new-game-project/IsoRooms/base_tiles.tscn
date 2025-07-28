@@ -382,7 +382,6 @@ tile_set = SubResource("TileSet_0ybgh")
 
 [node name="Stairs1" type="TileMapLayer" parent="."]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD///n/AAACAAAAAAA=")
 tile_set = SubResource("TileSet_gllpn")
 
 [node name="Stairs2" type="TileMapLayer" parent="."]

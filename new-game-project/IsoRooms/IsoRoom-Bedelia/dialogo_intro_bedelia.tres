@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="Dialogo" load_steps=13 format=3 uid="uid://b4e3wx412orli"]
+
+[ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="1_becl3"]
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="1_ng8f6"]
+[ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="2_hg8tx"]
+[ext_resource type="Script" uid="uid://bk4dph0sloiwh" path="res://managers/dialogue 2.0/recursos/scripts/grab_item_event.gd" id="3_hg8tx"]
+[ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="4_5p326"]
+
+[sub_resource type="Resource" id="Resource_gvfep"]
+script = ExtResource("3_hg8tx")
+item_id = ""
+metadata/_custom_type_script = "uid://bk4dph0sloiwh"
+
+[sub_resource type="Resource" id="Resource_becl3"]
+script = ExtResource("1_ng8f6")
+arreglo_de_textos = PackedStringArray()
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[sub_resource type="Resource" id="Resource_hg8tx"]
+script = ExtResource("1_becl3")
+texto = "Ok..."
+dialogo_exitoso = SubResource("Resource_becl3")
+array_eventos = Array[ExtResource("2_hg8tx")]([SubResource("Resource_gvfep")])
+decision_type = "Chat"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_5p326"]
+script = ExtResource("4_5p326")
+array_opciones = Array[ExtResource("1_becl3")]([SubResource("Resource_hg8tx")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
+
+[sub_resource type="Resource" id="Resource_np102"]
+script = ExtResource("1_ng8f6")
+arreglo_de_textos = PackedStringArray("¿Tenés permiso para eso?", "...", "Hagamos esto, quiero tomar mate hace un largo rato, pero mi pava se rompio. Tomá , cargame el termo. Cuando vuelvas te doy la llave.", "Ah! Y trame yerba tambien! ")
+decision = SubResource("Resource_5p326")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[sub_resource type="Resource" id="Resource_x34vu"]
+script = ExtResource("1_becl3")
+texto = "Necesitaba la llave del aula 01."
+dialogo_exitoso = SubResource("Resource_np102")
+array_eventos = Array[ExtResource("2_hg8tx")]([])
+decision_type = "Chat"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_crkkf"]
+script = ExtResource("4_5p326")
+array_opciones = Array[ExtResource("1_becl3")]([SubResource("Resource_x34vu")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
+
+[resource]
+script = ExtResource("1_ng8f6")
+arreglo_de_textos = PackedStringArray("Hola querido", "¿Necesitabas algo?¿Perdiste algo?")
+decision = SubResource("Resource_crkkf")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"

@@ -3,6 +3,7 @@ class_name Npc extends Interactable
 signal quest_begun
 signal dialogue_ended
 signal quest_ended(title)
+signal item_used(item_id: String)
 
 @export var gives_item: String
 @export var npc_name: String
@@ -31,13 +32,18 @@ func _ready():
 	name = "npc" + npc_name
 	my_type = "npc"
 	
+	if dialogoDefault:
+		dialogoDefault.use_item.connect(_on_item_used)
+	
 	if gives_item != null:
 		create_item()
 		primerDialogo.deliver_item.connect(new_item)
 		
 	if primerDialogo.esta_vacio() == false: 
+		primerDialogo.use_item.connect(_on_item_used)
 		tiene_dialogo_quest = true
 		quest_icon.show()
+		
 	if quest:
 		tiene_quest = true
 		quest.init()
@@ -134,3 +140,6 @@ func create_item() -> Item :
 	node_item.my_type = "item"
 	node_item.id = gives_item
 	return node_item
+	
+func _on_item_used(item_id: String):
+	item_used.emit(item_id)

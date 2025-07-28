@@ -7,14 +7,14 @@
 [ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="4_rt6xu"]
 [ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="5_44jda"]
 [ext_resource type="Resource" uid="uid://dy3bdvrg8p02e" path="res://Nerds/dn4.tres" id="5_rt6xu"]
-[ext_resource type="PackedScene" uid="uid://bkkm80qlft38n" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleInformatica/puzzle_informatica.tscn" id="6_0p76l"]
+[ext_resource type="PackedScene" uid="uid://dilhgir4y8bhr" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleElectronica/puzzle_electronica.tscn" id="6_h71hj"]
 [ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="7_0p76l"]
 [ext_resource type="Script" uid="uid://bgh1w2gpnp0nj" path="res://managers/dialogue 2.0/recursos/scripts/evento_enqueue_event.gd" id="7_h71hj"]
 [ext_resource type="Script" uid="uid://bk4dph0sloiwh" path="res://managers/dialogue 2.0/recursos/scripts/grab_item_event.gd" id="8_h71hj"]
 
 [sub_resource type="Resource" id="Resource_y5ad4"]
 script = ExtResource("7_h71hj")
-event = ExtResource("6_0p76l")
+event = ExtResource("6_h71hj")
 metadata/_custom_type_script = "uid://bgh1w2gpnp0nj"
 
 [sub_resource type="Resource" id="Resource_h71hj"]
@@ -82,7 +82,6 @@ visibility_layer = 1
 position = Vector2(-0.166667, 1.5)
 
 [node name="Dialogo Quest" parent="." index="4"]
-vacio = false
 dialogueResource = SubResource("Resource_tdshe")
 dialogo_alternativo = SubResource("Resource_10grf")
 

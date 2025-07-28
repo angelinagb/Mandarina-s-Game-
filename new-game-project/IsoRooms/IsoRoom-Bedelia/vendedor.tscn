@@ -1,0 +1,45 @@
+[gd_scene load_steps=12 format=3 uid="uid://bw0sog6evwj22"]
+
+[ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_kdgq2"]
+[ext_resource type="Resource" uid="uid://dulsu7mixf1r2" path="res://IsoRooms/IsoRoom-Bedelia/vendedorq3.tres" id="2_h14ig"]
+[ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="3_bv1sr"]
+[ext_resource type="Resource" uid="uid://kbegk088u6kd" path="res://IsoRooms/IsoRoom-Bedelia/default_bedelia.tres" id="3_upswm"]
+[ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="4_774in"]
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="5_vl4nq"]
+[ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="6_xcl34"]
+
+[sub_resource type="Resource" id="Resource_0t5m6"]
+script = ExtResource("5_vl4nq")
+arreglo_de_textos = PackedStringArray("mm Yerba no tengo.. quizas podes pedirle a alguien que te preste un poco")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[sub_resource type="Resource" id="Resource_imxc2"]
+script = ExtResource("3_bv1sr")
+texto = "Si! Necesito Yerba"
+dialogo_exitoso = SubResource("Resource_0t5m6")
+array_eventos = Array[ExtResource("4_774in")]([])
+decision_type = "Chat"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_nweta"]
+script = ExtResource("6_xcl34")
+array_opciones = Array[ExtResource("3_bv1sr")]([SubResource("Resource_imxc2")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
+
+[sub_resource type="Resource" id="Resource_iejnb"]
+script = ExtResource("5_vl4nq")
+arreglo_de_textos = PackedStringArray("¿Algo mas?", "")
+decision = SubResource("Resource_nweta")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[node name="Vendedorq3" instance=ExtResource("1_kdgq2")]
+gives_item = "Termo Lleno"
+
+[node name="Dialogo Quest" parent="." index="4"]
+dialogueResource = ExtResource("2_h14ig")
+dialogo_alternativo = SubResource("Resource_iejnb")
+
+[node name="Dialogo Default" parent="." index="5"]
+dialogueResource = ExtResource("3_upswm")

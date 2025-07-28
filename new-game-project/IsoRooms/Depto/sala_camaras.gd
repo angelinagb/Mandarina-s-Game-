@@ -2,6 +2,7 @@ extends IsoRoom
 
 @onready var cams_activator: Activator = $Interactables/Cams_Activator
 @export var player_think: PackedScene
+@onready var item: Key = $Interactables/Items/Item
 
 
 
@@ -17,6 +18,8 @@ func _on_cams_finished():
 	if not already_watched:
 		already_watched = true
 		QueueManager.enqueue_event(player_think)
+		await QueueManager.finished
+		item.interact()
 
 func get_state() -> Dictionary:
 	return {

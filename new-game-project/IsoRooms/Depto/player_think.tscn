@@ -1,11 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpgylvsidqx3f"]
+[gd_scene load_steps=11 format=3 uid="uid://dpgylvsidqx3f"]
 
 [ext_resource type="PackedScene" uid="uid://bqscndmb0v4br" path="res://managers/dialogue 2.0/dialogue_system.tscn" id="1_p3kn1"]
 [ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="2_nn1sh"]
+[ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="2_qimx7"]
+[ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="3_d2xxp"]
+[ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="4_4bmss"]
+[ext_resource type="Script" uid="uid://bk4dph0sloiwh" path="res://managers/dialogue 2.0/recursos/scripts/grab_item_event.gd" id="4_d2xxp"]
+
+[sub_resource type="Resource" id="Resource_4bmss"]
+script = ExtResource("4_d2xxp")
+item_id = "ROOM-5"
+metadata/_custom_type_script = "uid://bk4dph0sloiwh"
+
+[sub_resource type="Resource" id="Resource_bya3f"]
+script = ExtResource("2_qimx7")
+texto = "Empecemos por la Cafetería entonces"
+array_eventos = Array[ExtResource("3_d2xxp")]([SubResource("Resource_4bmss")])
+decision_type = "Chat"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_dyq1x"]
+script = ExtResource("4_4bmss")
+array_opciones = Array[ExtResource("2_qimx7")]([SubResource("Resource_bya3f")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
 
 [sub_resource type="Resource" id="Resource_y5nwn"]
 script = ExtResource("2_nn1sh")
-arreglo_de_textos = PackedStringArray("Este Mandarina...", "Bueno, tengo 4 lugares para investigar", "Segun las camaras hubo hojas en La Cafeteria, en el Laboratorio de Fisica, El Laboratorio de Química y el Aula 01", "Empecemos por la Cafetería entonces")
+arreglo_de_textos = PackedStringArray("Este Mandarina...", "Bueno, tengo 4 lugares para investigar", "Segun las camaras hubo hojas en La Cafeteria, en el Laboratorio de Fisica, El Laboratorio de Química y el Aula 01")
+decision = SubResource("Resource_dyq1x")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"
 

@@ -6,6 +6,7 @@ class_name DialogueSystem
 signal dialogue_ended
 signal finished
 signal deliver_item(item_id: String)
+signal use_item(item_id: String)
 
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var next_text_button: Button = $CanvasLayer/PanelContainer/next_text_button
@@ -246,6 +247,10 @@ func trigger_events(events: Array[Evento] ):
 	for event in events:
 		if event is Evento_Grab_Item :
 			deliver_item.emit(event.item_id)
+		if event is event_use_item :
+			use_item.emit(event.item_id)
+		if event is Event_Enqueue_Event:
+			event.event.puzzle_result.connect(_on_puzzle_result)
 		await event.trigger()
 		
 
@@ -261,3 +266,8 @@ func skip():
 		next_text()
 		index += 1
 #endregion
+
+
+func _on_puzzle_result(result):
+	if not result :
+		pass

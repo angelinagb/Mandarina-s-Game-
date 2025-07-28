@@ -22,7 +22,10 @@ var current: IsoRoom
 var abilities_points: Dictionary
 var abilities_available_points: Dictionary
 
-var notifications ={"item_notification": preload("res://visuals/Notificacion GUI/Instancias/item_picked_up_notif.tscn")}
+var notifications ={
+"item_notification": preload("res://visuals/Notificacion GUI/Instancias/item_picked_up_notif.tscn"), 
+"key_notification" :preload("res://Ange/notif_llave.tscn")	
+}
 
 
 func save_this():
@@ -58,10 +61,18 @@ func save_this():
 			"is_in_world": true,
 			"is_in_player": false
 		},
-		"Termo": {
-			"id": "Termo",
-			"name": "Termo",
-			"desc": "el item 1",
+		"Termo Vacio": {
+			"id": "Termo Vacio",
+			"name": "Termo Vacio",
+			"desc": "¿Que puedo llegar a hacer con esto? Puede ser un arma...",
+			"path_img": "res://art/items/termo.png",
+			"is_in_world": true,
+			"is_in_player": false
+		},
+		"full_termo": {
+			"id": "full_termo",
+			"name": "Termo Lleno",
+			"desc": "Ahora tiene agua hirviendo! Un arma mejorada...",
 			"path_img": "res://art/items/termo.png",
 			"is_in_world": true,
 			"is_in_player": false
@@ -194,7 +205,11 @@ func _on_interactable_interacted(interactable: Interactable):
 
 func _on_item_grabbed(item: Item) -> void:
 	if item is Key:
+		item = item as Key
 		inventory.new_key(item.open_room_id)
+		var temp = notifications.key_notification.instantiate()
+		var personalizada = temp.get_personalized_scene(item.nombre_room)
+		NotificationManager.enqueue_event(personalizada)
 	else:
 		inventory.item_grabbed(item.getId())
 		NotificationManager.enqueue_event(notifications.item_notification)
@@ -255,6 +270,7 @@ func change_room(new_room_id: String, current_room_id: String):
 	player = current.get_player()
 	
 	current.interactable_interacted.connect(_on_interactable_interacted)
+	current.item_used.connect(_on_item_used)
 	
 	player.move_to(current.get_position_spawn(current_room_id))
 
@@ -300,3 +316,7 @@ func _on_menu_quest_updated(quest_upd: Quest) -> void:
 
 func on_game_ended():
 	add_child(load("res://Franco/Franco/end.tscn").instantiate())
+
+
+func _on_item_used(item_id):
+	inventory.item_used(item_id)

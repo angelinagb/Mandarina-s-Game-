@@ -29,3 +29,16 @@ func end():
 	finished.emit()
 	queue_free()
 	
+func get_personalized_scene(new_description: String) -> PackedScene:
+	var copy = self.duplicate()
+	var label = copy.get_node("Control/PanelContainer/MarginContainer/VBoxContainer/Descripcion") as Label
+	if label:
+		label.text = new_description
+	
+	var nueva_packed_scene = PackedScene.new()
+	var success = nueva_packed_scene.pack(copy)
+	
+	if not success:
+		push_error("No se pudo empaquetar la escena personalizada")
+
+	return nueva_packed_scene

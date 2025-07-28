@@ -1,5 +1,6 @@
 class_name  IsoRoom  extends Node2D
 
+signal item_used
 signal interactable_interacted(interactable: Interactable)
 @onready var room_sounds: AudioStreamPlayer = $RoomSounds
 
@@ -9,6 +10,9 @@ signal interactable_interacted(interactable: Interactable)
 var current_state: Dictionary = {}
 
 func _ready(): 
+	for child in $Interactables/Npcs.get_children():
+		if child :
+			child.item_used.connect(_on_item_used)
 	current_state = StateManager.get_room_state(room_id)
 	restore_state()
 		
@@ -42,3 +46,6 @@ func save_state():
 	for node in get_tree().get_nodes_in_group("Con Estado"):
 		current_state[node.name] = node.get_state()
 	StateManager.save_room_state(room_id, current_state)
+
+func _on_item_used(item_id):
+	item_used.emit()

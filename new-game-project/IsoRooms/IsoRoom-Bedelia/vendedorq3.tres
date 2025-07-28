@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="Dialogo" load_steps=12 format=3 uid="uid://dulsu7mixf1r2"]
+
+[ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="1_o2k7x"]
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="1_yrnkv"]
+[ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="2_egroq"]
+[ext_resource type="Script" uid="uid://bk4dph0sloiwh" path="res://managers/dialogue 2.0/recursos/scripts/grab_item_event.gd" id="3_egroq"]
+[ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="3_msplc"]
+[ext_resource type="Script" uid="uid://cd5vp04d7c84l" path="res://managers/dialogue 2.0/recursos/scripts/Evento_usar_item.gd" id="3_nw3y8"]
+
+[sub_resource type="Resource" id="Resource_jeok7"]
+script = ExtResource("3_nw3y8")
+item_id = "Termo Vacio"
+metadata/_custom_type_script = "uid://cd5vp04d7c84l"
+
+[sub_resource type="Resource" id="Resource_lh7l6"]
+script = ExtResource("3_egroq")
+item_id = "Termo Lleno"
+metadata/_custom_type_script = "uid://bk4dph0sloiwh"
+
+[sub_resource type="Resource" id="Resource_0daa6"]
+script = ExtResource("1_yrnkv")
+arreglo_de_textos = PackedStringArray("¡Claro! Pasame tu termo")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[sub_resource type="Resource" id="Resource_nw3y8"]
+script = ExtResource("1_o2k7x")
+texto = "Necesito cargar el termo"
+dialogo_exitoso = SubResource("Resource_0daa6")
+array_eventos = Array[ExtResource("2_egroq")]([SubResource("Resource_jeok7"), SubResource("Resource_lh7l6")])
+decision_type = "Chat"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_64nkm"]
+script = ExtResource("3_msplc")
+array_opciones = Array[ExtResource("1_o2k7x")]([SubResource("Resource_nw3y8")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
+
+[resource]
+script = ExtResource("1_yrnkv")
+arreglo_de_textos = PackedStringArray("¡Hola! ¿Qué vas a llevar?", "¡Ah! ¡Sos vos! Gracias por ayudarme antes, lo que quieras va por la casa", "Decime que necesitas")
+decision = SubResource("Resource_64nkm")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"

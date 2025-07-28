@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://cimvpyl0tae0m"]
+[gd_scene load_steps=19 format=3 uid="uid://cimvpyl0tae0m"]
 
 [ext_resource type="PackedScene" uid="uid://3g08138nqpuj" path="res://IsoRooms/IsoRoom2/2_iso_room_cafeteria.tscn" id="1_7eguv"]
 [ext_resource type="Script" uid="uid://bfncky2s0ss6u" path="res://Tomas/CAFETERIA/cafeteria.gd" id="2_ap168"]
 [ext_resource type="PackedScene" uid="uid://dh1mihsxbf435" path="res://Tomas/CAFETERIA/Intro/cafeteria_dialogo_1.tscn" id="3_km8hj"]
 [ext_resource type="Texture2D" uid="uid://dlbf708twa50n" path="res://art/characters/iso/npc/Trader_npc.png" id="4_4je3a"]
 [ext_resource type="PackedScene" uid="uid://hm1bx25eg2ip" path="res://Tomas/CAFETERIA/Vendedor_Q1.tscn" id="4_j2wjg"]
+[ext_resource type="PackedScene" uid="uid://bykastfo056vh" path="res://IsoRooms/IsoRoom1/Interactuables/Items/key.tscn" id="4_put8h"]
 [ext_resource type="PackedScene" uid="uid://casn7bf6nq44q" path="res://utils/Interact/Transitioner/Instancias/trans_r2_r3.tscn" id="4_w6y4y"]
 [ext_resource type="PackedScene" uid="uid://n0gmw80orkd4" path="res://utils/Interact/Npc/Instancias/Grupo_1.tscn" id="5_snxlu"]
 [ext_resource type="PackedScene" uid="uid://qghui2lvxk3v" path="res://utils/Interact/Npc/Instancias/Grupo_2.tscn" id="6_4je3a"]
@@ -13,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://xpklt7xbwqj7" path="res://utils/Interact/Npc/Instancias/Grupo_3.tscn" id="7_xnuun"]
 [ext_resource type="PackedScene" uid="uid://bh12kbhvaf3bl" path="res://Tomas/CAFETERIA/Nerd_Q2.tscn" id="8_aaue2"]
 [ext_resource type="Script" uid="uid://dwqxbk43d6bwm" path="res://utils/Interact/Npc/npc.gd" id="10_cok5s"]
+[ext_resource type="PackedScene" uid="uid://bw0sog6evwj22" path="res://IsoRooms/IsoRoom-Bedelia/vendedor.tscn" id="10_ech2l"]
 
 [sub_resource type="Animation" id="Animation_km8hj"]
 length = 0.001
@@ -74,6 +76,24 @@ position = Vector2(46, -61)
 [node name="defect" parent="Spawns" index="0"]
 position = Vector2(-457, -127)
 
+[node name="Item" parent="Interactables/Items" index="0" instance=ExtResource("4_put8h")]
+visible = false
+position = Vector2(283, -411)
+open_room_id = "ROOM-PISO2A"
+nombre_room = "Piso2"
+
+[node name="Area2D" parent="Interactables/Items/Item" index="1"]
+process_mode = 4
+
+[node name="Item2" parent="Interactables/Items" index="1" instance=ExtResource("4_put8h")]
+visible = false
+position = Vector2(283, -411)
+open_room_id = "ROOM-BEDELIA"
+nombre_room = "Bedelia"
+
+[node name="Area2D" parent="Interactables/Items/Item2" index="1"]
+process_mode = 4
+
 [node name="TRANS R2 -> R3" parent="Interactables/Transitioners" index="0"]
 process_mode = 3
 position = Vector2(-470, -158)
@@ -85,7 +105,8 @@ room_id = "ROOM-PASILLO2"
 position = Vector2(319, 264)
 rotation = -1.84769
 scale = Vector2(1.81578, -4.86591)
-room_id = "VACIO"
+room_id = "ROOM-4"
+necesary_key = true
 
 [node name="SPRITE VENDEDOR" type="Sprite2D" parent="Interactables/Npcs" index="0"]
 position = Vector2(397, -263)
@@ -107,11 +128,16 @@ scale = Vector2(0.367685, 0.333333)
 quest = ExtResource("7_0pd66")
 id = "COFFEE_V2"
 
+[node name="Vendedor Q3" parent="Interactables/Npcs/SPRITE VENDEDOR" index="2" groups=["COFFEE_END"] instance=ExtResource("10_ech2l")]
+process_mode = 4
+gives_item = "full_termo"
+
 [node name="Nerd" parent="Interactables/Npcs" index="1" groups=["Q2_BEGIN"] instance=ExtResource("8_aaue2")]
 process_mode = 4
 position = Vector2(187, -179)
 rotation = -0.0416234
 script = ExtResource("10_cok5s")
+gives_item = "Capitulo1"
 npc_name = "Matias el Nerd"
 id = ""
 
@@ -150,14 +176,20 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
+[connection signal="interacted" from="Interactables/Items/Item" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Items/Item2" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q1" to="." method="_on_interactable_interacted"]
 [connection signal="quest_begun" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q1" to="." method="_on_vendedor_q_1_quest_begun"]
 [connection signal="quest_ended" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q1" to="." method="_on_vendedor_q_1_quest_ended"]
 [connection signal="interacted" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2" to="." method="_on_interactable_interacted"]
 [connection signal="quest_begun" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2" to="." method="_on_vendedor_q_2_quest_begun"]
 [connection signal="quest_ended" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2" to="." method="_on_vendedor_q_2_quest_ended"]
+[connection signal="interacted" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q3" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/Nerd" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/GRUPO 1" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/GRUPO 2" to="." method="_on_interactable_interacted"]
 [connection signal="dialogue_ended" from="Interactables/Npcs/GRUPO 3" to="." method="_on_grupo_3_dialogue_ended"]
 [connection signal="interacted" from="Interactables/Npcs/GRUPO 3" to="." method="_on_interactable_interacted"]
+
+[editable path="Interactables/Items/Item"]
+[editable path="Interactables/Items/Item2"]

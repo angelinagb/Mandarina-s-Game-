@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbfsbj3iwbn6"]
+
+[ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_q1ubv"]
+[ext_resource type="Texture2D" uid="uid://cwuxd057ijn8f" path="res://art/characters/iso/npc/mujer_sentada.png" id="2_qhbjw"]
+
+[node name="Npc" instance=ExtResource("1_q1ubv")]
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_qhbjw")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-0.333333, 18.3333)
+scale = Vector2(1.08182, 0.442938)
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(-7, -17)
+scale = Vector2(-8.9285, 13.4599)
+
+[node name="NpcQuestIndicador" parent="." index="6"]
+offset_left = 30.0
+offset_top = -86.0
+offset_right = 62.0
+offset_bottom = -54.0

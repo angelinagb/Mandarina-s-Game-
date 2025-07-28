@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8e16wsckrrf4"]
+
+[ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_fgag3"]
+[ext_resource type="PackedScene" uid="uid://dftnv4qn3ukuy" path="res://IsoRooms/IsoRoom-Bedelia/bedelia_base_tiles.tscn" id="2_s6xlg"]
+[ext_resource type="PackedScene" uid="uid://dtgwk30hw03u7" path="res://trans_vacio.tscn" id="3_hbgyd"]
+[ext_resource type="PackedScene" uid="uid://ckfbm7hlw3f7l" path="res://IsoRooms/IsoRoom-Bedelia/mujer_bedelia_npc.tscn" id="3_qtwbl"]
+[ext_resource type="PackedScene" uid="uid://dbfsbj3iwbn6" path="res://IsoRooms/IsoRoom-Bedelia/mujer2_bedelia_npc.tscn" id="5_m32ng"]
+
+[node name="IsoRoom" instance=ExtResource("1_fgag3")]
+
+[node name="BaseTiles" parent="." index="0" instance=ExtResource("2_s6xlg")]
+
+[node name="defect" parent="Spawns" index="0"]
+position = Vector2(402, -196)
+
+[node name="Transitioner" parent="Interactables/Transitioners" index="0" instance=ExtResource("3_hbgyd")]
+position = Vector2(435, -213)
+rotation = 0.520996
+scale = Vector2(5, 1)
+room_id = "ROOM-PISO2A"
+
+[node name="Npc" parent="Interactables/Npcs" index="0" instance=ExtResource("3_qtwbl")]
+position = Vector2(76, -236)
+scale = Vector2(0.735209, 0.679334)
+gives_item = "Termo Vacio"
+npc_name = "Carolina"
+
+[node name="Npc3" parent="Interactables/Npcs" index="1" instance=ExtResource("5_m32ng")]
+position = Vector2(-60, -162)
+scale = Vector2(0.662868, 0.646904)
+npc_name = "María"
+
+[node name="PlayerB" parent="Player" index="0"]
+position = Vector2(401, -221)
+
+[connection signal="interacted" from="Interactables/Npcs/Npc" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/Npc3" to="." method="_on_interactable_interacted"]

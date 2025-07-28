@@ -2,11 +2,26 @@ extends IsoRoom
 
 @export var dialogo_intro : PackedScene
 @onready var anim_player : AnimationPlayer = $CinematicasCafeteria
+@onready var key1: Key = $Interactables/Items/Item
+@onready var key2: Key = $Interactables/Items/Item2
+
+
+
+
 
 var said = false
 
 func _ready() -> void:
-	super._ready()
+	for child in $"Interactables/Npcs/SPRITE VENDEDOR".get_children():
+		if child and child is Npc:
+				child.item_used.connect(_on_item_used)
+	for child in $Interactables/Npcs.get_children():
+		if child and child is Npc:
+			child.item_used.connect(_on_item_used)
+			
+	current_state = StateManager.get_room_state(room_id)
+	restore_state()
+	
 	add_to_group("Con Estado")
 	if not said:
 		intro()
@@ -49,7 +64,9 @@ func _on_vendedor_q_2_quest_ended(title: Variant) -> void:
 		node.process_mode = Node.PROCESS_MODE_DISABLED
 	for node : Node in get_tree().get_nodes_in_group("COFFEE_END"):
 		node.process_mode = Node.PROCESS_MODE_INHERIT
-	
+	await NotificationManager.finished
+	key1.interact()
+	key2.interact()
 
 
 func _on_vendedor_q_2_quest_begun() -> void:

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Quest" load_steps=8 format=3 uid="uid://gv3afr554f23"]
+[gd_resource type="Resource" script_class="Quest" load_steps=9 format=3 uid="uid://gv3afr554f23"]
 
 [ext_resource type="Script" uid="uid://cj81x6yti6bmb" path="res://managers/notification/quest/quest.gd" id="1_oeqka"]
 [ext_resource type="Script" uid="uid://c0nhxnmv56tui" path="res://managers/notification/quest/quest_step.gd" id="2_0wubs"]
@@ -13,15 +13,23 @@ metadata/_custom_type_script = "uid://c0nhxnmv56tui"
 
 [sub_resource type="Resource" id="Resource_rs4ea"]
 script = ExtResource("2_0wubs")
-text_to_do = "Consigue el capitulo 1 "
+text_to_do = "Consigue el capitulo 1 en la Cafeteria"
 necessary_interactables = {
 "Capitulo1": false
 }
 metadata/_custom_type_script = "uid://c0nhxnmv56tui"
 
+[sub_resource type="Resource" id="Resource_dk1c5"]
+script = ExtResource("2_0wubs")
+text_to_do = "Consigue la llave del aula 01 en Bedelía"
+necessary_interactables = {
+"bedelia_npc1": false
+}
+metadata/_custom_type_script = "uid://c0nhxnmv56tui"
+
 [sub_resource type="Resource" id="Resource_3fuga"]
 script = ExtResource("2_0wubs")
-text_to_do = "Consigue el capitulo 2"
+text_to_do = "Consigue el capitulo 2 en el Aula 01"
 necessary_interactables = {
 "Capitulo2": false
 }
@@ -29,7 +37,7 @@ metadata/_custom_type_script = "uid://c0nhxnmv56tui"
 
 [sub_resource type="Resource" id="Resource_7prh0"]
 script = ExtResource("2_0wubs")
-text_to_do = "Consigue el capítulo 3"
+text_to_do = "Consigue el capítulo 3 en el Laboratorio de Química."
 necessary_interactables = {
 "Capitulo3": false
 }
@@ -37,14 +45,14 @@ metadata/_custom_type_script = "uid://c0nhxnmv56tui"
 
 [sub_resource type="Resource" id="Resource_ua18d"]
 script = ExtResource("2_0wubs")
-text_to_do = "Consigue el Capítulo 4 "
+text_to_do = "Consigue el Capítulo 4 en el Laboratorio de Física."
 necessary_interactables = {}
 metadata/_custom_type_script = "uid://c0nhxnmv56tui"
 
 [resource]
 script = ExtResource("1_oeqka")
 title = "Sigue el rastro de Mandarina"
-steps = Array[ExtResource("2_0wubs")]([SubResource("Resource_oeqka"), SubResource("Resource_rs4ea"), SubResource("Resource_3fuga"), SubResource("Resource_7prh0"), SubResource("Resource_ua18d")])
+steps = Array[ExtResource("2_0wubs")]([SubResource("Resource_oeqka"), SubResource("Resource_rs4ea"), SubResource("Resource_dk1c5"), SubResource("Resource_3fuga"), SubResource("Resource_7prh0"), SubResource("Resource_ua18d")])
 current_step = 0
 is_secondary = false
 metadata/_custom_type_script = "uid://cj81x6yti6bmb"

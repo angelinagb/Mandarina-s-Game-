@@ -20,6 +20,7 @@ position = Vector2(-217, 246)
 process_mode = 4
 position = Vector2(-70, 195)
 open_room_id = "ROOM-SALA-CAMARAS"
+nombre_room = "SALA DE CÁMARAS"
 id = "key"
 
 [node name="CollisionShape2D" parent="Interactables/Items/Key/Area2D" index="0"]
