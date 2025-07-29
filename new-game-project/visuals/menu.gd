@@ -34,6 +34,7 @@ func initialize(quest_manager: QuestManager, inventory_manager: InventoryManager
 
 func add_item_inventory(item: Dictionary):
 	var item_box := elemento_inventario.instantiate()
+	item_box.name = item.get("id")
 	item_container.add_child(item_box)
 	
 	var texture := load(item.get("path_img", ""))
@@ -43,7 +44,8 @@ func add_item_inventory(item: Dictionary):
 
 func remove_item_inventory(item: Dictionary):
 	for child in item_container.get_children():
-		pass
+		if child.name == item.get("id"):
+			item_container.remove_child(child)
 
 func add_quest_ui(quest: Quest) -> void:
 	var quest_box : QuestElement
@@ -87,9 +89,9 @@ func on_quest_updated(quest: Quest) -> void:
 		quest_updated.emit(quest)
 
 func on_item_updated(item: Dictionary):
-	if item.is_in_player and not item.is_in_world:
+	if item.is_in_player:
 		add_item_inventory(item)
-	elif not item.is_in_player and not item.is_in_world:
+	else:
 		remove_item_inventory(item)
 
 func on_abilities_updated(points_available: int, abilities: Dictionary):

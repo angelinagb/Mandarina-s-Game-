@@ -69,8 +69,8 @@ func save_this():
 			"is_in_world": true,
 			"is_in_player": false
 		},
-		"full_termo": {
-			"id": "full_termo",
+		"Termo Lleno": {
+			"id": "Termno Lleno",
 			"name": "Termo Lleno",
 			"desc": "Ahora tiene agua hirviendo! Un arma mejorada...",
 			"path_img": "res://art/items/termo.png",
@@ -227,9 +227,12 @@ func _on_transitioner_activated(transitioner: Transitioner) -> void:
 		current_room_id = room_id
 
 func _on_npc_talked_to(npc: Npc) -> void:
-	if npc.gives_item != null :
+	if npc is Merchant:
+		npc.request_item_check.connect(_on_item_check_requested)
+		npc.n_item.interacted.connect(_on_interactable_interacted)
+	elif npc.gives_item != "":
 		npc.node_item.interacted.connect(_on_interactable_interacted)
-	
+	npc.item_used.connect(_on_item_used)
 	npc.startDialogue()
 	await npc.dialogue_ended
 	
@@ -253,6 +256,8 @@ func _on_puzzle_begin(puzzle : Interactable):
 func initialize_room(path_room: String, temp: String ):
 	current = room_manager.initialize(path_room)
 	current.interactable_interacted.connect(_on_interactable_interacted)
+	#current.item_used.connect(self._on_item_used)
+	
 	player = current.get_player()
 	player.initialize(current.get_position_spawn(temp))
 
@@ -270,7 +275,7 @@ func change_room(new_room_id: String, current_room_id: String):
 	player = current.get_player()
 	
 	current.interactable_interacted.connect(_on_interactable_interacted)
-	current.item_used.connect(_on_item_used)
+	#current.item_used.connect(_on_item_used)
 	
 	player.move_to(current.get_position_spawn(current_room_id))
 
@@ -320,3 +325,10 @@ func on_game_ended():
 
 func _on_item_used(item_id):
 	inventory.item_used(item_id)
+
+
+
+func _on_item_check_requested(item_id, merchant_ref):
+	var result = inventory.get_items_in_player().has(item_id)
+	print("→ [World] Emitiendo hacia ", merchant_ref.name, ", resultado: ", result)
+	merchant_ref.response_item_check.emit(result, item_id)

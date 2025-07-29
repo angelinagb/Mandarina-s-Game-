@@ -7,7 +7,7 @@
 script = ExtResource("2_yica4")
 text_to_do = "Carga el termo en la cafetería."
 necessary_interactables = {
-"COFFEE_V": false
+"Termo Lleno": false
 }
 metadata/_custom_type_script = "uid://c0nhxnmv56tui"
 

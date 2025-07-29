@@ -6,7 +6,6 @@
 
 [node name="AlumnoNro3-3" instance=ExtResource("1_vc7fm")]
 scale = Vector2(1.2, 1.2)
-gives_item = true
 npc_name = "Victoria Fernandez"
 
 [node name="PlayerShadow" parent="." index="0"]

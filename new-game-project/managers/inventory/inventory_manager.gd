@@ -3,7 +3,7 @@ extends Node
 
 var items: Dictionary = {}
 var items_in_world: Array[String]
-var items_in_player: Array[String]
+var items_in_player: Array[String] 
 var keys_in_player: Array[String]
 
 signal game_ended()
@@ -32,6 +32,7 @@ func get_items_in_player() -> Array[String]:
 	return items_in_player
 
 func item_grabbed(item_id: String) -> void:
+	print("item dadoo")
 	if not items_in_world.has(item_id):
 		return
 	else :
@@ -41,6 +42,7 @@ func item_grabbed(item_id: String) -> void:
 		give_item_to_player(item_id)
 
 func item_used(item_id: String) -> void:
+	print("item usado")
 	if items_in_player.has(item_id):
 		items[item_id].is_in_player = false
 		items_in_player.erase(item_id)

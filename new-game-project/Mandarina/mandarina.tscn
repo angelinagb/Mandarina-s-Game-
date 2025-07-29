@@ -1,4 +1,4 @@
-[gd_scene load_steps=134 format=3 uid="uid://d2jcbaf1bvttq"]
+[gd_scene load_steps=136 format=3 uid="uid://d2jcbaf1bvttq"]
 
 [ext_resource type="Script" uid="uid://8rdxjob1fq4o" path="res://Mandarina/mandarina.gd" id="1_ugmtq"]
 [ext_resource type="Texture2D" uid="uid://bjnf67pgj1rvw" path="res://art/characters/iso/Mandarina/64x64/2d/spritesheet.png" id="2_ugmtq"]
@@ -13,9 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://cs3rwnqx3k4ae" path="res://art/characters/iso/Mandarina/64x64/top-down/walk_1.png" id="9_05fqv"]
 [ext_resource type="Texture2D" uid="uid://hxhqvva75vso" path="res://art/characters/iso/Mandarina/64x64/top-down/walk_2.png" id="10_jajso"]
 [ext_resource type="Texture2D" uid="uid://hcij2ybwy8af" path="res://art/characters/iso/Mandarina/64x64/top-down/walk_8.png" id="12_qvbdr"]
+[ext_resource type="AudioStream" uid="uid://ctv6isbqfgw3c" path="res://art/music-sfx/RPGsfx/cat-meow-7-fx-306186.mp3" id="14_vwlnu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hacv5"]
-radius = 31.4376
+radius = 100.806
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qvbdr"]
 atlas = ExtResource("4_bkt2i")
@@ -937,6 +938,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qvbdr"]
+radius = 62.0
+
 [node name="Mandarina" type="CharacterBody2D"]
 floor_constant_speed = true
 script = ExtResource("1_ugmtq")
@@ -946,9 +950,12 @@ position = Vector2(-2, 13)
 scale = Vector2(2.85683, -0.825672)
 texture = ExtResource("2_yd76f")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, 13)
-scale = Vector2(0.707513, 0.170459)
+[node name="Area2D" type="Area2D" parent="Shadow"]
+scale = Vector2(0.943994, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shadow/Area2D"]
+position = Vector2(-0.350038, 0)
+scale = Vector2(0.247657, -0.206449)
 shape = SubResource("CircleShape2D_hacv5")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
@@ -957,3 +964,22 @@ sprite_frames = SubResource("SpriteFrames_hjutk")
 animation = &"jump_right"
 frame = 9
 frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 11)
+scale = Vector2(0.319123, 0.103508)
+shape = SubResource("CircleShape2D_qvbdr")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -14.0
+offset_top = -59.0
+offset_right = 16.0
+offset_bottom = -45.0
+theme_override_font_sizes/font_size = 10
+text = "miau.."
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_vwlnu")
+
+[connection signal="body_entered" from="Shadow/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Shadow/Area2D" to="." method="_on_area_2d_body_exited"]

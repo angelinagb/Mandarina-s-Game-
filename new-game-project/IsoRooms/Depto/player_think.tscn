@@ -35,5 +35,4 @@ metadata/_custom_type_script = "uid://dekceg47jr41c"
 dialogueResource = SubResource("Resource_y5nwn")
 
 [node name="RichTextLabel" parent="CanvasLayer/PanelContainer/VBoxContainer" index="0"]
-fit_content = true
 scroll_active = false

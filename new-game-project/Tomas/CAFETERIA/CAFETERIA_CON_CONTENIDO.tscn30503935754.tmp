@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cimvpyl0tae0m"]
+[gd_scene load_steps=19 format=3 uid="uid://cimvpyl0tae0m"]
 
 [ext_resource type="PackedScene" uid="uid://3g08138nqpuj" path="res://IsoRooms/IsoRoom2/2_iso_room_cafeteria.tscn" id="1_7eguv"]
 [ext_resource type="Script" uid="uid://bfncky2s0ss6u" path="res://Tomas/CAFETERIA/cafeteria.gd" id="2_ap168"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://bh12kbhvaf3bl" path="res://Tomas/CAFETERIA/Nerd_Q2.tscn" id="8_aaue2"]
 [ext_resource type="Script" uid="uid://dwqxbk43d6bwm" path="res://utils/Interact/Npc/npc.gd" id="10_cok5s"]
 [ext_resource type="PackedScene" uid="uid://dmuwy4w1v43x8" path="res://utils/Interact/Npc/Instancias/Mercader/mercader.tscn" id="10_ech2l"]
-[ext_resource type="PackedScene" uid="uid://d2jcbaf1bvttq" path="res://Mandarina/mandarina.tscn" id="16_odqet"]
 
 [sub_resource type="Animation" id="Animation_km8hj"]
 length = 0.001
@@ -164,12 +163,6 @@ offset_top = -78.1113
 offset_right = 49.991
 offset_bottom = -46.1113
 
-[node name="Mandarina" parent="Interactables/Npcs" index="6" instance=ExtResource("16_odqet")]
-position = Vector2(290, -417)
-
-[node name="Area2D" parent="Interactables/Npcs/Mandarina/Shadow" index="0"]
-position = Vector2(-4.20046, -69.0347)
-
 [node name="PlayerB" parent="Player" index="0"]
 position = Vector2(-456, -152)
 
@@ -212,4 +205,3 @@ color = Color(0, 0, 0, 0)
 [editable path="Interactables/Items/Item2"]
 [editable path="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2"]
 [editable path="Interactables/Npcs/Mercader"]
-[editable path="Interactables/Npcs/Mandarina"]

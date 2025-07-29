@@ -18,6 +18,7 @@ func inicializar(texto: String, indice: int,type: String):
 	match type: 
 		"Quest": decision_icon.texture = preload("res://art/menu/Icons_Essential/v1.2/Icons/Info.png")
 		"Quit": decision_icon.texture = preload("res://art/menu/Icons_Essential/v1.2/Icons/Exit.png")
+		"Market": decision_icon.texture = preload("res://art/menu/Icons_Essential/v1.2/Icons/Coin2.png")
 		_: decision_icon.texture = null
 	pressed.connect(_on_button_pressed)
 	label.queue_redraw()

@@ -9,13 +9,13 @@ var level_completed = false
 var said = false
 
 func _ready() -> void:
-	for child in $"Interactables/Npcs/SPRITE VENDEDOR".get_children():
-		if child and child is Npc:
-				child.item_used.connect(_on_item_used)
-	for child in $Interactables/Npcs.get_children():
-		if child and child is Npc:
-			child.item_used.connect(_on_item_used)
-			
+	#for child in $"Interactables/Npcs/SPRITE VENDEDOR".get_children():
+		#if child and child is Npc:
+				#child.item_used.connect(_on_item_used)
+	#for child in $Interactables/Npcs.get_children():
+		#if child and child is Npc:
+			#child.item_used.connect(_on_item_used)
+			#
 	current_state = StateManager.get_room_state(room_id)
 	restore_state()
 	
@@ -66,8 +66,10 @@ func _on_vendedor_q_1_quest_begun() -> void:
 func _on_vendedor_q_2_quest_ended(title: Variant) -> void:
 	for node : Node in get_tree().get_nodes_in_group("Q2"):
 		node.process_mode = Node.PROCESS_MODE_DISABLED
+		node.visible = false
 	for node : Node in get_tree().get_nodes_in_group("COFFEE_END"):
 		node.process_mode = Node.PROCESS_MODE_INHERIT
+	
 	await NotificationManager.finished
 	key1.interact()
 	key2.interact()

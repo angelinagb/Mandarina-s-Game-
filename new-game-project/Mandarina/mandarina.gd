@@ -6,13 +6,13 @@ var running_speed :=110.0
 var speed := 80.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite
+@onready var label: Label = $Label
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 @onready var path_2d: Path2D = $Path2D
 var waypoints: Array[Vector2] = []
 var current_point := 0
 var running := false
-
-
 
 func _begin_motion():
 	# Convertir Path2D a puntos globales
@@ -81,3 +81,16 @@ func idle_and_look():
 
 func get_current_point() -> int:
 	return current_point
+
+
+func _ready() -> void:
+	update_animation(Vector2.ZERO)
+
+
+func _on_area_2d_body_entered(body: PlayerB) -> void:
+	label.visible = true
+	audio_stream_player.play()
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	label.visible = false

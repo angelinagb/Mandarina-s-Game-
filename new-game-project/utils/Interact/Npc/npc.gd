@@ -35,7 +35,7 @@ func _ready():
 	if dialogoDefault:
 		dialogoDefault.use_item.connect(_on_item_used)
 	
-	if gives_item != null:
+	if gives_item != "":
 		create_item()
 		primerDialogo.deliver_item.connect(new_item)
 		

@@ -24,6 +24,7 @@ var decision_actual : Decision
 
 @export var vacio : bool #determina si se va a reproducir este dialogo o no.
 
+
 @onready var speaker_name: Label = $CanvasLayer/Speaker_Name
 
 ##Recurso con información sobre el diálogo a mostrar
@@ -185,6 +186,7 @@ func cambiar_a_modo_conversacion(): #resetea el cuadro de dialogo
 	
 func _on_boton_decision_pressed(indice : int):
 	#TENGO QUE ELIMINAR TODOS LOS BOTONES DEL DIALOGOv+
+	
 	var events = decision_actual.get_recurso_dialogo_de_decision_elegida(indice).array_eventos
 	cambiar_a_modo_conversacion()
 	dialogueResource = decision_actual.get_recurso_dialogo_de_decision_elegida(indice).get_recurso_dialogo_exitoso()
@@ -246,13 +248,12 @@ func check_and_start_alternative_dialogue():
 func trigger_events(events: Array[Evento] ):
 	var type
 	for event in events:
-		if event is Evento_Grab_Item :
+		if event is Evento_Grab_Item and event.item_id != null:
 			deliver_item.emit(event.item_id)
-		if event is event_use_item :
+		elif event is event_use_item and event.item_id != null :
 			use_item.emit(event.item_id)
 		await event.trigger()
 		
-
 #region para debugear
 func skip_conversation(): 
 	if Input.is_action_just_pressed("ui_right"):

@@ -71,7 +71,6 @@ scale = Vector2(1.41777, 1.54542)
 [node name="AlumnoNro3-3" parent="Interactables/Npcs" index="1" instance=ExtResource("6_iyjjf")]
 position = Vector2(226, -503)
 scale = Vector2(1.09628, 1.31673)
-gives_item = ""
 id = "Al3-3"
 
 [node name="Terminal_sube" parent="Interactables" index="3" instance=ExtResource("10_bg5nm")]
