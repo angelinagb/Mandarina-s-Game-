@@ -20,3 +20,5 @@ dialogueResource = ExtResource("2_xwvbs")
 
 [node name="Dialogo Default" parent="." index="5"]
 dialogueResource = ExtResource("3_xwvbs")
+
+[editable path="NpcQuestIndicador"]

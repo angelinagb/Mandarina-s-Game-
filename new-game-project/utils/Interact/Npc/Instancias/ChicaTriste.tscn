@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjkpau08dmw6l"]
+[gd_scene load_steps=8 format=3 uid="uid://cjkpau08dmw6l"]
 
 [ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_hdobk"]
 [ext_resource type="Resource" uid="uid://ct45gjwmh0t0y" path="res://Tomas/Quest 1/quest_chocolate.tres" id="2_5w6g1"]
-[ext_resource type="Texture2D" uid="uid://djj4haibkkndk" path="res://art/characters/iso/npc/unnamed.png" id="3_5w6g1"]
-[ext_resource type="Resource" uid="uid://b25o7bfjrxwqp" path="res://managers/dialogue 2.0/recursos/dialogos/DIALOGO PRUEBA/PRUEBA_DIALOGO.tres" id="4_5w6g1"]
-[ext_resource type="Resource" uid="uid://d0qk3att6gqda" path="res://managers/dialogue 2.0/recursos/dialogos/ChicaTriste_1_dialogo/dialogo_debugging.tres" id="4_6bm3g"]
+[ext_resource type="Texture2D" uid="uid://d0puyy150tjoo" path="res://art/characters/iso/npc/girl_npc.png" id="3_5w6g1"]
+[ext_resource type="Resource" uid="uid://uer8c1g8tyar" path="res://IsoRooms/IsoRoom-Piso2/Dialogo_quest.tres" id="4_xp2du"]
+[ext_resource type="AudioStream" uid="uid://xe3m817pv17o" path="res://art/music-sfx/RPG_Music_Orchestra/hmms-various-1-7175.mp3" id="6_xp2du"]
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="8_57jey"]
+
+[sub_resource type="Resource" id="Resource_xp2du"]
+script = ExtResource("8_57jey")
+arreglo_de_textos = PackedStringArray("Un candado... Una clave... ¿Qué esta pasando?")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
 
 [node name="Chica Triste" instance=ExtResource("1_hdobk")]
 quest = ExtResource("2_5w6g1")
@@ -14,8 +21,8 @@ position = Vector2(-4, 29)
 scale = Vector2(2.71677, 1.57576)
 
 [node name="Sprite2D" parent="." index="1"]
-position = Vector2(-4, -8)
-scale = Vector2(0.0970756, 0.0968096)
+position = Vector2(2, -41)
+scale = Vector2(0.198635, 0.192972)
 texture = ExtResource("3_5w6g1")
 
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]
@@ -23,15 +30,27 @@ position = Vector2(-4, 29)
 scale = Vector2(2.92651, 1.45249)
 
 [node name="Dialogo Quest" parent="." index="4"]
-destruirse_al_finalizar = true
-dialogueResource = ExtResource("4_6bm3g")
+dialogueResource = ExtResource("4_xp2du")
 
 [node name="Dialogo Default" parent="." index="5"]
-dialogueResource = ExtResource("4_5w6g1")
+scale = Vector2(2.2251, 1.57231)
+vacio = true
+dialogueResource = SubResource("Resource_xp2du")
 
 [node name="NpcQuestIndicador" parent="." index="6"]
-offset_left = 1.0
-offset_top = -62.0
-offset_right = 33.0
-offset_bottom = -30.0
+offset_top = -10.8124
+offset_right = 34.0
+offset_bottom = 21.1876
+grow_horizontal = 1
 scale = Vector2(1.07131, 0.817495)
+
+[node name="TextureRect" parent="NpcQuestIndicador" index="0"]
+offset_left = -42.1362
+offset_top = -202.578
+offset_right = 21.8638
+offset_bottom = -138.578
+
+[node name="AudioStreamPlayer" parent="." index="7"]
+stream = ExtResource("6_xp2du")
+
+[editable path="NpcQuestIndicador"]

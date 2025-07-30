@@ -84,6 +84,7 @@ func get_current_point() -> int:
 
 
 func _ready() -> void:
+	label.visible = false
 	update_animation(Vector2.ZERO)
 
 

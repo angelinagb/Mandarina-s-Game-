@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2dmd4gc77b5v"]
+
+[ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_jqyjy"]
+[ext_resource type="Resource" uid="uid://dlgry4m3wvgjr" path="res://IsoRooms/IsoRoom-Piso2/chica_triste_quest_end.tres" id="2_7trsy"]
+[ext_resource type="Texture2D" uid="uid://d0puyy150tjoo" path="res://art/characters/iso/npc/girl_npc.png" id="2_apx3q"]
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="3_doyf5"]
+
+[sub_resource type="Resource" id="Resource_apx3q"]
+script = ExtResource("3_doyf5")
+arreglo_de_textos = PackedStringArray("Hola! Gracias por ayudarme antes!")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[node name="ChicaTriste2" instance=ExtResource("1_jqyjy")]
+gives_item = "Yerba"
+npc_name = "Ana_Npc_Piso2"
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(2, -41)
+scale = Vector2(0.198635, 0.192972)
+texture = ExtResource("2_apx3q")
+
+[node name="Dialogo Quest" parent="." index="4"]
+dialogueResource = ExtResource("2_7trsy")
+
+[node name="Dialogo Default" parent="." index="5"]
+dialogueResource = SubResource("Resource_apx3q")
+
+[editable path="NpcQuestIndicador"]

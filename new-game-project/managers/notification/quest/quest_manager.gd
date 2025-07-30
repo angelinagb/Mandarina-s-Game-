@@ -50,7 +50,7 @@ func on_quest_finished(title):
 		return
 
 	# Mostrar popup de quest completada
-	var quest_completed_scene = preload("res://Tomas/pop up/quest_completed.tscn")
+	var quest_completed_scene = preload("res://Ange/quest_completed_notif.tscn")
 	var temp = quest_completed_scene.instantiate()
 	var personalizada = temp.get_personalized_scene(title)
 	NotificationManager.enqueue_event(personalizada)

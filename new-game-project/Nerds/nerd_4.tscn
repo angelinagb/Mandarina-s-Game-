@@ -82,8 +82,18 @@ visibility_layer = 1
 position = Vector2(-0.166667, 1.5)
 
 [node name="Dialogo Quest" parent="." index="4"]
+vacio = true
 dialogueResource = SubResource("Resource_tdshe")
 dialogo_alternativo = SubResource("Resource_10grf")
 
 [node name="Dialogo Default" parent="." index="5"]
 dialogueResource = ExtResource("5_rt6xu")
+
+[node name="NpcQuestIndicador" parent="." index="6"]
+offset_left = 1.0
+offset_top = 14.5
+offset_right = 17.0
+offset_bottom = 30.5
+grow_horizontal = 1
+
+[editable path="NpcQuestIndicador"]

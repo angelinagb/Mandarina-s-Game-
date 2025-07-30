@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="Dialogo" load_steps=11 format=3 uid="uid://bi35xdf0df4o1"]
+
+[ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="1_ogwnc"]
+[ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="2_w82l8"]
+[ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="3_fbdpd"]
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="4_dfsvv"]
+
+[sub_resource type="Resource" id="Resource_vokb3"]
+script = ExtResource("1_ogwnc")
+texto = "Y bueno.."
+array_eventos = Array[ExtResource("2_w82l8")]([])
+decision_type = "Chat"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_8p23m"]
+script = ExtResource("3_fbdpd")
+array_opciones = Array[ExtResource("1_ogwnc")]([SubResource("Resource_vokb3")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
+
+[sub_resource type="Resource" id="Resource_iw1vd"]
+script = ExtResource("4_dfsvv")
+arreglo_de_textos = PackedStringArray("Es que resulta que esta andando todo mal", "Y algunas puertas estan cerradas con clave", "¿¿Desde cuando??", "Bueno, resulta que deje adentro dla 201 un pendrive con mis trabajos", "Podrias ayudarme a recuperlo? Las entregas son en estos dias..")
+decision = SubResource("Resource_8p23m")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[sub_resource type="Resource" id="Resource_jpd4g"]
+script = ExtResource("1_ogwnc")
+texto = "Si, decime"
+dialogo_exitoso = SubResource("Resource_iw1vd")
+array_eventos = Array[ExtResource("2_w82l8")]([])
+decision_type = "Chat"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_utut5"]
+script = ExtResource("1_ogwnc")
+texto = "No gracias, no tengo tiempo"
+array_eventos = Array[ExtResource("2_w82l8")]([])
+decision_type = "Quit"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_7vuid"]
+script = ExtResource("3_fbdpd")
+array_opciones = Array[ExtResource("1_ogwnc")]([SubResource("Resource_jpd4g"), SubResource("Resource_utut5")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
+
+[resource]
+script = ExtResource("4_dfsvv")
+arreglo_de_textos = PackedStringArray("¡Hola! ¿Me podes ayudar con algo?")
+decision = SubResource("Resource_7vuid")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"

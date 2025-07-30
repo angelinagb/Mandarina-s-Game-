@@ -79,7 +79,7 @@ metadata/_custom_type_script = "uid://ceg75660dlfjc"
 
 [resource]
 script = ExtResource("2_la1bs")
-arreglo_de_textos = PackedStringArray("JAJAJAJA", "?", "¿Que querés?")
+arreglo_de_textos = PackedStringArray("JAJAJA", "?", "¿Qué queres?")
 decision = SubResource("Resource_2pq64")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"

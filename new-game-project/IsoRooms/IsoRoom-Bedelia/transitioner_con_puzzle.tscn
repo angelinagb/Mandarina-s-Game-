@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxurh7x1dv7db"]
+
+[ext_resource type="PackedScene" uid="uid://53qcgarmhxng" path="res://utils/Interact/Transitioner/transitioner.tscn" id="1_pqe7a"]
+[ext_resource type="Script" uid="uid://b376s8crd4o4m" path="res://IsoRooms/IsoRoom-Bedelia/transitioner_con_puzzle.gd" id="2_ko2tv"]
+
+[node name="Puzzle_Transitioner" instance=ExtResource("1_pqe7a")]
+script = ExtResource("2_ko2tv")
+puzzle = null

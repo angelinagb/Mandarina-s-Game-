@@ -9,15 +9,25 @@ signal finished
 @onready var timer : Timer = $Timer
 @export var tiempo_que_aparece : float = 5.0
 @onready var sound = get_node_or_null("sound")
+@onready var anim_sprite = get_node_or_null("Control/AnimatedSprite2D")
 
 func start():
+	if anim_sprite:
+		anim_sprite.play("appear")
 	anim_player.play("fade_in")
 	await anim_player.animation_finished
+	
 	if sound:
-		sound.play
+		sound.play()
+		
 	timer.start(tiempo_que_aparece)
 	await timer.timeout
 	
+	if anim_sprite:
+		anim_sprite.play("disappear")
+		
+		
+		
 	anim_player.play("fade_out")
 	await anim_player.animation_finished
 	

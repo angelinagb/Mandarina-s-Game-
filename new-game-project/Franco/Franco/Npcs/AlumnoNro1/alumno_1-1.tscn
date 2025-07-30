@@ -19,3 +19,12 @@ dialogueResource = ExtResource("3_1c4sw")
 [node name="Dialogo Default" parent="." index="5"]
 scale = Vector2(1.87619, 1.06504)
 dialogueResource = ExtResource("3_0dt2h")
+
+[node name="NpcQuestIndicador" parent="." index="6"]
+offset_left = -8.33333
+offset_top = -67.5
+offset_right = 7.66667
+offset_bottom = -51.5
+grow_horizontal = 1
+
+[editable path="NpcQuestIndicador"]

@@ -1,17 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8e16wsckrrf4"]
+[gd_scene load_steps=8 format=3 uid="uid://b8e16wsckrrf4"]
 
 [ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_fgag3"]
+[ext_resource type="Script" uid="uid://ouk1mok4voqb" path="res://IsoRooms/IsoRoom-Bedelia/bedelia_iso_room.gd" id="2_pf3ew"]
 [ext_resource type="PackedScene" uid="uid://dftnv4qn3ukuy" path="res://IsoRooms/IsoRoom-Bedelia/bedelia_base_tiles.tscn" id="2_s6xlg"]
 [ext_resource type="PackedScene" uid="uid://dtgwk30hw03u7" path="res://trans_vacio.tscn" id="3_hbgyd"]
+[ext_resource type="PackedScene" uid="uid://bykastfo056vh" path="res://IsoRooms/IsoRoom1/Interactuables/Items/key.tscn" id="3_m32ng"]
 [ext_resource type="PackedScene" uid="uid://ckfbm7hlw3f7l" path="res://IsoRooms/IsoRoom-Bedelia/mujer_bedelia_npc.tscn" id="3_qtwbl"]
 [ext_resource type="PackedScene" uid="uid://dbfsbj3iwbn6" path="res://IsoRooms/IsoRoom-Bedelia/mujer2_bedelia_npc.tscn" id="5_m32ng"]
 
 [node name="IsoRoom" instance=ExtResource("1_fgag3")]
+script = ExtResource("2_pf3ew")
 
 [node name="BaseTiles" parent="." index="0" instance=ExtResource("2_s6xlg")]
 
 [node name="defect" parent="Spawns" index="0"]
 position = Vector2(402, -196)
+
+[node name="Item" parent="Interactables/Items" index="0" instance=ExtResource("3_m32ng")]
+visible = false
+position = Vector2(320, -134)
+open_room_id = "ROOM-4"
+nombre_room = "Aula 01"
 
 [node name="Transitioner" parent="Interactables/Transitioners" index="0" instance=ExtResource("3_hbgyd")]
 position = Vector2(435, -213)
@@ -26,13 +35,25 @@ gives_item = "Termo Vacio"
 npc_name = "Carolina"
 
 [node name="Npc3" parent="Interactables/Npcs" index="1" instance=ExtResource("5_m32ng")]
-position = Vector2(-60, -162)
+process_mode = 4
+position = Vector2(-62, -166)
 scale = Vector2(0.662868, 0.646904)
 npc_name = "María"
+id = "Maria_NPC"
+
+[node name="NpcQuestIndicador" parent="Interactables/Npcs/Npc3" index="6"]
+grow_horizontal = 1
 
 [node name="PlayerB" parent="Player" index="0"]
 position = Vector2(401, -221)
 
+[connection signal="interacted" from="Interactables/Items/Item" to="." method="_on_item_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/Transitioner" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/Npc" to="." method="_on_interactable_interacted"]
+[connection signal="quest_begun" from="Interactables/Npcs/Npc" to="." method="_on_npc_quest_begun"]
+[connection signal="quest_ended" from="Interactables/Npcs/Npc" to="." method="_on_npc_quest_ended"]
+[connection signal="dialogue_ended" from="Interactables/Npcs/Npc3" to="." method="_on_npc_3_dialogue_ended"]
 [connection signal="interacted" from="Interactables/Npcs/Npc3" to="." method="_on_interactable_interacted"]
+
+[editable path="Interactables/Npcs/Npc3"]
+[editable path="Interactables/Npcs/Npc3/NpcQuestIndicador"]

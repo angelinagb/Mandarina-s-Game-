@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="Opcion" load_steps=11 format=3 uid="uid://5y20tb4gcelr"]
+
+[ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="1_j4vlt"]
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="2_jbang"]
+[ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="3_2dn2b"]
+[ext_resource type="Resource" uid="uid://bik8r658kt2el" path="res://IsoRooms/IsoRoom-Bedelia/ok_quit_op.tres" id="3_21h4c"]
+[ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="4_fl3b1"]
+
+[sub_resource type="Resource" id="Resource_gyd6v"]
+script = ExtResource("4_fl3b1")
+array_opciones = Array[ExtResource("3_2dn2b")]([ExtResource("3_21h4c")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
+
+[sub_resource type="Resource" id="Resource_oiggf"]
+script = ExtResource("2_jbang")
+arreglo_de_textos = PackedStringArray("Mmm esa es mas dificil.. ", "Hubo faltantes asi que en la cafeteria no hay stock", "Quizas alguien te pueda dar un poco, todo el mundo toma mate acá")
+decision = SubResource("Resource_gyd6v")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[sub_resource type="Resource" id="Resource_vbiyn"]
+script = ExtResource("3_2dn2b")
+texto = "¿Y dónde consigo la yerba?"
+dialogo_exitoso = SubResource("Resource_oiggf")
+array_eventos = Array[ExtResource("1_j4vlt")]([])
+decision_type = "Chat"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_g5q1q"]
+script = ExtResource("4_fl3b1")
+array_opciones = Array[ExtResource("3_2dn2b")]([ExtResource("3_21h4c"), SubResource("Resource_vbiyn")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
+
+[sub_resource type="Resource" id="Resource_21h4c"]
+script = ExtResource("2_jbang")
+arreglo_de_textos = PackedStringArray("En la cafeteria. ¿Dónde mas?")
+decision = SubResource("Resource_g5q1q")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[resource]
+script = ExtResource("3_2dn2b")
+texto = "¿Donde cargo el termo?"
+dialogo_exitoso = SubResource("Resource_21h4c")
+array_eventos = Array[ExtResource("1_j4vlt")]([])
+decision_type = "Chat"
+metadata/_custom_type_script = "uid://bxesqyur17jig"

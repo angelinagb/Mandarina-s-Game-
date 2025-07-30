@@ -16,6 +16,8 @@ signal item_used(item_id: String)
 @onready var current_dialogue: int = 0
 @onready var current_npc_state:STATE = STATE.WAITING
 
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+
 var player_in_range = false
 var tiene_dialogo_quest : bool 
 var tiene_quest: bool
@@ -70,9 +72,11 @@ func on_quest_ended(title):
 
 func interact():
 	interacted.emit(self)
+
 	await dialogueEnded()
 	
 func startDialogue():
+	$AudioStreamPlayer.play()
 	if tiene_dialogo_quest == true:
 		primerDialogo.set_speaker(self.npc_name)
 		primerDialogo.start()
@@ -105,10 +109,12 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 
 func _on_dialogo_quest_dialogue_ended() -> void:
+	$AudioStreamPlayer.stop()
 	dialogue_ended.emit()
 
 
 func _on_dialogo_default_dialogue_ended() -> void:
+	$AudioStreamPlayer.stop()
 	dialogue_ended.emit()
 	
 func get_state() -> Dictionary:

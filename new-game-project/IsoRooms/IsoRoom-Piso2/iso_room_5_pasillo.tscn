@@ -1,14 +1,54 @@
-[gd_scene load_steps=4 format=3 uid="uid://csd34hxktl1hl"]
+[gd_scene load_steps=16 format=3 uid="uid://csd34hxktl1hl"]
 
 [ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_y3myp"]
+[ext_resource type="Script" uid="uid://cru4sreum2y7h" path="res://IsoRooms/IsoRoom-Piso2/piso2_isoroom.gd" id="2_3bu61"]
 [ext_resource type="PackedScene" uid="uid://cojn85xfsktkp" path="res://IsoRooms/IsoRoom-Piso2/5_base_tiles.tscn" id="2_7xcgx"]
 [ext_resource type="PackedScene" uid="uid://cas7jeaslklbm" path="res://utils/Interact/Transitioner/Instancias/trans_pasillo_cafeteria.tscn" id="2_js4aw"]
+[ext_resource type="PackedScene" uid="uid://cjkpau08dmw6l" path="res://utils/Interact/Npc/Instancias/ChicaTriste.tscn" id="4_uubpd"]
+[ext_resource type="PackedScene" uid="uid://bxurh7x1dv7db" path="res://IsoRooms/IsoRoom-Bedelia/transitioner_con_puzzle.tscn" id="4_vokb3"]
+[ext_resource type="PackedScene" uid="uid://ksp6solj3qvd" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleCandado/puzzle_candado.tscn" id="5_8p23m"]
+[ext_resource type="Script" uid="uid://cj81x6yti6bmb" path="res://managers/notification/quest/quest.gd" id="5_agp1c"]
+[ext_resource type="Script" uid="uid://c0nhxnmv56tui" path="res://managers/notification/quest/quest_step.gd" id="6_db85a"]
+[ext_resource type="PackedScene" uid="uid://csoh0x671pkgf" path="res://IsoRooms/Objetos/Scenes/Floor_switch.tscn" id="9_db85a"]
+[ext_resource type="PackedScene" uid="uid://d2dmd4gc77b5v" path="res://IsoRooms/IsoRoom-Piso2/chica_triste_2.tscn" id="10_vokb3"]
+[ext_resource type="FontFile" uid="uid://c48homm7y5ftp" path="res://art/Fonts/Audiowide-Regular.ttf" id="11_786h8"]
+
+[sub_resource type="Resource" id="Resource_y22jl"]
+script = ExtResource("6_db85a")
+text_to_do = "Consigue el pendrive en el aula 201"
+necessary_interactables = {
+"Pendrive": false
+}
+metadata/_custom_type_script = "uid://c0nhxnmv56tui"
+
+[sub_resource type="Resource" id="Resource_vokb3"]
+script = ExtResource("6_db85a")
+text_to_do = "Volver con Ana"
+necessary_interactables = {
+"Ana_Piso2_Npc": false
+}
+metadata/_custom_type_script = "uid://c0nhxnmv56tui"
+
+[sub_resource type="Resource" id="Resource_786h8"]
+script = ExtResource("5_agp1c")
+title = "Recuperar el pendrive de Ana"
+steps = Array[ExtResource("6_db85a")]([SubResource("Resource_y22jl"), SubResource("Resource_vokb3")])
+current_step = 0
+is_secondary = true
+metadata/_custom_type_script = "uid://cj81x6yti6bmb"
 
 [node name="IsoRoom5-Pasillo" instance=ExtResource("1_y3myp")]
+script = ExtResource("2_3bu61")
 room_id = "ROOM-PISO2A"
 
 [node name="BaseTiles" parent="." index="0" instance=ExtResource("2_7xcgx")]
 metadata/_edit_lock_ = true
+
+[node name="ROOM-201" type="Marker2D" parent="Spawns" index="1"]
+position = Vector2(-868, 409)
+
+[node name="ROOM-BEDELIA" type="Marker2D" parent="Spawns" index="2"]
+position = Vector2(-3075, 111)
 
 [node name="trasn_ labo_industrial" parent="Interactables/Transitioners" index="0" instance=ExtResource("2_js4aw")]
 position = Vector2(-539, -157)
@@ -46,36 +86,145 @@ rotation = 2.04148
 scale = Vector2(1.30347, -4.86094)
 necesary_key = true
 
-[node name="trans_aula_201" parent="Interactables/Transitioners" index="6" instance=ExtResource("2_js4aw")]
-position = Vector2(-852, 444)
-rotation = 0.967534
-scale = Vector2(2.92013, -3.71304)
-necesary_key = true
-
-[node name="trans_aula_207" parent="Interactables/Transitioners" index="7" instance=ExtResource("2_js4aw")]
+[node name="trans_aula_207" parent="Interactables/Transitioners" index="6" instance=ExtResource("2_js4aw")]
 position = Vector2(-1847, 877)
 rotation = 0.490498
 scale = Vector2(-5.47888, 2.07825)
 necesary_key = true
 
-[node name="trans_aula_206" parent="Interactables/Transitioners" index="8" instance=ExtResource("2_js4aw")]
+[node name="trans_aula_206" parent="Interactables/Transitioners" index="7" instance=ExtResource("2_js4aw")]
 position = Vector2(-2483, 451)
 rotation = 0.490498
 scale = Vector2(-5.47888, 2.07825)
 necesary_key = true
 
-[node name="trans_aula_205" parent="Interactables/Transitioners" index="9" instance=ExtResource("2_js4aw")]
+[node name="trans_aula_205" parent="Interactables/Transitioners" index="8" instance=ExtResource("2_js4aw")]
 position = Vector2(-2640, 149)
 rotation = 0.490498
 scale = Vector2(-5.47888, 2.07825)
 necesary_key = true
 
-[node name="trans_bedelia" parent="Interactables/Transitioners" index="10" instance=ExtResource("2_js4aw")]
+[node name="trans_bedelia" parent="Interactables/Transitioners" index="9" instance=ExtResource("2_js4aw")]
 position = Vector2(-3116, 130)
 rotation = 0.490498
 scale = Vector2(-5.47888, 2.07825)
 room_id = "ROOM-BEDELIA"
+id = "TRANS-BEDELIA"
+
+[node name="Puzzle_Transitioner" parent="Interactables/Transitioners" index="10" instance=ExtResource("4_vokb3")]
+process_mode = 4
+position = Vector2(-848, 439)
+rotation = 4.1635
+scale = Vector2(2.37921, -5.14795)
+puzzle = ExtResource("5_8p23m")
+room_id = "ROOM-201"
 necesary_key = true
+
+[node name="Chica Triste" parent="Interactables/Npcs" index="0" groups=["q1"] instance=ExtResource("4_uubpd")]
+position = Vector2(-1634, 310)
+npc_name = "Ana"
+quest = SubResource("Resource_786h8")
+
+[node name="ChicaTriste2" parent="Interactables/Npcs" index="1" groups=["end"] instance=ExtResource("10_vokb3")]
+process_mode = 4
+visible = false
+position = Vector2(-1634, 310)
+npc_name = "Ana"
+id = "Ana_Npc_Piso2"
+
+[node name="PlayerB" parent="Player" index="0"]
+position = Vector2(-1469, 456)
+
+[node name="Switch" parent="." index="5" instance=ExtResource("9_db85a")]
+visible = false
+modulate = Color(0.686275, 0.682353, 0.662745, 0.447059)
+position = Vector2(-1278, 319)
+
+[node name="Switch2" parent="." index="6" instance=ExtResource("9_db85a")]
+visible = false
+modulate = Color(0.686275, 0.682353, 0.662745, 0.447059)
+position = Vector2(-1532, 446)
+
+[node name="Switch3" parent="." index="7" instance=ExtResource("9_db85a")]
+visible = false
+modulate = Color(0.686275, 0.682353, 0.662745, 0.447059)
+position = Vector2(-1296, 569)
+
+[node name="Switch4" parent="." index="8" instance=ExtResource("9_db85a")]
+visible = false
+modulate = Color(0.686275, 0.682353, 0.662745, 0.447059)
+position = Vector2(-1035, 710)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." index="9"]
+
+[node name="3" type="Label" parent="." index="10"]
+visible = false
+modulate = Color(1, 1, 1, 0.533333)
+offset_left = -1226.0
+offset_top = 309.0
+offset_right = -1186.0
+offset_bottom = 361.0
+rotation = -0.490232
+scale = Vector2(1.43741, 1.01957)
+theme_override_fonts/font = ExtResource("11_786h8")
+theme_override_font_sizes/font_size = 40
+text = "3
+"
+
+[node name="1" type="Label" parent="." index="11"]
+visible = false
+modulate = Color(1, 1, 1, 0.407843)
+offset_left = -1350.0
+offset_top = 348.0
+offset_right = -1310.0
+offset_bottom = 400.0
+rotation = 0.161237
+theme_override_fonts/font = ExtResource("11_786h8")
+theme_override_font_sizes/font_size = 40
+text = "1"
+
+[node name="2" type="Label" parent="." index="12"]
+visible = false
+z_index = 2
+offset_left = -615.0
+offset_top = 863.0
+offset_right = -575.0
+offset_bottom = 970.0
+rotation = -0.583231
+scale = Vector2(1.66781, 0.930719)
+theme_override_fonts/font = ExtResource("11_786h8")
+theme_override_font_sizes/font_size = 40
+text = "2
+"
+
+[node name="4" type="Label" parent="." index="13"]
+visible = false
+z_index = 2
+offset_left = -1513.0
+offset_top = 723.0
+offset_right = -1473.0
+offset_bottom = 830.0
+rotation = 0.850978
+scale = Vector2(1.2451, 1.48353)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.286275)
+theme_override_fonts/font = ExtResource("11_786h8")
+theme_override_font_sizes/font_size = 40
+text = "4
+"
 
 [connection signal="interacted" from="Interactables/Transitioners/trans_pasillo2" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/trans_bedelia" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/Puzzle_Transitioner" to="." method="_on_interactable_interacted"]
+[connection signal="unblocked" from="Interactables/Transitioners/Puzzle_Transitioner" to="." method="_on_puzzle_transitioner_unblocked"]
+[connection signal="interacted" from="Interactables/Npcs/Chica Triste" to="." method="_on_interactable_interacted"]
+[connection signal="quest_begun" from="Interactables/Npcs/Chica Triste" to="." method="_on_chica_triste_quest_begun"]
+[connection signal="quest_ended" from="Interactables/Npcs/Chica Triste" to="." method="_on_chica_triste_quest_ended"]
+[connection signal="interacted" from="Interactables/Npcs/ChicaTriste2" to="." method="_on_interactable_interacted"]
+[connection signal="body_entered" from="Switch" to="." method="_on_switch_body_entered" binds= [1]]
+[connection signal="body_exited" from="Switch" to="." method="_on_switch_body_exited"]
+[connection signal="body_entered" from="Switch2" to="." method="_on_switch_body_entered" binds= [2]]
+[connection signal="body_exited" from="Switch2" to="." method="_on_switch_body_exited"]
+[connection signal="body_entered" from="Switch3" to="." method="_on_switch_body_entered" binds= [3]]
+[connection signal="body_exited" from="Switch3" to="." method="_on_switch_body_exited"]
+[connection signal="body_entered" from="Switch4" to="." method="_on_switch_body_entered" binds= [4]]
+[connection signal="body_exited" from="Switch4" to="." method="_on_switch_body_exited"]

@@ -1,33 +1,55 @@
-[gd_resource type="Resource" script_class="Dialogo" load_steps=13 format=3 uid="uid://b4e3wx412orli"]
+[gd_resource type="Resource" script_class="Dialogo" load_steps=17 format=3 uid="uid://b4e3wx412orli"]
 
 [ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="1_becl3"]
 [ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="1_ng8f6"]
 [ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="2_hg8tx"]
-[ext_resource type="Script" uid="uid://bk4dph0sloiwh" path="res://managers/dialogue 2.0/recursos/scripts/grab_item_event.gd" id="3_hg8tx"]
+[ext_resource type="Resource" uid="uid://bik8r658kt2el" path="res://IsoRooms/IsoRoom-Bedelia/ok_quit_op.tres" id="3_hg8tx"]
 [ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="4_5p326"]
+[ext_resource type="Resource" uid="uid://5y20tb4gcelr" path="res://IsoRooms/IsoRoom-Bedelia/preguntar_termo.tres" id="4_np102"]
 
-[sub_resource type="Resource" id="Resource_gvfep"]
-script = ExtResource("3_hg8tx")
-item_id = ""
-metadata/_custom_type_script = "uid://bk4dph0sloiwh"
+[sub_resource type="Resource" id="Resource_j2loj"]
+script = ExtResource("4_5p326")
+array_opciones = Array[ExtResource("1_becl3")]([ExtResource("3_hg8tx")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
 
-[sub_resource type="Resource" id="Resource_becl3"]
+[sub_resource type="Resource" id="Resource_q3orf"]
 script = ExtResource("1_ng8f6")
-arreglo_de_textos = PackedStringArray()
+arreglo_de_textos = PackedStringArray("En la cafeteria. ¿Dónde mas?")
+decision = SubResource("Resource_j2loj")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"
 
-[sub_resource type="Resource" id="Resource_hg8tx"]
+[sub_resource type="Resource" id="Resource_3gfpb"]
 script = ExtResource("1_becl3")
-texto = "Ok..."
-dialogo_exitoso = SubResource("Resource_becl3")
-array_eventos = Array[ExtResource("2_hg8tx")]([SubResource("Resource_gvfep")])
+texto = "¿Donde cargo el termo?"
+dialogo_exitoso = SubResource("Resource_q3orf")
+array_eventos = Array[ExtResource("2_hg8tx")]([])
+decision_type = "Chat"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_g3dfg"]
+script = ExtResource("4_5p326")
+array_opciones = Array[ExtResource("1_becl3")]([ExtResource("3_hg8tx"), SubResource("Resource_3gfpb")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
+
+[sub_resource type="Resource" id="Resource_p7all"]
+script = ExtResource("1_ng8f6")
+arreglo_de_textos = PackedStringArray("Hubo faltantes asi que en la cafeteria no hay stock", "Quizas alguien te pueda dar un poco, todo el mundo toma mate acá")
+decision = SubResource("Resource_g3dfg")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[sub_resource type="Resource" id="Resource_gvfep"]
+script = ExtResource("1_becl3")
+texto = "¿Y dónde consigo la yerba?"
+dialogo_exitoso = SubResource("Resource_p7all")
+array_eventos = Array[ExtResource("2_hg8tx")]([])
 decision_type = "Chat"
 metadata/_custom_type_script = "uid://bxesqyur17jig"
 
 [sub_resource type="Resource" id="Resource_5p326"]
 script = ExtResource("4_5p326")
-array_opciones = Array[ExtResource("1_becl3")]([SubResource("Resource_hg8tx")])
+array_opciones = Array[ExtResource("1_becl3")]([ExtResource("3_hg8tx"), ExtResource("4_np102"), SubResource("Resource_gvfep")])
 metadata/_custom_type_script = "uid://ceg75660dlfjc"
 
 [sub_resource type="Resource" id="Resource_np102"]

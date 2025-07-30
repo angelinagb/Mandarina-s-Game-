@@ -131,10 +131,13 @@ id = "COFFEE_V2"
 
 [node name="NpcQuestIndicador" parent="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2" index="6"]
 visible = false
+custom_minimum_size = Vector2(32, 32)
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="Nerd" parent="Interactables/Npcs" index="1" groups=["Q2_BEGIN"] instance=ExtResource("8_aaue2")]
 process_mode = 4
-position = Vector2(187, -179)
+position = Vector2(184, -187)
 rotation = -0.0416234
 script = ExtResource("10_cok5s")
 gives_item = "Capitulo1"
@@ -147,7 +150,7 @@ position = Vector2(-204, -36)
 
 [node name="GRUPO 2" parent="Interactables/Npcs" index="3" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("6_4je3a")]
 process_mode = 4
-position = Vector2(615, -6)
+position = Vector2(534, -64)
 
 [node name="GRUPO 3" parent="Interactables/Npcs" index="4" groups=["Q1_GRUPOS"] instance=ExtResource("7_xnuun")]
 process_mode = 4
@@ -158,17 +161,14 @@ position = Vector2(57, -407)
 rotation = -3.14159
 scale = Vector2(1.1843, -1.2487)
 
-[node name="NpcQuestIndicador" parent="Interactables/Npcs/Mercader" index="6"]
-offset_left = 17.991
-offset_top = -78.1113
-offset_right = 49.991
-offset_bottom = -46.1113
-
 [node name="Mandarina" parent="Interactables/Npcs" index="6" instance=ExtResource("16_odqet")]
 position = Vector2(290, -417)
 
 [node name="Area2D" parent="Interactables/Npcs/Mandarina/Shadow" index="0"]
 position = Vector2(-4.20046, -69.0347)
+
+[node name="Label" parent="Interactables/Npcs/Mandarina" index="3"]
+visible = false
 
 [node name="PlayerB" parent="Player" index="0"]
 position = Vector2(-456, -152)
@@ -211,5 +211,5 @@ color = Color(0, 0, 0, 0)
 [editable path="Interactables/Items/Item"]
 [editable path="Interactables/Items/Item2"]
 [editable path="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2"]
-[editable path="Interactables/Npcs/Mercader"]
+[editable path="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2/NpcQuestIndicador"]
 [editable path="Interactables/Npcs/Mandarina"]

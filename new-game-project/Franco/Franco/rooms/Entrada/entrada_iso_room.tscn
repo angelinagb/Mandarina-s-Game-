@@ -49,6 +49,7 @@ rotation = -0.449199
 scale = Vector2(4.54762, -1.30585)
 room_id = "ROOM-6"
 necesary_key = true
+id = "Laboratorio de Quimica"
 
 [node name="Transitioner2" parent="Interactables/Transitioners" index="3" instance=ExtResource("7_gko6f")]
 z_index = 30
@@ -56,6 +57,7 @@ position = Vector2(577, -490)
 rotation = -0.449199
 scale = Vector2(4.54762, -1.30585)
 necesary_key = true
+id = "Piso1"
 
 [node name="trans_entrada_labosyh" parent="Interactables/Transitioners" index="4" instance=ExtResource("6_wxnbc")]
 position = Vector2(681, -726)
@@ -65,11 +67,11 @@ room_id = "ROOM-LABOSYH"
 id = "Trans_LABOSYH"
 
 [node name="AlumnoNro1-1" parent="Interactables/Npcs" index="0" groups=["Con Estado"] instance=ExtResource("3_aafd0")]
-position = Vector2(574, -124)
+position = Vector2(572, -124)
 scale = Vector2(1.41777, 1.54542)
 
 [node name="AlumnoNro3-3" parent="Interactables/Npcs" index="1" instance=ExtResource("6_iyjjf")]
-position = Vector2(226, -503)
+position = Vector2(234, -498)
 scale = Vector2(1.09628, 1.31673)
 id = "Al3-3"
 
@@ -89,3 +91,5 @@ position = Vector2(95, -168)
 [connection signal="interacted" from="Interactables/Npcs/AlumnoNro1-1" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/AlumnoNro3-3" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Terminal_sube" to="." method="_on_interactable_interacted"]
+
+[editable path="Interactables/Transitioners/trans_entrada_labosyh"]

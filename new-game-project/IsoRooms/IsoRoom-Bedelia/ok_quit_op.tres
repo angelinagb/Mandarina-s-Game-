@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Opcion" load_steps=3 format=3 uid="uid://bik8r658kt2el"]
+
+[ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="1_pbbbq"]
+[ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="2_fklu2"]
+
+[resource]
+script = ExtResource("2_fklu2")
+texto = "Ok..."
+array_eventos = Array[ExtResource("1_pbbbq")]([])
+decision_type = "Quit"
+metadata/_custom_type_script = "uid://bxesqyur17jig"

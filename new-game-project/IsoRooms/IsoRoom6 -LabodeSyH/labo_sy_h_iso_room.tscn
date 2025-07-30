@@ -34,7 +34,7 @@ scale = Vector2(5.37969, -1.27588)
 room_id = "ROOM-ENTRADA"
 
 [node name="Npc_profe" parent="Interactables/Npcs" index="0" groups=["Con Estado"] instance=ExtResource("3_kpvxe")]
-position = Vector2(-88, 6)
+position = Vector2(-74, -5)
 scale = Vector2(2.5, 2.5)
 gives_item = "Capitulo0"
 quest = ExtResource("6_yacvt")

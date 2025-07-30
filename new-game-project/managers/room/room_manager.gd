@@ -18,7 +18,8 @@ var rooms = {
 	"ROOM-LABOSYH":"res://IsoRooms/IsoRoom6 -LabodeSyH/labo_sy_h_iso_room.tscn",
 	"ROOM-SALA-CAMARAS": "res://IsoRooms/Depto/sala_camaras.tscn",
 	"ROOM-PISO2A": "res://IsoRooms/IsoRoom-Piso2/iso_room_5_pasillo.tscn",
-	"ROOM-BEDELIA": "res://IsoRooms/IsoRoom-Bedelia/bedelia_iso_room.tscn"
+	"ROOM-BEDELIA": "res://IsoRooms/IsoRoom-Bedelia/bedelia_iso_room.tscn",
+	"ROOM-201": "res://IsoRooms/IsoRoom-201/201.tscn"
 	}
 
 func get_room(room_id : String) -> String:
@@ -39,11 +40,17 @@ func change_room(room_id: String) -> IsoRoom:
 		return
 	can_change_room = false
 	current.save_state()
+	
+	
 	current.queue_free()
 	current = load(get_room(room_id)).instantiate()
+	
 	add_child(current)
 	can_change_room = true
+
 	return current
 
 func _ready() -> void:
 	StateManager.inicializar_rooms(rooms.keys())
+	$RoomMusic.play()
+	print("manager")

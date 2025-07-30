@@ -9,7 +9,7 @@ signal quest_ended(title)
 @export var current_step: int = 0
 @export var is_secondary : bool = true
 
-func init():
+func init(): 
 	steps[steps.size() -1 ].step_completed.connect(on_last_step_completed)
 	
 
@@ -24,7 +24,7 @@ func try_advance_step():
 		current_step += 1
 	
 func on_last_step_completed():
-	quest_ended.emit(title)
+	print("quest_ended.emit(title")
 
 func is_completed() -> bool:
 	return current_step >= steps.size()

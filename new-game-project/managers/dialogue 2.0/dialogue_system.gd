@@ -244,7 +244,7 @@ func check_and_start_alternative_dialogue():
 	
 		start()
 
-
+ 
 func trigger_events(events: Array[Evento] ):
 	var type
 	for event in events:

@@ -24,7 +24,8 @@ var abilities_available_points: Dictionary
 
 var notifications ={
 "item_notification": preload("res://visuals/Notificacion GUI/Instancias/item_picked_up_notif.tscn"), 
-"key_notification" :preload("res://Ange/notif_llave.tscn")	
+"key_notification" :preload("res://Ange/notif_llave.tscn"),
+"door_blocked_notification": preload("res://Ange/door_blocked_notification.tscn")
 }
 
 
@@ -207,22 +208,25 @@ func _on_item_grabbed(item: Item) -> void:
 	if item is Key:
 		item = item as Key
 		inventory.new_key(item.open_room_id)
-		var temp = notifications.key_notification.instantiate()
-		var personalizada = temp.get_personalized_scene(item.nombre_room)
-		NotificationManager.enqueue_event(personalizada)
+		new_notification(item.nombre_room, notifications.key_notification)
 	else:
 		inventory.item_grabbed(item.getId())
-		NotificationManager.enqueue_event(notifications.item_notification)
+		var item_name = inventory.get_item_data(item.getId())["name"]
+		new_notification(item_name,notifications.item_notification)
 	item.end()
 
 func _on_transitioner_activated(transitioner: Transitioner) -> void:
 	if transitioner.necesary_key and !inventory.has_key(transitioner.room_id):
-			NotificationManager.enqueue_event(preload("res://Ange/door_blocked_notification.tscn"))
+			NotificationManager.enqueue_event(notifications.door_blocked_notification)
 	else:
+		transitioner.door_sound_open.play()
+		await transitioner.door_sound_open.finished
+		
 		if transitioner.quest != null :
 			transitioner.take_room_quest()
 			quest.add_quest(transitioner.quest)
 		var room_id: String = transitioner.get_room_id() 
+
 		change_room(room_id, current_room_id)
 		current_room_id = room_id
 
@@ -332,3 +336,9 @@ func _on_item_check_requested(item_id, merchant_ref):
 	var result = inventory.get_items_in_player().has(item_id)
 	print("→ [World] Emitiendo hacia ", merchant_ref.name, ", resultado: ", result)
 	merchant_ref.response_item_check.emit(result, item_id)
+
+
+func new_notification(desc: String, scene: PackedScene):
+	var temp = scene.instantiate()
+	var personalizada = temp.get_personalized_scene(desc)
+	NotificationManager.enqueue_event(personalizada)

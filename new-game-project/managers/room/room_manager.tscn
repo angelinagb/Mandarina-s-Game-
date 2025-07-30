@@ -1,6 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://dadkd5r8y1uut"]
+[gd_scene load_steps=6 format=3 uid="uid://dadkd5r8y1uut"]
 
 [ext_resource type="Script" uid="uid://xa4fqgmnaxtv" path="res://managers/room/room_manager.gd" id="1_b5jqn"]
+[ext_resource type="AudioStream" uid="uid://bysfyj2g1jvwa" path="res://art/music-sfx/Retro_Retro_Music/spanish-guitar-loop-17221.mp3" id="2_pyb3p"]
+[ext_resource type="AudioStream" uid="uid://cjeaf2ihiatqd" path="res://art/music-sfx/Retro_Retro_Music/calm_game_music_1-49209.mp3" id="3_7vko7"]
+[ext_resource type="AudioStream" uid="uid://328xayf6flx2" path="res://art/music-sfx/Retro_Retro_Music/bored, honestly.mp3" id="4_5v4f0"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_8iumn"]
+stream_count = 3
+stream_0 = ExtResource("2_pyb3p")
+stream_1 = ExtResource("3_7vko7")
+stream_2 = ExtResource("4_5v4f0")
 
 [node name="room_manager" type="Node"]
 script = ExtResource("1_b5jqn")
+
+[node name="RoomMusic" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = SubResource("AudioStreamPlaylist_8iumn")
+volume_db = -22.787
+autoplay = true
+stream_paused = true

@@ -3,20 +3,18 @@ class_name  IsoRoom  extends Node2D
 #signal item_used
 signal interactable_interacted(interactable: Interactable)
 @onready var room_sounds: AudioStreamPlayer = $RoomSounds
+@onready var room_music: AudioStreamPlayer = $RoomMusic
 
 @onready var player_b: PlayerB = $Player/PlayerB
 
 @export var room_id: String
 var current_state: Dictionary = {}
 
+
 func _ready(): 
-	#for child in $Interactables/Npcs.get_children():
-		#if child :
-			#child.item_used.connect(self._on_item_used)
 	current_state = StateManager.get_room_state(room_id)
 	restore_state()
 		
-
 func get_room_identifier(): return room_id
 
 func get_position_spawn(name_spawn: String) -> Vector2:
@@ -47,5 +45,6 @@ func save_state():
 		current_state[node.name] = node.get_state()
 	StateManager.save_room_state(room_id, current_state)
 
-#func _on_item_used(item_id):
-	#item_used.emit()
+
+func _on_item_interacted(interactable: Interactable) -> void:
+	pass # Replace with function body.

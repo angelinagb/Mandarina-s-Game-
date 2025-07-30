@@ -4,8 +4,6 @@
 
 [resource]
 script = ExtResource("1_0qk1u")
-text_to_do = "Humillar a Chico Nerd 1"
-necessary_interactables = {
-"Q1_S1_VICTORIA": false
-}
+text_to_do = ""
+necessary_interactables = {}
 metadata/_custom_type_script = "uid://c0nhxnmv56tui"

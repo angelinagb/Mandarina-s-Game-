@@ -23,7 +23,7 @@ func _ready():
 	response_item_check.connect(_on_response)
 	#item_used.connect(_on_item_used)
 	super._ready()
-	
+	quest_icon.visible = true
 	
 func _show_message(texto: String) -> void:
 	if dialogue_system:
@@ -68,7 +68,7 @@ func do_trade(required_item: String, reward_item: String) -> void:
 
 	dialogue_system.use_item.emit(required_item)
 
-	_show_message("Gracias por el intercambio! Aquí tienes tu " + trades[required_item])
+	_show_message("Aquí tienes tu " + trades[required_item])
 	
 
 func startDialogue():
