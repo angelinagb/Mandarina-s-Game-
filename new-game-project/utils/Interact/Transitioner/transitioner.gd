@@ -12,7 +12,7 @@ var room_id: String = "VACIO"
 @export var quest: Quest
 @export var necesary_key:= false
 @onready var label: Label = $Label
-
+@export var to_room_name : String = "to-room"
 
 func _ready():
 	my_type = "transitioner"
@@ -35,6 +35,9 @@ func interact() :
 		
 func get_type():
 	return my_type
+	
+func get_to_room_name() -> String:
+	return to_room_name
 	
 func take_room_quest():
 	pass

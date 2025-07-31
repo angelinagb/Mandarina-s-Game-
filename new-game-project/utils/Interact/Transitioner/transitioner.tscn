@@ -9,6 +9,7 @@ script = ExtResource("1_21cju")
 room_id = "VACIO"
 quest = null
 necesary_key = false
+to_room_name = "to-room"
 
 [node name="door_sound_open" type="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource("3_s0v1x")

@@ -34,6 +34,7 @@ position = Vector2(196, -568)
 position = Vector2(1045, -536)
 rotation = 2.10737
 scale = Vector2(1.2269, 4.19627)
+to_room_name = "Al pasillo 2"
 
 [node name="Tr-Ent-Scom" parent="Interactables/Transitioners" index="1" instance=ExtResource("4_d7voa")]
 position = Vector2(109, -613)
@@ -41,6 +42,7 @@ rotation = 2.69055
 scale = Vector2(5.42614, 1.76333)
 room_id = "ROOM-CENTROALUMNOS"
 necesary_key = true
+to_room_name = "Al Centro de alumnos"
 
 [node name="Transitioner" parent="Interactables/Transitioners" index="2" instance=ExtResource("7_gko6f")]
 z_index = 30
@@ -49,6 +51,7 @@ rotation = -0.449199
 scale = Vector2(4.54762, -1.30585)
 room_id = "ROOM-6"
 necesary_key = true
+to_room_name = "Al Laboratorio de Quimica"
 id = "Laboratorio de Quimica"
 
 [node name="Transitioner2" parent="Interactables/Transitioners" index="3" instance=ExtResource("7_gko6f")]
@@ -57,6 +60,7 @@ position = Vector2(577, -490)
 rotation = -0.449199
 scale = Vector2(4.54762, -1.30585)
 necesary_key = true
+to_room_name = "Al Piso 1"
 id = "Piso1"
 
 [node name="trans_entrada_labosyh" parent="Interactables/Transitioners" index="4" instance=ExtResource("6_wxnbc")]
@@ -64,6 +68,7 @@ position = Vector2(681, -726)
 rotation = 0.499486
 scale = Vector2(4.31694, -1.36504)
 room_id = "ROOM-LABOSYH"
+to_room_name = "A Seguridad e Higiene"
 id = "Trans_LABOSYH"
 
 [node name="AlumnoNro1-1" parent="Interactables/Npcs" index="0" groups=["Con Estado"] instance=ExtResource("3_aafd0")]

@@ -24,7 +24,7 @@ func _on_interactuable_cambiado(i):
 		match type:
 			"item"			: button_text = "pick up"
 			"npc"			: button_text = "talk"
-			"transitioner"	: button_text = "to-room"
+			"transitioner"	: button_text = i.get_to_room_name()
 			"activator"		: button_text = "use"
 
 		interact_button.text = button_text
