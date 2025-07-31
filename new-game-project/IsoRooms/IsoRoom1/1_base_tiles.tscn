@@ -106,7 +106,7 @@ sources/2 = SubResource("TileSetAtlasSource_tgo6q")
 sources/1 = SubResource("TileSetAtlasSource_otiqa")
 sources/8 = SubResource("TileSetAtlasSource_niu15")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cq16r"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_th60u"]
 texture = ExtResource("2_cq16r")
 margins = Vector2i(2, 0)
 texture_region_size = Vector2i(28, 17)
@@ -142,7 +142,7 @@ texture_region_size = Vector2i(28, 17)
 5:19/size_in_atlas = Vector2i(2, 3)
 5:19/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4skku"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0jqlu"]
 texture = ExtResource("3_4skku")
 texture_region_size = Vector2i(256, 512)
 0:0/0 = 0
@@ -151,7 +151,7 @@ texture_region_size = Vector2i(256, 512)
 0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_kjft8")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-70.5, 11, -73.5, -70, -23.5, -102, 59.5, -49, 61.2, 33.4, 24.5, 63)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ympy"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3vggj"]
 texture = ExtResource("4_1ympy")
 texture_region_size = Vector2i(32, 16)
 25:52/size_in_atlas = Vector2i(5, 11)
@@ -172,7 +172,7 @@ texture_region_size = Vector2i(32, 16)
 20:18/0 = 0
 20:18/0/texture_origin = Vector2i(0, 191)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_th60u"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nnxld"]
 texture = ExtResource("5_th60u")
 texture_region_size = Vector2i(64, 32)
 2:2/size_in_atlas = Vector2i(1, 2)
@@ -190,10 +190,10 @@ terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 navigation_layer_0/layers = 1
-sources/3 = SubResource("TileSetAtlasSource_1ympy")
-sources/2 = SubResource("TileSetAtlasSource_4skku")
-sources/1 = SubResource("TileSetAtlasSource_cq16r")
-sources/8 = SubResource("TileSetAtlasSource_th60u")
+sources/3 = SubResource("TileSetAtlasSource_3vggj")
+sources/2 = SubResource("TileSetAtlasSource_0jqlu")
+sources/1 = SubResource("TileSetAtlasSource_th60u")
+sources/8 = SubResource("TileSetAtlasSource_nnxld")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wxpp0"]
 

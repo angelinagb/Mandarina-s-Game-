@@ -197,6 +197,7 @@ sources/2 = SubResource("TileSetAtlasSource_uccfs")
 
 [node name="BaseTiles" instance=ExtResource("1_k3gj6")]
 scale = Vector2(0.816851, 1)
+metadata/_edit_horizontal_guides_ = [-140.0, -154.0]
 
 [node name="floors" parent="." index="0"]
 position = Vector2(132, -7)

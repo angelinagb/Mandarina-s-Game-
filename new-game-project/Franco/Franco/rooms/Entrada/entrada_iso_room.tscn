@@ -67,7 +67,7 @@ room_id = "ROOM-LABOSYH"
 id = "Trans_LABOSYH"
 
 [node name="AlumnoNro1-1" parent="Interactables/Npcs" index="0" groups=["Con Estado"] instance=ExtResource("3_aafd0")]
-position = Vector2(572, -124)
+position = Vector2(628, -328)
 scale = Vector2(1.41777, 1.54542)
 
 [node name="AlumnoNro3-3" parent="Interactables/Npcs" index="1" instance=ExtResource("6_iyjjf")]
@@ -81,7 +81,7 @@ scale = Vector2(0.272137, 0.217287)
 activable = ExtResource("10_go8ah")
 
 [node name="PlayerB" parent="Player" index="0"]
-position = Vector2(95, -168)
+position = Vector2(651, -701)
 
 [connection signal="interacted" from="Interactables/Transitioners/Tr-Ent-Pas2" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/Tr-Ent-Scom" to="." method="_on_interactable_interacted"]

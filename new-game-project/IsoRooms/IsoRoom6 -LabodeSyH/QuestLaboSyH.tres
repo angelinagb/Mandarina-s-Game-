@@ -1,7 +1,15 @@
-[gd_resource type="Resource" script_class="Quest" load_steps=9 format=3 uid="uid://gv3afr554f23"]
+[gd_resource type="Resource" script_class="Quest" load_steps=10 format=3 uid="uid://gv3afr554f23"]
 
 [ext_resource type="Script" uid="uid://cj81x6yti6bmb" path="res://managers/notification/quest/quest.gd" id="1_oeqka"]
 [ext_resource type="Script" uid="uid://c0nhxnmv56tui" path="res://managers/notification/quest/quest_step.gd" id="2_0wubs"]
+
+[sub_resource type="Resource" id="Resource_xqliu"]
+script = ExtResource("2_0wubs")
+text_to_do = "Agarra la llave de la Sala de Cámaras"
+necessary_interactables = {
+"key": false
+}
+metadata/_custom_type_script = "uid://c0nhxnmv56tui"
 
 [sub_resource type="Resource" id="Resource_oeqka"]
 script = ExtResource("2_0wubs")
@@ -52,7 +60,7 @@ metadata/_custom_type_script = "uid://c0nhxnmv56tui"
 [resource]
 script = ExtResource("1_oeqka")
 title = "Sigue el rastro de Mandarina"
-steps = Array[ExtResource("2_0wubs")]([SubResource("Resource_oeqka"), SubResource("Resource_rs4ea"), SubResource("Resource_dk1c5"), SubResource("Resource_3fuga"), SubResource("Resource_7prh0"), SubResource("Resource_ua18d")])
+steps = Array[ExtResource("2_0wubs")]([SubResource("Resource_xqliu"), SubResource("Resource_oeqka"), SubResource("Resource_rs4ea"), SubResource("Resource_dk1c5"), SubResource("Resource_3fuga"), SubResource("Resource_7prh0"), SubResource("Resource_ua18d")])
 current_step = 0
 is_secondary = false
 metadata/_custom_type_script = "uid://cj81x6yti6bmb"

@@ -20,17 +20,17 @@ scale = Vector2(0.629577, 1.05579)
 [node name="ROOM-PISO2A" type="Marker2D" parent="Spawns" index="1"]
 position = Vector2(757, -270)
 
-[node name="ROOM-CAFETERIA" type="Marker2D" parent="Spawns" index="2"]
+[node name="ROOM-5" type="Marker2D" parent="Spawns" index="2"]
 position = Vector2(695, -167)
 scale = Vector2(1, 1.00781)
 
 [node name="Transitioner" parent="Interactables/Transitioners" index="0" instance=ExtResource("3_522a5")]
-position = Vector2(-188, 306)
+position = Vector2(-544, 493)
 rotation = -1.03759
 scale = Vector2(-3.04491, -5.50299)
 
 [node name="Transitioner2" parent="Interactables/Transitioners" index="1" instance=ExtResource("4_rpjon")]
-position = Vector2(762, -130)
+position = Vector2(1071, -116)
 rotation = 1.05498
 scale = Vector2(1.66797, 4.06116)
 room_id = "ROOM-5"
@@ -44,13 +44,14 @@ room_id = "ROOM-SALA-CAMARAS"
 necesary_key = true
 
 [node name="Transitioner4" parent="Interactables/Transitioners" index="3" instance=ExtResource("5_o76j6")]
-position = Vector2(235, -412)
+position = Vector2(818, 18)
 rotation = -0.589321
 scale = Vector2(3.68585, -0.939496)
+room_id = "ROOM-CENTROALUMNOS"
 necesary_key = true
 
 [node name="trans-piso2a" parent="Interactables/Transitioners" index="4" instance=ExtResource("5_o76j6")]
-position = Vector2(842, -285)
+position = Vector2(1691, -398)
 rotation = 0.589706
 scale = Vector2(5.12216, -1.437)
 room_id = "ROOM-PISO2A"

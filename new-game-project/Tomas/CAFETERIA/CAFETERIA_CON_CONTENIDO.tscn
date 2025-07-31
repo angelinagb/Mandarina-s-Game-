@@ -73,6 +73,7 @@ room_id = "ROOM-CAFETERIA"
 
 [node name="BaseTiles" parent="." index="0"]
 position = Vector2(46, -61)
+metadata/_edit_horizontal_guides_ = [-140.0, -154.0]
 
 [node name="defect" parent="Spawns" index="0"]
 position = Vector2(-457, -127)
@@ -144,6 +145,13 @@ gives_item = "Capitulo1"
 npc_name = "Matias el Nerd"
 id = ""
 
+[node name="NpcQuestIndicador" parent="Interactables/Npcs/Nerd" index="6"]
+offset_left = 5.24533
+offset_top = -5.78674
+offset_right = 21.2453
+offset_bottom = 10.2133
+grow_horizontal = 1
+
 [node name="GRUPO 1" parent="Interactables/Npcs" index="2" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("5_snxlu")]
 process_mode = 4
 position = Vector2(-204, -36)
@@ -212,4 +220,6 @@ color = Color(0, 0, 0, 0)
 [editable path="Interactables/Items/Item2"]
 [editable path="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2"]
 [editable path="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2/NpcQuestIndicador"]
+[editable path="Interactables/Npcs/Nerd"]
+[editable path="Interactables/Npcs/Nerd/NpcQuestIndicador"]
 [editable path="Interactables/Npcs/Mandarina"]

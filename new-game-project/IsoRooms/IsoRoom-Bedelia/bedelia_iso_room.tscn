@@ -12,11 +12,13 @@
 script = ExtResource("2_pf3ew")
 
 [node name="BaseTiles" parent="." index="0" instance=ExtResource("2_s6xlg")]
+metadata/_edit_horizontal_guides_ = [-140.0, -154.0]
 
 [node name="defect" parent="Spawns" index="0"]
 position = Vector2(402, -196)
 
 [node name="Item" parent="Interactables/Items" index="0" instance=ExtResource("3_m32ng")]
+process_mode = 4
 visible = false
 position = Vector2(320, -134)
 open_room_id = "ROOM-4"

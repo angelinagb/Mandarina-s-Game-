@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://lpb6bguiyou2"]
+[gd_scene load_steps=17 format=4 uid="uid://lpb6bguiyou2"]
 
 [ext_resource type="PackedScene" uid="uid://cevm1i60dkopp" path="res://IsoRooms/base_tiles.tscn" id="1_6r0c8"]
 [ext_resource type="Texture2D" uid="uid://dfoav8ds1ty2i" path="res://art/items/2dClassroomAssetPackByStyloo/Computer Room/Computer Room Spritesheet 8.png" id="2_5q5m5"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dxobd0rfq5ukd" path="res://art/items/2dClassroomAssetPackByStyloo/Principal Office/Principal Office First Spritesheet 8.png" id="4_h5vna"]
 [ext_resource type="Texture2D" uid="uid://cke2isx22rasr" path="res://art/items/2dClassroomAssetPackByStyloo/Computer Room/Computer Room Spritesheet 2.png" id="5_xplr8"]
 [ext_resource type="Texture2D" uid="uid://dr5u0m5ml714" path="res://art/items/2dClassroomAssetPackByStyloo/Principal Office/Principal Office Second Spritesheet 2.png" id="6_h5vna"]
-[ext_resource type="PackedScene" uid="uid://cemxq83ayi3jv" path="res://pendrive.tscn" id="7_67420"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wxpp0"]
 
@@ -98,16 +97,18 @@ sources/3 = SubResource("TileSetAtlasSource_edv63")
 [node name="Labo_syh_base_tiles" instance=ExtResource("1_6r0c8")]
 
 [node name="floors" parent="." index="0"]
-tile_map_data = PackedByteArray("AAD//wEAAQAAAAAAAAAAAAEAAQAAAAAAAAABAAEAAQAAAAAAAAABAAAAAQAAAAAAAAD//wAAAQAAAAAAAAAAAAAAAQAAAAAAAAD//wIAAQAAAAAAAAAAAAIAAQAAAAAAAAABAAIAAQAAAAAAAAD//wMAAQAAAAAAAAAAAAMAAQAAAAAAAAABAAMAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD+/wEAAQAAAAAAAAD//wEAAQAAAAAAAAAAAAEAAQAAAAAAAAABAAEAAQAAAAAAAAABAAAAAQAAAAAAAAABAP//AQAAAAAAAAD9/wEAAQAAAAAAAAABAP7/AQAAAAAAAAD9////AQAAAAAAAAD9/wAAAQAAAAAAAAD+////AQAAAAAAAAD+/wAAAQAAAAAAAAD///7/AQAAAAAAAAD//wAAAQAAAAAAAAAAAP7/AQAAAAAAAAAAAAAAAQAAAAAAAAD+//7/AQAAAAAAAAD9//7/AQAAAAAAAAD//wIAAQAAAAAAAAAAAAIAAQAAAAAAAAABAAIAAQAAAAAAAAD//wMAAQAAAAAAAAAAAAMAAQAAAAAAAAABAAMAAQAAAAAAAAABAAQAAQAAAAAAAAAAAAQAAQAAAAAAAAD//wQAAQAAAAAAAAD+/wQAAQAAAAAAAAD+/wMAAQAAAAAAAAD+/wIAAQAAAAAAAAACAP//AQAAAAAAAAACAAAAAQAAAAAAAAACAAEAAQAAAAAAAAACAAIAAQAAAAAAAAACAAMAAQAAAAAAAAACAAQAAQAAAAAAAAACAAUAAQAAAAAAAAD9/wQAAQAAAAAAAAD9/wMAAQAAAAAAAAD9/wIAAQAAAAAAAAD8//7/AQAAAAAAAAD8////AQAAAAAAAAD8/wAAAQAAAAAAAAD8/wEAAQAAAAAAAAD8/wIAAQAAAAAAAAD8/wMAAQAAAAAAAAD8/wQAAQAAAAAAAAD8/wUAAQAAAAAAAAD8/wYAAQAAAAAAAAD7/wUAAQAAAAAAAAD7/wQAAQAAAAAAAAD7/wMAAQAAAAAAAAD8/wcAAQAAAAAAAAD7/wYAAQAAAAAAAAD7/wcAAQAAAAAAAAACAP7/AQAAAAAAAAACAAcAAQAAAAAAAAACAAYAAQAAAAAAAAADAAIAAQAAAAAAAAADAAMAAQAAAAAAAAADAAQAAQAAAAAAAAAEAAIAAQAAAAAAAAAEAAMAAQAAAAAAAAAEAAQAAQAAAAAAAAD+/wUAAQAAAAAAAAD+/wYAAQAAAAAAAAD+/wcAAQAAAAAAAAD//wUAAQAAAAAAAAD//wYAAQAAAAAAAAD//wcAAQAAAAAAAAAAAAUAAQAAAAAAAAAAAAYAAQAAAAAAAAAAAAcAAQAAAAAAAAABAAUAAQAAAAAAAAABAAYAAQAAAAAAAAABAAcAAQAAAAAAAAD9/wUAAQAAAAAAAAD9/wYAAQAAAAAAAAD9/wcAAQAAAAAAAAA=")
 
 [node name="walls_back" parent="." index="1"]
-tile_map_data = PackedByteArray("AAD//wMACAAAAAEAAAD//wIACAAAAAEAAAD//wEACAAAAAEAAAD//wAACAACAAAAAAAAAAAACAACAAEAAAABAAAACAACAAEAAAA=")
+tile_map_data = PackedByteArray("AAD//wMACAAAAAEAAAD//wIACAAAAAEAAAD//wEACAAAAAEAAAD//wAACAACAAAAAAAAAAAACAACAAEAAAABAAAACAACAAEAAAD//wQACAAAAAEAAAADAAMAAwAAAAQAAAAEAAMACAABAAAAAAAEAAIACAADAAEAAAACAAMACAABAAEAAAD//wUACAAAAAEAAAABAAYACAACAAAAAAAAAAYACAACAAEAAAD//wYACAACAAAAAAD+/wcAAwACAAQAAAA=")
 
 [node name="walls_front" parent="." index="2"]
+visible = true
+modulate = Color(1, 1, 1, 0.352941)
 tile_map_data = PackedByteArray("AAABAAEACAADAAEAAAABAAAACAADAAEAAAABAAIACAADAAEAAAABAAMACAABAAAAAAD//wMACAABAAEAAAA=")
 
 [node name="puertas_front" parent="." index="3"]
-tile_map_data = PackedByteArray("AAAAAAMAAwAAAAQAAAA=")
+tile_map_data = PackedByteArray("AAAAAAMAAwAAAAQAAAABAAYACAAAAAAAAAA=")
 
 [node name="objects" parent="." index="4"]
 tile_map_data = PackedByteArray("AAADAAYAAgAAABcAAAADAAQAAgAAABcAAAAEAAMAAgAAABcAABAGAAUAAgAAABcAABA=")
@@ -126,6 +127,9 @@ y_sort_enabled = true
 material = SubResource("ShaderMaterial_wxpp0")
 tile_map_data = PackedByteArray("AAABAP3/AAAAAAAAAAD//wQAAAAAAAAAAAD+/xQAAAAAAAAAAAD9/xUAAAAAAAAAAAD+/xMAAAAAAAAAAAAAABMAAAAAAAAAAAABABIAAAAAAAAAAAABABEAAAAAAAAAAAADAAMAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_0ybgh")
+
+[node name="Stairs1" parent="." index="8"]
+tile_map_data = PackedByteArray("AAABAAYAAAAAAAAAAAA=")
 
 [node name="ComputerRoomSpritesheet8" type="Sprite2D" parent="." index="10"]
 z_index = 1
@@ -149,8 +153,9 @@ scale = Vector2(0.491754, 0.347797)
 tile_map_data = PackedByteArray("AAAAAP//AgAEAAkAABD+//7/AwAEAAUAAAAEAAAAAwAOAAgAAAD/////AwADAAAAAAACAAQAAwAAAAAAAAACAAMAAwADAAAAAAACAAIAAwAJAAgAAAA=")
 tile_set = SubResource("TileSet_edv63")
 
-[node name="Item" parent="." index="13" instance=ExtResource("7_67420")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(128, 32)
-scale = Vector2(0.766721, 0.807569)
+[node name="Polygon2D" type="Polygon2D" parent="." index="14"]
+z_index = 4
+position = Vector2(3, 32.1842)
+scale = Vector2(1, 0.85439)
+color = Color(0.219608, 0.219608, 0.219608, 0.686275)
+polygon = PackedVector2Array(-18, 283, 375, 15, 682, 165.985, 248, 423.479)

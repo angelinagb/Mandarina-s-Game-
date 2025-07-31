@@ -52,7 +52,12 @@ func create_stock() -> void:
 			var evento = EventoTrade.new(needed_item,reward_item,self)
 			opcion.array_eventos.append(evento)
 			decision.array_opciones.append(opcion) 
-			
+		
+		var quit_opcion = Opcion.new()
+		quit_opcion.texto = "Gracias. Nos vemos."
+		quit_opcion.decision_type = "Quit"
+		decision.array_opciones.append(quit_opcion)
+		
 		dialogue_system.dialogueResource.decision = decision
 		dialogue_system.start()
 
