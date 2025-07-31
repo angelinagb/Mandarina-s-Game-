@@ -101,10 +101,9 @@ process_mode = 4
 
 [node name="Pasillo" parent="Interactables/Transitioners" index="0" instance=ExtResource("4_w6y4y")]
 position = Vector2(-453, -198)
-rotation = -2.13773
+rotation = -2.13549
 scale = Vector2(1.81578, -4.86591)
 room_id = "ROOM-PASILLO2"
-necesary_key = true
 to_room_name = "Al Pasillo"
 
 [node name="Transitioner" parent="Interactables/Transitioners" index="1" instance=ExtResource("6_odqet")]
@@ -112,12 +111,13 @@ position = Vector2(306, 267)
 scale = Vector2(3.59631, 1)
 room_id = "ROOM-4"
 necesary_key = true
+to_room_name = "a Aula 01"
 
 [node name="SPRITE VENDEDOR" type="Sprite2D" parent="Interactables/Npcs" index="0"]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(404, -289)
-scale = Vector2(2.64314, 2.70897)
+position = Vector2(439, -260)
+scale = Vector2(3.24001, 2.29399)
 texture = ExtResource("4_4je3a")
 hframes = 6
 
@@ -137,15 +137,19 @@ id = "COFFEE_V2"
 [node name="NpcQuestIndicador" parent="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2" index="6"]
 visible = false
 custom_minimum_size = Vector2(32, 32)
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 34.0
+offset_bottom = 33.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
 [node name="Nerd" parent="Interactables/Npcs" index="1" groups=["Q2_BEGIN"] instance=ExtResource("8_aaue2")]
 process_mode = 4
 z_index = -1
-position = Vector2(-282, -238)
+position = Vector2(15, -319)
 rotation = -0.0416234
-scale = Vector2(1.48148, 1.33099)
+scale = Vector2(-1.08963, 1.33099)
 script = ExtResource("10_cok5s")
 gives_item = "Capitulo1"
 npc_name = "Matias el Nerd"
@@ -154,11 +158,15 @@ id = ""
 [node name="Sprite2D" parent="Interactables/Npcs/Nerd" index="1"]
 y_sort_enabled = true
 
+[node name="Area2D" parent="Interactables/Npcs/Nerd" index="2"]
+position = Vector2(-1.94931, 33.9052)
+scale = Vector2(13.257, 4.18105)
+
 [node name="NpcQuestIndicador" parent="Interactables/Npcs/Nerd" index="6"]
-offset_left = 5.24533
-offset_top = -5.78674
-offset_right = 21.2453
-offset_bottom = 10.2133
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 18.0
+offset_bottom = 17.0
 grow_horizontal = 1
 
 [node name="GRUPO 1" parent="Interactables/Npcs" index="2" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("5_snxlu")]
@@ -166,19 +174,29 @@ process_mode = 4
 position = Vector2(-190, -139)
 scale = Vector2(1.32405, 1.16664)
 
+[node name="CollisionShape2D" parent="Interactables/Npcs/GRUPO 1/Area2D" index="0"]
+position = Vector2(-1.25876, 18.2862)
+scale = Vector2(2.06315, 0.609241)
+
 [node name="GRUPO 2" parent="Interactables/Npcs" index="3" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("6_4je3a")]
 process_mode = 4
-position = Vector2(270, -90)
+position = Vector2(254, -149)
 scale = Vector2(1.02039, 1.08529)
+
+[node name="Area2D" parent="Interactables/Npcs/GRUPO 2" index="2"]
+position = Vector2(1.96004, 4.60707)
 
 [node name="GRUPO 3" parent="Interactables/Npcs" index="4" groups=["Q1_GRUPOS"] instance=ExtResource("7_xnuun")]
 process_mode = 4
 z_index = -1
-position = Vector2(98, -36)
+position = Vector2(80, -32)
 scale = Vector2(1.14765, 1.13801)
 
+[node name="Area2D" parent="Interactables/Npcs/GRUPO 3" index="2"]
+scale = Vector2(5.67565, 2.0174)
+
 [node name="Mercader" parent="Interactables/Npcs" index="5" instance=ExtResource("10_ech2l")]
-position = Vector2(89, -362)
+position = Vector2(327, -331)
 rotation = -3.14159
 scale = Vector2(1.1843, -1.2487)
 
@@ -193,7 +211,7 @@ visible = false
 
 [node name="PlayerB" parent="Player" index="0"]
 z_index = 0
-position = Vector2(15, -6)
+position = Vector2(-29, 5)
 
 [node name="CinematicasCafeteria" type="AnimationPlayer" parent="." index="4"]
 libraries = {
@@ -201,8 +219,10 @@ libraries = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="5"]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" index="0"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -216,6 +236,8 @@ color = Color(0, 0, 0, 0)
 
 [connection signal="interacted" from="Interactables/Items/Item" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Items/Item2" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/Pasillo" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/Transitioner" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q1" to="." method="_on_interactable_interacted"]
 [connection signal="quest_begun" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q1" to="." method="_on_vendedor_q_1_quest_begun"]
 [connection signal="quest_ended" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q1" to="." method="_on_vendedor_q_1_quest_ended"]
@@ -235,4 +257,10 @@ color = Color(0, 0, 0, 0)
 [editable path="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2/NpcQuestIndicador"]
 [editable path="Interactables/Npcs/Nerd"]
 [editable path="Interactables/Npcs/Nerd/NpcQuestIndicador"]
+[editable path="Interactables/Npcs/GRUPO 1"]
+[editable path="Interactables/Npcs/GRUPO 1/NpcQuestIndicador"]
+[editable path="Interactables/Npcs/GRUPO 2"]
+[editable path="Interactables/Npcs/GRUPO 2/NpcQuestIndicador"]
+[editable path="Interactables/Npcs/GRUPO 3"]
+[editable path="Interactables/Npcs/GRUPO 3/NpcQuestIndicador"]
 [editable path="Interactables/Npcs/Mandarina"]

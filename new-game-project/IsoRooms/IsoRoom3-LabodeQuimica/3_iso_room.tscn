@@ -25,7 +25,7 @@ position = Vector2(353, 304)
 position = Vector2(126, 164)
 
 [node name="TRANS R3 -> R2" parent="Interactables/Transitioners" index="0" instance=ExtResource("4_v2ge4")]
-position = Vector2(411, 451)
+position = Vector2(-678, 433)
 rotation = -0.423137
 scale = Vector2(6.8216, -4.13405)
 room_id = "ROOM-ENTRADA"
