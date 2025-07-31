@@ -1,9 +1,30 @@
-[gd_resource type="Resource" script_class="Dialogo" load_steps=2 format=3 uid="uid://cndyeoebrms4x"]
+[gd_resource type="Resource" script_class="Dialogo" load_steps=9 format=3 uid="uid://cndyeoebrms4x"]
 
+[ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="1_tvsju"]
 [ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="1_vxl60"]
+[ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="2_h507q"]
+[ext_resource type="Script" uid="uid://djlqe64vei5v6" path="res://managers/dialogue 2.0/recursos/scripts/Evento_Avanzar_Quest.gd" id="3_l2y7w"]
+[ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="4_vrpo8"]
+
+[sub_resource type="Resource" id="Resource_3xmqt"]
+script = ExtResource("3_l2y7w")
+metadata/_custom_type_script = "uid://djlqe64vei5v6"
+
+[sub_resource type="Resource" id="Resource_eym8h"]
+script = ExtResource("1_tvsju")
+texto = "Gracias"
+array_eventos = Array[ExtResource("2_h507q")]([SubResource("Resource_3xmqt")])
+decision_type = "Chat"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_hf8gu"]
+script = ExtResource("4_vrpo8")
+array_opciones = Array[ExtResource("1_tvsju")]([SubResource("Resource_eym8h")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
 
 [resource]
 script = ExtResource("1_vxl60")
 arreglo_de_textos = PackedStringArray("Gracias por ayudarme con mi problema", "Ya encontré quien te robo tu tesis", "Es un nerd que viene todos los días a comer a solas en un rincón", "Todo el tiempo se ríe solo y parece que esta loco", "Creo que ya esta acá deberías buscarlo, te deseo suerte")
+decision = SubResource("Resource_hf8gu")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"

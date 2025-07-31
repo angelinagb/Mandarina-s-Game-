@@ -21,5 +21,5 @@
 ->find mandarina
 
 Hay que arreglar
-	doble call de quest_ended
-	si pierde el puzzle o si lo gana da igual
+	doble call de quest_ended ✔️
+	si pierde el puzzle o si lo gana da igual✔️

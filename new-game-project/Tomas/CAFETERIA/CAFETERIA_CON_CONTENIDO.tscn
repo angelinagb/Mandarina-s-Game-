@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cimvpyl0tae0m"]
+[gd_scene load_steps=19 format=3 uid="uid://cimvpyl0tae0m"]
 
 [ext_resource type="PackedScene" uid="uid://3g08138nqpuj" path="res://IsoRooms/IsoRoom2/2_iso_room_cafeteria.tscn" id="1_7eguv"]
 [ext_resource type="Script" uid="uid://bfncky2s0ss6u" path="res://Tomas/CAFETERIA/cafeteria.gd" id="2_ap168"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://n0gmw80orkd4" path="res://utils/Interact/Npc/Instancias/Grupo_1.tscn" id="5_snxlu"]
 [ext_resource type="PackedScene" uid="uid://qghui2lvxk3v" path="res://utils/Interact/Npc/Instancias/Grupo_2.tscn" id="6_4je3a"]
 [ext_resource type="PackedScene" uid="uid://x7bckplwrhjd" path="res://Tomas/CAFETERIA/Vendedor_Q2.tscn" id="6_xnuun"]
-[ext_resource type="Resource" uid="uid://cv5hu5avsttda" path="res://Tomas/CAFETERIA/Quest 2/cafeteria_q2.tres" id="7_0pd66"]
 [ext_resource type="PackedScene" uid="uid://xpklt7xbwqj7" path="res://utils/Interact/Npc/Instancias/Grupo_3.tscn" id="7_xnuun"]
 [ext_resource type="PackedScene" uid="uid://bh12kbhvaf3bl" path="res://Tomas/CAFETERIA/Nerd_Q2.tscn" id="8_aaue2"]
 [ext_resource type="Script" uid="uid://dwqxbk43d6bwm" path="res://utils/Interact/Npc/npc.gd" id="10_cok5s"]
@@ -73,7 +72,6 @@ room_id = "ROOM-CAFETERIA"
 
 [node name="BaseTiles" parent="." index="0"]
 position = Vector2(46, -61)
-metadata/_edit_horizontal_guides_ = [-140.0, -154.0]
 
 [node name="defect" parent="Spawns" index="0"]
 position = Vector2(-457, -127)
@@ -127,7 +125,6 @@ id = "COFFEE_V"
 process_mode = 4
 position = Vector2(-4.54008, -3.45291)
 scale = Vector2(0.367685, 0.333333)
-quest = ExtResource("7_0pd66")
 id = "COFFEE_V2"
 
 [node name="NpcQuestIndicador" parent="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2" index="6"]

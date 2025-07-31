@@ -12,7 +12,6 @@
 script = ExtResource("2_tie1i")
 
 [node name="Labo_syh_base_tiles" parent="." index="0" instance=ExtResource("2_8c415")]
-metadata/_edit_horizontal_guides_ = [-140.0, -154.0]
 
 [node name="defect" parent="Spawns" index="0"]
 position = Vector2(-217, 246)

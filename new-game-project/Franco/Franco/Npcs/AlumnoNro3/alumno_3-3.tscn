@@ -1,12 +1,57 @@
-[gd_scene load_steps=5 format=3 uid="uid://57n8nvjbm568"]
+[gd_scene load_steps=17 format=3 uid="uid://57n8nvjbm568"]
 
 [ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_vc7fm"]
 [ext_resource type="Texture2D" uid="uid://cjkw4snpnyg7o" path="res://Franco/Franco/Npcs/AlumnoNro3/AlumnoNro3.png" id="2_2m3r8"]
 [ext_resource type="Resource" uid="uid://rkcdn7a3f300" path="res://Franco/Franco/Npcs/AlumnoNro3/dialogo_3-3.tres" id="3_mklwf"]
+[ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="3_or6hr"]
+[ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="4_gb13w"]
 [ext_resource type="AudioStream" uid="uid://xe3m817pv17o" path="res://art/music-sfx/RPG_Music_Orchestra/hmms-various-1-7175.mp3" id="4_n3bly"]
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="5_7kdsh"]
+[ext_resource type="Script" uid="uid://bgh1w2gpnp0nj" path="res://managers/dialogue 2.0/recursos/scripts/evento_enqueue_event.gd" id="6_4xaqa"]
+[ext_resource type="PackedScene" uid="uid://ksp6solj3qvd" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleCandado/puzzle_candado.tscn" id="6_gb13w"]
+[ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="7_dvclv"]
+
+[sub_resource type="Resource" id="Resource_86igd"]
+script = ExtResource("5_7kdsh")
+arreglo_de_textos = PackedStringArray("Payaso")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[sub_resource type="Resource" id="Resource_o40bt"]
+script = ExtResource("5_7kdsh")
+arreglo_de_textos = PackedStringArray("Farewell")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[sub_resource type="Resource" id="Resource_0jk26"]
+script = ExtResource("6_4xaqa")
+event = ExtResource("6_gb13w")
+dialogo_lose = SubResource("Resource_86igd")
+dialogo_win = SubResource("Resource_o40bt")
+metadata/_custom_type_script = "uid://bgh1w2gpnp0nj"
+
+[sub_resource type="Resource" id="Resource_ip4ph"]
+script = ExtResource("3_or6hr")
+texto = "Puzzle"
+array_eventos = Array[ExtResource("4_gb13w")]([SubResource("Resource_0jk26")])
+decision_type = "Chat"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_75yiy"]
+script = ExtResource("7_dvclv")
+array_opciones = Array[ExtResource("3_or6hr")]([SubResource("Resource_ip4ph")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
+
+[sub_resource type="Resource" id="Resource_b3iak"]
+script = ExtResource("5_7kdsh")
+arreglo_de_textos = PackedStringArray("Hola")
+decision = SubResource("Resource_75yiy")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
 
 [node name="AlumnoNro3-3" instance=ExtResource("1_vc7fm")]
 scale = Vector2(1.2, 1.2)
+gives_item = "Mate"
 npc_name = "Victoria Fernandez"
 
 [node name="PlayerShadow" parent="." index="0"]
@@ -17,16 +62,12 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_2m3r8")
 
 [node name="Dialogo Quest" parent="." index="4"]
-vacio = true
+dialogueResource = SubResource("Resource_b3iak")
 
 [node name="Dialogo Default" parent="." index="5"]
 dialogueResource = ExtResource("3_mklwf")
 
 [node name="NpcQuestIndicador" parent="." index="6"]
-offset_left = 0.0
-offset_top = -9.63912
-offset_right = 16.0
-offset_bottom = 6.36088
 grow_horizontal = 1
 
 [node name="TextureRect" parent="NpcQuestIndicador" index="0"]

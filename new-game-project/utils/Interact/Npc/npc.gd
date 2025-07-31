@@ -23,6 +23,9 @@ var tiene_dialogo_quest : bool
 var tiene_quest: bool
 var node_item: Item
 
+var save_quest_default: Dialogo
+var quest_accepted: bool = false
+
 enum STATE {
 	TALKING,
 	WAITING
@@ -34,6 +37,7 @@ func _ready():
 	name = "npc" + npc_name
 	my_type = "npc"
 	
+
 	if dialogoDefault:
 		dialogoDefault.use_item.connect(_on_item_used)
 	
@@ -42,11 +46,13 @@ func _ready():
 		primerDialogo.deliver_item.connect(new_item)
 		
 	if primerDialogo.esta_vacio() == false: 
+		save_quest_default = primerDialogo.dialogueResource
 		primerDialogo.use_item.connect(_on_item_used)
 		tiene_dialogo_quest = true
 		quest_icon.show()
 		
 	if quest:
+		primerDialogo.quest_accepted.connect(take_quest)
 		tiene_quest = true
 		quest.init()
 		quest.quest_ended.connect(on_quest_ended)
@@ -78,13 +84,13 @@ func interact():
 func startDialogue():
 	$AudioStreamPlayer.play()
 	if tiene_dialogo_quest == true:
+		if primerDialogo.dialogueResource == null:
+			primerDialogo.dialogueResource = save_quest_default
 		primerDialogo.set_speaker(self.npc_name)
 		primerDialogo.start()
-		await primerDialogo.finished
 		take_first_dialogue()
-		if tiene_quest :
-			take_quest()
-			
+		await primerDialogo.finished
+	
 	elif dialogoDefault != null:
 		dialogoDefault.set_speaker(self.npc_name)
 		dialogoDefault.start()
@@ -92,12 +98,12 @@ func startDialogue():
 	
 	
 func quest_available():
-	return tiene_quest
+	return quest_accepted
 	
 func take_quest():
+	quest_accepted = true
 	quest_icon.hide()
 	quest_begun.emit()
-	tiene_quest = false
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "PlayerB":

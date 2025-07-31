@@ -1,40 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://ckfbm7hlw3f7l"]
+[gd_scene load_steps=7 format=3 uid="uid://ckfbm7hlw3f7l"]
 
 [ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_bq4m8"]
 [ext_resource type="Texture2D" uid="uid://bxoc5fehgjgi3" path="res://art/characters/iso/npc/Mujer de pie.png" id="2_hqoyr"]
 [ext_resource type="Resource" uid="uid://ba4qlk0qvr145" path="res://IsoRooms/IsoRoom-Bedelia/QuestBedelia.tres" id="2_xg6t4"]
 [ext_resource type="Resource" uid="uid://b4e3wx412orli" path="res://IsoRooms/IsoRoom-Bedelia/dialogo_intro_bedelia.tres" id="3_b7j6q"]
 [ext_resource type="Resource" uid="uid://kbegk088u6kd" path="res://IsoRooms/IsoRoom-Bedelia/default_bedelia.tres" id="4_b7j6q"]
-[ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="5_8fdok"]
-[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="5_n4817"]
 [ext_resource type="AudioStream" uid="uid://xe3m817pv17o" path="res://art/music-sfx/RPG_Music_Orchestra/hmms-various-1-7175.mp3" id="6_5o7nw"]
-[ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="6_vvw4q"]
-[ext_resource type="Script" uid="uid://bk4dph0sloiwh" path="res://managers/dialogue 2.0/recursos/scripts/grab_item_event.gd" id="7_wu0b0"]
-[ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="8_bs788"]
-
-[sub_resource type="Resource" id="Resource_57ll2"]
-script = ExtResource("7_wu0b0")
-item_id = ""
-metadata/_custom_type_script = "uid://bk4dph0sloiwh"
-
-[sub_resource type="Resource" id="Resource_4h2vg"]
-script = ExtResource("5_8fdok")
-texto = ""
-array_eventos = Array[ExtResource("6_vvw4q")]([SubResource("Resource_57ll2")])
-decision_type = "Quit"
-metadata/_custom_type_script = "uid://bxesqyur17jig"
-
-[sub_resource type="Resource" id="Resource_1dnpu"]
-script = ExtResource("8_bs788")
-array_opciones = Array[ExtResource("5_8fdok")]([SubResource("Resource_4h2vg")])
-metadata/_custom_type_script = "uid://ceg75660dlfjc"
-
-[sub_resource type="Resource" id="Resource_0j0p2"]
-script = ExtResource("5_n4817")
-arreglo_de_textos = PackedStringArray("¡Gracias!")
-decision = SubResource("Resource_1dnpu")
-tiempo_entre_caracteres = 0.02
-metadata/_custom_type_script = "uid://dekceg47jr41c"
 
 [node name="Npc" instance=ExtResource("1_bq4m8")]
 quest = ExtResource("2_xg6t4")
@@ -49,7 +20,6 @@ scale = Vector2(-6.86667, 3.52124)
 
 [node name="Dialogo Quest" parent="." index="4"]
 dialogueResource = ExtResource("3_b7j6q")
-dialogo_alternativo = SubResource("Resource_0j0p2")
 
 [node name="Dialogo Default" parent="." index="5"]
 dialogueResource = ExtResource("4_b7j6q")

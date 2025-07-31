@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://x7bckplwrhjd"]
+[gd_scene load_steps=6 format=3 uid="uid://x7bckplwrhjd"]
 
 [ext_resource type="PackedScene" uid="uid://hm1bx25eg2ip" path="res://Tomas/CAFETERIA/Vendedor_Q1.tscn" id="1_4cmog"]
+[ext_resource type="Resource" uid="uid://cv5hu5avsttda" path="res://Tomas/CAFETERIA/Quest 2/cafeteria_q2.tres" id="2_kxps5"]
 [ext_resource type="Resource" uid="uid://cndyeoebrms4x" path="res://Tomas/CAFETERIA/Quest 2/cafeteria_q2_dialogo.tres" id="2_xwvbs"]
 [ext_resource type="Resource" uid="uid://cxielkr23ymc6" path="res://Tomas/CAFETERIA/Quest 2/cafeteria_quest_2_dialogo_final.tres" id="3_xwvbs"]
 
@@ -8,6 +9,8 @@
 size = Vector2(58.0535, 68.1253)
 
 [node name="Vendedor Q2" instance=ExtResource("1_4cmog")]
+npc_name = "Vendedor"
+quest = ExtResource("2_kxps5")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(0.970817, -1.78814e-06)

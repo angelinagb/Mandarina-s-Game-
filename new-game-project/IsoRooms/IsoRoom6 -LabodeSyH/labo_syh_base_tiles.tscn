@@ -158,4 +158,4 @@ z_index = 4
 position = Vector2(3, 32.1842)
 scale = Vector2(1, 0.85439)
 color = Color(0.219608, 0.219608, 0.219608, 0.686275)
-polygon = PackedVector2Array(-18, 283, 375, 15, 682, 165.985, 248, 423.479)
+polygon = PackedVector2Array(-69, 228.017, 367, -59.9073, 689, 139.065, 247, 423.478)

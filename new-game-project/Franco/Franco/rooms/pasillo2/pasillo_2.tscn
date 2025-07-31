@@ -12,6 +12,7 @@
 room_id = "ROOM-PASILLO2"
 
 [node name="BaseTiles" parent="." index="0" instance=ExtResource("2_c7vn3")]
+position = Vector2(-18, 14)
 
 [node name="defect" parent="Spawns" index="0"]
 position = Vector2(3, 196)
@@ -24,17 +25,21 @@ position = Vector2(757, -270)
 position = Vector2(695, -167)
 scale = Vector2(1, 1.00781)
 
+[node name="ROOM-ENTRADA" type="Marker2D" parent="Spawns" index="3"]
+position = Vector2(-493, 486)
+
 [node name="Transitioner" parent="Interactables/Transitioners" index="0" instance=ExtResource("3_522a5")]
 position = Vector2(-544, 493)
 rotation = -1.03759
 scale = Vector2(-3.04491, -5.50299)
 
 [node name="Transitioner2" parent="Interactables/Transitioners" index="1" instance=ExtResource("4_rpjon")]
-position = Vector2(1071, -116)
+position = Vector2(951, -136)
 rotation = 1.05498
-scale = Vector2(1.66797, 4.06116)
+scale = Vector2(-3.84991, 9.02824)
 room_id = "ROOM-5"
 necesary_key = true
+to_room_name = "A CAFETERIA"
 
 [node name="Transitioner3" parent="Interactables/Transitioners" index="2" instance=ExtResource("5_o76j6")]
 position = Vector2(-27, 107)
@@ -42,20 +47,22 @@ rotation = 2.6936
 scale = Vector2(5.32383, -1.24007)
 room_id = "ROOM-SALA-CAMARAS"
 necesary_key = true
+to_room_name = "A SALA CAMARAS"
 
 [node name="Transitioner4" parent="Interactables/Transitioners" index="3" instance=ExtResource("5_o76j6")]
-position = Vector2(818, 18)
+position = Vector2(681, 80)
 rotation = -0.589321
 scale = Vector2(3.68585, -0.939496)
-room_id = "ROOM-CENTROALUMNOS"
 necesary_key = true
+to_room_name = "A PATIO "
 
 [node name="trans-piso2a" parent="Interactables/Transitioners" index="4" instance=ExtResource("5_o76j6")]
-position = Vector2(1691, -398)
+position = Vector2(845, -285)
 rotation = 0.589706
-scale = Vector2(5.12216, -1.437)
+scale = Vector2(5.08793, -1.437)
 room_id = "ROOM-PISO2A"
 necesary_key = true
+to_room_name = "A 2DO PISO"
 
 [node name="AlumnoNro2-3" parent="Interactables/Npcs" index="0" instance=ExtResource("5_rpjon")]
 position = Vector2(197, -311)

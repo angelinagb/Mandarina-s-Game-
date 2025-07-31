@@ -8,6 +8,8 @@ signal dialogue_ended
 signal finished
 signal deliver_item(item_id: String)
 signal use_item(item_id: String)
+signal puzzle_result(result)
+signal quest_accepted
 
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var next_text_button: Button = $CanvasLayer/PanelContainer/next_text_button
@@ -244,7 +246,8 @@ func check_and_start_alternative_dialogue():
 	
 		start()
 
- 
+var dwin: Dialogo
+var dlose: Dialogo 
 func trigger_events(events: Array[Evento] ):
 	var type
 	for event in events:
@@ -252,6 +255,15 @@ func trigger_events(events: Array[Evento] ):
 			deliver_item.emit(event.item_id)
 		elif event is event_use_item and event.item_id != null :
 			use_item.emit(event.item_id)
+		elif event is Event_Enqueue_Event:
+			dwin = event.dialogo_win
+			dlose = event.dialogo_lose
+			var puzzle_instance :Puzzle = event.event.instantiate()
+			puzzle_instance.puzzle_result.connect(_on_puzzle_result)
+			add_child(puzzle_instance)
+			await puzzle_instance.finished
+		elif event is AdvanceQuestEventResource : #podria ser otro, podemos usar el decision_type tambien
+				quest_accepted.emit()
 		await event.trigger()
 		
 #region para debugear
@@ -269,5 +281,26 @@ func skip():
 
 
 func _on_puzzle_result(result):
-	if not result :
-		pass
+	var decision = Decision.new()
+	var opcion_quit = Opcion.new()
+	opcion_quit.decision_type = "Quit"
+	if !result :
+		dialogo_alternativo = dlose # es el que no tiene la data de lo que tiene que darle
+		dialogo_alternativo.decision = decision
+		opcion_quit.texto = "Volvere..."
+		dialogo_alternativo.decision.array_opciones.append(opcion_quit)
+		get_parent().tiene_dialogo_quest = true 
+	else:
+		dialogo_alternativo = dwin
+		dialogo_alternativo.decision = decision
+		opcion_quit.texto = "Nos vemos"
+		var item = get_parent().gives_item
+		if item != null  and item != "" :
+			var new_event = Evento_Grab_Item.new()
+			new_event.item_id = item
+			opcion_quit.array_eventos.append(new_event)
+			dialogo_alternativo.decision.array_opciones.append(opcion_quit)
+		get_parent().take_first_dialogue() 
+	
+		
+	

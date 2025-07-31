@@ -1,44 +1,16 @@
-[gd_scene load_steps=18 format=3 uid="uid://bh12kbhvaf3bl"]
+[gd_scene load_steps=10 format=3 uid="uid://bh12kbhvaf3bl"]
 
 [ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_iw10b"]
 [ext_resource type="Script" uid="uid://cq5o8tv7h24ea" path="res://Tomas/CAFETERIA/nerd_script.gd" id="2_au8og"]
 [ext_resource type="PackedScene" uid="uid://bahdwu3b3uvas" path="res://Tomas/CAFETERIA/Quest 2/cafeteria_quest_2_dialogo_combate.tscn" id="3_n26le"]
 [ext_resource type="PackedScene" uid="uid://bkkm80qlft38n" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleInformatica/puzzle_informatica.tscn" id="3_nt8ji"]
 [ext_resource type="Texture2D" uid="uid://chn0y3w2dkddb" path="res://art/characters/iso/npc/npc_sentado.png" id="5_nt8ji"]
-[ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="6_3dwm0"]
+[ext_resource type="Resource" uid="uid://dtig4xsv7ckdd" path="res://managers/dialogue 2.0/recursos/dialogos/ChicaTriste_1_dialogo/1dialogo_1conv.tres" id="6_la701"]
 [ext_resource type="Resource" uid="uid://be24g1jx7m82l" path="res://Tomas/CAFETERIA/Quest 2/cafeteria_q2_dialogo_2.tres" id="6_nt8ji"]
-[ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="7_p0pgu"]
-[ext_resource type="Script" uid="uid://bk4dph0sloiwh" path="res://managers/dialogue 2.0/recursos/scripts/grab_item_event.gd" id="8_w3apo"]
-[ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="9_tw2lu"]
-[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="10_x1ugx"]
 [ext_resource type="AudioStream" uid="uid://mvo4og273elk" path="res://art/music-sfx/RPG_Music_Orchestra/question-noise-44154.mp3" id="12_p0pgu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_edm0b"]
 size = Vector2(16, 28.3333)
-
-[sub_resource type="Resource" id="Resource_2y0yp"]
-script = ExtResource("8_w3apo")
-item_id = "Capitulo1"
-metadata/_custom_type_script = "uid://bk4dph0sloiwh"
-
-[sub_resource type="Resource" id="Resource_enaah"]
-script = ExtResource("6_3dwm0")
-texto = "Nos vemos!"
-array_eventos = Array[ExtResource("7_p0pgu")]([SubResource("Resource_2y0yp")])
-decision_type = "Quit"
-metadata/_custom_type_script = "uid://bxesqyur17jig"
-
-[sub_resource type="Resource" id="Resource_4w6vx"]
-script = ExtResource("9_tw2lu")
-array_opciones = Array[ExtResource("6_3dwm0")]([SubResource("Resource_enaah")])
-metadata/_custom_type_script = "uid://ceg75660dlfjc"
-
-[sub_resource type="Resource" id="Resource_uv6fx"]
-script = ExtResource("10_x1ugx")
-arreglo_de_textos = PackedStringArray("Okey! Okey! ... Acá está tu hoja. No era necesaria la humillación. Qué dramático")
-decision = SubResource("Resource_4w6vx")
-tiempo_entre_caracteres = 0.02
-metadata/_custom_type_script = "uid://dekceg47jr41c"
 
 [node name="Nerd" instance=ExtResource("1_iw10b")]
 y_sort_enabled = true
@@ -56,7 +28,7 @@ position = Vector2(0.916658, -3)
 shape = SubResource("RectangleShape2D_edm0b")
 
 [node name="Dialogo Quest" parent="." index="4"]
-dialogo_alternativo = SubResource("Resource_uv6fx")
+dialogo_alternativo = ExtResource("6_la701")
 
 [node name="Dialogo Default" parent="." index="5"]
 dialogueResource = ExtResource("6_nt8ji")

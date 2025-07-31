@@ -1,19 +1,37 @@
-[gd_resource type="Resource" script_class="Dialogo" load_steps=16 format=3 uid="uid://csg85q86ltl7j"]
+[gd_resource type="Resource" script_class="Dialogo" load_steps=20 format=3 uid="uid://csg85q86ltl7j"]
 
 [ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="1_7yv0c"]
 [ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="1_pft6n"]
 [ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="2_pcb0t"]
 [ext_resource type="Script" uid="uid://bk4dph0sloiwh" path="res://managers/dialogue 2.0/recursos/scripts/grab_item_event.gd" id="3_pcb0t"]
 [ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="4_cba2b"]
+[ext_resource type="Script" uid="uid://djlqe64vei5v6" path="res://managers/dialogue 2.0/recursos/scripts/Evento_Avanzar_Quest.gd" id="4_pam5u"]
 
 [sub_resource type="Resource" id="Resource_cba2b"]
 script = ExtResource("3_pcb0t")
 item_id = "Capitulo0"
 metadata/_custom_type_script = "uid://bk4dph0sloiwh"
 
+[sub_resource type="Resource" id="Resource_gd8y2"]
+script = ExtResource("4_pam5u")
+metadata/_custom_type_script = "uid://djlqe64vei5v6"
+
+[sub_resource type="Resource" id="Resource_h4lks"]
+script = ExtResource("1_7yv0c")
+texto = "Esta bien."
+array_eventos = Array[ExtResource("2_pcb0t")]([SubResource("Resource_gd8y2")])
+decision_type = "Chat"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_v0r0d"]
+script = ExtResource("4_cba2b")
+array_opciones = Array[ExtResource("1_7yv0c")]([SubResource("Resource_h4lks")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
+
 [sub_resource type="Resource" id="Resource_pam5u"]
 script = ExtResource("1_pft6n")
 arreglo_de_textos = PackedStringArray("(risa nerviosa) No... pero encontré una hoja en la impresora.", "Tomá", "Deberías encontrar el resto antes de que la IA termine la etapa de entrenamiento.", "Podés ver las cámaras si quieres", "En el escritorio estan las llaves de la sala de camaras,  antes era el aula de Trabajo Final", "¡Suerte en la busqueda!")
+decision = SubResource("Resource_v0r0d")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"
 

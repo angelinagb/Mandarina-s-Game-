@@ -42,7 +42,6 @@ script = ExtResource("2_3bu61")
 room_id = "ROOM-PISO2A"
 
 [node name="BaseTiles" parent="." index="0" instance=ExtResource("2_7xcgx")]
-metadata/_edit_horizontal_guides_ = [-140.0, -154.0]
 metadata/_edit_lock_ = true
 
 [node name="ROOM-201" type="Marker2D" parent="Spawns" index="1"]

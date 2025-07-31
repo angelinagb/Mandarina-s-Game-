@@ -1,11 +1,22 @@
-[gd_resource type="Resource" script_class="Opcion" load_steps=3 format=3 uid="uid://bik8r658kt2el"]
+[gd_resource type="Resource" script_class="Opcion" load_steps=7 format=3 uid="uid://bik8r658kt2el"]
 
 [ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="1_pbbbq"]
 [ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="2_fklu2"]
+[ext_resource type="Script" uid="uid://bk4dph0sloiwh" path="res://managers/dialogue 2.0/recursos/scripts/grab_item_event.gd" id="2_njwu0"]
+[ext_resource type="Script" uid="uid://djlqe64vei5v6" path="res://managers/dialogue 2.0/recursos/scripts/Evento_Avanzar_Quest.gd" id="3_atl1k"]
+
+[sub_resource type="Resource" id="Resource_udcpy"]
+script = ExtResource("2_njwu0")
+item_id = "TermoVacio"
+metadata/_custom_type_script = "uid://bk4dph0sloiwh"
+
+[sub_resource type="Resource" id="Resource_fs4ip"]
+script = ExtResource("3_atl1k")
+metadata/_custom_type_script = "uid://djlqe64vei5v6"
 
 [resource]
 script = ExtResource("2_fklu2")
 texto = "Ok..."
-array_eventos = Array[ExtResource("1_pbbbq")]([])
+array_eventos = Array[ExtResource("1_pbbbq")]([SubResource("Resource_udcpy"), SubResource("Resource_fs4ip")])
 decision_type = "Quit"
 metadata/_custom_type_script = "uid://bxesqyur17jig"
