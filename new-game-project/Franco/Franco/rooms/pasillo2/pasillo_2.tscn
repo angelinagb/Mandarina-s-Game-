@@ -31,7 +31,7 @@ position = Vector2(-493, 486)
 [node name="Transitioner" parent="Interactables/Transitioners" index="0" instance=ExtResource("3_522a5")]
 position = Vector2(-544, 493)
 rotation = -1.03759
-scale = Vector2(-3.04491, -5.50299)
+scale = Vector2(-3.06083, -5.59824)
 
 [node name="Transitioner2" parent="Interactables/Transitioners" index="1" instance=ExtResource("4_rpjon")]
 position = Vector2(951, -136)
@@ -66,17 +66,29 @@ to_room_name = "A 2DO PISO"
 
 [node name="AlumnoNro2-3" parent="Interactables/Npcs" index="0" instance=ExtResource("5_rpjon")]
 position = Vector2(197, -311)
+scale = Vector2(1.81605, 1.6734)
 npc_name = "Jorge"
+
+[node name="Area2D" parent="Interactables/Npcs/AlumnoNro2-3" index="2"]
+position = Vector2(0, 31.6667)
+scale = Vector2(4.46731, 0.714875)
+
+[node name="NpcQuestIndicador" parent="Interactables/Npcs/AlumnoNro2-3" index="6"]
+grow_horizontal = 1
 
 [node name="Nerd4" parent="Interactables/Npcs" index="1" instance=ExtResource("6_rwdn4")]
 y_sort_enabled = false
-position = Vector2(634, -343)
-scale = Vector2(1.81113, 1.98075)
+position = Vector2(575, -301)
+scale = Vector2(-2.03901, 1.94546)
 gives_item = "Capitulo1"
 npc_name = "Camila"
 
+[node name="Area2D" parent="Interactables/Npcs/Nerd4" index="2"]
+position = Vector2(-1.10428, 26.7575)
+scale = Vector2(-6.58346, 3.01696)
+
 [node name="PlayerB" parent="Player" index="0"]
-position = Vector2(571, -204)
+position = Vector2(272, -287)
 
 [connection signal="interacted" from="Interactables/Transitioners/Transitioner" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/Transitioner2" to="." method="_on_interactable_interacted"]
@@ -85,3 +97,8 @@ position = Vector2(571, -204)
 [connection signal="interacted" from="Interactables/Transitioners/trans-piso2a" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/AlumnoNro2-3" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/Nerd4" to="." method="_on_interactable_interacted"]
+
+[editable path="Interactables/Npcs/AlumnoNro2-3"]
+[editable path="Interactables/Npcs/AlumnoNro2-3/NpcQuestIndicador"]
+[editable path="Interactables/Npcs/Nerd4"]
+[editable path="Interactables/Npcs/Nerd4/NpcQuestIndicador"]

@@ -175,7 +175,7 @@ sources/5 = SubResource("TileSetAtlasSource_dul4s")
 sources/2 = SubResource("TileSetAtlasSource_0ybgh")
 sources/6 = SubResource("TileSetAtlasSource_axond")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wwcp7"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rhiv8"]
 texture = ExtResource("2_auoli")
 texture_region_size = Vector2i(256, 128)
 0:0/size_in_atlas = Vector2i(2, 5)
@@ -191,7 +191,7 @@ texture_region_size = Vector2i(256, 128)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_aej4x"]
 polygon = PackedVector2Array(0, -64, -128, 0, 0, 64, 128, 0)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2gknh"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hh51l"]
 texture = ExtResource("2_12h6b")
 margins = Vector2i(2, 0)
 texture_region_size = Vector2i(28, 17)
@@ -230,7 +230,7 @@ texture_region_size = Vector2i(28, 17)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kjft8"]
 cull_mode = 2
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vwsck"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iqg4d"]
 texture = ExtResource("3_auoli")
 texture_region_size = Vector2i(256, 512)
 0:0/0 = 0
@@ -239,7 +239,7 @@ texture_region_size = Vector2i(256, 512)
 0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_kjft8")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-74, -27, -74.5, -75.5, -23.5, -106.5, 63.5, -49.5, 63, 32.5, 0, 64, -73.4, 27.3)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ox0pq"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n1ipd"]
 texture = ExtResource("4_wwcp7")
 texture_region_size = Vector2i(32, 16)
 25:52/size_in_atlas = Vector2i(5, 11)
@@ -262,7 +262,7 @@ texture_region_size = Vector2i(32, 16)
 31:29/0 = 0
 25:20/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_56oce"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k6gkm"]
 texture = ExtResource("5_jwge4")
 texture_region_size = Vector2i(64, 32)
 2:2/size_in_atlas = Vector2i(1, 2)
@@ -280,11 +280,11 @@ terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 navigation_layer_0/layers = 1
-sources/3 = SubResource("TileSetAtlasSource_ox0pq")
-sources/2 = SubResource("TileSetAtlasSource_vwsck")
-sources/1 = SubResource("TileSetAtlasSource_2gknh")
-sources/8 = SubResource("TileSetAtlasSource_56oce")
-sources/0 = SubResource("TileSetAtlasSource_wwcp7")
+sources/3 = SubResource("TileSetAtlasSource_n1ipd")
+sources/2 = SubResource("TileSetAtlasSource_iqg4d")
+sources/1 = SubResource("TileSetAtlasSource_hh51l")
+sources/8 = SubResource("TileSetAtlasSource_k6gkm")
+sources/0 = SubResource("TileSetAtlasSource_rhiv8")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ktoy4"]
 texture = ExtResource("2_12h6b")
@@ -386,14 +386,14 @@ sources/8 = SubResource("TileSetAtlasSource_mk5qu")
 [node name="BaseTiles" instance=ExtResource("1_yfvts")]
 
 [node name="floors" parent="." index="0"]
-tile_map_data = PackedByteArray("AAD+/wEAAQAAAAAAAAD//wEAAQAAAAAAAAD9/wEAAQAAAAAAAAD9//3/AQAAAAAAAAD+//3/AQAAAAAAAAD9////AQAAAAAAAAD9/wAAAQAAAAAAAAD+////AQAAAAAAAAD+/wAAAQAAAAAAAAD//wAAAQAAAAAAAAD/////AQAAAAAAAAD+//7/AQAAAAAAAAD9//7/AQAAAAAAAAD///7/AQAAAAAAAAD///3/AQAAAAAAAAAAAP3/AQAAAAAAAAAAAP7/AQAAAAAAAAAAAP//AQAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD+/wEAAQAAAAAAAAD//wEAAQAAAAAAAAAAAAEAAQAAAAAAAAD9/wEAAQAAAAAAAAAAAP3/AQAAAAAAAAD9//3/AQAAAAAAAAD+//3/AQAAAAAAAAD///3/AQAAAAAAAAD9////AQAAAAAAAAD9/wAAAQAAAAAAAAD+////AQAAAAAAAAD+/wAAAQAAAAAAAAD///7/AQAAAAAAAAD//wAAAQAAAAAAAAAAAP7/AQAAAAAAAAAAAP//AQAAAAAAAAAAAAAAAQAAAAAAAAD/////AQAAAAAAAAD+//7/AQAAAAAAAAD9//7/AQAAAAAAAAA=")
 
 [node name="walls_back" parent="." index="1"]
 z_index = -1
 tile_map_data = PackedByteArray("AAD9/wEACAAAAAEAAAD9//3/CAACAAAAAAD+//3/CAACAAEAAAD9//7/CAAAAAEAAAD9////CAAAAAEAAAD9/wAACAAAAAEAAAD///3/AwACAAAAAAA=")
 
 [node name="walls_front" parent="." index="2"]
-tile_map_data = PackedByteArray("AAAAAP3/CAADAAAAAAAAAP7/CAADAAEAAAAAAP//CAADAAEAAAAAAAAACAADAAEAAAAAAAEACAABAAAAAAD//wEACAABAAEAAAD+/wEACAABAAEAAAD9/wEACAABAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAAEACAABAAAAAAD//wEACAABAAEAAAD+/wEACAABAAEAAAD9/wEACAABAAEAAAAAAP3/CAADAAAAAAAAAP7/CAADAAEAAAAAAP//CAADAAEAAAAAAAAACAADAAEAAAA=")
 
 [node name="objects3" type="TileMapLayer" parent="." index="5"]
 y_sort_enabled = true
