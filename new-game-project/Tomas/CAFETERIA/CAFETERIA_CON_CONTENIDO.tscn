@@ -201,7 +201,7 @@ rotation = -3.14159
 scale = Vector2(1.1843, -1.2487)
 
 [node name="Mandarina" parent="Interactables/Npcs" index="6" instance=ExtResource("16_odqet")]
-position = Vector2(-657, 19)
+position = Vector2(-642, 43)
 
 [node name="Area2D" parent="Interactables/Npcs/Mandarina/Shadow" index="0"]
 position = Vector2(-4.20046, -69.0347)

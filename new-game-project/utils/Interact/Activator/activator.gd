@@ -24,10 +24,9 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 
 func interact():
-	
-		QueueManager.enqueue_event(activable)
-		interacted.emit(self)
-		end_activable.emit()
+	QueueManager.enqueue_event(activable)
+	interacted.emit(self)
+	end_activable.emit()
 		
 func get_type()  -> String :
 	return my_type

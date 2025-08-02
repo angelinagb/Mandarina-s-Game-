@@ -1,0 +1,89 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgjvuht5rv4ms"]
+
+[ext_resource type="Script" uid="uid://cnsbmmywtbg2k" path="res://utils/Interact/Puzzle/puzzles/main.gd" id="1_lbjwc"]
+[ext_resource type="Texture2D" uid="uid://b11oalxlgyd8c" path="res://Ange/TGame/Assets/table_area.jpg" id="2_2dbro"]
+[ext_resource type="FontFile" uid="uid://c48ugbmiah50a" path="res://Ange/TGame/Bangers-Regular.ttf" id="3_p8p0y"]
+[ext_resource type="PackedScene" uid="uid://c21sjdkws43hr" path="res://Ange/TGame/Game/card_manager.tscn" id="4_bjiwv"]
+
+[node name="Puzzle" type="CanvasLayer"]
+script = ExtResource("1_lbjwc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.400698, 0.400698, 0.400698, 1)
+offset_right = 1602.0
+offset_bottom = 720.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_2dbro")
+
+[node name="CardManager" parent="." instance=ExtResource("4_bjiwv")]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 571.0
+offset_top = 228.0
+offset_right = 616.0
+offset_bottom = 314.0
+scale = Vector2(1.5, 1.5)
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_p8p0y")
+text = "TRUCO"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_p8p0y")
+text = "ENVIDO"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_p8p0y")
+text = "FLOR"
+
+[node name="Card2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 300.0
+offset_top = 187.0
+offset_right = 393.0
+offset_bottom = 304.0
+rotation = 0.317729
+scale = Vector2(1.20015, 1.20555)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Card3" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 93.0
+offset_top = 224.0
+offset_right = 186.0
+offset_bottom = 341.0
+rotation = -0.419905
+scale = Vector2(1.20015, 1.20555)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Card1" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 194.0
+offset_top = 186.0
+offset_right = 287.0
+offset_bottom = 303.0
+scale = Vector2(1.20015, 1.20555)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="Jugar1" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 440.0
+offset_top = 53.0
+offset_right = 533.0
+offset_bottom = 170.0
+scale = Vector2(1.20015, 1.20555)
+size_flags_horizontal = 3
+size_flags_vertical = 3

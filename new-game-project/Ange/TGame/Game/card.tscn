@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxli0rgjt8e5b"]
+
+[ext_resource type="Script" uid="uid://c101uo4jrgfbr" path="res://Ange/TGame/Game/card.gd" id="1_m3ab1"]
+[ext_resource type="Texture2D" uid="uid://dsvhobb6gu1de" path="res://Ange/TGame/Assets/spanish_deck/1Basto.PNG" id="2_5sg6n"]
+[ext_resource type="Texture2D" uid="uid://cwvlrkfi658e6" path="res://Ange/TGame/Assets/spanish_deck/back.PNG" id="3_fmfwh"]
+
+[node name="Card" type="Control"]
+layout_mode = 3
+anchor_right = 0.092
+anchor_bottom = 0.312
+offset_right = -73.6
+offset_bottom = -112.32
+script = ExtResource("1_m3ab1")
+metadata/_edit_use_anchors_ = true
+
+[node name="CardImage" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 73.0
+offset_bottom = 113.0
+texture = ExtResource("2_5sg6n")
+stretch_mode = 2
+
+[node name="Back" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 0
+offset_right = 73.0
+offset_bottom = 113.0
+texture = ExtResource("3_fmfwh")
+stretch_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 72.0
+offset_bottom = 114.0
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

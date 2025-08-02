@@ -6,9 +6,9 @@ func _ready():
 	pass
 
 func update(points_available: int, abilities: Dictionary):
-	$VBoxContainer/HBoxContainer/Animales_Button.update(abilities.get("Animales")[0])
+	$VBoxContainer/HBoxContainer/Imagination_Button.update(abilities.get("Imaginacion")[0])
 	$VBoxContainer/HBoxContainer/Carisma_Button.update(abilities.get("Carisma")[0])
-	$VBoxContainer/HBoxContainer/Estudio_Button.update(abilities.get("Estudio")[0])
+	$VBoxContainer/HBoxContainer/Intelecto_Button.update(abilities.get("Estudio")[0])
 	if points_available <= 0:
 		$VBoxContainer/HBoxContainer/Animales_Button.disabled = true
 		$VBoxContainer/HBoxContainer/Carisma_Button.disabled = true

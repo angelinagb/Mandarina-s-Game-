@@ -39,6 +39,8 @@ func get_personalized_scene(mode: String = "fail", custom_text: String = "") -> 
 				custom_text = ia_sarcastic_success_messages[randi() % ia_sarcastic_success_messages.size()]
 			"fail":
 				custom_text = ia_sarcastic_messages[randi() % ia_sarcastic_messages.size()]
+			"personalized":
+				pass
 			_:
 				custom_text = "Modo inválido. Sos incluso peor que el promedio."
 

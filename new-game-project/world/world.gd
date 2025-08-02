@@ -170,6 +170,7 @@ func load_setup():
 	event.initialize([])
 	
 	quest.initialize(event, [])
+	quest.quest_ended.connect(_on_quest_ended)
 	
 	initialize_room(room_setup.actual_room, room_setup.prev_room)
 	
@@ -320,6 +321,7 @@ func _on_activator_activate(interactable: Activator):
 	
 
 
+
 func _on_menu_quest_updated(quest_upd: Quest) -> void:
 	quest.update_quest(quest_upd)
 
@@ -342,3 +344,8 @@ func new_notification(desc: String, scene: PackedScene):
 	var temp = scene.instantiate()
 	var personalizada = temp.get_personalized_scene(desc)
 	NotificationManager.enqueue_event(personalizada)
+
+
+func _on_quest_ended():
+	abilities_available_points["Points"] +=1
+	menu.on_abilities_updated(abilities_available_points["Points"],abilities_points)

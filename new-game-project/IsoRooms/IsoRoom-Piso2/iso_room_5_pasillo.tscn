@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://csd34hxktl1hl"]
+[gd_scene load_steps=17 format=3 uid="uid://csd34hxktl1hl"]
 
 [ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_y3myp"]
 [ext_resource type="Script" uid="uid://cru4sreum2y7h" path="res://IsoRooms/IsoRoom-Piso2/piso2_isoroom.gd" id="2_3bu61"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://c0nhxnmv56tui" path="res://managers/notification/quest/quest_step.gd" id="6_db85a"]
 [ext_resource type="PackedScene" uid="uid://csoh0x671pkgf" path="res://IsoRooms/Objetos/Scenes/Floor_switch.tscn" id="9_db85a"]
 [ext_resource type="PackedScene" uid="uid://d2dmd4gc77b5v" path="res://IsoRooms/IsoRoom-Piso2/chica_triste_2.tscn" id="10_vokb3"]
+[ext_resource type="PackedScene" uid="uid://b00erj1payaym" path="res://utils/Interact/Activator/machine.tscn" id="11_8p23m"]
 [ext_resource type="FontFile" uid="uid://c48homm7y5ftp" path="res://art/Fonts/Audiowide-Regular.ttf" id="11_786h8"]
 
 [sub_resource type="Resource" id="Resource_y22jl"]
@@ -121,16 +122,20 @@ room_id = "ROOM-201"
 necesary_key = true
 
 [node name="Chica Triste" parent="Interactables/Npcs" index="0" groups=["q1"] instance=ExtResource("4_uubpd")]
-position = Vector2(-1634, 310)
+position = Vector2(-845, 868)
 npc_name = "Ana"
 quest = SubResource("Resource_786h8")
 
 [node name="ChicaTriste2" parent="Interactables/Npcs" index="1" groups=["end"] instance=ExtResource("10_vokb3")]
 process_mode = 4
 visible = false
-position = Vector2(-1634, 310)
+position = Vector2(-845, 866)
 npc_name = "Ana"
 id = "Ana_Npc_Piso2"
+
+[node name="Activator" parent="Interactables" index="4" instance=ExtResource("11_8p23m")]
+position = Vector2(-1379, 345)
+scale = Vector2(-0.127816, 0.119387)
 
 [node name="PlayerB" parent="Player" index="0"]
 position = Vector2(-1469, 456)
@@ -220,6 +225,7 @@ text = "4
 [connection signal="quest_begun" from="Interactables/Npcs/Chica Triste" to="." method="_on_chica_triste_quest_begun"]
 [connection signal="quest_ended" from="Interactables/Npcs/Chica Triste" to="." method="_on_chica_triste_quest_ended"]
 [connection signal="interacted" from="Interactables/Npcs/ChicaTriste2" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Activator" to="." method="_on_interactable_interacted"]
 [connection signal="body_entered" from="Switch" to="." method="_on_switch_body_entered" binds= [1]]
 [connection signal="body_exited" from="Switch" to="." method="_on_switch_body_exited"]
 [connection signal="body_entered" from="Switch2" to="." method="_on_switch_body_entered" binds= [2]]

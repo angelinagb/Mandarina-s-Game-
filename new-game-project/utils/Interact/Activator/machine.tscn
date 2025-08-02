@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b00erj1payaym"]
+
+[ext_resource type="PackedScene" uid="uid://c352qhl8iuech" path="res://utils/Interact/Activator/activator.tscn" id="1_in6oq"]
+[ext_resource type="Texture2D" uid="uid://dqjqcqcdcej36" path="res://art/Tiles (2)/machine.png" id="2_0mvyw"]
+[ext_resource type="Script" uid="uid://c4fsvdae7s1o" path="res://utils/Interact/Activator/machine.gd" id="2_sctd0"]
+
+[node name="Activator" instance=ExtResource("1_in6oq")]
+script = ExtResource("2_sctd0")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_0mvyw")
+
+[node name="Area2D" parent="." index="1"]
+visible = true
+scale = Vector2(28.7102, -49.5848)
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(27, -53.5)

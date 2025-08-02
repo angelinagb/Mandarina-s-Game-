@@ -95,8 +95,8 @@ func on_item_updated(item: Dictionary):
 		remove_item_inventory(item)
 
 func on_abilities_updated(points_available: int, abilities: Dictionary):
-	#$Control2/MainMenu.update(points_available, abilities)
-	pass
+	$Control2/MainMenu.update(points_available, abilities)
+	#pass
 
 func _on_main_menu_ability_button_pressed(ability_name: String) -> void:
 	ability_button_pressed.emit(ability_name)

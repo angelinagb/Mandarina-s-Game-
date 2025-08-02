@@ -1,6 +1,7 @@
 class_name QuestManager
 extends Node
 
+signal quest_ended()
 signal new_active_secondary_quest(quest: Quest)
 signal quest_updated(quest: Quest)
 signal all_level_quest_completed
@@ -73,6 +74,8 @@ func on_quest_finished(title):
 			new_active_secondary_quest.emit(active_secondary_quest)
 		else:
 			set_secondary("", "")
+			
+	quest_ended.emit()
 
 func add_quest(quest: Quest) -> void:
 	if get_quest_by_title(quest.title) == null:
