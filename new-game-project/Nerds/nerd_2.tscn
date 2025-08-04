@@ -16,3 +16,5 @@ texture = ExtResource("4_xbf20")
 
 [node name="Dialogo Default" parent="." index="5"]
 dialogueResource = ExtResource("5_fd3xv")
+
+[editable path="NpcQuestIndicador"]
