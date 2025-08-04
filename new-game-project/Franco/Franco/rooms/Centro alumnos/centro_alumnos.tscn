@@ -20,6 +20,7 @@ scale = Vector2(3, 3)
 [node name="AlumnoNro1-3" parent="Interactables/Npcs" index="0" instance=ExtResource("4_w8tux")]
 position = Vector2(-370, -612)
 scale = Vector2(-1.30431, 1.51919)
+gives_item = ""
 
 [node name="AlumnoNro3-2" parent="Interactables/Npcs" index="1" instance=ExtResource("5_jhm14")]
 position = Vector2(-660, -437)

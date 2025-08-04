@@ -12,9 +12,11 @@ shadow_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wcvn6")
@@ -54,3 +56,7 @@ texture_normal = ExtResource("4_xgbmo")
 [node name="Intelecto_Button" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_lw6ts")]
 layout_mode = 2
 texture_normal = ExtResource("3_xgbmo")
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Imagination_Button" to="." method="_on_imagination_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Carisma_Button" to="." method="_on_carisma_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Intelecto_Button" to="." method="_on_intelecto_button_pressed"]
