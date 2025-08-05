@@ -97,11 +97,10 @@ scale = Vector2(-5.47888, 2.07825)
 necesary_key = true
 
 [node name="trans_aula_206" parent="Interactables/Transitioners" index="7" instance=ExtResource("2_js4aw")]
-position = Vector2(-2483, 451)
+position = Vector2(-2477, 437)
 rotation = 0.490498
 scale = Vector2(-5.47888, 2.07825)
 room_id = "ROOM-LABOFISICA"
-necesary_key = true
 to_room_name = "Lab de Fisica"
 id = "Lab de Fisica"
 
