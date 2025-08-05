@@ -52,55 +52,63 @@ position = Vector2(-868, 409)
 position = Vector2(-3075, 111)
 
 [node name="ROOM-LABOFISICA" type="Marker2D" parent="Spawns" index="3"]
-position = Vector2(-2393, 400)
+position = Vector2(-2782, 247)
 
 [node name="trasn_ labo_industrial" parent="Interactables/Transitioners" index="0" instance=ExtResource("2_js4aw")]
 position = Vector2(-539, -157)
 rotation = -0.417543
 scale = Vector2(5.36464, 1.25457)
 necesary_key = true
+to_room_name = "LAB. INDUSTRIAL 1"
 
 [node name="trans_labo_instruial_2" parent="Interactables/Transitioners" index="1" instance=ExtResource("2_js4aw")]
 position = Vector2(-201, -160)
 rotation = 0.463196
 scale = Vector2(5.30208, 1.36455)
 necesary_key = true
+to_room_name = "LAB. INDUSTRIAL 2"
 
 [node name="trans_depto_info" parent="Interactables/Transitioners" index="2" instance=ExtResource("2_js4aw")]
 position = Vector2(809, 348)
 rotation = 0.6763
 scale = Vector2(5.01539, 1.56877)
 necesary_key = true
+to_room_name = "DEPTO. INFORMATICA"
 
 [node name="trans" parent="Interactables/Transitioners" index="3" instance=ExtResource("2_js4aw")]
 position = Vector2(1022, 611)
 rotation = 0.967534
 scale = Vector2(2.31606, -3.83157)
 necesary_key = true
+to_room_name = "SALAS"
 
 [node name="trans_pasillo2" parent="Interactables/Transitioners" index="4" instance=ExtResource("2_js4aw")]
 position = Vector2(139, 5)
 rotation = 2.04148
 scale = Vector2(1.30347, -4.86094)
 room_id = "ROOM-PASILLO2"
+to_room_name = "BAJAR AL PASILLO 2"
 
 [node name="trans2" parent="Interactables/Transitioners" index="5" instance=ExtResource("2_js4aw")]
 position = Vector2(-40, -88)
 rotation = 2.04148
 scale = Vector2(1.30347, -4.86094)
 necesary_key = true
+to_room_name = ""
 
 [node name="trans_aula_207" parent="Interactables/Transitioners" index="6" instance=ExtResource("2_js4aw")]
 position = Vector2(-1847, 877)
 rotation = 0.490498
 scale = Vector2(-5.47888, 2.07825)
 necesary_key = true
+to_room_name = "Aula 207"
 
-[node name="trans_aula_206" parent="Interactables/Transitioners" index="7" instance=ExtResource("2_js4aw")]
-position = Vector2(-2477, 437)
+[node name="trans_labofisica" parent="Interactables/Transitioners" index="7" instance=ExtResource("2_js4aw")]
+position = Vector2(-2865, 270)
 rotation = 0.490498
 scale = Vector2(-5.47888, 2.07825)
 room_id = "ROOM-LABOFISICA"
+necesary_key = true
 to_room_name = "Lab de Fisica"
 id = "Lab de Fisica"
 
@@ -109,15 +117,24 @@ position = Vector2(-2640, 149)
 rotation = 0.490498
 scale = Vector2(-5.47888, 2.07825)
 necesary_key = true
+to_room_name = "Aula 205"
 
-[node name="trans_bedelia" parent="Interactables/Transitioners" index="9" instance=ExtResource("2_js4aw")]
+[node name="trans_aula_208" parent="Interactables/Transitioners" index="9" instance=ExtResource("2_js4aw")]
+position = Vector2(-2484, 454)
+rotation = 0.490498
+scale = Vector2(-5.47888, 2.07825)
+necesary_key = true
+to_room_name = "Aula 206"
+
+[node name="trans_bedelia" parent="Interactables/Transitioners" index="10" instance=ExtResource("2_js4aw")]
 position = Vector2(-3116, 130)
 rotation = 0.490498
 scale = Vector2(-5.47888, 2.07825)
 room_id = "ROOM-BEDELIA"
+to_room_name = "BEDELIA"
 id = "TRANS-BEDELIA"
 
-[node name="Puzzle_Transitioner" parent="Interactables/Transitioners" index="10" instance=ExtResource("4_vokb3")]
+[node name="Puzzle_Transitioner" parent="Interactables/Transitioners" index="11" instance=ExtResource("4_vokb3")]
 process_mode = 4
 position = Vector2(-848, 439)
 rotation = 4.1635
@@ -125,6 +142,7 @@ scale = Vector2(2.37921, -5.14795)
 puzzle = ExtResource("5_8p23m")
 room_id = "ROOM-201"
 necesary_key = true
+to_room_name = "AULA 201"
 
 [node name="Chica Triste" parent="Interactables/Npcs" index="0" groups=["q1"] instance=ExtResource("4_uubpd")]
 position = Vector2(-845, 868)
@@ -137,7 +155,8 @@ visible = false
 position = Vector2(-845, 866)
 
 [node name="Activator" parent="Interactables" index="4" instance=ExtResource("11_8p23m")]
-position = Vector2(-1379, 345)
+z_index = -1
+position = Vector2(-1363, 353)
 scale = Vector2(-0.127816, 0.119387)
 
 [node name="PlayerB" parent="Player" index="0"]
@@ -221,7 +240,7 @@ text = "4
 "
 
 [connection signal="interacted" from="Interactables/Transitioners/trans_pasillo2" to="." method="_on_interactable_interacted"]
-[connection signal="interacted" from="Interactables/Transitioners/trans_aula_206" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/trans_labofisica" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/trans_bedelia" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/Puzzle_Transitioner" to="." method="_on_interactable_interacted"]
 [connection signal="unblocked" from="Interactables/Transitioners/Puzzle_Transitioner" to="." method="_on_puzzle_transitioner_unblocked"]

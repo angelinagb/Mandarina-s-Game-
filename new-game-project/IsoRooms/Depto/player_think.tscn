@@ -26,7 +26,7 @@ metadata/_custom_type_script = "uid://ceg75660dlfjc"
 
 [sub_resource type="Resource" id="Resource_y5nwn"]
 script = ExtResource("2_nn1sh")
-arreglo_de_textos = PackedStringArray("Este Mandarina...", "Bueno, tengo 4 lugares para investigar", "Segun las camaras hubo hojas en La Cafeteria, en el Laboratorio de Fisica, El Laboratorio de Química y el Aula 01")
+arreglo_de_textos = PackedStringArray("Este Mandarina...", "Bueno, tengo 4 lugares para investigar", "Segun las camaras hubo hojas en La Cafeteria, en el Laboratorio de Fisica, El Laboratorio de Química y el Aula 02")
 decision = SubResource("Resource_dyq1x")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"

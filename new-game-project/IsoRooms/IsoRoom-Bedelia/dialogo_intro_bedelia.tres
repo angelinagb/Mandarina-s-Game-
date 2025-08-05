@@ -61,7 +61,7 @@ metadata/_custom_type_script = "uid://dekceg47jr41c"
 
 [sub_resource type="Resource" id="Resource_x34vu"]
 script = ExtResource("1_becl3")
-texto = "Necesitaba la llave del aula 01."
+texto = "Necesitaba la llave del aula 02."
 dialogo_exitoso = SubResource("Resource_np102")
 array_eventos = Array[ExtResource("2_hg8tx")]([])
 decision_type = "Chat"

@@ -38,6 +38,7 @@ position = Vector2(699, 53)
 rotation = -0.556548
 scale = Vector2(7.16601, 1.19053)
 room_id = "ROOM-PASILLO2"
+to_room_name = "AL PASILLO"
 
 [node name="Cams_Activator" parent="Interactables" index="4" instance=ExtResource("5_ultxf")]
 y_sort_enabled = true

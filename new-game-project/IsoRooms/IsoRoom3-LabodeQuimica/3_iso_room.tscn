@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cedn2qcbe0ghs"]
+[gd_scene load_steps=9 format=3 uid="uid://cedn2qcbe0ghs"]
 
 [ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_sskki"]
 [ext_resource type="Script" uid="uid://pv5la577e4f6" path="res://IsoRooms/IsoRoom3-LabodeQuimica/3_iso_room.gd" id="2_8j8dk"]
 [ext_resource type="PackedScene" uid="uid://bucn0vs17tsw2" path="res://utils/Interact/Item/Instancias/Mate.tscn" id="2_twoqq"]
 [ext_resource type="PackedScene" uid="uid://cl6b1ih87sy2a" path="res://IsoRooms/IsoRoom3-LabodeQuimica/iso_room_base3.tscn" id="4_kwovi"]
 [ext_resource type="PackedScene" uid="uid://biaeia3f0l7xn" path="res://utils/Interact/Transitioner/Instancias/trans_r3_r2.tscn" id="4_v2ge4"]
+[ext_resource type="PackedScene" uid="uid://bykastfo056vh" path="res://IsoRooms/IsoRoom1/Interactuables/Items/key.tscn" id="6_23rmj"]
 [ext_resource type="PackedScene" uid="uid://dhv5haco81ty" path="res://Ange/Capitulo.tscn" id="6_sunh3"]
 [ext_resource type="PackedScene" uid="uid://chs0k71ajke58" path="res://Ange/Juan.tscn" id="7_8j8dk"]
 
@@ -39,6 +40,11 @@ scale = Vector2(0.688427, 0.652338)
 visible = false
 scale = Vector2(22.2988, 18.932)
 
+[node name="Key" parent="Interactables/Items" index="2" instance=ExtResource("6_23rmj")]
+position = Vector2(3709, 1339)
+open_room_id = "ROOM-LABOFISICA"
+nombre_room = "LABORATORIO DE FISICA"
+
 [node name="TRANS R3 -> R2" parent="Interactables/Transitioners" index="0" instance=ExtResource("4_v2ge4")]
 position = Vector2(-678, 433)
 rotation = -0.423137
@@ -54,6 +60,8 @@ position = Vector2(-523, 397)
 
 [connection signal="interacted" from="Interactables/Items/Mate" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Items/Item" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Items/Item" to="." method="_on_item_interacted"]
+[connection signal="interacted" from="Interactables/Items/Key" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/TRANS R3 -> R2" to="." method="_on_interactable_interacted"]
 [connection signal="dialogue_ended" from="Interactables/Npcs/Npc" to="." method="_on_npc_dialogue_ended"]
 [connection signal="interacted" from="Interactables/Npcs/Npc" to="." method="_on_interactable_interacted"]

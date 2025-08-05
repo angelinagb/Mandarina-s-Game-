@@ -1,6 +1,7 @@
 extends IsoRoom
 
 @onready var item: Item = $Interactables/Items/Item
+@onready var key: Key = $Interactables/Items/Key
 
 var level_completed
 
@@ -23,3 +24,7 @@ func get_state() -> Dictionary:
 func load_state(state: Dictionary) -> void:
 	if state.has("level_completed"):
 		level_completed = state["level_completed"] 
+
+
+func _on_item_interacted(interactable: Interactable) -> void:
+	key.interact()

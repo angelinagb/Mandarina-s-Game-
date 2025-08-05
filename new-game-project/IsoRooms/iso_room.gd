@@ -44,7 +44,3 @@ func save_state():
 	for node in get_tree().get_nodes_in_group("Con Estado"):
 		current_state[node.name] = node.get_state()
 	StateManager.save_room_state(room_id, current_state)
-
-
-func _on_item_interacted(interactable: Interactable) -> void:
-	pass # Replace with function body.

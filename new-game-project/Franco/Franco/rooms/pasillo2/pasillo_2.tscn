@@ -32,9 +32,9 @@ position = Vector2(-493, 486)
 position = Vector2(272, -386)
 
 [node name="TransitionerAula01" parent="Interactables/Transitioners" index="0" instance=ExtResource("3_522a5")]
-position = Vector2(208, -381)
+position = Vector2(201, -397)
 rotation = 1.0472
-scale = Vector2(1, 2)
+scale = Vector2(-1.12355, 3.60195)
 room_id = "ROOM-4"
 necesary_key = true
 to_room_name = "Aula 01"
