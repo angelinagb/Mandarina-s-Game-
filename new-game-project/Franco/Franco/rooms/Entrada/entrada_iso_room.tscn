@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bq0g1jdkuqoe4"]
+[gd_scene load_steps=13 format=3 uid="uid://bq0g1jdkuqoe4"]
 
 [ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_jvyd0"]
 [ext_resource type="PackedScene" uid="uid://cd4po1v8botyd" path="res://IsoRooms/IsoRoom0_Entrada/0_base_tiles_entrada.tscn" id="2_wxnbc"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://57n8nvjbm568" path="res://Franco/Franco/Npcs/AlumnoNro3/alumno_3-3.tscn" id="6_iyjjf"]
 [ext_resource type="PackedScene" uid="uid://bd8vu6dvsq1r1" path="res://utils/Interact/Transitioner/Instancias/trans_entrada_deptoal.tscn" id="6_wxnbc"]
 [ext_resource type="PackedScene" uid="uid://ilxqll2oo45m" path="res://Ange/entrada_pasillo.tscn" id="7_gko6f"]
+[ext_resource type="PackedScene" uid="uid://bxurh7x1dv7db" path="res://IsoRooms/IsoRoom-Bedelia/transitioner_con_puzzle.tscn" id="7_go8ah"]
+[ext_resource type="PackedScene" uid="uid://b67a6yiwqfmwq" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleMatematica/puzzle_matematica.tscn" id="8_vn0rm"]
 [ext_resource type="PackedScene" uid="uid://d2f2p7cl1qirc" path="res://Ange/Decos/terminal_sube.tscn" id="10_bg5nm"]
 [ext_resource type="PackedScene" uid="uid://bamrwyg31jnv4" path="res://Ange/Decos/sube.tscn" id="10_go8ah"]
 
@@ -44,17 +46,7 @@ room_id = "ROOM-CENTROALUMNOS"
 necesary_key = true
 to_room_name = "Al Centro de alumnos"
 
-[node name="Transitioner" parent="Interactables/Transitioners" index="2" instance=ExtResource("7_gko6f")]
-z_index = 30
-position = Vector2(438, 81)
-rotation = -0.449199
-scale = Vector2(4.54762, -1.30585)
-room_id = "ROOM-6"
-necesary_key = true
-to_room_name = "Al Laboratorio de Quimica"
-id = "Laboratorio de Quimica"
-
-[node name="Transitioner2" parent="Interactables/Transitioners" index="3" instance=ExtResource("7_gko6f")]
+[node name="Transitioner2" parent="Interactables/Transitioners" index="2" instance=ExtResource("7_gko6f")]
 z_index = 30
 position = Vector2(577, -490)
 rotation = -0.449199
@@ -63,13 +55,21 @@ necesary_key = true
 to_room_name = "Al Piso 1"
 id = "Piso1"
 
-[node name="trans_entrada_labosyh" parent="Interactables/Transitioners" index="4" instance=ExtResource("6_wxnbc")]
+[node name="trans_entrada_labosyh" parent="Interactables/Transitioners" index="3" instance=ExtResource("6_wxnbc")]
 position = Vector2(681, -726)
 rotation = 0.499486
 scale = Vector2(4.31694, -1.36504)
 room_id = "ROOM-LABOSYH"
 to_room_name = "A Seguridad e Higiene"
 id = "Trans_LABOSYH"
+
+[node name="Puzzle_Transitioner" parent="Interactables/Transitioners" index="4" instance=ExtResource("7_go8ah")]
+position = Vector2(449, 60)
+rotation = -0.343567
+scale = Vector2(7.16998, 1.75895)
+puzzle = ExtResource("8_vn0rm")
+room_id = "ROOM-6"
+necesary_key = true
 
 [node name="AlumnoNro1-1" parent="Interactables/Npcs" index="0" groups=["Con Estado"] instance=ExtResource("3_aafd0")]
 position = Vector2(628, -328)
@@ -91,9 +91,9 @@ position = Vector2(651, -701)
 
 [connection signal="interacted" from="Interactables/Transitioners/Tr-Ent-Pas2" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/Tr-Ent-Scom" to="." method="_on_interactable_interacted"]
-[connection signal="interacted" from="Interactables/Transitioners/Transitioner" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/Transitioner2" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/trans_entrada_labosyh" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/Puzzle_Transitioner" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/AlumnoNro1-1" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/AlumnoNro3-3" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Terminal_sube" to="." method="_on_interactable_interacted"]

@@ -42,9 +42,6 @@ scale = Vector2(0.662868, 0.646904)
 npc_name = "María"
 id = "Maria_NPC"
 
-[node name="NpcQuestIndicador" parent="Interactables/Npcs/Npc3" index="6"]
-grow_horizontal = 1
-
 [node name="PlayerB" parent="Player" index="0"]
 position = Vector2(401, -221)
 

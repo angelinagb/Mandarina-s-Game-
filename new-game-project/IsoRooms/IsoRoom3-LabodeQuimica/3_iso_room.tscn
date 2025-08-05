@@ -1,14 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://cedn2qcbe0ghs"]
+[gd_scene load_steps=8 format=3 uid="uid://cedn2qcbe0ghs"]
 
 [ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_sskki"]
+[ext_resource type="Script" uid="uid://pv5la577e4f6" path="res://IsoRooms/IsoRoom3-LabodeQuimica/3_iso_room.gd" id="2_8j8dk"]
 [ext_resource type="PackedScene" uid="uid://bucn0vs17tsw2" path="res://utils/Interact/Item/Instancias/Mate.tscn" id="2_twoqq"]
 [ext_resource type="PackedScene" uid="uid://cl6b1ih87sy2a" path="res://IsoRooms/IsoRoom3-LabodeQuimica/iso_room_base3.tscn" id="4_kwovi"]
 [ext_resource type="PackedScene" uid="uid://biaeia3f0l7xn" path="res://utils/Interact/Transitioner/Instancias/trans_r3_r2.tscn" id="4_v2ge4"]
-[ext_resource type="PackedScene" uid="uid://b7vuer4est3c1" path="res://utils/Interact/Npc/Instancias/Alumno_1.tscn" id="5_v2ge4"]
-[ext_resource type="PackedScene" uid="uid://dp1j1sh86uh60" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleQuimica/puzzle_quimica.tscn" id="6_sunh3"]
+[ext_resource type="PackedScene" uid="uid://dhv5haco81ty" path="res://Ange/Capitulo.tscn" id="6_sunh3"]
+[ext_resource type="PackedScene" uid="uid://chs0k71ajke58" path="res://Ange/Juan.tscn" id="7_8j8dk"]
 
 [node name="IsoRoom" instance=ExtResource("1_sskki")]
 y_sort_enabled = true
+script = ExtResource("2_8j8dk")
+room_id = "ROOM-6"
 metadata/_edit_lock_ = true
 
 [node name="BaseTiles" parent="." index="0" instance=ExtResource("4_kwovi")]
@@ -22,25 +25,40 @@ position = Vector2(16, 287)
 position = Vector2(353, 304)
 
 [node name="Mate" parent="Interactables/Items" index="0" instance=ExtResource("2_twoqq")]
-position = Vector2(126, 164)
+position = Vector2(207, 154)
+
+[node name="Item" parent="Interactables/Items" index="1" instance=ExtResource("6_sunh3")]
+visible = false
+position = Vector2(-4, 485)
+scale = Vector2(0.233086, 0.239453)
+
+[node name="Sprite2D" parent="Interactables/Items/Item" index="0"]
+scale = Vector2(0.688427, 0.652338)
+
+[node name="Area2D" parent="Interactables/Items/Item" index="1"]
+visible = false
+scale = Vector2(22.2988, 18.932)
 
 [node name="TRANS R3 -> R2" parent="Interactables/Transitioners" index="0" instance=ExtResource("4_v2ge4")]
 position = Vector2(-678, 433)
 rotation = -0.423137
-scale = Vector2(6.8216, -4.13405)
+scale = Vector2(7.21697, -1.46937)
 room_id = "ROOM-ENTRADA"
 
-[node name="Alumno 1" parent="Interactables/Npcs" index="0" instance=ExtResource("5_v2ge4")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-148, 158)
-rotation = -0.00162853
-scale = Vector2(-1.0321, 1.53535)
-puzzle = ExtResource("6_sunh3")
+[node name="Npc" parent="Interactables/Npcs" index="0" instance=ExtResource("7_8j8dk")]
+position = Vector2(-146, 187)
+scale = Vector2(1.21513, 1.05621)
 
 [node name="PlayerB" parent="Player" index="0"]
 position = Vector2(-523, 397)
 
 [connection signal="interacted" from="Interactables/Items/Mate" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Items/Item" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/TRANS R3 -> R2" to="." method="_on_interactable_interacted"]
-[connection signal="interacted" from="Interactables/Npcs/Alumno 1" to="." method="_on_interactable_interacted"]
+[connection signal="dialogue_ended" from="Interactables/Npcs/Npc" to="." method="_on_npc_dialogue_ended"]
+[connection signal="interacted" from="Interactables/Npcs/Npc" to="." method="_on_interactable_interacted"]
+[connection signal="puzzle_result" from="Interactables/Npcs/Npc/Dialogo Quest" to="." method="_on_dialogo_quest_puzzle_result"]
+
+[editable path="Interactables/Items/Item"]
+[editable path="Interactables/Npcs/Npc"]
+[editable path="Interactables/Npcs/Npc/NpcQuestIndicador"]
