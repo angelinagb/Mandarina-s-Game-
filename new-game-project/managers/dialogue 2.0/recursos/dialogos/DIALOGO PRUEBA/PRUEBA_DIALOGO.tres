@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_bck87")
-arreglo_de_textos = PackedStringArray("*Llora descontroladamente*", "Si hermanito, es antes de Jara, no despues", "*Sigue llorando descontroladamente*")
+arreglo_de_textos = PackedStringArray("Podría meter un nuevo...", "Hola! Gracias por ayudarme antes!")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"

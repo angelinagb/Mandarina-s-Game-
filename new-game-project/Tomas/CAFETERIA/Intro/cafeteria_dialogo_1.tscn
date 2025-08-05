@@ -4,5 +4,4 @@
 [ext_resource type="Resource" uid="uid://cjaej6cj8a01j" path="res://Tomas/CAFETERIA/Intro/cafeteria_dialogo_1.tres" id="2_2hc40"]
 
 [node name="Dialogue System" instance=ExtResource("1_wvcr2")]
-destruirse_al_finalizar = true
 dialogueResource = ExtResource("2_2hc40")

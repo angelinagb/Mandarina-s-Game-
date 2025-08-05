@@ -1,0 +1,77 @@
+[gd_scene load_steps=15 format=3 uid="uid://dbfsbj3iwbn6"]
+
+[ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_q1ubv"]
+[ext_resource type="Texture2D" uid="uid://cwuxd057ijn8f" path="res://art/characters/iso/npc/mujer_sentada.png" id="2_qhbjw"]
+[ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="3_1y4oq"]
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="3_hscsh"]
+[ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="4_qqxeg"]
+[ext_resource type="Script" uid="uid://cd5vp04d7c84l" path="res://managers/dialogue 2.0/recursos/scripts/Evento_usar_item.gd" id="5_xn1x8"]
+[ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="6_4qmrk"]
+[ext_resource type="AudioStream" uid="uid://xe3m817pv17o" path="res://art/music-sfx/RPG_Music_Orchestra/hmms-various-1-7175.mp3" id="8_qqxeg"]
+
+[sub_resource type="Resource" id="Resource_i28n6"]
+script = ExtResource("5_xn1x8")
+item_id = "Termo Lleno"
+metadata/_custom_type_script = "uid://cd5vp04d7c84l"
+
+[sub_resource type="Resource" id="Resource_kcno8"]
+script = ExtResource("5_xn1x8")
+item_id = "Yerba"
+metadata/_custom_type_script = "uid://cd5vp04d7c84l"
+
+[sub_resource type="Resource" id="Resource_4gqhw"]
+script = ExtResource("3_1y4oq")
+texto = "Obvio! Gracias"
+array_eventos = Array[ExtResource("4_qqxeg")]([SubResource("Resource_i28n6"), SubResource("Resource_kcno8")])
+decision_type = "Chat"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_2g2qp"]
+script = ExtResource("6_4qmrk")
+array_opciones = Array[ExtResource("3_1y4oq")]([SubResource("Resource_4gqhw")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
+
+[sub_resource type="Resource" id="Resource_cex08"]
+script = ExtResource("3_hscsh")
+arreglo_de_textos = PackedStringArray("Volviste! Que bueno!", "Acá estan las llave de la 01", "No te olvides de devolverlas", "Gracias por el mate")
+decision = SubResource("Resource_2g2qp")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[sub_resource type="Resource" id="Resource_qqxeg"]
+script = ExtResource("3_hscsh")
+arreglo_de_textos = PackedStringArray("¿Si?")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[node name="Npc" instance=ExtResource("1_q1ubv")]
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_qhbjw")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-0.333333, 18.3333)
+scale = Vector2(1.08182, 0.442938)
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(-7, -17)
+scale = Vector2(-8.9285, 13.4599)
+
+[node name="Dialogo Quest" parent="." index="4"]
+dialogueResource = SubResource("Resource_cex08")
+
+[node name="Dialogo Default" parent="." index="5"]
+dialogueResource = SubResource("Resource_qqxeg")
+
+[node name="NpcQuestIndicador" parent="." index="6"]
+offset_left = -11.0
+offset_top = -74.0
+offset_right = 21.0
+offset_bottom = -42.0
+grow_horizontal = 1
+
+[node name="AudioStreamPlayer" parent="." index="7"]
+stream = ExtResource("8_qqxeg")
+
+[editable path="NpcQuestIndicador"]

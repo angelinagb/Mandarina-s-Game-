@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4q483gk5g84g"]
+
+[ext_resource type="Script" uid="uid://xp0kw8kjmn4w" path="res://SecurityCams/security_cams.gd" id="1_6unci"]
+[ext_resource type="PackedScene" uid="uid://cbd4cnklmn8ew" path="res://IsoRooms/IsoRoom2/2_base_tiles.tscn" id="2_6unci"]
+[ext_resource type="PackedScene" uid="uid://d2jcbaf1bvttq" path="res://Mandarina/mandarina.tscn" id="3_8pcq8"]
+[ext_resource type="Texture2D" uid="uid://bb5dqyk3tbehr" path="res://art/room/paper_set.png" id="3_x4xup"]
+[ext_resource type="Texture2D" uid="uid://cmbhdp0rhrnn5" path="res://art/characters/iso/GirlSample/playerShadow.png" id="4_hvy4p"]
+[ext_resource type="Texture2D" uid="uid://cd3syor82y8vc" path="res://art/room/cam_frame.png" id="4_kv3pw"]
+
+[sub_resource type="Curve2D" id="Curve2D_6unci"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 13, 8, 0, 0, 0, 0, 165, 87, 0, 0, 0, 0, 270, 119, 0, 0, 0, 0, 350, 31, 0, 0, 0, 0, 482, -37, 0, 0, 0, 0, 645, -76, 0, 0, 0, 0, 797, -76, 0, 0, 0, 0, 908, -4, 0, 0, 0, 0, 878, 96, 0, 0, 0, 0, 724, 172, 0, 0, 0, 0, 606, 243, 0, 0, 0, 0, 656, 356, 0, 0, 0, 0, 789, 398)
+}
+point_count = 13
+
+[node name="SC1" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_6unci")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 800.0
+offset_bottom = 360.0
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(800, 360)
+render_target_update_mode = 4
+
+[node name="BaseTiles" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_6unci")]
+position = Vector2(733, 336)
+
+[node name="paper_sheet_floor" type="Sprite2D" parent="SubViewportContainer/SubViewport/BaseTiles"]
+visible = false
+position = Vector2(-426.026, 1.99998)
+rotation = 0.714917
+scale = Vector2(-0.0986236, 0.10713)
+texture = ExtResource("3_x4xup")
+region_enabled = true
+region_rect = Rect2(101, 145, 195, 194)
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/BaseTiles/paper_sheet_floor"]
+modulate = Color(0.803922, 0.803922, 0.803922, 0.584314)
+show_behind_parent = true
+position = Vector2(-5.63723, 20.217)
+scale = Vector2(-19.6817, 22.4651)
+texture = ExtResource("4_hvy4p")
+
+[node name="Mandarina" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_8pcq8")]
+position = Vector2(215, 247)
+
+[node name="paper_sheet" type="Sprite2D" parent="SubViewportContainer/SubViewport/Mandarina"]
+position = Vector2(9, 3)
+rotation = 1.01581
+scale = Vector2(0.0902922, 0.116043)
+texture = ExtResource("3_x4xup")
+region_enabled = true
+region_rect = Rect2(395, 378, 111, 209)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="SubViewportContainer/SubViewport/Mandarina"]
+position = Vector2(0, 6)
+remote_path = NodePath("../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="SubViewportContainer/SubViewport/Mandarina"]
+position = Vector2(0, 6)
+
+[node name="Path2D" type="Path2D" parent="SubViewportContainer/SubViewport/Mandarina"]
+position = Vector2(-19, 1)
+curve = SubResource("Curve2D_6unci")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="SubViewportContainer/SubViewport/Mandarina/Path2D"]
+position = Vector2(13, 8)
+rotation = 0.479312
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_kv3pw")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 389.0
+offset_top = 319.0
+offset_right = 447.0
+offset_bottom = 342.0
+text = "CAM 02"
+
+[editable path="SubViewportContainer/SubViewport/Mandarina"]

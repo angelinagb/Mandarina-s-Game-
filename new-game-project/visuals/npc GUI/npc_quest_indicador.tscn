@@ -1,7 +1,44 @@
-[gd_scene load_steps=3 format=3 uid="uid://iuedtyho3pq5"]
+[gd_scene load_steps=6 format=3 uid="uid://iuedtyho3pq5"]
 
 [ext_resource type="Script" uid="uid://bcm43i7c25blm" path="res://visuals/npc GUI/npc_quest_indicador.gd" id="1_4osju"]
-[ext_resource type="Texture2D" uid="uid://ccgicbrx5ofw3" path="res://art/menu/quest_icon.png" id="2_yigmp"]
+[ext_resource type="Texture2D" uid="uid://33f1lhapcq5" path="res://art/menu/Icons_Essential/v1.2/World Map/Sprites/HighLighter/0.png" id="2_yigmp"]
+
+[sub_resource type="Animation" id="Animation_yigmp"]
+resource_name = "idle"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, 1), Vector2(2, -13)]
+}
+
+[sub_resource type="Animation" id="Animation_2kyi7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fmatg"]
+_data = {
+&"RESET": SubResource("Animation_2kyi7"),
+&"idle": SubResource("Animation_yigmp")
+}
 
 [node name="NpcQuestIndicador" type="ColorRect"]
 anchors_preset = 15
@@ -34,3 +71,7 @@ texture = ExtResource("2_yigmp")
 stretch_mode = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fmatg")
+}
+autoplay = "idle"

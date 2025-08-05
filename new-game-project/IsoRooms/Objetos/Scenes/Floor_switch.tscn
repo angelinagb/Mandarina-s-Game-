@@ -1,17 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://csoh0x671pkgf"]
+[gd_scene load_steps=3 format=3 uid="uid://csoh0x671pkgf"]
 
 [ext_resource type="Script" uid="uid://dx8vmxi2u3qv1" path="res://IsoRooms/Objetos/Scenes/floor_switch.gd" id="1_wg2qb"]
+[ext_resource type="Texture2D" uid="uid://bx3nbq8r351ds" path="res://art/tiles/SwichFloor1.png" id="2_aiw18"]
 
 [node name="Switch" type="Area2D"]
 script = ExtResource("1_wg2qb")
-id = "switch000"
 
 [node name="SwichFloor1" type="Sprite2D" parent="."]
 y_sort_enabled = true
 position = Vector2(-3, 5)
+texture = ExtResource("2_aiw18")
 hframes = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2(0, 2)
 polygon = PackedVector2Array(-3, 157, -63, 189, -1, 220, 64, 189)
 metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

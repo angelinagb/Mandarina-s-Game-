@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd8vu6dvsq1r1"]
+
+[ext_resource type="PackedScene" uid="uid://53qcgarmhxng" path="res://utils/Interact/Transitioner/transitioner.tscn" id="1_koui1"]
+
+[node name="trans entrada_deptoal" instance=ExtResource("1_koui1")]

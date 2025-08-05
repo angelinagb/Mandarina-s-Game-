@@ -33,6 +33,7 @@ scale = Vector2(3, 3)
 room_id = "ROOM-4"
 
 [node name="AlumnoNro2-2" parent="Interactables/Npcs" index="0" instance=ExtResource("6_4ue0e")]
+gives_item = ""
 
 [node name="AlumnoNro3-1" parent="Interactables/Npcs" index="1" instance=ExtResource("7_kvqi8")]
 

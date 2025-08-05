@@ -2,12 +2,12 @@ extends IsoRoom
 
 @export var intro : PackedScene
 @onready var trans : Transitioner = $"Interactables/Transitioners/Trans R1 -> R2"
-@onready var base_tiles: Node2D = $BaseTiles
+@onready var item: Key = $Interactables/Items/Item
 
 
 func _ready():
 	super._ready()
-	trans.process_mode = Node.PROCESS_MODE_DISABLED
+	#trans.process_mode = Node.PROCESS_MODE_DISABLED
 	#QueueManager.enqueue_event(intro)
 
 
@@ -16,7 +16,6 @@ func save_state():
 	super.save_state()
 
 
-func _on_chica_triste_dialogue_ended() -> void:
-	trans.process_mode = Node.PROCESS_MODE_INHERIT
-	#change dialogo si la quest no esta completada 
-	#change dialogo una vez terminada la quest?
+
+func _on_capitulo_2_interacted(interactable: Interactable) -> void:
+	item.interact()

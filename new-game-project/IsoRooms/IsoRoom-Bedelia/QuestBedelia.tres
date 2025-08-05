@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=7 format=3 uid="uid://ba4qlk0qvr145"]
+
+[ext_resource type="Script" uid="uid://cj81x6yti6bmb" path="res://managers/notification/quest/quest.gd" id="1_m8c24"]
+[ext_resource type="Script" uid="uid://c0nhxnmv56tui" path="res://managers/notification/quest/quest_step.gd" id="2_yica4"]
+
+[sub_resource type="Resource" id="Resource_m8c24"]
+script = ExtResource("2_yica4")
+text_to_do = "Carga el termo en la cafetería."
+necessary_interactables = {
+"Termo Lleno": false
+}
+metadata/_custom_type_script = "uid://c0nhxnmv56tui"
+
+[sub_resource type="Resource" id="Resource_yica4"]
+script = ExtResource("2_yica4")
+text_to_do = "Consigue yerba de algún alumno en el segundo piso"
+necessary_interactables = {
+"Yerba": false
+}
+metadata/_custom_type_script = "uid://c0nhxnmv56tui"
+
+[sub_resource type="Resource" id="Resource_sf2a7"]
+script = ExtResource("2_yica4")
+text_to_do = "Vuelve a bedelia"
+necessary_interactables = {
+"TRANS-BEDELIA": false
+}
+metadata/_custom_type_script = "uid://c0nhxnmv56tui"
+
+[sub_resource type="Resource" id="Resource_kqvsy"]
+script = ExtResource("2_yica4")
+text_to_do = "Habla con Carolina"
+necessary_interactables = {
+"npcCarolina": false
+}
+metadata/_custom_type_script = "uid://c0nhxnmv56tui"
+
+[resource]
+script = ExtResource("1_m8c24")
+title = "Favor a Bedelía"
+steps = Array[ExtResource("2_yica4")]([SubResource("Resource_m8c24"), SubResource("Resource_yica4"), SubResource("Resource_sf2a7"), SubResource("Resource_kqvsy")])
+current_step = 0
+is_secondary = true
+metadata/_custom_type_script = "uid://cj81x6yti6bmb"

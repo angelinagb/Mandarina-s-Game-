@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://bqscndmb0v4br"]
+[gd_scene load_steps=15 format=3 uid="uid://bqscndmb0v4br"]
 
 [ext_resource type="Script" uid="uid://u4sjvuleppf5" path="res://managers/dialogue 2.0/dialogue_system.gd" id="1_r12a2"]
 [ext_resource type="PackedScene" uid="uid://b3iipnt2mv61n" path="res://managers/dialogue 2.0/BotonDecision.tscn" id="2_7c8yr"]
 [ext_resource type="Resource" uid="uid://dtig4xsv7ckdd" path="res://managers/dialogue 2.0/recursos/dialogos/ChicaTriste_1_dialogo/1dialogo_1conv.tres" id="2_m0h81"]
 [ext_resource type="Animation" uid="uid://b0g4yolqy1eik" path="res://managers/dialogue 2.0/animacion/fade_out.res" id="3_qmr60"]
 [ext_resource type="Animation" uid="uid://bqjgh3o0hb1hh" path="res://managers/dialogue 2.0/animacion/fade_in.res" id="4_8k1qw"]
+[ext_resource type="FontFile" uid="uid://c48homm7y5ftp" path="res://art/Fonts/Audiowide-Regular.ttf" id="4_ovsma"]
+[ext_resource type="FontFile" uid="uid://ctwexxmrsmp1g" path="res://utils/Interact/Puzzle/puzzles/font/LuckiestGuy-Regular.ttf" id="5_s10b4"]
 [ext_resource type="AudioStream" uid="uid://d4f01b4kpkqyl" path="res://art/music-sfx/Interface/toggle_001.ogg" id="6_0fdmc"]
 [ext_resource type="AudioStream" uid="uid://dtc8fccphn13c" path="res://art/music-sfx/Interface/toggle_002.ogg" id="7_ovsma"]
 
@@ -15,6 +17,12 @@ border_width_top = 25
 border_width_right = 25
 border_width_bottom = 25
 border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_53nip"]
+font = ExtResource("5_s10b4")
+font_color = Color(0.596078, 0.921569, 1, 1)
+outline_size = 19
+outline_color = Color(0.462291, 0.462291, 0.462291, 0.372549)
 
 [sub_resource type="Animation" id="Animation_m0h81"]
 length = 0.001
@@ -45,13 +53,13 @@ stream_1 = ExtResource("7_ovsma")
 
 [node name="Dialogue System" type="Node2D"]
 process_mode = 3
+scale = Vector2(1.01314, 1.09268)
 script = ExtResource("1_r12a2")
 boton_decision = ExtResource("2_7c8yr")
 dialogueResource = ExtResource("2_m0h81")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 10
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
@@ -87,15 +95,29 @@ theme_override_constants/separation = 10
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 52)
 layout_mode = 2
+theme_override_colors/font_selected_color = Color(0.00392157, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_ovsma")
 theme_override_font_sizes/normal_font_size = 18
-text = "El otro dia iba caminando por la calle y no sabia que iba a pasr das da s"
+text = "¡¿Desapareció?! ¡¿Cómo es posible?! ¿Y si alguien la encuentra y la publica en internet? ¡Sería una catastrofe!"
+fit_content = true
 
 [node name="next_text_button" type="Button" parent="CanvasLayer/PanelContainer"]
+z_index = 7
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 disabled = true
+toggle_mode = true
 text = "next"
+
+[node name="Speaker_Name" type="Label" parent="CanvasLayer"]
+offset_left = 101.0
+offset_top = 212.0
+offset_right = 148.0
+offset_bottom = 235.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+label_settings = SubResource("LabelSettings_53nip")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

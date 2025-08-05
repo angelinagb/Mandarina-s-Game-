@@ -1,16 +1,21 @@
-[gd_scene load_steps=15 format=3 uid="uid://cimvpyl0tae0m"]
+[gd_scene load_steps=20 format=3 uid="uid://cimvpyl0tae0m"]
 
 [ext_resource type="PackedScene" uid="uid://3g08138nqpuj" path="res://IsoRooms/IsoRoom2/2_iso_room_cafeteria.tscn" id="1_7eguv"]
 [ext_resource type="Script" uid="uid://bfncky2s0ss6u" path="res://Tomas/CAFETERIA/cafeteria.gd" id="2_ap168"]
 [ext_resource type="PackedScene" uid="uid://dh1mihsxbf435" path="res://Tomas/CAFETERIA/Intro/cafeteria_dialogo_1.tscn" id="3_km8hj"]
-[ext_resource type="Texture2D" uid="uid://gpqvpe334ymm" path="res://art/characters/iso/npc/Trader_npc.png" id="4_4je3a"]
+[ext_resource type="Texture2D" uid="uid://dlbf708twa50n" path="res://art/characters/iso/npc/Trader_npc.png" id="4_4je3a"]
 [ext_resource type="PackedScene" uid="uid://hm1bx25eg2ip" path="res://Tomas/CAFETERIA/Vendedor_Q1.tscn" id="4_j2wjg"]
+[ext_resource type="PackedScene" uid="uid://bykastfo056vh" path="res://IsoRooms/IsoRoom1/Interactuables/Items/key.tscn" id="4_put8h"]
+[ext_resource type="PackedScene" uid="uid://casn7bf6nq44q" path="res://utils/Interact/Transitioner/Instancias/trans_r2_r3.tscn" id="4_w6y4y"]
 [ext_resource type="PackedScene" uid="uid://n0gmw80orkd4" path="res://utils/Interact/Npc/Instancias/Grupo_1.tscn" id="5_snxlu"]
 [ext_resource type="PackedScene" uid="uid://qghui2lvxk3v" path="res://utils/Interact/Npc/Instancias/Grupo_2.tscn" id="6_4je3a"]
+[ext_resource type="PackedScene" uid="uid://53qcgarmhxng" path="res://utils/Interact/Transitioner/transitioner.tscn" id="6_odqet"]
 [ext_resource type="PackedScene" uid="uid://x7bckplwrhjd" path="res://Tomas/CAFETERIA/Vendedor_Q2.tscn" id="6_xnuun"]
-[ext_resource type="Resource" uid="uid://cv5hu5avsttda" path="res://Tomas/CAFETERIA/Quest 2/cafeteria_q2.tres" id="7_0pd66"]
 [ext_resource type="PackedScene" uid="uid://xpklt7xbwqj7" path="res://utils/Interact/Npc/Instancias/Grupo_3.tscn" id="7_xnuun"]
 [ext_resource type="PackedScene" uid="uid://bh12kbhvaf3bl" path="res://Tomas/CAFETERIA/Nerd_Q2.tscn" id="8_aaue2"]
+[ext_resource type="Script" uid="uid://dwqxbk43d6bwm" path="res://utils/Interact/Npc/npc.gd" id="10_cok5s"]
+[ext_resource type="PackedScene" uid="uid://dmuwy4w1v43x8" path="res://utils/Interact/Npc/Instancias/Mercader/mercader.tscn" id="10_ech2l"]
+[ext_resource type="PackedScene" uid="uid://d2jcbaf1bvttq" path="res://Mandarina/mandarina.tscn" id="16_odqet"]
 
 [sub_resource type="Animation" id="Animation_km8hj"]
 length = 0.001
@@ -61,49 +66,152 @@ _data = {
 &"fade_out": SubResource("Animation_ap168")
 }
 
-[node name="CAFETERIA" instance=ExtResource("1_7eguv")]
+[node name="CAFETERIA" groups=["Con Estado"] instance=ExtResource("1_7eguv")]
 script = ExtResource("2_ap168")
 dialogo_intro = ExtResource("3_km8hj")
-room_id = ""
+room_id = "ROOM-CAFETERIA"
+
+[node name="BaseTiles" parent="." index="0"]
+position = Vector2(-1549, -87)
+metadata/_edit_lock_ = true
 
 [node name="defect" parent="Spawns" index="0"]
-position = Vector2(226, -376)
+position = Vector2(-391, -196)
 
-[node name="TRANS R2 -> R3" parent="Interactables/Transitioners" index="0" groups=["COFFEE_END"]]
+[node name="ROOM-PASILLO2" type="Marker2D" parent="Spawns" index="1"]
+position = Vector2(-401, -153)
+
+[node name="Item" parent="Interactables/Items" index="0" instance=ExtResource("4_put8h")]
+visible = false
+position = Vector2(283, -411)
+open_room_id = "ROOM-PISO2A"
+nombre_room = "Piso2"
+
+[node name="Area2D" parent="Interactables/Items/Item" index="1"]
 process_mode = 4
+
+[node name="Item2" parent="Interactables/Items" index="1" instance=ExtResource("4_put8h")]
+visible = false
+position = Vector2(283, -411)
+open_room_id = "ROOM-BEDELIA"
+nombre_room = "Bedelia"
+
+[node name="Area2D" parent="Interactables/Items/Item2" index="1"]
+process_mode = 4
+
+[node name="Pasillo" parent="Interactables/Transitioners" index="0" instance=ExtResource("4_w6y4y")]
+position = Vector2(-453, -198)
+rotation = -2.13549
+scale = Vector2(1.81578, -4.86591)
 room_id = "ROOM-PASILLO2"
+to_room_name = "Al Pasillo"
+
+[node name="Transitioner" parent="Interactables/Transitioners" index="1" instance=ExtResource("6_odqet")]
+position = Vector2(306, 267)
+scale = Vector2(3.59631, 1)
+room_id = "ROOM-4"
+necesary_key = true
+to_room_name = "a Aula 01"
 
 [node name="SPRITE VENDEDOR" type="Sprite2D" parent="Interactables/Npcs" index="0"]
-position = Vector2(572, -334)
-scale = Vector2(3, 3)
+z_index = 1
+y_sort_enabled = true
+position = Vector2(439, -260)
+scale = Vector2(3.24001, 2.29399)
 texture = ExtResource("4_4je3a")
 hframes = 6
 
-[node name="Vendedor Q1" parent="Interactables/Npcs/SPRITE VENDEDOR" index="0" groups=["Q1"] instance=ExtResource("4_j2wjg")]
+[node name="Vendedor Q1" parent="Interactables/Npcs/SPRITE VENDEDOR" index="0" groups=["Q1", "Q2"] instance=ExtResource("4_j2wjg")]
 position = Vector2(-2.66667, -3)
+rotation = -0.0425112
 scale = Vector2(0.333333, 0.333333)
+npc_name = "Vendedor"
+id = "COFFEE_V"
 
 [node name="Vendedor Q2" parent="Interactables/Npcs/SPRITE VENDEDOR" index="1" groups=["Q2"] instance=ExtResource("6_xnuun")]
 process_mode = 4
-position = Vector2(-2.66667, -3)
-scale = Vector2(0.333333, 0.333333)
-quest = ExtResource("7_0pd66")
+position = Vector2(-4.54008, -3.45291)
+scale = Vector2(0.367685, 0.333333)
+id = "COFFEE_V2"
 
-[node name="Nerd" parent="Interactables/Npcs" index="1" groups=["Q2", "Q2_BEGIN"] instance=ExtResource("8_aaue2")]
+[node name="NpcQuestIndicador" parent="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2" index="6"]
+visible = false
+custom_minimum_size = Vector2(32, 32)
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 34.0
+offset_bottom = 33.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Nerd" parent="Interactables/Npcs" index="1" groups=["Q2_BEGIN"] instance=ExtResource("8_aaue2")]
 process_mode = 4
-position = Vector2(-522, -140)
+z_index = -1
+position = Vector2(15, -319)
+rotation = -0.0416234
+scale = Vector2(-1.08963, 1.33099)
+script = ExtResource("10_cok5s")
+gives_item = "Capitulo1"
+npc_name = "Matias el Nerd"
+id = ""
+
+[node name="Sprite2D" parent="Interactables/Npcs/Nerd" index="1"]
+y_sort_enabled = true
+
+[node name="Area2D" parent="Interactables/Npcs/Nerd" index="2"]
+position = Vector2(-1.94931, 33.9052)
+scale = Vector2(13.257, 4.18105)
+
+[node name="NpcQuestIndicador" parent="Interactables/Npcs/Nerd" index="6"]
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 18.0
+offset_bottom = 17.0
+grow_horizontal = 1
 
 [node name="GRUPO 1" parent="Interactables/Npcs" index="2" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("5_snxlu")]
 process_mode = 4
-position = Vector2(247, 38)
+position = Vector2(-190, -139)
+scale = Vector2(1.32405, 1.16664)
+
+[node name="CollisionShape2D" parent="Interactables/Npcs/GRUPO 1/Area2D" index="0"]
+position = Vector2(-1.25876, 18.2862)
+scale = Vector2(2.06315, 0.609241)
 
 [node name="GRUPO 2" parent="Interactables/Npcs" index="3" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("6_4je3a")]
 process_mode = 4
-position = Vector2(172, -175)
+position = Vector2(254, -149)
+scale = Vector2(1.02039, 1.08529)
 
-[node name="GRUPO 3" parent="Interactables/Npcs" index="4" groups=["Q1", "Q1_GRUPOS"] instance=ExtResource("7_xnuun")]
+[node name="Area2D" parent="Interactables/Npcs/GRUPO 2" index="2"]
+position = Vector2(1.96004, 4.60707)
+
+[node name="GRUPO 3" parent="Interactables/Npcs" index="4" groups=["Q1_GRUPOS"] instance=ExtResource("7_xnuun")]
 process_mode = 4
-position = Vector2(505, -55)
+z_index = -1
+position = Vector2(80, -32)
+scale = Vector2(1.14765, 1.13801)
+
+[node name="Area2D" parent="Interactables/Npcs/GRUPO 3" index="2"]
+scale = Vector2(5.67565, 2.0174)
+
+[node name="Mercader" parent="Interactables/Npcs" index="5" instance=ExtResource("10_ech2l")]
+position = Vector2(327, -331)
+rotation = -3.14159
+scale = Vector2(1.1843, -1.2487)
+
+[node name="Mandarina" parent="Interactables/Npcs" index="6" instance=ExtResource("16_odqet")]
+position = Vector2(-642, 43)
+
+[node name="Area2D" parent="Interactables/Npcs/Mandarina/Shadow" index="0"]
+position = Vector2(-4.20046, -69.0347)
+
+[node name="Label" parent="Interactables/Npcs/Mandarina" index="3"]
+visible = false
+
+[node name="PlayerB" parent="Player" index="0"]
+z_index = 0
+position = Vector2(-29, 5)
 
 [node name="CinematicasCafeteria" type="AnimationPlayer" parent="." index="4"]
 libraries = {
@@ -111,19 +219,25 @@ libraries = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="5"]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" index="0"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = -11.0
-offset_right = 2.0
-offset_bottom = -11.0
+offset_left = -1.0
+offset_top = 15.0
+offset_right = -1.0
+offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
+[connection signal="interacted" from="Interactables/Items/Item" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Items/Item2" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/Pasillo" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/Transitioner" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q1" to="." method="_on_interactable_interacted"]
 [connection signal="quest_begun" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q1" to="." method="_on_vendedor_q_1_quest_begun"]
 [connection signal="quest_ended" from="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q1" to="." method="_on_vendedor_q_1_quest_ended"]
@@ -133,4 +247,20 @@ color = Color(0, 0, 0, 0)
 [connection signal="interacted" from="Interactables/Npcs/Nerd" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/GRUPO 1" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/GRUPO 2" to="." method="_on_interactable_interacted"]
+[connection signal="dialogue_ended" from="Interactables/Npcs/GRUPO 3" to="." method="_on_grupo_3_dialogue_ended"]
 [connection signal="interacted" from="Interactables/Npcs/GRUPO 3" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Npcs/Mercader" to="." method="_on_interactable_interacted"]
+
+[editable path="Interactables/Items/Item"]
+[editable path="Interactables/Items/Item2"]
+[editable path="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2"]
+[editable path="Interactables/Npcs/SPRITE VENDEDOR/Vendedor Q2/NpcQuestIndicador"]
+[editable path="Interactables/Npcs/Nerd"]
+[editable path="Interactables/Npcs/Nerd/NpcQuestIndicador"]
+[editable path="Interactables/Npcs/GRUPO 1"]
+[editable path="Interactables/Npcs/GRUPO 1/NpcQuestIndicador"]
+[editable path="Interactables/Npcs/GRUPO 2"]
+[editable path="Interactables/Npcs/GRUPO 2/NpcQuestIndicador"]
+[editable path="Interactables/Npcs/GRUPO 3"]
+[editable path="Interactables/Npcs/GRUPO 3/NpcQuestIndicador"]
+[editable path="Interactables/Npcs/Mandarina"]

@@ -2,9 +2,11 @@ class_name MenuManager extends CanvasLayer
 
 signal ability_button_pressed(ability_name: String)
 signal secondary_quest_picked(title : String)
+signal quest_updated(quest : Quest)
 
 @onready var item_container := %"Conteneder Inventario"
 @onready var quest_container := %"Contenedor Quest"
+@onready var v_box_container: VBoxContainer = $"HBoxContainer/Contenedor Quest/VBoxContainer"
 @export var elemento_quest_main : PackedScene
 @export var elemento_inventario : PackedScene
 @export var elemento_quest_secondary : PackedScene
@@ -13,6 +15,7 @@ var active_secondary_quest = null
 var quest_manager: QuestManager
 var inventory_manager: InventoryManager
 
+@warning_ignore("shadowed_variable")
 func initialize(quest_manager: QuestManager, inventory_manager: InventoryManager, items: Dictionary):
 	self.quest_manager = quest_manager
 	quest_manager.quest_updated.connect(on_quest_updated)
@@ -31,30 +34,34 @@ func initialize(quest_manager: QuestManager, inventory_manager: InventoryManager
 
 func add_item_inventory(item: Dictionary):
 	var item_box := elemento_inventario.instantiate()
+	item_box.name = item.get("id")
 	item_container.add_child(item_box)
 	
 	var texture := load(item.get("path_img", ""))
 	item_box.set_icono(texture)
 	item_box.set_titulo("- %s" % item.get("name", "Item sin nombre"))
 
+
 func remove_item_inventory(item: Dictionary):
 	for child in item_container.get_children():
-		pass
+		if child.name == item.get("id"):
+			item_container.remove_child(child)
 
 func add_quest_ui(quest: Quest) -> void:
 	var quest_box : QuestElement
 	if(quest.is_secondary):
 		quest_box = elemento_quest_secondary.instantiate()
-		quest_box.pressed.connect(_on_secondary_quest_picked.bind(quest_box.titulo))
+		quest_box.pressed.connect(_on_secondary_quest_picked.bind(quest.title))
 	else:
 		quest_box = elemento_quest_main.instantiate()
-	quest_container.add_child(quest_box)
+	v_box_container.add_child(quest_box)
 	quest_box.set_nombre_elemento(quest.title)  # útil para identificarlo luego
 	if(quest == active_secondary_quest):
 		quest_box.set_titulo(quest.title + " (ACTIVA)")
 	else:
 		quest_box.set_titulo(quest.title)
 	quest_box.set_paso("    " + quest.get_current_step().text_to_do)
+	
 	
 	#var step := quest.get_current_step()
 	#if step:
@@ -69,26 +76,27 @@ func add_quest_ui(quest: Quest) -> void:
 #
 			#quest_box.add_child(step_label)
 	
-	quest_container.add_child(quest_box)
+
 
 func on_quest_updated(quest: Quest) -> void:
-	var existing_box := quest_container.get_node_or_null(quest.title)
+	var existing_box := v_box_container.get_node_or_null(quest.title)
 	if existing_box:
-		quest_container.remove_child(existing_box)
+		v_box_container.remove_child(existing_box)
 		existing_box.queue_free()
 	
 	if not quest.is_completed():
 		add_quest_ui(quest)
+		quest_updated.emit(quest)
 
 func on_item_updated(item: Dictionary):
-	if item.is_in_player and not item.is_in_world:
+	if item.is_in_player:
 		add_item_inventory(item)
-	elif not item.is_in_player and not item.is_in_world:
+	else:
 		remove_item_inventory(item)
 
 func on_abilities_updated(points_available: int, abilities: Dictionary):
-	#$Control2/MainMenu.update(points_available, abilities)
-	pass
+	$Control2/MainMenu.update(points_available, abilities)
+	#pass
 
 func _on_main_menu_ability_button_pressed(ability_name: String) -> void:
 	ability_button_pressed.emit(ability_name)

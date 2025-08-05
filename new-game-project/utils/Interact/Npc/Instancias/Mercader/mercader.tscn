@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmuwy4w1v43x8"]
+
+[ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_tr6mw"]
+[ext_resource type="Script" uid="uid://b503wvv4kebdl" path="res://utils/Interact/Npc/Instancias/Mercader/mercader.gd" id="2_pcnot"]
+[ext_resource type="Texture2D" uid="uid://ypnhxbwfijf2" path="res://art/characters/iso/npc/man_suit_case.png" id="3_ubsug"]
+[ext_resource type="Resource" uid="uid://dcvnsxn50sjpm" path="res://utils/Interact/Npc/Instancias/Mercader/mercader_dialogo.tres" id="4_gmwwj"]
+[ext_resource type="Texture2D" uid="uid://coiqyeudb35ss" path="res://art/menu/Mobile Game UI/icons/shop_icon_1.png" id="5_g4ruw"]
+
+[node name="Mercader" instance=ExtResource("1_tr6mw")]
+script = ExtResource("2_pcnot")
+trades = {
+"Termo Vacio": "Termo Lleno"
+}
+npc_name = "Uno Random"
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(2, -14)
+scale = Vector2(0.125359, 0.121128)
+texture = ExtResource("3_ubsug")
+
+[node name="Dialogo Quest" parent="." index="4"]
+vacio = true
+dialogueResource = ExtResource("4_gmwwj")
+
+[node name="Dialogo Default" parent="." index="5"]
+dialogueResource = ExtResource("4_gmwwj")
+
+[node name="NpcQuestIndicador" parent="." index="6"]
+offset_top = -12.5853
+offset_bottom = 3.41469
+grow_horizontal = 1
+
+[node name="TextureRect" parent="NpcQuestIndicador" index="0"]
+modulate = Color(0, 0, 0, 1)
+offset_top = -114.668
+offset_bottom = -50.6676
+texture = ExtResource("5_g4ruw")
+
+[editable path="NpcQuestIndicador"]

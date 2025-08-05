@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Event_Enqueue_Event" load_steps=6 format=3 uid="uid://272jcdp181mo"]
+
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="1_rx6sn"]
+[ext_resource type="PackedScene" uid="uid://dilhgir4y8bhr" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleElectronica/puzzle_electronica.tscn" id="2_4mhx8"]
+[ext_resource type="Script" uid="uid://bgh1w2gpnp0nj" path="res://managers/dialogue 2.0/recursos/scripts/evento_enqueue_event.gd" id="3_f4rou"]
+
+[sub_resource type="Resource" id="Resource_83cv2"]
+script = ExtResource("1_rx6sn")
+arreglo_de_textos = PackedStringArray("JAJAJA ", "Te dije que se iba a complicar", "Ya te podes ir, payaso")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[sub_resource type="Resource" id="Resource_wl2gm"]
+script = ExtResource("1_rx6sn")
+arreglo_de_textos = PackedStringArray("Okey Okey! Acá esta tu hoja, no hacia falta la humillaion, que dramatico")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[resource]
+script = ExtResource("3_f4rou")
+event = ExtResource("2_4mhx8")
+dialogo_lose = SubResource("Resource_83cv2")
+dialogo_win = SubResource("Resource_wl2gm")
+metadata/_custom_type_script = "uid://bgh1w2gpnp0nj"

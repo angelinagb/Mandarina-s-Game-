@@ -1,34 +1,32 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7vuer4est3c1"]
+[gd_scene load_steps=6 format=3 uid="uid://b7vuer4est3c1"]
 
 [ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_m7ijv"]
-[ext_resource type="Script" uid="uid://bx8mltsrm31l6" path="res://utils/Interact/Npc/Instancias/alumno_1.gd" id="2_15fen"]
+[ext_resource type="Texture2D" uid="uid://yjkb31jym162" path="res://art/characters/iso/npc/boy_npc.png" id="2_15fen"]
+[ext_resource type="Resource" uid="uid://x4tigv2syvn7" path="res://Ange/dialogoJquimica.tres" id="3_4oijs"]
 [ext_resource type="Resource" uid="uid://hoqapuuax7nu" path="res://managers/dialogue 2.0/recursos/dialogos/Alumna_1_dialogo/alumna_1.tres" id="3_atqdo"]
-[ext_resource type="Resource" uid="uid://ddbq60ed0dnbn" path="res://Tomas/Quest 1/victoria_Quest.tres" id="4_1t34d"]
 [ext_resource type="PackedScene" uid="uid://bqscndmb0v4br" path="res://managers/dialogue 2.0/dialogue_system.tscn" id="5_4oijs"]
-[ext_resource type="PackedScene" uid="uid://dihymy0nqn7ab" path="res://Tomas/pop up/quest_completed.tscn" id="5_vden7"]
-[ext_resource type="Texture2D" uid="uid://bjfayaxpwmbpq" path="res://art/characters/iso/npc/clint_bellanger_isometric_programador_npc.png" id="6_1t34d"]
 
 [node name="Alumno 1" instance=ExtResource("1_m7ijv")]
-script = ExtResource("2_15fen")
-puzzle = null
-dialogo_victoria = ExtResource("4_1t34d")
-quest_completed = ExtResource("5_vden7")
-id = "Q1_S1_VICTORIA"
+npc_name = "Juan"
 
 [node name="Sprite2D" parent="." index="1"]
-position = Vector2(1.5, -6)
-scale = Vector2(2.22917, 1.53125)
-texture = ExtResource("6_1t34d")
-hframes = 6
+position = Vector2(2, -67)
+scale = Vector2(0.140835, 0.180649)
+texture = ExtResource("2_15fen")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(-0.75, -2.10417)
 
 [node name="Dialogo Quest" parent="." index="4"]
-vacio = true
+dialogueResource = ExtResource("3_4oijs")
 
 [node name="Dialogo Default" parent="." index="5"]
-destruirse_al_finalizar = true
+vacio = true
 dialogueResource = ExtResource("3_atqdo")
 
 [node name="Dialogue System" parent="." index="6" instance=ExtResource("5_4oijs")]
+
+[node name="NpcQuestIndicador" parent="." index="7"]
+grow_horizontal = 1
+
+[editable path="NpcQuestIndicador"]

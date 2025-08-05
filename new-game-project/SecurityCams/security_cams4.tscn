@@ -1,0 +1,163 @@
+[gd_scene load_steps=11 format=3 uid="uid://bg5abc5cnrouj"]
+
+[ext_resource type="Script" uid="uid://b244bvqe03blj" path="res://SecurityCams/security_cams_4.gd" id="1_rbw1w"]
+[ext_resource type="PackedScene" uid="uid://bxdarh5hjdqcv" path="res://IsoRooms/IsoRoom4-LabodeFisica/4_base_tiles_labodefisica.tscn" id="2_rbw1w"]
+[ext_resource type="PackedScene" uid="uid://d2jcbaf1bvttq" path="res://Mandarina/mandarina.tscn" id="3_8af7e"]
+[ext_resource type="Texture2D" uid="uid://cmbhdp0rhrnn5" path="res://art/characters/iso/GirlSample/playerShadow.png" id="4_hfhrk"]
+[ext_resource type="Texture2D" uid="uid://cd3syor82y8vc" path="res://art/room/cam_frame.png" id="4_kc7di"]
+[ext_resource type="Texture2D" uid="uid://bb5dqyk3tbehr" path="res://art/room/paper_set.png" id="4_u5a3m"]
+
+[sub_resource type="Curve2D" id="Curve2D_6unci"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 23, 10, 0, 0, 0, 0, 157, 96, 0, 0, 0, 0, 21, 146, 0, 0, 0, 0, -8, 229, 0, 0, 0, 0, 58, 303, 0.593534, 0.593534, -0.593534, -0.593534, 198, 309, -0.883198, -0.0918197, 0.883198, 0.0918197, 254, 320)
+}
+point_count = 7
+
+[sub_resource type="Animation" id="Animation_5ituq"]
+
+[sub_resource type="Animation" id="Animation_rbw1w"]
+resource_name = "jump_to_table"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Mandarina/AnimatedSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/Mandarina/AnimatedSprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jump_right"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SubViewportContainer/SubViewport/Mandarina:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.216568, 0.387382, 0.48804, 0.60395, 0.671056, 0.732061, 0.851021),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(747, 505), Vector2(770, 491), Vector2(805, 472), Vector2(824, 471), Vector2(845, 479), Vector2(845, 479), Vector2(845, 479), Vector2(845, 479)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8af7e"]
+_data = {
+&"RESET": SubResource("Animation_5ituq"),
+&"jump_to_table": SubResource("Animation_rbw1w")
+}
+
+[node name="SC1" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_rbw1w")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 800.0
+offset_bottom = 360.0
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(800, 360)
+render_target_update_mode = 4
+
+[node name="BaseTiles" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_rbw1w")]
+position = Vector2(519, 471)
+
+[node name="paper_sheet_floor" type="Sprite2D" parent="SubViewportContainer/SubViewport/BaseTiles"]
+visible = false
+position = Vector2(130, -192)
+rotation = 0.714917
+scale = Vector2(-0.0986236, 0.10713)
+texture = ExtResource("4_u5a3m")
+region_enabled = true
+region_rect = Rect2(101, 145, 195, 194)
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/BaseTiles/paper_sheet_floor"]
+modulate = Color(0.803922, 0.803922, 0.803922, 0.584314)
+show_behind_parent = true
+position = Vector2(-5.63723, 20.217)
+scale = Vector2(-19.6817, 22.4651)
+texture = ExtResource("4_hfhrk")
+
+[node name="Mandarina" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_8af7e")]
+z_index = 20
+position = Vector2(496, 184)
+
+[node name="AnimatedSprite" parent="SubViewportContainer/SubViewport/Mandarina" index="2"]
+position = Vector2(2, -4)
+frame = 0
+frame_progress = 0.0
+speed_scale = 0.5
+
+[node name="paper_sheet" type="Sprite2D" parent="SubViewportContainer/SubViewport/Mandarina"]
+z_index = 1
+position = Vector2(11, 3)
+rotation = 0.37959
+scale = Vector2(0.0591191, 0.133065)
+texture = ExtResource("4_u5a3m")
+region_enabled = true
+region_rect = Rect2(395, 378, 111, 209)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="SubViewportContainer/SubViewport/Mandarina"]
+position = Vector2(0, 6)
+remote_path = NodePath("../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="SubViewportContainer/SubViewport/Mandarina"]
+position = Vector2(0, 6)
+
+[node name="Path2D" type="Path2D" parent="SubViewportContainer/SubViewport/Mandarina"]
+position = Vector2(-19, 1)
+curve = SubResource("Curve2D_6unci")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="SubViewportContainer/SubViewport/Mandarina/Path2D"]
+position = Vector2(23, 10)
+rotation = 0.570583
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_kc7di")
+metadata/_edit_use_anchors_ = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(738.324, 512.521)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8af7e")
+}
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -26.0
+offset_top = -44.0
+offset_right = 32.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.98855, 1)
+text = "CAM 04"
+
+[editable path="SubViewportContainer/SubViewport/Mandarina"]

@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmuwy4w1v43x8"]
+
+[ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_tr6mw"]
+[ext_resource type="Script" uid="uid://b503wvv4kebdl" path="res://utils/Interact/Npc/Instancias/Mercader/mercader.gd" id="2_pcnot"]
+[ext_resource type="Texture2D" uid="uid://ypnhxbwfijf2" path="res://art/characters/iso/npc/man_suit_case.png" id="3_ubsug"]
+[ext_resource type="Resource" uid="uid://dcvnsxn50sjpm" path="res://utils/Interact/Npc/Instancias/Mercader/mercader_dialogo.tres" id="4_gmwwj"]
+
+[sub_resource type="GDScript" id="GDScript_el6l7"]
+script/source = "extends Resource
+class_name Dialogo
+
+
+@export var arreglo_de_textos : PackedStringArray
+@export var decision : Decision
+#Tiempo que se va a esperar para mostrar el siguiente caräcter del texto
+@export var tiempo_entre_caracteres : float = .02
+
+
+var current_text : int
+
+func init():
+	current_text = 0
+
+func get_dialogue_count() -> int:
+	return arreglo_de_textos.size()
+
+func get_dialogue_text(i: int) -> String:
+		return arreglo_de_textos[i]
+	
+func get_recurso_decision() -> Decision:
+	return decision	
+	
+func get_dialogue_speed() -> float:
+	return tiempo_entre_caracteres
+"
+
+[sub_resource type="Resource" id="Resource_ubsug"]
+script = SubResource("GDScript_el6l7")
+arreglo_de_textos = PackedStringArray()
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[node name="Mercader" instance=ExtResource("1_tr6mw")]
+script = ExtResource("2_pcnot")
+trades = {
+"Termo Vacio": "Termo Lleno"
+}
+npc_name = "Uno Random"
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(2, -14)
+scale = Vector2(0.125359, 0.121128)
+texture = ExtResource("3_ubsug")
+
+[node name="Dialogo Quest" parent="." index="4"]
+vacio = true
+dialogueResource = ExtResource("4_gmwwj")
+
+[node name="Dialogo Default" parent="." index="5"]
+dialogueResource = SubResource("Resource_ubsug")

@@ -1,0 +1,242 @@
+[gd_scene load_steps=9 format=3 uid="uid://cpqmbgeosfbo2"]
+
+[ext_resource type="Texture2D" uid="uid://dkucmftlc07xx" path="res://art/menu/fondoMenu.png" id="1_2p01t"]
+[ext_resource type="Script" uid="uid://33g8k5crs6c6" path="res://Ange/Menu2/inventario_2.gd" id="1_7vwls"]
+[ext_resource type="Texture2D" uid="uid://c6rbi3n6rdyl4" path="res://art/menu/Mobile Game UI/inventory/Inventory/Inventory_icons_and_text.png" id="2_7vwls"]
+[ext_resource type="Texture2D" uid="uid://cups88d6vmhgd" path="res://art/menu/Mobile Game UI/inventory/Inventory/Book.png" id="3_ojf5t"]
+[ext_resource type="FontFile" uid="uid://ctwexxmrsmp1g" path="res://utils/Interact/Puzzle/puzzles/font/LuckiestGuy-Regular.ttf" id="4_mvw3m"]
+[ext_resource type="Texture2D" uid="uid://baxhjt5jc52fb" path="res://art/menu/Mobile Game UI/inventory/Inventory/Inventory - copia.png" id="5_2p01t"]
+[ext_resource type="Texture2D" uid="uid://b16r8lgcplq6h" path="res://art/menu/Mobile Game UI/back_icon.png" id="6_ojf5t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vwls"]
+bg_color = Color(0.960351, 0.960351, 0.960351, 1)
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.485628, 0.231848, 0.262166, 0.6)
+shadow_size = 5
+anti_aliasing = false
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_7vwls")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 800.0
+offset_top = -220.0
+offset_right = 800.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+texture = ExtResource("1_2p01t")
+stretch_mode = 5
+
+[node name="InventoryIconsAndText2" type="Sprite2D" parent="Control"]
+position = Vector2(232, 184)
+scale = Vector2(2.56499, 1.95267)
+texture = ExtResource("2_7vwls")
+region_enabled = true
+region_rect = Rect2(0, 32, 112, 112)
+
+[node name="InventoryIconsAndText" type="Sprite2D" parent="Control"]
+position = Vector2(572, 185)
+scale = Vector2(2.56499, 1.95267)
+texture = ExtResource("2_7vwls")
+region_enabled = true
+region_rect = Rect2(0, 32, 112, 112)
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ojf5t")
+expand_mode = 1
+
+[node name="Control" type="Control" parent="Control"]
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.081
+anchor_top = 0.164
+anchor_right = 0.485
+anchor_bottom = 0.832
+offset_left = 0.199997
+offset_top = -0.0400009
+offset_right = 6.0
+offset_bottom = 3.47998
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Control/Control"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -210.0
+offset_bottom = -152.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.76239, 2.67621)
+columns = 4
+
+[node name="Slot0" type="Button" parent="Control/Control/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7vwls")
+icon = ExtResource("5_2p01t")
+flat = true
+icon_alignment = 1
+
+[node name="Slot1" type="Button" parent="Control/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+icon = ExtResource("5_2p01t")
+flat = true
+icon_alignment = 1
+
+[node name="Slot2" type="Button" parent="Control/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+icon = ExtResource("5_2p01t")
+flat = true
+icon_alignment = 1
+
+[node name="Slot3" type="Button" parent="Control/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+icon = ExtResource("5_2p01t")
+flat = true
+icon_alignment = 1
+
+[node name="Slot4" type="Button" parent="Control/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+icon = ExtResource("5_2p01t")
+flat = true
+icon_alignment = 1
+
+[node name="Slot5" type="Button" parent="Control/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+icon = ExtResource("5_2p01t")
+flat = true
+icon_alignment = 1
+
+[node name="Slot6" type="Button" parent="Control/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+icon = ExtResource("5_2p01t")
+flat = true
+icon_alignment = 1
+
+[node name="Slot7" type="Button" parent="Control/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+icon = ExtResource("5_2p01t")
+flat = true
+icon_alignment = 1
+
+[node name="Slot8" type="Button" parent="Control/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+icon = ExtResource("5_2p01t")
+flat = true
+icon_alignment = 1
+
+[node name="Slot9" type="Button" parent="Control/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+icon = ExtResource("5_2p01t")
+flat = true
+icon_alignment = 1
+
+[node name="Slot10" type="Button" parent="Control/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+icon = ExtResource("5_2p01t")
+flat = true
+icon_alignment = 1
+
+[node name="Slot11" type="Button" parent="Control/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+icon = ExtResource("5_2p01t")
+flat = true
+icon_alignment = 1
+
+[node name="back_Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.811
+anchor_right = 0.085
+anchor_bottom = 1.0
+offset_top = 0.039978
+grow_vertical = 0
+icon = ExtResource("6_ojf5t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 415.0
+offset_top = 66.0
+offset_right = 739.0
+offset_bottom = 298.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mvw3m")
+text = "Descripción"
+
+[node name="Object_Name" type="Label" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mvw3m")
+text = "Name"
+
+[node name="Description" type="RichTextLabel" parent="VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0.00392157, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_mvw3m")
+theme_override_font_sizes/normal_font_size = 18
+text = "This is the description"
+
+[connection signal="pressed" from="Control/back_Button" to="." method="_on_back_button_pressed"]

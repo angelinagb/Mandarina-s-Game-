@@ -33,3 +33,7 @@ func _process_queue() -> void:
 	await event_instance.finished  # Custom signal when the event is done
 	event_instance.queue_free()
 	_process_queue()
+	
+	
+func enqueue_instance(event_instance: Node):
+	add_child(event_instance)

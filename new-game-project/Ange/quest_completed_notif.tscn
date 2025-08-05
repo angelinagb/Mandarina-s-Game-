@@ -1,0 +1,145 @@
+[gd_scene load_steps=28 format=3 uid="uid://c7ax4yb6uxwdl"]
+
+[ext_resource type="PackedScene" uid="uid://cyif0m3rl1hoj" path="res://visuals/Notificacion GUI/Notification.tscn" id="1_x6igu"]
+[ext_resource type="Texture2D" uid="uid://44pdc581o8oq" path="res://art/menu/Icons_Essential/v1.2/World Map/Appear/0.png" id="2_4rnnf"]
+[ext_resource type="Texture2D" uid="uid://cjir1r0rkw431" path="res://art/menu/Icons_Essential/v1.2/World Map/Appear/1.png" id="3_dk2wk"]
+[ext_resource type="Texture2D" uid="uid://c6tvkeqrre2pk" path="res://art/menu/Icons_Essential/v1.2/World Map/Appear/2.png" id="4_mnv5f"]
+[ext_resource type="Texture2D" uid="uid://c8n2iwn2bvnow" path="res://art/menu/Icons_Essential/v1.2/World Map/Appear/3.png" id="5_lshle"]
+[ext_resource type="Texture2D" uid="uid://c06lrvywnfwjd" path="res://art/menu/Icons_Essential/v1.2/World Map/Appear/4.png" id="6_ii4lw"]
+[ext_resource type="Texture2D" uid="uid://cgwpcbe3w56ad" path="res://art/menu/Icons_Essential/v1.2/World Map/Appear/5.png" id="7_6cagg"]
+[ext_resource type="Texture2D" uid="uid://cp6l18oamja01" path="res://art/menu/Icons_Essential/v1.2/World Map/Appear/6.png" id="8_3l80i"]
+[ext_resource type="Texture2D" uid="uid://b3v2ii0yhbdwh" path="res://art/menu/Icons_Essential/v1.2/World Map/Appear/7.png" id="9_j4fx7"]
+[ext_resource type="Texture2D" uid="uid://cth2321ymgi6f" path="res://art/menu/Icons_Essential/v1.2/World Map/Appear/8.png" id="10_kixqo"]
+[ext_resource type="Texture2D" uid="uid://0r4stv5qjn1v" path="res://art/menu/Icons_Essential/v1.2/World Map/Appear/9.png" id="11_njpb8"]
+[ext_resource type="Texture2D" uid="uid://bn3bd4d266ghv" path="res://art/menu/Icons_Essential/v1.2/World Map/Appear/10.png" id="12_vrxdt"]
+[ext_resource type="Texture2D" uid="uid://divvwr1dd8cnk" path="res://art/menu/Icons_Essential/v1.2/World Map/Disappear/0.png" id="13_502j4"]
+[ext_resource type="Texture2D" uid="uid://kv1qikmdrw6a" path="res://art/menu/Icons_Essential/v1.2/World Map/Disappear/1.png" id="14_5bs6j"]
+[ext_resource type="Texture2D" uid="uid://j0cmlhoujisa" path="res://art/menu/Icons_Essential/v1.2/World Map/Disappear/2.png" id="15_vlm3t"]
+[ext_resource type="Texture2D" uid="uid://bm7qmh5txvnj7" path="res://art/menu/Icons_Essential/v1.2/World Map/Disappear/3.png" id="16_4xfe4"]
+[ext_resource type="Texture2D" uid="uid://ckn1t61qayhia" path="res://art/menu/Icons_Essential/v1.2/World Map/Disappear/4.png" id="17_5m11m"]
+[ext_resource type="Texture2D" uid="uid://c2l17b6aifnyu" path="res://art/menu/Icons_Essential/v1.2/World Map/Disappear/5.png" id="18_1sguu"]
+[ext_resource type="Texture2D" uid="uid://cp5apnvcugqns" path="res://art/menu/Icons_Essential/v1.2/World Map/Disappear/6.png" id="19_ktcqa"]
+[ext_resource type="Texture2D" uid="uid://pn1vsxmn5yrm" path="res://art/menu/Icons_Essential/v1.2/World Map/Disappear/7.png" id="20_31cgk"]
+[ext_resource type="Texture2D" uid="uid://wfguo4tnihb4" path="res://art/menu/Icons_Essential/v1.2/World Map/Disappear/8.png" id="21_f4a8r"]
+[ext_resource type="Texture2D" uid="uid://dl2hf6awxqc72" path="res://art/menu/Icons_Essential/v1.2/World Map/Disappear/9.png" id="22_j1lfo"]
+[ext_resource type="Texture2D" uid="uid://1o57q3qhdblw" path="res://art/menu/Icons_Essential/v1.2/World Map/Disappear/10.png" id="23_i6p5r"]
+[ext_resource type="FontFile" uid="uid://ctwexxmrsmp1g" path="res://utils/Interact/Puzzle/puzzles/font/LuckiestGuy-Regular.ttf" id="24_3l3td"]
+[ext_resource type="AudioStream" uid="uid://bbo6a87q8hn68" path="res://art/music-sfx/RPGsfx/game-level-complete-143022.mp3" id="25_4rnnf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kabde"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4rnnf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dk2wk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mnv5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lshle")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ii4lw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6cagg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3l80i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_j4fx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_kixqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_njpb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vrxdt")
+}],
+"loop": false,
+"name": &"appear",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_502j4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_5bs6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_vlm3t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4xfe4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5m11m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_1sguu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ktcqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_31cgk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_f4a8r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_j1lfo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_i6p5r")
+}],
+"loop": true,
+"name": &"disappear",
+"speed": 10.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4rnnf"]
+
+[node name="QuestCompletedNotif" instance=ExtResource("1_x6igu")]
+tiempo_que_aparece = 3.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control" index="0"]
+modulate = Color(0.0784314, 1, 1, 1)
+position = Vector2(142, 123)
+scale = Vector2(0.607497, 0.174793)
+sprite_frames = SubResource("SpriteFrames_kabde")
+animation = &"appear"
+frame = 10
+frame_progress = 1.0
+speed_scale = 2.0
+
+[node name="PanelContainer" parent="Control" index="1"]
+offset_left = 2.0
+offset_top = -68.0
+offset_right = 250.0
+offset_bottom = -17.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4rnnf")
+
+[node name="Titulo" parent="Control/PanelContainer/MarginContainer/VBoxContainer" index="0"]
+theme_override_fonts/font = ExtResource("24_3l3td")
+text = "Nueva Misión Completada ✔️"
+
+[node name="Descripcion" parent="Control/PanelContainer/MarginContainer/VBoxContainer" index="1"]
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("24_3l3td")
+text = "->titulo quest"
+
+[node name="sound" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("25_4rnnf")

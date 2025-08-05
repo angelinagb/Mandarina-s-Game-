@@ -1,16 +1,99 @@
-[gd_scene load_steps=5 format=3 uid="uid://5x17l54uy2sg"]
+[gd_scene load_steps=21 format=3 uid="uid://5x17l54uy2sg"]
 
 [ext_resource type="PackedScene" uid="uid://bh12kbhvaf3bl" path="res://Tomas/CAFETERIA/Nerd_Q2.tscn" id="1_xovak"]
-[ext_resource type="PackedScene" uid="uid://dwak37e1gsj" path="res://Nerds/nerd4dv.tscn" id="3_tdshe"]
+[ext_resource type="Script" uid="uid://dwqxbk43d6bwm" path="res://utils/Interact/Npc/npc.gd" id="2_h71hj"]
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="4_4r2bd"]
 [ext_resource type="Texture2D" uid="uid://bkhuoqtvtfh4p" path="res://Nerds/AlumnoNro3.png" id="4_o6fue"]
+[ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="4_rt6xu"]
+[ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="5_44jda"]
 [ext_resource type="Resource" uid="uid://dy3bdvrg8p02e" path="res://Nerds/dn4.tres" id="5_rt6xu"]
+[ext_resource type="PackedScene" uid="uid://dilhgir4y8bhr" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleElectronica/puzzle_electronica.tscn" id="6_h71hj"]
+[ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="7_0p76l"]
+[ext_resource type="Script" uid="uid://bgh1w2gpnp0nj" path="res://managers/dialogue 2.0/recursos/scripts/evento_enqueue_event.gd" id="7_h71hj"]
+[ext_resource type="Script" uid="uid://bk4dph0sloiwh" path="res://managers/dialogue 2.0/recursos/scripts/grab_item_event.gd" id="8_h71hj"]
+
+[sub_resource type="Resource" id="Resource_y5ad4"]
+script = ExtResource("7_h71hj")
+event = ExtResource("6_h71hj")
+metadata/_custom_type_script = "uid://bgh1w2gpnp0nj"
+
+[sub_resource type="Resource" id="Resource_h71hj"]
+script = ExtResource("4_4r2bd")
+arreglo_de_textos = PackedStringArray("Si! Perdon, es verdad. Pero necesito que me ayudes con algo primero")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[sub_resource type="Resource" id="Resource_ka1tw"]
+script = ExtResource("4_rt6xu")
+texto = "Me parece que tenes mi hoja."
+dialogo_exitoso = SubResource("Resource_h71hj")
+array_eventos = Array[ExtResource("5_44jda")]([SubResource("Resource_y5ad4")])
+decision_type = "Quest"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_p4bnu"]
+script = ExtResource("7_0p76l")
+array_opciones = Array[ExtResource("4_rt6xu")]([SubResource("Resource_ka1tw")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
+
+[sub_resource type="Resource" id="Resource_tdshe"]
+script = ExtResource("4_4r2bd")
+arreglo_de_textos = PackedStringArray("¿Hola?")
+decision = SubResource("Resource_p4bnu")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[sub_resource type="Resource" id="Resource_lkshp"]
+script = ExtResource("8_h71hj")
+item_id = "Capitulo1"
+metadata/_custom_type_script = "uid://bk4dph0sloiwh"
+
+[sub_resource type="Resource" id="Resource_dh234"]
+script = ExtResource("4_rt6xu")
+texto = "¡Nos vemos!"
+array_eventos = Array[ExtResource("5_44jda")]([SubResource("Resource_lkshp")])
+decision_type = "Quit"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_744ww"]
+script = ExtResource("7_0p76l")
+array_opciones = Array[ExtResource("4_rt6xu")]([SubResource("Resource_dh234")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
+
+[sub_resource type="Resource" id="Resource_10grf"]
+script = ExtResource("4_4r2bd")
+arreglo_de_textos = PackedStringArray("Toma tu hoja.", "Gracias por ayudarme")
+decision = SubResource("Resource_744ww")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
 
 [node name="Nerd4" instance=ExtResource("1_xovak")]
 scale = Vector2(2, 2)
-dialogo_victoria = ExtResource("3_tdshe")
+script = ExtResource("2_h71hj")
+npc_name = "Alumno Nerd"
+id = ""
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("4_o6fue")
 
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+light_mask = 1
+visibility_layer = 1
+position = Vector2(-0.166667, 1.5)
+
+[node name="Dialogo Quest" parent="." index="4"]
+vacio = true
+dialogueResource = SubResource("Resource_tdshe")
+dialogo_alternativo = SubResource("Resource_10grf")
+
 [node name="Dialogo Default" parent="." index="5"]
 dialogueResource = ExtResource("5_rt6xu")
+
+[node name="NpcQuestIndicador" parent="." index="6"]
+offset_left = 1.0
+offset_top = 14.5
+offset_right = 17.0
+offset_bottom = 30.5
+grow_horizontal = 1
+
+[editable path="NpcQuestIndicador"]

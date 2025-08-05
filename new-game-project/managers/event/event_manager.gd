@@ -9,9 +9,9 @@ func initialize(Events: Array[String]):
 	
 
 func addEvent(event: String):
-	if events.find(event) == -1:
-		events.append(event)
-		event_added.emit(event)
+	#if events.find(event) == -1:
+	events.append(event)
+	event_added.emit(event)
 
 func getEvents() -> Array[String]:
 	return events

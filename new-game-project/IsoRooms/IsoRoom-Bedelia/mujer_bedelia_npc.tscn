@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://ckfbm7hlw3f7l"]
+
+[ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_bq4m8"]
+[ext_resource type="Texture2D" uid="uid://bxoc5fehgjgi3" path="res://art/characters/iso/npc/Mujer de pie.png" id="2_hqoyr"]
+[ext_resource type="Resource" uid="uid://ba4qlk0qvr145" path="res://IsoRooms/IsoRoom-Bedelia/QuestBedelia.tres" id="2_xg6t4"]
+[ext_resource type="Resource" uid="uid://b4e3wx412orli" path="res://IsoRooms/IsoRoom-Bedelia/dialogo_intro_bedelia.tres" id="3_b7j6q"]
+[ext_resource type="Resource" uid="uid://kbegk088u6kd" path="res://IsoRooms/IsoRoom-Bedelia/default_bedelia.tres" id="4_b7j6q"]
+[ext_resource type="AudioStream" uid="uid://xe3m817pv17o" path="res://art/music-sfx/RPG_Music_Orchestra/hmms-various-1-7175.mp3" id="6_5o7nw"]
+
+[node name="Npc" instance=ExtResource("1_bq4m8")]
+npc_name = "Carolina"
+quest = ExtResource("2_xg6t4")
+id = "npcCarolina"
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(4, -45)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_hqoyr")
+
+[node name="Area2D" parent="." index="2"]
+scale = Vector2(-6.86667, 3.52124)
+
+[node name="Dialogo Quest" parent="." index="4"]
+dialogueResource = ExtResource("3_b7j6q")
+
+[node name="Dialogo Default" parent="." index="5"]
+dialogueResource = ExtResource("4_b7j6q")
+
+[node name="NpcQuestIndicador" parent="." index="6"]
+offset_right = 34.0
+offset_bottom = 33.0
+grow_horizontal = 1
+
+[node name="AudioStreamPlayer" parent="." index="7"]
+stream = ExtResource("6_5o7nw")
+
+[editable path="NpcQuestIndicador"]

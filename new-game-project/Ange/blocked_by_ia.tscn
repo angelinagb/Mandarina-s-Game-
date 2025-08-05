@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://tvol23dp2xex"]
+
+[ext_resource type="PackedScene" uid="uid://cyif0m3rl1hoj" path="res://visuals/Notificacion GUI/Notification.tscn" id="1_yi8a4"]
+[ext_resource type="Script" uid="uid://cgi41noxypjft" path="res://Ange/ia_notif.gd" id="2_8dwrp"]
+[ext_resource type="AudioStream" uid="uid://bw14d4tvrkirx" path="res://Ange/error-04-199275.mp3" id="2_u5nqb"]
+[ext_resource type="FontFile" uid="uid://c48homm7y5ftp" path="res://art/Fonts/Audiowide-Regular.ttf" id="3_8dwrp"]
+
+[node name="IA_NOTIF" instance=ExtResource("1_yi8a4")]
+script = ExtResource("2_8dwrp")
+
+[node name="PanelContainer" parent="Control" index="0"]
+modulate = Color(0.666667, 0.933333, 0.647059, 1)
+
+[node name="Titulo" parent="Control/PanelContainer/MarginContainer/VBoxContainer" index="0"]
+theme_override_fonts/font = ExtResource("3_8dwrp")
+text = "🤖 MENSAJE DE LA IA:"
+
+[node name="Descripcion" parent="Control/PanelContainer/MarginContainer/VBoxContainer" index="1"]
+theme_override_fonts/font = ExtResource("3_8dwrp")
+text = "¿Eso fue un intento? Fascinante."
+
+[node name="sound" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("2_u5nqb")

@@ -22,15 +22,38 @@ var current: IsoRoom
 var abilities_points: Dictionary
 var abilities_available_points: Dictionary
 
+var notifications ={
+"item_notification": preload("res://visuals/Notificacion GUI/Instancias/item_picked_up_notif.tscn"), 
+"key_notification" :preload("res://Ange/notif_llave.tscn"),
+"door_blocked_notification": preload("res://Ange/door_blocked_notification.tscn")
+}
+
+
 func save_this():
-	var ability_points : Dictionary = {"Points": 10}
+	var ability_points : Dictionary = {"Points": 1}
 	var abilities: Dictionary = {
 		"Estudio": [0, 5],
-		"Animales": [0, 5],
-		"Carisma": [0, 5]
+		"Carisma": [0, 5],
+		"Imaginacion": [0, 5]
 	}
 	
 	var items = {
+		"Key": {
+			"id": "key",
+			"name":"Key",
+			"desc": "La llave de alguna puerta de la facultad",
+			"path_img": "res://art/menu/Icons_Essential/v1.2/Icons/Key.png",
+			"is_in_world": true,
+			"is_in_player": false
+		},
+		"Pendrive": {
+			"id": "pendrive",
+			"name":"pendrive",
+			"desc": "Un contenedor binario de informacion,que agradable",
+			"path_img": "res://art/items/pendrive.png",
+			"is_in_world": true,
+			"is_in_player": false
+		},
 		"Mate": {
 			"id": "Mate",
 			"name": "Mate",
@@ -39,10 +62,18 @@ func save_this():
 			"is_in_world": true,
 			"is_in_player": false
 		},
-		"Termo": {
-			"id": "Termo",
-			"name": "Termo",
-			"desc": "el item 1",
+		"Termo Vacio": {
+			"id": "Termo Vacio",
+			"name": "Termo Vacio",
+			"desc": "¿Que puedo llegar a hacer con esto? Puede ser un arma...",
+			"path_img": "res://art/items/termo.png",
+			"is_in_world": true,
+			"is_in_player": false
+		},
+		"Termo Lleno": {
+			"id": "Termno Lleno",
+			"name": "Termo Lleno",
+			"desc": "Ahora tiene agua hirviendo! Un arma mejorada...",
 			"path_img": "res://art/items/termo.png",
 			"is_in_world": true,
 			"is_in_player": false
@@ -52,6 +83,46 @@ func save_this():
 			"name": "Yerba",
 			"desc": "el item 2",
 			"path_img": "res://art/items/yerba.png",
+			"is_in_world": true,
+			"is_in_player": false
+		},
+		"Capitulo0": {
+			"id": "Capitulo0",
+			"name": "Introducción",
+			"desc": "El capitulo 1 de la tesis.",
+			"path_img": "res://art/items/book.png",
+			"is_in_world": true,
+			"is_in_player": false
+		},
+		"Capitulo1": {
+			"id": "Capitulo1",
+			"name": "Capitulo 1",
+			"desc": "El capitulo 1 de la tesis.",
+			"path_img": "res://art/items/book.png",
+			"is_in_world": true,
+			"is_in_player": false
+		},
+		"Capitulo2": {
+			"id": "Capitulo2",
+			"name": "Capitulo 2",
+			"desc": "El capitulo 2 de la tesis.",
+			"path_img": "res://art/items/book.png",
+			"is_in_world": true,
+			"is_in_player": false
+		},
+		"Capitulo3": {
+			"id": "Capitulo3",
+			"name": "Capitulo 3",
+			"desc": "El capitulo 3 de la tesis.",
+			"path_img": "res://art/items/book.png",
+			"is_in_world": true,
+			"is_in_player": false
+		},
+		"Capitulo4": {
+			"id": "Capitulo4",
+			"name": "Capitulo 4",
+			"desc": "El capitulo 4 de la tesis.",
+			"path_img": "res://art/items/book.png",
 			"is_in_world": true,
 			"is_in_player": false
 		}
@@ -85,7 +156,7 @@ func save_setup(room_save: Dictionary):
 	save_manager.save_dict(abilities_available_points, "AbilityAvailablePoints")
 
 func load_setup():
-	var player_setup: Dictionary = save_manager.load_dict("PlayerSetup")
+	var _player_setup: Dictionary = save_manager.load_dict("PlayerSetup")
 	var room_setup: Dictionary = save_manager.load_dict("RoomSetup")
 	
 	var items: Dictionary = save_manager.load_dict("Items")
@@ -94,10 +165,12 @@ func load_setup():
 	abilities_available_points = save_manager.load_dict("AbilityAvailablePoints")
 	
 	inventory.initialize(items)
+	inventory.game_ended.connect(on_game_ended)
 	
 	event.initialize([])
 	
 	quest.initialize(event, [])
+	quest.quest_ended.connect(_on_quest_ended)
 	
 	initialize_room(room_setup.actual_room, room_setup.prev_room)
 	
@@ -114,8 +187,6 @@ func _on_interactable_interacted(interactable: Interactable):
 	#rehacer quest step para que acepte ID de cualquier interactuable
 	#Falta guardar estado de items al cambiar de rooms
 	#SEPARAR INTERACTABLES EN FASES, FASE 1, 2, ETC
-	print("señal conectada")
-	print(interactable.my_type)
 	match interactable.my_type:
 		"item":
 			_on_item_grabbed(interactable)
@@ -124,38 +195,61 @@ func _on_interactable_interacted(interactable: Interactable):
 		"npc":
 			await _on_npc_talked_to(interactable)
 		"puzzle":
-			print("match ok")
 			await _on_puzzle_begin(interactable)
+		"activator":
+			await _on_activator_activate(interactable)
 		_:
-			print("no tengo interactuable" + interactable.my_type)
+			print("no tengo interactuable" + interactable.my_type + interactable.getId())
 	
+
 	event.interactable_triggered(interactable.id)
 	
 
 func _on_item_grabbed(item: Item) -> void:
-	inventory.item_grabbed(item.getId())
+	if item is Key:
+		item = item as Key
+		inventory.new_key(item.open_room_id)
+		new_notification(item.nombre_room, notifications.key_notification)
+	else:
+		inventory.item_grabbed(item.getId())
+		var item_name = inventory.get_item_data(item.getId())["name"]
+		new_notification(item_name,notifications.item_notification)
 	item.end()
 
 func _on_transitioner_activated(transitioner: Transitioner) -> void:
-	var room_id: String = transitioner.get_room_id()
-	change_room(room_id, current_room_id)
-	current_room_id = room_id
+	if transitioner.necesary_key and !inventory.has_key(transitioner.room_id):
+			NotificationManager.enqueue_event(notifications.door_blocked_notification)
+	else:
+		transitioner.door_sound_open.play()
+		await transitioner.door_sound_open.finished
+		
+		if transitioner.quest != null :
+			transitioner.take_room_quest()
+			quest.add_quest(transitioner.quest)
+		var room_id: String = transitioner.get_room_id() 
+
+		change_room(room_id, current_room_id)
+		current_room_id = room_id
 
 func _on_npc_talked_to(npc: Npc) -> void:
+	if npc is Merchant:
+		npc.request_item_check.connect(_on_item_check_requested)
+		npc.n_item.interacted.connect(_on_interactable_interacted)
+	elif npc.gives_item != "":
+		npc.node_item.interacted.connect(_on_interactable_interacted)
+	npc.item_used.connect(_on_item_used)
 	npc.startDialogue()
-	print("hablando con npc---")
 	await npc.dialogue_ended
+	
 	if npc.quest_available():
 		npc.take_quest()
 		quest.add_quest(npc.quest)
 		
-		
+
 		
 func _on_puzzle_begin(puzzle : Interactable):
 		var dapuzzle = puzzle.puzzle_tcsn.instantiate()
 		add_child(dapuzzle)
-		print("llega")
-		show_behind_parent
 		#player.pause_player()
 		#var screen_size = get_viewport_rect().size
 		#puzzle_instance.position = screen_size / 2
@@ -167,9 +261,12 @@ func _on_puzzle_begin(puzzle : Interactable):
 func initialize_room(path_room: String, temp: String ):
 	current = room_manager.initialize(path_room)
 	current.interactable_interacted.connect(_on_interactable_interacted)
+	#current.item_used.connect(self._on_item_used)
+	
 	player = current.get_player()
 	player.initialize(current.get_position_spawn(temp))
 
+@warning_ignore("shadowed_variable")
 func change_room(new_room_id: String, current_room_id: String):
 	var room_save: Dictionary = {
 		"actual_room": new_room_id,
@@ -183,6 +280,7 @@ func change_room(new_room_id: String, current_room_id: String):
 	player = current.get_player()
 	
 	current.interactable_interacted.connect(_on_interactable_interacted)
+	#current.item_used.connect(_on_item_used)
 	
 	player.move_to(current.get_position_spawn(current_room_id))
 
@@ -202,9 +300,26 @@ func on_puzzle_solved(Reward: String) :
 	inventory.item_grabbed(Reward)
 	player.resume_player()
 
+func _on_quest_begin(interactable: Interactable):
+	quest.add_quest(interactable.the_quest)
+
+func _on_activator_activate(interactable: Activator):
+	if interactable.has_method("get_type_abilitie") and interactable.has_method("get_amount_abilitie"):
+		if abilities_points[interactable.get_type_abilitie()][0] >= interactable.get_amount_abilitie():
+			interactable.feedback(true)
+			var item = Item.new()
+			item.id = interactable.item_id
+			item.my_type = "item"
+			_on_interactable_interacted(item)
+			
+		else: 
+			interactable.feedback(false)
+	#QueueManager.enqueue_event(interactable.activable)
+	pass
 
 #func _on_inventory_manager_item_updated(item: Dictionary) -> void:
-	#pass # Replace with function body.
+	#menu.on_item_updated(item)
+	#print()
 #
 #
 #func _on_quest_manager_quest_updated(quest: Quest) -> void:
@@ -214,3 +329,34 @@ func on_puzzle_solved(Reward: String) :
 #func _on_event_manager_event_added(event: String) -> void:
 	#pass # Replace with function body.
 	
+
+
+
+func _on_menu_quest_updated(quest_upd: Quest) -> void:
+	quest.update_quest(quest_upd)
+
+func on_game_ended():
+	add_child(load("res://Franco/Franco/end.tscn").instantiate())
+
+
+func _on_item_used(item_id):
+	inventory.item_used(item_id)
+
+
+
+func _on_item_check_requested(item_id, merchant_ref):
+	var result = inventory.get_items_in_player().has(item_id)
+	print("→ [World] Emitiendo hacia ", merchant_ref.name, ", resultado: ", result)
+	merchant_ref.response_item_check.emit(result, item_id)
+
+
+func new_notification(desc: String, scene: PackedScene):
+	var temp = scene.instantiate()
+	var personalizada = temp.get_personalized_scene(desc)
+	NotificationManager.enqueue_event(personalizada)
+
+
+func _on_quest_ended():
+	abilities_available_points["Points"] +=1
+	menu.on_abilities_updated(abilities_available_points["Points"],abilities_points)
+	NotificationManager.enqueue_event(preload("res://pointabilitienotif.tscn"))

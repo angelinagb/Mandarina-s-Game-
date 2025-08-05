@@ -20,17 +20,17 @@ func _on_interactuable_cambiado(i):
 	interact_button.disabled = i == null
 	if (i) and i.has_method("get_type"):
 		var type = i.get_type()
-		print(type)
 		 #default
 		match type:
 			"item"			: button_text = "pick up"
 			"npc"			: button_text = "talk"
-			"transitioner"	: button_text = "to-room"
+			"transitioner"	: button_text = i.get_to_room_name()
 			"activator"		: button_text = "use"
 
 		interact_button.text = button_text
 	
 func _on_interact_button_pressed() -> void:
+	interact_button.disabled = true
 	InteractionManager.interact()
 
 

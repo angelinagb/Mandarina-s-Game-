@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds27s5dlfj5al"]
+
+[ext_resource type="PackedScene" uid="uid://cyif0m3rl1hoj" path="res://visuals/Notificacion GUI/Notification.tscn" id="1_rkbv1"]
+[ext_resource type="AudioStream" uid="uid://dm8vrneajg2oy" path="res://art/music-sfx/RPG_Music_Orchestra/collect-points-190037.mp3" id="2_4ipq1"]
+
+[node name="New_Mision_Notification" instance=ExtResource("1_rkbv1")]
+tiempo_que_aparece = 1.5
+
+[node name="Titulo" parent="Control/PanelContainer/MarginContainer/VBoxContainer" index="0"]
+text = "¡Nueva misión disponible!"
+
+[node name="Descripcion" parent="Control/PanelContainer/MarginContainer/VBoxContainer" index="1"]
+text = "Abre tu mochila para mas detalles"
+
+[node name="sound" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("2_4ipq1")

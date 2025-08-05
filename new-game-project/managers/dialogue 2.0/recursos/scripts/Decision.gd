@@ -16,3 +16,5 @@ func get_texto_opciones() -> PackedStringArray:
 func get_recurso_dialogo_de_decision_elegida(indice : int) -> Opcion:
 	return array_opciones[indice]
  
+func get_type_decision_elegida(indice: int) -> String :
+	return array_opciones[indice].get_type()

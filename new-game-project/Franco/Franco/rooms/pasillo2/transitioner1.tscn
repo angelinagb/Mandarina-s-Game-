@@ -4,3 +4,4 @@
 
 [node name="Transitioner" instance=ExtResource("1_gc64c")]
 room_id = "ROOM-ENTRADA"
+to_room_name = "to-room"

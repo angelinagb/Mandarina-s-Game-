@@ -35,6 +35,9 @@ func _on_key_pressed(note: String) -> void:
 			finished.emit()
 			on_puzzle_solved.emit("Chocolate")
 			current_index = 0  # o podés cambiar de nivel
+			
+			var inventory_manager = get_node("/root/Main/World/InventoryManager")
+			inventory_manager.item_grabbed("Capitulo4")
 	else:
 		print("❌ Error. Esperaba:", target_sequence[current_index])
 		feedback_error()
@@ -47,12 +50,19 @@ func feedback_error():
 	await get_tree().create_timer(0.5).timeout
 	print("restarting secuence")
 	canvas_modulate.color ="ffffff"
+	puzzle_result.emit(false)
+	queue_free()
+	end()
+	
 	
 
 func feedback_win():
 	canvas_modulate.color = "76ff6d"
 	play_feedback_sound("win")
 	await get_tree().create_timer(2.02).timeout
+	puzzle_result.emit(true)
+	queue_free()
+	end()
 	
 
 func play_feedback_sound(type: String):
@@ -70,3 +80,9 @@ func play_feedback_sound(type: String):
 func hidep():
 	for key in get_tree().get_nodes_in_group("piano_keys"):
 		key.disable = true 
+
+
+func _on_button_pressed() -> void:
+	queue_free()
+	end()
+	puzzle_result.emit(false)

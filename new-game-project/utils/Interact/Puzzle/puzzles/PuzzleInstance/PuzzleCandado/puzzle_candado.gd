@@ -26,6 +26,7 @@ func check_solution():
 	if ACTUAL_COMBINATION == CORRECT_COMBINATION:
 		await update_response_label("¡Abriste el candado!")
 		end_puzzle(true)
+		
 	else:
 		await update_response_label("¡Fallaste abriendo el candado!")
 		open_popup_menu()

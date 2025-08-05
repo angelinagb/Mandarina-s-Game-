@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_0tluj")
-arreglo_de_textos = PackedStringArray("No puedo esperar a que sea mediodía para irme de aca", "Quiere llegar a casa y dormir todo el día", "Encima se vienen parciales, no tengo tiempo de nada", "(Son solo son estudiantes quejandose, no tiene relevancia con el stock faltante)")
+arreglo_de_textos = PackedStringArray("No puedo esperar a que sea mediodía para irme de aca", "Quiero llegar a casa y dormir todo el día", "Encima se vienen parciales, no tengo tiempo de nada", "(Son solo son estudiantes quejandose, no tiene relevancia con el stock faltante)")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"

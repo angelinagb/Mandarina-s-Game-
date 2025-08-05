@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_uibiu")
-arreglo_de_textos = PackedStringArray("Gracias por ayudarme, ya me siento más en paz", "Suerte con el nerd")
+arreglo_de_textos = PackedStringArray("Gracias por ayudarme, ya me siento más en paz")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"

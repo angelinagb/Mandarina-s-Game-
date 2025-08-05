@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbkkwwggkmh6l"]
+
+[ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_62w5j"]
+[ext_resource type="Texture2D" uid="uid://ypnhxbwfijf2" path="res://art/characters/iso/npc/man_suit_case.png" id="2_nsufu"]
+
+[node name="Npc" instance=ExtResource("1_62w5j")]
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(2, -6)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_nsufu")
+
+[node name="NpcQuestIndicador" parent="." index="6"]
+offset_left = 16.0
+offset_top = -59.0
+offset_right = 48.0
+offset_bottom = -27.0

@@ -39,17 +39,17 @@ script = ExtResource("1_l277l")
 
 [node name="Quests Info" type="VBoxContainer" parent="CanvasLayer"]
 custom_minimum_size = Vector2(150, 100)
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -50.0
-offset_right = 150.0
-offset_bottom = 50.0
-grow_vertical = 2
+offset_left = 1.0
+offset_top = 24.0
+offset_right = 151.0
+offset_bottom = 126.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Quests Info"]
 visible = false
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_l277l")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Quests Info/PanelContainer"]
@@ -64,10 +64,12 @@ layout_mode = 2
 
 [node name="Titulo" type="Label" parent="CanvasLayer/Quests Info/PanelContainer/MarginContainer/Active Main Quest"]
 layout_mode = 2
+text = "TItulo Quest"
 label_settings = SubResource("LabelSettings_05jgr")
 
 [node name="Step" type="Label" parent="CanvasLayer/Quests Info/PanelContainer/MarginContainer/Active Main Quest"]
 layout_mode = 2
+text = "PasoPasoPaso"
 label_settings = SubResource("LabelSettings_iipj2")
 
 [node name="PanelContainer2" type="PanelContainer" parent="CanvasLayer/Quests Info"]
@@ -87,8 +89,21 @@ layout_mode = 2
 
 [node name="Titulo" type="Label" parent="CanvasLayer/Quests Info/PanelContainer2/MarginContainer/Active Secondary Quest"]
 layout_mode = 2
+text = "Titulo QUest"
 label_settings = SubResource("LabelSettings_4cjpl")
 
 [node name="Quest" type="Label" parent="CanvasLayer/Quests Info/PanelContainer2/MarginContainer/Active Secondary Quest"]
 layout_mode = 2
+text = "PASOPASOPASO"
 label_settings = SubResource("LabelSettings_bdoti")
+
+[node name="CheckButton" type="CheckButton" parent="CanvasLayer"]
+visible = false
+offset_left = -2.0
+offset_top = -16.0
+offset_right = 198.0
+offset_bottom = 40.0
+button_pressed = true
+text = "Show Active Quests"
+
+[connection signal="toggled" from="CanvasLayer/CheckButton" to="." method="_on_check_button_toggled"]

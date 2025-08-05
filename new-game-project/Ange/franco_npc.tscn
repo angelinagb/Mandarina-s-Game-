@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bd60j0ppl5sbm"]
+
+[ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_86w2h"]
+[ext_resource type="Texture2D" uid="uid://dnv4bv46vfof2" path="res://art/characters/iso/npc/clint_bellanger_isometric_programador_npc.png" id="2_p2h21"]
+[ext_resource type="Resource" uid="uid://bin2w80ucewvn" path="res://Ange/profe_franco_dialogo.tres" id="3_p2h21"]
+[ext_resource type="Resource" uid="uid://brhq08dyercow" path="res://Ange/franco_dialogo_default.tres" id="4_0it1q"]
+[ext_resource type="AudioStream" uid="uid://ewfn75wft2tv" path="res://utils/Interact/Npc/086386_approving-hmwav-40089.mp3" id="5_tacij"]
+
+[node name="Npc" instance=ExtResource("1_86w2h")]
+npc_name = "Profe Franco"
+id = "PROFE_FRANCO_NPC"
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_p2h21")
+hframes = 6
+
+[node name="Dialogo Quest" parent="." index="4"]
+dialogueResource = ExtResource("3_p2h21")
+
+[node name="Dialogo Default" parent="." index="5"]
+dialogueResource = ExtResource("4_0it1q")
+
+[node name="NpcQuestIndicador" parent="." index="6"]
+offset_right = 34.0
+offset_bottom = 33.0
+grow_horizontal = 1
+scale = Vector2(0.575237, 0.600918)
+
+[node name="TextureRect" parent="NpcQuestIndicador" index="0"]
+anchors_preset = -1
+anchor_top = -2.496
+offset_left = -35.1226
+offset_top = -0.00579071
+offset_right = 28.8774
+offset_bottom = -31.8778
+
+[node name="AudioStreamPlayer" parent="." index="7"]
+stream = ExtResource("5_tacij")
+
+[editable path="NpcQuestIndicador"]

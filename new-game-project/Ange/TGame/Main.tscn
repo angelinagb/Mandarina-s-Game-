@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://crnvtsuvvschn"]
+
+[ext_resource type="PackedScene" uid="uid://bgjvuht5rv4ms" path="res://utils/Interact/Puzzle/puzzles/puzzle.tscn" id="1_i1gog"]
+
+[node name="Puzzle" instance=ExtResource("1_i1gog")]

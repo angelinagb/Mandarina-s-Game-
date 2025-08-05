@@ -1,36 +1,39 @@
 [gd_scene load_steps=4 format=3 uid="uid://b5387jnlpjppi"]
 
+[ext_resource type="Texture2D" uid="uid://datninidv12ma" path="res://art/menu/Icons_Essential/v1.2/Icons/Power.png" id="1_3swm3"]
 [ext_resource type="Script" uid="uid://kqf1slqsp0t6" path="res://visuals/abilities_menu/upgrade_button.gd" id="1_12u02"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_12u02"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2ppci"]
 shadow_color = Color(0, 0, 0, 1)
 
 [node name="upgradeButton" type="TextureButton"]
-offset_right = 64.0
-offset_bottom = 64.0
+custom_minimum_size = Vector2(64, 64)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 toggle_mode = true
-action_mode = 0
-texture_normal = SubResource("CompressedTexture2D_12u02")
-ignore_texture_size = true
-stretch_mode = 5
+texture_normal = ExtResource("1_3swm3")
+stretch_mode = 0
 script = ExtResource("1_12u02")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -32.0
-offset_top = -32.0
-grow_horizontal = 0
+offset_left = -27.0001
+offset_top = -51.0
+offset_right = 49.9999
+offset_bottom = 18.0
+grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(0.717088, 0.784225)
 size_flags_vertical = 8
-theme_override_font_sizes/font_size = 20
 text = "0/5"
 label_settings = SubResource("LabelSettings_2ppci")
-horizontal_alignment = 2
+horizontal_alignment = 1
 vertical_alignment = 2

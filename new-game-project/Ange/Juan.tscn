@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://chs0k71ajke58"]
+
+[ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_kfbve"]
+[ext_resource type="Texture2D" uid="uid://b341gjt3lvvwc" path="res://Franco/Franco/Npcs/AlumnoNro1/AlumnoNro1.png" id="2_itek3"]
+[ext_resource type="Resource" uid="uid://x4tigv2syvn7" path="res://Ange/dialogoJquimica.tres" id="2_wsdmm"]
+
+[node name="Npc" instance=ExtResource("1_kfbve")]
+npc_name = "Juan"
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.256166, 0.202832)
+texture = ExtResource("2_itek3")
+
+[node name="Dialogo Quest" parent="." index="4"]
+dialogueResource = ExtResource("2_wsdmm")
+
+[node name="Dialogo Default" parent="." index="5"]
+vacio = true
+
+[editable path="NpcQuestIndicador"]

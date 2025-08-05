@@ -22,3 +22,4 @@ func start_dialogue(text: String) -> void:
 	text_label.text = ""
 	text_label.hide()
 	canvas.hide()
+	

@@ -47,7 +47,8 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "¡Felicitaciones!"
+text = "¡Felicitaciones!
+Gracias por jugar esta demo"
 label_settings = SubResource("LabelSettings_rjjqa")
 horizontal_alignment = 1
 

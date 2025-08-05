@@ -1,65 +1,99 @@
 class_name QuestManager
 extends Node
 
+signal quest_ended()
 signal new_active_secondary_quest(quest: Quest)
 signal quest_updated(quest: Quest)
 signal all_level_quest_completed
 
 var taken_quests: Array[Quest] = []
-var active_primary_quest : Quest = null
-var active_secondary_quest : Quest = null
+var completed_quest: Array[Quest] = []
+var active_primary_quest: Quest = null
+var active_secondary_quest: Quest = null
 var event_manager: EventManager
-@onready var titulo_main : Label = $"CanvasLayer/Quests Info/PanelContainer/MarginContainer/Active Main Quest/Titulo"
-@onready var step_main : Label= $"CanvasLayer/Quests Info/PanelContainer/MarginContainer/Active Main Quest/Step"
-@onready var titulo_secondary : Label= $"CanvasLayer/Quests Info/PanelContainer2/MarginContainer/Active Secondary Quest/Titulo"
-@onready var step_secondary : Label = $"CanvasLayer/Quests Info/PanelContainer2/MarginContainer/Active Secondary Quest/Quest"
-@onready var ui_main : PanelContainer = $"CanvasLayer/Quests Info/PanelContainer"
-@onready var ui_secondary : PanelContainer = $"CanvasLayer/Quests Info/PanelContainer2"
 
+@onready var titulo_main: Label = $"CanvasLayer/Quests Info/PanelContainer/MarginContainer/Active Main Quest/Titulo"
+@onready var step_main: Label = $"CanvasLayer/Quests Info/PanelContainer/MarginContainer/Active Main Quest/Step"
+@onready var titulo_secondary: Label = $"CanvasLayer/Quests Info/PanelContainer2/MarginContainer/Active Secondary Quest/Titulo"
+@onready var step_secondary: Label = $"CanvasLayer/Quests Info/PanelContainer2/MarginContainer/Active Secondary Quest/Quest"
+@onready var ui_main: PanelContainer = $"CanvasLayer/Quests Info/PanelContainer"
+@onready var ui_secondary: PanelContainer = $"CanvasLayer/Quests Info/PanelContainer2"
+@onready var quests_info: VBoxContainer = $"CanvasLayer/Quests Info"
 
-func set_main(titulo : String, step : String):
+func set_main(titulo: String, step: String):
 	titulo_main.text = titulo
 	step_main.text = step
-	if(titulo == "" and step == ""):
+	if (titulo == "" and step == ""):
 		ui_main.hide()
 	else:
 		ui_main.show()
-	
-func set_secondary(titulo : String, step : String):
+		quests_info.visible = true
+
+func set_secondary(titulo: String, step: String):
 	titulo_secondary.text = titulo
 	step_secondary.text = step
-	if(titulo == "" and step == ""):
+	if (titulo == "" and step == ""):
 		ui_secondary.hide()
 	else:
 		ui_secondary.show()
+		quests_info.visible = true
 
-
+@warning_ignore("shadowed_variable")
 func initialize(event_manager: EventManager, taken_quests: Array[Quest]):
 	self.event_manager = event_manager
 	event_manager.event_added.connect(on_event_added)
-	
 	self.taken_quests = taken_quests
-	
+
 func on_quest_finished(title):
-	set_main("","")
-	set_secondary("","")
-	
-	
+	var ended_quest = get_quest_by_title(title)
+	if ended_quest == null:
+		print("⚠️ Quest con título '%s' no encontrada o ya completada." % title)
+		return
+
+	# Mostrar popup de quest completada
+	var quest_completed_scene = preload("res://Ange/quest_completed_notif.tscn")
+	var temp = quest_completed_scene.instantiate()
+	var personalizada = temp.get_personalized_scene(title)
+	NotificationManager.enqueue_event(personalizada)
+
+	# Actualizar listas
+	completed_quest.append(ended_quest)
+	taken_quests.erase(ended_quest)
+
+	# Actualizar quests activas
+	if ended_quest == active_primary_quest:
+		active_primary_quest = get_next_primary()
+		if active_primary_quest:
+			set_main(active_primary_quest.title, safe_get_step(active_primary_quest))
+		else:
+			set_main("", "")
+	elif ended_quest == active_secondary_quest:
+		active_secondary_quest = get_next_Secondary()
+		if active_secondary_quest:
+			set_secondary(active_secondary_quest.title, safe_get_step(active_secondary_quest))
+			new_active_secondary_quest.emit(active_secondary_quest)
+		else:
+			set_secondary("", "")
+			
+	quest_ended.emit()
+
 func add_quest(quest: Quest) -> void:
-	if not taken_quests.has(quest):
-		quest.quest_ended.connect(on_quest_finished)
+	if get_quest_by_title(quest.title) == null:
+		NotificationManager.enqueue_event(preload("res://new_quest_notification.tscn"))
+		if not quest.quest_ended.is_connected(on_quest_finished):
+			quest.quest_ended.connect(on_quest_finished)
 		taken_quests.append(quest)
+
 		if quest.is_secondary and active_secondary_quest == null:
 			active_secondary_quest = quest
-			set_secondary(quest.title, quest.get_current_step().text_to_do)
+			set_secondary(quest.title, safe_get_step(quest))
 			new_active_secondary_quest.emit(quest)
-		else:
-			if !quest.is_secondary and active_primary_quest == null:
-				active_primary_quest = quest
-			set_main(quest.title, quest.get_current_step().text_to_do)
+		elif not quest.is_secondary and active_primary_quest == null:
+			active_primary_quest = quest
+			set_main(quest.title, safe_get_step(quest))
+
 		quest_updated.emit(quest)
-		
-		
+		$CanvasLayer/CheckButton.visible = true
 
 func on_event_added(event: String) -> void:
 	for quest in taken_quests:
@@ -67,6 +101,8 @@ func on_event_added(event: String) -> void:
 			var edited: bool = quest.register_interactable(event)
 			if edited:
 				quest_updated.emit(quest)
+				if quest.is_completed():
+					quest.quest_ended.emit(quest.title)
 
 func get_quest_by_title(title: String) -> Quest:
 	for quest in taken_quests:
@@ -77,13 +113,41 @@ func get_quest_by_title(title: String) -> Quest:
 func get_active_quests() -> Array[Quest]:
 	return taken_quests.filter(func(q): return not q.is_completed())
 
-
 func _on_menu_secondary_quest_picked(title: String) -> void:
-	var picked_quest : Quest = get_quest_by_title(title)
+	var picked_quest: Quest = get_quest_by_title(title)
 	if picked_quest != active_secondary_quest:
 		active_secondary_quest = picked_quest
-		set_secondary(picked_quest.title, picked_quest.get_current_step().text_to_do)
+		set_secondary(picked_quest.title, safe_get_step(picked_quest))
 		quest_updated.emit(picked_quest)
-		
+
 func finished_level():
 	all_level_quest_completed.emit()
+
+func _on_check_button_toggled(toggled_on: bool) -> void:
+	quests_info.visible = toggled_on
+
+func update_quest(quest: Quest) -> void:
+	if quest == active_primary_quest:
+		set_main(quest.title, safe_get_step(quest))
+	elif quest == active_secondary_quest:
+		set_secondary(quest.title, safe_get_step(quest))
+
+func get_next_primary() -> Quest:
+	for quest in taken_quests:
+		if not quest.is_secondary:
+			return quest
+	return null
+
+func get_next_Secondary() -> Quest:
+	for quest in taken_quests:
+		if quest.is_secondary:
+			return quest
+	return null
+
+# Utilidad: evita null en get_current_step()
+func safe_get_step(quest: Quest) -> String:
+	var step = quest.get_current_step()
+	if step != null:
+		return step.text_to_do
+	else:
+		return ""

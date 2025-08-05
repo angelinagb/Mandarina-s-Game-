@@ -1,18 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://dymo47m6k6uqb"]
+[gd_scene load_steps=9 format=3 uid="uid://dymo47m6k6uqb"]
 
 [ext_resource type="PackedScene" uid="uid://mvhkwj4slyyt" path="res://utils/Interact/Interactable/interactable.tscn" id="1_k5sc4"]
 [ext_resource type="Script" uid="uid://dwqxbk43d6bwm" path="res://utils/Interact/Npc/npc.gd" id="2_x63vy"]
 [ext_resource type="PackedScene" uid="uid://bqscndmb0v4br" path="res://managers/dialogue 2.0/dialogue_system.tscn" id="3_ghgua"]
 [ext_resource type="PackedScene" uid="uid://iuedtyho3pq5" path="res://visuals/npc GUI/npc_quest_indicador.tscn" id="4_mkqov"]
 [ext_resource type="Texture2D" uid="uid://cmbhdp0rhrnn5" path="res://art/characters/iso/GirlSample/playerShadow.png" id="5_4cdph"]
+[ext_resource type="AudioStream" uid="uid://dsbxxk6ggfeql" path="res://utils/Interact/Npc/hmm-oh-6957.mp3" id="6_21rhp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4cdph"]
+radius = 15.1734
+height = 37.0904
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_21rhp"]
 radius = 6.18907
 
 [node name="Npc" instance=ExtResource("1_k5sc4")]
 script = ExtResource("2_x63vy")
+gives_item = ""
+npc_name = ""
 quest = null
 
 [node name="PlayerShadow" type="Sprite2D" parent="." index="0"]
@@ -25,7 +30,10 @@ texture = ExtResource("5_4cdph")
 scale = Vector2(3, 3)
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(-0.333333, -2)
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-0.333333, 11)
+scale = Vector2(1, 0.275367)
 shape = SubResource("CapsuleShape2D_4cdph")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="3"]
@@ -40,14 +48,27 @@ shape = SubResource("CircleShape2D_21rhp")
 [node name="Dialogo Default" parent="." index="5" instance=ExtResource("3_ghgua")]
 
 [node name="NpcQuestIndicador" parent="." index="6" instance=ExtResource("4_mkqov")]
-custom_minimum_size = Vector2(32, 32)
-offset_left = 22.0
-offset_top = -57.0
-offset_right = 54.0
-offset_bottom = -25.0
-scale = Vector2(0.747764, 0.80786)
-size_flags_horizontal = 0
-size_flags_vertical = 0
+custom_minimum_size = Vector2(16, 16)
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 18.0
+offset_bottom = 17.0
+grow_vertical = 1
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" parent="NpcQuestIndicador" index="0"]
+offset_left = -26.0
+offset_top = -93.0
+offset_right = 38.0
+offset_bottom = -29.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="7"]
+stream = ExtResource("6_21rhp")
 
 [connection signal="dialogue_ended" from="Dialogo Quest" to="." method="_on_dialogo_quest_dialogue_ended"]
 [connection signal="dialogue_ended" from="Dialogo Default" to="." method="_on_dialogo_default_dialogue_ended"]
+
+[editable path="NpcQuestIndicador"]

@@ -18,7 +18,8 @@ func enqueue_event(async_scene: PackedScene):
 	async_queue.append(async_scene)
 	if not is_playing:
 		_start_queue()
-		
+	else:
+		await QueueManager.finished
 func _start_queue():
 	is_playing = true
 	#no pausea arbol, ya que es asincronica la notificacion
@@ -36,3 +37,4 @@ func _process_queue() -> void:
 	await event_instance.finished  # Custom signal when the event is done
 	event_instance.queue_free()
 	_process_queue()
+ 

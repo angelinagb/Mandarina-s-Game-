@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://puq2d8b6klak"]
+
+[ext_resource type="PackedScene" uid="uid://cd4po1v8botyd" path="res://IsoRooms/IsoRoom0_Entrada/0_base_tiles_entrada.tscn" id="1_mb033"]
+[ext_resource type="PackedScene" uid="uid://lpb6bguiyou2" path="res://IsoRooms/IsoRoom6 -LabodeSyH/labo_syh_base_tiles.tscn" id="2_cirfc"]
+[ext_resource type="PackedScene" uid="uid://dboe44ingytfm" path="res://Franco/Franco/rooms/pasillo2/pasillo_2_base_tiles.tscn" id="3_4qwym"]
+[ext_resource type="PackedScene" uid="uid://ch4g0isb86j0w" path="res://IsoRooms/Depto/dpto_base_tiles.tscn" id="4_ot2vy"]
+[ext_resource type="PackedScene" uid="uid://dfp282bcn4bat" path="res://IsoRooms/IsoRoom1/1_base_tiles.tscn" id="6_cirfc"]
+[ext_resource type="PackedScene" uid="uid://df0eeq5en5tmr" path="res://IsoRooms/IsoRoom4-LabodeFisica/4_iso_room_labodefisica.tscn" id="7_ot2vy"]
+[ext_resource type="PackedScene" uid="uid://cevm1i60dkopp" path="res://IsoRooms/base_tiles.tscn" id="8_cwiy4"]
+
+[node name="Piso1" type="Node2D"]
+
+[node name="Entrada" parent="." instance=ExtResource("1_mb033")]
+
+[node name="Labo_syh_base_tiles" parent="." instance=ExtResource("2_cirfc")]
+z_index = 1
+position = Vector2(1019, -1022)
+metadata/_edit_horizontal_guides_ = [-140.0, -154.0, -666.0]
+
+[node name="Pasillo2" parent="." instance=ExtResource("3_4qwym")]
+z_index = -1
+position = Vector2(1787, -1152)
+
+[node name="BaseTiles" parent="." instance=ExtResource("4_ot2vy")]
+z_index = -4
+position = Vector2(987, -1142)
+metadata/_edit_horizontal_guides_ = [-140.0, -154.0, -666.0]
+
+[node name="BaseTiles4" parent="." instance=ExtResource("6_cirfc")]
+z_index = 4
+position = Vector2(4305, -634)
+metadata/_edit_horizontal_guides_ = [-140.0, -154.0, -666.0]
+
+[node name="LabodeFisica" parent="." instance=ExtResource("7_ot2vy")]
+z_index = 1
+position = Vector2(1764, -270)
+
+[node name="BaseTiles3" parent="." instance=ExtResource("8_cwiy4")]

@@ -25,3 +25,4 @@ script = ExtResource("1_lguep")
 [node name="PlayerB" parent="Player" instance=ExtResource("2_vdkr8")]
 
 [node name="RoomSounds" type="AudioStreamPlayer" parent="."]
+process_mode = 3

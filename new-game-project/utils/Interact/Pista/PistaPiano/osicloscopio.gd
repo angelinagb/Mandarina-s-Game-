@@ -43,9 +43,7 @@ func _on_close_pressed() -> void:
 	queue_free()
 
 func start():
-	process_mode= Node.PROCESS_MODE_ALWAYS
-	z_index = 1000
-	show_behind_parent = true 
+	pass
 
 func end():
 	process_mode= Node.PROCESS_MODE_INHERIT

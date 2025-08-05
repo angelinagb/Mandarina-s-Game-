@@ -2,23 +2,37 @@ extends Node2D
 class_name DialogueSystem
 
 #TODO señales si hay exito o falla el chequeo de hablidad
-#no deberia activarse de vuelta la animacion cuando empieza recursivamente otro dialogo
+#no deberia activarse de vuelta la animacion
+#cuando empieza recursivamente otro dialogo
 signal dialogue_ended
 signal finished
+signal deliver_item(item_id: String)
+signal use_item(item_id: String)
+signal puzzle_result(result)
+signal quest_accepted
+
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var next_text_button: Button = $CanvasLayer/PanelContainer/next_text_button
 @onready var anim_player : AnimationPlayer = $AnimationPlayer
 @onready var rich_text_label : RichTextLabel = $CanvasLayer/PanelContainer/VBoxContainer/RichTextLabel
 @onready var timer : Timer = $Timer
+
 @export var boton_decision : PackedScene
+
 @onready var margin_container : PanelContainer = %PanelContainer
 @onready var v_box_container : VBoxContainer = %VBoxContainer
 @export var destruirse_al_finalizar : bool
 var decision_actual : Decision
-@export var vacio : bool
+
+@export var vacio : bool #determina si se va a reproducir este dialogo o no.
+
+
+@onready var speaker_name: Label = $CanvasLayer/Speaker_Name
 
 ##Recurso con información sobre el diálogo a mostrar
 @export var dialogueResource : Dialogo
+@export var dialogo_alternativo: Dialogo
+
 @onready var canvas_layer : CanvasLayer = $CanvasLayer
 ## while text not empty
 var i : int
@@ -27,7 +41,7 @@ var text_length : int
 var text_count : int
 var current_state : States
 
-enum States {ABRIENDO, MOSTRANDO_TEXTO, TEXTO_MOSTRADO, CERRANDO}
+enum States {ABRIENDO, MOSTRANDO_TEXTO, TEXTO_MOSTRADO, CERRANDO, MOSTRANDO_DECISIONES}
 
 
 
@@ -48,23 +62,32 @@ func inicializar_conversacion() -> void:
 	timer.wait_time = dialogueResource.get_dialogue_speed()
 	rich_text_label.text = ""
 	current_state = States.ABRIENDO
-	
+
+@warning_ignore("shadowed_variable")
 func mostrar_decision():
+	set_button_visibility(false)
+	speaker_name.visible = false
+	current_state = States.MOSTRANDO_DECISIONES
 	var i : int = 0
 	var aux_boton : BotonDecision
 	rich_text_label.queue_free()
 	while i < decision_actual.get_texto_opciones().size():
 		#CREO UN BOTON POR CADA DECISION Y CONECTO AL EVENTO
 		aux_boton = boton_decision.instantiate()
-		aux_boton.inicializar(decision_actual.get_texto_opciones()[i],i)
+		aux_boton.inicializar(decision_actual.get_texto_opciones()[i],i,decision_actual.get_type_decision_elegida(i))
 		aux_boton.boton_decision_elegido.connect(_on_boton_decision_pressed)
 		v_box_container.add_child(aux_boton)
 		i += 1
-		
-
 ##Comienza el dialogo, si layer es mayor que 0 se le asigna ese valor al canvas_layer
-func start(layer: float = -1):
-	if vacio == false:
+
+func start(layer: int = -1):
+	if rich_text_label == null or not is_instance_valid(rich_text_label):
+		cambiar_a_modo_conversacion()  # aseguro que lo crea de nuevo
+	if vacio or dialogueResource == null: # tengo que arrancar el dialogo
+		#end()
+		#return
+		pass
+	else:
 		if layer > 0:
 			canvas_layer.layer = layer
 		if text_count > 0:
@@ -74,27 +97,33 @@ func start(layer: float = -1):
 		else:
 			destruir()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
+	skip_conversation() # para debuggear
 	if current_state == States.TEXTO_MOSTRADO:
-		next_text_button.disabled = false
+		set_button_visibility(true)
+		pass
 	if current_state == States.MOSTRANDO_TEXTO:
 		audio_stream_player.play()
 	else:
 		audio_stream_player.stop()
+	if current_state != States.MOSTRANDO_DECISIONES :
+		speaker_name.visible = true
 
 func terminar_texto():
 	i = text_length
 	rich_text_label.text = dialogueResource.get_dialogue_text(j)
-
+	
 func read_text():
 	if i < text_length:
-		#voy agregando caracteres de a uno
 		rich_text_label.text += dialogueResource.get_dialogue_text(j)[i]
 		i += 1
 		timer.start()
 	else:
-		current_state = States.TEXTO_MOSTRADO
-		
+		if current_state != States.TEXTO_MOSTRADO:
+			next_text_button.disabled = false
+			current_state = States.TEXTO_MOSTRADO
+			
+			
 func _on_timer_timeout() -> void:
 	read_text()
 
@@ -113,7 +142,10 @@ func next_text():
 			mostrar_decision()
 		else:	
 			current_state = States.CERRANDO
-			anim_player.play("fade_out")
+			if anim_player.has_animation("fade_out"):
+				anim_player.play("fade_out")
+			else:
+				destruir()
 		
 func destruir():
 	dialogue_ended.emit()
@@ -124,32 +156,151 @@ func destruir():
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "fade_in":
-		current_state = States.MOSTRANDO_TEXTO
-		read_text()
+		if text_count > 0:
+			current_state = States.MOSTRANDO_TEXTO
+			read_text()
+		else:
+			current_state = States.CERRANDO
+			destruir()
 	else:
 		destruir()
 		
-func cambiar_a_modo_conversacion():
+func cambiar_a_modo_conversacion(): #resetea el cuadro de dialogo
 	v_box_container.queue_free()
-	v_box_container = VBoxContainer.new()
-	rich_text_label = RichTextLabel.new()
-	rich_text_label.add_theme_font_size_override("normal_font_size",25)
-	rich_text_label.custom_minimum_size = Vector2(0,100)
-	margin_container.add_child(v_box_container)
-	v_box_container.add_child(rich_text_label)
-		
-
-		
-func _on_boton_decision_pressed(indice : int):
-	#TENGO QUE ELIMINAR TODOS LOS BOTONES DEL DIALOGO
-	cambiar_a_modo_conversacion()
-	dialogueResource = decision_actual.get_recurso_dialogo_de_decision_elegida(indice).get_recurso_dialogo()
-	inicializar_conversacion()
-	start()
 	
+	v_box_container = VBoxContainer.new()
+	v_box_container.alignment = BoxContainer.ALIGNMENT_BEGIN
+	v_box_container.size_flags_vertical = v_box_container.SIZE_SHRINK_CENTER
+	margin_container.add_child(v_box_container) 
+	
+	margin_container.move_child(v_box_container,0)
+	
+	
+	rich_text_label = RichTextLabel.new()
+	rich_text_label.scroll_active = true
+	rich_text_label.fit_content = true 
+	rich_text_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	rich_text_label.add_theme_font_size_override("normal_font_size",18)
+	rich_text_label.custom_minimum_size = Vector2(0,52)
+	rich_text_label.add_theme_font_override("normal_font",preload("res://art/Fonts/Audiowide-Regular.ttf"))
+	v_box_container.add_child(rich_text_label)
 
+	
+func _on_boton_decision_pressed(indice : int):
+	#TENGO QUE ELIMINAR TODOS LOS BOTONES DEL DIALOGOv+
+	
+	var events = decision_actual.get_recurso_dialogo_de_decision_elegida(indice).array_eventos
+	cambiar_a_modo_conversacion()
+	dialogueResource = decision_actual.get_recurso_dialogo_de_decision_elegida(indice).get_recurso_dialogo_exitoso()
+	
+	if dialogueResource != null:
+		canvas_layer.hide()
+		start()
+		await dialogue_ended
+		
+	if events.size() > 0 :
+		canvas_layer.hide()
+		await trigger_events(events)
+		canvas_layer.show()
 
+	check_and_start_alternative_dialogue() 
 
 func _on_next_text_button_pressed() -> void:
 	next_text()	
 	next_text_button.disabled = true
+
+
+
+func set_button_visibility(state:bool):
+	if state == false:
+		next_text_button.hide()
+		next_text_button.disabled = true
+		next_text_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		next_text_button.modulate = Color(1, 1, 1, 0)  # invisible por si algún estilo ignora "visible"
+	else:
+		next_text_button.show()
+		next_text_button.disabled = false
+		next_text_button.mouse_filter = Control.MOUSE_FILTER_STOP
+		next_text_button.modulate = Color(1, 1, 1, 1)
+
+
+func set_speaker(character_name: String):
+	speaker_name.text = character_name
+	
+func end():
+		current_state = States.CERRANDO
+		anim_player.play("fade_out")
+		destruir()
+
+
+
+func check_and_start_alternative_dialogue():
+	if dialogo_alternativo == null:
+		end()
+	else:
+		cambiar_a_modo_conversacion()
+		canvas_layer.hide()
+	
+		dialogueResource = dialogo_alternativo
+		dialogo_alternativo = null
+	
+		start()
+
+var dwin: Dialogo
+var dlose: Dialogo 
+func trigger_events(events: Array[Evento] ):
+	var type
+	for event in events:
+		if event is Evento_Grab_Item and event.item_id != null:
+			deliver_item.emit(event.item_id)
+		elif event is event_use_item and event.item_id != null :
+			use_item.emit(event.item_id)
+		elif event is Event_Enqueue_Event:
+			dwin = event.dialogo_win
+			dlose = event.dialogo_lose
+			var puzzle_instance :Puzzle = event.event.instantiate()
+			puzzle_instance.puzzle_result.connect(_on_puzzle_result)
+			add_child(puzzle_instance)
+			await puzzle_instance.finished
+		elif event is AdvanceQuestEventResource : #podria ser otro, podemos usar el decision_type tambien
+				quest_accepted.emit()
+		await event.trigger()
+		
+#region para debugear
+func skip_conversation(): 
+	if Input.is_action_just_pressed("ui_right"):
+		skip()
+
+func skip():
+	var index = j
+	while index < dialogueResource.arreglo_de_textos.size():
+		terminar_texto()
+		next_text()
+		index += 1
+#endregion
+
+
+func _on_puzzle_result(result):
+	var decision = Decision.new()
+	var opcion_quit = Opcion.new()
+	opcion_quit.decision_type = "Quit"
+	if not result :
+		dialogo_alternativo = dlose # es el que no tiene la data de lo que tiene que darle
+		dialogo_alternativo.decision = decision
+		opcion_quit.texto = "Volvere..."
+		dialogo_alternativo.decision.array_opciones.append(opcion_quit)
+		get_parent().tiene_dialogo_quest = true 
+	else:
+		dialogo_alternativo = dwin
+		dialogo_alternativo.decision = decision
+		opcion_quit.texto = "Nos vemos"
+		dialogo_alternativo.decision.array_opciones.append(opcion_quit)
+		var item = get_parent().gives_item
+		if item != null  and item != "" :
+			var new_event = Evento_Grab_Item.new()
+			new_event.item_id = item
+			opcion_quit.array_eventos.append(new_event)
+		get_parent().take_first_dialogue() 
+	
+		
+	

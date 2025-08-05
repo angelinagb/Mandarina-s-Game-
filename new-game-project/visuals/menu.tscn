@@ -26,6 +26,7 @@ layer = 2
 script = ExtResource("1_7whbs")
 elemento_quest_main = ExtResource("2_cbfyr")
 elemento_quest_secondary = ExtResource("3_exrgd")
+metadata/_edit_horizontal_guides_ = [262.0]
 
 [node name="Fondo" type="Sprite2D" parent="."]
 position = Vector2(400, 180)
@@ -37,7 +38,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 57.0
-offset_bottom = -170.0
+offset_bottom = -98.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -45,7 +46,6 @@ grow_vertical = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 0
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/Contenedor Quest"]
 layout_mode = 2
@@ -56,6 +56,10 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Quest list"
 label_settings = SubResource("LabelSettings_dmkcs")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Contenedor Quest"]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Conteneder Inventario" type="VBoxContainer" parent="HBoxContainer"]
 unique_name_in_owner = true
@@ -74,25 +78,22 @@ text = "Inventario"
 label_settings = SubResource("LabelSettings_nqhns")
 
 [node name="Control2" type="Control" parent="."]
-visible = false
 layout_mode = 3
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
+anchor_top = 0.731
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -100.0
-offset_right = 144.0
+offset_top = -0.160004
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MainMenu" parent="Control2" instance=ExtResource("3_cbfyr")]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-offset_top = -100.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_vertical = 0
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -14.0
 
 [node name="ExitButton" type="Button" parent="."]
 offset_left = 2.0

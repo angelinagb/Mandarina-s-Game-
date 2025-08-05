@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3s4xku1cuevt"]
+
+[ext_resource type="PackedScene" uid="uid://bqscndmb0v4br" path="res://managers/dialogue 2.0/dialogue_system.tscn" id="1_vw6p2"]
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="4_uhnqb"]
+
+[sub_resource type="Resource" id="Resource_hype0"]
+script = ExtResource("4_uhnqb")
+arreglo_de_textos = PackedStringArray("JAJAJAJA ", "Ahora estas atrapado", "Fuiste muy bueno con los números...", "Veamos como te va con algo mas artistico Mr. Cuadrado")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[node name="Dialogue System" instance=ExtResource("1_vw6p2")]
+dialogueResource = SubResource("Resource_hype0")
+
+[node name="Speaker_Name" parent="CanvasLayer" index="2"]
+text = "LA IA ACADEMICA"

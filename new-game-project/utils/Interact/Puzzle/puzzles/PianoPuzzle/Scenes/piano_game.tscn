@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://wbl6odje5t52"]
+[gd_scene load_steps=19 format=3 uid="uid://wbl6odje5t52"]
 
 [ext_resource type="Script" uid="uid://bq5y43o22joh7" path="res://utils/Interact/Puzzle/puzzles/PianoPuzzle/scripts/piano_game.gd" id="1_4aced"]
 [ext_resource type="PackedScene" uid="uid://6p4ounmbwbp2" path="res://utils/Interact/Puzzle/puzzles/PianoPuzzle/Scenes/key.tscn" id="2_7f5js"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://dqtc4cc6mrod8" path="res://utils/Interact/Puzzle/puzzles/PianoPuzzle/Sounds/sounds_g4-g5/c5#.ogg" id="13_fgr7n"]
 [ext_resource type="AudioStream" uid="uid://dy46p41n8of75" path="res://utils/Interact/Puzzle/puzzles/PianoPuzzle/Sounds/sounds_g4-g5/d5#.ogg" id="14_hyoph"]
 [ext_resource type="AudioStream" uid="uid://bmbi8pkq04smy" path="res://utils/Interact/Puzzle/puzzles/PianoPuzzle/Sounds/sounds_g4-g5/f5#.ogg" id="15_47kd8"]
+[ext_resource type="Texture2D" uid="uid://b6l5sn0604j4m" path="res://art/menu/Icons_Essential/v1.2/Icons/Restart.png" id="17_ybc5f"]
 
 [sub_resource type="GDScript" id="GDScript_ibkju"]
 script/source = "extends AudioStreamPlayer2D
@@ -222,3 +223,14 @@ is_black = true
 note = "f5#"
 stream = ExtResource("15_47kd8")
 metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = 5.0
+offset_top = 323.0
+offset_right = 82.0
+offset_bottom = 354.0
+scale = Vector2(0.822649, 0.896801)
+text = "Volver"
+icon = ExtResource("17_ybc5f")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,18 +1,20 @@
 class_name  IsoRoom  extends Node2D
 
+#signal item_used
 signal interactable_interacted(interactable: Interactable)
-@onready var back_round_music: AudioStreamPlayer = $BackRoundMusic
+@onready var room_sounds: AudioStreamPlayer = $RoomSounds
+@onready var room_music: AudioStreamPlayer = $RoomMusic
 
 @onready var player_b: PlayerB = $Player/PlayerB
 
 @export var room_id: String
 var current_state: Dictionary = {}
 
+
 func _ready(): 
 	current_state = StateManager.get_room_state(room_id)
 	restore_state()
 		
-
 func get_room_identifier(): return room_id
 
 func get_position_spawn(name_spawn: String) -> Vector2:
@@ -23,7 +25,6 @@ func get_position_spawn(name_spawn: String) -> Vector2:
 
 func _on_interactable_interacted(interactable: Interactable):
 	interactable_interacted.emit(interactable)
-	print("disparando señal desde la room, " + "incteractuo: " + interactable.my_type)
 
 func get_player() -> PlayerB:
 	return player_b

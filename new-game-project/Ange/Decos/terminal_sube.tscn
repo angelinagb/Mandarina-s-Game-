@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2f2p7cl1qirc"]
+
+[ext_resource type="PackedScene" uid="uid://c352qhl8iuech" path="res://utils/Interact/Activator/activator.tscn" id="1_axlgv"]
+[ext_resource type="Texture2D" uid="uid://bniaaipsbro7r" path="res://art/items/2dClassroomAssetPackByStyloo/Classroom/Classroom Second Spritesheet 2.png" id="1_tvpa6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_axlgv"]
+
+[node name="Activator" instance=ExtResource("1_axlgv")]
+scale = Vector2(0.757385, 0.646395)
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("1_tvpa6")
+region_enabled = true
+region_rect = Rect2(40, 520, 288, 504)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(5.28134, 119.122)
+scale = Vector2(22.9333, 15.4717)
+shape = SubResource("CircleShape2D_axlgv")
+
+[node name="Area2D2" type="Area2D" parent="." index="2"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2" index="0"]
+polygon = PackedVector2Array(-130.713, -143.875, 22.4457, -244.433, 128.072, -134.593, 95.0639, -114.481, 80.5403, 85.0873, 149.198, 140.781, 146.557, 160.892, 25.0863, 235.15, -110.908, 156.251, -102.986, 137.687, -93.7436, 122.216, -105.627, -119.122)

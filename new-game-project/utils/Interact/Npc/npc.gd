@@ -3,33 +3,61 @@ class_name Npc extends Interactable
 signal quest_begun
 signal dialogue_ended
 signal quest_ended(title)
+signal item_used(item_id: String)
 
+@export var gives_item: String
+@export var npc_name: String
 @export var quest: Quest
+
 @onready var primerDialogo : DialogueSystem = $"Dialogo Quest"
 @onready var dialogoDefault : DialogueSystem = $"Dialogo Default"
 @onready var quest_icon : ColorRect = $NpcQuestIndicador
-var tiene_quest : bool
 
 @onready var current_dialogue: int = 0
 @onready var current_npc_state:STATE = STATE.WAITING
 
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+
 var player_in_range = false
+var tiene_dialogo_quest : bool 
+var tiene_quest: bool
+var node_item: Item
+
+var save_quest_default: Dialogo
+var quest_accepted: bool = false
 
 enum STATE {
 	TALKING,
 	WAITING
 }
 
-func _ready():
-	quest_icon.hide()
-	if primerDialogo.esta_vacio() == false:
-		tiene_quest = true
-		quest_icon.show()
-	my_type = "npc"
+func _ready(): 
 	super._ready()
+	quest_icon.hide()
+	name = "npc" + npc_name
+	my_type = "npc"
+	
+
+	if dialogoDefault:
+		dialogoDefault.use_item.connect(_on_item_used)
+	
+	if gives_item != "":
+		create_item()
+		primerDialogo.deliver_item.connect(new_item)
+		
+	if primerDialogo.esta_vacio() == false: 
+		save_quest_default = primerDialogo.dialogueResource
+		primerDialogo.use_item.connect(_on_item_used)
+		tiene_dialogo_quest = true
+		quest_icon.show()
+		
 	if quest:
+		primerDialogo.quest_accepted.connect(take_quest)
+		tiene_quest = true
 		quest.init()
 		quest.quest_ended.connect(on_quest_ended)
+		
+	
 
 #func _input(event):
 	#match current_npc_state:
@@ -50,21 +78,30 @@ func on_quest_ended(title):
 
 func interact():
 	interacted.emit(self)
+
 	await dialogueEnded()
 	
 func startDialogue():
-	if tiene_quest == true:
+	$AudioStreamPlayer.play()
+	if tiene_dialogo_quest == true:
+		if primerDialogo.dialogueResource == null:
+			primerDialogo.dialogueResource = save_quest_default
+		primerDialogo.set_speaker(self.npc_name)
 		primerDialogo.start()
-	else:
-		if dialogoDefault != null:
-			dialogoDefault.start()
+		take_first_dialogue()
+		await primerDialogo.finished
+	
+	elif dialogoDefault != null:
+		dialogoDefault.set_speaker(self.npc_name)
+		dialogoDefault.start()
+		await dialogoDefault.finished
 	
 	
 func quest_available():
-	return tiene_quest
+	return quest_accepted
 	
 func take_quest():
-	tiene_quest = false
+	quest_accepted = true
 	quest_icon.hide()
 	quest_begun.emit()
 
@@ -78,21 +115,43 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 
 func _on_dialogo_quest_dialogue_ended() -> void:
+	$AudioStreamPlayer.stop()
 	dialogue_ended.emit()
 
 
 func _on_dialogo_default_dialogue_ended() -> void:
+	$AudioStreamPlayer.stop()
 	dialogue_ended.emit()
 	
 func get_state() -> Dictionary:
 	var state = {}
-	state["tiene_quest"] = tiene_quest
+	state["questDialogo"] = tiene_dialogo_quest
 	state["process_mode"] = process_mode
+	state["quest"] = tiene_quest
+	
 	return state
 	
 func load_state(current_state):
-	tiene_quest = current_state["tiene_quest"]
+	tiene_dialogo_quest = current_state["questDialogo"]
 	process_mode = current_state["process_mode"]
+	tiene_quest = current_state["quest"]
 	
 func get_type()  -> String :
 	return my_type
+	
+
+func new_item(item):
+	node_item.interact()
+
+func take_first_dialogue():
+	quest_icon.hide()
+	tiene_dialogo_quest = false
+
+func create_item() -> Item :
+	node_item = Item.new()
+	node_item.my_type = "item"
+	node_item.id = gives_item
+	return node_item
+	
+func _on_item_used(item_id: String):
+	item_used.emit(item_id)

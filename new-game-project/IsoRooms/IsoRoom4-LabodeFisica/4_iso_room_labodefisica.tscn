@@ -1,42 +1,54 @@
-[gd_scene load_steps=10 format=3 uid="uid://df0eeq5en5tmr"]
+[gd_scene load_steps=11 format=3 uid="uid://df0eeq5en5tmr"]
 
 [ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_ebu0q"]
 [ext_resource type="PackedScene" uid="uid://bxdarh5hjdqcv" path="res://IsoRooms/IsoRoom4-LabodeFisica/4_base_tiles_labodefisica.tscn" id="2_8hemf"]
 [ext_resource type="Script" uid="uid://cbksmdo5jkvnq" path="res://IsoRooms/IsoRoom4-LabodeFisica/4_iso_room_labodefisica.gd" id="2_i5aki"]
-[ext_resource type="PackedScene" uid="uid://v8ayk5g3mgli" path="res://utils/Interact/Pista/PistaPiano/osicloscopio.tscn" id="3_oyfwe"]
+[ext_resource type="PackedScene" uid="uid://d3s4xku1cuevt" path="res://Ange/dialogue_system.tscn" id="3_83261"]
 [ext_resource type="PackedScene" uid="uid://bucn0vs17tsw2" path="res://utils/Interact/Item/Instancias/Mate.tscn" id="3_woc7s"]
-[ext_resource type="PackedScene" uid="uid://da3yrerllmlfw" path="res://IsoRooms/IsoRoom4-LabodeFisica/transitioner.tscn" id="6_7bnoq"]
-[ext_resource type="Script" uid="uid://bvq7ul31l7a5" path="res://utils/Interact/Interactable/interactable.gd" id="6_bpgie"]
+[ext_resource type="PackedScene" uid="uid://bxurh7x1dv7db" path="res://IsoRooms/IsoRoom-Bedelia/transitioner_con_puzzle.tscn" id="6_e7dv1"]
 [ext_resource type="PackedScene" uid="uid://cho8fef01i037" path="res://IsoRooms/IsoRoom4-LabodeFisica/osc_activator.tscn" id="7_7bnoq"]
+[ext_resource type="AudioStream" uid="uid://bw14d4tvrkirx" path="res://Ange/error-04-199275.mp3" id="9_83261"]
 [ext_resource type="PackedScene" uid="uid://wbl6odje5t52" path="res://utils/Interact/Puzzle/puzzles/PianoPuzzle/Scenes/piano_game.tscn" id="9_e7dv1"]
+[ext_resource type="PackedScene" uid="uid://b6ql18l3lj552" path="res://utils/Interact/Puzzle/puzzles/PistaPiano.tscn" id="9_yuu8r"]
 
 [node name="LabodeFisica" instance=ExtResource("1_ebu0q")]
 script = ExtResource("2_i5aki")
-osc = ExtResource("3_oyfwe")
+dialogo_trap = ExtResource("3_83261")
+room_id = "ROOM-LABOFISICA"
 
 [node name="BaseTiles" parent="." index="0" instance=ExtResource("2_8hemf")]
 
+[node name="ROOM-PISO2A" type="Marker2D" parent="Spawns" index="1"]
+position = Vector2(13, -252)
+
 [node name="Mate" parent="Interactables/Items" index="0" instance=ExtResource("3_woc7s")]
-position = Vector2(292, -273)
+position = Vector2(311, -286)
 
-[node name="Transitioner" parent="Interactables/Transitioners" index="0" instance=ExtResource("6_7bnoq")]
-position = Vector2(-315, 31)
-rotation = 0.678933
-scale = Vector2(4, 4)
+[node name="Area2D" parent="Interactables/Items/Mate" index="1"]
+rotation = -1.26247
+scale = Vector2(5.72374, 1.22664)
 
-[node name="Activators" type="Node2D" parent="Interactables" index="4"]
-script = ExtResource("6_bpgie")
-metadata/_custom_type_script = "uid://bvq7ul31l7a5"
+[node name="Puzzle_Transitioner" parent="Interactables/Transitioners" index="0" instance=ExtResource("6_e7dv1")]
+position = Vector2(-24, -292)
+rotation = -0.504619
+scale = Vector2(6.24, 1)
+puzzle = ExtResource("9_e7dv1")
+room_id = "ROOM-PISO2A"
+necesary_key = true
 
-[node name="OscActivator" parent="Interactables/Activators" index="0" instance=ExtResource("7_7bnoq")]
+[node name="OscActivator" parent="Interactables" index="4" instance=ExtResource("7_7bnoq")]
 position = Vector2(-153, -215)
 rotation = -0.475169
 scale = Vector2(3.41612, -4.68284)
-activable = ExtResource("9_e7dv1")
+activable = ExtResource("9_yuu8r")
 id = "ROOM-LABOFISICA"
 
 [node name="PlayerB" parent="Player" index="0"]
 position = Vector2(205, -31)
 
-[connection signal="interacted" from="Interactables/Transitioners/Transitioner" to="." method="_on_interactable_interacted"]
-[connection signal="interacted" from="Interactables/Activators/OscActivator" to="." method="_on_interactable_interacted"]
+[node name="RoomSounds" parent="." index="4"]
+stream = ExtResource("9_83261")
+
+[connection signal="interacted" from="Interactables/OscActivator" to="." method="_on_interactable_interacted"]
+
+[editable path="Interactables/Items/Mate"]

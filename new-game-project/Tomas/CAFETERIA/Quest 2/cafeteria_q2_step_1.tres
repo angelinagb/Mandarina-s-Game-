@@ -6,6 +6,6 @@
 script = ExtResource("1_mjhj3")
 text_to_do = "Enfrentar al Nerd"
 necessary_interactables = {
-"COFFEE-NERD": false
+"Capitulo1": false
 }
 metadata/_custom_type_script = "uid://c0nhxnmv56tui"

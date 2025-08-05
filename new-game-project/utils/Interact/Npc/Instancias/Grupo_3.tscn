@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://xpklt7xbwqj7"]
 
 [ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_varp3"]
-[ext_resource type="Texture2D" uid="uid://djj4haibkkndk" path="res://art/characters/iso/npc/unnamed.png" id="2_gxpsg"]
+[ext_resource type="Texture2D" uid="uid://chn0y3w2dkddb" path="res://art/characters/iso/npc/npc_sentado.png" id="2_gxpsg"]
 [ext_resource type="Resource" uid="uid://7pyj6j84fvmy" path="res://Tomas/CAFETERIA/Quest 1/cafeteria_quest_1_dialogo_grupo_3.tres" id="2_j5owp"]
 
 [node name="GRUPO 3" instance=ExtResource("1_varp3")]

@@ -1,11 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://mig00nmd2h8j"]
+[gd_scene load_steps=3 format=3 uid="uid://mig00nmd2h8j"]
 
 [ext_resource type="PackedScene" uid="uid://cyif0m3rl1hoj" path="res://visuals/Notificacion GUI/Notification.tscn" id="1_xlmdv"]
+[ext_resource type="AudioStream" uid="uid://cn75df3etw8gq" path="res://art/music-sfx/RPG_Music_Orchestra/item-equip-6904.mp3" id="2_lanrx"]
 
 [node name="Notification" instance=ExtResource("1_xlmdv")]
+tiempo_que_aparece = 2.0
 
 [node name="Titulo" parent="Control/PanelContainer/MarginContainer/VBoxContainer" index="0"]
 text = "Nuevo item obtenido !"
 
 [node name="Descripcion" parent="Control/PanelContainer/MarginContainer/VBoxContainer" index="1"]
 text = "Examine item para más detalles"
+
+[node name="sound" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("2_lanrx")

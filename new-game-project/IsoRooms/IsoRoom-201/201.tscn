@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmrylgwd7adng"]
+
+[ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_0qlln"]
+[ext_resource type="PackedScene" uid="uid://cemxq83ayi3jv" path="res://pendrive.tscn" id="2_en2wq"]
+[ext_resource type="PackedScene" uid="uid://b4bt82myv58x6" path="res://IsoRooms/IsoRoom-201/201_base_tiles.tscn" id="2_n0sjv"]
+[ext_resource type="PackedScene" uid="uid://bucn0vs17tsw2" path="res://utils/Interact/Item/Instancias/Mate.tscn" id="3_ejr7h"]
+[ext_resource type="PackedScene" uid="uid://53qcgarmhxng" path="res://utils/Interact/Transitioner/transitioner.tscn" id="4_w5u6u"]
+
+[node name="IsoRoom" instance=ExtResource("1_0qlln")]
+room_id = "ROOM-201"
+
+[node name="BaseTiles" parent="." index="0" instance=ExtResource("2_n0sjv")]
+
+[node name="defect" parent="Spawns" index="0"]
+position = Vector2(-153, -205)
+
+[node name="Item" parent="Interactables/Items" index="0" instance=ExtResource("2_en2wq")]
+position = Vector2(-8, -257)
+id = "Pendrive"
+
+[node name="Mate" parent="Interactables/Items" index="1" instance=ExtResource("3_ejr7h")]
+position = Vector2(-15, -127)
+
+[node name="Transitioner" parent="Interactables/Transitioners" index="0" instance=ExtResource("4_w5u6u")]
+position = Vector2(-178, -230)
+rotation = -0.579855
+scale = Vector2(4.1815, 1.19549)
+room_id = "ROOM-PISO2A"
+
+[node name="CollisionShape2D" parent="Interactables/Transitioners/Transitioner/Area2D" index="0"]
+scale = Vector2(0.896978, 0.859221)
+
+[node name="PlayerB" parent="Player" index="0"]
+position = Vector2(309, -241)
+
+[connection signal="interacted" from="Interactables/Items/Item" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Items/Mate" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/Transitioner" to="." method="_on_interactable_interacted"]
+
+[editable path="Interactables/Transitioners/Transitioner"]

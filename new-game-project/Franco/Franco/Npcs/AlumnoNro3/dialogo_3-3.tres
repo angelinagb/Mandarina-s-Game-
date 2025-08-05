@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_6x3r7")
-arreglo_de_textos = PackedStringArray("Vos podes creer que esta andando todo mal hoy?")
+arreglo_de_textos = PackedStringArray()
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"

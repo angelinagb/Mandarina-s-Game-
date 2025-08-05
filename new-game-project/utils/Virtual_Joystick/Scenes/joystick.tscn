@@ -1,22 +1,20 @@
 [gd_scene load_steps=5 format=3 uid="uid://dm6q0abakck7u"]
 
 [ext_resource type="Script" uid="uid://bqfwiy3kj7vrp" path="res://utils/Virtual_Joystick/Code/joystick.gd" id="1_ii2vn"]
-[ext_resource type="Texture2D" uid="uid://bidhxucp2kd66" path="res://utils/Virtual_Joystick/art/joyring.png" id="2_w2jn3"]
-[ext_resource type="Texture2D" uid="uid://hg42snfhm6ei" path="res://utils/Virtual_Joystick/art/joyknobpng.png" id="3_voruw"]
+[ext_resource type="Texture2D" uid="uid://5cv0hnff1ql" path="res://art/menu/Joystick/shadedDarkRing.png" id="2_b1846"]
+[ext_resource type="Texture2D" uid="uid://cby5jl71y0837" path="res://art/menu/Joystick/shadedDarkKnob.png" id="3_witoa"]
 [ext_resource type="Script" uid="uid://bushfgr64xmmr" path="res://utils/Virtual_Joystick/Code/Knob.gd" id="4_g4kk1"]
 
 [node name="Joystick" type="Node2D"]
 script = ExtResource("1_ii2vn")
 
 [node name="Ring" type="Sprite2D" parent="."]
-modulate = Color(0.0670734, 0.0107269, 0.000919926, 0.662745)
-scale = Vector2(0.055, 0.055)
-texture = ExtResource("2_w2jn3")
+position = Vector2(0, -1.5)
+texture = ExtResource("2_b1846")
 
 [node name="Knob" type="Sprite2D" parent="."]
-modulate = Color(0.933333, 0.423529, 0.180392, 1)
-scale = Vector2(0.02, 0.02)
-texture = ExtResource("3_voruw")
+position = Vector2(0, 2)
+texture = ExtResource("3_witoa")
 script = ExtResource("4_g4kk1")
 
 [node name="Button" type="Button" parent="."]
@@ -25,6 +23,7 @@ offset_left = -50.0
 offset_top = -50.0
 offset_right = 52.0
 offset_bottom = 53.0
+flat = true
 
 [connection signal="button_down" from="Button" to="Knob" method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="Knob" method="_on_button_button_up"]

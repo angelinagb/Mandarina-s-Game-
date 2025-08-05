@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Dialogo" load_steps=8 format=3 uid="uid://brhq08dyercow"]
+
+[ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="1_3dxmn"]
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="1_fu7nv"]
+[ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="2_i4jw8"]
+[ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="3_vy3e1"]
+
+[sub_resource type="Resource" id="Resource_y53x6"]
+script = ExtResource("1_3dxmn")
+texto = "¿Truquito?"
+array_eventos = Array[ExtResource("2_i4jw8")]([])
+decision_type = "Quest"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_isd67"]
+script = ExtResource("1_3dxmn")
+texto = "¡Nos vemos!"
+array_eventos = Array[ExtResource("2_i4jw8")]([])
+decision_type = "Quit"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_6fq03"]
+script = ExtResource("3_vy3e1")
+array_opciones = Array[ExtResource("1_3dxmn")]([SubResource("Resource_y53x6"), SubResource("Resource_isd67")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
+
+[resource]
+script = ExtResource("1_fu7nv")
+arreglo_de_textos = PackedStringArray("¡Hola! ")
+decision = SubResource("Resource_6fq03")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"

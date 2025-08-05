@@ -49,7 +49,5 @@ scale = Vector2(0.800692, 0.877655)
 icon = ExtResource("4_loldm")
 flat = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
 [connection signal="pressed" from="BeginButton" to="." method="_on_begin_pressed"]
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_pressed"]

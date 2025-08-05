@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://c46v7o6wj5rwq"]
+
+[ext_resource type="Texture2D" uid="uid://dikutfqpnp62j" path="res://art/menu/Mobile Game UI/inventory/Inventory/Inventory.png" id="1_mcq7f"]
+[ext_resource type="Texture2D" uid="uid://dl05n7wim573p" path="res://art/menu/habilidad_carisma.png" id="2_qnew4"]
+
+[node name="Inventory_item" type="CanvasLayer"]
+
+[node name="Inventory" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_mcq7f")
+region_enabled = true
+region_rect = Rect2(224, 128, 16, 16)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 28.0
+offset_bottom = 28.0
+scale = Vector2(0.602166, 0.584993)
+
+[node name="Icon" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_qnew4")
+expand_mode = 1
+stretch_mode = 5

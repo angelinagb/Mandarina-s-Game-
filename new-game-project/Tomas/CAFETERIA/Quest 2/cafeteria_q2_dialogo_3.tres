@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_maa31")
-arreglo_de_textos = PackedStringArray("Que humillación", "Toma tu hoja, por favor no le cuentes a nadie esto", "No puedo creerlo", "¡Hoja de tesis conseguida! Nivel Cafetería completado")
+arreglo_de_textos = PackedStringArray("Que humillación", "Toma tu hoja, por favor no le cuentes a nadie esto", "No puedo creerlo")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"

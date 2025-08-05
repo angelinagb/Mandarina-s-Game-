@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://cr82lsk1vc42y"]
+
+[ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_bvjg6"]
+[ext_resource type="PackedScene" uid="uid://lpb6bguiyou2" path="res://IsoRooms/IsoRoom6 -LabodeSyH/labo_syh_base_tiles.tscn" id="2_8c415"]
+[ext_resource type="Script" uid="uid://c6iusquapj1ba" path="res://IsoRooms/IsoRoom6 -LabodeSyH/labo_sy_h_iso_room.gd" id="2_tie1i"]
+[ext_resource type="PackedScene" uid="uid://bd60j0ppl5sbm" path="res://Ange/franco_npc.tscn" id="3_kpvxe"]
+[ext_resource type="PackedScene" uid="uid://bykastfo056vh" path="res://IsoRooms/IsoRoom1/Interactuables/Items/key.tscn" id="3_yacvt"]
+[ext_resource type="PackedScene" uid="uid://da3yrerllmlfw" path="res://IsoRooms/IsoRoom4-LabodeFisica/transitioner.tscn" id="4_xlrqw"]
+[ext_resource type="Resource" uid="uid://gv3afr554f23" path="res://IsoRooms/IsoRoom6 -LabodeSyH/QuestLaboSyH.tres" id="6_yacvt"]
+
+[node name="LaboSyH" instance=ExtResource("1_bvjg6")]
+script = ExtResource("2_tie1i")
+
+[node name="Labo_syh_base_tiles" parent="." index="0" instance=ExtResource("2_8c415")]
+
+[node name="defect" parent="Spawns" index="0"]
+position = Vector2(-217, 246)
+
+[node name="Key" parent="Interactables/Items" index="0" instance=ExtResource("3_yacvt")]
+process_mode = 4
+position = Vector2(-70, 195)
+open_room_id = "ROOM-SALA-CAMARAS"
+nombre_room = "SALA DE CÁMARAS"
+id = "key"
+
+[node name="CollisionShape2D" parent="Interactables/Items/Key/Area2D" index="0"]
+position = Vector2(-1, 47)
+scale = Vector2(1, 3.88)
+
+[node name="Transitioner" parent="Interactables/Transitioners" index="0" instance=ExtResource("4_xlrqw")]
+position = Vector2(-289, 248)
+rotation = 0.577697
+scale = Vector2(5.37969, -1.27588)
+room_id = "ROOM-ENTRADA"
+
+[node name="Npc_profe" parent="Interactables/Npcs" index="0" groups=["Con Estado"] instance=ExtResource("3_kpvxe")]
+position = Vector2(-74, -5)
+scale = Vector2(2.5, 2.5)
+gives_item = "Capitulo0"
+quest = ExtResource("6_yacvt")
+
+[node name="PlayerB" parent="Player" index="0"]
+position = Vector2(-179, 265)
+
+[connection signal="interacted" from="Interactables/Items/Key" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/Transitioner" to="." method="_on_interactable_interacted"]
+[connection signal="dialogue_ended" from="Interactables/Npcs/Npc_profe" to="." method="_on_npc_profe_dialogue_ended"]
+[connection signal="interacted" from="Interactables/Npcs/Npc_profe" to="." method="_on_interactable_interacted"]
+
+[editable path="Interactables/Items/Key"]

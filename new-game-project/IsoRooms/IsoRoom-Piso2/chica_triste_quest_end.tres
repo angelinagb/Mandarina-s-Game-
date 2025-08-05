@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="Dialogo" load_steps=13 format=3 uid="uid://dlgry4m3wvgjr"]
+
+[ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="1_11ekg"]
+[ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="2_mgec6"]
+[ext_resource type="Script" uid="uid://bk4dph0sloiwh" path="res://managers/dialogue 2.0/recursos/scripts/grab_item_event.gd" id="3_cylls"]
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="4_b1h6x"]
+[ext_resource type="Script" uid="uid://cd5vp04d7c84l" path="res://managers/dialogue 2.0/recursos/scripts/Evento_usar_item.gd" id="4_mgec6"]
+[ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="5_uavnw"]
+
+[sub_resource type="Resource" id="Resource_ryl7i"]
+script = ExtResource("3_cylls")
+item_id = ""
+metadata/_custom_type_script = "uid://bk4dph0sloiwh"
+
+[sub_resource type="Resource" id="Resource_cylls"]
+script = ExtResource("4_mgec6")
+item_id = "Pendrive"
+metadata/_custom_type_script = "uid://cd5vp04d7c84l"
+
+[sub_resource type="Resource" id="Resource_lglv1"]
+script = ExtResource("4_b1h6x")
+arreglo_de_textos = PackedStringArray("Si!! Tomá.")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[sub_resource type="Resource" id="Resource_4cpk3"]
+script = ExtResource("1_11ekg")
+texto = "¿Tenes Yerba?"
+dialogo_exitoso = SubResource("Resource_lglv1")
+array_eventos = Array[ExtResource("2_mgec6")]([SubResource("Resource_ryl7i"), SubResource("Resource_cylls")])
+decision_type = "Quest"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_11ekg"]
+script = ExtResource("1_11ekg")
+texto = "Ok. Nos vemos"
+array_eventos = Array[ExtResource("2_mgec6")]([])
+decision_type = "Quit"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_siqdp"]
+script = ExtResource("5_uavnw")
+array_opciones = Array[ExtResource("1_11ekg")]([SubResource("Resource_4cpk3"), SubResource("Resource_11ekg")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
+
+[resource]
+script = ExtResource("4_b1h6x")
+arreglo_de_textos = PackedStringArray("¡Muchas Gracias!", "¿Estoy en deuda, hay algo que necesites?")
+decision = SubResource("Resource_siqdp")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"

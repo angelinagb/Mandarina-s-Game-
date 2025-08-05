@@ -17,3 +17,18 @@ func start():
 	await anim_player.animation_finished
 	finished.emit()
 	queue_free()
+
+#es basicamente un clone
+func get_personalized_scene(new_nombre_quest: String) -> PackedScene:
+	var copy = self.duplicate()
+	var label = copy.get_node("PanelContainer/PanelContainer/VBoxContainer/Nombre Quest") as Label
+	if label:
+		label.text = new_nombre_quest
+	
+	var nueva_packed_scene = PackedScene.new()
+	var success = nueva_packed_scene.pack(copy)
+	
+	if not success:
+		push_error("No se pudo empaquetar la escena personalizada")
+
+	return nueva_packed_scene
