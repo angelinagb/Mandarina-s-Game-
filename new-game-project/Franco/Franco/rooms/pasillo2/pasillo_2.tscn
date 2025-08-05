@@ -38,7 +38,6 @@ position = Vector2(951, -136)
 rotation = 1.05498
 scale = Vector2(-3.84991, 9.02824)
 room_id = "ROOM-5"
-necesary_key = true
 to_room_name = "A CAFETERIA"
 
 [node name="Transitioner3" parent="Interactables/Transitioners" index="2" instance=ExtResource("5_o76j6")]
@@ -61,7 +60,6 @@ position = Vector2(845, -285)
 rotation = 0.589706
 scale = Vector2(5.08793, -1.437)
 room_id = "ROOM-PISO2A"
-necesary_key = true
 to_room_name = "A 2DO PISO"
 
 [node name="AlumnoNro2-3" parent="Interactables/Npcs" index="0" instance=ExtResource("5_rpjon")]

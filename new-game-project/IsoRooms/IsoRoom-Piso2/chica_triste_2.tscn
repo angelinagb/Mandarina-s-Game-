@@ -13,7 +13,8 @@ metadata/_custom_type_script = "uid://dekceg47jr41c"
 
 [node name="ChicaTriste2" instance=ExtResource("1_jqyjy")]
 gives_item = "Yerba"
-npc_name = "Ana_Npc_Piso2"
+npc_name = "Ana"
+id = "Ana_Npc_Piso2"
 
 [node name="Sprite2D" parent="." index="1"]
 position = Vector2(2, -41)

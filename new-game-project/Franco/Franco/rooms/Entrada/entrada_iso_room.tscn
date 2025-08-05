@@ -49,8 +49,7 @@ z_index = 30
 position = Vector2(438, 81)
 rotation = -0.449199
 scale = Vector2(4.54762, -1.30585)
-room_id = "ROOM-6"
-necesary_key = true
+room_id = "ROOM-BEDELIA"
 to_room_name = "Al Laboratorio de Quimica"
 id = "Laboratorio de Quimica"
 
@@ -77,6 +76,7 @@ scale = Vector2(1.41777, 1.54542)
 
 [node name="AlumnoNro3-3" parent="Interactables/Npcs" index="1" instance=ExtResource("6_iyjjf")]
 position = Vector2(234, -498)
+rotation = 0.00181519
 scale = Vector2(1.09628, 1.31673)
 id = "Al3-3"
 

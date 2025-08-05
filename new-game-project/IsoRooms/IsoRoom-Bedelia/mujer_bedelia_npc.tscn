@@ -8,7 +8,9 @@
 [ext_resource type="AudioStream" uid="uid://xe3m817pv17o" path="res://art/music-sfx/RPG_Music_Orchestra/hmms-various-1-7175.mp3" id="6_5o7nw"]
 
 [node name="Npc" instance=ExtResource("1_bq4m8")]
+npc_name = "Carolina"
 quest = ExtResource("2_xg6t4")
+id = "npcCarolina"
 
 [node name="Sprite2D" parent="." index="1"]
 position = Vector2(4, -45)

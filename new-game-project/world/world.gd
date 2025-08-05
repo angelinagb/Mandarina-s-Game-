@@ -30,7 +30,7 @@ var notifications ={
 
 
 func save_this():
-	var ability_points : Dictionary = {"Points": 10}
+	var ability_points : Dictionary = {"Points": 1}
 	var abilities: Dictionary = {
 		"Estudio": [0, 5],
 		"Carisma": [0, 5],
@@ -306,8 +306,14 @@ func _on_quest_begin(interactable: Interactable):
 func _on_activator_activate(interactable: Activator):
 	if interactable.has_method("get_type_abilitie") and interactable.has_method("get_amount_abilitie"):
 		if abilities_points[interactable.get_type_abilitie()][0] >= interactable.get_amount_abilitie():
-			inventory.item_grabbed(interactable.item_id)
-	
+			interactable.feedback(true)
+			var item = Item.new()
+			item.id = interactable.item_id
+			item.my_type = "item"
+			_on_interactable_interacted(item)
+			
+		else: 
+			interactable.feedback(false)
 	#QueueManager.enqueue_event(interactable.activable)
 	pass
 

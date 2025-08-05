@@ -16,12 +16,13 @@ script = ExtResource("2_pf3ew")
 [node name="defect" parent="Spawns" index="0"]
 position = Vector2(402, -196)
 
-[node name="Item" parent="Interactables/Items" index="0" instance=ExtResource("3_m32ng")]
+[node name="Key" parent="Interactables/Items" index="0" groups=["end"] instance=ExtResource("3_m32ng")]
 process_mode = 4
 visible = false
 position = Vector2(320, -134)
 open_room_id = "ROOM-4"
 nombre_room = "Aula 01"
+id = " key"
 
 [node name="Transitioner" parent="Interactables/Transitioners" index="0" instance=ExtResource("3_hbgyd")]
 position = Vector2(435, -213)
@@ -29,13 +30,12 @@ rotation = 0.520996
 scale = Vector2(5, 1)
 room_id = "ROOM-PISO2A"
 
-[node name="Npc" parent="Interactables/Npcs" index="0" instance=ExtResource("3_qtwbl")]
+[node name="Npc" parent="Interactables/Npcs" index="0" groups=["end"] instance=ExtResource("3_qtwbl")]
 position = Vector2(76, -236)
 scale = Vector2(0.735209, 0.679334)
 gives_item = "Termo Vacio"
-npc_name = "Carolina"
 
-[node name="Npc3" parent="Interactables/Npcs" index="1" instance=ExtResource("5_m32ng")]
+[node name="Npc3" parent="Interactables/Npcs" index="1" groups=["end"] instance=ExtResource("5_m32ng")]
 process_mode = 4
 position = Vector2(-62, -166)
 scale = Vector2(0.662868, 0.646904)
@@ -48,7 +48,7 @@ grow_horizontal = 1
 [node name="PlayerB" parent="Player" index="0"]
 position = Vector2(401, -221)
 
-[connection signal="interacted" from="Interactables/Items/Item" to="." method="_on_item_interacted"]
+[connection signal="interacted" from="Interactables/Items/Key" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/Transitioner" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Npcs/Npc" to="." method="_on_interactable_interacted"]
 [connection signal="quest_begun" from="Interactables/Npcs/Npc" to="." method="_on_npc_quest_begun"]

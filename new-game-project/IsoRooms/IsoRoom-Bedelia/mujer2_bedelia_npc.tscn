@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dbfsbj3iwbn6"]
+[gd_scene load_steps=15 format=3 uid="uid://dbfsbj3iwbn6"]
 
 [ext_resource type="PackedScene" uid="uid://dymo47m6k6uqb" path="res://utils/Interact/Npc/npc.tscn" id="1_q1ubv"]
 [ext_resource type="Texture2D" uid="uid://cwuxd057ijn8f" path="res://art/characters/iso/npc/mujer_sentada.png" id="2_qhbjw"]
@@ -7,10 +7,11 @@
 [ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="4_qqxeg"]
 [ext_resource type="Script" uid="uid://cd5vp04d7c84l" path="res://managers/dialogue 2.0/recursos/scripts/Evento_usar_item.gd" id="5_xn1x8"]
 [ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="6_4qmrk"]
+[ext_resource type="AudioStream" uid="uid://xe3m817pv17o" path="res://art/music-sfx/RPG_Music_Orchestra/hmms-various-1-7175.mp3" id="8_qqxeg"]
 
 [sub_resource type="Resource" id="Resource_i28n6"]
 script = ExtResource("5_xn1x8")
-item_id = "TermoLleno"
+item_id = "Termo Lleno"
 metadata/_custom_type_script = "uid://cd5vp04d7c84l"
 
 [sub_resource type="Resource" id="Resource_kcno8"]
@@ -37,6 +38,12 @@ decision = SubResource("Resource_2g2qp")
 tiempo_entre_caracteres = 0.02
 metadata/_custom_type_script = "uid://dekceg47jr41c"
 
+[sub_resource type="Resource" id="Resource_qqxeg"]
+script = ExtResource("3_hscsh")
+arreglo_de_textos = PackedStringArray("¿Si?")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
 [node name="Npc" instance=ExtResource("1_q1ubv")]
 
 [node name="Sprite2D" parent="." index="1"]
@@ -54,8 +61,14 @@ scale = Vector2(-8.9285, 13.4599)
 [node name="Dialogo Quest" parent="." index="4"]
 dialogueResource = SubResource("Resource_cex08")
 
+[node name="Dialogo Default" parent="." index="5"]
+dialogueResource = SubResource("Resource_qqxeg")
+
 [node name="NpcQuestIndicador" parent="." index="6"]
 offset_right = 34.0
 offset_bottom = 33.0
+
+[node name="AudioStreamPlayer" parent="." index="7"]
+stream = ExtResource("8_qqxeg")
 
 [editable path="NpcQuestIndicador"]

@@ -30,9 +30,7 @@ metadata/_custom_type_script = "uid://c0nhxnmv56tui"
 [sub_resource type="Resource" id="Resource_dk1c5"]
 script = ExtResource("2_0wubs")
 text_to_do = "Consigue la llave del aula 01 en Bedelía"
-necessary_interactables = {
-"bedelia_npc1": false
-}
+necessary_interactables = {}
 metadata/_custom_type_script = "uid://c0nhxnmv56tui"
 
 [sub_resource type="Resource" id="Resource_3fuga"]

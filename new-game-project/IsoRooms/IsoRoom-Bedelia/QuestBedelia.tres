@@ -29,9 +29,9 @@ metadata/_custom_type_script = "uid://c0nhxnmv56tui"
 
 [sub_resource type="Resource" id="Resource_kqvsy"]
 script = ExtResource("2_yica4")
-text_to_do = "Entrega el set de Mate a Maria"
+text_to_do = "Habla con Carolina"
 necessary_interactables = {
-"Maria_NPC": false
+"npcCarolina": false
 }
 metadata/_custom_type_script = "uid://c0nhxnmv56tui"
 

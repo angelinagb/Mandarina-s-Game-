@@ -26,7 +26,7 @@ metadata/_custom_type_script = "uid://c0nhxnmv56tui"
 script = ExtResource("6_db85a")
 text_to_do = "Volver con Ana"
 necessary_interactables = {
-"Ana_Piso2_Npc": false
+"Ana_Npc_Piso2": false
 }
 metadata/_custom_type_script = "uid://c0nhxnmv56tui"
 
@@ -130,8 +130,6 @@ quest = SubResource("Resource_786h8")
 process_mode = 4
 visible = false
 position = Vector2(-845, 866)
-npc_name = "Ana"
-id = "Ana_Npc_Piso2"
 
 [node name="Activator" parent="Interactables" index="4" instance=ExtResource("11_8p23m")]
 position = Vector2(-1379, 345)
