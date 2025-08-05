@@ -284,7 +284,7 @@ func _on_puzzle_result(result):
 	var decision = Decision.new()
 	var opcion_quit = Opcion.new()
 	opcion_quit.decision_type = "Quit"
-	if !result :
+	if not result :
 		dialogo_alternativo = dlose # es el que no tiene la data de lo que tiene que darle
 		dialogo_alternativo.decision = decision
 		opcion_quit.texto = "Volvere..."
@@ -294,12 +294,12 @@ func _on_puzzle_result(result):
 		dialogo_alternativo = dwin
 		dialogo_alternativo.decision = decision
 		opcion_quit.texto = "Nos vemos"
+		dialogo_alternativo.decision.array_opciones.append(opcion_quit)
 		var item = get_parent().gives_item
 		if item != null  and item != "" :
 			var new_event = Evento_Grab_Item.new()
 			new_event.item_id = item
 			opcion_quit.array_eventos.append(new_event)
-			dialogo_alternativo.decision.array_opciones.append(opcion_quit)
 		get_parent().take_first_dialogue() 
 	
 		

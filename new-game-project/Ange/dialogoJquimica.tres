@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="Dialogo" load_steps=12 format=3 uid="uid://x4tigv2syvn7"]
+
+[ext_resource type="Script" uid="uid://bxesqyur17jig" path="res://managers/dialogue 2.0/recursos/scripts/Opcion.gd" id="1_uu8b3"]
+[ext_resource type="Script" uid="uid://d3e656lca7p0r" path="res://managers/dialogue 2.0/recursos/scripts/Evento.gd" id="2_fjg6u"]
+[ext_resource type="Script" uid="uid://dekceg47jr41c" path="res://managers/dialogue 2.0/recursos/scripts/Dialogo.gd" id="3_echmu"]
+[ext_resource type="PackedScene" uid="uid://dp1j1sh86uh60" path="res://utils/Interact/Puzzle/puzzles/PuzzleInstance/PuzzleQuimica/puzzle_quimica.tscn" id="4_qcjpe"]
+[ext_resource type="Script" uid="uid://bgh1w2gpnp0nj" path="res://managers/dialogue 2.0/recursos/scripts/evento_enqueue_event.gd" id="5_feuej"]
+[ext_resource type="Script" uid="uid://ceg75660dlfjc" path="res://managers/dialogue 2.0/recursos/scripts/Decision.gd" id="6_f8s8p"]
+
+[sub_resource type="Resource" id="Resource_5ywb6"]
+script = ExtResource("3_echmu")
+arreglo_de_textos = PackedStringArray("Complicado...")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[sub_resource type="Resource" id="Resource_dxn2g"]
+script = ExtResource("3_echmu")
+arreglo_de_textos = PackedStringArray("Gracias!", "Mmm...", "Ahi esta tu hoja mirá , abajo de esa mesa", "Suerte con el resto!")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"
+
+[sub_resource type="Resource" id="Resource_vskla"]
+script = ExtResource("5_feuej")
+event = ExtResource("4_qcjpe")
+dialogo_lose = SubResource("Resource_5ywb6")
+dialogo_win = SubResource("Resource_dxn2g")
+metadata/_custom_type_script = "uid://bgh1w2gpnp0nj"
+
+[sub_resource type="Resource" id="Resource_cbu6b"]
+script = ExtResource("1_uu8b3")
+texto = "Ok..."
+array_eventos = Array[ExtResource("2_fjg6u")]([SubResource("Resource_vskla")])
+decision_type = "Chat"
+metadata/_custom_type_script = "uid://bxesqyur17jig"
+
+[sub_resource type="Resource" id="Resource_j8odv"]
+script = ExtResource("6_f8s8p")
+array_opciones = Array[ExtResource("1_uu8b3")]([SubResource("Resource_cbu6b")])
+metadata/_custom_type_script = "uid://ceg75660dlfjc"
+
+[resource]
+script = ExtResource("3_echmu")
+arreglo_de_textos = PackedStringArray("Hola! ¿Como viene la busqueda?", "Ya se sabe en toda la facu...", "Vi una hoja tirada por aca, ayudame a terminar esto y te ayudo a buscarla")
+decision = SubResource("Resource_j8odv")
+tiempo_entre_caracteres = 0.02
+metadata/_custom_type_script = "uid://dekceg47jr41c"

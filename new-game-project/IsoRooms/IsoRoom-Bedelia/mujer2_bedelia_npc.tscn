@@ -65,8 +65,11 @@ dialogueResource = SubResource("Resource_cex08")
 dialogueResource = SubResource("Resource_qqxeg")
 
 [node name="NpcQuestIndicador" parent="." index="6"]
-offset_right = 34.0
-offset_bottom = 33.0
+offset_left = -11.0
+offset_top = -74.0
+offset_right = 21.0
+offset_bottom = -42.0
+grow_horizontal = 1
 
 [node name="AudioStreamPlayer" parent="." index="7"]
 stream = ExtResource("8_qqxeg")
