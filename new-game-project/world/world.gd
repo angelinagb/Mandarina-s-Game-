@@ -359,3 +359,4 @@ func new_notification(desc: String, scene: PackedScene):
 func _on_quest_ended():
 	abilities_available_points["Points"] +=1
 	menu.on_abilities_updated(abilities_available_points["Points"],abilities_points)
+	NotificationManager.enqueue_event(preload("res://pointabilitienotif.tscn"))

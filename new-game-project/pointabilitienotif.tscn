@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2bni18xnflxf"]
+
+[ext_resource type="PackedScene" uid="uid://cyif0m3rl1hoj" path="res://visuals/Notificacion GUI/Notification.tscn" id="1_6ecdg"]
+[ext_resource type="AudioStream" uid="uid://u0xsb5c4yqwj" path="res://art/music-sfx/RPGsfx/80s-achievement-unlocked-94452.mp3" id="2_5kfxm"]
+
+[node name="Notification" instance=ExtResource("1_6ecdg")]
+
+[node name="PanelContainer" parent="Control" index="0"]
+modulate = Color(1, 0.992157, 1, 1)
+
+[node name="Titulo" parent="Control/PanelContainer/MarginContainer/VBoxContainer" index="0"]
+modulate = Color(0.258824, 1, 1, 1)
+text = "+1 Punto de Habilidad"
+
+[node name="Descripcion" parent="Control/PanelContainer/MarginContainer/VBoxContainer" index="1"]
+modulate = Color(0.623529, 1, 0.905882, 1)
+text = "Abre la mochila para usarlos."
+
+[node name="sound" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("2_5kfxm")
