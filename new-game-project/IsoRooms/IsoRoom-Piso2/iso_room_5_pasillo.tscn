@@ -51,6 +51,9 @@ position = Vector2(-868, 409)
 [node name="ROOM-BEDELIA" type="Marker2D" parent="Spawns" index="2"]
 position = Vector2(-3075, 111)
 
+[node name="ROOM-LABOFISICA" type="Marker2D" parent="Spawns" index="3"]
+position = Vector2(-2393, 400)
+
 [node name="trasn_ labo_industrial" parent="Interactables/Transitioners" index="0" instance=ExtResource("2_js4aw")]
 position = Vector2(-539, -157)
 rotation = -0.417543
@@ -97,7 +100,10 @@ necesary_key = true
 position = Vector2(-2483, 451)
 rotation = 0.490498
 scale = Vector2(-5.47888, 2.07825)
+room_id = "ROOM-LABOFISICA"
 necesary_key = true
+to_room_name = "Lab de Fisica"
+id = "Lab de Fisica"
 
 [node name="trans_aula_205" parent="Interactables/Transitioners" index="8" instance=ExtResource("2_js4aw")]
 position = Vector2(-2640, 149)
@@ -216,6 +222,7 @@ text = "4
 "
 
 [connection signal="interacted" from="Interactables/Transitioners/trans_pasillo2" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Transitioners/trans_aula_206" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/trans_bedelia" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/Puzzle_Transitioner" to="." method="_on_interactable_interacted"]
 [connection signal="unblocked" from="Interactables/Transitioners/Puzzle_Transitioner" to="." method="_on_puzzle_transitioner_unblocked"]

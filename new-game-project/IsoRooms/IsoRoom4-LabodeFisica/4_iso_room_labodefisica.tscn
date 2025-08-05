@@ -16,6 +16,9 @@ osc = ExtResource("3_oyfwe")
 
 [node name="BaseTiles" parent="." index="0" instance=ExtResource("2_8hemf")]
 
+[node name="ROOM-PISO2A" type="Marker2D" parent="Spawns" index="1"]
+position = Vector2(13, -252)
+
 [node name="Mate" parent="Interactables/Items" index="0" instance=ExtResource("3_woc7s")]
 position = Vector2(311, -286)
 
@@ -27,6 +30,7 @@ scale = Vector2(5.72374, 1.22664)
 position = Vector2(-41, -275)
 rotation = 0.994021
 scale = Vector2(1.50987, 5.56687)
+room_id = "ROOM-PISO2A"
 
 [node name="Activators" type="Node2D" parent="Interactables" index="4"]
 script = ExtResource("6_bpgie")

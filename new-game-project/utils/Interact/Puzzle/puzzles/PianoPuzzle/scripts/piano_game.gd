@@ -35,6 +35,9 @@ func _on_key_pressed(note: String) -> void:
 			finished.emit()
 			on_puzzle_solved.emit("Chocolate")
 			current_index = 0  # o podés cambiar de nivel
+			
+			var inventory_manager = get_node("/root/Main/World/InventoryManager")
+			inventory_manager.item_grabbed("Capitulo4")
 	else:
 		print("❌ Error. Esperaba:", target_sequence[current_index])
 		feedback_error()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bt1w2mhrlrldg"]
+[gd_scene load_steps=8 format=3 uid="uid://bt1w2mhrlrldg"]
 
 [ext_resource type="PackedScene" uid="uid://d4kokfybi0077" path="res://IsoRooms/IsoRoom.tscn" id="1_r6l0j"]
 [ext_resource type="PackedScene" uid="uid://dfp282bcn4bat" path="res://IsoRooms/IsoRoom1/1_base_tiles.tscn" id="2_6jolm"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bykastfo056vh" path="res://IsoRooms/IsoRoom1/Interactuables/Items/key.tscn" id="3_33ucu"]
 [ext_resource type="PackedScene" uid="uid://dtgjbrj2ss74o" path="res://utils/Interact/Transitioner/Instancias/trans_r1_r2.tscn" id="4_ims64"]
 [ext_resource type="PackedScene" uid="uid://bucn0vs17tsw2" path="res://utils/Interact/Item/Instancias/Mate.tscn" id="5_1a3g4"]
+[ext_resource type="PackedScene" uid="uid://cl6dwnd5qqx5t" path="res://utils/Interact/Item/Instancias/capitulo_2.tscn" id="6_1a3g4"]
 
 [node name="IsoRoom-1" instance=ExtResource("1_r6l0j")]
 y_sort_enabled = true
@@ -20,10 +21,11 @@ script = null
 [node name="defect" parent="Spawns" index="0"]
 position = Vector2(288, -267)
 
-[node name="ROOM-5" type="Marker2D" parent="Spawns" index="1"]
+[node name="ROOM-PASILLO2" type="Marker2D" parent="Spawns" index="1"]
 position = Vector2(230, -370)
 
 [node name="Item" parent="Interactables/Items" index="0" instance=ExtResource("3_33ucu")]
+visible = false
 position = Vector2(-71, -321)
 rotation = 0.00967322
 scale = Vector2(0.426274, 0.649988)
@@ -31,11 +33,14 @@ scale = Vector2(0.426274, 0.649988)
 [node name="Mate" parent="Interactables/Items" index="1" instance=ExtResource("5_1a3g4")]
 position = Vector2(235, -197)
 
+[node name="Capitulo2" parent="Interactables/Items" index="2" instance=ExtResource("6_1a3g4")]
+position = Vector2(558, -154)
+
 [node name="Trans R1 -> R2" parent="Interactables/Transitioners" index="0" instance=ExtResource("4_ims64")]
-position = Vector2(289, -415)
+position = Vector2(283, -384)
 rotation = -2.67915
 scale = Vector2(2.09534, 1.28191)
-room_id = "ROOM-PASILLO1"
+room_id = "ROOM-PASILLO2"
 id = "trans_iso_1to2"
 
 [node name="PlayerB" parent="Player" index="0"]
@@ -43,4 +48,5 @@ position = Vector2(397, -218)
 
 [connection signal="interacted" from="Interactables/Items/Item" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Items/Mate" to="." method="_on_interactable_interacted"]
+[connection signal="interacted" from="Interactables/Items/Capitulo2" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/Trans R1 -> R2" to="." method="_on_interactable_interacted"]

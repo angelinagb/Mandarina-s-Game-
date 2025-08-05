@@ -28,12 +28,24 @@ scale = Vector2(1, 1.00781)
 [node name="ROOM-ENTRADA" type="Marker2D" parent="Spawns" index="3"]
 position = Vector2(-493, 486)
 
-[node name="Transitioner" parent="Interactables/Transitioners" index="0" instance=ExtResource("3_522a5")]
+[node name="ROOM-4" type="Marker2D" parent="Spawns" index="4"]
+position = Vector2(272, -386)
+
+[node name="TransitionerAula01" parent="Interactables/Transitioners" index="0" instance=ExtResource("3_522a5")]
+position = Vector2(208, -381)
+rotation = 1.0472
+scale = Vector2(1, 2)
+room_id = "ROOM-4"
+necesary_key = true
+to_room_name = "Aula 01"
+id = "Aula 01"
+
+[node name="Transitioner" parent="Interactables/Transitioners" index="1" instance=ExtResource("3_522a5")]
 position = Vector2(-544, 493)
 rotation = -1.03759
 scale = Vector2(-3.06083, -5.59824)
 
-[node name="Transitioner2" parent="Interactables/Transitioners" index="1" instance=ExtResource("4_rpjon")]
+[node name="Transitioner2" parent="Interactables/Transitioners" index="2" instance=ExtResource("4_rpjon")]
 position = Vector2(951, -136)
 rotation = 1.05498
 scale = Vector2(-3.84991, 9.02824)
@@ -41,7 +53,7 @@ room_id = "ROOM-5"
 necesary_key = true
 to_room_name = "A CAFETERIA"
 
-[node name="Transitioner3" parent="Interactables/Transitioners" index="2" instance=ExtResource("5_o76j6")]
+[node name="Transitioner3" parent="Interactables/Transitioners" index="3" instance=ExtResource("5_o76j6")]
 position = Vector2(-27, 107)
 rotation = 2.6936
 scale = Vector2(5.32383, -1.24007)
@@ -49,14 +61,14 @@ room_id = "ROOM-SALA-CAMARAS"
 necesary_key = true
 to_room_name = "A SALA CAMARAS"
 
-[node name="Transitioner4" parent="Interactables/Transitioners" index="3" instance=ExtResource("5_o76j6")]
+[node name="Transitioner4" parent="Interactables/Transitioners" index="4" instance=ExtResource("5_o76j6")]
 position = Vector2(681, 80)
 rotation = -0.589321
 scale = Vector2(3.68585, -0.939496)
 necesary_key = true
 to_room_name = "A PATIO "
 
-[node name="trans-piso2a" parent="Interactables/Transitioners" index="4" instance=ExtResource("5_o76j6")]
+[node name="trans-piso2a" parent="Interactables/Transitioners" index="5" instance=ExtResource("5_o76j6")]
 position = Vector2(845, -285)
 rotation = 0.589706
 scale = Vector2(5.08793, -1.437)
@@ -96,6 +108,7 @@ offset_bottom = 17.0
 [node name="PlayerB" parent="Player" index="0"]
 position = Vector2(272, -287)
 
+[connection signal="interacted" from="Interactables/Transitioners/TransitionerAula01" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/Transitioner" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/Transitioner2" to="." method="_on_interactable_interacted"]
 [connection signal="interacted" from="Interactables/Transitioners/Transitioner3" to="." method="_on_interactable_interacted"]

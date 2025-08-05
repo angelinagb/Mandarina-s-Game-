@@ -7,7 +7,7 @@ extends IsoRoom
 
 func _ready():
 	super._ready()
-	trans.process_mode = Node.PROCESS_MODE_DISABLED
+	#trans.process_mode = Node.PROCESS_MODE_DISABLED
 	#QueueManager.enqueue_event(intro)
 
 
@@ -17,6 +17,7 @@ func save_state():
 
 
 func _on_chica_triste_dialogue_ended() -> void:
-	trans.process_mode = Node.PROCESS_MODE_INHERIT
+	pass
+	#trans.process_mode = Node.PROCESS_MODE_INHERIT
 	#change dialogo si la quest no esta completada 
 	#change dialogo una vez terminada la quest?
